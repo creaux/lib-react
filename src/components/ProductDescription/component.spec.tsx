@@ -4,9 +4,9 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import chai, { expect } from 'chai';
 import chaiSinon from 'sinon-chai';
 import chaiEnzyme from 'chai-enzyme';
-import { Button } from '../../forms/Button';
-import { Variants } from '../../forms/Button';
-import { Sizes } from '../../types/sizes';
+import { Button } from '../forms/Button';
+import { Variants } from '../forms/Button';
+import { Sizes } from '../types/sizes';
 import { spy } from 'sinon';
 
 describe('ProductDescription', () => {

@@ -14,7 +14,7 @@ exports[`Storyshots Atoms/Cycler default 1`] = `
       className="cycler"
     >
       <button
-        className="btn btn-link link "
+        className="btn btn-link link"
         onClick={[Function]}
       >
         <svg
@@ -565,7 +565,7 @@ exports[`Storyshots Atoms/Cycler default 1`] = `
 
 exports[`Storyshots Atoms/Image as background 1`] = `
 <div
-  className="background"
+  className="image-background"
   style={
     Object {
       "backgroundImage": "url(http://lorempixel.com/640/480/fashion)",
@@ -576,7 +576,7 @@ exports[`Storyshots Atoms/Image as background 1`] = `
 
 exports[`Storyshots Atoms/Image as img 1`] = `
 <div
-  className="background"
+  className="image-background"
 >
   <img
     alt="Lorem ipsum"
@@ -596,7 +596,7 @@ exports[`Storyshots Atoms/Sidescription default 1`] = `
     }
   >
     <div
-      className="container"
+      className="sidescription"
     >
       <h1>
         Lorem ipsum
@@ -881,7 +881,7 @@ exports[`Storyshots Atoms/Sidescription default 1`] = `
                             }
                           }
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -1024,11 +1024,10 @@ exports[`Storyshots Atoms/Svg default 1`] = `
         >
           <a
             aria-label="pyxis media"
-            className="root"
+            className="svg"
             href="#"
           >
             <svg
-              className="svg"
               styles={
                 Object {
                   "fill": "black",
@@ -2315,7 +2314,7 @@ exports[`Storyshots Atoms/forms/Button Documentation 1`] = `
                                 }
                               }
                             >
-                              action
+                              actionHandler
                             </span>
                             }
                           </span>
@@ -2613,7 +2612,7 @@ exports[`Storyshots Atoms/forms/Button Documentation 1`] = `
                                 }
                               }
                             >
-                              action
+                              actionHandler
                             </span>
                             }
                           </span>
@@ -2911,7 +2910,7 @@ exports[`Storyshots Atoms/forms/Button Documentation 1`] = `
                                 }
                               }
                             >
-                              action
+                              actionHandler
                             </span>
                             }
                           </span>
@@ -3209,7 +3208,7 @@ exports[`Storyshots Atoms/forms/Button Documentation 1`] = `
                                 }
                               }
                             >
-                              action
+                              actionHandler
                             </span>
                             }
                           </span>
@@ -3507,7 +3506,7 @@ exports[`Storyshots Atoms/forms/Button Documentation 1`] = `
                                 }
                               }
                             >
-                              action
+                              actionHandler
                             </span>
                             }
                           </span>
@@ -3805,7 +3804,7 @@ exports[`Storyshots Atoms/forms/Button Documentation 1`] = `
                                 }
                               }
                             >
-                              action
+                              actionHandler
                             </span>
                             }
                           </span>
@@ -4103,7 +4102,7 @@ exports[`Storyshots Atoms/forms/Button Documentation 1`] = `
                                 }
                               }
                             >
-                              action
+                              actionHandler
                             </span>
                             }
                           </span>
@@ -4513,7 +4512,7 @@ exports[`Storyshots Atoms/forms/Button danger 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -4828,7 +4827,7 @@ exports[`Storyshots Atoms/forms/Button dark 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -5143,7 +5142,7 @@ exports[`Storyshots Atoms/forms/Button info 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -5458,7 +5457,7 @@ exports[`Storyshots Atoms/forms/Button light 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -5773,7 +5772,7 @@ exports[`Storyshots Atoms/forms/Button link 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -6088,7 +6087,7 @@ exports[`Storyshots Atoms/forms/Button outline-danger 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -6403,7 +6402,7 @@ exports[`Storyshots Atoms/forms/Button outline-dark 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -6718,7 +6717,7 @@ exports[`Storyshots Atoms/forms/Button outline-info 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -7033,7 +7032,7 @@ exports[`Storyshots Atoms/forms/Button outline-light 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -7348,7 +7347,7 @@ exports[`Storyshots Atoms/forms/Button outline-primary 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -7663,7 +7662,7 @@ exports[`Storyshots Atoms/forms/Button outline-secondary 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -7978,7 +7977,7 @@ exports[`Storyshots Atoms/forms/Button outline-success 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -8293,7 +8292,7 @@ exports[`Storyshots Atoms/forms/Button outline-warning 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -8608,7 +8607,7 @@ exports[`Storyshots Atoms/forms/Button primary 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -8923,7 +8922,7 @@ exports[`Storyshots Atoms/forms/Button secondary 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -9238,7 +9237,7 @@ exports[`Storyshots Atoms/forms/Button success 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -9553,7 +9552,7 @@ exports[`Storyshots Atoms/forms/Button warning 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -9798,6 +9797,7 @@ Array [
   <select
     className="custom-select"
     id="123456"
+    onChange={[Function]}
     value="511 01"
   >
     <option
@@ -10287,7 +10287,7 @@ exports[`Storyshots Moleculs/Add Documentation 1`] = `
                               }
                             }
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -10648,7 +10648,7 @@ exports[`Storyshots Moleculs/Add default 1`] = `
                             }
                           }
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -10728,3211 +10728,491 @@ exports[`Storyshots Moleculs/Add default 1`] = `
 `;
 
 exports[`Storyshots Moleculs/Carousel Documentation 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
   <div
-    style={
+    className="markdown-body"
+    dangerouslySetInnerHTML={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "__html": "<p>HEADER.md</p>
+",
       }
     }
+  />
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<br />",
+      }
+    }
+  />
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<p>VARIANTS_HEADER.md</p>
+",
+      }
+    }
+  />
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<br />",
+      }
+    }
+  />
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<p>VARIANTS_SIMPLE.md</p>
+",
+      }
+    }
+  />
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<br />",
+      }
+    }
+  />
+  <div
+    className="carousel slide"
+    onKeyDown={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
+    <ol
+      className="carousel-indicators"
+    >
+      <li
+        className="active"
+        onClick={[Function]}
+      />
+       
+      <li
+        className={null}
+        onClick={[Function]}
+      />
+       
+      <li
+        className={null}
+        onClick={[Function]}
+      />
+       
+    </ol>
     <div
-      style={
-        Object {
-          "padding": "20px",
-        }
-      }
+      className="carousel-inner"
     >
       <div
-        className="markdown-body"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>HEADER.md</p>
-",
-          }
-        }
-      />
-      <div
-        className="markdown-body"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<br />",
-          }
-        }
-      />
-      <div
-        className="markdown-body"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>VARIANTS_HEADER.md</p>
-",
-          }
-        }
-      />
-      <div
-        className="markdown-body"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<br />",
-          }
-        }
-      />
-      <div
-        className="markdown-body"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>VARIANTS_SIMPLE.md</p>
-",
-          }
-        }
-      />
-      <div
-        className="markdown-body"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<br />",
-          }
-        }
-      />
-      <div
-        className="carousel slide"
-        onKeyDown={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
+        className="carousel-item active carousel-item"
       >
-        <ol
-          className="carousel-indicators"
-        >
-          <li
-            className="active"
-            onClick={[Function]}
-          />
-           
-          <li
-            className={null}
-            onClick={[Function]}
-          />
-           
-          <li
-            className={null}
-            onClick={[Function]}
-          />
-           
-        </ol>
-        <div
-          className="carousel-inner"
-        >
-          <div
-            className="carousel-item active carousel-item"
-          >
-            <img
-              alt="Lorem ipsum"
-              className="d-block w-100"
-              src="http://lorempixel.com/640/480/fashion"
-            />
-          </div>
-          <div
-            className="carousel-item carousel-item"
-          >
-            <img
-              alt="Lorem ipsum"
-              className="d-block w-100"
-              src="http://lorempixel.com/640/480/fashion"
-            />
-          </div>
-          <div
-            className="carousel-item carousel-item"
-          >
-            <img
-              alt="Lorem ipsum"
-              className="d-block w-100"
-              src="http://lorempixel.com/640/480/fashion"
-            />
-          </div>
-        </div>
-        <a
-          className="carousel-control-prev"
-          href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-        >
-          <span
-            aria-hidden="true"
-            className="carousel-control-prev-icon"
-          />
-          <span
-            className="sr-only"
-          >
-            Previous
-          </span>
-        </a>
-        <a
-          className="carousel-control-next"
-          href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-        >
-          <span
-            aria-hidden="true"
-            className="carousel-control-next-icon"
-          />
-          <span
-            className="sr-only"
-          >
-            Next
-          </span>
-        </a>
+        <img
+          alt="Lorem ipsum"
+          className="d-block w-100"
+          src="http://lorempixel.com/640/480/fashion"
+        />
       </div>
       <div
-        className="markdown-body"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<br />",
-          }
-        }
-      />
-      <div
-        className="markdown-body"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>VARIANTS_MULTI.md</p>
-",
-          }
-        }
-      />
-      <div
-        className="markdown-body"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<br />",
-          }
-        }
-      />
-      <div
-        className="carousel slide"
-        onKeyDown={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
+        className="carousel-item carousel-item"
       >
-        <ol
-          className="carousel-indicators"
-        >
-          <li
-            className="active"
-            onClick={[Function]}
-          />
-           
-          <li
-            className={null}
-            onClick={[Function]}
-          />
-           
-        </ol>
-        <div
-          className="carousel-inner"
-        >
-          <div
-            className="carousel-item active carousel-item"
-          >
-            <img
-              alt="Lorem ipsum"
-              className="w-25"
-              src="http://lorempixel.com/640/480/fashion"
-            />
-            <img
-              alt="Lorem ipsum"
-              className="w-25"
-              src="http://lorempixel.com/640/480/fashion"
-            />
-            <img
-              alt="Lorem ipsum"
-              className="w-25"
-              src="http://lorempixel.com/640/480/fashion"
-            />
-            <img
-              alt="Lorem ipsum"
-              className="w-25"
-              src="http://lorempixel.com/640/480/fashion"
-            />
-          </div>
-          <div
-            className="carousel-item carousel-item"
-          >
-            <img
-              alt="Lorem ipsum"
-              className="w-25"
-              src="http://lorempixel.com/640/480/fashion"
-            />
-            <img
-              alt="Lorem ipsum"
-              className="w-25"
-              src="http://lorempixel.com/640/480/fashion"
-            />
-            <img
-              alt="Lorem ipsum"
-              className="w-25"
-              src="http://lorempixel.com/640/480/fashion"
-            />
-            <img
-              alt="Lorem ipsum"
-              className="w-25"
-              src="http://lorempixel.com/640/480/fashion"
-            />
-          </div>
-        </div>
-        <a
-          className="carousel-control-prev"
-          href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-        >
-          <span
-            aria-hidden="true"
-            className="carousel-control-prev-icon"
-          />
-          <span
-            className="sr-only"
-          >
-            Previous
-          </span>
-        </a>
-        <a
-          className="carousel-control-next"
-          href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-        >
-          <span
-            aria-hidden="true"
-            className="carousel-control-next-icon"
-          />
-          <span
-            className="sr-only"
-          >
-            Next
-          </span>
-        </a>
+        <img
+          alt="Lorem ipsum"
+          className="d-block w-100"
+          src="http://lorempixel.com/640/480/fashion"
+        />
+      </div>
+      <div
+        className="carousel-item carousel-item"
+      >
+        <img
+          alt="Lorem ipsum"
+          className="d-block w-100"
+          src="http://lorempixel.com/640/480/fashion"
+        />
       </div>
     </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-  <div
-    className="info__overlay"
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-        "zIndex": 99999,
-      }
-    }
-  >
-    <button
-      className="info__close-button"
+    <a
+      className="carousel-control-prev"
+      href="#"
       onClick={[Function]}
-      style={
-        Object {
-          "background": "#027ac5",
-          "border": "none",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": "12px",
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-        }
-      }
-      type="button"
+      onKeyDown={[Function]}
+      role="button"
     >
-      ×
-    </button>
-    <div>
-      <div
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "color": "black",
-            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
+      <span
+        aria-hidden="true"
+        className="carousel-control-prev-icon"
+      />
+      <span
+        className="sr-only"
       >
-        
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Story Source
-          </h1>
-          <pre
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fafafa",
-                "display": "flex",
-                "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                "fontSize": ".88em",
-                "justifyContent": "space-between",
-                "lineHeight": 1.5,
-                "overflowX": "scroll",
-                "padding": ".5rem",
-              }
-            }
-          >
-            <div>
-              <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    div
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        style
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#666",
-                              }
-                            }
-                          >
-                            {
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                padding
-                              </span>
-                            </span>
-                            : 
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              '20px'
-                            </span>
-                            }
-                          </span>
-                          }
-                        </span>
-                      </span>
-                      
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    Marked
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        md
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            HEADER.md
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    Marked
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        md
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            &lt;br /&gt;
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    Marked
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        md
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            VARIANTS_HEADER.md
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    Marked
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        md
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            &lt;br /&gt;
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    Marked
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        md
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            VARIANTS_SIMPLE.md
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    Marked
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        md
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            &lt;br /&gt;
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    Carousel
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        slides
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#666",
-                              }
-                            }
-                          >
-                            [
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                {
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    src
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  'http://lorempixel.com/640/480/fashion'
-                                </span>
-                                ,
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    alt
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  'Lorem ipsum'
-                                </span>
-                                }
-                              </span>
-                            </span>
-                            ,
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                {
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    src
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  'http://lorempixel.com/640/480/fashion'
-                                </span>
-                                ,
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    alt
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  'Lorem ipsum'
-                                </span>
-                                }
-                              </span>
-                            </span>
-                            ,
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                {
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    src
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  'http://lorempixel.com/640/480/fashion'
-                                </span>
-                                ,
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    alt
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  'Lorem ipsum'
-                                </span>
-                                }
-                              </span>
-                            </span>
-                            ]
-                          </span>
-                          }
-                        </span>
-                      </span>
-                    </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        variant
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            simple
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    Marked
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        md
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            &lt;br /&gt;
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    Marked
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        md
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            VARIANTS_MULTI.md
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    Marked
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        md
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            &lt;br /&gt;
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    Carousel
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        slides
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#666",
-                              }
-                            }
-                          >
-                            [
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                [
-                                <span>
-                                  <span>
-                                    <br />
-                                        
-                                      
-                                  </span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    {
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        src
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'http://lorempixel.com/640/480/fashion'
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        alt
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'Lorem ipsum'
-                                    </span>
-                                    }
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
-                                        
-                                      
-                                  </span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    {
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        src
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'http://lorempixel.com/640/480/fashion'
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        alt
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'Lorem ipsum'
-                                    </span>
-                                    }
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
-                                        
-                                      
-                                  </span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    {
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        src
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'http://lorempixel.com/640/480/fashion'
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        alt
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'Lorem ipsum'
-                                    </span>
-                                    }
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
-                                        
-                                      
-                                  </span>
-                                  …
-                                </span>
-                                <span>
-                                  <br />
-                                      
-                                </span>
-                                ]
-                              </span>
-                            </span>
-                            ,
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                [
-                                <span>
-                                  <span>
-                                    <br />
-                                        
-                                      
-                                  </span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    {
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        src
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'http://lorempixel.com/640/480/fashion'
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        alt
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'Lorem ipsum'
-                                    </span>
-                                    }
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
-                                        
-                                      
-                                  </span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    {
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        src
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'http://lorempixel.com/640/480/fashion'
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        alt
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'Lorem ipsum'
-                                    </span>
-                                    }
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
-                                        
-                                      
-                                  </span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    {
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        src
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'http://lorempixel.com/640/480/fashion'
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        alt
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      'Lorem ipsum'
-                                    </span>
-                                    }
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
-                                        
-                                      
-                                  </span>
-                                  …
-                                </span>
-                                <span>
-                                  <br />
-                                      
-                                </span>
-                                ]
-                              </span>
-                            </span>
-                            ]
-                          </span>
-                          }
-                        </span>
-                      </span>
-                    </span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        variant
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            multi
-                          </span>
-                          "
-                        </span>
-                      </span>
-                       
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;/
-                    div
-                    &gt;
-                  </span>
-                </div>
-              </div>
-            </div>
-            <button
-              onClick={[Function]}
-              style={
-                Object {
-                  "alignSelf": "flex-start",
-                  "backgroundColor": "rgb(255, 255, 255)",
-                  "borderColor": "rgb(238, 238, 238)",
-                  "borderImage": "initial",
-                  "borderRadius": "3px",
-                  "borderStyle": "solid",
-                  "borderWidth": "1px",
-                  "cursor": "pointer",
-                  "flexShrink": "0",
-                  "fontSize": "13px",
-                  "overflow": "hidden",
-                  "padding": "3px 10px",
-                }
-              }
-              type="button"
-            >
-              Copy
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h3
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
-            >
-              "
-              Carousel
-              " Component
-            </h3>
-            <small>
-              No propTypes defined!
-            </small>
-          </div>
-          <div>
-            <h3
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
-            >
-              "
-              Marked
-              " Component
-            </h3>
-            <small>
-              No propTypes defined!
-            </small>
-          </div>
-        </div>
+        Previous
+      </span>
+    </a>
+    <a
+      className="carousel-control-next"
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+    >
+      <span
+        aria-hidden="true"
+        className="carousel-control-next-icon"
+      />
+      <span
+        className="sr-only"
+      >
+        Next
+      </span>
+    </a>
+  </div>
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<br />",
+      }
+    }
+  />
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<p>VARIANTS_MULTI.md</p>
+",
+      }
+    }
+  />
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<br />",
+      }
+    }
+  />
+  <div
+    className="carousel slide"
+    onKeyDown={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  >
+    <ol
+      className="carousel-indicators"
+    >
+      <li
+        className="active"
+        onClick={[Function]}
+      />
+       
+      <li
+        className={null}
+        onClick={[Function]}
+      />
+       
+    </ol>
+    <div
+      className="carousel-inner"
+    >
+      <div
+        className="carousel-item active carousel-item"
+      >
+        <img
+          alt="Lorem ipsum"
+          className="w-25"
+          src="http://lorempixel.com/640/480/fashion"
+        />
+        <img
+          alt="Lorem ipsum"
+          className="w-25"
+          src="http://lorempixel.com/640/480/fashion"
+        />
+        <img
+          alt="Lorem ipsum"
+          className="w-25"
+          src="http://lorempixel.com/640/480/fashion"
+        />
+        <img
+          alt="Lorem ipsum"
+          className="w-25"
+          src="http://lorempixel.com/640/480/fashion"
+        />
+      </div>
+      <div
+        className="carousel-item carousel-item"
+      >
+        <img
+          alt="Lorem ipsum"
+          className="w-25"
+          src="http://lorempixel.com/640/480/fashion"
+        />
+        <img
+          alt="Lorem ipsum"
+          className="w-25"
+          src="http://lorempixel.com/640/480/fashion"
+        />
+        <img
+          alt="Lorem ipsum"
+          className="w-25"
+          src="http://lorempixel.com/640/480/fashion"
+        />
+        <img
+          alt="Lorem ipsum"
+          className="w-25"
+          src="http://lorempixel.com/640/480/fashion"
+        />
       </div>
     </div>
+    <a
+      className="carousel-control-prev"
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+    >
+      <span
+        aria-hidden="true"
+        className="carousel-control-prev-icon"
+      />
+      <span
+        className="sr-only"
+      >
+        Previous
+      </span>
+    </a>
+    <a
+      className="carousel-control-next"
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+    >
+      <span
+        aria-hidden="true"
+        className="carousel-control-next-icon"
+      />
+      <span
+        className="sr-only"
+      >
+        Next
+      </span>
+    </a>
   </div>
 </div>
 `;
 
 exports[`Storyshots Moleculs/Carousel multi 1`] = `
-<div>
+<div
+  className="carousel slide"
+  onKeyDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+>
+  <ol
+    className="carousel-indicators"
+  >
+    <li
+      className="active"
+      onClick={[Function]}
+    />
+     
+    <li
+      className={null}
+      onClick={[Function]}
+    />
+     
+  </ol>
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="carousel-inner"
   >
     <div
-      className="carousel slide"
-      onKeyDown={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
+      className="carousel-item active carousel-item"
     >
-      <ol
-        className="carousel-indicators"
-      >
-        <li
-          className="active"
-          onClick={[Function]}
-        />
-         
-        <li
-          className={null}
-          onClick={[Function]}
-        />
-         
-      </ol>
-      <div
-        className="carousel-inner"
-      >
-        <div
-          className="carousel-item active carousel-item"
-        >
-          <img
-            alt="Lorem ipsum"
-            className="w-25"
-            src="http://lorempixel.com/640/480/fashion"
-          />
-          <img
-            alt="Lorem ipsum"
-            className="w-25"
-            src="http://lorempixel.com/640/480/fashion"
-          />
-          <img
-            alt="Lorem ipsum"
-            className="w-25"
-            src="http://lorempixel.com/640/480/fashion"
-          />
-          <img
-            alt="Lorem ipsum"
-            className="w-25"
-            src="http://lorempixel.com/640/480/fashion"
-          />
-        </div>
-        <div
-          className="carousel-item carousel-item"
-        >
-          <img
-            alt="Lorem ipsum"
-            className="w-25"
-            src="http://lorempixel.com/640/480/fashion"
-          />
-          <img
-            alt="Lorem ipsum"
-            className="w-25"
-            src="http://lorempixel.com/640/480/fashion"
-          />
-          <img
-            alt="Lorem ipsum"
-            className="w-25"
-            src="http://lorempixel.com/640/480/fashion"
-          />
-          <img
-            alt="Lorem ipsum"
-            className="w-25"
-            src="http://lorempixel.com/640/480/fashion"
-          />
-        </div>
-      </div>
-      <a
-        className="carousel-control-prev"
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-      >
-        <span
-          aria-hidden="true"
-          className="carousel-control-prev-icon"
-        />
-        <span
-          className="sr-only"
-        >
-          Previous
-        </span>
-      </a>
-      <a
-        className="carousel-control-next"
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-      >
-        <span
-          aria-hidden="true"
-          className="carousel-control-next-icon"
-        />
-        <span
-          className="sr-only"
-        >
-          Next
-        </span>
-      </a>
+      <img
+        alt="Lorem ipsum"
+        className="w-25"
+        src="http://lorempixel.com/640/480/fashion"
+      />
+      <img
+        alt="Lorem ipsum"
+        className="w-25"
+        src="http://lorempixel.com/640/480/fashion"
+      />
+      <img
+        alt="Lorem ipsum"
+        className="w-25"
+        src="http://lorempixel.com/640/480/fashion"
+      />
+      <img
+        alt="Lorem ipsum"
+        className="w-25"
+        src="http://lorempixel.com/640/480/fashion"
+      />
+    </div>
+    <div
+      className="carousel-item carousel-item"
+    >
+      <img
+        alt="Lorem ipsum"
+        className="w-25"
+        src="http://lorempixel.com/640/480/fashion"
+      />
+      <img
+        alt="Lorem ipsum"
+        className="w-25"
+        src="http://lorempixel.com/640/480/fashion"
+      />
+      <img
+        alt="Lorem ipsum"
+        className="w-25"
+        src="http://lorempixel.com/640/480/fashion"
+      />
+      <img
+        alt="Lorem ipsum"
+        className="w-25"
+        src="http://lorempixel.com/640/480/fashion"
+      />
     </div>
   </div>
-  <button
-    className="info__show-button"
+  <a
+    className="carousel-control-prev"
+    href="#"
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    onKeyDown={[Function]}
+    role="button"
   >
-    Show Info
-  </button>
-  <div
-    className="info__overlay"
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-        "zIndex": 99999,
-      }
-    }
-  >
-    <button
-      className="info__close-button"
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "#027ac5",
-          "border": "none",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": "12px",
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-        }
-      }
-      type="button"
+    <span
+      aria-hidden="true"
+      className="carousel-control-prev-icon"
+    />
+    <span
+      className="sr-only"
     >
-      ×
-    </button>
-    <div>
-      <div
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "color": "black",
-            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
-      >
-        
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Story Source
-          </h1>
-          <pre
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fafafa",
-                "display": "flex",
-                "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                "fontSize": ".88em",
-                "justifyContent": "space-between",
-                "lineHeight": 1.5,
-                "overflowX": "scroll",
-                "padding": ".5rem",
-              }
-            }
-          >
-            <div>
-              <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
-              >
-                <span
-                  style={
-                    Object {
-                      "color": "#444",
-                    }
-                  }
-                >
-                  &lt;
-                  Carousel
-                </span>
-                <span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      slides
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        {
-                        <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
-                        >
-                          [
-                          <span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              [
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  {
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      src
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'http://lorempixel.com/640/480/fashion'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      alt
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'Lorem ipsum'
-                                  </span>
-                                  }
-                                </span>
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  {
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      src
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'http://lorempixel.com/640/480/fashion'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      alt
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'Lorem ipsum'
-                                  </span>
-                                  }
-                                </span>
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  {
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      src
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'http://lorempixel.com/640/480/fashion'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      alt
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'Lorem ipsum'
-                                  </span>
-                                  }
-                                </span>
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                …
-                              </span>
-                              <span>
-                                <br />
-                                    
-                              </span>
-                              ]
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              [
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  {
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      src
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'http://lorempixel.com/640/480/fashion'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      alt
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'Lorem ipsum'
-                                  </span>
-                                  }
-                                </span>
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  {
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      src
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'http://lorempixel.com/640/480/fashion'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      alt
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'Lorem ipsum'
-                                  </span>
-                                  }
-                                </span>
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  {
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      src
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'http://lorempixel.com/640/480/fashion'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      alt
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'Lorem ipsum'
-                                  </span>
-                                  }
-                                </span>
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                …
-                              </span>
-                              <span>
-                                <br />
-                                    
-                              </span>
-                              ]
-                            </span>
-                          </span>
-                          ]
-                        </span>
-                        }
-                      </span>
-                    </span>
-                  </span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      variant
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        "
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          multi
-                        </span>
-                        "
-                      </span>
-                    </span>
-                     
-                  </span>
-                </span>
-                <span
-                  style={
-                    Object {
-                      "color": "#444",
-                    }
-                  }
-                >
-                  /&gt;
-                </span>
-              </div>
-            </div>
-            <button
-              onClick={[Function]}
-              style={
-                Object {
-                  "alignSelf": "flex-start",
-                  "backgroundColor": "rgb(255, 255, 255)",
-                  "borderColor": "rgb(238, 238, 238)",
-                  "borderImage": "initial",
-                  "borderRadius": "3px",
-                  "borderStyle": "solid",
-                  "borderWidth": "1px",
-                  "cursor": "pointer",
-                  "flexShrink": "0",
-                  "fontSize": "13px",
-                  "overflow": "hidden",
-                  "padding": "3px 10px",
-                }
-              }
-              type="button"
-            >
-              Copy
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h3
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
-            >
-              "
-              Carousel
-              " Component
-            </h3>
-            <small>
-              No propTypes defined!
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      Previous
+    </span>
+  </a>
+  <a
+    className="carousel-control-next"
+    href="#"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+  >
+    <span
+      aria-hidden="true"
+      className="carousel-control-next-icon"
+    />
+    <span
+      className="sr-only"
+    >
+      Next
+    </span>
+  </a>
 </div>
 `;
 
 exports[`Storyshots Moleculs/Carousel simple 1`] = `
-<div>
+<div
+  className="carousel slide"
+  onKeyDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+>
+  <ol
+    className="carousel-indicators"
+  >
+    <li
+      className="active"
+      onClick={[Function]}
+    />
+     
+    <li
+      className={null}
+      onClick={[Function]}
+    />
+     
+    <li
+      className={null}
+      onClick={[Function]}
+    />
+     
+  </ol>
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="carousel-inner"
   >
     <div
-      className="carousel slide"
-      onKeyDown={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
+      className="carousel-item active carousel-item"
     >
-      <ol
-        className="carousel-indicators"
-      >
-        <li
-          className="active"
-          onClick={[Function]}
-        />
-         
-        <li
-          className={null}
-          onClick={[Function]}
-        />
-         
-        <li
-          className={null}
-          onClick={[Function]}
-        />
-         
-      </ol>
-      <div
-        className="carousel-inner"
-      >
-        <div
-          className="carousel-item active carousel-item"
-        >
-          <img
-            alt="Lorem ipsum"
-            className="d-block w-100"
-            src="http://lorempixel.com/640/480/fashion"
-          />
-        </div>
-        <div
-          className="carousel-item carousel-item"
-        >
-          <img
-            alt="Lorem ipsum"
-            className="d-block w-100"
-            src="http://lorempixel.com/640/480/fashion"
-          />
-        </div>
-        <div
-          className="carousel-item carousel-item"
-        >
-          <img
-            alt="Lorem ipsum"
-            className="d-block w-100"
-            src="http://lorempixel.com/640/480/fashion"
-          />
-        </div>
-      </div>
-      <a
-        className="carousel-control-prev"
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-      >
-        <span
-          aria-hidden="true"
-          className="carousel-control-prev-icon"
-        />
-        <span
-          className="sr-only"
-        >
-          Previous
-        </span>
-      </a>
-      <a
-        className="carousel-control-next"
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-      >
-        <span
-          aria-hidden="true"
-          className="carousel-control-next-icon"
-        />
-        <span
-          className="sr-only"
-        >
-          Next
-        </span>
-      </a>
+      <img
+        alt="Lorem ipsum"
+        className="d-block w-100"
+        src="http://lorempixel.com/640/480/fashion"
+      />
+    </div>
+    <div
+      className="carousel-item carousel-item"
+    >
+      <img
+        alt="Lorem ipsum"
+        className="d-block w-100"
+        src="http://lorempixel.com/640/480/fashion"
+      />
+    </div>
+    <div
+      className="carousel-item carousel-item"
+    >
+      <img
+        alt="Lorem ipsum"
+        className="d-block w-100"
+        src="http://lorempixel.com/640/480/fashion"
+      />
     </div>
   </div>
-  <button
-    className="info__show-button"
+  <a
+    className="carousel-control-prev"
+    href="#"
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    onKeyDown={[Function]}
+    role="button"
   >
-    Show Info
-  </button>
-  <div
-    className="info__overlay"
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-        "zIndex": 99999,
-      }
-    }
-  >
-    <button
-      className="info__close-button"
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "#027ac5",
-          "border": "none",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": "12px",
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-        }
-      }
-      type="button"
+    <span
+      aria-hidden="true"
+      className="carousel-control-prev-icon"
+    />
+    <span
+      className="sr-only"
     >
-      ×
-    </button>
-    <div>
-      <div
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "color": "black",
-            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
-      >
-        
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Story Source
-          </h1>
-          <pre
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fafafa",
-                "display": "flex",
-                "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                "fontSize": ".88em",
-                "justifyContent": "space-between",
-                "lineHeight": 1.5,
-                "overflowX": "scroll",
-                "padding": ".5rem",
-              }
-            }
-          >
-            <div>
-              <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
-              >
-                <span
-                  style={
-                    Object {
-                      "color": "#444",
-                    }
-                  }
-                >
-                  &lt;
-                  Carousel
-                </span>
-                <span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      slides
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        {
-                        <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
-                        >
-                          [
-                          <span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  src
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'http://lorempixel.com/640/480/fashion'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  alt
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'Lorem ipsum'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  src
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'http://lorempixel.com/640/480/fashion'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  alt
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'Lorem ipsum'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  src
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'http://lorempixel.com/640/480/fashion'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  alt
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'Lorem ipsum'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ]
-                        </span>
-                        }
-                      </span>
-                    </span>
-                  </span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      variant
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        "
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          simple
-                        </span>
-                        "
-                      </span>
-                    </span>
-                     
-                  </span>
-                </span>
-                <span
-                  style={
-                    Object {
-                      "color": "#444",
-                    }
-                  }
-                >
-                  /&gt;
-                </span>
-              </div>
-            </div>
-            <button
-              onClick={[Function]}
-              style={
-                Object {
-                  "alignSelf": "flex-start",
-                  "backgroundColor": "rgb(255, 255, 255)",
-                  "borderColor": "rgb(238, 238, 238)",
-                  "borderImage": "initial",
-                  "borderRadius": "3px",
-                  "borderStyle": "solid",
-                  "borderWidth": "1px",
-                  "cursor": "pointer",
-                  "flexShrink": "0",
-                  "fontSize": "13px",
-                  "overflow": "hidden",
-                  "padding": "3px 10px",
-                }
-              }
-              type="button"
-            >
-              Copy
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h3
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
-            >
-              "
-              Carousel
-              " Component
-            </h3>
-            <small>
-              No propTypes defined!
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      Previous
+    </span>
+  </a>
+  <a
+    className="carousel-control-next"
+    href="#"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+  >
+    <span
+      aria-hidden="true"
+      className="carousel-control-next-icon"
+    />
+    <span
+      className="sr-only"
+    >
+      Next
+    </span>
+  </a>
 </div>
 `;
 
@@ -13969,11 +11249,10 @@ exports[`Storyshots Moleculs/Navigation default 1`] = `
     href="#home"
   >
     <a
-      className="root"
+      className="svg"
       href="#home"
     >
       <svg
-        className="svg"
         styles={
           Object {
             "fill": "black",
@@ -14226,7 +11505,7 @@ exports[`Storyshots Moleculs/Raiser default 1`] = `
                             }
                           }
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -14307,7 +11586,7 @@ exports[`Storyshots Moleculs/Raiser default 1`] = `
 
 exports[`Storyshots Moleculs/Steps default 1`] = `
 <ul
-  className="list-group list-group-horizontal list-group-flush justify-content-between mb-3"
+  className="steps list-group list-group-horizontal list-group-flush justify-content-between mb-3"
 >
   <li
     className="list-group-item border-0 step-active px-0 py-0"
@@ -14379,13 +11658,13 @@ Array [
       className="col-6 mb-3"
     >
       <label
-        htmlFor="forname"
+        htmlFor="foroname"
       >
         Forname
       </label>
       <input
         className="form-control"
-        id="forname"
+        id="foroname"
         onChange={[Function]}
         type="text"
         value="Karel"
@@ -14429,14 +11708,6 @@ Array [
           type="text"
           value="Some Street"
         />
-        <datalist>
-          <option
-            value="Vodickova"
-          />
-          <option
-            value="Stromovka"
-          />
-        </datalist>
       </div>
       <div
         className="col-2 mb-3"
@@ -14444,26 +11715,15 @@ Array [
         <label
           htmlFor="streetNo"
         >
-          Street No.
+          Street Number
         </label>
         <input
           className="form-control"
           id="streetNo"
           onChange={[Function]}
           type="text"
-          value={0}
+          value="0"
         />
-        <datalist>
-          <option
-            value={3}
-          />
-          <option
-            value={33}
-          />
-          <option
-            value={333}
-          />
-        </datalist>
       </div>
       <div
         className="col-4 mb-3"
@@ -14480,14 +11740,6 @@ Array [
           type="text"
           value="12345"
         />
-        <datalist>
-          <option
-            value="12345"
-          />
-          <option
-            value="68789"
-          />
-        </datalist>
       </div>
     </div>
     <div
@@ -14504,6 +11756,7 @@ Array [
         <select
           className="custom-select"
           id="city"
+          onChange={[Function]}
           value="prague"
         >
           <option
@@ -14529,6 +11782,7 @@ Array [
         <select
           className="custom-select"
           id="country"
+          onChange={[Function]}
           value="czechRepublic"
         >
           <option
@@ -14558,13 +11812,13 @@ Array [
       className="col-6 mb-3"
     >
       <label
-        htmlFor="forname"
+        htmlFor="foroname"
       >
         Forname
       </label>
       <input
         className="form-control"
-        id="forname"
+        id="foroname"
         onChange={[Function]}
         type="text"
         value="Karel"
@@ -14594,14 +11848,9 @@ Array [
     <div
       className="col-6 mb-3"
     >
-      <label
-        htmlFor="company"
-      >
-        Company
-      </label>
+      <label />
       <input
         className="form-control"
-        id="company"
         onChange={[Function]}
         type="text"
         value="Neco LTD"
@@ -14610,14 +11859,9 @@ Array [
     <div
       className="col-6 mb-3"
     >
-      <label
-        htmlFor="vat"
-      >
-        VAT
-      </label>
+      <label />
       <input
         className="form-control"
-        id="vat"
         onChange={[Function]}
         type="text"
         value="123456"
@@ -14645,14 +11889,6 @@ Array [
           type="text"
           value="Some Street"
         />
-        <datalist>
-          <option
-            value="Vodickova"
-          />
-          <option
-            value="Stromovka"
-          />
-        </datalist>
       </div>
       <div
         className="col-2 mb-3"
@@ -14660,26 +11896,15 @@ Array [
         <label
           htmlFor="streetNo"
         >
-          Street No.
+          Street Number
         </label>
         <input
           className="form-control"
           id="streetNo"
           onChange={[Function]}
           type="text"
-          value={0}
+          value="0"
         />
-        <datalist>
-          <option
-            value={3}
-          />
-          <option
-            value={33}
-          />
-          <option
-            value={333}
-          />
-        </datalist>
       </div>
       <div
         className="col-4 mb-3"
@@ -14696,14 +11921,6 @@ Array [
           type="text"
           value="12345"
         />
-        <datalist>
-          <option
-            value="12345"
-          />
-          <option
-            value="68789"
-          />
-        </datalist>
       </div>
     </div>
     <div
@@ -14720,6 +11937,7 @@ Array [
         <select
           className="custom-select"
           id="city"
+          onChange={[Function]}
           value="prague"
         >
           <option
@@ -14745,6 +11963,7 @@ Array [
         <select
           className="custom-select"
           id="country"
+          onChange={[Function]}
           value="czechRepublic"
         >
           <option
@@ -14773,13 +11992,13 @@ exports[`Storyshots Moleculs/forms/Company default 1`] = `
     className="col-6 mb-3"
   >
     <label
-      htmlFor="company"
+      htmlFor="123456"
     >
-      Company
+      VAT
     </label>
     <input
       className="form-control"
-      id="company"
+      id="123456"
       onChange={[Function]}
       type="text"
       value="Neco LTD"
@@ -14789,13 +12008,13 @@ exports[`Storyshots Moleculs/forms/Company default 1`] = `
     className="col-6 mb-3"
   >
     <label
-      htmlFor="vat"
+      htmlFor="12345"
     >
       VAT
     </label>
     <input
       className="form-control"
-      id="vat"
+      id="12345"
       onChange={[Function]}
       type="text"
       value="123456"
@@ -14884,570 +12103,13 @@ exports[`Storyshots Moleculs/forms/Person state-full 1`] = `
 </fieldset>
 `;
 
-exports[`Storyshots Organisms/Form default 1`] = `
-<form>
-  <div
-    className="btn-group w-100"
-    data-toggle="buttons"
-  >
-    <label
-      className="btn btn-primary"
-    >
-      <svg
-        aria-hidden="true"
-        className="svg-inline--fa fa-walking fa-w-10 fa-1x mr-3"
-        data-icon="walking"
-        data-prefix="fas"
-        focusable="false"
-        role="img"
-        style={Object {}}
-        viewBox="0 0 320 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M208 96c26.5 0 48-21.5 48-48S234.5 0 208 0s-48 21.5-48 48 21.5 48 48 48zm94.5 149.1l-23.3-11.8-9.7-29.4c-14.7-44.6-55.7-75.8-102.2-75.9-36-.1-55.9 10.1-93.3 25.2-21.6 8.7-39.3 25.2-49.7 46.2L17.6 213c-7.8 15.8-1.5 35 14.2 42.9 15.6 7.9 34.6 1.5 42.5-14.3L81 228c3.5-7 9.3-12.5 16.5-15.4l26.8-10.8-15.2 60.7c-5.2 20.8.4 42.9 14.9 58.8l59.9 65.4c7.2 7.9 12.3 17.4 14.9 27.7l18.3 73.3c4.3 17.1 21.7 27.6 38.8 23.3 17.1-4.3 27.6-21.7 23.3-38.8l-22.2-89c-2.6-10.3-7.7-19.9-14.9-27.7l-45.5-49.7 17.2-68.7 5.5 16.5c5.3 16.1 16.7 29.4 31.7 37l23.3 11.8c15.6 7.9 34.6 1.5 42.5-14.3 7.7-15.7 1.4-35.1-14.3-43zM73.6 385.8c-3.2 8.1-8 15.4-14.2 21.5l-50 50.1c-12.5 12.5-12.5 32.8 0 45.3s32.7 12.5 45.2 0l59.4-59.4c6.1-6.1 10.9-13.4 14.2-21.5l13.5-33.8c-55.3-60.3-38.7-41.8-47.4-53.7l-20.7 51.5z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
-      <input
-        checked={false}
-        className="sr-only"
-        id="abcdefghc"
-        name="rthgfjslwp"
-        onChange={[Function]}
-        type="radio"
-        value="abcdefghc"
-      />
-      Personal Handover
-    </label>
-    <label
-      className="btn btn-primary active"
-    >
-      <svg
-        aria-hidden="true"
-        className="svg-inline--fa fa-truck fa-w-20 fa-1x mr-3"
-        data-icon="truck"
-        data-prefix="fas"
-        focusable="false"
-        role="img"
-        style={Object {}}
-        viewBox="0 0 640 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
-      <input
-        checked={true}
-        className="sr-only"
-        id="cdefghc"
-        name="rthgfjslwp"
-        onChange={[Function]}
-        type="radio"
-        value="cdefghc"
-      />
-      Home Delivery
-    </label>
-  </div>
-  <div
-    className="accordion"
-  >
-    <div
-      className="card"
-    >
-      <div
-        className="card-header"
-      >
-        <button
-          className="btn btn-link"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Invoicing Address
-        </button>
-      </div>
-      <div
-        aria-expanded={null}
-        className="collapse"
-      >
-        <div
-          className="card-body"
-        >
-          <fieldset
-            className="form-row"
-            name="name"
-          >
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="forname"
-              >
-                Forname
-              </label>
-              <input
-                className="form-control"
-                id="forname"
-                onChange={[Function]}
-                type="text"
-                value="Karel"
-              />
-            </div>
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="surname"
-              >
-                Surname
-              </label>
-              <input
-                className="form-control"
-                id="surname"
-                onChange={[Function]}
-                type="text"
-                value="Vomacka"
-              />
-            </div>
-          </fieldset>
-          <fieldset
-            className="form-row"
-            name="company"
-          >
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="company"
-              >
-                Company
-              </label>
-              <input
-                className="form-control"
-                id="company"
-                onChange={[Function]}
-                type="text"
-                value="Neco LTD"
-              />
-            </div>
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="vat"
-              >
-                VAT
-              </label>
-              <input
-                className="form-control"
-                id="vat"
-                onChange={[Function]}
-                type="text"
-                value="123456"
-              />
-            </div>
-          </fieldset>
-          <fieldset
-            name="address"
-          >
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="street"
-                >
-                  Street
-                </label>
-                <input
-                  className="form-control"
-                  id="street"
-                  onChange={[Function]}
-                  type="text"
-                  value="Some Street"
-                />
-                <datalist>
-                  <option
-                    value="Vodickova"
-                  />
-                  <option
-                    value="Stromovka"
-                  />
-                </datalist>
-              </div>
-              <div
-                className="col-2 mb-3"
-              >
-                <label
-                  htmlFor="streetNo"
-                >
-                  Street No.
-                </label>
-                <input
-                  className="form-control"
-                  id="streetNo"
-                  onChange={[Function]}
-                  type="text"
-                  value={0}
-                />
-                <datalist>
-                  <option
-                    value={3}
-                  />
-                  <option
-                    value={33}
-                  />
-                  <option
-                    value={333}
-                  />
-                </datalist>
-              </div>
-              <div
-                className="col-4 mb-3"
-              >
-                <label
-                  htmlFor="postcode"
-                >
-                  Postcode
-                </label>
-                <input
-                  className="form-control"
-                  id="postcode"
-                  onChange={[Function]}
-                  type="text"
-                  value="12345"
-                />
-                <datalist>
-                  <option
-                    value="12345"
-                  />
-                  <option
-                    value="68789"
-                  />
-                </datalist>
-              </div>
-            </div>
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="city"
-                >
-                  City
-                </label>
-                <select
-                  className="custom-select"
-                  id="city"
-                  value="prague"
-                >
-                  <option
-                    value="prague"
-                  >
-                    Prague
-                  </option>
-                  <option
-                    value="berlin"
-                  >
-                    Berlin
-                  </option>
-                </select>
-              </div>
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="city"
-                >
-                  Country
-                </label>
-                <select
-                  className="custom-select"
-                  id="country"
-                  value="czechRepublic"
-                >
-                  <option
-                    value="CZ"
-                  >
-                    Czech Republic
-                  </option>
-                  <option
-                    value="DE"
-                  >
-                    Germany
-                  </option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-    <div
-      className="card"
-    >
-      <div
-        className="card-header"
-      >
-        <button
-          className="btn btn-link"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Delivery Address
-        </button>
-        <small>
-          Fill only if delivery address is different than invoicing address.
-        </small>
-      </div>
-      <div
-        aria-expanded={null}
-        className="collapse"
-      >
-        <div
-          className="card-body"
-        >
-          <fieldset
-            className="form-row"
-            name="name"
-          >
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="forname"
-              >
-                Forname
-              </label>
-              <input
-                className="form-control"
-                id="forname"
-                onChange={[Function]}
-                type="text"
-                value="Karel"
-              />
-            </div>
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="surname"
-              >
-                Surname
-              </label>
-              <input
-                className="form-control"
-                id="surname"
-                onChange={[Function]}
-                type="text"
-                value="Vomacka"
-              />
-            </div>
-          </fieldset>
-          <fieldset
-            name="address"
-          >
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="street"
-                >
-                  Street
-                </label>
-                <input
-                  className="form-control"
-                  id="street"
-                  onChange={[Function]}
-                  type="text"
-                  value="Some Street"
-                />
-                <datalist>
-                  <option
-                    value="Vodickova"
-                  />
-                  <option
-                    value="Stromovka"
-                  />
-                </datalist>
-              </div>
-              <div
-                className="col-2 mb-3"
-              >
-                <label
-                  htmlFor="streetNo"
-                >
-                  Street No.
-                </label>
-                <input
-                  className="form-control"
-                  id="streetNo"
-                  onChange={[Function]}
-                  type="text"
-                  value={0}
-                />
-                <datalist>
-                  <option
-                    value={3}
-                  />
-                  <option
-                    value={33}
-                  />
-                  <option
-                    value={333}
-                  />
-                </datalist>
-              </div>
-              <div
-                className="col-4 mb-3"
-              >
-                <label
-                  htmlFor="postcode"
-                >
-                  Postcode
-                </label>
-                <input
-                  className="form-control"
-                  id="postcode"
-                  onChange={[Function]}
-                  type="text"
-                  value="12345"
-                />
-                <datalist>
-                  <option
-                    value="12345"
-                  />
-                  <option
-                    value="68789"
-                  />
-                </datalist>
-              </div>
-            </div>
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="city"
-                >
-                  City
-                </label>
-                <select
-                  className="custom-select"
-                  id="city"
-                  value="prague"
-                >
-                  <option
-                    value="prague"
-                  >
-                    Prague
-                  </option>
-                  <option
-                    value="berlin"
-                  >
-                    Berlin
-                  </option>
-                </select>
-              </div>
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="city"
-                >
-                  Country
-                </label>
-                <select
-                  className="custom-select"
-                  id="country"
-                  value="czechRepublic"
-                >
-                  <option
-                    value="CZ"
-                  >
-                    Czech Republic
-                  </option>
-                  <option
-                    value="DE"
-                  >
-                    Germany
-                  </option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="form-check"
-  >
-    <input
-      checked={false}
-      className="form-check-input"
-      id="123456789"
-      name="123456789"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <label
-      className="form-check-label"
-      htmlFor="123456789"
-    >
-      Please check me!
-    </label>
-  </div>
-  <div
-    className="form-check"
-  >
-    <input
-      checked={false}
-      className="form-check-input"
-      id="123456789"
-      name="123456789"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <label
-      className="form-check-label"
-      htmlFor="123456789"
-    >
-      Please check me!
-    </label>
-  </div>
-  <button
-    className="btn btn-primary"
-    disabled={false}
-    type="submit"
-  >
-    Next
-  </button>
-</form>
-`;
-
 exports[`Storyshots Organisms/Order default 1`] = `
 <div
   className="w-50 mr-auto ml-auto"
 >
   <div>
     <ul
-      className="list-group list-group-horizontal list-group-flush justify-content-between mb-3"
+      className="steps list-group list-group-horizontal list-group-flush justify-content-between mb-3"
     >
       <li
         className="list-group-item border-0 step-active px-0 py-0"
@@ -15519,7 +12181,7 @@ exports[`Storyshots Organisms/Order default 1`] = `
           className="align-middle"
         >
           <div
-            className="background"
+            className="image-background"
           >
             <img
               alt="Lorem ipsum"
@@ -15569,7 +12231,7 @@ exports[`Storyshots Organisms/Order default 1`] = `
           className="align-middle"
         >
           <div
-            className="background"
+            className="image-background"
           >
             <img
               alt="Lorem ipsum"
@@ -15619,7 +12281,7 @@ exports[`Storyshots Organisms/Order default 1`] = `
           className="align-middle"
         >
           <div
-            className="background"
+            className="image-background"
           >
             <img
               alt="Lorem ipsum"
@@ -15675,7 +12337,7 @@ exports[`Storyshots Organisms/Order empty 1`] = `
 >
   <div>
     <ul
-      className="list-group list-group-horizontal list-group-flush justify-content-between mb-3"
+      className="steps list-group list-group-horizontal list-group-flush justify-content-between mb-3"
     >
       <li
         className="list-group-item border-0 step-active px-0 py-0"
@@ -15746,9 +12408,1001 @@ exports[`Storyshots Organisms/Order empty 1`] = `
 </div>
 `;
 
+exports[`Storyshots Organisms/forms/Shipping default 1`] = `
+Array [
+  <div
+    className="btn-group w-100"
+    data-toggle="buttons"
+  >
+    <label
+      className="btn btn-primary"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-walking fa-w-10 fa-1x mr-3"
+        data-icon="walking"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 320 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M208 96c26.5 0 48-21.5 48-48S234.5 0 208 0s-48 21.5-48 48 21.5 48 48 48zm94.5 149.1l-23.3-11.8-9.7-29.4c-14.7-44.6-55.7-75.8-102.2-75.9-36-.1-55.9 10.1-93.3 25.2-21.6 8.7-39.3 25.2-49.7 46.2L17.6 213c-7.8 15.8-1.5 35 14.2 42.9 15.6 7.9 34.6 1.5 42.5-14.3L81 228c3.5-7 9.3-12.5 16.5-15.4l26.8-10.8-15.2 60.7c-5.2 20.8.4 42.9 14.9 58.8l59.9 65.4c7.2 7.9 12.3 17.4 14.9 27.7l18.3 73.3c4.3 17.1 21.7 27.6 38.8 23.3 17.1-4.3 27.6-21.7 23.3-38.8l-22.2-89c-2.6-10.3-7.7-19.9-14.9-27.7l-45.5-49.7 17.2-68.7 5.5 16.5c5.3 16.1 16.7 29.4 31.7 37l23.3 11.8c15.6 7.9 34.6 1.5 42.5-14.3 7.7-15.7 1.4-35.1-14.3-43zM73.6 385.8c-3.2 8.1-8 15.4-14.2 21.5l-50 50.1c-12.5 12.5-12.5 32.8 0 45.3s32.7 12.5 45.2 0l59.4-59.4c6.1-6.1 10.9-13.4 14.2-21.5l13.5-33.8c-55.3-60.3-38.7-41.8-47.4-53.7l-20.7 51.5z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      <input
+        checked={false}
+        className="sr-only"
+        id="abcdefghc"
+        name="rthgfjslwp"
+        onChange={[Function]}
+        type="radio"
+        value="abcdefghc"
+      />
+      Personal Handover
+    </label>
+    <label
+      className="btn btn-primary active"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-truck fa-w-20 fa-1x mr-3"
+        data-icon="truck"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 640 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      <input
+        checked={true}
+        className="sr-only"
+        id="cdefghc"
+        name="rthgfjslwp"
+        onChange={[Function]}
+        type="radio"
+        value="cdefghc"
+      />
+      Home Delivery
+    </label>
+  </div>,
+  <div
+    className="accordion"
+  >
+    <div
+      className="card"
+    >
+      <div
+        className="card-header"
+      >
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Invoicing Address
+        </button>
+      </div>
+      <div
+        aria-expanded={null}
+        className="collapse"
+      >
+        <div
+          className="card-body"
+        >
+          <fieldset
+            className="form-row"
+            name="name"
+          >
+            <div
+              className="col-6 mb-3"
+            >
+              <label
+                htmlFor="foroname"
+              >
+                Forname
+              </label>
+              <input
+                className="form-control"
+                id="foroname"
+                onChange={[Function]}
+                type="text"
+                value="Karel"
+              />
+            </div>
+            <div
+              className="col-6 mb-3"
+            >
+              <label
+                htmlFor="surname"
+              >
+                Surname
+              </label>
+              <input
+                className="form-control"
+                id="surname"
+                onChange={[Function]}
+                type="text"
+                value="Vomacka"
+              />
+            </div>
+          </fieldset>
+          <fieldset
+            className="form-row"
+            name="company"
+          >
+            <div
+              className="col-6 mb-3"
+            >
+              <label />
+              <input
+                className="form-control"
+                onChange={[Function]}
+                type="text"
+                value="Neco LTD"
+              />
+            </div>
+            <div
+              className="col-6 mb-3"
+            >
+              <label />
+              <input
+                className="form-control"
+                onChange={[Function]}
+                type="text"
+                value="123456"
+              />
+            </div>
+          </fieldset>
+          <fieldset
+            name="address"
+          >
+            <div
+              className="form-row"
+            >
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="street"
+                >
+                  Street
+                </label>
+                <input
+                  className="form-control"
+                  id="street"
+                  onChange={[Function]}
+                  type="text"
+                  value="Some Street"
+                />
+              </div>
+              <div
+                className="col-2 mb-3"
+              >
+                <label
+                  htmlFor="streetNo"
+                >
+                  Street Number
+                </label>
+                <input
+                  className="form-control"
+                  id="streetNo"
+                  onChange={[Function]}
+                  type="text"
+                  value="0"
+                />
+              </div>
+              <div
+                className="col-4 mb-3"
+              >
+                <label
+                  htmlFor="postcode"
+                >
+                  Postcode
+                </label>
+                <input
+                  className="form-control"
+                  id="postcode"
+                  onChange={[Function]}
+                  type="text"
+                  value="12345"
+                />
+              </div>
+            </div>
+            <div
+              className="form-row"
+            >
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="city"
+                >
+                  City
+                </label>
+                <select
+                  className="custom-select"
+                  id="city"
+                  onChange={[Function]}
+                  value="prague"
+                >
+                  <option
+                    value="prague"
+                  >
+                    Prague
+                  </option>
+                  <option
+                    value="berlin"
+                  >
+                    Berlin
+                  </option>
+                </select>
+              </div>
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="city"
+                >
+                  Country
+                </label>
+                <select
+                  className="custom-select"
+                  id="country"
+                  onChange={[Function]}
+                  value="czechRepublic"
+                >
+                  <option
+                    value="CZ"
+                  >
+                    Czech Republic
+                  </option>
+                  <option
+                    value="DE"
+                  >
+                    Germany
+                  </option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card"
+    >
+      <div
+        className="card-header"
+      >
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Delivery Address
+        </button>
+        <small>
+          Fill only if delivery address is different than invoicing address.
+        </small>
+      </div>
+      <div
+        aria-expanded={null}
+        className="collapse"
+      >
+        <div
+          className="card-body"
+        >
+          <fieldset
+            className="form-row"
+            name="name"
+          >
+            <div
+              className="col-6 mb-3"
+            >
+              <label
+                htmlFor="foroname"
+              >
+                Forname
+              </label>
+              <input
+                className="form-control"
+                id="foroname"
+                onChange={[Function]}
+                type="text"
+                value="Karel"
+              />
+            </div>
+            <div
+              className="col-6 mb-3"
+            >
+              <label
+                htmlFor="surname"
+              >
+                Surname
+              </label>
+              <input
+                className="form-control"
+                id="surname"
+                onChange={[Function]}
+                type="text"
+                value="Vomacka"
+              />
+            </div>
+          </fieldset>
+          <fieldset
+            name="address"
+          >
+            <div
+              className="form-row"
+            >
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="street"
+                >
+                  Street
+                </label>
+                <input
+                  className="form-control"
+                  id="street"
+                  onChange={[Function]}
+                  type="text"
+                  value="Some Street"
+                />
+              </div>
+              <div
+                className="col-2 mb-3"
+              >
+                <label
+                  htmlFor="streetNo"
+                >
+                  Street Number
+                </label>
+                <input
+                  className="form-control"
+                  id="streetNo"
+                  onChange={[Function]}
+                  type="text"
+                  value="0"
+                />
+              </div>
+              <div
+                className="col-4 mb-3"
+              >
+                <label
+                  htmlFor="postcode"
+                >
+                  Postcode
+                </label>
+                <input
+                  className="form-control"
+                  id="postcode"
+                  onChange={[Function]}
+                  type="text"
+                  value="12345"
+                />
+              </div>
+            </div>
+            <div
+              className="form-row"
+            >
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="city"
+                >
+                  City
+                </label>
+                <select
+                  className="custom-select"
+                  id="city"
+                  onChange={[Function]}
+                  value="prague"
+                >
+                  <option
+                    value="prague"
+                  >
+                    Prague
+                  </option>
+                  <option
+                    value="berlin"
+                  >
+                    Berlin
+                  </option>
+                </select>
+              </div>
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="city"
+                >
+                  Country
+                </label>
+                <select
+                  className="custom-select"
+                  id="country"
+                  onChange={[Function]}
+                  value="czechRepublic"
+                >
+                  <option
+                    value="CZ"
+                  >
+                    Czech Republic
+                  </option>
+                  <option
+                    value="DE"
+                  >
+                    Germany
+                  </option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="form-check"
+  >
+    <input
+      checked={false}
+      className="form-check-input"
+      id="123456789"
+      name="123456789"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className="form-check-label"
+      htmlFor="123456789"
+    >
+      Please check me!
+    </label>
+  </div>,
+  <div
+    className="form-check"
+  >
+    <input
+      checked={false}
+      className="form-check-input"
+      id="123456789"
+      name="123456789"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className="form-check-label"
+      htmlFor="123456789"
+    >
+      Please check me!
+    </label>
+  </div>,
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Next
+  </button>,
+]
+`;
+
+exports[`Storyshots Organisms/forms/Shipping state-full 1`] = `
+Array [
+  <div
+    className="btn-group w-100"
+    data-toggle="buttons"
+  >
+    <label
+      className="btn btn-primary"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-truck fa-w-20 fa-1x mr-3"
+        data-icon="truck"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 640 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      <input
+        checked={false}
+        className="sr-only"
+        id="11"
+        name="01"
+        onChange={[Function]}
+        type="radio"
+        value="11"
+      />
+      Home Delivery
+    </label>
+    <label
+      className="btn btn-primary"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-truck fa-w-20 fa-1x mr-3"
+        data-icon="truck"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 640 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      <input
+        checked={false}
+        className="sr-only"
+        id="12"
+        name="01"
+        onChange={[Function]}
+        type="radio"
+        value="12"
+      />
+      Personal Pickup
+    </label>
+  </div>,
+  <div
+    className="accordion"
+  >
+    <div
+      className="card"
+    >
+      <div
+        className="card-header"
+      >
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Invoicing Address
+        </button>
+      </div>
+      <div
+        aria-expanded={null}
+        className="collapse"
+      >
+        <div
+          className="card-body"
+        >
+          <fieldset
+            className="form-row"
+            name="name"
+          >
+            <div
+              className="col-6 mb-3"
+            >
+              <label
+                htmlFor="forname1"
+              >
+                Forename
+              </label>
+              <input
+                className="form-control"
+                id="forname1"
+                onChange={[Function]}
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="col-6 mb-3"
+            >
+              <label
+                htmlFor="surname1"
+              >
+                Surname
+              </label>
+              <input
+                className="form-control"
+                id="surname1"
+                onChange={[Function]}
+                type="text"
+                value=""
+              />
+            </div>
+          </fieldset>
+          <fieldset
+            className="form-row"
+            name="company"
+          >
+            <div
+              className="col-6 mb-3"
+            >
+              <label
+                htmlFor="company"
+              >
+                Company
+              </label>
+              <input
+                className="form-control"
+                id="company"
+                onChange={[Function]}
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="col-6 mb-3"
+            >
+              <label
+                htmlFor="vat"
+              >
+                VAT
+              </label>
+              <input
+                className="form-control"
+                id="vat"
+                onChange={[Function]}
+                type="text"
+                value=""
+              />
+            </div>
+          </fieldset>
+          <fieldset
+            name="address"
+          >
+            <div
+              className="form-row"
+            >
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="street1"
+                >
+                  Street
+                </label>
+                <input
+                  className="form-control"
+                  id="street1"
+                  onChange={[Function]}
+                  placeholder="Your Street"
+                  type="text"
+                  value="Street 1"
+                />
+              </div>
+              <div
+                className="col-2 mb-3"
+              >
+                <label
+                  htmlFor="streetNo1"
+                >
+                  Street No.
+                </label>
+                <input
+                  className="form-control"
+                  id="streetNo1"
+                  onChange={[Function]}
+                  placeholder="Your Number Street"
+                  type="number"
+                  value="5"
+                />
+              </div>
+              <div
+                className="col-4 mb-3"
+              >
+                <label
+                  htmlFor="postcode1"
+                >
+                  Postcode
+                </label>
+                <input
+                  className="form-control"
+                  id="postcode1"
+                  onChange={[Function]}
+                  placeholder="111 11"
+                  type="text"
+                  value="123 45"
+                />
+              </div>
+            </div>
+            <div
+              className="form-row"
+            >
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="city"
+                >
+                  City
+                </label>
+                <select
+                  className="custom-select"
+                  id="city1"
+                  onChange={[Function]}
+                  value=""
+                >
+                  <option
+                    value="PRG"
+                  >
+                    Prague
+                  </option>
+                </select>
+              </div>
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="city"
+                >
+                  Country
+                </label>
+                <select
+                  className="custom-select"
+                  id="country1"
+                  onChange={[Function]}
+                  value=""
+                >
+                  <option
+                    value="CZ"
+                  >
+                    Czech Republic
+                  </option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card"
+    >
+      <div
+        className="card-header"
+      >
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Delivery Address
+        </button>
+        <small>
+          Fill only if delivery address is different than invoicing address.
+        </small>
+      </div>
+      <div
+        aria-expanded={null}
+        className="collapse"
+      >
+        <div
+          className="card-body"
+        >
+          <fieldset
+            className="form-row"
+            name="name"
+          >
+            <div
+              className="col-6 mb-3"
+            >
+              <label
+                htmlFor="forname2"
+              >
+                Forename
+              </label>
+              <input
+                className="form-control"
+                id="forname2"
+                onChange={[Function]}
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="col-6 mb-3"
+            >
+              <label
+                htmlFor="surname2"
+              >
+                Surname
+              </label>
+              <input
+                className="form-control"
+                id="surname2"
+                onChange={[Function]}
+                type="text"
+                value=""
+              />
+            </div>
+          </fieldset>
+          <fieldset
+            name="address"
+          >
+            <div
+              className="form-row"
+            >
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="street2"
+                >
+                  Street
+                </label>
+                <input
+                  className="form-control"
+                  id="street2"
+                  onChange={[Function]}
+                  placeholder="Your Street"
+                  type="text"
+                  value="Street 2"
+                />
+              </div>
+              <div
+                className="col-2 mb-3"
+              >
+                <label
+                  htmlFor="streetNo2"
+                >
+                  Street No.
+                </label>
+                <input
+                  className="form-control"
+                  id="streetNo2"
+                  onChange={[Function]}
+                  placeholder="Your Number Street"
+                  type="number"
+                  value="5"
+                />
+              </div>
+              <div
+                className="col-4 mb-3"
+              >
+                <label
+                  htmlFor="postcode2"
+                >
+                  Postcode
+                </label>
+                <input
+                  className="form-control"
+                  id="postcode2"
+                  onChange={[Function]}
+                  placeholder="111 11"
+                  type="text"
+                  value="123 45"
+                />
+              </div>
+            </div>
+            <div
+              className="form-row"
+            >
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="city"
+                >
+                  City
+                </label>
+                <select
+                  className="custom-select"
+                  id="city2"
+                  onChange={[Function]}
+                  value=""
+                >
+                  <option
+                    value="PRG"
+                  >
+                    Prague
+                  </option>
+                </select>
+              </div>
+              <div
+                className="col-6 mb-3"
+              >
+                <label
+                  htmlFor="city"
+                >
+                  Country
+                </label>
+                <select
+                  className="custom-select"
+                  id="country2"
+                  onChange={[Function]}
+                  value=""
+                >
+                  <option
+                    value="CZ"
+                  >
+                    Czech Republic
+                  </option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="form-check"
+  >
+    <input
+      checked={false}
+      className="form-check-input"
+      id="terms"
+      name="terms"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className="form-check-label"
+      htmlFor="terms"
+    >
+      I agree terms and conditions
+    </label>
+  </div>,
+  <div
+    className="form-check"
+  >
+    <input
+      checked={false}
+      className="form-check-input"
+      id="data"
+      name="data"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className="form-check-label"
+      htmlFor="data"
+    >
+      I agree with GDPR
+    </label>
+  </div>,
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Next
+  </button>,
+]
+`;
+
 exports[`Storyshots Templates/ProductDetail default 1`] = `
 <div
-  className="detail"
+  className="product-detail"
 >
   <div
     className="container-fluid h-100"
@@ -15790,11 +13444,10 @@ exports[`Storyshots Templates/ProductDetail default 1`] = `
               href="#home"
             >
               <a
-                className="root"
+                className="svg"
                 href="/"
               >
                 <svg
-                  className="svg"
                   styles={
                     Object {
                       "fill": "black",
@@ -15811,7 +13464,7 @@ exports[`Storyshots Templates/ProductDetail default 1`] = `
           className="image-wrapper"
         >
           <div
-            className="background"
+            className="image-background"
             style={
               Object {
                 "backgroundImage": "url(http://lorempixel.com/640/480/fashion)",
@@ -15880,7 +13533,7 @@ exports[`Storyshots moleculs/List default 1`] = `
       className="align-middle"
     >
       <div
-        className="background"
+        className="image-background"
       >
         <img
           alt="Lorem ipsum"
@@ -15929,7 +13582,7 @@ exports[`Storyshots moleculs/List default 1`] = `
       className="align-middle"
     >
       <div
-        className="background"
+        className="image-background"
       >
         <img
           alt="Lorem ipsum"
@@ -15978,7 +13631,7 @@ exports[`Storyshots moleculs/List default 1`] = `
       className="align-middle"
     >
       <div
-        className="background"
+        className="image-background"
       >
         <img
           alt="Lorem ipsum"

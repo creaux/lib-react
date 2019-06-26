@@ -51,7 +51,7 @@ export interface CarouselProps {
   variant: Variants;
 }
 
-const CarouselPure: React.FunctionComponent<CarouselProps> = ({
+export const Carousel: React.FunctionComponent<CarouselProps> = ({
   slides,
   variant = Variants.SIMPLE
 }) => (
@@ -73,7 +73,3 @@ const CarouselPure: React.FunctionComponent<CarouselProps> = ({
     })}
   </BsCarousel>
 );
-
-export const Carousel = compose<CarouselProps, CarouselProps>(
-  setDisplayName('Carousel'),
-)(CarouselPure);

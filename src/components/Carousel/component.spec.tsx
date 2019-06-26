@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, CarouselProps } from '.';
+import { Carousel, CarouselProps } from './component';
 import { shallow, ShallowWrapper } from 'enzyme';
 import chai, { expect } from 'chai';
 import chaiSinon from 'sinon-chai';
@@ -8,9 +8,9 @@ import { mocks } from './mocks';
 import { Carousel as BsCarousel } from 'react-bootstrap';
 import { CarouselSlide } from './types';
 
-describe(Carousel.displayName as string, () => {
+describe("Carousel", () => {
   it('should contain Carousel container', () => {
-    const component = shallow(<Carousel {...mocks.simple} />).shallow();
+    const component = shallow(<Carousel {...mocks.simple} />);
     expect(component.find(BsCarousel)).to.be.present();
   });
 
