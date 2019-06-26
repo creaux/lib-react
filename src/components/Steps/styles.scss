@@ -1,0 +1,21 @@
+.steps {
+  .circle {
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    background-color: $secondary;
+  }
+
+  .label {
+    color: $secondary;
+  }
+
+  .step-active .label {
+    color: $dark;
+  }
+
+  .step-active .circle {
+    background-color: $dark;
+  }
+
+}

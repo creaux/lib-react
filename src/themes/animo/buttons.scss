@@ -1,0 +1,18 @@
+@import '~bootstrap/scss/_variables.scss';
+
+@include media-breakpoint-down(sm) {
+  .btn {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $border-radius);
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .btn {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $border-radius);
+  }
+
+  .form-control {
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    height: auto;
+  }
+}

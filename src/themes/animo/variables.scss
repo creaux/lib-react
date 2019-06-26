@@ -1,0 +1,24 @@
+
+// For overriding: https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
+// Bootstrap override
+
+%scope {
+  @import "~bootstrap/scss/functions";
+  @import "~bootstrap/scss/variables";
+
+  $enable-responsive-font-sizes: true !global;
+
+  $theme-colors: (
+    primary: $gray-700
+  ) !global;
+
+  $enable-rounded: false !global;
+
+  $font-family-sans-serif: 'Sofia Pro' !global;
+
+  // 1rem is default value of bootstrap $spacer
+  // which is not available here
+  $spacers: (
+    8: (1rem * 8)
+  ) !global;
+}

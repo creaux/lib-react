@@ -1,0 +1,77 @@
+.cycler {
+  $item: (
+    height: 25px,
+    color: black
+  );
+
+  $active-item: (
+    height: 29px
+  );
+
+  $item-count: 3;
+
+  @function getWrapperHeight() {
+    @return (map-get($map: $item, $key: height) * ($item-count - 1)) +
+    map-get($map: $active-item, $key: height);
+  }
+
+  @mixin direction {
+    font-weight: 200;
+  }
+
+  .up,
+  .down,
+  .link {
+    outline: none;
+    padding: 0;
+    border: 0;
+    box-sizing: none;
+    background-color: transparent;
+  }
+
+
+  .wrapper {
+    height: getWrapperHeight();
+    overflow: hidden;
+    position: relative;
+  }
+
+  .items {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+  }
+
+  .item {
+    height: map-get($map: $item, $key: height);
+    line-height: map-get($map: $item, $key: height);
+    list-style: none;
+    vertical-align: middle;
+    font-weight: 200;
+  }
+
+  .link {
+    font-weight: 300;
+    text-decoration: none;
+    transition: font-weight 0.2s ease-in-out;
+  }
+
+  .link:hover {
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .active {
+    font-size: 20px;
+    height: map-get($map: $active-item, $key: height);
+    line-height: map-get($map: $active-item, $key: height);
+  }
+
+  .up::before {
+    @include direction();
+  }
+
+  .down::before {
+    @include direction();
+  }
+}
