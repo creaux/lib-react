@@ -14,7 +14,7 @@
     "storybook": "start-storybook -p 9001 -h 0.0.0.0 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o .storybook/build",
     "storybook:serve": "serve .storybook/build",
-    "prettier": "prettier --single-quote --write \\\\\\\"src/**/*.{ts,tsx}\\\\\\\"",
+    "prettier": "prettier --single-quote --write \"src/**/*.{ts,tsx}\"",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "test:update": "react-scripts test -u",
