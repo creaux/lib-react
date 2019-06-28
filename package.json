@@ -1,20 +1,20 @@
 {
-  "name": "@pyxis/lib-react",
-  "version": "1.0.0",
+  "name": "@pyxismedia/lib-react",
+  "version": "0.0.1",
   "description": "React Typescript Components Library",
   "author": "Petr Juna <petr.juna@pyxis.media>",
   "homepage": "http://pyxis.media",
   "license": "MIT",
   "main": "index.ts",
   "files": [
-    "./index.ts",
-    "./src/**/*"
+    "index.ts",
+    "src/**/*"
   ],
   "scripts": {
     "storybook": "start-storybook -p 9001 -h 0.0.0.0 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o .storybook/build",
     "storybook:serve": "serve .storybook/build",
-    "prettier": "prettier --single-quote --write \"src/**/*.{ts,tsx}\"",
+    "prettier": "prettier --single-quote --write \\\\\\\"src/**/*.{ts,tsx}\\\\\\\"",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "test:update": "react-scripts test -u",
@@ -103,5 +103,15 @@
       "pre-push": "CI=true npm test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "directories": {
+    "lib": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creaux/lib-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/creaux/lib-react/issues"
   }
 }
