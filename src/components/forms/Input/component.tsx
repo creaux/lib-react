@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { OnChange } from '../../../types/form';
+import { OnChange } from '../../types/form';
 import { IInputData, InputTypeEnum } from './types';
 
 export interface InputProps extends IInputData {

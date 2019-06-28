@@ -1,4 +1,4 @@
-import { IInput } from '../../../forms/Input/types';
+import { IInput } from '../Input/types';
 
 export interface IPerson {
   forname: IInput;

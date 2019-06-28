@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Person } from './component';
 import { FormEvent } from 'react';
 import { IPerson } from './types';
-import { IInput } from '../../../forms/Input/types';
+import { IInput } from "../Input/types";
 
 export const props = {
   forname: {

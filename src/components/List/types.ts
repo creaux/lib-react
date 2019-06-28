@@ -1,5 +1,5 @@
 import React from 'react';
-import { Model } from '../../../common/Model';
+import { Model } from '../../types';
 
 export class OrderItem extends Model {
   constructor(

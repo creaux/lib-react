@@ -20,7 +20,9 @@
     "test:update": "react-scripts test -u",
     "eject": "react-scripts eject",
     "release": "semantic-release",
-    "commit": "commit"
+    "commit": "commit",
+    "build": "npm run storybook:build",
+    "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
@@ -100,7 +102,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "CI=true npm test",
+      "pre-push": "CI=true npm test && npm run build",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },

@@ -1,5 +1,5 @@
-import { IInput, IInputData } from '../../../forms/Input/types';
-import { ISelect } from '../../../forms/Select/types';
+import { IInput, IInputData } from "../Input/types";
+import { ISelect } from '../Select/types';
 
 export interface IAbode {
   forname: IInput;
