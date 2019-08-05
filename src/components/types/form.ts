@@ -31,3 +31,8 @@ export type OnFieldChange<F extends string> = (id: F) => OnChange;
 export type OnGroupChange<G extends string, F extends string> = (
   group: G
 ) => OnFieldChange<F>;
+
+export type OnValidFieldChange<F extends string> = (id: F) => (valid: boolean) => void;
+export type OnValidGroupFieldChange<G extends string, F extends string> = (
+  group: G
+) => OnValidFieldChange<F>;
