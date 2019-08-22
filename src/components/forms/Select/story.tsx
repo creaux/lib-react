@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { SelectContainer, SelectContainerProps } from "./container";
+import { SelectContainer, SelectContainerProps } from './container';
 
 const props: SelectContainerProps = {
   id: 'city',
@@ -19,7 +19,7 @@ const props: SelectContainerProps = {
     }
   ],
   onChange() {},
-  placeholder: "Please choose an option..."
+  placeholder: 'Please choose an option...'
 };
 
 storiesOf('Atoms/forms/Select', module).add('default', () => (

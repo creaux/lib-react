@@ -1,6 +1,6 @@
 import React, { createElement, FormEvent } from 'react';
 import { Select, SelectProps } from './component';
-import { OnValidChange } from "../Input/types";
+import { OnValidChange } from '../Input/types';
 
 export interface SelectContainerProps extends SelectProps {
   onValidChange: OnValidChange;
@@ -11,7 +11,10 @@ export interface SelectContainerState {
   valid: boolean;
 }
 
-export class SelectContainer extends React.Component<SelectContainerProps, SelectContainerState> {
+export class SelectContainer extends React.Component<
+  SelectContainerProps,
+  SelectContainerState
+> {
   constructor(props: SelectContainerProps) {
     super(props);
     this.state = {
@@ -30,7 +33,14 @@ export class SelectContainer extends React.Component<SelectContainerProps, Selec
   render() {
     const { id, label, options, placeholder } = this.props;
     const { value } = this.state;
-    const props = { id, label, value, options, onChange: this.handleChange, placeholder };
+    const props = {
+      id,
+      label,
+      value,
+      options,
+      onChange: this.handleChange,
+      placeholder
+    };
     return createElement(Select, props);
   }
 }

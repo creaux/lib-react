@@ -1,5 +1,5 @@
-import { Messages } from "../../../../../validators/types";
-import { ValidatorModel } from "./validator";
+import { Messages } from '../../../../../validators/types';
+import { ValidatorModel } from './validator';
 
 export interface ValidatorProps {
   validator: ValidatorModel;

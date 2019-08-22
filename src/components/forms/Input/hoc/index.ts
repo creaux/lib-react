@@ -1,5 +1,5 @@
-import { type } from "./type";
-import { validator } from "./validator";
+import { type } from './type';
+import { validator } from './validator';
 
 export class HOC {
   public static readonly type = type;

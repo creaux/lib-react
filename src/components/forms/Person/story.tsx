@@ -1,8 +1,8 @@
-import React, { FormEvent, useState } from "react";
-import { storiesOf } from "@storybook/react";
-import { Person, PersonProps } from "./component";
-import { IPerson } from "./types";
-import { IInput } from "../Input/types";
+import React, { FormEvent, useState } from 'react';
+import { storiesOf } from '@storybook/react';
+import { Person, PersonProps } from './component';
+import { IPerson } from './types';
+import { IInput } from '../Input/types';
 
 export const props: PersonProps = {
   forname: {
@@ -63,7 +63,13 @@ const PersonContainer = () => {
     setState({ ...state, [id]: value });
   };
 
-  return <Person {...state} onFieldChange={handleFieldChange} onFieldValidChange={() => () => {}} />;
+  return (
+    <Person
+      {...state}
+      onFieldChange={handleFieldChange}
+      onFieldValidChange={() => () => {}}
+    />
+  );
 };
 
 storiesOf('Moleculs/forms/Person', module)

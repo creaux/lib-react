@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from "react";
-import { Text } from "../Input";
-import { OnFieldChange, OnValidFieldChange } from "../../types/form";
-import { IPerson } from "./types";
+import React, { FunctionComponent } from 'react';
+import { Text } from '../Input';
+import { OnFieldChange, OnValidFieldChange } from '../../types/form';
+import { IPerson } from './types';
 
 export interface PersonProps extends IPerson {
   onFieldChange: OnFieldChange<keyof IPerson>;

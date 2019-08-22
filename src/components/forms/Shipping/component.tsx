@@ -1,18 +1,25 @@
-import React, { FunctionComponent, FormEvent } from "react";
-import { RadioStack } from "../RadioStack/component";
-import { Abode, IAbode } from "../Abode";
+import React, { FunctionComponent, FormEvent } from 'react';
+import { RadioStack } from '../RadioStack/component';
+import { Abode, IAbode } from '../Abode';
 // @ts-ignore
-import { Accordion, Card } from "react-bootstrap";
-import { Checkbox } from "../../forms/Checkbox";
-import { Button, Variants } from "../Button";
-import { OnFieldChange, OnGroupChange, OnValidGroupFieldChange } from "../../types/form";
-import { IShippingFields, IShippingGroups } from "./types";
+import { Accordion, Card } from 'react-bootstrap';
+import { Checkbox } from '../../forms/Checkbox';
+import { Button, Variants } from '../Button';
+import {
+  OnFieldChange,
+  OnGroupChange,
+  OnValidGroupFieldChange
+} from '../../types/form';
+import { IShippingFields, IShippingGroups } from './types';
 
 interface ShippingProps extends IShippingGroups, IShippingFields {
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
   onFieldChange: OnFieldChange<keyof IShippingFields>;
   onGroupChange: OnGroupChange<keyof IShippingGroups, keyof IAbode>;
-  onValidGroupFieldChange: OnValidGroupFieldChange<keyof IShippingGroups, keyof IAbode>;
+  onValidGroupFieldChange: OnValidGroupFieldChange<
+    keyof IShippingGroups,
+    keyof IAbode
+  >;
   valid: boolean;
 }
 
@@ -31,7 +38,7 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
   <>
     <RadioStack
       {...distribution}
-      onChange={handleFieldChange("distribution")}
+      onChange={handleFieldChange('distribution')}
     />
     <Accordion>
       <Card>
@@ -44,7 +51,7 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
           <Card.Body>
             <Abode
               {...invoicing}
-              onFieldChange={handleGroupChange("invoicing")}
+              onFieldChange={handleGroupChange('invoicing')}
               onValidFieldChange={handleValidGroupFieldChange('invoicing')}
             />
           </Card.Body>
@@ -63,15 +70,17 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
           <Card.Body>
             <Abode
               {...delivery}
-              onFieldChange={handleGroupChange("delivery")}
+              onFieldChange={handleGroupChange('delivery')}
               onValidFieldChange={handleValidGroupFieldChange('delivery')}
             />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
     </Accordion>
-    <Checkbox {...terms} onChange={handleFieldChange("terms")} />
-    <Checkbox {...data} onChange={handleFieldChange("data")} />
-    <Button onClick={handleSubmit} disabled={!valid}>Next</Button>
+    <Checkbox {...terms} onChange={handleFieldChange('terms')} />
+    <Checkbox {...data} onChange={handleFieldChange('data')} />
+    <Button onClick={handleSubmit} disabled={!valid}>
+      Next
+    </Button>
   </>
 );

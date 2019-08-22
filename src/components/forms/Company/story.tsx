@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Company, CompanyProps } from "./component";
+import { Company, CompanyProps } from './component';
 
 const props: CompanyProps = {
   company: {
@@ -23,10 +23,10 @@ const props: CompanyProps = {
       invalid: 'INvalid'
     }
   },
-  onFieldChange: () => (text) => {
-    console.log(text)
+  onFieldChange: () => text => {
+    console.log(text);
   },
-  onValidFieldChange: () => (valid) => {
+  onValidFieldChange: () => valid => {
     console.log(valid);
   }
 };

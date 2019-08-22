@@ -1,6 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Shipping as ShippingContainer, ShippingProps, ShippingState } from "./container";
+import {
+  Shipping as ShippingContainer,
+  ShippingProps,
+  ShippingState
+} from './container';
 
 const propsContainer: ShippingProps = {
   titles: {
@@ -27,5 +31,6 @@ const propsContainer: ShippingProps = {
   }
 };
 
-storiesOf('Organisms/forms/Shipping', module)
-  .add('default', () => <ShippingContainer {...propsContainer} />);
+storiesOf('Organisms/forms/Shipping', module).add('default', () => (
+  <ShippingContainer {...propsContainer} />
+));

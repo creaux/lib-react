@@ -1,8 +1,8 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Address, AddressProps } from "./component";
-import { Form } from "../Form";
-import { FormType } from "../Form/component";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Address, AddressProps } from './component';
+import { Form } from '../Form';
+import { FormType } from '../Form/component';
 
 export const props: AddressProps = {
   street: {
@@ -14,7 +14,7 @@ export const props: AddressProps = {
     messages: {
       valid: '',
       invalid: ''
-    },
+    }
   },
   streetNo: {
     id: '12345',
@@ -25,7 +25,7 @@ export const props: AddressProps = {
     messages: {
       valid: '',
       invalid: ''
-    },
+    }
   },
   postcode: {
     id: '1234567',
@@ -36,7 +36,7 @@ export const props: AddressProps = {
     messages: {
       valid: '',
       invalid: ''
-    },
+    }
   },
   countries: {
     id: 'country',

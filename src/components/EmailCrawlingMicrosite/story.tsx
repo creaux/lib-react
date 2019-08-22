@@ -1,7 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { EmailCrawlingMicrosite, EmailCrawlingMicrositeProps } from "./component";
-import { asBackgroundProps } from "../Image/mock";
+import {
+  EmailCrawlingMicrosite,
+  EmailCrawlingMicrositeProps
+} from './component';
+import { asBackgroundProps } from '../Image/mock';
 
 const stories = storiesOf('Templates/EmailCrawlingMicrosite', module);
 
@@ -15,7 +18,7 @@ stories.add(name, () => {
     },
     messages: {
       valid: 'You email address is correct.',
-      invalid: 'Provided email address doesn\'t seem to be correct.'
+      invalid: "Provided email address doesn't seem to be correct."
     },
     onEmailSubmit: () => {},
     background: asBackgroundProps

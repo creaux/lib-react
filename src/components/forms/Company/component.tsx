@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from "react";
-import { Text } from "../Input";
-import { OnFieldChange, OnValidFieldChange } from "../../types/form";
-import { ICompany } from "./types";
+import React, { FunctionComponent } from 'react';
+import { Text } from '../Input';
+import { OnFieldChange, OnValidFieldChange } from '../../types/form';
+import { ICompany } from './types';
 
 export interface CompanyProps extends ICompany {
   onFieldChange: OnFieldChange<keyof ICompany>;
-  onValidFieldChange: OnValidFieldChange<keyof ICompany>,
+  onValidFieldChange: OnValidFieldChange<keyof ICompany>;
 }
 
 export const Company: FunctionComponent<CompanyProps> = ({

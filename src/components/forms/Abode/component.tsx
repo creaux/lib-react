@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Address } from '../Address';
 import { Company } from '../Company';
 import { Person } from '../Person';
-import { OnFieldChange, OnValidFieldChange } from "../../types/form";
+import { OnFieldChange, OnValidFieldChange } from '../../types/form';
 import { IAbode } from './types';
 
 export interface AbodeProps extends IAbode {
@@ -21,7 +21,7 @@ export const Abode: FunctionComponent<AbodeProps> = ({
   cities,
   countries,
   onFieldChange: handleFieldChange,
-  onValidFieldChange: handleValidFieldChange,
+  onValidFieldChange: handleValidFieldChange
 }) => (
   <>
     <Person

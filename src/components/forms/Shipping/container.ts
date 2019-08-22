@@ -1,9 +1,9 @@
 import { Component, FormEvent, createElement, ReactNode } from 'react';
 import { Shipping as ShippingComponent } from './component';
 import { faTruck } from '@fortawesome/free-solid-svg-icons';
-import { IAbode } from "../Abode";
-import { ICheckbox } from "../Checkbox/types";
-import { IRadioStack } from "../RadioStack/types";
+import { IAbode } from '../Abode';
+import { ICheckbox } from '../Checkbox/types';
+import { IRadioStack } from '../RadioStack/types';
 
 const { assign } = Object;
 
@@ -12,29 +12,29 @@ type Field = 'distribution' | 'terms' | 'data';
 
 interface ShippingTitles {
   distribution: {
-    home: string,
-    personal: string
-  },
+    home: string;
+    personal: string;
+  };
   address: {
-    forename: string,
-    surname: string,
-    company: string,
-    vat: string,
-    street: string,
-    streetNo: string,
-    postcode: string,
-    city: string,
-    country: string
-  },
-  terms: string,
-  data: string
+    forename: string;
+    surname: string;
+    company: string;
+    vat: string;
+    street: string;
+    streetNo: string;
+    postcode: string;
+    city: string;
+    country: string;
+  };
+  terms: string;
+  data: string;
 }
 
 interface IShipping {}
 
 export interface ShippingProps extends IShipping {
-  titles: ShippingTitles,
-  onFormSubmit: (data: ShippingState['data']) => void
+  titles: ShippingTitles;
+  onFormSubmit: (data: ShippingState['data']) => void;
 }
 
 export interface ShippingState {
@@ -293,7 +293,9 @@ export class Shipping extends Component<ShippingProps, ShippingState>
     this.props.onFormSubmit(this.state.data);
   };
 
-  handleValidGroupFieldChange = (group: Group) => (field: keyof IAbode) => (valid: boolean) => {
+  handleValidGroupFieldChange = (group: Group) => (field: keyof IAbode) => (
+    valid: boolean
+  ) => {
     // TODO To know which field is valid which is not
     this.setState({ valid });
   };

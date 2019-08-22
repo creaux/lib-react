@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { EmailContainer as Email } from "./container";
+import { EmailContainer as Email } from './container';
 
 const stories = storiesOf('Moleculs/forms/EmailCrawler', module);
 
@@ -11,8 +11,8 @@ stories.add(name, () => {
     labels: { input: 'Email', button: 'Send' },
     onSubmit: (email: string) => console.log(email),
     messages: {
-      invalid: "Please fill valid email address.",
-      valid: "Email is valid email address."
+      invalid: 'Please fill valid email address.',
+      valid: 'Email is valid email address.'
     }
   };
   return <Email {...props} />;

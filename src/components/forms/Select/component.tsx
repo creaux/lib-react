@@ -17,8 +17,15 @@ export const Select: FunctionComponent<SelectProps> = ({
 }) => (
   <>
     <label htmlFor={id}>{label}</label>
-    <select value={value} className="custom-select form-control" id={id} onChange={onChange}>
-      <option value="" disabled>{placeholder}</option>
+    <select
+      value={value}
+      className="custom-select form-control"
+      id={id}
+      onChange={onChange}
+    >
+      <option value="" disabled>
+        {placeholder}
+      </option>
       {options.map((option: IOption) => (
         <option key={option.id} value={option.value}>
           {option.title}

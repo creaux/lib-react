@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from "react";
-import { Text } from "../Input";
-import { OnFieldChange, OnValidFieldChange } from "../../types/form";
-import { Select } from "../../forms/Select";
-import { IAddress } from "./types";
+import React, { FunctionComponent } from 'react';
+import { Text } from '../Input';
+import { OnFieldChange, OnValidFieldChange } from '../../types/form';
+import { Select } from '../../forms/Select';
+import { IAddress } from './types';
 
 export interface AddressProps extends IAddress {
   onFieldChange: OnFieldChange<keyof IAddress>;

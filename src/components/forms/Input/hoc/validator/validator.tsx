@@ -1,5 +1,5 @@
-import React, { ComponentType, ReactElement } from "react";
-import { Messages } from "../../../../../validators/types";
+import React, { ComponentType, ReactElement } from 'react';
+import { Messages } from '../../../../../validators/types';
 
 export type Validator = (message: string) => Validation;
 
@@ -15,24 +15,35 @@ export class ValidatorModel {
   ) {}
 }
 
-export function validator<O extends { messages: Messages }>(validator: Validator) {
-  type Output = Pick<O, Exclude<keyof O, "messages">> & { validator: ValidatorModel };
+export function validator<O extends { messages: Messages }>(
+  validator: Validator
+) {
+  type Output = Pick<O, Exclude<keyof O, 'messages'>> & {
+    validator: ValidatorModel;
+  };
 
-  return function (Component: ComponentType<Output>) {
-
-    return function (props: O): ReactElement<Output> {
-
+  return function(Component: ComponentType<Output>) {
+    return function(props: O): ReactElement<Output> {
       const { messages, ...rest } = props;
 
-      if (messages && messages.valid.length === 0 && messages.invalid.length === 0) {
-        console.error(`${Component.name}: Property messages has to be provided per each field.`)
+      if (
+        messages &&
+        messages.valid.length === 0 &&
+        messages.invalid.length === 0
+      ) {
+        console.error(
+          `${Component.name}: Property messages has to be provided per each field.`
+        );
       }
 
-      const validators = new ValidatorModel([validator(messages.invalid)], messages.valid);
+      const validators = new ValidatorModel(
+        [validator(messages.invalid)],
+        messages.valid
+      );
 
       const withValidator = { ...rest, validator: validators };
 
       return <Component {...withValidator} />;
-    }
-  }
+    };
+  };
 }

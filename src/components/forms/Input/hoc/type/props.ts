@@ -1,4 +1,4 @@
-import { InputTypeEnum } from "../../types";
+import { InputTypeEnum } from '../../types';
 
 export interface TypeProps {
   type: InputTypeEnum;

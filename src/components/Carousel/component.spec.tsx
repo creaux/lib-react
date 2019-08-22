@@ -8,7 +8,7 @@ import { mocks } from './mocks';
 import { Carousel as BsCarousel } from 'react-bootstrap';
 import { CarouselSlide } from './types';
 
-describe("Carousel", () => {
+describe('Carousel', () => {
   it('should contain Carousel container', () => {
     const component = shallow(<Carousel {...mocks.simple} />);
     expect(component.find(BsCarousel)).to.be.present();

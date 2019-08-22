@@ -26,10 +26,7 @@ export const Cycler: FunctionComponent<CyclerProps> = ({
   handleItemClick
 }) => (
   <div className="cycler">
-    <button
-      onClick={up}
-      className="btn btn-link link"
-    >
+    <button onClick={up} className="btn btn-link link">
       <FontAwesomeIcon icon={faChevronUp} size="2x" className="up" />
     </button>
     <div className="wrapper">
@@ -37,7 +34,7 @@ export const Cycler: FunctionComponent<CyclerProps> = ({
         {items.map((item, index) => (
           <li
             key={item.id}
-            className={cx("item", {
+            className={cx('item', {
               active: isActive(index)
             })}
           >

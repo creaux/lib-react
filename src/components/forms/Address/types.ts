@@ -1,6 +1,6 @@
 import { IInputData } from '../Input/types';
 import { ISelect } from '../Select/types';
-import { Messages } from "../../../validators/types";
+import { Messages } from '../../../validators/types';
 
 export interface IAddress {
   street: IInputData & { messages: Messages };

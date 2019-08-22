@@ -1,10 +1,10 @@
 import React, { createElement, FormEvent } from 'react';
 import { Input } from './component';
-import { IInputDataTyped } from "./types";
-import { OnChange } from "../../types/form";
-import { FormContext } from "../Form/component";
-import { OnValidChange } from "./types";
-import { Validation, ValidatorModel } from "./hoc/validator";
+import { IInputDataTyped } from './types';
+import { OnChange } from '../../types/form';
+import { FormContext } from '../Form/component';
+import { OnValidChange } from './types';
+import { Validation, ValidatorModel } from './hoc/validator';
 
 export interface InputContainerProps extends IInputDataTyped {
   onChange: OnChange;
@@ -13,12 +13,15 @@ export interface InputContainerProps extends IInputDataTyped {
 }
 
 export interface InputContainerState {
-  value: string
+  value: string;
   message: string;
   valid: boolean;
 }
 
-export class InputContainer extends React.Component<InputContainerProps, InputContainerState> {
+export class InputContainer extends React.Component<
+  InputContainerProps,
+  InputContainerState
+> {
   static readonly contextType = FormContext;
 
   constructor(props: InputContainerProps) {
@@ -50,8 +53,9 @@ export class InputContainer extends React.Component<InputContainerProps, InputCo
     const { value } = e.currentTarget;
     const { onChange: handleChange } = this.props;
 
-    const validation: Validation | undefined = this.validations
-      .find(({ validator }: Validation) => validator(value));
+    const validation: Validation | undefined = this.validations.find(
+      ({ validator }: Validation) => validator(value)
+    );
 
     if (validation && validation.message) {
       this.setState({ message: validation.message, valid: false, value });
