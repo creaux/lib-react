@@ -12519,6 +12519,523 @@ exports[`Storyshots Moleculs/forms/Person state-full 1`] = `
 </fieldset>
 `;
 
+exports[`Storyshots Organisms/Blog/Detail default 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-8"
+        >
+          <h1
+            className="mt-4"
+          >
+            Post Title
+          </h1>
+          <p
+            className="lead"
+          >
+            by
+            <a
+              href="#"
+            >
+              Start Bootstrap
+            </a>
+          </p>
+          <hr />
+          <p>
+            Posted on January 1, 2019 at 12:00 PM
+          </p>
+          <hr />
+          <img
+            alt=""
+            className="img-fluid rounded"
+            src="http://placehold.it/900x300"
+          />
+          <hr />
+          <p
+            className="lead"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!
+          </p>
+          <blockquote
+            className="blockquote"
+          >
+            <p
+              className="mb-0"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+            </p>
+            <footer
+              className="blockquote-footer"
+            >
+              Someone famous in
+              <cite
+                title="Source Title"
+              >
+                Source Title
+              </cite>
+            </footer>
+          </blockquote>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!
+          </p>
+          <hr />
+          <div
+            className="card my-4"
+          >
+            <h5
+              className="card-header"
+            >
+              Leave a Comment:
+            </h5>
+            <div
+              className="card-body"
+            >
+              <form>
+                <div
+                  className="form-group"
+                >
+                  <textarea
+                    className="form-control"
+                    rows={3}
+                  />
+                </div>
+                <button
+                  className="btn btn-primary"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+          <div
+            className="media mb-4"
+          >
+            <img
+              alt=""
+              className="d-flex mr-3 rounded-circle"
+              src="http://placehold.it/50x50"
+            />
+            <div
+              className="media-body"
+            >
+              <h5
+                className="mt-0"
+              >
+                Commenter Name
+              </h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </div>
+          <div
+            className="media mb-4"
+          >
+            <img
+              alt=""
+              className="d-flex mr-3 rounded-circle"
+              src="http://placehold.it/50x50"
+            />
+            <div
+              className="media-body"
+            >
+              <h5
+                className="mt-0"
+              >
+                Commenter Name
+              </h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              <div
+                className="media mt-4"
+              >
+                <img
+                  alt=""
+                  className="d-flex mr-3 rounded-circle"
+                  src="http://placehold.it/50x50"
+                />
+                <div
+                  className="media-body"
+                >
+                  <h5
+                    className="mt-0"
+                  >
+                    Commenter Name
+                  </h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </div>
+              <div
+                className="media mt-4"
+              >
+                <img
+                  alt=""
+                  className="d-flex mr-3 rounded-circle"
+                  src="http://placehold.it/50x50"
+                />
+                <div
+                  className="media-body"
+                >
+                  <h5
+                    className="mt-0"
+                  >
+                    Commenter Name
+                  </h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4"
+        >
+          <div
+            className="card my-4"
+          >
+            <h5
+              className="card-header"
+            >
+              Search
+            </h5>
+            <div
+              className="card-body"
+            >
+              <div
+                className="input-group"
+              >
+                <input
+                  className="form-control"
+                  placeholder="Search for..."
+                  type="text"
+                />
+                <span
+                  className="input-group-btn"
+                >
+                  <button
+                    className="btn btn-secondary"
+                    type="button"
+                  >
+                    Go!
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="card my-4"
+          >
+            <h5
+              className="card-header"
+            >
+              Categories
+            </h5>
+            <div
+              className="card-body"
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="col-lg-6"
+                >
+                  <ul
+                    className="list-unstyled mb-0"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                      >
+                        Web Design
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                      >
+                        HTML
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                      >
+                        Freebies
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  className="col-lg-6"
+                >
+                  <ul
+                    className="list-unstyled mb-0"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                      >
+                        JavaScript
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                      >
+                        CSS
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                      >
+                        Tutorials
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="card my-4"
+          >
+            <h5
+              className="card-header"
+            >
+              Side Widget
+            </h5>
+            <div
+              className="card-body"
+            >
+              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    className="info__overlay"
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+        "zIndex": 99999,
+      }
+    }
+  >
+    <button
+      className="info__close-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#027ac5",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Story Source
+          </h1>
+          <pre
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fafafa",
+                "display": "flex",
+                "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                "fontSize": ".88em",
+                "justifyContent": "space-between",
+                "lineHeight": 1.5,
+                "overflowX": "scroll",
+                "padding": ".5rem",
+              }
+            }
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }
+              >
+                <span
+                  style={
+                    Object {
+                      "color": "#444",
+                    }
+                  }
+                >
+                  &lt;
+                  Detail
+                </span>
+                <span />
+                <span
+                  style={
+                    Object {
+                      "color": "#444",
+                    }
+                  }
+                >
+                  /&gt;
+                </span>
+              </div>
+            </div>
+            <button
+              onClick={[Function]}
+              style={
+                Object {
+                  "alignSelf": "flex-start",
+                  "backgroundColor": "rgb(255, 255, 255)",
+                  "borderColor": "rgb(238, 238, 238)",
+                  "borderImage": "initial",
+                  "borderRadius": "3px",
+                  "borderStyle": "solid",
+                  "borderWidth": "1px",
+                  "cursor": "pointer",
+                  "flexShrink": "0",
+                  "fontSize": "13px",
+                  "overflow": "hidden",
+                  "padding": "3px 10px",
+                }
+              }
+              type="button"
+            >
+              Copy
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h3
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }
+            >
+              "
+              Detail
+              " Component
+            </h3>
+            <small>
+              No propTypes defined!
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Organisms/Order default 1`] = `
 <div
   className="w-50 mr-auto ml-auto"
