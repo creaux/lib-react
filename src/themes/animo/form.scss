@@ -4,6 +4,16 @@
   .btn {
     @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $border-radius);
   }
+
+  .form-control {
+    padding: $input-padding-y-sm $input-padding-x-sm;
+    font-size: $input-font-size-sm;
+    height: auto;
+  }
+
+  .form-inline-persist {
+    flex-wrap: nowrap;
+  }
 }
 
 @include media-breakpoint-up(sm) {
@@ -14,5 +24,18 @@
   .form-control {
     padding: $input-padding-y-lg $input-padding-x-lg;
     height: auto;
+    font-size: $input-font-size-lg;
+  }
+
+  .form-inline {
+    .form-control {
+      width: 100%;
+    }
+  }
+}
+
+.form-control {
+  .form-text {
+    font-size: 60%;
   }
 }

@@ -9691,30 +9691,117 @@ exports[`Storyshots Atoms/forms/Checkbox default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Atoms/forms/Input default 1`] = `
-Array [
+exports[`Storyshots Atoms/forms/Email Email 1`] = `
+<div
+  className="form-group"
+>
   <label
+    className="mr-3"
+    htmlFor="email"
+  >
+    Email
+  </label>
+  <input
+    className="form-control"
+    id="email"
+    name="email"
+    onChange={[Function]}
+    placeholder="Please fill email."
+    type="email"
+    value=""
+  />
+  <small
+    className="form-text valid-feedback d-block"
+  >
+    
+  </small>
+</div>
+`;
+
+exports[`Storyshots Atoms/forms/Input default 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className="mr-3"
     htmlFor="123456"
   >
     Postcode
-  </label>,
+  </label>
   <input
     className="form-control"
     id="123456"
+    name="123456"
     onChange={[Function]}
     placeholder="255 45"
     type="text"
-    value="511 01"
-  />,
-  <datalist>
-    <option
-      value="130 00"
+    value=""
+  />
+  <small
+    className="form-text valid-feedback d-block"
+  >
+    
+  </small>
+</div>
+`;
+
+exports[`Storyshots Atoms/forms/Input with Form Context 1`] = `
+<form
+  className="align-items-stretch form-inline flex-nowrap"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control"
+  >
+    <label
+      className="mr-3"
+      htmlFor="123456"
+    >
+      Postcode
+    </label>
+    <input
+      className="border-0"
+      id="123456"
+      name="123456"
+      onChange={[Function]}
+      placeholder="255 45"
+      type="text"
+      value=""
     />
-    <option
-      value="888 88"
-    />
-  </datalist>,
-]
+    <small
+      className="form-text valid-feedback d-block"
+    >
+      
+    </small>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Input with validator 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className="mr-3"
+    htmlFor="email"
+  >
+    Email
+  </label>
+  <input
+    className="form-control"
+    id="email"
+    name="email"
+    onChange={[Function]}
+    placeholder="email@email.cz"
+    type="email"
+    value=""
+  />
+  <small
+    className="form-text valid-feedback d-block"
+  >
+    
+  </small>
+</div>
 `;
 
 exports[`Storyshots Atoms/forms/RadioStack default 1`] = `
@@ -9792,21 +9879,59 @@ Array [
   <label
     htmlFor="city"
   >
-    Postcode
+    City
   </label>,
   <select
-    className="custom-select"
-    id="123456"
+    className="custom-select form-control"
+    id="city"
     onChange={[Function]}
-    value="511 01"
+    value=""
   >
     <option
-      value="xyz"
+      disabled={true}
+      value=""
     >
-      Xyz
+      Please choose an option...
+    </option>
+    <option
+      value="prague"
+    >
+      Prague
+    </option>
+    <option
+      value="liberec"
+    >
+      Liberec
     </option>
   </select>,
 ]
+`;
+
+exports[`Storyshots Atoms/forms/Text Text 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className="mr-3"
+    htmlFor="text"
+  >
+    Text
+  </label>
+  <input
+    className="form-control"
+    id="text"
+    name="text"
+    onChange={[Function]}
+    placeholder="Please fill some text."
+    type="text"
+    value=""
+  />
+  <small
+    className="form-text valid-feedback d-block"
+  >
+    
+  </small>
+</div>
 `;
 
 exports[`Storyshots Moleculs/Add Documentation 1`] = `
@@ -11649,44 +11774,74 @@ exports[`Storyshots Moleculs/Steps default 1`] = `
 `;
 
 exports[`Storyshots Moleculs/forms/Abode delivery 1`] = `
-Array [
+<form
+  className=""
+  onSubmit={[Function]}
+>
   <fieldset
-    className="form-row"
     name="name"
   >
     <div
-      className="col-6 mb-3"
+      className="form-row"
     >
-      <label
-        htmlFor="foroname"
+      <div
+        className="col-6 mb-3"
       >
-        Forname
-      </label>
-      <input
-        className="form-control"
-        id="foroname"
-        onChange={[Function]}
-        type="text"
-        value="Karel"
-      />
-    </div>
-    <div
-      className="col-6 mb-3"
-    >
-      <label
-        htmlFor="surname"
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="forename"
+          >
+            Forname
+          </label>
+          <input
+            className="form-control"
+            id="forename"
+            name="forename"
+            onChange={[Function]}
+            placeholder="Name"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-6 mb-3"
       >
-        Surname
-      </label>
-      <input
-        className="form-control"
-        id="surname"
-        onChange={[Function]}
-        type="text"
-        value="Vomacka"
-      />
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="surname"
+          >
+            Surname
+          </label>
+          <input
+            className="form-control"
+            id="surname"
+            name="surname"
+            onChange={[Function]}
+            placeholder="Surname"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
+      </div>
     </div>
-  </fieldset>,
+  </fieldset>
   <fieldset
     name="address"
   >
@@ -11696,50 +11851,86 @@ Array [
       <div
         className="col-6 mb-3"
       >
-        <label
-          htmlFor="street"
+        <div
+          className="form-group"
         >
-          Street
-        </label>
-        <input
-          className="form-control"
-          id="street"
-          onChange={[Function]}
-          type="text"
-          value="Some Street"
-        />
+          <label
+            className="mr-3"
+            htmlFor="street"
+          >
+            Street
+          </label>
+          <input
+            className="form-control"
+            id="street"
+            name="street"
+            onChange={[Function]}
+            placeholder="Some Street"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
       </div>
       <div
         className="col-2 mb-3"
       >
-        <label
-          htmlFor="streetNo"
+        <div
+          className="form-group"
         >
-          Street Number
-        </label>
-        <input
-          className="form-control"
-          id="streetNo"
-          onChange={[Function]}
-          type="text"
-          value="0"
-        />
+          <label
+            className="mr-3"
+            htmlFor="streetNo"
+          >
+            Street Number
+          </label>
+          <input
+            className="form-control"
+            id="streetNo"
+            name="streetNo"
+            onChange={[Function]}
+            placeholder="5"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
       </div>
       <div
         className="col-4 mb-3"
       >
-        <label
-          htmlFor="postcode"
+        <div
+          className="form-group"
         >
-          Postcode
-        </label>
-        <input
-          className="form-control"
-          id="postcode"
-          onChange={[Function]}
-          type="text"
-          value="12345"
-        />
+          <label
+            className="mr-3"
+            htmlFor="postcode"
+          >
+            Postcode
+          </label>
+          <input
+            className="form-control"
+            id="postcode"
+            name="postcode"
+            onChange={[Function]}
+            placeholder="511 01"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
       </div>
     </div>
     <div
@@ -11754,11 +11945,15 @@ Array [
           City
         </label>
         <select
-          className="custom-select"
+          className="custom-select form-control"
           id="city"
           onChange={[Function]}
-          value="prague"
+          value=""
         >
+          <option
+            disabled={true}
+            value=""
+          />
           <option
             value="prague"
           >
@@ -11775,16 +11970,20 @@ Array [
         className="col-6 mb-3"
       >
         <label
-          htmlFor="city"
+          htmlFor="country"
         >
           Country
         </label>
         <select
-          className="custom-select"
+          className="custom-select form-control"
           id="country"
           onChange={[Function]}
-          value="czechRepublic"
+          value=""
         >
+          <option
+            disabled={true}
+            value=""
+          />
           <option
             value="CZ"
           >
@@ -11798,76 +11997,135 @@ Array [
         </select>
       </div>
     </div>
-  </fieldset>,
-]
+  </fieldset>
+</form>
 `;
 
 exports[`Storyshots Moleculs/forms/Abode invoicing 1`] = `
-Array [
+<form
+  className=""
+  onSubmit={[Function]}
+>
   <fieldset
-    className="form-row"
     name="name"
   >
     <div
-      className="col-6 mb-3"
+      className="form-row"
     >
-      <label
-        htmlFor="foroname"
+      <div
+        className="col-6 mb-3"
       >
-        Forname
-      </label>
-      <input
-        className="form-control"
-        id="foroname"
-        onChange={[Function]}
-        type="text"
-        value="Karel"
-      />
-    </div>
-    <div
-      className="col-6 mb-3"
-    >
-      <label
-        htmlFor="surname"
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="forename"
+          >
+            Forname
+          </label>
+          <input
+            className="form-control"
+            id="forename"
+            name="forename"
+            onChange={[Function]}
+            placeholder="Name"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-6 mb-3"
       >
-        Surname
-      </label>
-      <input
-        className="form-control"
-        id="surname"
-        onChange={[Function]}
-        type="text"
-        value="Vomacka"
-      />
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="surname"
+          >
+            Surname
+          </label>
+          <input
+            className="form-control"
+            id="surname"
+            name="surname"
+            onChange={[Function]}
+            placeholder="Surname"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
+      </div>
     </div>
-  </fieldset>,
+  </fieldset>
   <fieldset
-    className="form-row"
     name="company"
   >
     <div
-      className="col-6 mb-3"
+      className="form-row"
     >
-      <label />
-      <input
-        className="form-control"
-        onChange={[Function]}
-        type="text"
-        value="Neco LTD"
-      />
+      <div
+        className="col-6 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+          >
+            Company
+          </label>
+          <input
+            className="form-control"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-6 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+          >
+            VAT
+          </label>
+          <input
+            className="form-control"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
+      </div>
     </div>
-    <div
-      className="col-6 mb-3"
-    >
-      <label />
-      <input
-        className="form-control"
-        onChange={[Function]}
-        type="text"
-        value="123456"
-      />
-    </div>
-  </fieldset>,
+  </fieldset>
   <fieldset
     name="address"
   >
@@ -11877,50 +12135,86 @@ Array [
       <div
         className="col-6 mb-3"
       >
-        <label
-          htmlFor="street"
+        <div
+          className="form-group"
         >
-          Street
-        </label>
-        <input
-          className="form-control"
-          id="street"
-          onChange={[Function]}
-          type="text"
-          value="Some Street"
-        />
+          <label
+            className="mr-3"
+            htmlFor="street"
+          >
+            Street
+          </label>
+          <input
+            className="form-control"
+            id="street"
+            name="street"
+            onChange={[Function]}
+            placeholder="Some Street"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
       </div>
       <div
         className="col-2 mb-3"
       >
-        <label
-          htmlFor="streetNo"
+        <div
+          className="form-group"
         >
-          Street Number
-        </label>
-        <input
-          className="form-control"
-          id="streetNo"
-          onChange={[Function]}
-          type="text"
-          value="0"
-        />
+          <label
+            className="mr-3"
+            htmlFor="streetNo"
+          >
+            Street Number
+          </label>
+          <input
+            className="form-control"
+            id="streetNo"
+            name="streetNo"
+            onChange={[Function]}
+            placeholder="5"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
       </div>
       <div
         className="col-4 mb-3"
       >
-        <label
-          htmlFor="postcode"
+        <div
+          className="form-group"
         >
-          Postcode
-        </label>
-        <input
-          className="form-control"
-          id="postcode"
-          onChange={[Function]}
-          type="text"
-          value="12345"
-        />
+          <label
+            className="mr-3"
+            htmlFor="postcode"
+          >
+            Postcode
+          </label>
+          <input
+            className="form-control"
+            id="postcode"
+            name="postcode"
+            onChange={[Function]}
+            placeholder="511 01"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
       </div>
     </div>
     <div
@@ -11935,11 +12229,15 @@ Array [
           City
         </label>
         <select
-          className="custom-select"
+          className="custom-select form-control"
           id="city"
           onChange={[Function]}
-          value="prague"
+          value=""
         >
+          <option
+            disabled={true}
+            value=""
+          />
           <option
             value="prague"
           >
@@ -11956,16 +12254,20 @@ Array [
         className="col-6 mb-3"
       >
         <label
-          htmlFor="city"
+          htmlFor="country"
         >
           Country
         </label>
         <select
-          className="custom-select"
+          className="custom-select form-control"
           id="country"
           onChange={[Function]}
-          value="czechRepublic"
+          value=""
         >
+          <option
+            disabled={true}
+            value=""
+          />
           <option
             value="CZ"
           >
@@ -11979,126 +12281,240 @@ Array [
         </select>
       </div>
     </div>
-  </fieldset>,
-]
+  </fieldset>
+</form>
 `;
 
 exports[`Storyshots Moleculs/forms/Company default 1`] = `
 <fieldset
-  className="form-row"
   name="company"
 >
   <div
-    className="col-6 mb-3"
+    className="form-row"
   >
-    <label
-      htmlFor="123456"
+    <div
+      className="col-6 mb-3"
     >
-      VAT
-    </label>
-    <input
-      className="form-control"
-      id="123456"
-      onChange={[Function]}
-      type="text"
-      value="Neco LTD"
-    />
-  </div>
-  <div
-    className="col-6 mb-3"
-  >
-    <label
-      htmlFor="12345"
+      <div
+        className="form-group"
+      >
+        <label
+          className="mr-3"
+          htmlFor="123456"
+        >
+          Company
+        </label>
+        <input
+          className="form-control"
+          id="123456"
+          name="123456"
+          onChange={[Function]}
+          placeholder=""
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text valid-feedback d-block"
+        >
+          
+        </small>
+      </div>
+    </div>
+    <div
+      className="col-6 mb-3"
     >
-      VAT
-    </label>
-    <input
-      className="form-control"
-      id="12345"
-      onChange={[Function]}
-      type="text"
-      value="123456"
-    />
+      <div
+        className="form-group"
+      >
+        <label
+          className="mr-3"
+          htmlFor="12345"
+        >
+          VAT
+        </label>
+        <input
+          className="form-control"
+          id="12345"
+          name="12345"
+          onChange={[Function]}
+          placeholder=""
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text valid-feedback d-block"
+        >
+          
+        </small>
+      </div>
+    </div>
   </div>
 </fieldset>
 `;
 
+exports[`Storyshots Moleculs/forms/EmailCrawler default 1`] = `
+<form
+  className="align-items-stretch form-inline flex-nowrap"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control"
+  >
+    <input
+      className="border-0"
+      id="email"
+      name="email"
+      onChange={[Function]}
+      placeholder="Email"
+      type="email"
+      value=""
+    />
+    <small
+      className="form-text valid-feedback d-block"
+    >
+      
+    </small>
+  </div>
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    type="submit"
+  >
+    Send
+  </button>
+</form>
+`;
+
 exports[`Storyshots Moleculs/forms/Person default 1`] = `
 <fieldset
-  className="form-row"
   name="name"
 >
   <div
-    className="col-6 mb-3"
+    className="form-row"
   >
-    <label
-      htmlFor="forname"
+    <div
+      className="col-6 mb-3"
     >
-      Forname
-    </label>
-    <input
-      className="form-control"
-      id="forname"
-      onChange={[Function]}
-      type="text"
-      value="Karel"
-    />
-  </div>
-  <div
-    className="col-6 mb-3"
-  >
-    <label
-      htmlFor="surname"
+      <div
+        className="form-group"
+      >
+        <label
+          className="mr-3"
+          htmlFor="forname"
+        >
+          Forname
+        </label>
+        <input
+          className="form-control"
+          id="forname"
+          name="forname"
+          onChange={[Function]}
+          placeholder=""
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text valid-feedback d-block"
+        >
+          
+        </small>
+      </div>
+    </div>
+    <div
+      className="col-6 mb-3"
     >
-      Surname
-    </label>
-    <input
-      className="form-control"
-      id="surname"
-      onChange={[Function]}
-      type="text"
-      value="Vomacka"
-    />
+      <div
+        className="form-group"
+      >
+        <label
+          className="mr-3"
+          htmlFor="surname"
+        >
+          Surname
+        </label>
+        <input
+          className="form-control"
+          id="surname"
+          name="surname"
+          onChange={[Function]}
+          placeholder=""
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text valid-feedback d-block"
+        >
+          
+        </small>
+      </div>
+    </div>
   </div>
 </fieldset>
 `;
 
 exports[`Storyshots Moleculs/forms/Person state-full 1`] = `
 <fieldset
-  className="form-row"
   name="name"
 >
   <div
-    className="col-6 mb-3"
+    className="form-row"
   >
-    <label
-      htmlFor="forname"
+    <div
+      className="col-6 mb-3"
     >
-      Forname
-    </label>
-    <input
-      className="form-control"
-      id="forname"
-      onChange={[Function]}
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    className="col-6 mb-3"
-  >
-    <label
-      htmlFor="surname"
+      <div
+        className="form-group"
+      >
+        <label
+          className="mr-3"
+          htmlFor="forname"
+        >
+          Forname
+        </label>
+        <input
+          className="form-control"
+          id="forname"
+          name="forname"
+          onChange={[Function]}
+          placeholder=""
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text valid-feedback d-block"
+        >
+          
+        </small>
+      </div>
+    </div>
+    <div
+      className="col-6 mb-3"
     >
-      Surname
-    </label>
-    <input
-      className="form-control"
-      id="surname"
-      onChange={[Function]}
-      type="text"
-      value=""
-    />
+      <div
+        className="form-group"
+      >
+        <label
+          className="mr-3"
+          htmlFor="surname"
+        >
+          Surname
+        </label>
+        <input
+          className="form-control"
+          id="surname"
+          name="surname"
+          onChange={[Function]}
+          placeholder=""
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text valid-feedback d-block"
+        >
+          
+        </small>
+      </div>
+    </div>
   </div>
 </fieldset>
 `;
@@ -12419,504 +12835,6 @@ Array [
     >
       <svg
         aria-hidden="true"
-        className="svg-inline--fa fa-walking fa-w-10 fa-1x mr-3"
-        data-icon="walking"
-        data-prefix="fas"
-        focusable="false"
-        role="img"
-        style={Object {}}
-        viewBox="0 0 320 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M208 96c26.5 0 48-21.5 48-48S234.5 0 208 0s-48 21.5-48 48 21.5 48 48 48zm94.5 149.1l-23.3-11.8-9.7-29.4c-14.7-44.6-55.7-75.8-102.2-75.9-36-.1-55.9 10.1-93.3 25.2-21.6 8.7-39.3 25.2-49.7 46.2L17.6 213c-7.8 15.8-1.5 35 14.2 42.9 15.6 7.9 34.6 1.5 42.5-14.3L81 228c3.5-7 9.3-12.5 16.5-15.4l26.8-10.8-15.2 60.7c-5.2 20.8.4 42.9 14.9 58.8l59.9 65.4c7.2 7.9 12.3 17.4 14.9 27.7l18.3 73.3c4.3 17.1 21.7 27.6 38.8 23.3 17.1-4.3 27.6-21.7 23.3-38.8l-22.2-89c-2.6-10.3-7.7-19.9-14.9-27.7l-45.5-49.7 17.2-68.7 5.5 16.5c5.3 16.1 16.7 29.4 31.7 37l23.3 11.8c15.6 7.9 34.6 1.5 42.5-14.3 7.7-15.7 1.4-35.1-14.3-43zM73.6 385.8c-3.2 8.1-8 15.4-14.2 21.5l-50 50.1c-12.5 12.5-12.5 32.8 0 45.3s32.7 12.5 45.2 0l59.4-59.4c6.1-6.1 10.9-13.4 14.2-21.5l13.5-33.8c-55.3-60.3-38.7-41.8-47.4-53.7l-20.7 51.5z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
-      <input
-        checked={false}
-        className="sr-only"
-        id="abcdefghc"
-        name="rthgfjslwp"
-        onChange={[Function]}
-        type="radio"
-        value="abcdefghc"
-      />
-      Personal Handover
-    </label>
-    <label
-      className="btn btn-primary active"
-    >
-      <svg
-        aria-hidden="true"
-        className="svg-inline--fa fa-truck fa-w-20 fa-1x mr-3"
-        data-icon="truck"
-        data-prefix="fas"
-        focusable="false"
-        role="img"
-        style={Object {}}
-        viewBox="0 0 640 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
-      <input
-        checked={true}
-        className="sr-only"
-        id="cdefghc"
-        name="rthgfjslwp"
-        onChange={[Function]}
-        type="radio"
-        value="cdefghc"
-      />
-      Home Delivery
-    </label>
-  </div>,
-  <div
-    className="accordion"
-  >
-    <div
-      className="card"
-    >
-      <div
-        className="card-header"
-      >
-        <button
-          className="btn btn-link"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Invoicing Address
-        </button>
-      </div>
-      <div
-        aria-expanded={null}
-        className="collapse"
-      >
-        <div
-          className="card-body"
-        >
-          <fieldset
-            className="form-row"
-            name="name"
-          >
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="foroname"
-              >
-                Forname
-              </label>
-              <input
-                className="form-control"
-                id="foroname"
-                onChange={[Function]}
-                type="text"
-                value="Karel"
-              />
-            </div>
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="surname"
-              >
-                Surname
-              </label>
-              <input
-                className="form-control"
-                id="surname"
-                onChange={[Function]}
-                type="text"
-                value="Vomacka"
-              />
-            </div>
-          </fieldset>
-          <fieldset
-            className="form-row"
-            name="company"
-          >
-            <div
-              className="col-6 mb-3"
-            >
-              <label />
-              <input
-                className="form-control"
-                onChange={[Function]}
-                type="text"
-                value="Neco LTD"
-              />
-            </div>
-            <div
-              className="col-6 mb-3"
-            >
-              <label />
-              <input
-                className="form-control"
-                onChange={[Function]}
-                type="text"
-                value="123456"
-              />
-            </div>
-          </fieldset>
-          <fieldset
-            name="address"
-          >
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="street"
-                >
-                  Street
-                </label>
-                <input
-                  className="form-control"
-                  id="street"
-                  onChange={[Function]}
-                  type="text"
-                  value="Some Street"
-                />
-              </div>
-              <div
-                className="col-2 mb-3"
-              >
-                <label
-                  htmlFor="streetNo"
-                >
-                  Street Number
-                </label>
-                <input
-                  className="form-control"
-                  id="streetNo"
-                  onChange={[Function]}
-                  type="text"
-                  value="0"
-                />
-              </div>
-              <div
-                className="col-4 mb-3"
-              >
-                <label
-                  htmlFor="postcode"
-                >
-                  Postcode
-                </label>
-                <input
-                  className="form-control"
-                  id="postcode"
-                  onChange={[Function]}
-                  type="text"
-                  value="12345"
-                />
-              </div>
-            </div>
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="city"
-                >
-                  City
-                </label>
-                <select
-                  className="custom-select"
-                  id="city"
-                  onChange={[Function]}
-                  value="prague"
-                >
-                  <option
-                    value="prague"
-                  >
-                    Prague
-                  </option>
-                  <option
-                    value="berlin"
-                  >
-                    Berlin
-                  </option>
-                </select>
-              </div>
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="city"
-                >
-                  Country
-                </label>
-                <select
-                  className="custom-select"
-                  id="country"
-                  onChange={[Function]}
-                  value="czechRepublic"
-                >
-                  <option
-                    value="CZ"
-                  >
-                    Czech Republic
-                  </option>
-                  <option
-                    value="DE"
-                  >
-                    Germany
-                  </option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-    <div
-      className="card"
-    >
-      <div
-        className="card-header"
-      >
-        <button
-          className="btn btn-link"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Delivery Address
-        </button>
-        <small>
-          Fill only if delivery address is different than invoicing address.
-        </small>
-      </div>
-      <div
-        aria-expanded={null}
-        className="collapse"
-      >
-        <div
-          className="card-body"
-        >
-          <fieldset
-            className="form-row"
-            name="name"
-          >
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="foroname"
-              >
-                Forname
-              </label>
-              <input
-                className="form-control"
-                id="foroname"
-                onChange={[Function]}
-                type="text"
-                value="Karel"
-              />
-            </div>
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="surname"
-              >
-                Surname
-              </label>
-              <input
-                className="form-control"
-                id="surname"
-                onChange={[Function]}
-                type="text"
-                value="Vomacka"
-              />
-            </div>
-          </fieldset>
-          <fieldset
-            name="address"
-          >
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="street"
-                >
-                  Street
-                </label>
-                <input
-                  className="form-control"
-                  id="street"
-                  onChange={[Function]}
-                  type="text"
-                  value="Some Street"
-                />
-              </div>
-              <div
-                className="col-2 mb-3"
-              >
-                <label
-                  htmlFor="streetNo"
-                >
-                  Street Number
-                </label>
-                <input
-                  className="form-control"
-                  id="streetNo"
-                  onChange={[Function]}
-                  type="text"
-                  value="0"
-                />
-              </div>
-              <div
-                className="col-4 mb-3"
-              >
-                <label
-                  htmlFor="postcode"
-                >
-                  Postcode
-                </label>
-                <input
-                  className="form-control"
-                  id="postcode"
-                  onChange={[Function]}
-                  type="text"
-                  value="12345"
-                />
-              </div>
-            </div>
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="city"
-                >
-                  City
-                </label>
-                <select
-                  className="custom-select"
-                  id="city"
-                  onChange={[Function]}
-                  value="prague"
-                >
-                  <option
-                    value="prague"
-                  >
-                    Prague
-                  </option>
-                  <option
-                    value="berlin"
-                  >
-                    Berlin
-                  </option>
-                </select>
-              </div>
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="city"
-                >
-                  Country
-                </label>
-                <select
-                  className="custom-select"
-                  id="country"
-                  onChange={[Function]}
-                  value="czechRepublic"
-                >
-                  <option
-                    value="CZ"
-                  >
-                    Czech Republic
-                  </option>
-                  <option
-                    value="DE"
-                  >
-                    Germany
-                  </option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-  </div>,
-  <div
-    className="form-check"
-  >
-    <input
-      checked={false}
-      className="form-check-input"
-      id="123456789"
-      name="123456789"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <label
-      className="form-check-label"
-      htmlFor="123456789"
-    >
-      Please check me!
-    </label>
-  </div>,
-  <div
-    className="form-check"
-  >
-    <input
-      checked={false}
-      className="form-check-input"
-      id="123456789"
-      name="123456789"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <label
-      className="form-check-label"
-      htmlFor="123456789"
-    >
-      Please check me!
-    </label>
-  </div>,
-  <button
-    className="btn btn-primary"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
-  >
-    Next
-  </button>,
-]
-`;
-
-exports[`Storyshots Organisms/forms/Shipping state-full 1`] = `
-Array [
-  <div
-    className="btn-group w-100"
-    data-toggle="buttons"
-  >
-    <label
-      className="btn btn-primary"
-    >
-      <svg
-        aria-hidden="true"
         className="svg-inline--fa fa-truck fa-w-20 fa-1x mr-3"
         data-icon="truck"
         data-prefix="fas"
@@ -13001,77 +12919,131 @@ Array [
           className="card-body"
         >
           <fieldset
-            className="form-row"
             name="name"
           >
             <div
-              className="col-6 mb-3"
+              className="form-row"
             >
-              <label
-                htmlFor="forname1"
+              <div
+                className="col-6 mb-3"
               >
-                Forename
-              </label>
-              <input
-                className="form-control"
-                id="forname1"
-                onChange={[Function]}
-                type="text"
-                value=""
-              />
-            </div>
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="surname1"
+                <div
+                  className="form-group"
+                >
+                  <label
+                    className="mr-3"
+                    htmlFor="forname1"
+                  >
+                    Forename
+                  </label>
+                  <input
+                    className="form-control"
+                    id="forname1"
+                    name="forname1"
+                    onChange={[Function]}
+                    placeholder="Denisa"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
+              </div>
+              <div
+                className="col-6 mb-3"
               >
-                Surname
-              </label>
-              <input
-                className="form-control"
-                id="surname1"
-                onChange={[Function]}
-                type="text"
-                value=""
-              />
+                <div
+                  className="form-group"
+                >
+                  <label
+                    className="mr-3"
+                    htmlFor="surname1"
+                  >
+                    Surname
+                  </label>
+                  <input
+                    className="form-control"
+                    id="surname1"
+                    name="surname1"
+                    onChange={[Function]}
+                    placeholder="Juna"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
+              </div>
             </div>
           </fieldset>
           <fieldset
-            className="form-row"
             name="company"
           >
             <div
-              className="col-6 mb-3"
+              className="form-row"
             >
-              <label
-                htmlFor="company"
+              <div
+                className="col-6 mb-3"
               >
-                Company
-              </label>
-              <input
-                className="form-control"
-                id="company"
-                onChange={[Function]}
-                type="text"
-                value=""
-              />
-            </div>
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="vat"
+                <div
+                  className="form-group"
+                >
+                  <label
+                    className="mr-3"
+                    htmlFor="company"
+                  >
+                    Company
+                  </label>
+                  <input
+                    className="form-control"
+                    id="company"
+                    name="company"
+                    onChange={[Function]}
+                    placeholder="Somethings LTD"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
+              </div>
+              <div
+                className="col-6 mb-3"
               >
-                VAT
-              </label>
-              <input
-                className="form-control"
-                id="vat"
-                onChange={[Function]}
-                type="text"
-                value=""
-              />
+                <div
+                  className="form-group"
+                >
+                  <label
+                    className="mr-3"
+                    htmlFor="vat"
+                  >
+                    VAT
+                  </label>
+                  <input
+                    className="form-control"
+                    id="vat"
+                    name="vat"
+                    onChange={[Function]}
+                    placeholder="12345"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
+              </div>
             </div>
           </fieldset>
           <fieldset
@@ -13083,53 +13055,86 @@ Array [
               <div
                 className="col-6 mb-3"
               >
-                <label
-                  htmlFor="street1"
+                <div
+                  className="form-group"
                 >
-                  Street
-                </label>
-                <input
-                  className="form-control"
-                  id="street1"
-                  onChange={[Function]}
-                  placeholder="Your Street"
-                  type="text"
-                  value="Street 1"
-                />
+                  <label
+                    className="mr-3"
+                    htmlFor="street1"
+                  >
+                    Street
+                  </label>
+                  <input
+                    className="form-control"
+                    id="street1"
+                    name="street1"
+                    onChange={[Function]}
+                    placeholder="Your Street"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
               </div>
               <div
                 className="col-2 mb-3"
               >
-                <label
-                  htmlFor="streetNo1"
+                <div
+                  className="form-group"
                 >
-                  Street No.
-                </label>
-                <input
-                  className="form-control"
-                  id="streetNo1"
-                  onChange={[Function]}
-                  placeholder="Your Number Street"
-                  type="number"
-                  value="5"
-                />
+                  <label
+                    className="mr-3"
+                    htmlFor="streetNo1"
+                  >
+                    Street No.
+                  </label>
+                  <input
+                    className="form-control"
+                    id="streetNo1"
+                    name="streetNo1"
+                    onChange={[Function]}
+                    placeholder="Your Number Street"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
               </div>
               <div
                 className="col-4 mb-3"
               >
-                <label
-                  htmlFor="postcode1"
+                <div
+                  className="form-group"
                 >
-                  Postcode
-                </label>
-                <input
-                  className="form-control"
-                  id="postcode1"
-                  onChange={[Function]}
-                  placeholder="111 11"
-                  type="text"
-                  value="123 45"
-                />
+                  <label
+                    className="mr-3"
+                    htmlFor="postcode1"
+                  >
+                    Postcode
+                  </label>
+                  <input
+                    className="form-control"
+                    id="postcode1"
+                    name="postcode1"
+                    onChange={[Function]}
+                    placeholder="111 11"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
               </div>
             </div>
             <div
@@ -13139,16 +13144,20 @@ Array [
                 className="col-6 mb-3"
               >
                 <label
-                  htmlFor="city"
+                  htmlFor="city1"
                 >
                   City
                 </label>
                 <select
-                  className="custom-select"
+                  className="custom-select form-control"
                   id="city1"
                   onChange={[Function]}
                   value=""
                 >
+                  <option
+                    disabled={true}
+                    value=""
+                  />
                   <option
                     value="PRG"
                   >
@@ -13160,16 +13169,20 @@ Array [
                 className="col-6 mb-3"
               >
                 <label
-                  htmlFor="city"
+                  htmlFor="country1"
                 >
                   Country
                 </label>
                 <select
-                  className="custom-select"
+                  className="custom-select form-control"
                   id="country1"
                   onChange={[Function]}
                   value=""
                 >
+                  <option
+                    disabled={true}
+                    value=""
+                  />
                   <option
                     value="CZ"
                   >
@@ -13208,40 +13221,67 @@ Array [
           className="card-body"
         >
           <fieldset
-            className="form-row"
             name="name"
           >
             <div
-              className="col-6 mb-3"
+              className="form-row"
             >
-              <label
-                htmlFor="forname2"
+              <div
+                className="col-6 mb-3"
               >
-                Forename
-              </label>
-              <input
-                className="form-control"
-                id="forname2"
-                onChange={[Function]}
-                type="text"
-                value=""
-              />
-            </div>
-            <div
-              className="col-6 mb-3"
-            >
-              <label
-                htmlFor="surname2"
+                <div
+                  className="form-group"
+                >
+                  <label
+                    className="mr-3"
+                    htmlFor="forname2"
+                  >
+                    Forename
+                  </label>
+                  <input
+                    className="form-control"
+                    id="forname2"
+                    name="forname2"
+                    onChange={[Function]}
+                    placeholder="Denisa"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
+              </div>
+              <div
+                className="col-6 mb-3"
               >
-                Surname
-              </label>
-              <input
-                className="form-control"
-                id="surname2"
-                onChange={[Function]}
-                type="text"
-                value=""
-              />
+                <div
+                  className="form-group"
+                >
+                  <label
+                    className="mr-3"
+                    htmlFor="surname2"
+                  >
+                    Surname
+                  </label>
+                  <input
+                    className="form-control"
+                    id="surname2"
+                    name="surname2"
+                    onChange={[Function]}
+                    placeholder="Juna"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
+              </div>
             </div>
           </fieldset>
           <fieldset
@@ -13253,53 +13293,86 @@ Array [
               <div
                 className="col-6 mb-3"
               >
-                <label
-                  htmlFor="street2"
+                <div
+                  className="form-group"
                 >
-                  Street
-                </label>
-                <input
-                  className="form-control"
-                  id="street2"
-                  onChange={[Function]}
-                  placeholder="Your Street"
-                  type="text"
-                  value="Street 2"
-                />
+                  <label
+                    className="mr-3"
+                    htmlFor="street2"
+                  >
+                    Street
+                  </label>
+                  <input
+                    className="form-control"
+                    id="street2"
+                    name="street2"
+                    onChange={[Function]}
+                    placeholder="Your Street"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
               </div>
               <div
                 className="col-2 mb-3"
               >
-                <label
-                  htmlFor="streetNo2"
+                <div
+                  className="form-group"
                 >
-                  Street No.
-                </label>
-                <input
-                  className="form-control"
-                  id="streetNo2"
-                  onChange={[Function]}
-                  placeholder="Your Number Street"
-                  type="number"
-                  value="5"
-                />
+                  <label
+                    className="mr-3"
+                    htmlFor="streetNo2"
+                  >
+                    Street No.
+                  </label>
+                  <input
+                    className="form-control"
+                    id="streetNo2"
+                    name="streetNo2"
+                    onChange={[Function]}
+                    placeholder="Your Number Street"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
               </div>
               <div
                 className="col-4 mb-3"
               >
-                <label
-                  htmlFor="postcode2"
+                <div
+                  className="form-group"
                 >
-                  Postcode
-                </label>
-                <input
-                  className="form-control"
-                  id="postcode2"
-                  onChange={[Function]}
-                  placeholder="111 11"
-                  type="text"
-                  value="123 45"
-                />
+                  <label
+                    className="mr-3"
+                    htmlFor="postcode2"
+                  >
+                    Postcode
+                  </label>
+                  <input
+                    className="form-control"
+                    id="postcode2"
+                    name="postcode2"
+                    onChange={[Function]}
+                    placeholder="111 11"
+                    type="text"
+                    value=""
+                  />
+                  <small
+                    className="form-text valid-feedback d-block"
+                  >
+                    
+                  </small>
+                </div>
               </div>
             </div>
             <div
@@ -13309,16 +13382,20 @@ Array [
                 className="col-6 mb-3"
               >
                 <label
-                  htmlFor="city"
+                  htmlFor="city2"
                 >
                   City
                 </label>
                 <select
-                  className="custom-select"
+                  className="custom-select form-control"
                   id="city2"
                   onChange={[Function]}
                   value=""
                 >
+                  <option
+                    disabled={true}
+                    value=""
+                  />
                   <option
                     value="PRG"
                   >
@@ -13330,16 +13407,20 @@ Array [
                 className="col-6 mb-3"
               >
                 <label
-                  htmlFor="city"
+                  htmlFor="country2"
                 >
                   Country
                 </label>
                 <select
-                  className="custom-select"
+                  className="custom-select form-control"
                   id="country2"
                   onChange={[Function]}
                   value=""
                 >
+                  <option
+                    disabled={true}
+                    value=""
+                  />
                   <option
                     value="CZ"
                   >
@@ -13391,7 +13472,7 @@ Array [
   </div>,
   <button
     className="btn btn-primary"
-    disabled={false}
+    disabled={true}
     onClick={[Function]}
     type="button"
   >

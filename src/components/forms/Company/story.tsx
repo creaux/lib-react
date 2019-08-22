@@ -1,19 +1,34 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Company } from './component';
+import { Company, CompanyProps } from "./component";
 
-const props = {
+const props: CompanyProps = {
   company: {
     id: '123456',
     value: 'Neco LTD',
-    label: 'VAT'
+    label: 'Company',
+    placeholder: '',
+    messages: {
+      valid: 'Valid',
+      invalid: 'Invalid'
+    }
   },
   vat: {
     id: '12345',
     value: '123456',
-    label: 'VAT'
+    label: 'VAT',
+    placeholder: '',
+    messages: {
+      valid: 'Valid',
+      invalid: 'INvalid'
+    }
   },
-  onFieldChange: () => () => {}
+  onFieldChange: () => (text) => {
+    console.log(text)
+  },
+  onValidFieldChange: () => (valid) => {
+    console.log(valid);
+  }
 };
 
 storiesOf('Moleculs/forms/Company', module).add('default', () => (

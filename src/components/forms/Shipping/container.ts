@@ -1,10 +1,9 @@
 import { Component, FormEvent, createElement, ReactNode } from 'react';
 import { Shipping as ShippingComponent } from './component';
 import { faTruck } from '@fortawesome/free-solid-svg-icons';
-import { IAbode } from '../../forms/Abode';
-import { ICheckbox } from '../../forms/Checkbox/types';
-import { InputTypeEnum } from '../../forms/Input/types';
-import { IRadioStack } from '../../forms/RadioStack/types';
+import { IAbode } from "../Abode";
+import { ICheckbox } from "../Checkbox/types";
+import { IRadioStack } from "../RadioStack/types";
 
 const { assign } = Object;
 
@@ -46,6 +45,7 @@ export interface ShippingState {
     terms: ICheckbox;
     data: ICheckbox;
   };
+  valid: boolean;
 }
 
 export class Shipping extends Component<ShippingProps, ShippingState>
@@ -79,14 +79,20 @@ export class Shipping extends Component<ShippingProps, ShippingState>
             label: titles.address.forename,
             value: '',
             placeholder: 'Denisa',
-            type: InputTypeEnum.TEXT
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
           surname: {
             id: 'surname1',
             label: titles.address.surname,
             value: '',
             placeholder: 'Juna',
-            type: InputTypeEnum.TEXT
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
 
           company: {
@@ -94,14 +100,20 @@ export class Shipping extends Component<ShippingProps, ShippingState>
             label: titles.address.company,
             value: '',
             placeholder: 'Somethings LTD',
-            type: InputTypeEnum.TEXT
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
           vat: {
             id: 'vat',
             label: 'VAT',
             value: '',
             placeholder: '12345',
-            type: InputTypeEnum.TEXT
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
 
           street: {
@@ -109,21 +121,30 @@ export class Shipping extends Component<ShippingProps, ShippingState>
             label: titles.address.street,
             value: 'Street 1',
             placeholder: 'Your Street',
-            type: InputTypeEnum.TEXT
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
           streetNo: {
             id: 'streetNo1',
             label: titles.address.streetNo,
             value: '5',
             placeholder: 'Your Number Street',
-            type: InputTypeEnum.NUMBER
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
           postcode: {
             id: 'postcode1',
             label: titles.address.postcode,
             value: '123 45',
             placeholder: '111 11',
-            type: InputTypeEnum.TEXT
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
           cities: {
             id: 'city1',
@@ -156,14 +177,20 @@ export class Shipping extends Component<ShippingProps, ShippingState>
             label: titles.address.forename,
             value: '',
             placeholder: 'Denisa',
-            type: InputTypeEnum.TEXT
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
           surname: {
             id: 'surname2',
             label: titles.address.surname,
             value: '',
             placeholder: 'Juna',
-            type: InputTypeEnum.TEXT
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
 
           street: {
@@ -171,21 +198,30 @@ export class Shipping extends Component<ShippingProps, ShippingState>
             label: titles.address.street,
             value: 'Street 2',
             placeholder: 'Your Street',
-            type: InputTypeEnum.TEXT
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
           streetNo: {
             id: 'streetNo2',
             label: titles.address.streetNo,
             value: '5',
             placeholder: 'Your Number Street',
-            type: InputTypeEnum.NUMBER
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
           postcode: {
             id: 'postcode2',
             label: titles.address.postcode,
             value: '123 45',
             placeholder: '111 11',
-            type: InputTypeEnum.TEXT
+            messages: {
+              valid: '',
+              invalid: ''
+            }
           },
           cities: {
             id: 'city2',
@@ -222,7 +258,8 @@ export class Shipping extends Component<ShippingProps, ShippingState>
           id: 'data',
           title: titles.data
         }
-      }
+      },
+      valid: false
     };
   }
 
@@ -256,12 +293,19 @@ export class Shipping extends Component<ShippingProps, ShippingState>
     this.props.onFormSubmit(this.state.data);
   };
 
+  handleValidGroupFieldChange = (group: Group) => (field: keyof IAbode) => (valid: boolean) => {
+    // TODO To know which field is valid which is not
+    this.setState({ valid });
+  };
+
   render(): ReactNode {
     const props = {
       ...this.state.data,
       onGroupChange: this.handleGroupChange,
       onFieldChange: this.handleChange,
-      onSubmit: this.handleSubmit
+      onSubmit: this.handleSubmit,
+      onValidGroupFieldChange: this.handleValidGroupFieldChange,
+      valid: this.state.valid
     };
     return createElement(ShippingComponent, props);
   }

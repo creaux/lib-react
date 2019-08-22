@@ -10,6 +10,7 @@ export interface ButtonProps {
   onClick?: (event: any) => void;
   className?: string;
   type?: Type;
+  disabled?: boolean;
 }
 
 export const Button: FunctionComponent<ButtonProps> = ({
@@ -18,7 +19,8 @@ export const Button: FunctionComponent<ButtonProps> = ({
   size,
   onClick,
   className,
-  type
+  type,
+  disabled
 }) => (
   <Btn
     variant={variant}
@@ -26,6 +28,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
     onClick={onClick}
     className={className}
     type={type}
+    disabled={disabled}
   >
     {children}
   </Btn>

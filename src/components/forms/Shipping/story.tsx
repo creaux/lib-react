@@ -1,26 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Shipping } from './component';
-import { Shipping as ShippingContainer, ShippingState } from './container';
-import { props as radioStackProps } from '../RadioStack/story';
-import {
-  invoicingProps,
-  deliveryProps
-} from '../Abode/story';
-import { props as termsProps } from '../Checkbox/story';
+import { Shipping as ShippingContainer, ShippingProps, ShippingState } from "./container";
 
-const props = {
-  distribution: radioStackProps,
-  invoicing: invoicingProps,
-  delivery: deliveryProps,
-  terms: termsProps,
-  data: termsProps,
-  onFieldChange: () => () => {},
-  onGroupChange: () => () => () => {},
-  onSubmit() {}
-};
-
-const propsContainer = {
+const propsContainer: ShippingProps = {
   titles: {
     distribution: {
       home: 'Home Delivery',
@@ -46,5 +28,4 @@ const propsContainer = {
 };
 
 storiesOf('Organisms/forms/Shipping', module)
-  .add('default', () => <Shipping {...props} />)
-  .add('state-full', () => <ShippingContainer {...propsContainer} />);
+  .add('default', () => <ShippingContainer {...propsContainer} />);

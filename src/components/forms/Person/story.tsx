@@ -1,22 +1,32 @@
-import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { Person } from './component';
-import { FormEvent } from 'react';
-import { IPerson } from './types';
+import React, { FormEvent, useState } from "react";
+import { storiesOf } from "@storybook/react";
+import { Person, PersonProps } from "./component";
+import { IPerson } from "./types";
 import { IInput } from "../Input/types";
 
-export const props = {
+export const props: PersonProps = {
   forname: {
     value: 'Karel',
     id: 'forname',
-    label: 'Forname'
+    label: 'Forname',
+    placeholder: '',
+    messages: {
+      valid: '',
+      invalid: ''
+    }
   },
   surname: {
     value: 'Vomacka',
     id: 'surname',
-    label: 'Surname'
+    label: 'Surname',
+    placeholder: '',
+    messages: {
+      valid: '',
+      invalid: ''
+    }
   },
-  onFieldChange: () => () => {}
+  onFieldChange: () => () => {},
+  onFieldValidChange: () => () => {}
 };
 
 const PersonContainer = () => {
@@ -24,12 +34,22 @@ const PersonContainer = () => {
     forname: {
       value: '',
       id: 'forname',
-      label: 'Forname'
+      label: 'Forname',
+      placeholder: '',
+      messages: {
+        valid: '',
+        invalid: ''
+      }
     },
     surname: {
       value: '',
       id: 'surname',
-      label: 'Surname'
+      label: 'Surname',
+      placeholder: '',
+      messages: {
+        valid: '',
+        invalid: ''
+      }
     }
   });
 
@@ -43,7 +63,7 @@ const PersonContainer = () => {
     setState({ ...state, [id]: value });
   };
 
-  return <Person {...state} onFieldChange={handleFieldChange} />;
+  return <Person {...state} onFieldChange={handleFieldChange} onFieldValidChange={() => () => {}} />;
 };
 
 storiesOf('Moleculs/forms/Person', module)

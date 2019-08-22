@@ -4,6 +4,7 @@ import { ISelect, IOption } from './types';
 
 export interface SelectProps extends ISelect {
   onChange: OnChange;
+  placeholder: string;
 }
 
 export const Select: FunctionComponent<SelectProps> = ({
@@ -11,11 +12,13 @@ export const Select: FunctionComponent<SelectProps> = ({
   id,
   options,
   value,
-  onChange
+  onChange,
+  placeholder
 }) => (
   <>
-    <label htmlFor="city">{label}</label>
-    <select value={value} className="custom-select" id={id} onChange={onChange}>
+    <label htmlFor={id}>{label}</label>
+    <select value={value} className="custom-select form-control" id={id} onChange={onChange}>
+      <option value="" disabled>{placeholder}</option>
       {options.map((option: IOption) => (
         <option key={option.id} value={option.value}>
           {option.title}

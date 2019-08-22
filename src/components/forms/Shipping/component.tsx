@@ -5,13 +5,15 @@ import { Abode, IAbode } from "../Abode";
 import { Accordion, Card } from "react-bootstrap";
 import { Checkbox } from "../../forms/Checkbox";
 import { Button, Variants } from "../Button";
-import { OnFieldChange, OnGroupChange } from "../../types/form";
+import { OnFieldChange, OnGroupChange, OnValidGroupFieldChange } from "../../types/form";
 import { IShippingFields, IShippingGroups } from "./types";
 
 interface ShippingProps extends IShippingGroups, IShippingFields {
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
   onFieldChange: OnFieldChange<keyof IShippingFields>;
   onGroupChange: OnGroupChange<keyof IShippingGroups, keyof IAbode>;
+  onValidGroupFieldChange: OnValidGroupFieldChange<keyof IShippingGroups, keyof IAbode>;
+  valid: boolean;
 }
 
 export const Shipping: FunctionComponent<ShippingProps> = ({
@@ -22,7 +24,9 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
   data,
   onSubmit: handleSubmit,
   onGroupChange: handleGroupChange,
-  onFieldChange: handleFieldChange
+  onFieldChange: handleFieldChange,
+  onValidGroupFieldChange: handleValidGroupFieldChange,
+  valid
 }) => (
   <>
     <RadioStack
@@ -41,6 +45,7 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
             <Abode
               {...invoicing}
               onFieldChange={handleGroupChange("invoicing")}
+              onValidFieldChange={handleValidGroupFieldChange('invoicing')}
             />
           </Card.Body>
         </Accordion.Collapse>
@@ -59,6 +64,7 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
             <Abode
               {...delivery}
               onFieldChange={handleGroupChange("delivery")}
+              onValidFieldChange={handleValidGroupFieldChange('delivery')}
             />
           </Card.Body>
         </Accordion.Collapse>
@@ -66,6 +72,6 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
     </Accordion>
     <Checkbox {...terms} onChange={handleFieldChange("terms")} />
     <Checkbox {...data} onChange={handleFieldChange("data")} />
-    <Button onClick={handleSubmit}>Next</Button>
+    <Button onClick={handleSubmit} disabled={!valid}>Next</Button>
   </>
 );
