@@ -9760,7 +9760,7 @@ exports[`Storyshots Atoms/forms/Input with Form Context 1`] = `
       Postcode
     </label>
     <input
-      className="border-0"
+      className="border-0 w-100"
       id="123456"
       name="123456"
       onChange={[Function]}
@@ -12361,7 +12361,7 @@ exports[`Storyshots Moleculs/forms/EmailCrawler default 1`] = `
     className="form-control"
   >
     <input
-      className="border-0"
+      className="border-0 w-100"
       id="email"
       name="email"
       onChange={[Function]}
@@ -13479,6 +13479,56 @@ Array [
     Next
   </button>,
 ]
+`;
+
+exports[`Storyshots Templates/EmailCrawlingMicrosite default 1`] = `
+<div
+  className="image-background vh-100 vw-100 d-flex align-items-center justify-content-center"
+  style={
+    Object {
+      "backgroundImage": "url(http://lorempixel.com/640/480/fashion)",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "width": "630px",
+      }
+    }
+  >
+    <form
+      className="align-items-stretch form-inline flex-nowrap"
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100"
+          id="email"
+          name="email"
+          onChange={[Function]}
+          placeholder="Please provide an email address to get latest news"
+          type="email"
+          value=""
+        />
+        <small
+          className="form-text valid-feedback d-block"
+        >
+          
+        </small>
+      </div>
+      <button
+        className="btn btn-primary"
+        disabled={true}
+        type="submit"
+      >
+        Confirm
+      </button>
+    </form>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Templates/ProductDetail default 1`] = `

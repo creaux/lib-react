@@ -1,16 +1,24 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactNode } from "react";
 import { ImageVariants } from './types';
+import cx from 'classnames';
 
-export interface ImageProps {
-  variant?: ImageVariants;
+export interface ImageElement {
   src: string;
   alt?: string;
+}
+
+export interface ImageProps extends ImageElement{
+  variant?: ImageVariants;
+  className?: string;
+  children?: ReactNode;
 }
 
 export const Image: FunctionComponent<ImageProps> = ({
   variant = ImageVariants.SOLID,
   src,
-  alt
+  alt,
+  className,
+  children
 }) => {
   const attrs =
     variant === ImageVariants.BACKGROUND
@@ -18,8 +26,9 @@ export const Image: FunctionComponent<ImageProps> = ({
       : null;
   const isImg = variant === ImageVariants.SOLID;
   return (
-    <div {...attrs} className="image-background">
+    <div {...attrs} className={cx("image-background", className)}>
       {isImg ? <img src={src} alt={alt} /> : null}
+      {children}
     </div>
   );
 };

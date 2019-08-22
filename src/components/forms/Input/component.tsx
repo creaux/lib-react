@@ -32,7 +32,7 @@ export const Input: FunctionComponent<InputProps> = props => {
 
   const inputClasses = cx({
     'form-control': FormType.NORMAL === formType || FormType.INLINE === formType,
-    'border-0': FormType.ONPLACE === formType,
+    'border-0 w-100': FormType.ONPLACE === formType,
   });
 
   return (
