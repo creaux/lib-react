@@ -95,8 +95,7 @@
     "sinon": "^7.1.1",
     "sinon-chai": "^3.3.0",
     "storybook-readme": "^5.0.2",
-    "surge": "^0.21.3",
-    "typescript": "3.4.5"
+    "surge": "^0.21.3"
   },
   "engines": {
     "node": "10.15.3",
@@ -116,7 +115,7 @@
     }
   },
   "directories": {
-    "lib": "lib"
+    "lib": "build"
   },
   "repository": {
     "type": "git",
