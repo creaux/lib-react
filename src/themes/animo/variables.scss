@@ -3,8 +3,8 @@
 // Bootstrap override
 
 %scope {
-  @import "~bootstrap/scss/functions";
-  @import "~bootstrap/scss/variables";
+  @import "../../../node_modules/bootstrap/scss/functions";
+  @import "../../../node_modules/bootstrap/scss/variables";
 
   $enable-responsive-font-sizes: true !global;
 

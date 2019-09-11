@@ -5,7 +5,7 @@
   "author": "Petr Juna <petr.juna@pyxis.media>",
   "homepage": "http://pyxis.media",
   "license": "MIT",
-  "main": "index.ts",
+  "main": "build/index.js",
   "files": [
     "index.ts",
     "src/**/*"
@@ -22,6 +22,8 @@
     "eject": "react-scripts eject",
     "release": "semantic-release",
     "commit": "commit",
+    "lib": "rm -rf build && npm run build:css && NODE_ENV=production babel --extensions \".ts,.tsx\" src --out-dir build --ignore \"src/**/story.tsx,src/**/*.spec.ts,src/**/*.spec.tsx,__snapshots__,src/**/*.d.ts\"",
+    "lib:css": "node-sass-chokidar src/themes/animo/theme.scss build/themes/animo.css",
     "build": "npm run storybook:build",
     "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media"
   },
@@ -47,6 +49,7 @@
     "svg-inline-react": "^3.1.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.0",
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "@commitlint/prompt-cli": "^8.0.0",
@@ -83,6 +86,7 @@
     "enzyme-adapter-react-16": "^1.10.0",
     "husky": "2.7.0",
     "lint-staged": "8.2.1",
+    "node-sass-chokidar": "^1.3.5",
     "prettier": "1.18.2",
     "react-scripts": "3.0.1",
     "react-test-renderer": "^16.8.3",
@@ -105,12 +109,12 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "CI=true npm test && npm run build",
+      "pre-push": "CI=true npm test && npm run build && npm run lib",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "directories": {
-    "lib": "src"
+    "lib": "lib"
   },
   "repository": {
     "type": "git",
