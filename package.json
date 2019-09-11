@@ -22,7 +22,7 @@
     "eject": "react-scripts eject",
     "release": "semantic-release",
     "commit": "commit",
-    "lib": "rm -rf build && npm run build:css && NODE_ENV=production babel --extensions \".ts,.tsx\" src --out-dir build --ignore \"src/**/story.tsx,src/**/*.spec.ts,src/**/*.spec.tsx,__snapshots__,src/**/*.d.ts\"",
+    "lib": "rm -rf build && npm run lib:css && NODE_ENV=production babel --extensions \".ts,.tsx\" src --out-dir build --ignore \"src/**/story.tsx,src/**/*.spec.ts,src/**/*.spec.tsx,__snapshots__,src/**/*.d.ts\"",
     "lib:css": "node-sass-chokidar src/themes/animo/theme.scss build/themes/animo.css",
     "build": "npm run storybook:build",
     "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media"
