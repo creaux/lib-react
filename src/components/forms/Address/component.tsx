@@ -55,6 +55,8 @@ export const Address: FunctionComponent<AddressProps> = ({
           id={cities.id}
           {...cities}
           onChange={handleFieldChange('cities')}
+          onValidChange={() => {}}
+          placeholder=""
         />
       </div>
       <div className="col-6 mb-3">
@@ -63,6 +65,8 @@ export const Address: FunctionComponent<AddressProps> = ({
           id={countries.id}
           {...countries}
           onChange={handleFieldChange('countries')}
+          onValidChange={() => {}}
+          placeholder=""
         />
       </div>
     </div>

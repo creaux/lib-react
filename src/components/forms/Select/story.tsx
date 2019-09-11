@@ -18,6 +18,7 @@ const props: SelectContainerProps = {
       title: 'Liberec'
     }
   ],
+  onValidChange() {},
   onChange() {},
   placeholder: 'Please choose an option...'
 };
