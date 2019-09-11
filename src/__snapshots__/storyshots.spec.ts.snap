@@ -162,12 +162,12 @@ exports[`Storyshots Atoms/Cycler default 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -698,12 +698,12 @@ exports[`Storyshots Atoms/Sidescription default 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -1006,11 +1006,7 @@ exports[`Storyshots Atoms/Svg default 1`] = `
     />
   </div>
   <div
-    style={
-      Object {
-        "margin": "32px 0",
-      }
-    }
+    style={Object {}}
   >
     <div>
       <div>
@@ -1068,12 +1064,12 @@ exports[`Storyshots Atoms/Svg default 1`] = `
               "background": "white",
               "bottom": 0,
               "display": "none",
+              "height": "100vh",
               "left": 0,
               "overflow": "auto",
-              "padding": "0 40px",
               "position": "fixed",
-              "right": 0,
               "top": 0,
+              "width": "100vw",
               "zIndex": 99999,
             }
           }
@@ -1737,12 +1733,12 @@ exports[`Storyshots Atoms/forms/Button Documentation 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -4364,12 +4360,12 @@ exports[`Storyshots Atoms/forms/Button danger 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -4679,12 +4675,12 @@ exports[`Storyshots Atoms/forms/Button dark 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -4994,12 +4990,12 @@ exports[`Storyshots Atoms/forms/Button info 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -5309,12 +5305,12 @@ exports[`Storyshots Atoms/forms/Button light 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -5624,12 +5620,12 @@ exports[`Storyshots Atoms/forms/Button link 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -5939,12 +5935,12 @@ exports[`Storyshots Atoms/forms/Button outline-danger 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -6254,12 +6250,12 @@ exports[`Storyshots Atoms/forms/Button outline-dark 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -6569,12 +6565,12 @@ exports[`Storyshots Atoms/forms/Button outline-info 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -6884,12 +6880,12 @@ exports[`Storyshots Atoms/forms/Button outline-light 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -7199,12 +7195,12 @@ exports[`Storyshots Atoms/forms/Button outline-primary 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -7514,12 +7510,12 @@ exports[`Storyshots Atoms/forms/Button outline-secondary 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -7829,12 +7825,12 @@ exports[`Storyshots Atoms/forms/Button outline-success 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -8144,12 +8140,12 @@ exports[`Storyshots Atoms/forms/Button outline-warning 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -8459,12 +8455,12 @@ exports[`Storyshots Atoms/forms/Button primary 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -8774,12 +8770,12 @@ exports[`Storyshots Atoms/forms/Button secondary 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -9089,12 +9085,12 @@ exports[`Storyshots Atoms/forms/Button success 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -9404,12 +9400,12 @@ exports[`Storyshots Atoms/forms/Button warning 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -10062,12 +10058,12 @@ exports[`Storyshots Moleculs/Add Documentation 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -10626,12 +10622,12 @@ exports[`Storyshots Moleculs/Add default 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -10916,6 +10912,8 @@ exports[`Storyshots Moleculs/Carousel Documentation 1`] = `
     onKeyDown={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
   >
     <ol
       className="carousel-indicators"
@@ -11032,6 +11030,8 @@ exports[`Storyshots Moleculs/Carousel Documentation 1`] = `
     onKeyDown={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
   >
     <ol
       className="carousel-indicators"
@@ -11143,6 +11143,8 @@ exports[`Storyshots Moleculs/Carousel multi 1`] = `
   onKeyDown={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
+  onTouchEnd={[Function]}
+  onTouchStart={[Function]}
 >
   <ol
     className="carousel-indicators"
@@ -11253,6 +11255,8 @@ exports[`Storyshots Moleculs/Carousel simple 1`] = `
   onKeyDown={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
+  onTouchEnd={[Function]}
+  onTouchStart={[Function]}
 >
   <ol
     className="carousel-indicators"
@@ -11510,12 +11514,12 @@ exports[`Storyshots Moleculs/Raiser default 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
@@ -12873,12 +12877,12 @@ exports[`Storyshots Organisms/Blog/Detail default 1`] = `
         "background": "white",
         "bottom": 0,
         "display": "none",
+        "height": "100vh",
         "left": 0,
         "overflow": "auto",
-        "padding": "0 40px",
         "position": "fixed",
-        "right": 0,
         "top": 0,
+        "width": "100vw",
         "zIndex": 99999,
       }
     }
