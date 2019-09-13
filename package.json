@@ -7,8 +7,7 @@
   "license": "MIT",
   "main": "build/index.js",
   "files": [
-    "index.ts",
-    "src/**/*"
+    "build/**/*"
   ],
   "scripts": {
     "storybook": "start-storybook -p 9001 -h 0.0.0.0 -c .storybook",
@@ -113,9 +112,6 @@
       "pre-push": "CI=true npm test && npm run build && npm run lib",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "directories": {
-    "lib": "build"
   },
   "repository": {
     "type": "git",
