@@ -1,1 +1,1 @@
-export { Blog } from "./component";
+export { Blog } from './component';
