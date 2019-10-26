@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const Detail = () => (
   <div className="container">
@@ -8,7 +8,7 @@ export const Detail = () => (
 
         <p className="lead">
           by
-          <a href="#">Start Bootstrap</a>
+          <a href="/">Start Bootstrap</a>
         </p>
 
         <hr />
@@ -173,26 +173,26 @@ export const Detail = () => (
               <div className="col-lg-6">
                 <ul className="list-unstyled mb-0">
                   <li>
-                    <a href="#">Web Design</a>
+                    <a href="/">Web Design</a>
                   </li>
                   <li>
-                    <a href="#">HTML</a>
+                    <a href="/">HTML</a>
                   </li>
                   <li>
-                    <a href="#">Freebies</a>
+                    <a href="/">Freebies</a>
                   </li>
                 </ul>
               </div>
               <div className="col-lg-6">
                 <ul className="list-unstyled mb-0">
                   <li>
-                    <a href="#">JavaScript</a>
+                    <a href="/">JavaScript</a>
                   </li>
                   <li>
-                    <a href="#">CSS</a>
+                    <a href="/">CSS</a>
                   </li>
                   <li>
-                    <a href="#">Tutorials</a>
+                    <a href="/">Tutorials</a>
                   </li>
                 </ul>
               </div>
