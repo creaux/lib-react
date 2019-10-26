@@ -1,4 +1,3 @@
-
 // For overriding: https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
 // Bootstrap override
 
@@ -14,11 +13,13 @@
 
   $enable-rounded: false !global;
 
-  $font-family-sans-serif: 'Sofia Pro' !global;
+  $font-family-sans-serif: "Sofia Pro" !global;
 
   // 1rem is default value of bootstrap $spacer
   // which is not available here
   $spacers: (
-    8: (1rem * 8)
+    8: (
+      1rem * 8
+    )
   ) !global;
 }

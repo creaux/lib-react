@@ -1,8 +1,8 @@
 // Theming
-@import './fonts.scss';
-@import './variables.scss';
-@import '../../../node_modules/bootstrap/scss/bootstrap';
-@import 'form';
+@import "./fonts.scss";
+@import "./variables.scss";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "form";
 // Components
 @import "../../components/Cycler/cycler";
 @import "../../components/Image/styles";
