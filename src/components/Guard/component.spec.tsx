@@ -20,6 +20,15 @@ const Another = () => <div />;
 describe('Guard', () => {
   let component: ShallowWrapper;
 
+  it('should not render anything when children is not present', () => {
+    component = shallow(
+      <Guard Component={Component} />
+    );
+    console.log(component.debug());
+    expect(component).to.be.blank();
+  });
+
+
   it('should render only filtered component', () => {
     component = shallow(
       <Guard Component={Component}>

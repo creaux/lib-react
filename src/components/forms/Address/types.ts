@@ -1,11 +1,10 @@
-import { IInputData } from '../Input/types';
-import { ISelect } from '../Select/types';
-import { Messages } from '../../../validators/types';
+import { IInputData } from "../Input/types";
+import { ISelect } from "../Select/types";
 
 export interface IAddress {
-  street: IInputData & { messages: Messages };
-  streetNo: IInputData & { messages: Messages };
-  postcode: IInputData & { messages: Messages };
-  cities: ISelect;
-  countries: ISelect;
+  street: IInputData;
+  streetNo: IInputData;
+  postcode: IInputData;
+  cities: Omit<ISelect, "valid">;
+  countries: Omit<ISelect, "valid">;
 }

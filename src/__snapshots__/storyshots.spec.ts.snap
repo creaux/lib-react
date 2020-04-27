@@ -239,6 +239,37 @@ exports[`Storyshots Atoms/Svg default 1`] = `
 </a>
 `;
 
+exports[`Storyshots Atoms/Viewport default 1`] = `
+<div
+  className="viewport"
+  style={
+    Object {
+      "--Viewport__xPosition-desktop": "center",
+      "--Viewport__xPosition-landscape": "center",
+      "--Viewport__xPosition-portrait": "right",
+      "backgroundImage": "url(https://picsum.photos/id/100/2500/1656)",
+    }
+  }
+>
+  <div
+    className="hero"
+    style={
+      Object {
+        "--hero__x-position": 24,
+        "--hero__y-position": 24,
+      }
+    }
+  >
+    <h1>
+      Title
+    </h1>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Atoms/forms/Button Documentation 1`] = `
 <div
   style={
@@ -1613,6 +1644,12 @@ exports[`Storyshots Moleculs/Carousel simple 1`] = `
 </div>
 `;
 
+exports[`Storyshots Moleculs/Navigation buttons 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light bg-transparent undefined"
+/>
+`;
+
 exports[`Storyshots Moleculs/Navigation default 1`] = `
 <nav
   className="navbar navbar-expand-lg navbar-light bg-transparent undefined"
@@ -1661,6 +1698,38 @@ exports[`Storyshots Moleculs/Navigation default 1`] = `
     </a>
   </a>
 </nav>
+`;
+
+exports[`Storyshots Moleculs/ProductDescription checkout 1`] = `
+<div
+  className="d-flex align-items-center justify-content-center h-100"
+>
+  <div
+    className="d-flex flex-column w-100 ml-sm-8 mr-sm-8"
+  >
+    <h2>
+      Lorem
+    </h2>
+    <p
+      className="text-uppercase"
+    >
+      Dolor
+    </p>
+    <div
+      className="d-flex justify-content-between flex-row flex-sm-column justify-content-sm-center"
+    >
+      <div
+        className="align-self-center align-self-sm-start mb-sm-3"
+      >
+        <span
+          className="h2"
+        >
+          $300
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Moleculs/ProductDescription default 1`] = `
@@ -2393,6 +2462,195 @@ exports[`Storyshots Moleculs/forms/Company default 1`] = `
     </div>
   </div>
 </fieldset>
+`;
+
+exports[`Storyshots Moleculs/forms/Delivery default 1`] = `
+Array [
+  <fieldset
+    name="name"
+  >
+    <div
+      className="form-row"
+    >
+      <div
+        className="col-6 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            id=""
+            name=""
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-6 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            id=""
+            name=""
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
+      </div>
+    </div>
+  </fieldset>,
+  <fieldset
+    name="address"
+  >
+    <div
+      className="form-row"
+    >
+      <div
+        className="col-6 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            id=""
+            name=""
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-2 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            id=""
+            name=""
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-4 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            id=""
+            name=""
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text valid-feedback d-block"
+          >
+            
+          </small>
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-row"
+    >
+      <div
+        className="col-6 mb-3"
+      >
+        <label
+          htmlFor=""
+        >
+          
+        </label>
+        <select
+          className="custom-select form-control"
+          id=""
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            
+          </option>
+          <option
+            value=""
+          >
+            
+          </option>
+        </select>
+      </div>
+      <div
+        className="col-6 mb-3"
+      >
+        <label
+          htmlFor=""
+        >
+          
+        </label>
+        <select
+          className="custom-select form-control"
+          id=""
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            
+          </option>
+          <option
+            value=""
+          >
+            
+          </option>
+        </select>
+      </div>
+    </div>
+  </fieldset>,
+]
 `;
 
 exports[`Storyshots Moleculs/forms/EmailCrawler default 1`] = `
@@ -3175,6 +3433,123 @@ exports[`Storyshots Organisms/Order empty 1`] = `
 </div>
 `;
 
+exports[`Storyshots Organisms/Pad default 1`] = `
+<div>
+  <div
+    className="viewport"
+    style={
+      Object {
+        "--Viewport__xPosition-desktop": "center",
+        "--Viewport__xPosition-landscape": "center",
+        "--Viewport__xPosition-portrait": "right",
+        "backgroundImage": "url(https://picsum.photos/id/100/2500/1656)",
+      }
+    }
+  >
+    <div
+      className="hero"
+      style={
+        Object {
+          "--hero__x-position": 24,
+          "--hero__y-position": 24,
+        }
+      }
+    >
+      <h1>
+        Title
+      </h1>
+      <p>
+        Lorem ipsum
+      </p>
+    </div>
+  </div>
+  <div
+    className="viewport"
+    style={
+      Object {
+        "--Viewport__xPosition-desktop": "center",
+        "--Viewport__xPosition-landscape": "center",
+        "--Viewport__xPosition-portrait": "right",
+        "backgroundImage": "url(https://picsum.photos/id/100/2500/1656)",
+      }
+    }
+  >
+    <div
+      className="hero"
+      style={
+        Object {
+          "--hero__x-position": 24,
+          "--hero__y-position": 24,
+        }
+      }
+    >
+      <h1>
+        Title
+      </h1>
+      <p>
+        Lorem ipsum
+      </p>
+    </div>
+  </div>
+  <div
+    className="viewport"
+    style={
+      Object {
+        "--Viewport__xPosition-desktop": "center",
+        "--Viewport__xPosition-landscape": "center",
+        "--Viewport__xPosition-portrait": "right",
+        "backgroundImage": "url(https://picsum.photos/id/100/2500/1656)",
+      }
+    }
+  >
+    <div
+      className="hero"
+      style={
+        Object {
+          "--hero__x-position": 24,
+          "--hero__y-position": 24,
+        }
+      }
+    >
+      <h1>
+        Title
+      </h1>
+      <p>
+        Lorem ipsum
+      </p>
+    </div>
+  </div>
+  <nav
+    className="navbar navbar-expand-lg navbar-light bg-transparent undefined"
+  >
+    <ul
+      className="navbar-nav mr-auto"
+    >
+      <li
+        className="nav-item active"
+      >
+        <a
+          className="nav-link"
+          href="#lorem"
+        >
+          Lorem
+        </a>
+      </li>
+      <li
+        className="nav-item active"
+      >
+        <a
+          className="nav-link"
+          href="#ipsum"
+        >
+          ipsum
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
 exports[`Storyshots Organisms/forms/Shipping default 1`] = `
 Array [
   <div
@@ -3840,6 +4215,8 @@ Array [
 ]
 `;
 
+exports[`Storyshots Template/OneCheckout default 1`] = `null`;
+
 exports[`Storyshots Templates/EmailCrawlingMicrosite default 1`] = `
 <div
   className="image-background vh-100 vw-100 d-flex align-items-center justify-content-center"
@@ -3886,6 +4263,29 @@ exports[`Storyshots Templates/EmailCrawlingMicrosite default 1`] = `
         Confirm
       </button>
     </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates/OneCheckout default 1`] = `
+<div
+  className="d-flex align-items-center justify-content-center h-100"
+>
+  <div
+    className="d-flex flex-column w-100 ml-sm-8 mr-sm-8"
+  >
+    <h3 />
+    <div
+      className="d-flex justify-content-between flex-row flex-sm-column justify-content-sm-center"
+    >
+      <div
+        className="align-self-center align-self-sm-start mb-sm-3"
+      >
+        <span
+          className="h1"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;

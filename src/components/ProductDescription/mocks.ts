@@ -1,11 +1,9 @@
-import { ProductDescriptionProps } from './component';
+import {
+  ProductDescriptionProps,
+  ProductDescriptionPropsBuilder
+} from "./component";
 
-export const props: ProductDescriptionProps = {
-  title: 'Lorem',
-  category: 'Dolor',
-  description:
-    'Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-  price: '$300',
-  action: 'Add to basket',
-  onAdd: () => {}
-};
+export const props: ProductDescriptionProps = new ProductDescriptionPropsBuilder()
+  .withPrice("300")
+  .withTitle("Some title")
+  .build();

@@ -1,6 +1,9 @@
+// Custom variables
+$font-family-primary: "Open Sans", sans-serif;
+$font-family-secondary: 'Catamaran', sans-serif;
+
 // For overriding: https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
 // Bootstrap override
-
 %scope {
   @import "../../../node_modules/bootstrap/scss/functions";
   @import "../../../node_modules/bootstrap/scss/variables";
@@ -13,7 +16,9 @@
 
   $enable-rounded: false !global;
 
-  $font-family-sans-serif: "Sofia Pro" !global;
+  $font-family-sans-serif: $font-family-primary !global;
+  $headings-font-family: $font-family-secondary !global;
+  $headings-font-weight: 600 !global;
 
   // 1rem is default value of bootstrap $spacer
   // which is not available here

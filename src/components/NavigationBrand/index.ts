@@ -1,0 +1,1 @@
+export { NavigationBrand } from "./component";

@@ -1,4 +1,4 @@
-import { Validation } from '../components/forms/Input/hoc/validator';
+import { Validation } from "./validator";
 
 export const createValidator = (regex: RegExp) => (
   message: string

@@ -1,15 +1,17 @@
-import React, { createElement, FormEvent } from 'react';
-import { Input } from './component';
-import { IInputDataTyped } from './types';
-import { OnChange } from '../../types/form';
-import { FormContext } from '../Form/component';
-import { OnValidChange } from './types';
-import { Validation, ValidatorModel } from './hoc/validator';
+import React, { createElement, FormEvent } from "react";
+import { Input } from "./component";
+import { IInputDataTyped } from "./types";
+import { OnChange } from "../../types/form";
+import { FormTypeContext } from "../Form/component";
+import { OnValidChange } from "./types";
+import { Validation, ValidatorModel } from "../../../validators/validator";
 
 export interface InputContainerProps extends IInputDataTyped {
   onChange: OnChange;
   validator: ValidatorModel;
   onValidChange: OnValidChange;
+  placeholder: string;
+  label?: string;
 }
 
 export interface InputContainerState {
@@ -22,14 +24,14 @@ export class InputContainer extends React.Component<
   InputContainerProps,
   InputContainerState
 > {
-  static readonly contextType = FormContext;
+  static readonly contextType = FormTypeContext;
 
   constructor(props: InputContainerProps) {
     super(props);
 
     this.state = {
-      value: '',
-      message: '',
+      value: "",
+      message: "",
       valid: true
     };
   }

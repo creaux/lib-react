@@ -1,0 +1,17 @@
+$portrait-coordinates: var(--Viewport__xPosition-portrait);
+$landscape-coordinates: var(--Viewport__xPosition-landscape);
+
+.viewport {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+
+  @include media-breakpoint-down(sm) {
+    background-position-x: $portrait-coordinates;
+  }
+
+  @include media-breakpoint-up(sm) {
+    background-position-x: $landscape-coordinates;
+  }
+}

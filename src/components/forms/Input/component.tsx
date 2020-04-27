@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 import { OnChange } from '../../types/form';
 import { IInputDataTyped, InputTypeEnum } from './types';
-import { FormType } from '../Form/component';
+import { FormType, FormTypeContext } from '../Form/component';
 import cx from 'classnames';
 
 export interface InputProps extends IInputDataTyped {
@@ -9,6 +9,8 @@ export interface InputProps extends IInputDataTyped {
   message: string;
   valid: boolean;
   formType: FormType;
+  placeholder: string;
+  label: string;
 }
 
 export const Input: FunctionComponent<InputProps> = props => {
@@ -21,9 +23,10 @@ export const Input: FunctionComponent<InputProps> = props => {
     type = InputTypeEnum.TEXT,
     onChange: handleChange,
     message,
-    valid,
-    formType
+    valid
   } = props;
+
+  const formType = useContext(FormTypeContext);
 
   const wrapperClasses = cx({
     'form-group': FormType.NORMAL === formType,

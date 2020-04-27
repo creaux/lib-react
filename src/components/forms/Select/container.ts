@@ -1,28 +1,20 @@
-import React, { createElement, FormEvent } from 'react';
-import { Select, SelectProps } from './component';
-import { OnValidChange } from '../Input/types';
+import { createElement, FormEvent } from "react";
+import { Select } from "./component";
+import { ISelect } from "./types";
+import {
+  AbstractFieldContainer,
+  AbstractFieldContainerProps
+} from "../AbstractField/component";
 
-export interface SelectContainerProps extends SelectProps {
-  onValidChange: OnValidChange;
+export interface SelectContainerProps
+  extends AbstractFieldContainerProps,
+    ISelect {
+  className?: string;
 }
 
-export interface SelectContainerState {
-  value?: string | number;
-  valid: boolean;
-}
-
-export class SelectContainer extends React.Component<
-  SelectContainerProps,
-  SelectContainerState
+export class SelectContainer extends AbstractFieldContainer<
+  SelectContainerProps
 > {
-  constructor(props: SelectContainerProps) {
-    super(props);
-    this.state = {
-      value: '',
-      valid: false
-    };
-  }
-
   handleChange = (e: FormEvent<HTMLInputElement | HTMLSelectElement>) => {
     let data = { ...this.props, value: e.currentTarget.value };
     this.setState({ value: data.value, valid: true });
@@ -31,15 +23,20 @@ export class SelectContainer extends React.Component<
   };
 
   render() {
-    const { id, label, options, placeholder } = this.props;
-    const { value } = this.state;
+    const { id, label, placeholder, options, className } = this.props;
+    const { message, valid, value } = this.state;
     const props = {
       id,
       label,
       value,
+      placeholder,
       options,
+      message,
+      valid,
       onChange: this.handleChange,
-      placeholder
+      // FIXME WTF?
+      formType: this.context,
+      className
     };
     return createElement(Select, props);
   }

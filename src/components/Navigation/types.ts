@@ -1,9 +1,3 @@
-import React from 'react';
-
-export interface Item {
-  title: string;
-  link: string;
-  id?: string;
-}
+import React from "react";
 
 export abstract class NavigationAbstract extends React.Component {}

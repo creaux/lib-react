@@ -6,7 +6,7 @@ export interface IOption {
 
 export interface ISelect {
   id: string;
-  label: string;
   value: string | number | undefined;
   options: IOption[];
+  valid: boolean;
 }

@@ -1,10 +1,14 @@
 import React, { FunctionComponent } from 'react';
 import { OnChange } from '../../types/form';
 import { ISelect, IOption } from './types';
+import { Conditional } from '../../Conditional/component';
 
 export interface SelectProps extends ISelect {
   onChange: OnChange;
   placeholder: string;
+  label?: string;
+  message: string;
+  className?: string;
 }
 
 export const Select: FunctionComponent<SelectProps> = ({
@@ -13,10 +17,13 @@ export const Select: FunctionComponent<SelectProps> = ({
   options,
   value,
   onChange,
-  placeholder
+  placeholder,
+  valid,
+  message,
+  className,
 }) => (
-  <>
-    <label htmlFor={id}>{label}</label>
+  <Conditional condition={!!className} when={children => <div className={className}>{children}</div>}>
+    {label ? <label htmlFor={id}>{label}</label> : null}
     <select
       value={value}
       className="custom-select form-control"
@@ -32,5 +39,11 @@ export const Select: FunctionComponent<SelectProps> = ({
         </option>
       ))}
     </select>
-  </>
+    {!valid ? (
+      <small className="form-text invalid-feedback d-block">{message}</small>
+    ) : null}
+    {valid ? (
+      <small className="form-text valid-feedback d-block">{message}</small>
+    ) : null}
+  </Conditional>
 );

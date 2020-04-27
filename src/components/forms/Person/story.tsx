@@ -3,26 +3,23 @@ import { storiesOf } from '@storybook/react';
 import { Person, PersonProps } from './component';
 import { IPerson } from './types';
 import { IInput } from '../Input/types';
+import { Form, FormType } from '../Form';
 
 export const props: PersonProps = {
   forname: {
     value: 'Karel',
     id: 'forname',
-    label: 'Forname',
-    placeholder: '',
     messages: {
-      valid: '',
-      invalid: ''
+      valid: '32432',
+      invalid: 'sdfsd'
     }
   },
   surname: {
     value: 'Vomacka',
     id: 'surname',
-    label: 'Surname',
-    placeholder: '',
     messages: {
-      valid: '',
-      invalid: ''
+      valid: 'sdfsf',
+      invalid: 'sdfdf'
     }
   },
   onFieldChange: () => () => {},
@@ -34,21 +31,17 @@ const PersonContainer = () => {
     forname: {
       value: '',
       id: 'forname',
-      label: 'Forname',
-      placeholder: '',
       messages: {
-        valid: '',
-        invalid: ''
+        valid: 'abcs',
+        invalid: 'asdas'
       }
     },
     surname: {
       value: '',
       id: 'surname',
-      label: 'Surname',
-      placeholder: '',
       messages: {
-        valid: '',
-        invalid: ''
+        valid: '234234',
+        invalid: '234324'
       }
     }
   });
@@ -73,5 +66,14 @@ const PersonContainer = () => {
 };
 
 storiesOf('Moleculs/forms/Person', module)
-  .add('default', () => <Person {...props} />)
+  .add('default', () => (
+    <Form type={FormType.NORMAL} onSubmit={() => {}}>
+      <Person {...props} />
+    </Form>
+  ))
+  .add('inline', () => (
+    <Form type={FormType.INLINE} onSubmit={() => {}}>
+      <Person {...props} />
+    </Form>
+  ))
   .add('state-full', () => <PersonContainer />);

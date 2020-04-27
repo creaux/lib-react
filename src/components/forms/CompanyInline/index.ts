@@ -1,0 +1,1 @@
+export { CompanyInline } from "./component";
