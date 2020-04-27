@@ -1,19 +1,32 @@
 import React, { Children, cloneElement, ReactNode } from 'react';
 import get from 'lodash/get';
 
-export interface GuardProps {
+export interface GuardProps<ComponentProps> {
   Component?: ReactNode;
-  props?: { [key: string]: any };
-  when?: string[];
-  children: ReactNode;
+  props?: Partial<ComponentProps>;
+  when?: [(keyof ComponentProps), keyof ComponentProps[keyof ComponentProps]];
+  children?: ReactNode;
   otherwise?: Function;
+  defaults?: boolean;
 }
 
-export class Guard extends React.Component<GuardProps> {
+/**
+ * Guard renders children or otherwise when condition is not met
+ */
+export class Guard<ComponentProps = string[]> extends React.Component<GuardProps<ComponentProps>> {
   render() {
-    const { Component, children, props, when, otherwise } = this.props;
+    const { Component, children, props, when, otherwise, defaults = false } = this.props;
+
+    // When children is not defined then we don't want to render anything
+    if(!children && !defaults) {
+      return null;
+    }
 
     let hasWhen: any;
+
+    if (!children && defaults) {
+      return <Component {...props} />;
+    }
 
     return Children.map(children, child => {
       if (!React.isValidElement(child)) {

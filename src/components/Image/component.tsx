@@ -26,7 +26,7 @@ export const Image: FunctionComponent<ImageProps> = ({
       : null;
   const isImg = variant === ImageVariants.SOLID;
   return (
-    <div {...attrs} className={cx('image-background', className)}>
+    <div {...attrs} className={cx('image-background rounded', className)}>
       {isImg ? <img src={src} alt={alt} /> : null}
       {children}
     </div>

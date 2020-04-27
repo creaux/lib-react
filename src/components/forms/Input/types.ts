@@ -1,14 +1,12 @@
 export enum InputTypeEnum {
-  TEXT = 'text',
-  NUMBER = 'number',
-  EMAIL = 'email'
+  TEXT = "text",
+  NUMBER = "number",
+  EMAIL = "email"
 }
 
 export interface IInput {
   id: string;
-  label?: string;
   value: string;
-  placeholder: string;
 }
 
 export interface IInputTyped extends IInput {

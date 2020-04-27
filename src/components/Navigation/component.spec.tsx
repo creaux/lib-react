@@ -5,6 +5,8 @@ import chai, { expect } from 'chai';
 import chaiSinon from 'sinon-chai';
 import chaiEnzyme from 'chai-enzyme';
 import { props } from './mocks';
+import { ReactComponent as SvgComponent } from '../Svg/svg.svg';
+import { NavigationBrand } from '../NavigationBrand';
 
 describe('Navigation', () => {
   it('should be present', () => {
@@ -40,11 +42,14 @@ describe('Navigation', () => {
     expect(navLink.at(1)).to.have.prop('href', props.items[1].link);
   });
 
-  it('should contain Nav', () => {
-    const component = shallow(<Navigation {...props} />);
-    const navbar = component.find('.navbar');
-    const navbarBrand = navbar.find('.navbar-brand');
-    expect(navbarBrand).to.have.prop('href', '#home');
+  it('should contain Brand', () => {
+    const component = shallow(
+      <Navigation {...props}>
+        <NavigationBrand brand={SvgComponent} link="" />
+      </Navigation>
+    );
+    const navbar = component.find(NavigationBrand);
+    expect(navbar).to.be.present();
   });
 });
 

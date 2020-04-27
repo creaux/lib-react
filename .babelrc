@@ -3,5 +3,6 @@
     "flow": false,
     "typescript": true,
     "absoluteRuntime": false
-  }]]
+  }]],
+  "plugins": ["@babel/plugin-transform-react-display-name"]
 }

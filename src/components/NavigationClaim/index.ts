@@ -1,0 +1,1 @@
+export { NavigationClaim } from "./component";

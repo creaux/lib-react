@@ -1,1 +1,1 @@
-export { SelectContainer as Select } from './container';
+export { Select } from "./composed";

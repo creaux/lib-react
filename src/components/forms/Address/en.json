@@ -1,0 +1,22 @@
+{
+  "STREET": "Street",
+  "STREET_PLACEHOLDER": "Your Street",
+  "STREET_MESSAGE_VALID": "Street is valid",
+  "STREET_MESSAGE_INVALID": "Street is not valid",
+  "STREET_NO": "Street No.",
+  "STREET_NO_PLACEHOLDER": "Street No.",
+  "STREET_NO_MESSAGE_VALID": "Street number is valid",
+  "STREET_NO_MESSAGE_INVALID": "Street number is not valid",
+  "POSTCODE": "Postcode",
+  "POSTCODE_PLACEHOLDER": "123 21",
+  "POSTCODE_MESSAGE_VALID": "Postcode is valid",
+  "POSTCODE_MESSAGE_INVALID": "Postcode is not valid",
+  "CITY": "City",
+  "CITY_PLACEHOLDER": "Wien",
+  "CITY_MESSAGE_VALID": "City is valid",
+  "CITY_MESSAGE_INVALID": "City is not valid",
+  "COUNTRY": "Country",
+  "COUTRY_PLACEHOLDER": "Austria",
+  "COUNTRY_MESSAGE_VALID": "Country is valid",
+  "COUNTRY_MESSAGE_INVALID": "Country is not valid"
+}

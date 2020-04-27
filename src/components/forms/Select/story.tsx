@@ -1,11 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { SelectContainer, SelectContainerProps } from './container';
+import { Select } from './composed';
 
-const props: SelectContainerProps = {
-  id: 'city',
+const props = {
   label: 'City',
+  id: 'city',
   value: undefined,
+  messages: {
+    valid: 'City is valid',
+    invalid: 'City is invalid',
+  },
   options: [
     {
       id: '1',
@@ -24,5 +28,5 @@ const props: SelectContainerProps = {
 };
 
 storiesOf('Atoms/forms/Select', module).add('default', () => (
-  <SelectContainer {...props} />
+  <Select {...props} />
 ));

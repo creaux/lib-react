@@ -1,0 +1,1 @@
+export { Alpha } from "./component";

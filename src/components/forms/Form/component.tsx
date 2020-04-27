@@ -12,6 +12,14 @@ export enum FormType {
   ONPLACE = 'onplace' // When we need to have error message in the field
 }
 
+export function isInlineForm(type: FormType) {
+  return FormType.INLINE === type;
+}
+
+export function isNormalForm(type: FormType) {
+  return FormType.NORMAL === type;
+}
+
 interface FormProps {
   children: ReactNode;
   type: FormType;
@@ -19,7 +27,7 @@ interface FormProps {
   className?: string;
 }
 
-export const FormContext = createContext<FormType>(FormType.NORMAL);
+export const FormTypeContext = createContext<FormType>(FormType.NORMAL);
 
 export const Form: FunctionComponent<FormProps> = ({
   children,
@@ -38,8 +46,8 @@ export const Form: FunctionComponent<FormProps> = ({
     )
   };
   return (
-    <FormContext.Provider value={type}>
+    <FormTypeContext.Provider value={type}>
       <form {...props}>{children}</form>
-    </FormContext.Provider>
+    </FormTypeContext.Provider>
   );
 };

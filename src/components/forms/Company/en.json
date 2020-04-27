@@ -1,0 +1,10 @@
+{
+  "COMPANY": "Company",
+  "COMPANY_PLACEHOLDER": "Your Company LTD",
+  "COMPANY_MESSAGE_VALID": "Company name is valid",
+  "COMPANY_MESSAGE_INVALID": "Company name is invalid",
+  "VAT": "VAT",
+  "VAT_PLACEHOLDER": "12 45 78",
+  "VAT_MESSAGE_VALID": "VAT is valid",
+  "VAT_MESSAGE_INVALID": "VAT is invalid"
+}

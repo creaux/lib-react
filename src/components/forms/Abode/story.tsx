@@ -10,8 +10,6 @@ export const deliveryProps: AbodeProps = {
   forname: {
     id: 'forename',
     value: 'Karel',
-    label: 'Forname',
-    placeholder: 'Name',
     messages: {
       valid: '',
       invalid: ''
@@ -20,8 +18,6 @@ export const deliveryProps: AbodeProps = {
   surname: {
     id: 'surname',
     value: 'Vomacka',
-    label: 'Surname',
-    placeholder: 'Surname',
     messages: {
       valid: '',
       invalid: ''
@@ -29,21 +25,17 @@ export const deliveryProps: AbodeProps = {
   },
   street: {
     id: 'street',
-    label: 'Street',
     value: 'Some Street',
     datalist: ['Vodickova', 'Stromovka'],
-    placeholder: 'Some Street',
     messages: {
       valid: '',
       invalid: ''
-    }
+    },
   },
   streetNo: {
     id: 'streetNo',
-    label: 'Street Number',
     value: '0',
     datalist: ['3', '33', '333'],
-    placeholder: '5',
     messages: {
       valid: '',
       invalid: ''
@@ -51,10 +43,8 @@ export const deliveryProps: AbodeProps = {
   },
   postcode: {
     id: 'postcode',
-    label: 'Postcode',
     value: '12345',
     datalist: ['12345', '68789'],
-    placeholder: '511 01',
     messages: {
       valid: '',
       invalid: ''
@@ -62,7 +52,6 @@ export const deliveryProps: AbodeProps = {
   },
   countries: {
     id: 'country',
-    label: 'Country',
     value: 'czechRepublic',
     options: [
       {
@@ -79,7 +68,6 @@ export const deliveryProps: AbodeProps = {
   },
   cities: {
     id: 'city',
-    label: 'City',
     value: 'prague',
     options: [
       {
@@ -100,7 +88,6 @@ export const deliveryProps: AbodeProps = {
 
 export const invoicingProps: AbodeProps = assign({}, deliveryProps, {
   company: {
-    label: 'Company',
     value: 'Neco LTD',
     messages: {
       valid: '',
@@ -108,7 +95,6 @@ export const invoicingProps: AbodeProps = assign({}, deliveryProps, {
     }
   },
   vat: {
-    label: 'VAT',
     value: '123456',
     messages: {
       valid: '',

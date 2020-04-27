@@ -5,13 +5,11 @@ import { InputTypeEnum } from './types';
 import { Form } from '../Form';
 import { FormType } from '../Form/component';
 import { Validators } from '../../../validators';
-import { ValidatorModel } from './hoc/validator';
+import { ValidatorModel } from '../../../validators/validator';
 
 const props: InputContainerProps = {
   id: '123456',
-  label: 'Postcode',
   value: '511 01',
-  placeholder: '255 45',
   datalist: ['130 00', '888 88'],
   type: InputTypeEnum.TEXT,
   onChange() {},
@@ -24,9 +22,7 @@ storiesOf('Atoms/forms/Input', module)
   .add('with validator', () => {
     const props = {
       id: 'email',
-      label: 'Email',
       value: '',
-      placeholder: 'email@email.cz',
       type: InputTypeEnum.EMAIL,
       onChange() {}
     };

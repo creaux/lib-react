@@ -1,0 +1,1 @@
+export { OneCheckout } from "./component";
