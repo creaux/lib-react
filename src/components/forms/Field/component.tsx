@@ -41,6 +41,8 @@ export const Field: FunctionComponent<InputProps> = props => {
 
   const wrapperClasses = cx({
     "form-group": FormType.NORMAL === formType,
+    "h-100":
+      FormType.ONPLACE === formType,
     "form-control":
       FormType.ONPLACE === formType || FormType.INLINE === formType,
     "is-invalid":
@@ -55,6 +57,7 @@ export const Field: FunctionComponent<InputProps> = props => {
 
   const inputClasses = cx({
     "form-control": FormType.NORMAL === formType,
+    "h-auto": FieldType.SELECT === fieldType && FormType.ONPLACE === formType,
     "border-0 w-100":
       FormType.ONPLACE === formType || FormType.INLINE === formType,
     "is-invalid": FormType.NORMAL === formType && message.type === 1,
@@ -109,13 +112,13 @@ export const Field: FunctionComponent<InputProps> = props => {
         condition={formType !== FormType.INLINE}
         when={() => (
           <Switch cases={message.type}>
-            <small className="form-text valid-feedback d-block">
+            <small className="form-text valid-feedback d-block text-nowrap text-truncate">
               {message.value}
             </small>
-            <small className="form-text invalid-feedback d-block">
+            <small className="form-text invalid-feedback d-block text-nowrap text-truncate">
               {message.value}
             </small>
-            <small className="form-text text-muted">{message.value}</small>
+            <small className="form-text text-muted text-nowrap text-truncate">{message.value}</small>
           </Switch>
         )}
       />

@@ -4,6 +4,7 @@ import { Delivery } from './component';
 import { IAbode } from '../Abode/types';
 import { OnGroupChange, OnValidGroupFieldChange } from '../../types/form';
 import { IShippingGroups } from '../Shipping/types';
+import { Form, FormType } from '../Form/component';
 
 type Group = 'invoicing' | 'delivery';
 type Field = 'distribution' | 'terms' | 'data';
@@ -83,6 +84,22 @@ const props: Props = {
   }
 };
 
-storiesOf('Moleculs/forms/Delivery', module).add('default', () => (
-  <Delivery {...props} />
+const story = storiesOf('Moleculs/forms/Delivery', module);
+
+story.add('normal', () => (
+  <Form type={FormType.NORMAL} onSubmit={() => {}}>
+    <Delivery {...props} />
+  </Form>
+));
+
+story.add('onplace', () => (
+  <Form type={FormType.ONPLACE} onSubmit={() => {}}>
+    <Delivery {...props} />
+  </Form>
+));
+
+story.add('inline', () => (
+  <Form type={FormType.INLINE} onSubmit={() => {}}>
+    <Delivery {...props} />
+  </Form>
 ));

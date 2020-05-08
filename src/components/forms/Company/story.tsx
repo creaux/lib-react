@@ -20,14 +20,22 @@ const props: CompanyProps = {
   }
 };
 
-storiesOf('Moleculs/forms/Company', module)
-  .add('default', () => (
-    <Form type={FormType.NORMAL} onSubmit={() => {}}>
-      <Company {...props} />
-    </Form>
-  ))
-  .add('inline', () => (
-    <Form type={FormType.INLINE} onSubmit={() => {}}>
-      <Company {...props}/>
-    </Form>
-  ));
+const story = storiesOf('Moleculs/forms/Company', module)
+
+story.add('normal', () => (
+  <Form type={FormType.NORMAL} onSubmit={() => {}}>
+    <Company {...props} />
+  </Form>
+))
+
+story.add('onplace', () => (
+  <Form type={FormType.ONPLACE} onSubmit={() => {}}>
+    <Company {...props}/>
+  </Form>
+));
+
+story.add('inline', () => (
+  <Form type={FormType.INLINE} onSubmit={() => {}}>
+    <Company {...props}/>
+  </Form>
+));

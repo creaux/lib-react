@@ -39,7 +39,7 @@ export const Form: FunctionComponent<FormProps> = ({
     onSubmit: handleSubmit,
     className: cx(
       {
-        "align-items-stretch form-inline flex-nowrap": FormType.ONPLACE === type
+        "align-items-stretch flex-nowrap": FormType.ONPLACE === type
       },
       className
     )

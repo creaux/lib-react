@@ -4,6 +4,7 @@ import { ICheckbox } from './types';
 
 export interface CheckboxProps extends ICheckbox {
   onChange: OnChange;
+  title: string
 }
 
 export const Checkbox: FunctionComponent<CheckboxProps> = ({
