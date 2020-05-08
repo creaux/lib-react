@@ -1,9 +1,10 @@
-import React, { FunctionComponent } from 'react';
-import { Address } from '../Address';
-import { Company } from '../Company';
-import { Person } from '../Person';
-import { OnFieldChange, OnValidFieldChange } from '../../types/form';
-import { IAbode } from './types';
+import React, { FunctionComponent } from "react";
+import { Address } from "../Address";
+import { Company } from "../Company";
+import { Person } from "../Person";
+import { OnFieldChange, OnValidFieldChange } from "../../types/form";
+import { IAbode } from "./types";
+import { Conditional } from "../../Conditional/component";
 
 export interface AbodeProps extends IAbode {
   onFieldChange: OnFieldChange<keyof IAbode>;
@@ -24,20 +25,32 @@ export const Abode: FunctionComponent<AbodeProps> = ({
   onValidFieldChange: handleValidFieldChange
 }) => (
   <>
-    <Person
-      forname={forname}
-      surname={surname}
-      onFieldChange={handleFieldChange}
-      onFieldValidChange={handleValidFieldChange}
-    />
-    {vat && company ? (
-      <Company
-        company={company}
-        vat={vat}
-        onFieldChange={handleFieldChange}
-        onValidFieldChange={handleValidFieldChange}
+    <div className="mb-1">
+      <Conditional
+        condition={!(vat && company)}
+        when={() => (
+          <Person
+            forname={forname}
+            surname={surname}
+            onFieldChange={handleFieldChange}
+            onFieldValidChange={handleValidFieldChange}
+          />
+        )}
       />
-    ) : null}
+    </div>
+    <Conditional
+      condition={!!(vat && company)}
+      when={() => (
+        <div className="mb-1">
+          <Company
+            company={company}
+            vat={vat}
+            onFieldChange={handleFieldChange}
+            onValidFieldChange={handleValidFieldChange}
+          />
+        </div>
+      )}
+    />
     <Address
       street={street}
       streetNo={streetNo}

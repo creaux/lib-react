@@ -3,8 +3,10 @@
   "COMPANY_PLACEHOLDER": "Your Company LTD",
   "COMPANY_MESSAGE_VALID": "Company name is valid",
   "COMPANY_MESSAGE_INVALID": "Company name is invalid",
+  "COMPANY_MESSAGE_DEFAULT": "Please provide some company name",
   "VAT": "VAT",
   "VAT_PLACEHOLDER": "12 45 78",
   "VAT_MESSAGE_VALID": "VAT is valid",
-  "VAT_MESSAGE_INVALID": "VAT is invalid"
+  "VAT_MESSAGE_INVALID": "VAT is invalid",
+  "VAT_MESSAGE_DEFAULT": "Please provide VAT number"
 }

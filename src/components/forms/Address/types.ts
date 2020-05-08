@@ -1,5 +1,4 @@
-import { IInputData } from "../Input/types";
-import { ISelect } from "../Select/types";
+import { IInputData, ISelect } from "../Field/types";
 
 export interface IAddress {
   street: IInputData;

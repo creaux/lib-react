@@ -1,7 +1,7 @@
-import React, { FunctionComponent, ReactChild } from 'react';
-import { Variants, Type } from './types';
-import { Button as Btn } from 'react-bootstrap';
-import { Sizes } from '../../types/sizes';
+import React, { FunctionComponent, ReactChild } from "react";
+import { Variants, Type } from "./types";
+import { Button as Btn } from "react-bootstrap";
+import { Sizes } from "../../types/sizes";
 
 export interface ButtonProps {
   children: ReactChild;
@@ -14,7 +14,7 @@ export interface ButtonProps {
 }
 
 export const Button: FunctionComponent<ButtonProps> = ({
-  children = 'Confirm',
+  children = "Confirm",
   variant = Variants.PRIMARY,
   size,
   onClick,

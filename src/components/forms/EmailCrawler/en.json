@@ -1,0 +1,5 @@
+{
+  "EMAIL_CRAWLER_MESSAGE_VALID": "Your email address is valid",
+  "EMAIL_CRAWLER_MESSAGE_INVALID": "Your email address is invalid",
+  "EMAIL_CRAWLER_MESSAGE_DEFAULT": "Please provide your email address"
+}

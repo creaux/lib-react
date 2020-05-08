@@ -1,0 +1,1 @@
+export { SelectBasic } from "./component";
