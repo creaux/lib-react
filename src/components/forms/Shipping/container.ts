@@ -23,6 +23,7 @@ export interface ShippingState {
     delivery: IAbode;
     terms: ICheckbox;
     data: ICheckbox;
+    company: ICheckbox;
   };
   valid: boolean;
 }
@@ -42,6 +43,10 @@ export class Shipping extends Component<ShippingProps, ShippingState>
     super(props);
     this.state = {
       data: {
+        company: {
+          id: 'invoicing',
+          checked: true,
+        },
         distribution: {
           id: "01",
           active: undefined,
@@ -160,12 +165,10 @@ export class Shipping extends Component<ShippingProps, ShippingState>
         terms: {
           checked: false,
           id: "terms",
-          title: i18n.terms
         },
         data: {
           checked: false,
           id: "data",
-          title: i18n.data
         }
       },
       valid: false

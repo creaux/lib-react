@@ -4,38 +4,27 @@ import { Shipping as ShippingContainer, ShippingProps, ShippingState } from './c
 import { Form, FormType } from '../Form/component';
 
 const propsContainer: ShippingProps = {
-  titles: {
-    distribution: {
-      home: 'Home Delivery',
-      personal: 'Personal Pickup'
-    },
-    address: {
-      forename: 'Forename',
-      surname: 'Surname',
-      company: 'Company',
-      vat: 'VAT',
-      street: 'Street',
-      streetNo: 'Street No.',
-      postcode: 'Postcode',
-      city: 'City',
-      country: 'Country'
-    },
-    terms: 'I agree terms and conditions',
-    data: 'I agree with GDPR'
-  },
   onFormSubmit(data: ShippingState['data']) {
     console.log(data);
   }
 };
 
-storiesOf('Organisms/forms/Shipping', module)
-  .add('default', () => (
-    <Form type={FormType.NORMAL} onSubmit={() => {}}>
-      <ShippingContainer {...propsContainer} />
-    </Form>
-  ))
-  .add('inline', () => (
-    <Form type={FormType.INLINE} onSubmit={() => {}}>
-      <ShippingContainer {...propsContainer} />
-    </Form>
-  ));
+const story = storiesOf('Organisms/forms/Shipping', module);
+
+story.add('default', () => (
+  <Form type={FormType.NORMAL} onSubmit={() => {}}>
+    <ShippingContainer {...propsContainer} />
+  </Form>
+));
+
+story.add('onplace', () => (
+  <Form type={FormType.ONPLACE} onSubmit={()  => {}}>
+    <ShippingContainer {...propsContainer} />
+  </Form>
+));
+
+story.add('inline', () => (
+  <Form type={FormType.INLINE} onSubmit={() => {}}>
+    <ShippingContainer {...propsContainer} />
+  </Form>
+));

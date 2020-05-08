@@ -12,6 +12,7 @@ import { I18nConsumer } from "../../I18n/component";
 import defaultTranslations from "./en.json";
 import { Checkbox } from "../Checkbox/index";
 import { Button } from "../Button/component";
+import { Conditional } from '../../Conditional/component';
 
 interface ShippingProps extends IShippingGroups, IShippingFields {
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
@@ -25,16 +26,19 @@ interface ShippingProps extends IShippingGroups, IShippingFields {
 }
 
 export interface ShippingTranslations {
-  SHIPPING_COMPANY_DETAILS: "Company details";
-  SHIPPING_DELIVERY_ADDRESS: "Delivery address";
+  SHIPPING_COMPANY_DETAILS: string;
+  SHIPPING_DELIVERY_ADDRESS: string;
+  SHIPPING_IS_COMPANY: string;
+  SHIPPING_TERMS: string;
+  SHIPPING_DATA: string;
 }
 
 export const Shipping: FunctionComponent<ShippingProps> = ({
-  distribution,
   invoicing,
   delivery,
   terms,
   data,
+  company,
   onSubmit: handleSubmit,
   onGroupChange: handleGroupChange,
   onFieldChange: handleFieldChange,
@@ -69,15 +73,18 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
               &nbsp;&nbsp;
               <span>{translations.SHIPPING_COMPANY_DETAILS}</span>
             </h6>
+            <Checkbox title={translations.SHIPPING_IS_COMPANY} {...company} onChange={handleFieldChange("company")} />
+          </div>
+          <Conditional condition={!company.checked} when={() => (
             <Abode
               {...invoicing}
               onFieldChange={handleGroupChange("invoicing")}
               onValidFieldChange={handleValidGroupFieldChange("invoicing")}
             />
-          </div>
+          )} />
           <div>
-            <Checkbox {...terms} onChange={handleFieldChange("terms")} />
-            <Checkbox {...data} onChange={handleFieldChange("data")} />
+            <Checkbox title={translations.SHIPPING_TERMS} {...terms} onChange={handleFieldChange("terms")} />
+            <Checkbox title={translations.SHIPPING_DATA} {...data} onChange={handleFieldChange("data")} />
           </div>
           <Button onClick={handleSubmit} disabled={!valid}>
             Next

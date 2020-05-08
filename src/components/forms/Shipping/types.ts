@@ -11,4 +11,5 @@ export interface IShippingFields {
   distribution: IRadioStack;
   terms: ICheckbox;
   data: ICheckbox;
+  company: ICheckbox;
 }
