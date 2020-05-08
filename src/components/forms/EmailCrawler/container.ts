@@ -1,6 +1,5 @@
-import React, { Component, FormEvent } from 'react';
-import { EmailCrawler as EmailComponent } from './component';
-import { Messages } from '../../../validators/types';
+import React, { Component, FormEvent } from "react";
+import { EmailCrawler as EmailComponent } from "./component";
 
 export interface EmailState {
   email: string;
@@ -13,7 +12,6 @@ export interface EmailProps {
     button: string;
   };
   onSubmit: (email: string) => void;
-  messages: Messages;
 }
 
 export class EmailContainer extends Component<EmailProps, EmailState> {
@@ -23,7 +21,7 @@ export class EmailContainer extends Component<EmailProps, EmailState> {
     super(props);
 
     this.state = {
-      email: '',
+      email: "",
       valid: false
     };
   }
@@ -41,13 +39,12 @@ export class EmailContainer extends Component<EmailProps, EmailState> {
   };
 
   render() {
-    const { labels, messages } = this.props;
+    const { labels } = this.props;
     const props = {
       labels,
       value: this.state.email,
       onSubmit: this.handleSubmit,
       onChange: this.handleChange,
-      messages,
       valid: this.state.valid,
       onEmailValid: this.handleEmailValid
     };

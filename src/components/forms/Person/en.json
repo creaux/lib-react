@@ -1,0 +1,12 @@
+{
+  "FORENAME": "Forename",
+  "FORENAME_PLACEHOLDER": "Karel",
+  "FORENAME_MESSAGE_VALID": "Forename is valid",
+  "FORENAME_MESSAGE_INVALID": "Forename is not valid",
+  "FORENAME_MESSAGE_DEFAULT": "Provide forename",
+  "SURNAME": "Surname",
+  "SURNAME_PLACEHOLDER": "Vomacka",
+  "SURNAME_MESSAGE_VALID": "Surname is valid",
+  "SURNAME_MESSAGE_INVALID": "Surname is not valid",
+  "SURNAME_MESSAGE_DEFAULT": "Provide surname"
+}

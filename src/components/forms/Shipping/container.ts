@@ -3,7 +3,7 @@ import { Shipping as ShippingComponent } from "./component";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
 import { IAbode } from "../Abode";
 import { ICheckbox } from "../Checkbox/types";
-import { IRadioStack } from "../RadioStack/types";
+import { IRadioStack } from "../Field/RadioStack/types";
 
 const { assign } = Object;
 
@@ -61,61 +61,33 @@ export class Shipping extends Component<ShippingProps, ShippingState>
         invoicing: {
           forname: {
             id: "forname1",
-            value: "",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: ""
           },
           surname: {
             id: "surname1",
-            value: "",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: ""
           },
 
           company: {
             id: "company",
-            value: "",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: ""
           },
           vat: {
             id: "vat",
-            value: "",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: ""
           },
 
           street: {
             id: "street1",
-            value: "Street 1",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: "Street 1"
           },
           streetNo: {
             id: "streetNo1",
-            value: "5",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: "5"
           },
           postcode: {
             id: "postcode1",
-            value: "123 45",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: "123 45"
           },
           cities: {
             id: "city1",
@@ -143,44 +115,24 @@ export class Shipping extends Component<ShippingProps, ShippingState>
         delivery: {
           forname: {
             id: "forname2",
-            value: "",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: ""
           },
           surname: {
             id: "surname2",
-            value: "",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: ""
           },
 
           street: {
             id: "street2",
-            value: "Street 2",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: "Street 2"
           },
           streetNo: {
             id: "streetNo2",
-            value: "5",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: "5"
           },
           postcode: {
             id: "postcode2",
-            value: "123 45",
-            messages: {
-              valid: "",
-              invalid: ""
-            }
+            value: "123 45"
           },
           cities: {
             id: "city2",
@@ -253,8 +205,22 @@ export class Shipping extends Component<ShippingProps, ShippingState>
   handleValidGroupFieldChange = (group: Group) => (field: keyof IAbode) => (
     valid: boolean
   ) => {
+    console.log("valid", group, field);
+    const current = {
+      [group]: {
+        [field]: { valid }
+      }
+    };
+    const result = {
+      ...this.state,
+      ...current
+    };
+    const validated = Object.keys(result)
+      .map(resultet => Object.keys(resultet).some(field => field.valid))
+      .some(resultent => resultent);
+
     // TODO To know which field is valid which is not
-    this.setState({ valid });
+    this.setState({ ...result, valid: validated });
   };
 
   render(): ReactNode {

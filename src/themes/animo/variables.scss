@@ -1,3 +1,9 @@
+// Google fonts
+$font-family-script-primary: 'Catamaran';
+$font-weight-script-primary: '200;600';
+$font-family-script-secondary: 'Open+Sans';
+$font-weight-script-secondary: '400;600;800';
+
 // Custom variables
 $font-family-primary: "Open Sans", sans-serif;
 $font-family-secondary: 'Catamaran', sans-serif;
@@ -14,7 +20,7 @@ $font-family-secondary: 'Catamaran', sans-serif;
     primary: $gray-700
   ) !global;
 
-  $enable-rounded: false !global;
+  $enable-rounded: true !global;
 
   $font-family-sans-serif: $font-family-primary !global;
   $headings-font-family: $font-family-secondary !global;

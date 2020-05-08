@@ -1,0 +1,34 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { Select } from "./composed.ts_o";
+import { Form, FormType } from "../../Form/component";
+
+const props = {
+  label: "City",
+  id: "city",
+  value: undefined,
+  messages: ["City is valid", "City is invalid", "Please provide some option"],
+  options: [
+    {
+      id: "1",
+      value: "prague",
+      title: "Prague"
+    },
+    {
+      id: "2",
+      value: "liberec",
+      title: "Liberec"
+    }
+  ],
+  onValidChange() {},
+  onChange() {},
+  placeholder: "Please choose an option..."
+};
+
+const story = storiesOf("Atoms/forms/Select", module);
+
+story.add("default", () => (
+  <Form type={FormType.NORMAL} onSubmit={() => {}}>
+    <Select {...props} />
+  </Form>
+));

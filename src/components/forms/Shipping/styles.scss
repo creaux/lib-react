@@ -1,0 +1,18 @@
+.shipping {
+  display: flex;
+  flex-direction: column;
+}
+
+.shipping__toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  height: 40px;
+}
+
+.shipping__icon {
+  display: inline-block;
+  text-align: center;
+  width: 18px;
+}

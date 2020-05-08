@@ -1,8 +1,8 @@
 // Theming
-@import "./fonts.scss";
 @import "./variables.scss";
+@import "./fonts.scss";
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
-@import "form";
+@import "./bootstrap-fixes";
 // Components
 @import "../../components/Cycler/cycler";
 @import "../../components/Image/styles";
@@ -13,4 +13,4 @@
 @import "../../components/Viewport/styles";
 @import "../../components/Hero/styles";
 @import "../../components/ProductDescription/styles";
-@import "../../components/forms/Input/styles";
+@import "../../components/forms/Shipping/styles";
