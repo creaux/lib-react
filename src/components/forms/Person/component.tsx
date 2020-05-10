@@ -1,12 +1,37 @@
 import React, { FunctionComponent, useContext } from "react";
 import { Text } from "../Field";
 import { OnFieldChange, OnValidFieldChange } from "../../types/form";
-import { IPerson } from "./types";
+import { IPerson, PersonBuilder } from "./types";
 import { I18nConsumer } from "../../I18n";
 import { Translations } from "../../I18n/component";
 import { Conditional } from "../../Conditional/component";
 import { FormTypeContext, isNormalForm } from "../Form";
 import defaultTranslations from "./en.json";
+import { BuilderInterface } from "@pyxismedia/lib-model";
+
+export class PersonPropsBuilder extends PersonBuilder
+  implements BuilderInterface<PersonProps> {
+  private onFieldChange!: OnFieldChange<keyof IPerson>;
+  private onFieldValidChange!: OnValidFieldChange<keyof IPerson>;
+
+  withOnFieldChange(onFieldChange: OnFieldChange<keyof IPerson>) {
+    this.onFieldChange = onFieldChange;
+  }
+
+  withOnValidFieldChange(
+    onFieldValidChange: OnValidFieldChange<keyof IPerson>
+  ) {
+    this.onFieldValidChange = onFieldValidChange;
+  }
+
+  build(): PersonProps {
+    return {
+      ...super.build(),
+      onFieldChange: this.onFieldChange,
+      onFieldValidChange: this.onFieldValidChange
+    };
+  }
+}
 
 export interface PersonProps extends IPerson {
   onFieldChange: OnFieldChange<keyof IPerson>;

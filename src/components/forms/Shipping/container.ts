@@ -1,9 +1,10 @@
 import { Component, FormEvent, createElement, ReactNode } from "react";
 import { Shipping as ShippingComponent } from "./component";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
-import { IAbode } from "../Abode";
+import { IAbode, IAbodeValidated } from "../Abode";
 import { ICheckbox } from "../Checkbox/types";
 import { IRadioStack } from "../Field/RadioStack/types";
+import { merge } from "lodash";
 
 const { assign } = Object;
 
@@ -18,9 +19,8 @@ export interface ShippingProps extends IShipping {
 
 export interface ShippingState {
   data: {
-    distribution: IRadioStack;
-    invoicing: IAbode;
-    delivery: IAbode;
+    invoicing: IAbodeValidated;
+    delivery: IAbodeValidated;
     terms: ICheckbox;
     data: ICheckbox;
     company: ICheckbox;
@@ -44,59 +44,51 @@ export class Shipping extends Component<ShippingProps, ShippingState>
     this.state = {
       data: {
         company: {
-          id: 'invoicing',
-          checked: true,
-        },
-        distribution: {
-          id: "01",
-          active: undefined,
-          radios: [
-            {
-              title: i18n.home,
-              icon: faTruck,
-              id: "11"
-            },
-            {
-              title: i18n.personal,
-              icon: faTruck,
-              id: "12"
-            }
-          ]
+          id: "invoicing",
+          checked: true
         },
         invoicing: {
           forname: {
             id: "forname1",
-            value: ""
+            value: "",
+            valid: false
           },
           surname: {
             id: "surname1",
-            value: ""
+            value: "",
+            valid: false
           },
 
           company: {
             id: "company",
-            value: ""
+            value: "",
+            valid: false
           },
           vat: {
             id: "vat",
-            value: ""
+            value: "",
+            valid: false
           },
 
           street: {
             id: "street1",
-            value: "Street 1"
+            value: "Street 1",
+            valid: false
           },
           streetNo: {
             id: "streetNo1",
-            value: "5"
+            value: "5",
+            valid: false
           },
           postcode: {
             id: "postcode1",
-            value: "123 45"
+            value: "123 45",
+            valid: false
           },
           cities: {
             id: "city1",
             value: "",
+            valid: false,
             options: [
               {
                 id: "prague",
@@ -108,6 +100,7 @@ export class Shipping extends Component<ShippingProps, ShippingState>
           countries: {
             id: "country1",
             value: "",
+            valid: false,
             options: [
               {
                 id: "czechRepublic",
@@ -120,28 +113,34 @@ export class Shipping extends Component<ShippingProps, ShippingState>
         delivery: {
           forname: {
             id: "forname2",
-            value: ""
+            value: "",
+            valid: false
           },
           surname: {
             id: "surname2",
-            value: ""
+            value: "",
+            valid: false
           },
 
           street: {
             id: "street2",
-            value: "Street 2"
+            value: "Street 2",
+            valid: false
           },
           streetNo: {
             id: "streetNo2",
-            value: "5"
+            value: "5",
+            valid: false
           },
           postcode: {
             id: "postcode2",
-            value: "123 45"
+            value: "123 45",
+            valid: false
           },
           cities: {
             id: "city2",
             value: "",
+            valid: false,
             options: [
               {
                 id: "prague",
@@ -153,6 +152,7 @@ export class Shipping extends Component<ShippingProps, ShippingState>
           countries: {
             id: "country2",
             value: "",
+            valid: false,
             options: [
               {
                 id: "czechRepublic",
@@ -164,11 +164,11 @@ export class Shipping extends Component<ShippingProps, ShippingState>
         },
         terms: {
           checked: false,
-          id: "terms",
+          id: "terms"
         },
         data: {
           checked: false,
-          id: "data",
+          id: "data"
         }
       },
       valid: false
@@ -209,21 +209,19 @@ export class Shipping extends Component<ShippingProps, ShippingState>
     valid: boolean
   ) => {
     console.log("valid", group, field);
-    const current = {
+    const newState = merge(this.state, {
       [group]: {
         [field]: { valid }
       }
-    };
-    const result = {
-      ...this.state,
-      ...current
-    };
-    const validated = Object.keys(result)
-      .map(resultet => Object.keys(resultet).some(field => field.valid))
-      .some(resultent => resultent);
+    });
 
-    // TODO To know which field is valid which is not
-    this.setState({ ...result, valid: validated });
+    // TODO invoicing
+    // TODO deliver
+    // TODO terms
+    // TODO data
+    // TODO company
+
+    this.setState(newState);
   };
 
   render(): ReactNode {

@@ -8,6 +8,26 @@ export enum InputTypeEnum {
   EMAIL = "email"
 }
 
+export class InputBuilder {
+  private id!: string;
+  private value!: string;
+
+  withId(id: string) {
+    this.id = id;
+  }
+
+  withValue(value: string) {
+    this.value = value;
+  }
+
+  build(): IInput {
+    return {
+      id: this.id,
+      value: this.value
+    };
+  }
+}
+
 export interface IInput {
   id: string;
   value: string;

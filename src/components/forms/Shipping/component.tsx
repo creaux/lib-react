@@ -12,7 +12,7 @@ import { I18nConsumer } from "../../I18n/component";
 import defaultTranslations from "./en.json";
 import { Checkbox } from "../Checkbox/index";
 import { Button } from "../Button/component";
-import { Conditional } from '../../Conditional/component';
+import { Conditional } from "../../Conditional/component";
 
 interface ShippingProps extends IShippingGroups, IShippingFields {
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
@@ -73,18 +73,33 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
               &nbsp;&nbsp;
               <span>{translations.SHIPPING_COMPANY_DETAILS}</span>
             </h6>
-            <Checkbox title={translations.SHIPPING_IS_COMPANY} {...company} onChange={handleFieldChange("company")} />
-          </div>
-          <Conditional condition={!company.checked} when={() => (
-            <Abode
-              {...invoicing}
-              onFieldChange={handleGroupChange("invoicing")}
-              onValidFieldChange={handleValidGroupFieldChange("invoicing")}
+            <Checkbox
+              title={translations.SHIPPING_IS_COMPANY}
+              {...company}
+              onChange={handleFieldChange("company")}
             />
-          )} />
+          </div>
+          <Conditional
+            condition={!company.checked}
+            when={() => (
+              <Abode
+                {...invoicing}
+                onFieldChange={handleGroupChange("invoicing")}
+                onValidFieldChange={handleValidGroupFieldChange("invoicing")}
+              />
+            )}
+          />
           <div>
-            <Checkbox title={translations.SHIPPING_TERMS} {...terms} onChange={handleFieldChange("terms")} />
-            <Checkbox title={translations.SHIPPING_DATA} {...data} onChange={handleFieldChange("data")} />
+            <Checkbox
+              title={translations.SHIPPING_TERMS}
+              {...terms}
+              onChange={handleFieldChange("terms")}
+            />
+            <Checkbox
+              title={translations.SHIPPING_DATA}
+              {...data}
+              onChange={handleFieldChange("data")}
+            />
           </div>
           <Button onClick={handleSubmit} disabled={!valid}>
             Next

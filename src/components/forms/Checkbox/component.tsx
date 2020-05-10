@@ -1,10 +1,33 @@
-import React, { FunctionComponent } from 'react';
-import { OnChange } from '../../types/form';
-import { ICheckbox } from './types';
+import React, { FunctionComponent } from "react";
+import { OnChange } from "../../types/form";
+import { CheckboxBuilder, ICheckbox } from "./types";
+import { BuilderInterface } from "@pyxismedia/lib-model";
+
+export class CheckboxPropsBuilder extends CheckboxBuilder
+  implements BuilderInterface<CheckboxProps> {
+  private onChange!: OnChange;
+  private title!: string;
+
+  withOnChange(onChange: OnChange) {
+    this.onChange = onChange;
+  }
+
+  withTitle(title: string) {
+    this.title = title;
+  }
+
+  build(): CheckboxProps {
+    return {
+      ...super.build(),
+      title: this.title,
+      onChange: this.onChange
+    };
+  }
+}
 
 export interface CheckboxProps extends ICheckbox {
   onChange: OnChange;
-  title: string
+  title: string;
 }
 
 export const Checkbox: FunctionComponent<CheckboxProps> = ({
