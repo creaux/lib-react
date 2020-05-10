@@ -3,8 +3,31 @@ import { Address } from "../Address";
 import { Company } from "../Company";
 import { Person } from "../Person";
 import { OnFieldChange, OnValidFieldChange } from "../../types/form";
-import { IAbode } from "./types";
+import { AbodeBuilder, IAbode } from "./types";
 import { Conditional } from "../../Conditional/component";
+import { BuilderInterface } from "@pyxismedia/lib-model";
+
+export class AbodePropsBuilder extends AbodeBuilder
+  implements BuilderInterface<AbodeProps> {
+  onFieldChange!: OnFieldChange<keyof IAbode>;
+  onValidFieldChange!: OnValidFieldChange<keyof IAbode>;
+
+  withOnFieldChange(onFieldChange: OnFieldChange<keyof IAbode>) {
+    this.onFieldChange = onFieldChange;
+  }
+
+  withValidFieldChange(onValidFieldChange: OnValidFieldChange<keyof IAbode>) {
+    this.onValidFieldChange = onValidFieldChange;
+  }
+
+  build(): AbodeProps {
+    return {
+      ...super.build(),
+      onFieldChange: this.onFieldChange,
+      onValidFieldChange: this.onValidFieldChange
+    };
+  }
+}
 
 export interface AbodeProps extends IAbode {
   onFieldChange: OnFieldChange<keyof IAbode>;

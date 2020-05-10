@@ -41,8 +41,7 @@ export const Field: FunctionComponent<InputProps> = props => {
 
   const wrapperClasses = cx({
     "form-group": FormType.NORMAL === formType,
-    "h-100":
-      FormType.ONPLACE === formType,
+    "h-100": FormType.ONPLACE === formType,
     "form-control":
       FormType.ONPLACE === formType || FormType.INLINE === formType,
     "is-invalid":
@@ -118,7 +117,9 @@ export const Field: FunctionComponent<InputProps> = props => {
             <small className="form-text invalid-feedback d-block text-nowrap text-truncate">
               {message.value}
             </small>
-            <small className="form-text text-muted text-nowrap text-truncate">{message.value}</small>
+            <small className="form-text text-muted text-nowrap text-truncate">
+              {message.value}
+            </small>
           </Switch>
         )}
       />
