@@ -144,7 +144,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                 id={cities.id}
                 {...cities}
                 onChange={handleFieldChange("cities")}
-                onValidChange={() => {}}
+                onValidChange={handleValidFieldChange("cities")}
                 messages={[
                   translations.CITY_MESSAGE_VALID,
                   translations.CITY_MESSAGE_INVALID,
@@ -167,7 +167,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                 id={countries.id}
                 {...countries}
                 onChange={handleFieldChange("countries")}
-                onValidChange={() => {}}
+                onValidChange={handleValidFieldChange("countries")}
                 messages={[
                   translations.COUNTRY_MESSAGE_VALID,
                   translations.COUNTRY_MESSAGE_INVALID,

@@ -49,16 +49,11 @@ export const Abode: FunctionComponent<AbodeProps> = ({
 }) => (
   <>
     <div className="mb-1">
-      <Conditional
-        condition={!(vat && company)}
-        when={() => (
-          <Person
-            forname={forname}
-            surname={surname}
-            onFieldChange={handleFieldChange}
-            onFieldValidChange={handleValidFieldChange}
-          />
-        )}
+      <Person
+        forname={forname}
+        surname={surname}
+        onFieldChange={handleFieldChange}
+        onFieldValidChange={handleValidFieldChange}
       />
     </div>
     <Conditional

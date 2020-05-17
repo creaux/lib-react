@@ -1,10 +1,12 @@
 import { createValidator } from "./createValidator";
+import { create } from "domain";
 
 export class ValidatorPatterns {
   public static readonly regExpEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
   public static readonly regExpText = /^[a-zA-Z\s]+$/i;
   public static readonly regExpNumber = /^[0-9\s]+$/i;
   public static readonly regExpAlpha = /^[A-Z0-9\s]+$/i;
+  public static readonly regExpPhone = /^[0-9]{9}$/i;
 }
 
 export class Validators {
@@ -35,6 +37,13 @@ export class Validators {
   );
   public static readonly isAlpha = createValidator(
     ValidatorPatterns.regExpAlpha,
+    false
+  );
+  public static readonly isNotPhone = createValidator(
+    ValidatorPatterns.regExpPhone
+  );
+  public static readonly isPhone = createValidator(
+    ValidatorPatterns.regExpPhone,
     false
   );
 }

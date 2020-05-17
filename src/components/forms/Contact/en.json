@@ -1,0 +1,12 @@
+{
+  "CONTACT_EMAIL_LABEL": "Email",
+  "CONTACT_EMAIL_PLACEHOLDER": "something@else.com",
+  "CONTACT_EMAIL_MESSAGE_VALID": "Email is valid",
+  "CONTACT_EMAIL_MESSAGE_INVALID": "Email is invalid",
+  "CONTACT_EMAIL_MESSAGE_DEFAULT": "Please provide your email",
+  "CONTACT_NUMBER_LABEL": "Telephone number",
+  "CONTACT_NUMBER_PLACEHOLDER": "555 555 555",
+  "CONTACT_NUMBER_MESSAGE_VALID": "Telephone number is valid",
+  "CONTACT_NUMBER_MESSAGE_INVALID": "Telephone number is invalid",
+  "CONTACT_NUMBER_MESSAGE_DEFAULT": "Please provide telephone number"
+}

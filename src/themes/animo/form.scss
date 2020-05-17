@@ -1,0 +1,17 @@
+@import '../../../node_modules/bootstrap/scss/_variables.scss';
+
+@include media-breakpoint-down(xs) {
+  .input-group {
+    display: block;
+  }
+
+  .input-group .form-control {
+    display: block;
+    margin-bottom: 10px;
+    clear: both;
+  }
+}
+
+.btn:disabled, .btn.disabled {
+  cursor: default;
+}
