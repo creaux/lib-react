@@ -66,6 +66,7 @@
     "@storybook/addon-knobs": "^5.0.11",
     "@storybook/addon-options": "^5.0.11",
     "@storybook/addon-storyshots": "^5.0.11",
+    "@storybook/addon-viewport": "^5.3.18",
     "@storybook/core-events": "^5.0.11",
     "@storybook/react": "^5.0.11",
     "@types/chai-enzyme": "^0.6.6",

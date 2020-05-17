@@ -1,237 +1,316 @@
 import { Component, FormEvent, createElement, ReactNode } from "react";
 import { Shipping as ShippingComponent } from "./component";
-import { faTruck } from "@fortawesome/free-solid-svg-icons";
-import { IAbode, IAbodeValidated } from "../Abode";
-import { ICheckbox } from "../Checkbox/types";
-import { IRadioStack } from "../Field/RadioStack/types";
+import { AbodeBuilder, IAbode } from "../Abode";
+import { CheckboxBuilder, ICheckbox } from "../Checkbox/types";
 import { merge } from "lodash";
+import { BuilderInterface } from "@pyxismedia/lib-model";
+import { IShippingFields, IShippingGroups } from "./types";
+import { InputBuilder, OptionBuilder, SelectBuilder } from "../Field/types";
 
 const { assign } = Object;
 
 type Group = "invoicing" | "delivery";
-type Field = "distribution" | "terms" | "data";
+type Field = "terms" | "data" | "company";
 
-interface IShipping {}
-
-export interface ShippingProps extends IShipping {
-  onFormSubmit: (data: ShippingState["data"]) => void;
+export interface ShippingProps {
+  onFormChange: (data: ShippingState) => void;
+  onFormValidChange: (valid: boolean) => void;
 }
 
-export interface ShippingState {
-  data: {
-    invoicing: IAbodeValidated;
-    delivery: IAbodeValidated;
-    terms: ICheckbox;
-    data: ICheckbox;
-    company: ICheckbox;
-  };
-  valid: boolean;
+export class ShippingStateBuilder implements BuilderInterface<ShippingState> {
+  private delivery!: IAbode;
+  private invoicing!: IAbode;
+  private terms!: ICheckbox;
+  private data!: ICheckbox;
+  private company!: ICheckbox;
+
+  withDelivery(delivery: IAbode) {
+    this.delivery = delivery;
+    return this;
+  }
+
+  withInvoicing(invoicing: IAbode) {
+    this.invoicing = invoicing;
+    return this;
+  }
+
+  withTerms(terms: ICheckbox) {
+    this.terms = terms;
+    return this;
+  }
+
+  withData(data: ICheckbox) {
+    this.data = data;
+    return this;
+  }
+
+  withCompany(company: ICheckbox) {
+    this.company = company;
+    return this;
+  }
+
+  build(): ShippingState {
+    return {
+      delivery: this.delivery,
+      invoicing: this.invoicing,
+      terms: this.terms,
+      data: this.data,
+      company: this.company
+    };
+  }
 }
 
-const i18n = {
-  home: "Home",
-  personal: "Personal",
-  terms: "Terms",
-  data: "Personal data"
-};
+export interface ShippingState extends IShippingGroups, IShippingFields {}
 
-export class Shipping extends Component<ShippingProps, ShippingState>
-  implements IShipping {
+export class Shipping extends Component<ShippingProps, ShippingState> {
   state: ShippingState;
 
   constructor(props: ShippingProps) {
     super(props);
-    this.state = {
-      data: {
-        company: {
-          id: "invoicing",
-          checked: true
-        },
-        invoicing: {
-          forname: {
-            id: "forname1",
-            value: "",
-            valid: false
-          },
-          surname: {
-            id: "surname1",
-            value: "",
-            valid: false
-          },
 
-          company: {
-            id: "company",
-            value: "",
-            valid: false
-          },
-          vat: {
-            id: "vat",
-            value: "",
-            valid: false
-          },
-
-          street: {
-            id: "street1",
-            value: "Street 1",
-            valid: false
-          },
-          streetNo: {
-            id: "streetNo1",
-            value: "5",
-            valid: false
-          },
-          postcode: {
-            id: "postcode1",
-            value: "123 45",
-            valid: false
-          },
-          cities: {
-            id: "city1",
-            value: "",
-            valid: false,
-            options: [
-              {
-                id: "prague",
-                title: "Prague",
-                value: "PRG"
-              }
-            ]
-          },
-          countries: {
-            id: "country1",
-            value: "",
-            valid: false,
-            options: [
-              {
-                id: "czechRepublic",
-                title: "Czech Republic",
-                value: "CZ"
-              }
-            ]
-          }
-        },
-        delivery: {
-          forname: {
-            id: "forname2",
-            value: "",
-            valid: false
-          },
-          surname: {
-            id: "surname2",
-            value: "",
-            valid: false
-          },
-
-          street: {
-            id: "street2",
-            value: "Street 2",
-            valid: false
-          },
-          streetNo: {
-            id: "streetNo2",
-            value: "5",
-            valid: false
-          },
-          postcode: {
-            id: "postcode2",
-            value: "123 45",
-            valid: false
-          },
-          cities: {
-            id: "city2",
-            value: "",
-            valid: false,
-            options: [
-              {
-                id: "prague",
-                title: "Prague",
-                value: "PRG"
-              }
-            ]
-          },
-          countries: {
-            id: "country2",
-            value: "",
-            valid: false,
-            options: [
-              {
-                id: "czechRepublic",
-                title: "Czech Republic",
-                value: "CZ"
-              }
-            ]
-          }
-        },
-        terms: {
-          checked: false,
-          id: "terms"
-        },
-        data: {
-          checked: false,
-          id: "data"
-        }
-      },
-      valid: false
-    };
+    this.state = new ShippingStateBuilder()
+      .withDelivery(
+        new AbodeBuilder()
+          .withForname(
+            new InputBuilder()
+              .withId("forname2")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withSurname(
+            new InputBuilder()
+              .withId("surname2")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withStreet(
+            new InputBuilder()
+              .withId("street2")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withStreetNo(
+            new InputBuilder()
+              .withId("streetNo2")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withPostcode(
+            new InputBuilder()
+              .withId("postcode2")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withCities(
+            new SelectBuilder()
+              .withId("city2")
+              .withValue("")
+              .withOptions([
+                new OptionBuilder()
+                  .withId("prague")
+                  .withValue("Prague")
+                  .withTitle("Prague")
+                  .build()
+              ])
+              .build()
+          )
+          .withCountries(
+            new SelectBuilder()
+              .withId("country2")
+              .withValue("")
+              .withOptions([
+                new OptionBuilder()
+                  .withId("czechia")
+                  .withValue("Czechia")
+                  .withTitle("Czechia")
+                  .build()
+              ])
+              .build()
+          )
+          .build()
+      )
+      .withInvoicing(
+        new AbodeBuilder()
+          .withForname(
+            new InputBuilder()
+              .withId("forname1")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withSurname(
+            new InputBuilder()
+              .withId("surname1")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withCompany(
+            new InputBuilder()
+              .withId("company")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withVat(
+            new InputBuilder()
+              .withId("vat")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withStreet(
+            new InputBuilder()
+              .withId("street1")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withStreetNo(
+            new InputBuilder()
+              .withId("streetNo1")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withPostcode(
+            new InputBuilder()
+              .withId("postcode1")
+              .withValue("")
+              .withValid(false)
+              .build()
+          )
+          .withCities(
+            new SelectBuilder()
+              .withId("city1")
+              .withValue("")
+              .withOptions([
+                new OptionBuilder()
+                  .withId("prague")
+                  .withTitle("Prague")
+                  .withValue("prague")
+                  .build()
+              ])
+              .build()
+          )
+          .withCountries(
+            new SelectBuilder()
+              .withId("country1")
+              .withValue("")
+              .withOptions([
+                new OptionBuilder()
+                  .withId("czechia")
+                  .withTitle("Czechia")
+                  .withValue("czechia")
+                  .build()
+              ])
+              .build()
+          )
+          .build()
+      )
+      .withCompany(
+        new CheckboxBuilder()
+          .withId("company")
+          .withChecked(true)
+          .build()
+      )
+      .withData(
+        new CheckboxBuilder()
+          .withId("data")
+          .withChecked(false)
+          .build()
+      )
+      .withTerms(
+        new CheckboxBuilder()
+          .withId("terms")
+          .withChecked(false)
+          .build()
+      )
+      .build();
   }
 
-  handleChange = (field: Field) => (
+  componentDidUpdate(
+    prevProps: Readonly<ShippingProps>,
+    prevState: Readonly<ShippingState>,
+    snapshot?: any
+  ) {
+    const {
+      onFormChange: handleFormChange,
+      onFormValidChange: handleFormValidChange
+    } = this.props;
+    handleFormValidChange(this.isValid);
+    handleFormChange(this.state);
+  }
+
+  private handleCheckboxChange = (field: Field) => (
     event: FormEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    let data = assign({}, this.state.data);
-
-    if (event.currentTarget.type === "checkbox") {
-      const { checked } = event.currentTarget as HTMLInputElement;
-      (data[field] as ICheckbox).checked = checked;
-    }
-
-    if (event.currentTarget.type === "radio") {
-      (data[field] as IRadioStack).active = event.currentTarget.value;
-    }
-
-    this.setState({ data });
+    let data = assign({}, this.state);
+    const { checked } = event.currentTarget as HTMLInputElement;
+    (data[field] as ICheckbox).checked = checked;
+    this.setState(data);
   };
 
-  handleGroupChange = (group: Group) => (field: keyof IAbode) => (
+  private handleGroupChange = (group: Group) => (field: keyof IAbode) => (
     event: FormEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { value } = event.currentTarget;
-    let data = assign({}, this.state.data);
+    let data = assign({}, this.state);
     data[group][field]!["value"] = value;
-    this.setState({ data });
+    this.setState(data);
   };
 
-  handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
-    this.props.onFormSubmit(this.state.data);
+  private handleValidGroupFieldChange = (group: Group) => (
+    field: keyof IAbode
+  ) => (valid: boolean) => {
+    this.setState(
+      merge(this.state, {
+        [group]: {
+          [field]: { valid }
+        }
+      })
+    );
   };
 
-  handleValidGroupFieldChange = (group: Group) => (field: keyof IAbode) => (
-    valid: boolean
-  ) => {
-    console.log("valid", group, field);
-    const newState = merge(this.state, {
-      [group]: {
-        [field]: { valid }
-      }
-    });
+  private get isValid() {
+    const delivery = Object.keys(this.state.delivery)
+      // If it is undefined then it doesn't exists and doesn't need to be validated
+      .filter(key => this.state.delivery[key as keyof IAbode])
+      .every(key => {
+        const field = this.state.delivery[key as keyof IAbode];
+        if (field) {
+          return field.valid;
+        }
+      });
 
-    // TODO invoicing
-    // TODO deliver
-    // TODO terms
-    // TODO data
-    // TODO company
+    const billing = Object.keys(this.state.invoicing)
+      // If it is undefined then it doesn't exists and doesn't need to be validated
+      .filter(key => this.state.invoicing[key as keyof IAbode])
+      .every(key => {
+        const field = this.state.invoicing[key as keyof IAbode];
+        if (field) {
+          return field.valid;
+        }
+      });
 
-    this.setState(newState);
-  };
+    const company = !this.state.company.checked;
+    const terms = this.state.terms.checked;
+    const data = this.state.data.checked;
+
+    return delivery && terms && data && (company ? billing : true);
+  }
 
   render(): ReactNode {
     const props = {
-      ...this.state.data,
+      ...this.state,
       onGroupChange: this.handleGroupChange,
-      onFieldChange: this.handleChange,
-      onSubmit: this.handleSubmit,
-      onValidGroupFieldChange: this.handleValidGroupFieldChange,
-      valid: this.state.valid
+      onFieldChange: this.handleCheckboxChange,
+      onValidGroupFieldChange: this.handleValidGroupFieldChange
     };
     return createElement(ShippingComponent, props);
   }

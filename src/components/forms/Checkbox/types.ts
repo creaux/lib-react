@@ -6,10 +6,12 @@ export class CheckboxBuilder implements BuilderInterface<ICheckbox> {
 
   withChecked(checked: boolean) {
     this.checked = checked;
+    return this;
   }
 
   withId(id: string) {
     this.id = id;
+    return this;
   }
 
   build(): ICheckbox {

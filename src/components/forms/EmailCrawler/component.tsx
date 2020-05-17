@@ -43,7 +43,11 @@ export const EmailCrawler: FunctionComponent<EmailProps> = (
       defaultTranslations={defaultTranslations}
     >
       {translations => (
-        <Form onSubmit={handleSubmit} type={FormType.ONPLACE}>
+        <Form
+          onSubmit={handleSubmit}
+          type={FormType.ONPLACE}
+          className="form-inline"
+        >
           <Email
             onChange={handleChange}
             id="email"

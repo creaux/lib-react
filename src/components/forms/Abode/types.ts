@@ -2,7 +2,7 @@ import { IInput, IInputData, ISelect } from "../Field/types";
 import { BuilderInterface } from "@pyxismedia/lib-model";
 
 export class AbodeBuilder implements BuilderInterface<IAbode> {
-  private forname!: IInput;
+  private forname!: IInput & { valid?: boolean };
   private surname!: IInput;
   private company!: IInput;
   private vat!: IInput;
@@ -14,38 +14,47 @@ export class AbodeBuilder implements BuilderInterface<IAbode> {
 
   withForname(forename: IInput) {
     this.forname = forename;
+    return this;
   }
 
   withSurname(surname: IInput) {
     this.surname = surname;
+    return this;
   }
 
   withCompany(company: IInput) {
     this.company = company;
+    return this;
   }
 
   withVat(vat: IInput) {
     this.vat = vat;
+    return this;
   }
 
   withStreet(street: IInputData) {
     this.street = street;
+    return this;
   }
 
   withStreetNo(streetNo: IInputData) {
     this.streetNo = streetNo;
+    return this;
   }
 
   withPostcode(postcode: IInputData) {
     this.postcode = postcode;
+    return this;
   }
 
   withCities(cities: ISelect) {
     this.cities = cities;
+    return this;
   }
 
   withCountries(countries: ISelect) {
     this.countries = countries;
+    return this;
   }
 
   build(): IAbode {

@@ -11,18 +11,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { I18nConsumer } from "../../I18n/component";
 import defaultTranslations from "./en.json";
 import { Checkbox } from "../Checkbox/index";
-import { Button } from "../Button/component";
 import { Conditional } from "../../Conditional/component";
 
 interface ShippingProps extends IShippingGroups, IShippingFields {
-  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
   onFieldChange: OnFieldChange<keyof IShippingFields>;
   onGroupChange: OnGroupChange<keyof IShippingGroups, keyof IAbode>;
   onValidGroupFieldChange: OnValidGroupFieldChange<
     keyof IShippingGroups,
     keyof IAbode
   >;
-  valid: boolean;
 }
 
 export interface ShippingTranslations {
@@ -39,11 +36,9 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
   terms,
   data,
   company,
-  onSubmit: handleSubmit,
   onGroupChange: handleGroupChange,
   onFieldChange: handleFieldChange,
-  onValidGroupFieldChange: handleValidGroupFieldChange,
-  valid
+  onValidGroupFieldChange: handleValidGroupFieldChange
 }) => {
   return (
     <I18nConsumer<ShippingTranslations>
@@ -101,9 +96,6 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
               onChange={handleFieldChange("data")}
             />
           </div>
-          <Button onClick={handleSubmit} disabled={!valid}>
-            Next
-          </Button>
         </>
       )}
     </I18nConsumer>

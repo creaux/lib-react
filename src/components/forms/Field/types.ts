@@ -1,6 +1,6 @@
 import { OnChange } from "../../types/form";
 import { Messages } from "./hoc/validators/types";
-import { ValidatorProps } from "./hoc/validators/validator/props";
+import { BuilderInterface } from "@pyxismedia/lib-model";
 
 export enum InputTypeEnum {
   TEXT = "text",
@@ -11,19 +11,28 @@ export enum InputTypeEnum {
 export class InputBuilder {
   private id!: string;
   private value!: string;
+  private valid?: boolean;
 
   withId(id: string) {
     this.id = id;
+    return this;
   }
 
   withValue(value: string) {
     this.value = value;
+    return this;
+  }
+
+  withValid(valid: boolean) {
+    this.valid = valid;
+    return this;
   }
 
   build(): IInput {
     return {
       id: this.id,
-      value: this.value
+      value: this.value,
+      valid: this.valid
     };
   }
 }
@@ -31,6 +40,7 @@ export class InputBuilder {
 export interface IInput {
   id: string;
   value: string;
+  valid?: boolean;
 }
 
 export interface IInputData extends IInput {
@@ -59,14 +69,73 @@ export enum FieldType {
   INPUT
 }
 
+export class OptionBuilder implements BuilderInterface<IOption> {
+  private id!: string;
+  private value!: string;
+  private title!: string;
+
+  withId(id: string) {
+    this.id = id;
+    return this;
+  }
+
+  withValue(value: string) {
+    this.value = value;
+    return this;
+  }
+
+  withTitle(title: string) {
+    this.title = title;
+    return this;
+  }
+
+  build(): IOption {
+    return {
+      id: this.id,
+      value: this.value,
+      title: this.title
+    };
+  }
+}
+
 export interface IOption {
   id: string;
   title: string;
   value: string;
 }
 
+export class SelectBuilder implements BuilderInterface<ISelect> {
+  private id!: string;
+  private value!: string;
+  private options!: IOption[];
+
+  withId(id: string) {
+    this.id = id;
+    return this;
+  }
+
+  withValue(value: string) {
+    this.value = value;
+    return this;
+  }
+
+  withOptions(options: IOption[]) {
+    this.options = options;
+    return this;
+  }
+
+  build(): ISelect {
+    return {
+      id: this.id,
+      value: this.value,
+      options: this.options
+    };
+  }
+}
+
 export interface ISelect {
   id: string;
   value: string;
   options: IOption[];
+  valid?: boolean;
 }
