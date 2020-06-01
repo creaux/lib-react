@@ -14,8 +14,6 @@ export interface OneCheckoutProps {
 export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
   product
 }) => {
-  const [step, setStep] = useState();
-
   return (
     <div className="container">
       <div className="row">
@@ -26,10 +24,8 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
           </ProductDescription>
         </div>
         <div className="col-6">
-          <Stripe />
-        </div>
-        <div className="col-6">
           <Shipping onFormChange={() => {}} onFormValidChange={() => {}} />
+          <Stripe />
         </div>
       </div>
     </div>

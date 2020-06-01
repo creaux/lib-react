@@ -1,0 +1,10 @@
+.pad {
+  transform: translate3d(0px, 0px, 0px);
+  transition: all 700ms ease;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: scroll;
+}
