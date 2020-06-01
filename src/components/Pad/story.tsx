@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Pad } from './component';
 import { Hero } from '../Hero';
 import { PositionBuilder, Viewport, ViewportPropsBuilder } from '../Viewport/component';
 import { Navigation } from '../Navigation';
@@ -12,6 +11,7 @@ import { NavigationBrand } from '../NavigationBrand';
 import { props as navigationBrandProps } from '../NavigationBrand/mock';
 import { NavigationItems } from '../NavigationItems';
 import { props as navigationItemProps } from '../NavigationItems/mock';
+import { PadContainer } from './container';
 
 class ViewportProps {
   private static position = new PositionBuilder()
@@ -52,7 +52,7 @@ storiesOf('Organisms/Pad', module).add('default', () => {
         <NavigationBrand {...navigationBrandProps} />
         <NavigationItems {...navigationItemProps} />
       </Navigation>
-      <Pad>
+      <PadContainer>
         <Viewport {...ViewportProps.first}>
           <Hero {...heroProps} />
         </Viewport>
@@ -62,7 +62,7 @@ storiesOf('Organisms/Pad', module).add('default', () => {
         <Viewport {...ViewportProps.third}>
           <Hero {...heroProps} />
         </Viewport>
-      </Pad>
+      </PadContainer>
       <Navigation {...navigationProps} className="justify-content-between fixed-bottom">
         <NavigationClaim>This is button navigation</NavigationClaim>
         <NavigationButtons {...buttonProps} />
