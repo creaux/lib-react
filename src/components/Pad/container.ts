@@ -1,7 +1,6 @@
 import { Component, createElement, ReactNode } from "react";
 import { Pad } from "./component";
-import * as _ from "lodash";
-import { FullGestureState, StateKey } from "react-use-gesture/dist/types";
+import { throttle } from "lodash";
 
 export interface PadContainerProps {
   children: ReactNode[];
@@ -15,15 +14,15 @@ class Throttler {
   private id: number;
   private readonly setId: (id: number) => void;
 
-  constructor() {
+  constructor(timer: number = 500) {
     this.id = 0;
 
-    this.setId = _.throttle((id: number) => {
+    this.setId = throttle((id: number) => {
       this.id = id;
-    }, 500);
+    }, timer);
   }
 
-  public execute() {
+  public execute(): number {
     const id = this.id + 1;
     this.setId(id);
     return id;
@@ -39,32 +38,25 @@ export class PadContainer extends Component<
   PadContainerProps,
   PadContainerState
 > {
+  private static readonly VELOCITY = 0.6333;
+  private static readonly TIMER = 500;
+  private static readonly DURATION = 100;
+  private static readonly AXIS = "y";
+  private static readonly DIRECTION = {
+    down: 1,
+    up: -1
+  };
+
   private readonly throttler: Throttler;
   private readonly previousThrottler: Throttler;
 
-  // TODO: Do it around offset or similar and track current position to do it accordingly to the wheel, virtual scroll
-  // TODO: after window.innerHeight < offset when trackpad is untouchad it should stick with bottom or top scroll automatically
-  private setSpring = (state: FullGestureState<StateKey<"wheel">>) => (
-    i: number
-  ) => {
-    const nextPosition = this.state.position + 1;
-    if (i === nextPosition) {
-      return {
-        container: window.innerHeight - state.offset[1],
-        config: { duration: 100 }
-      };
-    }
-  };
-
-  private setSpringDown = (state: FullGestureState<StateKey<"wheel">>) => (
-    i: number
-  ) => {
+  private readonly slideDown = (i: number) => {
     const nextPosition = this.state.position + 1;
 
     if (i === this.state.position && this.previousThrottler.isUnlocked) {
       return {
         container: -1 * (window.innerHeight / 6),
-        config: { duration: 100 }
+        config: { duration: PadContainer.DURATION }
       };
     }
 
@@ -72,16 +64,16 @@ export class PadContainer extends Component<
       this.setState({ position: nextPosition });
       return {
         container: 0,
-        config: { duration: 100 }
+        config: { duration: PadContainer.DURATION }
       };
     }
   };
 
-  private setSpringUp = () => (i: number) => {
+  private readonly slideUp = (i: number) => {
     if (i === this.state.position - 1 && this.previousThrottler.isUnlocked) {
       return {
         container: 0,
-        config: { duration: 100 }
+        config: { duration: PadContainer.DURATION }
       };
     }
 
@@ -89,15 +81,15 @@ export class PadContainer extends Component<
       this.setState({ position: this.state.position - 1 });
       return {
         container: window.innerHeight,
-        config: { duration: 100 }
+        config: { duration: PadContainer.DURATION }
       };
     }
   };
 
   constructor(props: PadContainerProps) {
     super(props);
-    this.throttler = new Throttler();
-    this.previousThrottler = new Throttler();
+    this.throttler = new Throttler(PadContainer.TIMER);
+    this.previousThrottler = new Throttler(PadContainer.TIMER);
 
     this.state = {
       position: 0
@@ -108,9 +100,11 @@ export class PadContainer extends Component<
     return createElement(Pad, {
       children: this.props.children,
       position: this.state.position,
-      setSpringDown: this.setSpringDown,
-      setSpringUp: this.setSpringUp,
-      setSpring: this.setSpring
+      setSpringDown: this.slideDown,
+      setSpringUp: this.slideUp,
+      velocity: PadContainer.VELOCITY,
+      axis: PadContainer.AXIS,
+      direction: PadContainer.DIRECTION
     });
   }
 }
