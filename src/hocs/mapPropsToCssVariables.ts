@@ -16,11 +16,10 @@ export interface ResponsiveCss {
   desktop?: string;
 }
 
-const mapPropToCssVariables = <T extends string>(
-  name: string,
-  props: Literal
-) => (variable: T): Literal => {
-  if (props.hasOwnProperty(variable)) {
+const mapPropToCssVariables = (name: string, props: Literal) => (
+  variable: string | number | symbol
+): Literal => {
+  if (typeof variable === "string" && props.hasOwnProperty(variable)) {
     return {
       [`--${name}__${variable}-portrait`]: props[variable]["portrait"],
       [`--${name}__${variable}-landscape`]: props[variable]["landscape"],

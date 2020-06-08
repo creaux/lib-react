@@ -15,3 +15,22 @@
 .btn:disabled, .btn.disabled {
   cursor: default;
 }
+
+.form-control:focus-within {
+  outline: -webkit-focus-ring-color auto 1px;
+  outline-offset: -2px;
+
+  input:focus {
+    outline: none;
+  }
+}
+
+.form-check-input {
+  transform: scale(1.3333);
+  margin-top: .4rem;
+  margin-left: -1.3rem;
+}
+
+.form-check {
+  padding-left: 1.4rem;
+}

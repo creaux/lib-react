@@ -8,7 +8,11 @@ const story = storiesOf("Organisms/forms/Stripe", module);
 
 story.add("default", () => {
   return (
-    <Elements stripe={loadStripe("pk_test_foDOWVGgi52RtXjMWXhszdkA00X2vCJ2ZB")}>
+    <Elements
+      stripe={loadStripe(
+        process.env.STRIPE_SECRET ? process.env.STRIPE_SECRET : ""
+      )}
+    >
       <Stripe />
     </Elements>
   );

@@ -2,6 +2,7 @@ import React, { FunctionComponent, ReactChild } from "react";
 import { Variants, Type } from "./types";
 import { Button as Btn } from "react-bootstrap";
 import { Sizes } from "../../types/sizes";
+import cx from "classnames";
 
 export interface ButtonProps {
   children: ReactChild;
@@ -11,6 +12,7 @@ export interface ButtonProps {
   className?: string;
   type?: Type;
   disabled?: boolean;
+  extended?: boolean;
 }
 
 export const Button: FunctionComponent<ButtonProps> = ({
@@ -20,13 +22,14 @@ export const Button: FunctionComponent<ButtonProps> = ({
   onClick,
   className,
   type,
-  disabled
+  disabled,
+  extended = false
 }) => (
   <Btn
     variant={variant}
     size={size}
     onClick={onClick}
-    className={className}
+    className={cx(className, { "btn-block": extended })}
     type={type}
     disabled={disabled}
   >

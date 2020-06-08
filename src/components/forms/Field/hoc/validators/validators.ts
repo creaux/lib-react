@@ -1,5 +1,4 @@
 import { createValidator } from "./createValidator";
-import { create } from "domain";
 
 export class ValidatorPatterns {
   public static readonly regExpEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;

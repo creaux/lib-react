@@ -243,6 +243,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
       onFormChange: handleFormChange,
       onFormValidChange: handleFormValidChange
     } = this.props;
+
     handleFormValidChange(this.isValid);
     handleFormChange(this.state);
   }
@@ -277,32 +278,47 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
     );
   };
 
+  private get isValidDelivery() {
+    return (
+      Object.keys(this.state.delivery)
+        // If it is undefined then it doesn't exists and doesn't need to be validated
+        .filter(key => this.state.delivery[key as keyof IAbode])
+        .every(key => {
+          const field = this.state.delivery[key as keyof IAbode];
+          if (field) {
+            return field.valid;
+          }
+          return null;
+        })
+    );
+  }
+
+  private get isValidBilling() {
+    return (
+      Object.keys(this.state.invoicing)
+        // If it is undefined then it doesn't exists and doesn't need to be validated
+        .filter(key => this.state.invoicing[key as keyof IAbode])
+        .every(key => {
+          const field = this.state.invoicing[key as keyof IAbode];
+          if (field) {
+            return field.valid;
+          }
+          return undefined;
+        })
+    );
+  }
+
   private get isValid() {
-    const delivery = Object.keys(this.state.delivery)
-      // If it is undefined then it doesn't exists and doesn't need to be validated
-      .filter(key => this.state.delivery[key as keyof IAbode])
-      .every(key => {
-        const field = this.state.delivery[key as keyof IAbode];
-        if (field) {
-          return field.valid;
-        }
-      });
-
-    const billing = Object.keys(this.state.invoicing)
-      // If it is undefined then it doesn't exists and doesn't need to be validated
-      .filter(key => this.state.invoicing[key as keyof IAbode])
-      .every(key => {
-        const field = this.state.invoicing[key as keyof IAbode];
-        if (field) {
-          return field.valid;
-        }
-      });
-
     const company = !this.state.company.checked;
     const terms = this.state.terms.checked;
     const data = this.state.data.checked;
 
-    return delivery && terms && data && (company ? billing : true);
+    return (
+      this.isValidDelivery &&
+      terms &&
+      data &&
+      (company ? this.isValidBilling : true)
+    );
   }
 
   render(): ReactNode {

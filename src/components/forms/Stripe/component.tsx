@@ -53,7 +53,7 @@ export const Stripe: FunctionComponent<StripeProps> = ({
                 options={{ placeholder: translations.STRIPE_CVC_PLACEHOLDER }}
               />
             </div>
-            <Button type={Type.SUBMIT} className="stripe-submit">
+            <Button type={Type.SUBMIT} extended>
               Pay
             </Button>
           </>

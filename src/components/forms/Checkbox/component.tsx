@@ -45,7 +45,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
       onChange={handleChange}
       name={id}
     />
-    <label className="form-check-label" htmlFor={id}>
+    <label className="form-check-label small" htmlFor={id}>
       {title}
     </label>
   </div>
