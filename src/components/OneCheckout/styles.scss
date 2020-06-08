@@ -1,0 +1,17 @@
+.one-checkout {
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: 90%;
+  }
+
+  @include media-breakpoint-down(xl) {
+    width: 83%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 63%;
+  }
+}

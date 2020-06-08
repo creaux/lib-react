@@ -8,9 +8,11 @@ const story = storiesOf("Organisms/forms/Shipping", module);
 
 story.add("normal", () => {
   const [disabled, setDisabled] = useState(true);
-  const handleFormChange = () => {};
+  const handleFormChange = () => {
+    return;
+  };
   const handleFormValidChange = (valid: boolean) => {
-    setDisabled(!valid);
+    return setDisabled(!valid);
   };
   return (
     <Form type={FormType.NORMAL} onSubmit={() => {}}>
@@ -27,12 +29,19 @@ story.add("normal", () => {
 
 story.add("onplace", () => {
   const [disabled, setDisabled] = useState(true);
-  const handleFormChange = () => {};
+  const handleFormChange = () => {
+    return null;
+  };
   const handleFormValidChange = (valid: boolean) => {
-    setDisabled(!valid);
+    return setDisabled(!valid);
   };
   return (
-    <Form type={FormType.ONPLACE} onSubmit={() => {}}>
+    <Form
+      type={FormType.ONPLACE}
+      onSubmit={() => {
+        return null;
+      }}
+    >
       <Shipping
         onFormValidChange={handleFormValidChange}
         onFormChange={handleFormChange}

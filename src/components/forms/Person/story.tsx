@@ -1,8 +1,6 @@
-import React, { FormEvent, useState } from "react";
+import React from "react";
 import { storiesOf } from "@storybook/react";
 import { Person, PersonProps } from "./component";
-import { IPerson } from "./types";
-import { IInput } from "../Field/types";
 import { Form, FormType } from "../Form";
 
 export const props: PersonProps = {

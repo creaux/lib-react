@@ -1,4 +1,4 @@
-import React, { Component, ComponentType, FunctionComponent } from "react";
+import React, { ComponentType, FunctionComponent } from "react";
 import { ElementsConsumer } from "@stripe/react-stripe-js";
 import { Stripe, StripeElements } from "@stripe/stripe-js";
 

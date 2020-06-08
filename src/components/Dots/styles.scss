@@ -1,0 +1,19 @@
+.dots {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.dots__dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  border: 1px solid black;
+
+  cursor: pointer;
+  margin: 2px 0;
+}
+
+.dots__dot--active {
+  background-color: black;
+}

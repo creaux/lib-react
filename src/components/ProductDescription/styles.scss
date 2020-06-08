@@ -1,4 +1,9 @@
 .product-description-image {
-  height: 400px;
   width: 100%;
+
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
 }

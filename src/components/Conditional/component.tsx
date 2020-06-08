@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode, Children } from "react";
+import { FunctionComponent, ReactNode } from "react";
 
 export interface ConditionalProps {
   condition: boolean;
@@ -12,4 +12,14 @@ export const Conditional: FunctionComponent<ConditionalProps> = ({
   when,
   otherwise,
   children
-}) => (condition ? when(children) : otherwise ? otherwise(children) : null);
+}) => {
+  if (condition) {
+    return when(children);
+  }
+
+  if (otherwise) {
+    return otherwise(children);
+  }
+
+  return null;
+};

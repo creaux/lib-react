@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, Component } from 'react';
+import { createContext, ReactNode, Component } from "react";
 
 const { keys } = Object;
 
@@ -10,7 +10,7 @@ export const I18nContext = createContext({});
 
 export interface I18nConsumerProps<T> {
   defaultTranslations: Translations;
-  children: (translations: T | Translations) => ReactNode
+  children: (translations: T | Translations) => ReactNode;
 }
 
 export class I18nConsumer<T> extends Component<I18nConsumerProps<T>> {
@@ -18,9 +18,9 @@ export class I18nConsumer<T> extends Component<I18nConsumerProps<T>> {
 
   render() {
     return this.props.children(
-      (keys(this.context).length > 0) ?
-        this.context :
-        this.props.defaultTranslations
+      keys(this.context).length > 0
+        ? this.context
+        : this.props.defaultTranslations
     );
   }
 }
