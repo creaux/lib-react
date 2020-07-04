@@ -59,7 +59,7 @@ export const ProductDescription: FunctionComponent<ProductDescriptionProps> = ({
       <h3>{title}</h3>
       <Guard Component={Label}>{children}</Guard>
       <Guard Component={Description}>{children}</Guard>
-      <div className="d-flex justify-content-between flex-row flex-sm-column justify-content-sm-center">
+      <div className="d-flex justify-content-between flex-column justify-content-sm-center">
         <div className="align-self-center align-self-sm-start mb-sm-3">
           <span className="h1">{price}</span>
         </div>

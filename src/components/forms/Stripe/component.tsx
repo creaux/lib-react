@@ -18,10 +18,12 @@ export interface StripeTranslations {
 
 export interface StripeProps {
   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  disabled: boolean;
 }
 
 export const Stripe: FunctionComponent<StripeProps> = ({
-  onSubmit: handleSubmit
+  onSubmit: handleSubmit,
+  disabled
 }) => {
   return (
     <Form
@@ -53,7 +55,7 @@ export const Stripe: FunctionComponent<StripeProps> = ({
                 options={{ placeholder: translations.STRIPE_CVC_PLACEHOLDER }}
               />
             </div>
-            <Button type={Type.SUBMIT} extended>
+            <Button type={Type.SUBMIT} extended disabled={disabled}>
               Pay
             </Button>
           </>
