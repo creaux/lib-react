@@ -28,7 +28,6 @@ export interface OneCheckoutTranslations {
 
 export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
   product,
-  step,
   onStep: handleStep,
   onShippingValidChange: handleShippingValidChange,
   onShippingChange: handleShippingChange,
@@ -39,10 +38,10 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
       defaultTranslations={defaultTranslations}
     >
       {translations => (
-        <Viewport className="d-flex align-items-center">
+        <Viewport className="d-flex align-items-md-center">
           <div className="container-fluid one-checkout">
             <div className="row justify-content-between">
-              <div className="col-md-5 col-s-12  justify-content-center d-flex flex-column">
+              <div className="col-md-5 col-s-12 justify-content-center d-flex flex-column pb-xs-4">
                 <Button variant={Variants.LINK} className="align-self-start">
                   {translations.BUTTON_GO_BACK}
                 </Button>
@@ -51,28 +50,13 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
                 </ProductDescription>
               </div>
               <div className="col-md-6 col-s-12 justify-content-center d-flex flex-column border-left-1">
-                <Conditional
-                  condition={step === 0}
-                  when={() => (
-                    <>
-                      <div className="mb-4">
-                        <Shipping
-                          onFormChange={handleShippingChange}
-                          onFormValidChange={handleShippingValidChange}
-                        />
-                      </div>
-                      <Button
-                        variant={Variants.PRIMARY}
-                        onClick={() => handleStep(1)}
-                        disabled={!isShippingValid}
-                        extended
-                      >
-                        {translations.BUTTON_NEXT}
-                      </Button>
-                    </>
-                  )}
-                />
-                <Conditional condition={step === 1} when={() => <Stripe />} />
+                <div className="mb-4">
+                  <Shipping
+                    onFormChange={handleShippingChange}
+                    onFormValidChange={handleShippingValidChange}
+                  />
+                </div>
+                <Stripe disabled={!isShippingValid} />
               </div>
             </div>
           </div>
