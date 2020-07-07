@@ -9,7 +9,10 @@ export interface ElementsContextValue {
 
 export function elementsProvider<
   P extends ElementsContextValue,
-  O extends Omit<P, keyof ElementsContextValue>
+  O extends Omit<P, keyof ElementsContextValue> = Omit<
+    P,
+    keyof ElementsContextValue
+  >
 >(Component: ComponentType<P>): FunctionComponent<O> {
   return function(props: O) {
     return (

@@ -1,5 +1,5 @@
-import React, { Children, cloneElement, ReactNode } from 'react';
-import get from 'lodash/get';
+import React, { Children, cloneElement, ReactNode } from "react";
+import get from "lodash/get";
 
 export interface GuardProps<ComponentProps> {
   Component?: ReactNode;
@@ -13,18 +13,28 @@ export interface GuardProps<ComponentProps> {
 /**
  * Guard renders children or otherwise when condition is not met
  */
-export class Guard<ComponentProps = string[]> extends React.Component<GuardProps<ComponentProps>> {
+export class Guard<ComponentProps = string[]> extends React.Component<
+  GuardProps<ComponentProps>
+> {
   render() {
-    const { Component, children, props, when, otherwise, defaults = false } = this.props;
+    const {
+      Component,
+      children,
+      props,
+      when,
+      otherwise,
+      defaults = false
+    } = this.props;
 
     // When children is not defined then we don't want to render anything
-    if(!children && !defaults) {
+    if (!children && !defaults) {
       return null;
     }
 
     let hasWhen: any;
 
     if (!children && defaults) {
+      // @ts-ignore
       return <Component {...props} />;
     }
 
@@ -33,7 +43,7 @@ export class Guard<ComponentProps = string[]> extends React.Component<GuardProps
         return null;
       }
 
-      if ((when && get(child.props, when)) || typeof when === 'undefined') {
+      if ((when && get(child.props, when)) || typeof when === "undefined") {
         // hasWhen define whether we want to render otherwise or not
         hasWhen = get(child.props, when as any);
         if (

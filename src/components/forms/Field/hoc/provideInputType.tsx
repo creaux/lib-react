@@ -1,5 +1,5 @@
-import { InputTypeEnum, TypeProps } from "../../types";
 import React, { ComponentType, ReactElement } from "react";
+import { InputTypeEnum, TypeProps } from "../types";
 
 export const provideInputType = <P extends TypeProps>(type: InputTypeEnum) => {
   return (Component: ComponentType<P>) => (

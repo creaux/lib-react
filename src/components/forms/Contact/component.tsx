@@ -45,7 +45,6 @@ export const Contact: FunctionComponent<ContactProps> = ({
               when={children => <div className="col-6 mb-3">{children}</div>}
               otherwise={children => children}
             >
-              {/* TODO: email component */}
               <Email
                 label={
                   isNormalForm(type)
@@ -73,7 +72,6 @@ export const Contact: FunctionComponent<ContactProps> = ({
               when={children => <div className="col-6 mb-3">{children}</div>}
               otherwise={children => children}
             >
-              {/* TODO: tel number component */}
               <Phone
                 label={
                   isNormalForm(type)

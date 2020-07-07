@@ -103,7 +103,7 @@ export const Field: FunctionComponent<InputProps> = props => {
             placeholder={placeholder}
             value={value}
             onChange={handleChange}
-            options={options}
+            options={options as IOption[]}
           />
         )}
       />

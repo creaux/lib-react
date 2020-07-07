@@ -41,6 +41,7 @@ export class StripeContainer extends Component<StripeProps> {
       return;
     }
 
+    // @ts-ignore
     const result = await stripe.confirmCardPayment(this.secret, {
       payment_method: {
         card: elements.getElement(CardNumberElement),
@@ -88,7 +89,10 @@ export class StripeContainer extends Component<StripeProps> {
   };
 
   render() {
-    return createElement(StripeComponent, { onSubmit: this.handleSubmit });
+    return createElement(StripeComponent, {
+      onSubmit: this.handleSubmit,
+      disabled: false
+    });
   }
 }
 

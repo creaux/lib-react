@@ -47,7 +47,11 @@ export function validator<O extends ValidatorProps & MessagesProps>(
     return function(props: O): ReactElement<Output> {
       const { messages, ...rest } = props;
 
-      let validators: [Validation, Validation, Validation] = [];
+      let validators: [
+        Validation,
+        Validation,
+        Validation
+      ] = ([] as unknown) as [Validation, Validation, Validation];
 
       if (!Array.isArray(messages)) {
         throw new Error(

@@ -6,7 +6,6 @@ import { Image } from "../Image";
 import { Button, Variants } from "../forms/Button";
 import { Shipping } from "../forms/Shipping";
 import { Stripe } from "../forms/Stripe";
-import { Conditional } from "../Conditional/component";
 import { ShippingState } from "../forms/Shipping/container";
 import { Viewport } from "../Viewport/component";
 import { I18nConsumer } from "../I18n/component";
@@ -56,7 +55,7 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
                     onFormValidChange={handleShippingValidChange}
                   />
                 </div>
-                <Stripe disabled={!isShippingValid} />
+                <Stripe disabled={!isShippingValid} onSubmit={() => {}} />
               </div>
             </div>
           </div>
