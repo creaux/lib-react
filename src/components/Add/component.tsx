@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from 'react';
-import { Raiser } from '../Raiser';
-import { Button, Variants } from '../forms/Button';
-import setDisplayName from 'recompose/setDisplayName';
-import { Container, Row, Col } from 'react-bootstrap';
+import React, { FunctionComponent } from "react";
+import { Raiser } from "../Raiser";
+import { Button, Variants } from "../forms/Button";
+import setDisplayName from "recompose/setDisplayName";
+import { Container, Row, Col } from "react-bootstrap";
 
 export interface AddComponentProps {
   title: string;
-  onAdd: (event: MouseEvent) => void;
+  onAdd: (event: React.MouseEvent) => void;
   onCount: (count: number) => void;
 }
 
@@ -31,4 +31,4 @@ const AddPure: FunctionComponent<AddComponentProps> = ({
 
 export const AddComponent: FunctionComponent<
   AddComponentProps
-> = setDisplayName('AddComponent')(AddPure);
+> = setDisplayName("AddComponent")(AddPure);

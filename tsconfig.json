@@ -18,7 +18,8 @@
     "noEmit": true,
     "jsx": "preserve",
     "experimentalDecorators": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "downlevelIteration": true
   },
   "include": [
     "src"

@@ -1,18 +1,18 @@
-import React, { FunctionComponent } from 'react';
-import { AddContainer, AddContainerProps } from './container';
-import { AddComponent, AddComponentProps } from './component';
-import { shallow, ShallowWrapper } from 'enzyme';
-import chai, { expect } from 'chai';
-import { Raiser } from '../Raiser';
-import { Button, Variants } from '../forms/Button';
-import { spy, SinonSpy } from 'sinon';
-import { RaiserProps } from '../Raiser/container';
-import { ButtonProps } from 'react-bootstrap';
-import chaiSinon from 'sinon-chai';
-import chaiEnzyme from 'chai-enzyme';
+import React, { FunctionComponent, ReactNode } from "react";
+import { AddContainer, AddContainerProps } from "./container";
+import { AddComponent, AddComponentProps } from "./component";
+import { shallow, ShallowWrapper } from "enzyme";
+import chai, { expect } from "chai";
+import { Raiser } from "../Raiser";
+import { Button, Variants } from "../forms/Button";
+import { spy, SinonSpy } from "sinon";
+import { RaiserProps } from "../Raiser/container";
+import { ButtonProps } from "react-bootstrap";
+import chaiSinon from "sinon-chai";
+import chaiEnzyme from "chai-enzyme";
 
-describe('Add', () => {
-  describe('Component', () => {
+describe("Add", () => {
+  describe("Component", () => {
     let component: ShallowWrapper<FunctionComponent<AddComponentProps>>;
     let onAddSpy: SinonSpy;
     let onCountSpy: SinonSpy;
@@ -29,30 +29,24 @@ describe('Add', () => {
       );
     });
 
-    it('should render Add component', () => {
+    it("should render Add component", () => {
       expect(component).to.be.present();
     });
 
-    it('should contain Raiser', () => {
+    it("should contain Raiser", () => {
       expect(component.find<RaiserProps>(Raiser)).to.have.prop(
-        'onCount',
+        "onCount",
         onCountSpy
       );
     });
 
-    it('should contain Button', () => {
-      expect(component.find<ButtonProps>(Button)).to.have.prop(
-        'variant',
-        Variants.PRIMARY
-      );
-      expect(component.find<ButtonProps>(Button)).to.have.prop(
-        'onClick',
-        onAddSpy
-      );
+    it("should contain Button", () => {
+      expect(component.find(Button)).to.have.prop("variant", Variants.PRIMARY);
+      expect(component.find(Button)).to.have.prop("onClick", onAddSpy);
     });
   });
 
-  describe('Container', () => {
+  describe("Container", () => {
     let container: ShallowWrapper<AddContainerProps, {}, AddContainer>;
     let onAddSpy: SinonSpy;
 
@@ -63,23 +57,24 @@ describe('Add', () => {
       );
     });
 
-    it('should render Add container', () => {
+    it("should render Add container", () => {
       expect(container).to.be.present();
     });
 
-    it('should call onAdd on handleAdd', () => {
+    it("should call onAdd on handleAdd", () => {
       const event = {} as React.MouseEvent<HTMLButtonElement>;
       container.instance().handleAdd(event);
+      // eslint-disable-next-line no-unused-expressions
       expect(onAddSpy).to.have.been.called;
     });
 
-    it('should assign count on handleCount', () => {
+    it("should assign count on handleCount", () => {
       const count = 33;
       container.instance().handleCount(count);
       expect(container.instance().count).to.be.equal(33);
     });
 
-    it('should pass handleAdd on AddComponent', () => {
+    it("should pass handleAdd on AddComponent", () => {
       expect(container.instance().handleAdd).to.deep.equal(
         container.find<AddComponentProps>(AddComponent).props().onAdd
       );

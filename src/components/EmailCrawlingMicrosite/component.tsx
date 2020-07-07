@@ -27,7 +27,7 @@ export const EmailCrawlingMicrosite: FunctionComponent<
       <EmailCrawler
         labels={labels}
         onSubmit={handleEmailSubmit}
-        messages={messages}
+        // messages={messages}
       />
     </div>
   </Image>

@@ -1,10 +1,10 @@
-import React, { FunctionComponent, ReactNode } from 'react';
-import { ProductDescription } from '../ProductDescription';
-import { ImageVariants } from '../Image/types';
-import { Image } from '../Image';
-import { ProductDescriptionProps } from '../ProductDescription/component';
-import { Navigation } from '../Navigation';
-import { Guard } from '../Guard';
+import React, { FunctionComponent, ReactNode } from "react";
+import { ProductDescription } from "../ProductDescription";
+import { ImageVariants } from "../Image/types";
+import { Image } from "../Image";
+import { ProductDescriptionProps } from "../ProductDescription/component";
+import { Navigation } from "../Navigation";
+import { Guard } from "../Guard";
 
 export interface ProductDetailsProps extends ProductDescriptionProps {
   image: string;
@@ -14,36 +14,28 @@ export interface ProductDetailsProps extends ProductDescriptionProps {
 function viewport() {
   // This has to be loaded some globaly
   document.documentElement.style.setProperty(
-    '--viewport-height',
+    "--viewport-height",
     `${window.innerHeight}px`
   );
 }
 
 viewport();
 
-window.addEventListener('resize', viewport);
+window.addEventListener("resize", viewport);
 
 export const ProductDetail: FunctionComponent<ProductDetailsProps> = ({
   title,
-  category,
-  description,
   price,
-  action,
-  onAdd,
   image,
   children
 }) => {
   const productDescriptionProps = {
     title,
-    category,
-    description,
-    price,
-    action,
-    onAdd
+    price
   };
 
   const navigationProps = {
-    className: 'position-absolute',
+    className: "position-absolute",
     style: { left: 0, right: 0 }
   };
 

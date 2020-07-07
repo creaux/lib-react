@@ -1,9 +1,9 @@
-import React, { FunctionComponent } from 'react';
-import { Guard } from './component';
-import { shallow, ShallowWrapper } from 'enzyme';
-import chai, { expect } from 'chai';
-import sinonChai from 'sinon-chai';
-import chaiEnzyme from 'chai-enzyme';
+import React, { FunctionComponent } from "react";
+import { Guard } from "./component";
+import { shallow, ShallowWrapper } from "enzyme";
+import chai, { expect } from "chai";
+import sinonChai from "sinon-chai";
+import chaiEnzyme from "chai-enzyme";
 
 abstract class Abstract extends React.Component {}
 
@@ -17,19 +17,16 @@ const Component: FunctionComponent<ComponentProps> = () => null;
 
 const Another = () => <div />;
 
-describe('Guard', () => {
+describe("Guard", () => {
   let component: ShallowWrapper;
 
-  it('should not render anything when children is not present', () => {
-    component = shallow(
-      <Guard Component={Component} />
-    );
+  it("should not render anything when children is not present", () => {
+    component = shallow(<Guard Component={Component} />);
     console.log(component.debug());
     expect(component).to.be.blank();
   });
 
-
-  it('should render only filtered component', () => {
+  it("should render only filtered component", () => {
     component = shallow(
       <Guard Component={Component}>
         <Component />
@@ -40,7 +37,7 @@ describe('Guard', () => {
     expect(component.find(Another)).not.to.be.present();
   });
 
-  it('should render only filtered container', () => {
+  it("should render only filtered container", () => {
     component = shallow(
       <Guard Component={Abstract}>
         <Container />
@@ -51,9 +48,10 @@ describe('Guard', () => {
     expect(component.find(Another)).not.to.be.present();
   });
 
-  it('should render component if when is truthy', () => {
+  it("should render component if when is truthy", () => {
     component = shallow(
-      <Guard Component={Component} when={['condition']}>
+      // @ts-ignore
+      <Guard Component={Component} when={["condition"]}>
         <Component condition={true} />
         <Another />
       </Guard>
@@ -62,9 +60,10 @@ describe('Guard', () => {
     expect(component.find(Another)).not.to.be.present();
   });
 
-  it('should not render component if when is falsy', () => {
+  it("should not render component if when is falsy", () => {
     component = shallow(
-      <Guard Component={Component} when={['condition']}>
+      // @ts-ignore
+      <Guard Component={Component} when={["condition"]}>
         <Component condition={false} />
       </Guard>
     );

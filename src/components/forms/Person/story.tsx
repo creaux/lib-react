@@ -6,13 +6,11 @@ import { Form, FormType } from "../Form";
 export const props: PersonProps = {
   forname: {
     value: "Karel",
-    id: "forname",
-    messages: ["Name is valid", "Name is invalid", "Provide a name"]
+    id: "forname"
   },
   surname: {
     value: "Vomacka",
-    id: "surname",
-    messages: ["Name is valid", "Name is invalid", "Provide a name"]
+    id: "surname"
   },
   onFieldChange: () => () => {},
   onFieldValidChange: () => () => {}

@@ -1,25 +1,27 @@
-import { FunctionComponent, ReactNode } from "react";
+import { FunctionComponent, ReactElement } from "react";
 
 export interface ConditionalProps {
   condition: boolean;
-  when: (children: ReactNode) => ReactNode;
-  otherwise?: (children: ReactNode) => ReactNode;
-  children?: ReactNode;
+  when: (children: ReactElement) => ReactElement;
+  otherwise?: (children: ReactElement) => ReactElement;
+  // FIXME
+  children?: any;
 }
 
+// @ts-ignore
 export const Conditional: FunctionComponent<ConditionalProps> = ({
   condition,
   when,
   otherwise,
   children
 }) => {
-  if (condition) {
+  if (condition && children) {
     return when(children);
   }
 
-  if (otherwise) {
+  if (otherwise && children) {
     return otherwise(children);
   }
 
-  return null;
+  return children;
 };

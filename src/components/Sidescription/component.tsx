@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react';
-import { Add } from '../Add';
+import React, { FunctionComponent } from "react";
+import { Add } from "../Add";
 
 interface SidescriptionProps {
   title: string;
   description: string;
-  onAdd: (event: MouseEvent, count: number) => void;
+  onAdd: (event: React.MouseEvent, count: number) => void;
   subtitle: string;
 }
 

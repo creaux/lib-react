@@ -1,8 +1,8 @@
-import { FunctionComponent, ReactNode } from "react";
+import { FunctionComponent, ReactElement } from "react";
 
 interface SwitchProps {
   cases: number;
-  children: ReactNode[];
+  children: ReactElement[];
 }
 
 export const Switch: FunctionComponent<SwitchProps> = ({ cases, children }) => {

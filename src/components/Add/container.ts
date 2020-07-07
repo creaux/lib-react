@@ -1,9 +1,9 @@
-import React from 'react';
-import { AddComponent } from './component';
+import React from "react";
+import { AddComponent } from "./component";
 
 export interface AddContainerProps {
   title: string;
-  onAdd: (event: MouseEvent, count: number) => void;
+  onAdd: (event: React.MouseEvent, count: number) => void;
 }
 export class AddContainer extends React.Component<AddContainerProps> {
   count!: number;
@@ -12,7 +12,7 @@ export class AddContainer extends React.Component<AddContainerProps> {
     this.count = count;
   };
 
-  handleAdd = (e: MouseEvent) => {
+  handleAdd = (e: React.MouseEvent) => {
     this.props.onAdd(e, this.count);
   };
 
