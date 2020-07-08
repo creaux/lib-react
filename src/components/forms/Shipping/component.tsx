@@ -95,7 +95,7 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
             <CSSTransition
               in={!company.checked}
               timeout={400}
-              classNames="shipping__billing"
+              className="shipping__billing"
             >
               <div>
                 <Abode

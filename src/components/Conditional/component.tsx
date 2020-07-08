@@ -15,13 +15,13 @@ export const Conditional: FunctionComponent<ConditionalProps> = ({
   otherwise,
   children
 }) => {
-  if (condition && children) {
-    return when(children);
+  if (condition) {
+    return when(children || null);
   }
 
-  if (otherwise && children) {
-    return otherwise(children);
+  if (otherwise) {
+    return otherwise(children || null);
   }
 
-  return children;
+  return children || null;
 };
