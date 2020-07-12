@@ -55,7 +55,7 @@ export class ImagePropsBuilder {
 export interface ImageElement {
   src: string;
   alt?: string;
-  rounded: boolean;
+  rounded?: boolean;
 }
 
 export interface ImageProps extends ImageElement {
