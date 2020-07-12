@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import { BuilderInterface } from '@pyxismedia/lib-model';
 import {
   mapPropsToCssStyle,
   StyleProps
@@ -14,7 +13,7 @@ export interface PositionInterface {
   desktop: string;
 }
 
-export class PositionBuilder implements BuilderInterface {
+export class PositionBuilder {
   protected portrait!: string;
   protected landscape!: string;
   protected desktop!: string;

@@ -5,10 +5,8 @@ import { Person } from '../Person';
 import { OnFieldChange, OnValidFieldChange } from '../../types/form';
 import { AbodeBuilder, IAbode } from './types';
 import { Conditional } from '../../Conditional/component';
-import { BuilderInterface } from '@pyxismedia/lib-model';
 
-export class AbodePropsBuilder extends AbodeBuilder
-  implements BuilderInterface<AbodeProps> {
+export class AbodePropsBuilder extends AbodeBuilder {
   onFieldChange!: OnFieldChange<keyof IAbode>;
   onValidFieldChange!: OnValidFieldChange<keyof IAbode>;
 

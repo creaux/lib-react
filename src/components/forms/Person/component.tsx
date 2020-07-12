@@ -7,10 +7,8 @@ import { Translations } from '../../I18n/component';
 import { Conditional } from '../../Conditional/component';
 import { FormTypeContext, isNormalForm } from '../Form';
 import defaultTranslations from './en.json';
-import { BuilderInterface } from '@pyxismedia/lib-model';
 
-export class PersonPropsBuilder extends PersonBuilder
-  implements BuilderInterface<PersonProps> {
+export class PersonPropsBuilder extends PersonBuilder {
   private onFieldChange!: OnFieldChange<keyof IPerson>;
   private onFieldValidChange!: OnValidFieldChange<keyof IPerson>;
 

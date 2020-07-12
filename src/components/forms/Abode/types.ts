@@ -1,7 +1,6 @@
 import { IInput, IInputData, ISelect } from '../Field/types';
-import { BuilderInterface } from '@pyxismedia/lib-model';
 
-export class AbodeBuilder implements BuilderInterface<IAbode> {
+export class AbodeBuilder {
   private forname!: IInput & { valid?: boolean };
   private surname!: IInput;
   private company!: IInput;

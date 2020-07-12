@@ -3,7 +3,6 @@ import { Shipping as ShippingComponent } from './component';
 import { AbodeBuilder, IAbode } from '../Abode';
 import { CheckboxBuilder, ICheckbox } from '../Checkbox/types';
 import { merge } from 'lodash';
-import { BuilderInterface } from '@pyxismedia/lib-model';
 import { IShippingFields, IShippingGroups } from './types';
 import { InputBuilder, OptionBuilder, SelectBuilder } from '../Field/types';
 
@@ -17,7 +16,7 @@ export interface ShippingProps {
   onFormValidChange: (valid: boolean) => void;
 }
 
-export class ShippingStateBuilder implements BuilderInterface<ShippingState> {
+export class ShippingStateBuilder {
   private delivery!: IAbode;
   private invoicing!: IAbode;
   private terms!: ICheckbox;
