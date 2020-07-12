@@ -18,7 +18,7 @@
     "prettier": "prettier --single-quote --write \"src/**/*.{ts,tsx}\"",
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "test:update": "react-scripts test -u",
+    "test:update": "react-scripts test -u --watch-all=false",
     "eject": "react-scripts eject",
     "release": "semantic-release",
     "commit": "commit",

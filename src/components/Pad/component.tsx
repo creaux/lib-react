@@ -55,9 +55,9 @@ export const Pad: FunctionComponent<PadProps> = ({
     <>
       {springs.map((style, i) => (
         <animated.div
+          key={i}
           style={{
             transform: style.container.interpolate(x => {
-              console.log(x, i);
               return `translate3d(0, ${x}px, 0)`;
             })
           }}

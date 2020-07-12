@@ -124,9 +124,28 @@ exports[`Storyshots Atoms/Cycler default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Atoms/Dots default 1`] = `
+<div
+  className="dots"
+>
+  <button
+    className="dots__dot"
+    onClick={[Function]}
+  />
+  <button
+    className="dots__dot"
+    onClick={[Function]}
+  />
+  <button
+    className="dots__dot"
+    onClick={[Function]}
+  />
+</div>
+`;
+
 exports[`Storyshots Atoms/Image as background 1`] = `
 <div
-  className="image-background"
+  className="image-background rounded"
   style={
     Object {
       "backgroundImage": "url(http://lorempixel.com/640/480/fashion)",
@@ -137,7 +156,7 @@ exports[`Storyshots Atoms/Image as background 1`] = `
 
 exports[`Storyshots Atoms/Image as img 1`] = `
 <div
-  className="image-background"
+  className="image-background rounded"
 >
   <img
     alt="Lorem ipsum"
@@ -268,6 +287,85 @@ exports[`Storyshots Atoms/Viewport default 1`] = `
     </p>
   </div>
 </div>
+`;
+
+exports[`Storyshots Atoms/forms/Alpha inline 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control"
+  >
+    <input
+      className="border-0 w-100 bg-transparent"
+      id="alpha"
+      name="alpha"
+      onChange={[Function]}
+      placeholder="Please fill some alpha."
+      type="text"
+      value=""
+    />
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Alpha normal 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className="mr-3"
+      htmlFor="alpha"
+    >
+      Alpha
+    </label>
+    <input
+      className="form-control"
+      id="alpha"
+      name="alpha"
+      onChange={[Function]}
+      placeholder="Please fill some alpha."
+      type="text"
+      value=""
+    />
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Please fill some alpha
+    </small>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Alpha onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
+>
+  <div
+    className="h-100 form-control"
+  >
+    <input
+      className="border-0 w-100 bg-transparent"
+      id="alpha"
+      name="alpha"
+      onChange={[Function]}
+      placeholder="Please fill some alpha."
+      type="text"
+      value=""
+    />
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Please fill some alpha
+    </small>
+  </div>
+</form>
 `;
 
 exports[`Storyshots Atoms/forms/Button Documentation 1`] = `
@@ -746,7 +844,7 @@ exports[`Storyshots Atoms/forms/Checkbox default 1`] = `
     type="checkbox"
   />
   <label
-    className="form-check-label"
+    className="form-check-label small"
     htmlFor="123456789"
   >
     Please check me!
@@ -754,117 +852,241 @@ exports[`Storyshots Atoms/forms/Checkbox default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Atoms/forms/Email Email 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className="mr-3"
-    htmlFor="email"
-  >
-    Email
-  </label>
-  <input
-    className="form-control"
-    id="email"
-    name="email"
-    onChange={[Function]}
-    placeholder="Please fill email."
-    type="email"
-    value=""
-  />
-  <small
-    className="form-text valid-feedback d-block"
-  >
-    
-  </small>
-</div>
-`;
-
-exports[`Storyshots Atoms/forms/Input default 1`] = `
-<div
-  className="form-group"
->
-  <label
-    className="mr-3"
-    htmlFor="123456"
-  >
-    Postcode
-  </label>
-  <input
-    className="form-control"
-    id="123456"
-    name="123456"
-    onChange={[Function]}
-    placeholder="255 45"
-    type="text"
-    value=""
-  />
-  <small
-    className="form-text valid-feedback d-block"
-  >
-    
-  </small>
-</div>
-`;
-
-exports[`Storyshots Atoms/forms/Input with Form Context 1`] = `
+exports[`Storyshots Atoms/forms/Email inline 1`] = `
 <form
-  className="align-items-stretch form-inline flex-nowrap"
+  className=""
   onSubmit={[Function]}
 >
   <div
     className="form-control"
   >
+    <input
+      className="border-0 w-100 bg-transparent"
+      id="email"
+      name="email"
+      onChange={[Function]}
+      placeholder="Please fill email."
+      type="email"
+      value=""
+    />
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Email normal 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
     <label
       className="mr-3"
-      htmlFor="123456"
+      htmlFor="email"
     >
-      Postcode
+      Email
     </label>
     <input
-      className="border-0 w-100"
-      id="123456"
-      name="123456"
+      className="form-control"
+      id="email"
+      name="email"
       onChange={[Function]}
-      placeholder="255 45"
-      type="text"
+      placeholder="Please fill email."
+      type="email"
       value=""
     />
     <small
-      className="form-text valid-feedback d-block"
+      className="form-text text-muted text-nowrap text-truncate"
     >
-      
+      Default
     </small>
   </div>
 </form>
 `;
 
-exports[`Storyshots Atoms/forms/Input with validator 1`] = `
-<div
-  className="form-group"
+exports[`Storyshots Atoms/forms/Email onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
 >
-  <label
-    className="mr-3"
-    htmlFor="email"
+  <div
+    className="h-100 form-control"
   >
-    Email
-  </label>
-  <input
+    <input
+      className="border-0 w-100 bg-transparent"
+      id="email"
+      name="email"
+      onChange={[Function]}
+      placeholder="Please fill email."
+      type="email"
+      value=""
+    />
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Default
+    </small>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Number inline 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
     className="form-control"
-    id="email"
-    name="email"
-    onChange={[Function]}
-    placeholder="email@email.cz"
-    type="email"
-    value=""
-  />
-  <small
-    className="form-text valid-feedback d-block"
   >
-    
-  </small>
-</div>
+    <input
+      className="border-0 w-100 bg-transparent"
+      id="number"
+      name="number"
+      onChange={[Function]}
+      placeholder="Please fill some number."
+      type="text"
+      value=""
+    />
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Number normal 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className="mr-3"
+      htmlFor="number"
+    >
+      Number
+    </label>
+    <input
+      className="form-control"
+      id="number"
+      name="number"
+      onChange={[Function]}
+      placeholder="Please fill some number."
+      type="text"
+      value=""
+    />
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Please fill some number
+    </small>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Number onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
+>
+  <div
+    className="h-100 form-control"
+  >
+    <input
+      className="border-0 w-100 bg-transparent"
+      id="number"
+      name="number"
+      onChange={[Function]}
+      placeholder="Please fill some number."
+      type="text"
+      value=""
+    />
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Please fill some number
+    </small>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Phone inline 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control"
+  >
+    <input
+      className="border-0 w-100 bg-transparent"
+      id="number"
+      name="number"
+      onChange={[Function]}
+      placeholder="Please fill some number."
+      type="text"
+      value=""
+    />
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Phone normal 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className="mr-3"
+      htmlFor="number"
+    >
+      Number
+    </label>
+    <input
+      className="form-control"
+      id="number"
+      name="number"
+      onChange={[Function]}
+      placeholder="Please fill some number."
+      type="text"
+      value=""
+    />
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Please fill some number
+    </small>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Phone onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
+>
+  <div
+    className="h-100 form-control"
+  >
+    <input
+      className="border-0 w-100 bg-transparent"
+      id="number"
+      name="number"
+      onChange={[Function]}
+      placeholder="Please fill some number."
+      type="text"
+      value=""
+    />
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Please fill some number
+    </small>
+  </div>
+</form>
 `;
 
 exports[`Storyshots Atoms/forms/RadioStack default 1`] = `
@@ -937,64 +1159,189 @@ exports[`Storyshots Atoms/forms/RadioStack default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Atoms/forms/Select default 1`] = `
-Array [
-  <label
-    htmlFor="city"
+exports[`Storyshots Atoms/forms/Select inline 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control d-flex flex-column"
   >
-    City
-  </label>,
-  <select
-    className="custom-select form-control"
-    id="city"
-    onChange={[Function]}
-    value=""
-  >
-    <option
-      disabled={true}
+    <select
+      className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+      id="select"
+      onChange={[Function]}
       value=""
     >
-      Please choose an option...
-    </option>
-    <option
-      value="prague"
-    >
-      Prague
-    </option>
-    <option
-      value="liberec"
-    >
-      Liberec
-    </option>
-  </select>,
-]
+      <option
+        disabled={true}
+        value=""
+      >
+        Etwas
+      </option>
+      <option
+        value="Deset"
+      >
+        Deset
+      </option>
+    </select>
+  </div>
+</form>
 `;
 
-exports[`Storyshots Atoms/forms/Text Text 1`] = `
-<div
-  className="form-group"
+exports[`Storyshots Atoms/forms/Select normal 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
 >
-  <label
-    className="mr-3"
-    htmlFor="text"
+  <div
+    className="form-group d-flex flex-column"
   >
-    Text
-  </label>
-  <input
+    <label
+      className="mr-3"
+      htmlFor="select"
+    >
+      Select
+    </label>
+    <select
+      className="form-control custom-select"
+      id="select"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        disabled={true}
+        value=""
+      >
+        Etwas
+      </option>
+      <option
+        value="Deset"
+      >
+        Deset
+      </option>
+    </select>
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Please fill some number
+    </small>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Select onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
+>
+  <div
+    className="h-100 form-control d-flex flex-column"
+  >
+    <select
+      className="h-auto border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+      id="select"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        disabled={true}
+        value=""
+      >
+        Etwas
+      </option>
+      <option
+        value="Deset"
+      >
+        Deset
+      </option>
+    </select>
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Please fill some number
+    </small>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Text inline 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
     className="form-control"
-    id="text"
-    name="text"
-    onChange={[Function]}
-    placeholder="Please fill some text."
-    type="text"
-    value=""
-  />
-  <small
-    className="form-text valid-feedback d-block"
   >
-    
-  </small>
-</div>
+    <input
+      className="border-0 w-100 bg-transparent"
+      id="text"
+      name="text"
+      onChange={[Function]}
+      placeholder="Please fill some text."
+      type="text"
+      value=""
+    />
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Text normal 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className="mr-3"
+      htmlFor="text"
+    >
+      Text
+    </label>
+    <input
+      className="form-control"
+      id="text"
+      name="text"
+      onChange={[Function]}
+      placeholder="Please fill some text."
+      type="text"
+      value=""
+    />
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Please fill some text
+    </small>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Atoms/forms/Text onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
+>
+  <div
+    className="h-100 form-control"
+  >
+    <input
+      className="border-0 w-100 bg-transparent"
+      id="text"
+      name="text"
+      onChange={[Function]}
+      placeholder="Please fill some text."
+      type="text"
+      value=""
+    />
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Please fill some text
+    </small>
+  </div>
+</form>
 `;
 
 exports[`Storyshots Moleculs/Add Documentation 1`] = `
@@ -1212,6 +1559,7 @@ exports[`Storyshots Moleculs/Carousel Documentation 1`] = `
     onMouseOut={[Function]}
     onMouseOver={[Function]}
     onTouchEnd={[Function]}
+    onTouchMove={[Function]}
     onTouchStart={[Function]}
   >
     <ol
@@ -1221,23 +1569,20 @@ exports[`Storyshots Moleculs/Carousel Documentation 1`] = `
         className="active"
         onClick={[Function]}
       />
-       
       <li
         className={null}
         onClick={[Function]}
       />
-       
       <li
         className={null}
         onClick={[Function]}
       />
-       
     </ol>
     <div
       className="carousel-inner"
     >
       <div
-        className="carousel-item active carousel-item"
+        className="active carousel-item"
       >
         <img
           alt="Lorem ipsum"
@@ -1246,7 +1591,7 @@ exports[`Storyshots Moleculs/Carousel Documentation 1`] = `
         />
       </div>
       <div
-        className="carousel-item carousel-item"
+        className="carousel-item"
       >
         <img
           alt="Lorem ipsum"
@@ -1255,7 +1600,7 @@ exports[`Storyshots Moleculs/Carousel Documentation 1`] = `
         />
       </div>
       <div
-        className="carousel-item carousel-item"
+        className="carousel-item"
       >
         <img
           alt="Lorem ipsum"
@@ -1330,6 +1675,7 @@ exports[`Storyshots Moleculs/Carousel Documentation 1`] = `
     onMouseOut={[Function]}
     onMouseOver={[Function]}
     onTouchEnd={[Function]}
+    onTouchMove={[Function]}
     onTouchStart={[Function]}
   >
     <ol
@@ -1339,18 +1685,16 @@ exports[`Storyshots Moleculs/Carousel Documentation 1`] = `
         className="active"
         onClick={[Function]}
       />
-       
       <li
         className={null}
         onClick={[Function]}
       />
-       
     </ol>
     <div
       className="carousel-inner"
     >
       <div
-        className="carousel-item active carousel-item"
+        className="active carousel-item"
       >
         <img
           alt="Lorem ipsum"
@@ -1374,7 +1718,7 @@ exports[`Storyshots Moleculs/Carousel Documentation 1`] = `
         />
       </div>
       <div
-        className="carousel-item carousel-item"
+        className="carousel-item"
       >
         <img
           alt="Lorem ipsum"
@@ -1443,6 +1787,7 @@ exports[`Storyshots Moleculs/Carousel multi 1`] = `
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onTouchEnd={[Function]}
+  onTouchMove={[Function]}
   onTouchStart={[Function]}
 >
   <ol
@@ -1452,18 +1797,16 @@ exports[`Storyshots Moleculs/Carousel multi 1`] = `
       className="active"
       onClick={[Function]}
     />
-     
     <li
       className={null}
       onClick={[Function]}
     />
-     
   </ol>
   <div
     className="carousel-inner"
   >
     <div
-      className="carousel-item active carousel-item"
+      className="active carousel-item"
     >
       <img
         alt="Lorem ipsum"
@@ -1487,7 +1830,7 @@ exports[`Storyshots Moleculs/Carousel multi 1`] = `
       />
     </div>
     <div
-      className="carousel-item carousel-item"
+      className="carousel-item"
     >
       <img
         alt="Lorem ipsum"
@@ -1555,6 +1898,7 @@ exports[`Storyshots Moleculs/Carousel simple 1`] = `
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onTouchEnd={[Function]}
+  onTouchMove={[Function]}
   onTouchStart={[Function]}
 >
   <ol
@@ -1564,23 +1908,20 @@ exports[`Storyshots Moleculs/Carousel simple 1`] = `
       className="active"
       onClick={[Function]}
     />
-     
     <li
       className={null}
       onClick={[Function]}
     />
-     
     <li
       className={null}
       onClick={[Function]}
     />
-     
   </ol>
   <div
     className="carousel-inner"
   >
     <div
-      className="carousel-item active carousel-item"
+      className="active carousel-item"
     >
       <img
         alt="Lorem ipsum"
@@ -1589,7 +1930,7 @@ exports[`Storyshots Moleculs/Carousel simple 1`] = `
       />
     </div>
     <div
-      className="carousel-item carousel-item"
+      className="carousel-item"
     >
       <img
         alt="Lorem ipsum"
@@ -1598,7 +1939,7 @@ exports[`Storyshots Moleculs/Carousel simple 1`] = `
       />
     </div>
     <div
-      className="carousel-item carousel-item"
+      className="carousel-item"
     >
       <img
         alt="Lorem ipsum"
@@ -1646,8 +1987,25 @@ exports[`Storyshots Moleculs/Carousel simple 1`] = `
 
 exports[`Storyshots Moleculs/Navigation buttons 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light bg-transparent undefined"
-/>
+  className="navbar navbar-expand-lg navbar-light bg-transparent justify-content-between fixed-bottom"
+>
+  <button
+    className="navbar-brand"
+  >
+    This is button navigation
+  </button>
+  <form
+    className="form-inline"
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      type="button"
+    >
+      Click Me!
+    </button>
+  </form>
+</nav>
 `;
 
 exports[`Storyshots Moleculs/Navigation default 1`] = `
@@ -1701,35 +2059,51 @@ exports[`Storyshots Moleculs/Navigation default 1`] = `
 `;
 
 exports[`Storyshots Moleculs/ProductDescription checkout 1`] = `
-<div
-  className="d-flex align-items-center justify-content-center h-100"
->
+Array [
   <div
-    className="d-flex flex-column w-100 ml-sm-8 mr-sm-8"
+    className="w-100 ml-sm-8 mr-sm-8"
   >
-    <h2>
-      Lorem
-    </h2>
-    <p
-      className="text-uppercase"
+    <button
+      className="btn btn-link"
+      disabled={false}
+      type="button"
     >
-      Dolor
-    </p>
+      Go back
+    </button>
+  </div>,
+  <div
+    className="d-flex align-items-center justify-content-center h-100"
+  >
     <div
-      className="d-flex justify-content-between flex-row flex-sm-column justify-content-sm-center"
+      className="d-flex flex-column w-100"
     >
+      <h3>
+        Some title
+      </h3>
       <div
-        className="align-self-center align-self-sm-start mb-sm-3"
+        className="d-flex justify-content-between flex-column justify-content-sm-center"
       >
-        <span
-          className="h2"
+        <div
+          className="align-self-center align-self-sm-start mb-sm-3"
         >
-          $300
-        </span>
+          <span
+            className="h1"
+          >
+            300
+          </span>
+        </div>
+        <div
+          className="image-background product-description-image rounded"
+          style={
+            Object {
+              "backgroundImage": "url(http://lorempixel.com/640/480/fashion)",
+            }
+          }
+        />
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Storyshots Moleculs/ProductDescription default 1`] = `
@@ -1737,11 +2111,11 @@ exports[`Storyshots Moleculs/ProductDescription default 1`] = `
   className="d-flex align-items-center justify-content-center h-100"
 >
   <div
-    className="d-flex flex-column w-100 ml-sm-8 mr-sm-8"
+    className="d-flex flex-column w-100"
   >
-    <h2>
-      Lorem
-    </h2>
+    <h3>
+      Some title
+    </h3>
     <p
       className="text-uppercase"
     >
@@ -1753,15 +2127,15 @@ exports[`Storyshots Moleculs/ProductDescription default 1`] = `
       Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </p>
     <div
-      className="d-flex justify-content-between flex-row flex-sm-column justify-content-sm-center"
+      className="d-flex justify-content-between flex-column justify-content-sm-center"
     >
       <div
         className="align-self-center align-self-sm-start mb-sm-3"
       >
         <span
-          className="h2"
+          className="h1"
         >
-          $300
+          300
         </span>
       </div>
       <button
@@ -1770,7 +2144,7 @@ exports[`Storyshots Moleculs/ProductDescription default 1`] = `
         onClick={[Function]}
         type="button"
       >
-        Add to basket
+        Add to Cart
       </button>
     </div>
   </div>
@@ -1809,6 +2183,118 @@ exports[`Storyshots Moleculs/Raiser default 1`] = `
     >
       +
     </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Moleculs/Signpost default 1`] = `
+<div
+  className="viewport"
+  style={Object {}}
+>
+  <div
+    className="signpost__wrapper"
+  >
+    <div
+      className="signpost__item"
+    >
+      <div
+        className="image-background d-flex align-items-center justify-content-center"
+        style={
+          Object {
+            "backgroundImage": "url(https://picsum.photos/1024/768?random=1)",
+          }
+        }
+      >
+        <button
+          className="w-75 btn btn-outline-light btn-lg"
+          disabled={false}
+          type="button"
+        >
+          <div>
+            VIRGIN
+          </div>
+          <div>
+            Take a look
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      className="signpost__item"
+    >
+      <div
+        className="image-background d-flex align-items-center justify-content-center"
+        style={
+          Object {
+            "backgroundImage": "url(https://picsum.photos/1024/768?random=2)",
+          }
+        }
+      >
+        <button
+          className="w-75 btn btn-outline-light btn-lg"
+          disabled={false}
+          type="button"
+        >
+          <div>
+            VIRGIN
+          </div>
+          <div>
+            Take a look
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      className="signpost__item"
+    >
+      <div
+        className="image-background d-flex align-items-center justify-content-center"
+        style={
+          Object {
+            "backgroundImage": "url(https://picsum.photos/1024/768?random=3)",
+          }
+        }
+      >
+        <button
+          className="w-75 btn btn-outline-light btn-lg"
+          disabled={false}
+          type="button"
+        >
+          <div>
+            VIRGIN
+          </div>
+          <div>
+            Take a look
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      className="signpost__item"
+    >
+      <div
+        className="image-background d-flex align-items-center justify-content-center"
+        style={
+          Object {
+            "backgroundImage": "url(https://picsum.photos/1024/768?random=4)",
+          }
+        }
+      >
+        <button
+          className="w-75 btn btn-outline-light btn-lg"
+          disabled={false}
+          type="button"
+        >
+          <div>
+            VIRGIN
+          </div>
+          <div>
+            Take a look
+          </div>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1877,75 +2363,230 @@ exports[`Storyshots Moleculs/Steps default 1`] = `
 </ul>
 `;
 
-exports[`Storyshots Moleculs/forms/Abode delivery 1`] = `
+exports[`Storyshots Moleculs/forms/Abode delivery/inline 1`] = `
 <form
   className=""
   onSubmit={[Function]}
 >
-  <fieldset
-    name="name"
+  <div
+    className="mb-1"
   >
-    <div
-      className="form-row"
+    <fieldset
+      name="person"
     >
       <div
-        className="col-6 mb-3"
+        className="input-group"
       >
         <div
-          className="form-group"
+          className="form-control"
         >
-          <label
-            className="mr-3"
-            htmlFor="forename"
-          >
-            Forname
-          </label>
           <input
-            className="form-control"
+            className="border-0 w-100 bg-transparent"
             id="forename"
             name="forename"
             onChange={[Function]}
-            placeholder="Name"
+            placeholder="Karel"
             type="text"
             value=""
           />
-          <small
-            className="form-text valid-feedback d-block"
-          >
-            
-          </small>
         </div>
-      </div>
-      <div
-        className="col-6 mb-3"
-      >
         <div
-          className="form-group"
+          className="form-control"
         >
-          <label
-            className="mr-3"
-            htmlFor="surname"
-          >
-            Surname
-          </label>
           <input
-            className="form-control"
+            className="border-0 w-100 bg-transparent"
             id="surname"
             name="surname"
             onChange={[Function]}
-            placeholder="Surname"
+            placeholder="Vomacka"
             type="text"
             value=""
           />
-          <small
-            className="form-text valid-feedback d-block"
-          >
-            
-          </small>
         </div>
+      </div>
+    </fieldset>
+  </div>
+  <fieldset
+    name="address"
+  >
+    <div
+      className="input-group pb-1"
+    >
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="street"
+          name="street"
+          onChange={[Function]}
+          placeholder="Street"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="streetNo"
+          name="streetNo"
+          onChange={[Function]}
+          placeholder="Street No."
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="postcode"
+          name="postcode"
+          onChange={[Function]}
+          placeholder="Postcode"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="input-group"
+    >
+      <div
+        className="form-control d-flex flex-column"
+      >
+        <select
+          className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+          id="city"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            City
+          </option>
+          <option
+            value="prague"
+          >
+            Prague
+          </option>
+          <option
+            value="berlin"
+          >
+            Berlin
+          </option>
+        </select>
+      </div>
+      <div
+        className="form-control d-flex flex-column"
+      >
+        <select
+          className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+          id="country"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            Country
+          </option>
+          <option
+            value="CZ"
+          >
+            Czech Republic
+          </option>
+          <option
+            value="DE"
+          >
+            Germany
+          </option>
+        </select>
       </div>
     </div>
   </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Abode delivery/normal 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="mb-1"
+  >
+    <fieldset
+      name="person"
+    >
+      <div
+        className="form-row"
+      >
+        <div
+          className="col-6 mb-3"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="mr-3"
+              htmlFor="forename"
+            >
+              Forename
+            </label>
+            <input
+              className="form-control"
+              id="forename"
+              name="forename"
+              onChange={[Function]}
+              placeholder="Karel"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide forename
+            </small>
+          </div>
+        </div>
+        <div
+          className="col-6 mb-3"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="mr-3"
+              htmlFor="surname"
+            >
+              Surname
+            </label>
+            <input
+              className="form-control"
+              id="surname"
+              name="surname"
+              onChange={[Function]}
+              placeholder="Vomacka"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide surname
+            </small>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
   <fieldset
     name="address"
   >
@@ -1953,7 +2594,7 @@ exports[`Storyshots Moleculs/forms/Abode delivery 1`] = `
       className="form-row"
     >
       <div
-        className="col-6 mb-3"
+        className="col-4 mb-3"
       >
         <div
           className="form-group"
@@ -1969,19 +2610,19 @@ exports[`Storyshots Moleculs/forms/Abode delivery 1`] = `
             id="street"
             name="street"
             onChange={[Function]}
-            placeholder="Some Street"
+            placeholder="Your Street"
             type="text"
             value=""
           />
           <small
-            className="form-text valid-feedback d-block"
+            className="form-text text-muted text-nowrap text-truncate"
           >
-            
+            Provide street
           </small>
         </div>
       </div>
       <div
-        className="col-2 mb-3"
+        className="col-4 mb-3"
       >
         <div
           className="form-group"
@@ -1990,21 +2631,21 @@ exports[`Storyshots Moleculs/forms/Abode delivery 1`] = `
             className="mr-3"
             htmlFor="streetNo"
           >
-            Street Number
+            Street No.
           </label>
           <input
             className="form-control"
             id="streetNo"
             name="streetNo"
             onChange={[Function]}
-            placeholder="5"
+            placeholder="Street No."
             type="text"
             value=""
           />
           <small
-            className="form-text valid-feedback d-block"
+            className="form-text text-muted text-nowrap text-truncate"
           >
-            
+            Provide street number
           </small>
         </div>
       </div>
@@ -2025,14 +2666,14 @@ exports[`Storyshots Moleculs/forms/Abode delivery 1`] = `
             id="postcode"
             name="postcode"
             onChange={[Function]}
-            placeholder="511 01"
+            placeholder="123 21"
             type="text"
             value=""
           />
           <small
-            className="form-text valid-feedback d-block"
+            className="form-text text-muted text-nowrap text-truncate"
           >
-            
+            Provide postcode
           </small>
         </div>
       </div>
@@ -2043,13 +2684,212 @@ exports[`Storyshots Moleculs/forms/Abode delivery 1`] = `
       <div
         className="col-6 mb-3"
       >
-        <label
-          htmlFor="city"
+        <div
+          className="form-group d-flex flex-column"
         >
-          City
-        </label>
+          <label
+            className="mr-3"
+            htmlFor="city"
+          >
+            City
+          </label>
+          <select
+            className="form-control custom-select"
+            id="city"
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              disabled={true}
+              value=""
+            >
+              Wien
+            </option>
+            <option
+              value="prague"
+            >
+              Prague
+            </option>
+            <option
+              value="berlin"
+            >
+              Berlin
+            </option>
+          </select>
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Choose city
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-6 mb-3"
+      >
+        <div
+          className="form-group d-flex flex-column"
+        >
+          <label
+            className="mr-3"
+            htmlFor="country"
+          >
+            Country
+          </label>
+          <select
+            className="form-control custom-select"
+            id="country"
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              disabled={true}
+              value=""
+            />
+            <option
+              value="CZ"
+            >
+              Czech Republic
+            </option>
+            <option
+              value="DE"
+            >
+              Germany
+            </option>
+          </select>
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Choose country
+          </small>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Abode delivery/onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
+>
+  <div
+    className="mb-1"
+  >
+    <fieldset
+      name="person"
+    >
+      <div
+        className="input-group"
+      >
+        <div
+          className="h-100 form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="forename"
+            name="forename"
+            onChange={[Function]}
+            placeholder="Karel"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide forename
+          </small>
+        </div>
+        <div
+          className="h-100 form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="surname"
+            name="surname"
+            onChange={[Function]}
+            placeholder="Vomacka"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide surname
+          </small>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <fieldset
+    name="address"
+  >
+    <div
+      className="input-group pb-1"
+    >
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="street"
+          name="street"
+          onChange={[Function]}
+          placeholder="Street"
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Provide street
+        </small>
+      </div>
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="streetNo"
+          name="streetNo"
+          onChange={[Function]}
+          placeholder="Street No."
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Provide street number
+        </small>
+      </div>
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="postcode"
+          name="postcode"
+          onChange={[Function]}
+          placeholder="Postcode"
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Provide postcode
+        </small>
+      </div>
+    </div>
+    <div
+      className="input-group"
+    >
+      <div
+        className="h-100 form-control d-flex flex-column"
+      >
         <select
-          className="custom-select form-control"
+          className="h-auto border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
           id="city"
           onChange={[Function]}
           value=""
@@ -2058,7 +2898,202 @@ exports[`Storyshots Moleculs/forms/Abode delivery 1`] = `
             disabled={true}
             value=""
           >
-            
+            City
+          </option>
+          <option
+            value="prague"
+          >
+            Prague
+          </option>
+          <option
+            value="berlin"
+          >
+            Berlin
+          </option>
+        </select>
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Choose city
+        </small>
+      </div>
+      <div
+        className="h-100 form-control d-flex flex-column"
+      >
+        <select
+          className="h-auto border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+          id="country"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            Country
+          </option>
+          <option
+            value="CZ"
+          >
+            Czech Republic
+          </option>
+          <option
+            value="DE"
+          >
+            Germany
+          </option>
+        </select>
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Choose country
+        </small>
+      </div>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Abode invoicing/inline 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="mb-1"
+  >
+    <fieldset
+      name="person"
+    >
+      <div
+        className="input-group"
+      >
+        <div
+          className="form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="forename"
+            name="forename"
+            onChange={[Function]}
+            placeholder="Karel"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="surname"
+            name="surname"
+            onChange={[Function]}
+            placeholder="Vomacka"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div
+    className="mb-1"
+  >
+    <fieldset
+      name="company"
+    >
+      <div
+        className="input-group"
+      >
+        <div
+          className="form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            onChange={[Function]}
+            placeholder="Company"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            onChange={[Function]}
+            placeholder="VAT"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <fieldset
+    name="address"
+  >
+    <div
+      className="input-group pb-1"
+    >
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="street"
+          name="street"
+          onChange={[Function]}
+          placeholder="Street"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="streetNo"
+          name="streetNo"
+          onChange={[Function]}
+          placeholder="Street No."
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="postcode"
+          name="postcode"
+          onChange={[Function]}
+          placeholder="Postcode"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="input-group"
+    >
+      <div
+        className="form-control d-flex flex-column"
+      >
+        <select
+          className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+          id="city"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            City
           </option>
           <option
             value="prague"
@@ -2073,15 +3108,10 @@ exports[`Storyshots Moleculs/forms/Abode delivery 1`] = `
         </select>
       </div>
       <div
-        className="col-6 mb-3"
+        className="form-control d-flex flex-column"
       >
-        <label
-          htmlFor="country"
-        >
-          Country
-        </label>
         <select
-          className="custom-select form-control"
+          className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
           id="country"
           onChange={[Function]}
           value=""
@@ -2090,7 +3120,7 @@ exports[`Storyshots Moleculs/forms/Abode delivery 1`] = `
             disabled={true}
             value=""
           >
-            
+            Country
           </option>
           <option
             value="CZ"
@@ -2109,14 +3139,232 @@ exports[`Storyshots Moleculs/forms/Abode delivery 1`] = `
 </form>
 `;
 
-exports[`Storyshots Moleculs/forms/Abode invoicing 1`] = `
+exports[`Storyshots Moleculs/forms/Abode invoicing/normal 1`] = `
 <form
   className=""
   onSubmit={[Function]}
 >
-  <fieldset
-    name="name"
+  <div
+    className="mb-1"
   >
+    <fieldset
+      name="person"
+    >
+      <div
+        className="form-row"
+      >
+        <div
+          className="col-6 mb-3"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="mr-3"
+              htmlFor="forename"
+            >
+              Forename
+            </label>
+            <input
+              className="form-control"
+              id="forename"
+              name="forename"
+              onChange={[Function]}
+              placeholder="Karel"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide forename
+            </small>
+          </div>
+        </div>
+        <div
+          className="col-6 mb-3"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="mr-3"
+              htmlFor="surname"
+            >
+              Surname
+            </label>
+            <input
+              className="form-control"
+              id="surname"
+              name="surname"
+              onChange={[Function]}
+              placeholder="Vomacka"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide surname
+            </small>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div
+    className="mb-1"
+  >
+    <fieldset
+      name="company"
+    >
+      <div
+        className="form-row"
+      >
+        <div
+          className="col-6 mb-3"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="mr-3"
+            >
+              Company
+            </label>
+            <input
+              className="form-control"
+              onChange={[Function]}
+              placeholder="Your Company LTD"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Please provide some company name
+            </small>
+          </div>
+        </div>
+        <div
+          className="col-6 mb-3"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="mr-3"
+            >
+              VAT
+            </label>
+            <input
+              className="form-control"
+              onChange={[Function]}
+              placeholder="12 45 78"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Please provide VAT number
+            </small>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <fieldset
+    name="address"
+  >
+    <div
+      className="form-row"
+    >
+      <div
+        className="col-4 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="street"
+          >
+            Street
+          </label>
+          <input
+            className="form-control"
+            id="street"
+            name="street"
+            onChange={[Function]}
+            placeholder="Your Street"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide street
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-4 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="streetNo"
+          >
+            Street No.
+          </label>
+          <input
+            className="form-control"
+            id="streetNo"
+            name="streetNo"
+            onChange={[Function]}
+            placeholder="Street No."
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide street number
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-4 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="postcode"
+          >
+            Postcode
+          </label>
+          <input
+            className="form-control"
+            id="postcode"
+            name="postcode"
+            onChange={[Function]}
+            placeholder="123 21"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide postcode
+          </small>
+        </div>
+      </div>
+    </div>
     <div
       className="form-row"
     >
@@ -2124,27 +3372,41 @@ exports[`Storyshots Moleculs/forms/Abode invoicing 1`] = `
         className="col-6 mb-3"
       >
         <div
-          className="form-group"
+          className="form-group d-flex flex-column"
         >
           <label
             className="mr-3"
-            htmlFor="forename"
+            htmlFor="city"
           >
-            Forname
+            City
           </label>
-          <input
-            className="form-control"
-            id="forename"
-            name="forename"
+          <select
+            className="form-control custom-select"
+            id="city"
             onChange={[Function]}
-            placeholder="Name"
-            type="text"
             value=""
-          />
-          <small
-            className="form-text valid-feedback d-block"
           >
-            
+            <option
+              disabled={true}
+              value=""
+            >
+              Wien
+            </option>
+            <option
+              value="prague"
+            >
+              Prague
+            </option>
+            <option
+              value="berlin"
+            >
+              Berlin
+            </option>
+          </select>
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Choose city
           </small>
         </div>
       </div>
@@ -2152,32 +3414,761 @@ exports[`Storyshots Moleculs/forms/Abode invoicing 1`] = `
         className="col-6 mb-3"
       >
         <div
-          className="form-group"
+          className="form-group d-flex flex-column"
         >
           <label
             className="mr-3"
-            htmlFor="surname"
+            htmlFor="country"
           >
-            Surname
+            Country
           </label>
-          <input
-            className="form-control"
-            id="surname"
-            name="surname"
+          <select
+            className="form-control custom-select"
+            id="country"
             onChange={[Function]}
-            placeholder="Surname"
-            type="text"
             value=""
-          />
-          <small
-            className="form-text valid-feedback d-block"
           >
-            
+            <option
+              disabled={true}
+              value=""
+            />
+            <option
+              value="CZ"
+            >
+              Czech Republic
+            </option>
+            <option
+              value="DE"
+            >
+              Germany
+            </option>
+          </select>
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Choose country
           </small>
         </div>
       </div>
     </div>
   </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Abode invoicing/onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
+>
+  <div
+    className="mb-1"
+  >
+    <fieldset
+      name="person"
+    >
+      <div
+        className="input-group"
+      >
+        <div
+          className="h-100 form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="forename"
+            name="forename"
+            onChange={[Function]}
+            placeholder="Karel"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide forename
+          </small>
+        </div>
+        <div
+          className="h-100 form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="surname"
+            name="surname"
+            onChange={[Function]}
+            placeholder="Vomacka"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide surname
+          </small>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div
+    className="mb-1"
+  >
+    <fieldset
+      name="company"
+    >
+      <div
+        className="input-group"
+      >
+        <div
+          className="h-100 form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            onChange={[Function]}
+            placeholder="Company"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Please provide some company name
+          </small>
+        </div>
+        <div
+          className="h-100 form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            onChange={[Function]}
+            placeholder="VAT"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Please provide VAT number
+          </small>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <fieldset
+    name="address"
+  >
+    <div
+      className="input-group pb-1"
+    >
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="street"
+          name="street"
+          onChange={[Function]}
+          placeholder="Street"
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Provide street
+        </small>
+      </div>
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="streetNo"
+          name="streetNo"
+          onChange={[Function]}
+          placeholder="Street No."
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Provide street number
+        </small>
+      </div>
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="postcode"
+          name="postcode"
+          onChange={[Function]}
+          placeholder="Postcode"
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Provide postcode
+        </small>
+      </div>
+    </div>
+    <div
+      className="input-group"
+    >
+      <div
+        className="h-100 form-control d-flex flex-column"
+      >
+        <select
+          className="h-auto border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+          id="city"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            City
+          </option>
+          <option
+            value="prague"
+          >
+            Prague
+          </option>
+          <option
+            value="berlin"
+          >
+            Berlin
+          </option>
+        </select>
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Choose city
+        </small>
+      </div>
+      <div
+        className="h-100 form-control d-flex flex-column"
+      >
+        <select
+          className="h-auto border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+          id="country"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            Country
+          </option>
+          <option
+            value="CZ"
+          >
+            Czech Republic
+          </option>
+          <option
+            value="DE"
+          >
+            Germany
+          </option>
+        </select>
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Choose country
+        </small>
+      </div>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Address default 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <fieldset
+    name="address"
+  >
+    <div
+      className="form-row"
+    >
+      <div
+        className="col-4 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="123456"
+          >
+            Street
+          </label>
+          <input
+            className="form-control"
+            id="123456"
+            name="123456"
+            onChange={[Function]}
+            placeholder="Your Street"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide street
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-4 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="12345"
+          >
+            Street No.
+          </label>
+          <input
+            className="form-control"
+            id="12345"
+            name="12345"
+            onChange={[Function]}
+            placeholder="Street No."
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide street number
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-4 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="1234567"
+          >
+            Postcode
+          </label>
+          <input
+            className="form-control"
+            id="1234567"
+            name="1234567"
+            onChange={[Function]}
+            placeholder="123 21"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide postcode
+          </small>
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-row"
+    >
+      <div
+        className="col-6 mb-3"
+      >
+        <div
+          className="form-group d-flex flex-column"
+        >
+          <label
+            className="mr-3"
+            htmlFor="city"
+          >
+            City
+          </label>
+          <select
+            className="form-control custom-select"
+            id="city"
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              disabled={true}
+              value=""
+            >
+              Wien
+            </option>
+            <option
+              value="prague"
+            >
+              Prague
+            </option>
+            <option
+              value="berlin"
+            >
+              Berlin
+            </option>
+          </select>
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Choose city
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-6 mb-3"
+      >
+        <div
+          className="form-group d-flex flex-column"
+        >
+          <label
+            className="mr-3"
+            htmlFor="country"
+          >
+            Country
+          </label>
+          <select
+            className="form-control custom-select"
+            id="country"
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              disabled={true}
+              value=""
+            />
+            <option
+              value="CZ"
+            >
+              Czech Republic
+            </option>
+            <option
+              value="DE"
+            >
+              Germany
+            </option>
+          </select>
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Choose country
+          </small>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Address inline 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <fieldset
+    name="address"
+  >
+    <div
+      className="input-group pb-1"
+    >
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="123456"
+          name="123456"
+          onChange={[Function]}
+          placeholder="Street"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="12345"
+          name="12345"
+          onChange={[Function]}
+          placeholder="Street No."
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="1234567"
+          name="1234567"
+          onChange={[Function]}
+          placeholder="Postcode"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="input-group"
+    >
+      <div
+        className="form-control d-flex flex-column"
+      >
+        <select
+          className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+          id="city"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            City
+          </option>
+          <option
+            value="prague"
+          >
+            Prague
+          </option>
+          <option
+            value="berlin"
+          >
+            Berlin
+          </option>
+        </select>
+      </div>
+      <div
+        className="form-control d-flex flex-column"
+      >
+        <select
+          className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+          id="country"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            Country
+          </option>
+          <option
+            value="CZ"
+          >
+            Czech Republic
+          </option>
+          <option
+            value="DE"
+          >
+            Germany
+          </option>
+        </select>
+      </div>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Address onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
+>
+  <fieldset
+    name="address"
+  >
+    <div
+      className="input-group pb-1"
+    >
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="123456"
+          name="123456"
+          onChange={[Function]}
+          placeholder="Street"
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Provide street
+        </small>
+      </div>
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="12345"
+          name="12345"
+          onChange={[Function]}
+          placeholder="Street No."
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Provide street number
+        </small>
+      </div>
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="1234567"
+          name="1234567"
+          onChange={[Function]}
+          placeholder="Postcode"
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Provide postcode
+        </small>
+      </div>
+    </div>
+    <div
+      className="input-group"
+    >
+      <div
+        className="h-100 form-control d-flex flex-column"
+      >
+        <select
+          className="h-auto border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+          id="city"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            City
+          </option>
+          <option
+            value="prague"
+          >
+            Prague
+          </option>
+          <option
+            value="berlin"
+          >
+            Berlin
+          </option>
+        </select>
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Choose city
+        </small>
+      </div>
+      <div
+        className="h-100 form-control d-flex flex-column"
+      >
+        <select
+          className="h-auto border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+          id="country"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            Country
+          </option>
+          <option
+            value="CZ"
+          >
+            Czech Republic
+          </option>
+          <option
+            value="DE"
+          >
+            Germany
+          </option>
+        </select>
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Choose country
+        </small>
+      </div>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Company inline 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <fieldset
+    name="company"
+  >
+    <div
+      className="input-group"
+    >
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="123456"
+          name="123456"
+          onChange={[Function]}
+          placeholder="Company"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="12345"
+          name="12345"
+          onChange={[Function]}
+          placeholder="VAT"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Company normal 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
   <fieldset
     name="company"
   >
@@ -2192,19 +4183,23 @@ exports[`Storyshots Moleculs/forms/Abode invoicing 1`] = `
         >
           <label
             className="mr-3"
+            htmlFor="123456"
           >
             Company
           </label>
           <input
             className="form-control"
+            id="123456"
+            name="123456"
             onChange={[Function]}
+            placeholder="Your Company LTD"
             type="text"
             value=""
           />
           <small
-            className="form-text valid-feedback d-block"
+            className="form-text text-muted text-nowrap text-truncate"
           >
-            
+            Please provide some company name
           </small>
         </div>
       </div>
@@ -2216,608 +4211,413 @@ exports[`Storyshots Moleculs/forms/Abode invoicing 1`] = `
         >
           <label
             className="mr-3"
+            htmlFor="12345"
           >
             VAT
           </label>
           <input
             className="form-control"
+            id="12345"
+            name="12345"
             onChange={[Function]}
+            placeholder="12 45 78"
             type="text"
             value=""
           />
           <small
-            className="form-text valid-feedback d-block"
+            className="form-text text-muted text-nowrap text-truncate"
           >
-            
+            Please provide VAT number
           </small>
         </div>
-      </div>
-    </div>
-  </fieldset>
-  <fieldset
-    name="address"
-  >
-    <div
-      className="form-row"
-    >
-      <div
-        className="col-6 mb-3"
-      >
-        <div
-          className="form-group"
-        >
-          <label
-            className="mr-3"
-            htmlFor="street"
-          >
-            Street
-          </label>
-          <input
-            className="form-control"
-            id="street"
-            name="street"
-            onChange={[Function]}
-            placeholder="Some Street"
-            type="text"
-            value=""
-          />
-          <small
-            className="form-text valid-feedback d-block"
-          >
-            
-          </small>
-        </div>
-      </div>
-      <div
-        className="col-2 mb-3"
-      >
-        <div
-          className="form-group"
-        >
-          <label
-            className="mr-3"
-            htmlFor="streetNo"
-          >
-            Street Number
-          </label>
-          <input
-            className="form-control"
-            id="streetNo"
-            name="streetNo"
-            onChange={[Function]}
-            placeholder="5"
-            type="text"
-            value=""
-          />
-          <small
-            className="form-text valid-feedback d-block"
-          >
-            
-          </small>
-        </div>
-      </div>
-      <div
-        className="col-4 mb-3"
-      >
-        <div
-          className="form-group"
-        >
-          <label
-            className="mr-3"
-            htmlFor="postcode"
-          >
-            Postcode
-          </label>
-          <input
-            className="form-control"
-            id="postcode"
-            name="postcode"
-            onChange={[Function]}
-            placeholder="511 01"
-            type="text"
-            value=""
-          />
-          <small
-            className="form-text valid-feedback d-block"
-          >
-            
-          </small>
-        </div>
-      </div>
-    </div>
-    <div
-      className="form-row"
-    >
-      <div
-        className="col-6 mb-3"
-      >
-        <label
-          htmlFor="city"
-        >
-          City
-        </label>
-        <select
-          className="custom-select form-control"
-          id="city"
-          onChange={[Function]}
-          value=""
-        >
-          <option
-            disabled={true}
-            value=""
-          >
-            
-          </option>
-          <option
-            value="prague"
-          >
-            Prague
-          </option>
-          <option
-            value="berlin"
-          >
-            Berlin
-          </option>
-        </select>
-      </div>
-      <div
-        className="col-6 mb-3"
-      >
-        <label
-          htmlFor="country"
-        >
-          Country
-        </label>
-        <select
-          className="custom-select form-control"
-          id="country"
-          onChange={[Function]}
-          value=""
-        >
-          <option
-            disabled={true}
-            value=""
-          >
-            
-          </option>
-          <option
-            value="CZ"
-          >
-            Czech Republic
-          </option>
-          <option
-            value="DE"
-          >
-            Germany
-          </option>
-        </select>
       </div>
     </div>
   </fieldset>
 </form>
 `;
 
-exports[`Storyshots Moleculs/forms/Company default 1`] = `
-<fieldset
-  name="company"
+exports[`Storyshots Moleculs/forms/Company onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
 >
-  <div
-    className="form-row"
+  <fieldset
+    name="company"
   >
     <div
-      className="col-6 mb-3"
+      className="input-group"
     >
       <div
-        className="form-group"
+        className="h-100 form-control"
       >
-        <label
-          className="mr-3"
-          htmlFor="123456"
-        >
-          Company
-        </label>
         <input
-          className="form-control"
+          className="border-0 w-100 bg-transparent"
           id="123456"
           name="123456"
           onChange={[Function]}
-          placeholder=""
+          placeholder="Company"
           type="text"
           value=""
         />
         <small
-          className="form-text valid-feedback d-block"
+          className="form-text text-muted text-nowrap text-truncate"
         >
-          
+          Please provide some company name
         </small>
       </div>
-    </div>
-    <div
-      className="col-6 mb-3"
-    >
       <div
-        className="form-group"
+        className="h-100 form-control"
       >
-        <label
-          className="mr-3"
-          htmlFor="12345"
-        >
-          VAT
-        </label>
         <input
-          className="form-control"
+          className="border-0 w-100 bg-transparent"
           id="12345"
           name="12345"
           onChange={[Function]}
-          placeholder=""
+          placeholder="VAT"
           type="text"
           value=""
         />
         <small
-          className="form-text valid-feedback d-block"
+          className="form-text text-muted text-nowrap text-truncate"
         >
-          
+          Please provide VAT number
         </small>
       </div>
     </div>
-  </div>
-</fieldset>
-`;
-
-exports[`Storyshots Moleculs/forms/Delivery default 1`] = `
-Array [
-  <fieldset
-    name="name"
-  >
-    <div
-      className="form-row"
-    >
-      <div
-        className="col-6 mb-3"
-      >
-        <div
-          className="form-group"
-        >
-          <input
-            className="form-control"
-            id=""
-            name=""
-            onChange={[Function]}
-            placeholder=""
-            type="text"
-            value=""
-          />
-          <small
-            className="form-text valid-feedback d-block"
-          >
-            
-          </small>
-        </div>
-      </div>
-      <div
-        className="col-6 mb-3"
-      >
-        <div
-          className="form-group"
-        >
-          <input
-            className="form-control"
-            id=""
-            name=""
-            onChange={[Function]}
-            placeholder=""
-            type="text"
-            value=""
-          />
-          <small
-            className="form-text valid-feedback d-block"
-          >
-            
-          </small>
-        </div>
-      </div>
-    </div>
-  </fieldset>,
-  <fieldset
-    name="address"
-  >
-    <div
-      className="form-row"
-    >
-      <div
-        className="col-6 mb-3"
-      >
-        <div
-          className="form-group"
-        >
-          <input
-            className="form-control"
-            id=""
-            name=""
-            onChange={[Function]}
-            placeholder=""
-            type="text"
-            value=""
-          />
-          <small
-            className="form-text valid-feedback d-block"
-          >
-            
-          </small>
-        </div>
-      </div>
-      <div
-        className="col-2 mb-3"
-      >
-        <div
-          className="form-group"
-        >
-          <input
-            className="form-control"
-            id=""
-            name=""
-            onChange={[Function]}
-            placeholder=""
-            type="text"
-            value=""
-          />
-          <small
-            className="form-text valid-feedback d-block"
-          >
-            
-          </small>
-        </div>
-      </div>
-      <div
-        className="col-4 mb-3"
-      >
-        <div
-          className="form-group"
-        >
-          <input
-            className="form-control"
-            id=""
-            name=""
-            onChange={[Function]}
-            placeholder=""
-            type="text"
-            value=""
-          />
-          <small
-            className="form-text valid-feedback d-block"
-          >
-            
-          </small>
-        </div>
-      </div>
-    </div>
-    <div
-      className="form-row"
-    >
-      <div
-        className="col-6 mb-3"
-      >
-        <label
-          htmlFor=""
-        >
-          
-        </label>
-        <select
-          className="custom-select form-control"
-          id=""
-          onChange={[Function]}
-          value=""
-        >
-          <option
-            disabled={true}
-            value=""
-          >
-            
-          </option>
-          <option
-            value=""
-          >
-            
-          </option>
-        </select>
-      </div>
-      <div
-        className="col-6 mb-3"
-      >
-        <label
-          htmlFor=""
-        >
-          
-        </label>
-        <select
-          className="custom-select form-control"
-          id=""
-          onChange={[Function]}
-          value=""
-        >
-          <option
-            disabled={true}
-            value=""
-          >
-            
-          </option>
-          <option
-            value=""
-          >
-            
-          </option>
-        </select>
-      </div>
-    </div>
-  </fieldset>,
-]
-`;
-
-exports[`Storyshots Moleculs/forms/EmailCrawler default 1`] = `
-<form
-  className="align-items-stretch form-inline flex-nowrap"
-  onSubmit={[Function]}
->
-  <div
-    className="form-control"
-  >
-    <input
-      className="border-0 w-100"
-      id="email"
-      name="email"
-      onChange={[Function]}
-      placeholder="Email"
-      type="email"
-      value=""
-    />
-    <small
-      className="form-text valid-feedback d-block"
-    >
-      
-    </small>
-  </div>
-  <button
-    className="btn btn-primary"
-    disabled={true}
-    type="submit"
-  >
-    Send
-  </button>
+  </fieldset>
 </form>
 `;
 
-exports[`Storyshots Moleculs/forms/Person default 1`] = `
-<fieldset
-  name="name"
+exports[`Storyshots Moleculs/forms/Contact inline 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
 >
-  <div
-    className="form-row"
+  <fieldset
+    name="company"
   >
     <div
-      className="col-6 mb-3"
+      className="input-group"
     >
       <div
-        className="form-group"
+        className="form-control"
       >
-        <label
-          className="mr-3"
-          htmlFor="forname"
-        >
-          Forname
-        </label>
         <input
-          className="form-control"
-          id="forname"
-          name="forname"
+          className="border-0 w-100 bg-transparent"
+          id="123456"
+          name="123456"
           onChange={[Function]}
-          placeholder=""
+          placeholder="Email"
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="12345"
+          name="12345"
+          onChange={[Function]}
+          placeholder="Telephone number"
           type="text"
           value=""
         />
-        <small
-          className="form-text valid-feedback d-block"
-        >
-          
-        </small>
       </div>
     </div>
-    <div
-      className="col-6 mb-3"
-    >
-      <div
-        className="form-group"
-      >
-        <label
-          className="mr-3"
-          htmlFor="surname"
-        >
-          Surname
-        </label>
-        <input
-          className="form-control"
-          id="surname"
-          name="surname"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value=""
-        />
-        <small
-          className="form-text valid-feedback d-block"
-        >
-          
-        </small>
-      </div>
-    </div>
-  </div>
-</fieldset>
+  </fieldset>
+</form>
 `;
 
-exports[`Storyshots Moleculs/forms/Person state-full 1`] = `
-<fieldset
-  name="name"
+exports[`Storyshots Moleculs/forms/Contact normal 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
 >
-  <div
-    className="form-row"
+  <fieldset
+    name="company"
   >
     <div
-      className="col-6 mb-3"
+      className="form-row"
     >
       <div
-        className="form-group"
+        className="col-6 mb-3"
       >
-        <label
-          className="mr-3"
-          htmlFor="forname"
+        <div
+          className="form-group"
         >
-          Forname
-        </label>
+          <label
+            className="mr-3"
+            htmlFor="123456"
+          >
+            Email
+          </label>
+          <input
+            className="form-control"
+            id="123456"
+            name="123456"
+            onChange={[Function]}
+            placeholder="something@else.com"
+            type="email"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Please provide your email
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-6 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="12345"
+          >
+            Telephone number
+          </label>
+          <input
+            className="form-control"
+            id="12345"
+            name="12345"
+            onChange={[Function]}
+            placeholder="555 555 555"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Please provide telephone number
+          </small>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Contact onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
+>
+  <fieldset
+    name="company"
+  >
+    <div
+      className="input-group"
+    >
+      <div
+        className="h-100 form-control"
+      >
         <input
-          className="form-control"
+          className="border-0 w-100 bg-transparent"
+          id="123456"
+          name="123456"
+          onChange={[Function]}
+          placeholder="Email"
+          type="email"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Please provide your email
+        </small>
+      </div>
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="12345"
+          name="12345"
+          onChange={[Function]}
+          placeholder="Telephone number"
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Please provide telephone number
+        </small>
+      </div>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Person inline 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <fieldset
+    name="person"
+  >
+    <div
+      className="input-group"
+    >
+      <div
+        className="form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
           id="forname"
           name="forname"
           onChange={[Function]}
-          placeholder=""
+          placeholder="Karel"
           type="text"
           value=""
         />
-        <small
-          className="form-text valid-feedback d-block"
-        >
-          
-        </small>
       </div>
-    </div>
-    <div
-      className="col-6 mb-3"
-    >
       <div
-        className="form-group"
+        className="form-control"
       >
-        <label
-          className="mr-3"
-          htmlFor="surname"
-        >
-          Surname
-        </label>
         <input
-          className="form-control"
+          className="border-0 w-100 bg-transparent"
           id="surname"
           name="surname"
           onChange={[Function]}
-          placeholder=""
+          placeholder="Vomacka"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Person normal 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <fieldset
+    name="person"
+  >
+    <div
+      className="form-row"
+    >
+      <div
+        className="col-6 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="forname"
+          >
+            Forename
+          </label>
+          <input
+            className="form-control"
+            id="forname"
+            name="forname"
+            onChange={[Function]}
+            placeholder="Karel"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide forename
+          </small>
+        </div>
+      </div>
+      <div
+        className="col-6 mb-3"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="mr-3"
+            htmlFor="surname"
+          >
+            Surname
+          </label>
+          <input
+            className="form-control"
+            id="surname"
+            name="surname"
+            onChange={[Function]}
+            placeholder="Vomacka"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide surname
+          </small>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+`;
+
+exports[`Storyshots Moleculs/forms/Person onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
+>
+  <fieldset
+    name="person"
+  >
+    <div
+      className="input-group"
+    >
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="forname"
+          name="forname"
+          onChange={[Function]}
+          placeholder="Karel"
           type="text"
           value=""
         />
         <small
-          className="form-text valid-feedback d-block"
+          className="form-text text-muted text-nowrap text-truncate"
         >
-          
+          Provide forename
+        </small>
+      </div>
+      <div
+        className="h-100 form-control"
+      >
+        <input
+          className="border-0 w-100 bg-transparent"
+          id="surname"
+          name="surname"
+          onChange={[Function]}
+          placeholder="Vomacka"
+          type="text"
+          value=""
+        />
+        <small
+          className="form-text text-muted text-nowrap text-truncate"
+        >
+          Provide surname
         </small>
       </div>
     </div>
-  </div>
-</fieldset>
+  </fieldset>
+</form>
 `;
 
 exports[`Storyshots Organisms/Blog/Detail default 1`] = `
@@ -2840,7 +4640,7 @@ exports[`Storyshots Organisms/Blog/Detail default 1`] = `
       >
         by
         <a
-          href="#"
+          href="/"
         >
           Start Bootstrap
         </a>
@@ -3056,21 +4856,21 @@ exports[`Storyshots Organisms/Blog/Detail default 1`] = `
               >
                 <li>
                   <a
-                    href="#"
+                    href="/"
                   >
                     Web Design
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/"
                   >
                     HTML
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/"
                   >
                     Freebies
                   </a>
@@ -3085,21 +4885,21 @@ exports[`Storyshots Organisms/Blog/Detail default 1`] = `
               >
                 <li>
                   <a
-                    href="#"
+                    href="/"
                   >
                     JavaScript
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/"
                   >
                     CSS
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/"
                   >
                     Tutorials
                   </a>
@@ -3206,7 +5006,7 @@ exports[`Storyshots Organisms/Order default 1`] = `
           className="align-middle"
         >
           <div
-            className="image-background"
+            className="image-background rounded"
           >
             <img
               alt="Lorem ipsum"
@@ -3256,7 +5056,7 @@ exports[`Storyshots Organisms/Order default 1`] = `
           className="align-middle"
         >
           <div
-            className="image-background"
+            className="image-background rounded"
           >
             <img
               alt="Lorem ipsum"
@@ -3306,7 +5106,7 @@ exports[`Storyshots Organisms/Order default 1`] = `
           className="align-middle"
         >
           <div
-            className="image-background"
+            className="image-background rounded"
           >
             <img
               alt="Lorem ipsum"
@@ -3434,93 +5234,9 @@ exports[`Storyshots Organisms/Order empty 1`] = `
 `;
 
 exports[`Storyshots Organisms/Pad default 1`] = `
-<div>
-  <div
-    className="viewport"
-    style={
-      Object {
-        "--Viewport__xPosition-desktop": "center",
-        "--Viewport__xPosition-landscape": "center",
-        "--Viewport__xPosition-portrait": "right",
-        "backgroundImage": "url(https://picsum.photos/id/100/2500/1656)",
-      }
-    }
-  >
-    <div
-      className="hero"
-      style={
-        Object {
-          "--hero__x-position": 24,
-          "--hero__y-position": 24,
-        }
-      }
-    >
-      <h1>
-        Title
-      </h1>
-      <p>
-        Lorem ipsum
-      </p>
-    </div>
-  </div>
-  <div
-    className="viewport"
-    style={
-      Object {
-        "--Viewport__xPosition-desktop": "center",
-        "--Viewport__xPosition-landscape": "center",
-        "--Viewport__xPosition-portrait": "right",
-        "backgroundImage": "url(https://picsum.photos/id/100/2500/1656)",
-      }
-    }
-  >
-    <div
-      className="hero"
-      style={
-        Object {
-          "--hero__x-position": 24,
-          "--hero__y-position": 24,
-        }
-      }
-    >
-      <h1>
-        Title
-      </h1>
-      <p>
-        Lorem ipsum
-      </p>
-    </div>
-  </div>
-  <div
-    className="viewport"
-    style={
-      Object {
-        "--Viewport__xPosition-desktop": "center",
-        "--Viewport__xPosition-landscape": "center",
-        "--Viewport__xPosition-portrait": "right",
-        "backgroundImage": "url(https://picsum.photos/id/100/2500/1656)",
-      }
-    }
-  >
-    <div
-      className="hero"
-      style={
-        Object {
-          "--hero__x-position": 24,
-          "--hero__y-position": 24,
-        }
-      }
-    >
-      <h1>
-        Title
-      </h1>
-      <p>
-        Lorem ipsum
-      </p>
-    </div>
-  </div>
+Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-transparent undefined"
+    className="navbar navbar-expand-lg navbar-light bg-transparent justify-content-between fixed-top"
   >
     <ul
       className="navbar-nav mr-auto"
@@ -3546,680 +5262,1776 @@ exports[`Storyshots Organisms/Pad default 1`] = `
         </a>
       </li>
     </ul>
-  </nav>
-</div>
-`;
-
-exports[`Storyshots Organisms/forms/Shipping default 1`] = `
-Array [
-  <div
-    className="btn-group w-100"
-    data-toggle="buttons"
-  >
-    <label
-      className="btn btn-primary"
+    <a
+      className="navbar-brand mr-0"
+      href="#home"
     >
-      <svg
-        aria-hidden="true"
-        className="svg-inline--fa fa-truck fa-w-20 fa-1x mr-3"
-        data-icon="truck"
-        data-prefix="fas"
-        focusable="false"
-        role="img"
-        style={Object {}}
-        viewBox="0 0 640 512"
-        xmlns="http://www.w3.org/2000/svg"
+      <a
+        className="svg"
+        href="#home"
       >
-        <path
-          d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
-      <input
-        checked={false}
-        className="sr-only"
-        id="11"
-        name="01"
-        onChange={[Function]}
-        type="radio"
-        value="11"
-      />
-      Home Delivery
-    </label>
-    <label
-      className="btn btn-primary"
-    >
-      <svg
-        aria-hidden="true"
-        className="svg-inline--fa fa-truck fa-w-20 fa-1x mr-3"
-        data-icon="truck"
-        data-prefix="fas"
-        focusable="false"
-        role="img"
-        style={Object {}}
-        viewBox="0 0 640 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
-      <input
-        checked={false}
-        className="sr-only"
-        id="12"
-        name="01"
-        onChange={[Function]}
-        type="radio"
-        value="12"
-      />
-      Personal Pickup
-    </label>
-  </div>,
+        <svg
+          styles={
+            Object {
+              "fill": "black",
+            }
+          }
+        >
+          svg.svg
+        </svg>
+      </a>
+    </a>
+  </nav>,
   <div
-    className="accordion"
+    className="pad"
+    onWheel={[Function]}
+    style={
+      Object {
+        "transform": "translate3d(0, 0px, 0)",
+      }
+    }
   >
     <div
-      className="card"
+      className="viewport"
+      style={
+        Object {
+          "--Viewport__xPosition-desktop": "center",
+          "--Viewport__xPosition-landscape": "center",
+          "--Viewport__xPosition-portrait": "right",
+          "backgroundImage": "url(https://picsum.photos/id/100/2500/1656)",
+        }
+      }
     >
       <div
-        className="card-header"
+        className="hero"
+        style={
+          Object {
+            "--hero__x-position": 24,
+            "--hero__y-position": 24,
+          }
+        }
       >
-        <button
-          className="btn btn-link"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Invoicing Address
-        </button>
-      </div>
-      <div
-        aria-expanded={null}
-        className="collapse"
-      >
-        <div
-          className="card-body"
-        >
-          <fieldset
-            name="name"
-          >
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="forname1"
-                  >
-                    Forename
-                  </label>
-                  <input
-                    className="form-control"
-                    id="forname1"
-                    name="forname1"
-                    onChange={[Function]}
-                    placeholder="Denisa"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-              <div
-                className="col-6 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="surname1"
-                  >
-                    Surname
-                  </label>
-                  <input
-                    className="form-control"
-                    id="surname1"
-                    name="surname1"
-                    onChange={[Function]}
-                    placeholder="Juna"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset
-            name="company"
-          >
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="company"
-                  >
-                    Company
-                  </label>
-                  <input
-                    className="form-control"
-                    id="company"
-                    name="company"
-                    onChange={[Function]}
-                    placeholder="Somethings LTD"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-              <div
-                className="col-6 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="vat"
-                  >
-                    VAT
-                  </label>
-                  <input
-                    className="form-control"
-                    id="vat"
-                    name="vat"
-                    onChange={[Function]}
-                    placeholder="12345"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset
-            name="address"
-          >
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="street1"
-                  >
-                    Street
-                  </label>
-                  <input
-                    className="form-control"
-                    id="street1"
-                    name="street1"
-                    onChange={[Function]}
-                    placeholder="Your Street"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-              <div
-                className="col-2 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="streetNo1"
-                  >
-                    Street No.
-                  </label>
-                  <input
-                    className="form-control"
-                    id="streetNo1"
-                    name="streetNo1"
-                    onChange={[Function]}
-                    placeholder="Your Number Street"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-              <div
-                className="col-4 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="postcode1"
-                  >
-                    Postcode
-                  </label>
-                  <input
-                    className="form-control"
-                    id="postcode1"
-                    name="postcode1"
-                    onChange={[Function]}
-                    placeholder="111 11"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-            </div>
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="city1"
-                >
-                  City
-                </label>
-                <select
-                  className="custom-select form-control"
-                  id="city1"
-                  onChange={[Function]}
-                  value=""
-                >
-                  <option
-                    disabled={true}
-                    value=""
-                  >
-                    
-                  </option>
-                  <option
-                    value="PRG"
-                  >
-                    Prague
-                  </option>
-                </select>
-              </div>
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="country1"
-                >
-                  Country
-                </label>
-                <select
-                  className="custom-select form-control"
-                  id="country1"
-                  onChange={[Function]}
-                  value=""
-                >
-                  <option
-                    disabled={true}
-                    value=""
-                  >
-                    
-                  </option>
-                  <option
-                    value="CZ"
-                  >
-                    Czech Republic
-                  </option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-    <div
-      className="card"
-    >
-      <div
-        className="card-header"
-      >
-        <button
-          className="btn btn-link"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Delivery Address
-        </button>
-        <small>
-          Fill only if delivery address is different than invoicing address.
-        </small>
-      </div>
-      <div
-        aria-expanded={null}
-        className="collapse"
-      >
-        <div
-          className="card-body"
-        >
-          <fieldset
-            name="name"
-          >
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="forname2"
-                  >
-                    Forename
-                  </label>
-                  <input
-                    className="form-control"
-                    id="forname2"
-                    name="forname2"
-                    onChange={[Function]}
-                    placeholder="Denisa"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-              <div
-                className="col-6 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="surname2"
-                  >
-                    Surname
-                  </label>
-                  <input
-                    className="form-control"
-                    id="surname2"
-                    name="surname2"
-                    onChange={[Function]}
-                    placeholder="Juna"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset
-            name="address"
-          >
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="street2"
-                  >
-                    Street
-                  </label>
-                  <input
-                    className="form-control"
-                    id="street2"
-                    name="street2"
-                    onChange={[Function]}
-                    placeholder="Your Street"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-              <div
-                className="col-2 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="streetNo2"
-                  >
-                    Street No.
-                  </label>
-                  <input
-                    className="form-control"
-                    id="streetNo2"
-                    name="streetNo2"
-                    onChange={[Function]}
-                    placeholder="Your Number Street"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-              <div
-                className="col-4 mb-3"
-              >
-                <div
-                  className="form-group"
-                >
-                  <label
-                    className="mr-3"
-                    htmlFor="postcode2"
-                  >
-                    Postcode
-                  </label>
-                  <input
-                    className="form-control"
-                    id="postcode2"
-                    name="postcode2"
-                    onChange={[Function]}
-                    placeholder="111 11"
-                    type="text"
-                    value=""
-                  />
-                  <small
-                    className="form-text valid-feedback d-block"
-                  >
-                    
-                  </small>
-                </div>
-              </div>
-            </div>
-            <div
-              className="form-row"
-            >
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="city2"
-                >
-                  City
-                </label>
-                <select
-                  className="custom-select form-control"
-                  id="city2"
-                  onChange={[Function]}
-                  value=""
-                >
-                  <option
-                    disabled={true}
-                    value=""
-                  >
-                    
-                  </option>
-                  <option
-                    value="PRG"
-                  >
-                    Prague
-                  </option>
-                </select>
-              </div>
-              <div
-                className="col-6 mb-3"
-              >
-                <label
-                  htmlFor="country2"
-                >
-                  Country
-                </label>
-                <select
-                  className="custom-select form-control"
-                  id="country2"
-                  onChange={[Function]}
-                  value=""
-                >
-                  <option
-                    disabled={true}
-                    value=""
-                  >
-                    
-                  </option>
-                  <option
-                    value="CZ"
-                  >
-                    Czech Republic
-                  </option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+        <h1>
+          Title
+        </h1>
+        <p>
+          Lorem ipsum
+        </p>
       </div>
     </div>
   </div>,
   <div
-    className="form-check"
+    className="pad"
+    onWheel={[Function]}
+    style={
+      Object {
+        "transform": "translate3d(0, 768px, 0)",
+      }
+    }
   >
-    <input
-      checked={false}
-      className="form-check-input"
-      id="terms"
-      name="terms"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <label
-      className="form-check-label"
-      htmlFor="terms"
+    <div
+      className="viewport"
+      style={
+        Object {
+          "--Viewport__xPosition-desktop": "center",
+          "--Viewport__xPosition-landscape": "center",
+          "--Viewport__xPosition-portrait": "right",
+          "backgroundImage": "url(https://picsum.photos/id/101/2500/1656)",
+        }
+      }
     >
-      I agree terms and conditions
-    </label>
+      <div
+        className="hero"
+        style={
+          Object {
+            "--hero__x-position": 24,
+            "--hero__y-position": 24,
+          }
+        }
+      >
+        <h1>
+          Title
+        </h1>
+        <p>
+          Lorem ipsum
+        </p>
+      </div>
+    </div>
   </div>,
   <div
-    className="form-check"
+    className="pad"
+    onWheel={[Function]}
+    style={
+      Object {
+        "transform": "translate3d(0, 1536px, 0)",
+      }
+    }
   >
-    <input
-      checked={false}
-      className="form-check-input"
-      id="data"
-      name="data"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <label
-      className="form-check-label"
-      htmlFor="data"
+    <div
+      className="viewport"
+      style={
+        Object {
+          "--Viewport__xPosition-desktop": "center",
+          "--Viewport__xPosition-landscape": "center",
+          "--Viewport__xPosition-portrait": "right",
+          "backgroundImage": "url(https://picsum.photos/id/102/2500/1656)",
+        }
+      }
     >
-      I agree with GDPR
-    </label>
+      <div
+        className="hero"
+        style={
+          Object {
+            "--hero__x-position": 24,
+            "--hero__y-position": 24,
+          }
+        }
+      >
+        <h1>
+          Title
+        </h1>
+        <p>
+          Lorem ipsum
+        </p>
+      </div>
+    </div>
   </div>,
-  <button
-    className="btn btn-primary"
-    disabled={true}
-    onClick={[Function]}
-    type="button"
+  <nav
+    className="navbar navbar-expand-lg navbar-light bg-transparent justify-content-between fixed-bottom"
   >
-    Next
-  </button>,
+    <button
+      className="navbar-brand"
+    >
+      This is button navigation
+    </button>
+    <form
+      className="form-inline"
+    >
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        type="button"
+      >
+        Click Me!
+      </button>
+    </form>
+  </nav>,
 ]
 `;
 
-exports[`Storyshots Template/OneCheckout default 1`] = `null`;
+exports[`Storyshots Organisms/forms/EmailCrawler default 1`] = `
+<form
+  className="align-items-stretch flex-nowrap form-inline"
+  onSubmit={[Function]}
+>
+  <div
+    className="h-100 form-control"
+  >
+    <input
+      className="border-0 w-100 bg-transparent"
+      id="email"
+      name="email"
+      onChange={[Function]}
+      placeholder="Email"
+      type="email"
+      value=""
+    />
+    <small
+      className="form-text text-muted text-nowrap text-truncate"
+    >
+      Please provide your email address
+    </small>
+  </div>
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    type="submit"
+  >
+    Send
+  </button>
+</form>
+`;
+
+exports[`Storyshots Organisms/forms/Shipping inline 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="pb-4"
+  >
+    <h6>
+      <span>
+        Delivery details
+      </span>
+    </h6>
+    <div
+      className="mb-1"
+    >
+      <fieldset
+        name="person"
+      >
+        <div
+          className="input-group"
+        >
+          <div
+            className="form-control"
+          >
+            <input
+              className="border-0 w-100 bg-transparent"
+              id="forname2"
+              name="forname2"
+              onChange={[Function]}
+              placeholder="Karel"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="form-control"
+          >
+            <input
+              className="border-0 w-100 bg-transparent"
+              id="surname2"
+              name="surname2"
+              onChange={[Function]}
+              placeholder="Vomacka"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <fieldset
+      name="address"
+    >
+      <div
+        className="input-group pb-1"
+      >
+        <div
+          className="form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="street2"
+            name="street2"
+            onChange={[Function]}
+            placeholder="Street"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="streetNo2"
+            name="streetNo2"
+            onChange={[Function]}
+            placeholder="Street No."
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="postcode2"
+            name="postcode2"
+            onChange={[Function]}
+            placeholder="Postcode"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="input-group"
+      >
+        <div
+          className="form-control d-flex flex-column"
+        >
+          <select
+            className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+            id="city2"
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              disabled={true}
+              value=""
+            >
+              City
+            </option>
+            <option
+              value="Prague"
+            >
+              Prague
+            </option>
+          </select>
+        </div>
+        <div
+          className="form-control d-flex flex-column"
+        >
+          <select
+            className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+            id="country2"
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              disabled={true}
+              value=""
+            >
+              Country
+            </option>
+            <option
+              value="Czechia"
+            >
+              Czechia
+            </option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div>
+    <h6>
+      <span>
+        Billing details
+      </span>
+    </h6>
+    <div
+      className="mb-1"
+    >
+      <div
+        className="form-check"
+      >
+        <input
+          checked={true}
+          className="form-check-input"
+          id="company"
+          name="company"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label small"
+          htmlFor="company"
+        >
+          My billing details are same as delivery details
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mb-4"
+  >
+    <div
+      className="shipping__billing"
+    >
+      <div
+        className="mb-1"
+      >
+        <fieldset
+          name="person"
+        >
+          <div
+            className="input-group"
+          >
+            <div
+              className="form-control"
+            >
+              <input
+                className="border-0 w-100 bg-transparent"
+                id="forname1"
+                name="forname1"
+                onChange={[Function]}
+                placeholder="Karel"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="form-control"
+            >
+              <input
+                className="border-0 w-100 bg-transparent"
+                id="surname1"
+                name="surname1"
+                onChange={[Function]}
+                placeholder="Vomacka"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div
+        className="mb-1"
+      >
+        <fieldset
+          name="company"
+        >
+          <div
+            className="input-group"
+          >
+            <div
+              className="form-control"
+            >
+              <input
+                className="border-0 w-100 bg-transparent"
+                id="company"
+                name="company"
+                onChange={[Function]}
+                placeholder="Company"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="form-control"
+            >
+              <input
+                className="border-0 w-100 bg-transparent"
+                id="vat"
+                name="vat"
+                onChange={[Function]}
+                placeholder="VAT"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <fieldset
+        name="address"
+      >
+        <div
+          className="input-group pb-1"
+        >
+          <div
+            className="form-control"
+          >
+            <input
+              className="border-0 w-100 bg-transparent"
+              id="street1"
+              name="street1"
+              onChange={[Function]}
+              placeholder="Street"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="form-control"
+          >
+            <input
+              className="border-0 w-100 bg-transparent"
+              id="streetNo1"
+              name="streetNo1"
+              onChange={[Function]}
+              placeholder="Street No."
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="form-control"
+          >
+            <input
+              className="border-0 w-100 bg-transparent"
+              id="postcode1"
+              name="postcode1"
+              onChange={[Function]}
+              placeholder="Postcode"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="input-group"
+        >
+          <div
+            className="form-control d-flex flex-column"
+          >
+            <select
+              className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+              id="city1"
+              onChange={[Function]}
+              value=""
+            >
+              <option
+                disabled={true}
+                value=""
+              >
+                City
+              </option>
+              <option
+                value="prague"
+              >
+                Prague
+              </option>
+            </select>
+          </div>
+          <div
+            className="form-control d-flex flex-column"
+          >
+            <select
+              className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+              id="country1"
+              onChange={[Function]}
+              value=""
+            >
+              <option
+                disabled={true}
+                value=""
+              >
+                Country
+              </option>
+              <option
+                value="czechia"
+              >
+                Czechia
+              </option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div>
+    <div
+      className="mb-1"
+    >
+      <div
+        className="form-check"
+      >
+        <input
+          checked={false}
+          className="form-check-input"
+          id="terms"
+          name="terms"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label small"
+          htmlFor="terms"
+        >
+          I agree with terms and conditions
+        </label>
+      </div>
+    </div>
+    <div
+      className="mb-1"
+    >
+      <div
+        className="form-check"
+      >
+        <input
+          checked={false}
+          className="form-check-input"
+          id="data"
+          name="data"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label small"
+          htmlFor="data"
+        >
+          I agree that my data can be used by third-party
+        </label>
+      </div>
+    </div>
+  </div>
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Organisms/forms/Shipping normal 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="pb-4"
+  >
+    <h6>
+      <span>
+        Delivery details
+      </span>
+    </h6>
+    <div
+      className="mb-1"
+    >
+      <fieldset
+        name="person"
+      >
+        <div
+          className="form-row"
+        >
+          <div
+            className="col-6 mb-3"
+          >
+            <div
+              className="form-group"
+            >
+              <label
+                className="mr-3"
+                htmlFor="forname2"
+              >
+                Forename
+              </label>
+              <input
+                className="form-control"
+                id="forname2"
+                name="forname2"
+                onChange={[Function]}
+                placeholder="Karel"
+                type="text"
+                value=""
+              />
+              <small
+                className="form-text text-muted text-nowrap text-truncate"
+              >
+                Provide forename
+              </small>
+            </div>
+          </div>
+          <div
+            className="col-6 mb-3"
+          >
+            <div
+              className="form-group"
+            >
+              <label
+                className="mr-3"
+                htmlFor="surname2"
+              >
+                Surname
+              </label>
+              <input
+                className="form-control"
+                id="surname2"
+                name="surname2"
+                onChange={[Function]}
+                placeholder="Vomacka"
+                type="text"
+                value=""
+              />
+              <small
+                className="form-text text-muted text-nowrap text-truncate"
+              >
+                Provide surname
+              </small>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <fieldset
+      name="address"
+    >
+      <div
+        className="form-row"
+      >
+        <div
+          className="col-4 mb-3"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="mr-3"
+              htmlFor="street2"
+            >
+              Street
+            </label>
+            <input
+              className="form-control"
+              id="street2"
+              name="street2"
+              onChange={[Function]}
+              placeholder="Your Street"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide street
+            </small>
+          </div>
+        </div>
+        <div
+          className="col-4 mb-3"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="mr-3"
+              htmlFor="streetNo2"
+            >
+              Street No.
+            </label>
+            <input
+              className="form-control"
+              id="streetNo2"
+              name="streetNo2"
+              onChange={[Function]}
+              placeholder="Street No."
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide street number
+            </small>
+          </div>
+        </div>
+        <div
+          className="col-4 mb-3"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="mr-3"
+              htmlFor="postcode2"
+            >
+              Postcode
+            </label>
+            <input
+              className="form-control"
+              id="postcode2"
+              name="postcode2"
+              onChange={[Function]}
+              placeholder="123 21"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide postcode
+            </small>
+          </div>
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          className="col-6 mb-3"
+        >
+          <div
+            className="form-group d-flex flex-column"
+          >
+            <label
+              className="mr-3"
+              htmlFor="city2"
+            >
+              City
+            </label>
+            <select
+              className="form-control custom-select"
+              id="city2"
+              onChange={[Function]}
+              value=""
+            >
+              <option
+                disabled={true}
+                value=""
+              >
+                Wien
+              </option>
+              <option
+                value="Prague"
+              >
+                Prague
+              </option>
+            </select>
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Choose city
+            </small>
+          </div>
+        </div>
+        <div
+          className="col-6 mb-3"
+        >
+          <div
+            className="form-group d-flex flex-column"
+          >
+            <label
+              className="mr-3"
+              htmlFor="country2"
+            >
+              Country
+            </label>
+            <select
+              className="form-control custom-select"
+              id="country2"
+              onChange={[Function]}
+              value=""
+            >
+              <option
+                disabled={true}
+                value=""
+              />
+              <option
+                value="Czechia"
+              >
+                Czechia
+              </option>
+            </select>
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Choose country
+            </small>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div>
+    <h6>
+      <span>
+        Billing details
+      </span>
+    </h6>
+    <div
+      className="mb-1"
+    >
+      <div
+        className="form-check"
+      >
+        <input
+          checked={true}
+          className="form-check-input"
+          id="company"
+          name="company"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label small"
+          htmlFor="company"
+        >
+          My billing details are same as delivery details
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mb-4"
+  >
+    <div
+      className="shipping__billing"
+    >
+      <div
+        className="mb-1"
+      >
+        <fieldset
+          name="person"
+        >
+          <div
+            className="form-row"
+          >
+            <div
+              className="col-6 mb-3"
+            >
+              <div
+                className="form-group"
+              >
+                <label
+                  className="mr-3"
+                  htmlFor="forname1"
+                >
+                  Forename
+                </label>
+                <input
+                  className="form-control"
+                  id="forname1"
+                  name="forname1"
+                  onChange={[Function]}
+                  placeholder="Karel"
+                  type="text"
+                  value=""
+                />
+                <small
+                  className="form-text text-muted text-nowrap text-truncate"
+                >
+                  Provide forename
+                </small>
+              </div>
+            </div>
+            <div
+              className="col-6 mb-3"
+            >
+              <div
+                className="form-group"
+              >
+                <label
+                  className="mr-3"
+                  htmlFor="surname1"
+                >
+                  Surname
+                </label>
+                <input
+                  className="form-control"
+                  id="surname1"
+                  name="surname1"
+                  onChange={[Function]}
+                  placeholder="Vomacka"
+                  type="text"
+                  value=""
+                />
+                <small
+                  className="form-text text-muted text-nowrap text-truncate"
+                >
+                  Provide surname
+                </small>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div
+        className="mb-1"
+      >
+        <fieldset
+          name="company"
+        >
+          <div
+            className="form-row"
+          >
+            <div
+              className="col-6 mb-3"
+            >
+              <div
+                className="form-group"
+              >
+                <label
+                  className="mr-3"
+                  htmlFor="company"
+                >
+                  Company
+                </label>
+                <input
+                  className="form-control"
+                  id="company"
+                  name="company"
+                  onChange={[Function]}
+                  placeholder="Your Company LTD"
+                  type="text"
+                  value=""
+                />
+                <small
+                  className="form-text text-muted text-nowrap text-truncate"
+                >
+                  Please provide some company name
+                </small>
+              </div>
+            </div>
+            <div
+              className="col-6 mb-3"
+            >
+              <div
+                className="form-group"
+              >
+                <label
+                  className="mr-3"
+                  htmlFor="vat"
+                >
+                  VAT
+                </label>
+                <input
+                  className="form-control"
+                  id="vat"
+                  name="vat"
+                  onChange={[Function]}
+                  placeholder="12 45 78"
+                  type="text"
+                  value=""
+                />
+                <small
+                  className="form-text text-muted text-nowrap text-truncate"
+                >
+                  Please provide VAT number
+                </small>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <fieldset
+        name="address"
+      >
+        <div
+          className="form-row"
+        >
+          <div
+            className="col-4 mb-3"
+          >
+            <div
+              className="form-group"
+            >
+              <label
+                className="mr-3"
+                htmlFor="street1"
+              >
+                Street
+              </label>
+              <input
+                className="form-control"
+                id="street1"
+                name="street1"
+                onChange={[Function]}
+                placeholder="Your Street"
+                type="text"
+                value=""
+              />
+              <small
+                className="form-text text-muted text-nowrap text-truncate"
+              >
+                Provide street
+              </small>
+            </div>
+          </div>
+          <div
+            className="col-4 mb-3"
+          >
+            <div
+              className="form-group"
+            >
+              <label
+                className="mr-3"
+                htmlFor="streetNo1"
+              >
+                Street No.
+              </label>
+              <input
+                className="form-control"
+                id="streetNo1"
+                name="streetNo1"
+                onChange={[Function]}
+                placeholder="Street No."
+                type="text"
+                value=""
+              />
+              <small
+                className="form-text text-muted text-nowrap text-truncate"
+              >
+                Provide street number
+              </small>
+            </div>
+          </div>
+          <div
+            className="col-4 mb-3"
+          >
+            <div
+              className="form-group"
+            >
+              <label
+                className="mr-3"
+                htmlFor="postcode1"
+              >
+                Postcode
+              </label>
+              <input
+                className="form-control"
+                id="postcode1"
+                name="postcode1"
+                onChange={[Function]}
+                placeholder="123 21"
+                type="text"
+                value=""
+              />
+              <small
+                className="form-text text-muted text-nowrap text-truncate"
+              >
+                Provide postcode
+              </small>
+            </div>
+          </div>
+        </div>
+        <div
+          className="form-row"
+        >
+          <div
+            className="col-6 mb-3"
+          >
+            <div
+              className="form-group d-flex flex-column"
+            >
+              <label
+                className="mr-3"
+                htmlFor="city1"
+              >
+                City
+              </label>
+              <select
+                className="form-control custom-select"
+                id="city1"
+                onChange={[Function]}
+                value=""
+              >
+                <option
+                  disabled={true}
+                  value=""
+                >
+                  Wien
+                </option>
+                <option
+                  value="prague"
+                >
+                  Prague
+                </option>
+              </select>
+              <small
+                className="form-text text-muted text-nowrap text-truncate"
+              >
+                Choose city
+              </small>
+            </div>
+          </div>
+          <div
+            className="col-6 mb-3"
+          >
+            <div
+              className="form-group d-flex flex-column"
+            >
+              <label
+                className="mr-3"
+                htmlFor="country1"
+              >
+                Country
+              </label>
+              <select
+                className="form-control custom-select"
+                id="country1"
+                onChange={[Function]}
+                value=""
+              >
+                <option
+                  disabled={true}
+                  value=""
+                />
+                <option
+                  value="czechia"
+                >
+                  Czechia
+                </option>
+              </select>
+              <small
+                className="form-text text-muted text-nowrap text-truncate"
+              >
+                Choose country
+              </small>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div>
+    <div
+      className="mb-1"
+    >
+      <div
+        className="form-check"
+      >
+        <input
+          checked={false}
+          className="form-check-input"
+          id="terms"
+          name="terms"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label small"
+          htmlFor="terms"
+        >
+          I agree with terms and conditions
+        </label>
+      </div>
+    </div>
+    <div
+      className="mb-1"
+    >
+      <div
+        className="form-check"
+      >
+        <input
+          checked={false}
+          className="form-check-input"
+          id="data"
+          name="data"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label small"
+          htmlFor="data"
+        >
+          I agree that my data can be used by third-party
+        </label>
+      </div>
+    </div>
+  </div>
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Organisms/forms/Shipping onplace 1`] = `
+<form
+  className="align-items-stretch flex-nowrap"
+  onSubmit={[Function]}
+>
+  <div
+    className="pb-4"
+  >
+    <h6>
+      <span>
+        Delivery details
+      </span>
+    </h6>
+    <div
+      className="mb-1"
+    >
+      <fieldset
+        name="person"
+      >
+        <div
+          className="input-group"
+        >
+          <div
+            className="h-100 form-control"
+          >
+            <input
+              className="border-0 w-100 bg-transparent"
+              id="forname2"
+              name="forname2"
+              onChange={[Function]}
+              placeholder="Karel"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide forename
+            </small>
+          </div>
+          <div
+            className="h-100 form-control"
+          >
+            <input
+              className="border-0 w-100 bg-transparent"
+              id="surname2"
+              name="surname2"
+              onChange={[Function]}
+              placeholder="Vomacka"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide surname
+            </small>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <fieldset
+      name="address"
+    >
+      <div
+        className="input-group pb-1"
+      >
+        <div
+          className="h-100 form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="street2"
+            name="street2"
+            onChange={[Function]}
+            placeholder="Street"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide street
+          </small>
+        </div>
+        <div
+          className="h-100 form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="streetNo2"
+            name="streetNo2"
+            onChange={[Function]}
+            placeholder="Street No."
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide street number
+          </small>
+        </div>
+        <div
+          className="h-100 form-control"
+        >
+          <input
+            className="border-0 w-100 bg-transparent"
+            id="postcode2"
+            name="postcode2"
+            onChange={[Function]}
+            placeholder="Postcode"
+            type="text"
+            value=""
+          />
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Provide postcode
+          </small>
+        </div>
+      </div>
+      <div
+        className="input-group"
+      >
+        <div
+          className="h-100 form-control d-flex flex-column"
+        >
+          <select
+            className="h-auto border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+            id="city2"
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              disabled={true}
+              value=""
+            >
+              City
+            </option>
+            <option
+              value="Prague"
+            >
+              Prague
+            </option>
+          </select>
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Choose city
+          </small>
+        </div>
+        <div
+          className="h-100 form-control d-flex flex-column"
+        >
+          <select
+            className="h-auto border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+            id="country2"
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              disabled={true}
+              value=""
+            >
+              Country
+            </option>
+            <option
+              value="Czechia"
+            >
+              Czechia
+            </option>
+          </select>
+          <small
+            className="form-text text-muted text-nowrap text-truncate"
+          >
+            Choose country
+          </small>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div>
+    <h6>
+      <span>
+        Billing details
+      </span>
+    </h6>
+    <div
+      className="mb-1"
+    >
+      <div
+        className="form-check"
+      >
+        <input
+          checked={true}
+          className="form-check-input"
+          id="company"
+          name="company"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label small"
+          htmlFor="company"
+        >
+          My billing details are same as delivery details
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mb-4"
+  >
+    <div
+      className="shipping__billing"
+    >
+      <div
+        className="mb-1"
+      >
+        <fieldset
+          name="person"
+        >
+          <div
+            className="input-group"
+          >
+            <div
+              className="h-100 form-control"
+            >
+              <input
+                className="border-0 w-100 bg-transparent"
+                id="forname1"
+                name="forname1"
+                onChange={[Function]}
+                placeholder="Karel"
+                type="text"
+                value=""
+              />
+              <small
+                className="form-text text-muted text-nowrap text-truncate"
+              >
+                Provide forename
+              </small>
+            </div>
+            <div
+              className="h-100 form-control"
+            >
+              <input
+                className="border-0 w-100 bg-transparent"
+                id="surname1"
+                name="surname1"
+                onChange={[Function]}
+                placeholder="Vomacka"
+                type="text"
+                value=""
+              />
+              <small
+                className="form-text text-muted text-nowrap text-truncate"
+              >
+                Provide surname
+              </small>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div
+        className="mb-1"
+      >
+        <fieldset
+          name="company"
+        >
+          <div
+            className="input-group"
+          >
+            <div
+              className="h-100 form-control"
+            >
+              <input
+                className="border-0 w-100 bg-transparent"
+                id="company"
+                name="company"
+                onChange={[Function]}
+                placeholder="Company"
+                type="text"
+                value=""
+              />
+              <small
+                className="form-text text-muted text-nowrap text-truncate"
+              >
+                Please provide some company name
+              </small>
+            </div>
+            <div
+              className="h-100 form-control"
+            >
+              <input
+                className="border-0 w-100 bg-transparent"
+                id="vat"
+                name="vat"
+                onChange={[Function]}
+                placeholder="VAT"
+                type="text"
+                value=""
+              />
+              <small
+                className="form-text text-muted text-nowrap text-truncate"
+              >
+                Please provide VAT number
+              </small>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <fieldset
+        name="address"
+      >
+        <div
+          className="input-group pb-1"
+        >
+          <div
+            className="h-100 form-control"
+          >
+            <input
+              className="border-0 w-100 bg-transparent"
+              id="street1"
+              name="street1"
+              onChange={[Function]}
+              placeholder="Street"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide street
+            </small>
+          </div>
+          <div
+            className="h-100 form-control"
+          >
+            <input
+              className="border-0 w-100 bg-transparent"
+              id="streetNo1"
+              name="streetNo1"
+              onChange={[Function]}
+              placeholder="Street No."
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide street number
+            </small>
+          </div>
+          <div
+            className="h-100 form-control"
+          >
+            <input
+              className="border-0 w-100 bg-transparent"
+              id="postcode1"
+              name="postcode1"
+              onChange={[Function]}
+              placeholder="Postcode"
+              type="text"
+              value=""
+            />
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Provide postcode
+            </small>
+          </div>
+        </div>
+        <div
+          className="input-group"
+        >
+          <div
+            className="h-100 form-control d-flex flex-column"
+          >
+            <select
+              className="h-auto border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+              id="city1"
+              onChange={[Function]}
+              value=""
+            >
+              <option
+                disabled={true}
+                value=""
+              >
+                City
+              </option>
+              <option
+                value="prague"
+              >
+                Prague
+              </option>
+            </select>
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Choose city
+            </small>
+          </div>
+          <div
+            className="h-100 form-control d-flex flex-column"
+          >
+            <select
+              className="h-auto border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+              id="country1"
+              onChange={[Function]}
+              value=""
+            >
+              <option
+                disabled={true}
+                value=""
+              >
+                Country
+              </option>
+              <option
+                value="czechia"
+              >
+                Czechia
+              </option>
+            </select>
+            <small
+              className="form-text text-muted text-nowrap text-truncate"
+            >
+              Choose country
+            </small>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div>
+    <div
+      className="mb-1"
+    >
+      <div
+        className="form-check"
+      >
+        <input
+          checked={false}
+          className="form-check-input"
+          id="terms"
+          name="terms"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label small"
+          htmlFor="terms"
+        >
+          I agree with terms and conditions
+        </label>
+      </div>
+    </div>
+    <div
+      className="mb-1"
+    >
+      <div
+        className="form-check"
+      >
+        <input
+          checked={false}
+          className="form-check-input"
+          id="data"
+          name="data"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label small"
+          htmlFor="data"
+        >
+          I agree that my data can be used by third-party
+        </label>
+      </div>
+    </div>
+  </div>
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Organisms/forms/Stripe default 1`] = `
+<form
+  className="d-flex flex-column"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control d-flex flex-column justify-content-center stripe-card-number"
+  />
+  <div
+    className="input-group mb-4"
+  >
+    <div
+      className="form-control d-flex flex-column justify-content-center"
+    />
+    <div
+      className="form-control d-flex flex-column justify-content-center"
+    />
+  </div>
+  <button
+    className="btn-block btn btn-primary"
+    disabled={false}
+    type="submit"
+  >
+    Pay
+  </button>
+</form>
+`;
 
 exports[`Storyshots Templates/EmailCrawlingMicrosite default 1`] = `
 <div
-  className="image-background vh-100 vw-100 d-flex align-items-center justify-content-center"
+  className="image-background vh-100 vw-100 d-flex align-items-center justify-content-center rounded"
   style={
     Object {
       "backgroundImage": "url(http://lorempixel.com/640/480/fashion)",
@@ -4234,14 +7046,14 @@ exports[`Storyshots Templates/EmailCrawlingMicrosite default 1`] = `
     }
   >
     <form
-      className="align-items-stretch form-inline flex-nowrap"
+      className="align-items-stretch flex-nowrap form-inline"
       onSubmit={[Function]}
     >
       <div
-        className="form-control"
+        className="h-100 form-control"
       >
         <input
-          className="border-0 w-100"
+          className="border-0 w-100 bg-transparent"
           id="email"
           name="email"
           onChange={[Function]}
@@ -4250,9 +7062,9 @@ exports[`Storyshots Templates/EmailCrawlingMicrosite default 1`] = `
           value=""
         />
         <small
-          className="form-text valid-feedback d-block"
+          className="form-text text-muted text-nowrap text-truncate"
         >
-          
+          Please provide your email address
         </small>
       </div>
       <button
@@ -4268,26 +7080,496 @@ exports[`Storyshots Templates/EmailCrawlingMicrosite default 1`] = `
 `;
 
 exports[`Storyshots Templates/OneCheckout default 1`] = `
-<div
-  className="d-flex align-items-center justify-content-center h-100"
+<form
+  className=""
+  onSubmit={[Function]}
 >
   <div
-    className="d-flex flex-column w-100 ml-sm-8 mr-sm-8"
+    className="viewport d-flex align-items-md-center"
+    style={Object {}}
   >
-    <h3 />
     <div
-      className="d-flex justify-content-between flex-row flex-sm-column justify-content-sm-center"
+      className="container-fluid one-checkout"
     >
       <div
-        className="align-self-center align-self-sm-start mb-sm-3"
+        className="row justify-content-between"
       >
-        <span
-          className="h1"
-        />
+        <div
+          className="col-md-5 col-s-12 justify-content-center d-flex flex-column pb-xs-4"
+        >
+          <button
+            className="align-self-start btn btn-link"
+            disabled={false}
+            type="button"
+          >
+            Go back
+          </button>
+          <div
+            className="d-flex align-items-center justify-content-center h-100"
+          >
+            <div
+              className="d-flex flex-column w-100"
+            >
+              <h3>
+                Some title
+              </h3>
+              <div
+                className="d-flex justify-content-between flex-column justify-content-sm-center"
+              >
+                <div
+                  className="align-self-center align-self-sm-start mb-sm-3"
+                >
+                  <span
+                    className="h1"
+                  >
+                    300
+                  </span>
+                </div>
+                <div
+                  className="image-background product-description-image rounded"
+                  style={
+                    Object {
+                      "backgroundImage": "url(http://lorempixel.com/640/480/fashion)",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-6 col-s-12 justify-content-center d-flex flex-column border-left-1"
+        >
+          <div
+            className="mb-4"
+          >
+            <div
+              className="pb-4"
+            >
+              <h6>
+                <span>
+                  Delivery details
+                </span>
+              </h6>
+              <div
+                className="mb-1"
+              >
+                <fieldset
+                  name="person"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <div
+                      className="form-control"
+                    >
+                      <input
+                        className="border-0 w-100 bg-transparent"
+                        id="forname2"
+                        name="forname2"
+                        onChange={[Function]}
+                        placeholder="Karel"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                    <div
+                      className="form-control"
+                    >
+                      <input
+                        className="border-0 w-100 bg-transparent"
+                        id="surname2"
+                        name="surname2"
+                        onChange={[Function]}
+                        placeholder="Vomacka"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <fieldset
+                name="address"
+              >
+                <div
+                  className="input-group pb-1"
+                >
+                  <div
+                    className="form-control"
+                  >
+                    <input
+                      className="border-0 w-100 bg-transparent"
+                      id="street2"
+                      name="street2"
+                      onChange={[Function]}
+                      placeholder="Street"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                  <div
+                    className="form-control"
+                  >
+                    <input
+                      className="border-0 w-100 bg-transparent"
+                      id="streetNo2"
+                      name="streetNo2"
+                      onChange={[Function]}
+                      placeholder="Street No."
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                  <div
+                    className="form-control"
+                  >
+                    <input
+                      className="border-0 w-100 bg-transparent"
+                      id="postcode2"
+                      name="postcode2"
+                      onChange={[Function]}
+                      placeholder="Postcode"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div
+                  className="input-group"
+                >
+                  <div
+                    className="form-control d-flex flex-column"
+                  >
+                    <select
+                      className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+                      id="city2"
+                      onChange={[Function]}
+                      value=""
+                    >
+                      <option
+                        disabled={true}
+                        value=""
+                      >
+                        City
+                      </option>
+                      <option
+                        value="Prague"
+                      >
+                        Prague
+                      </option>
+                    </select>
+                  </div>
+                  <div
+                    className="form-control d-flex flex-column"
+                  >
+                    <select
+                      className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+                      id="country2"
+                      onChange={[Function]}
+                      value=""
+                    >
+                      <option
+                        disabled={true}
+                        value=""
+                      >
+                        Country
+                      </option>
+                      <option
+                        value="Czechia"
+                      >
+                        Czechia
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div>
+              <h6>
+                <span>
+                  Billing details
+                </span>
+              </h6>
+              <div
+                className="mb-1"
+              >
+                <div
+                  className="form-check"
+                >
+                  <input
+                    checked={true}
+                    className="form-check-input"
+                    id="company"
+                    name="company"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="form-check-label small"
+                    htmlFor="company"
+                  >
+                    My billing details are same as delivery details
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              className="mb-4"
+            >
+              <div
+                className="shipping__billing"
+              >
+                <div
+                  className="mb-1"
+                >
+                  <fieldset
+                    name="person"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <div
+                        className="form-control"
+                      >
+                        <input
+                          className="border-0 w-100 bg-transparent"
+                          id="forname1"
+                          name="forname1"
+                          onChange={[Function]}
+                          placeholder="Karel"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        className="form-control"
+                      >
+                        <input
+                          className="border-0 w-100 bg-transparent"
+                          id="surname1"
+                          name="surname1"
+                          onChange={[Function]}
+                          placeholder="Vomacka"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  className="mb-1"
+                >
+                  <fieldset
+                    name="company"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <div
+                        className="form-control"
+                      >
+                        <input
+                          className="border-0 w-100 bg-transparent"
+                          id="company"
+                          name="company"
+                          onChange={[Function]}
+                          placeholder="Company"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        className="form-control"
+                      >
+                        <input
+                          className="border-0 w-100 bg-transparent"
+                          id="vat"
+                          name="vat"
+                          onChange={[Function]}
+                          placeholder="VAT"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <fieldset
+                  name="address"
+                >
+                  <div
+                    className="input-group pb-1"
+                  >
+                    <div
+                      className="form-control"
+                    >
+                      <input
+                        className="border-0 w-100 bg-transparent"
+                        id="street1"
+                        name="street1"
+                        onChange={[Function]}
+                        placeholder="Street"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                    <div
+                      className="form-control"
+                    >
+                      <input
+                        className="border-0 w-100 bg-transparent"
+                        id="streetNo1"
+                        name="streetNo1"
+                        onChange={[Function]}
+                        placeholder="Street No."
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                    <div
+                      className="form-control"
+                    >
+                      <input
+                        className="border-0 w-100 bg-transparent"
+                        id="postcode1"
+                        name="postcode1"
+                        onChange={[Function]}
+                        placeholder="Postcode"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="input-group"
+                  >
+                    <div
+                      className="form-control d-flex flex-column"
+                    >
+                      <select
+                        className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+                        id="city1"
+                        onChange={[Function]}
+                        value=""
+                      >
+                        <option
+                          disabled={true}
+                          value=""
+                        >
+                          City
+                        </option>
+                        <option
+                          value="prague"
+                        >
+                          Prague
+                        </option>
+                      </select>
+                    </div>
+                    <div
+                      className="form-control d-flex flex-column"
+                    >
+                      <select
+                        className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+                        id="country1"
+                        onChange={[Function]}
+                        value=""
+                      >
+                        <option
+                          disabled={true}
+                          value=""
+                        >
+                          Country
+                        </option>
+                        <option
+                          value="czechia"
+                        >
+                          Czechia
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <div>
+              <div
+                className="mb-1"
+              >
+                <div
+                  className="form-check"
+                >
+                  <input
+                    checked={false}
+                    className="form-check-input"
+                    id="terms"
+                    name="terms"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="form-check-label small"
+                    htmlFor="terms"
+                  >
+                    I agree with terms and conditions
+                  </label>
+                </div>
+              </div>
+              <div
+                className="mb-1"
+              >
+                <div
+                  className="form-check"
+                >
+                  <input
+                    checked={false}
+                    className="form-check-input"
+                    id="data"
+                    name="data"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="form-check-label small"
+                    htmlFor="data"
+                  >
+                    I agree that my data can be used by third-party
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form
+            className="d-flex flex-column"
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-control d-flex flex-column justify-content-center stripe-card-number"
+            />
+            <div
+              className="input-group mb-4"
+            >
+              <div
+                className="form-control d-flex flex-column justify-content-center"
+              />
+              <div
+                className="form-control d-flex flex-column justify-content-center"
+              />
+            </div>
+            <button
+              className="btn-block btn btn-primary"
+              disabled={true}
+              type="submit"
+            >
+              Pay
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</form>
 `;
 
 exports[`Storyshots Templates/ProductDetail default 1`] = `
@@ -4335,7 +7617,7 @@ exports[`Storyshots Templates/ProductDetail default 1`] = `
             >
               <a
                 className="svg"
-                href="/"
+                href="#home"
               >
                 <svg
                   styles={
@@ -4354,7 +7636,7 @@ exports[`Storyshots Templates/ProductDetail default 1`] = `
           className="image-wrapper"
         >
           <div
-            className="image-background"
+            className="image-background rounded"
             style={
               Object {
                 "backgroundImage": "url(http://lorempixel.com/640/480/fashion)",
@@ -4370,41 +7652,23 @@ exports[`Storyshots Templates/ProductDetail default 1`] = `
           className="d-flex align-items-center justify-content-center h-100"
         >
           <div
-            className="d-flex flex-column w-100 ml-sm-8 mr-sm-8"
+            className="d-flex flex-column w-100"
           >
-            <h2>
-              Lorem
-            </h2>
-            <p
-              className="text-uppercase"
-            >
-              Dolor
-            </p>
-            <p
-              className="font-weight-light mb-4 mb-sm-3"
-            >
-              Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            </p>
+            <h3>
+              Some title
+            </h3>
             <div
-              className="d-flex justify-content-between flex-row flex-sm-column justify-content-sm-center"
+              className="d-flex justify-content-between flex-column justify-content-sm-center"
             >
               <div
                 className="align-self-center align-self-sm-start mb-sm-3"
               >
                 <span
-                  className="h2"
+                  className="h1"
                 >
-                  $300
+                  300
                 </span>
               </div>
-              <button
-                className="align-self-center align-self-sm-stretch btn btn-outline-dark"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-              >
-                Add to basket
-              </button>
             </div>
           </div>
         </div>
@@ -4423,7 +7687,7 @@ exports[`Storyshots moleculs/List default 1`] = `
       className="align-middle"
     >
       <div
-        className="image-background"
+        className="image-background rounded"
       >
         <img
           alt="Lorem ipsum"
@@ -4472,7 +7736,7 @@ exports[`Storyshots moleculs/List default 1`] = `
       className="align-middle"
     >
       <div
-        className="image-background"
+        className="image-background rounded"
       >
         <img
           alt="Lorem ipsum"
@@ -4521,7 +7785,7 @@ exports[`Storyshots moleculs/List default 1`] = `
       className="align-middle"
     >
       <div
-        className="image-background"
+        className="image-background rounded"
       >
         <img
           alt="Lorem ipsum"
