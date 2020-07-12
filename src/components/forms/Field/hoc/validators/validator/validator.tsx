@@ -1,7 +1,7 @@
-import React, { ComponentType, ReactElement } from "react";
-import { Message, MessageType } from "../types";
-import { BuilderInterface } from "@pyxismedia/lib-model";
-import { MessagesProps, ValidatorProps } from "./props";
+import React, { ComponentType, ReactElement } from 'react';
+import { Message, MessageType } from '../types';
+import { BuilderInterface } from '@pyxismedia/lib-model';
+import { MessagesProps, ValidatorProps } from './props';
 
 export type Validator = (message: Message) => Validation;
 
@@ -39,7 +39,7 @@ export function validator<O extends ValidatorProps & MessagesProps>(
     [(message: Message) => Validation, MessageType]
   ]
 ) {
-  type Output = Pick<O, Exclude<keyof O, "messages">> & {
+  type Output = Pick<O, Exclude<keyof O, 'messages'>> & {
     validator: [Validation, Validation, Validation];
   };
 

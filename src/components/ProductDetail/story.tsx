@@ -13,8 +13,10 @@ storiesOf('Templates/ProductDetail', module).add('default', () => (
     image="http://lorempixel.com/640/480/fashion"
   >
     <Navigation>
-      <NavigationItems items={[{ title: 'Get to know Animaux!', link: 'http://' }]} />
-      <NavigationBrand brand={Brand} link="#home"/>
+      <NavigationItems
+        items={[{ title: 'Get to know Animaux!', link: 'http://' }]}
+      />
+      <NavigationBrand brand={Brand} link="#home" />
     </Navigation>
   </ProductDetail>
 ));

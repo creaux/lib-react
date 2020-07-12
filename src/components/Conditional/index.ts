@@ -1,1 +1,1 @@
-export { Conditional } from "./component";
+export { Conditional } from './component';

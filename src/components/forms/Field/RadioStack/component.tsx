@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import cx from "classnames";
-import { OnChange } from "../../../types/form";
-import { IRadioStack, IRadio } from "./types";
+import React, { FunctionComponent } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import cx from 'classnames';
+import { OnChange } from '../../../types/form';
+import { IRadioStack, IRadio } from './types';
 
 export interface RadioStackProps extends IRadioStack {
   onChange: OnChange;
@@ -17,7 +17,7 @@ export const RadioStack: FunctionComponent<RadioStackProps> = ({
   <div className="btn-group w-100" data-toggle="buttons">
     {radios.map((radio: IRadio) => (
       <label
-        className={cx("btn", "btn-primary", { active: active === radio.id })}
+        className={cx('btn', 'btn-primary', { active: active === radio.id })}
         key={radio.id}
       >
         <FontAwesomeIcon icon={radio.icon} size="1x" className="mr-3" />

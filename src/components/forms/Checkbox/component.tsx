@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from "react";
-import { OnChange } from "../../types/form";
-import { CheckboxBuilder, ICheckbox } from "./types";
-import { BuilderInterface } from "@pyxismedia/lib-model";
+import React, { FunctionComponent } from 'react';
+import { OnChange } from '../../types/form';
+import { CheckboxBuilder, ICheckbox } from './types';
+import { BuilderInterface } from '@pyxismedia/lib-model';
 
 export class CheckboxPropsBuilder extends CheckboxBuilder
   implements BuilderInterface<CheckboxProps> {

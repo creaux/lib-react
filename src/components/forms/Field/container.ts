@@ -1,10 +1,10 @@
-import { Component, createElement, FormEvent } from "react";
-import { Field } from "./component";
-import { FormTypeContext } from "../Form/component";
-import { FieldType, InputTypeEnum, IOption, OnValidChange } from "./types";
-import { Message, MessageBuilder, MessageType } from "./hoc/validators/types";
-import { Validation } from "./hoc/validators/validator/validator";
-import { OnChange } from "../../types/form";
+import { Component, createElement, FormEvent } from 'react';
+import { Field } from './component';
+import { FormTypeContext } from '../Form/component';
+import { FieldType, InputTypeEnum, IOption, OnValidChange } from './types';
+import { Message, MessageBuilder, MessageType } from './hoc/validators/types';
+import { Validation } from './hoc/validators/validator/validator';
+import { OnChange } from '../../types/form';
 
 export interface FieldContainerProps {
   id: string;
@@ -41,7 +41,7 @@ export class FieldContainer extends Component<
     super(props);
 
     this.state = {
-      value: "",
+      value: '',
       message: this.defaultMessage
     };
   }
@@ -81,7 +81,7 @@ export class FieldContainer extends Component<
       }
     } else {
       throw new Error(
-        "Validators do not cover this use case please revise them."
+        'Validators do not cover this use case please revise them.'
       );
     }
   };

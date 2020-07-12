@@ -1,11 +1,11 @@
-import { OnChange } from "../../types/form";
-import { Messages } from "./hoc/validators/types";
-import { BuilderInterface } from "@pyxismedia/lib-model";
+import { OnChange } from '../../types/form';
+import { Messages } from './hoc/validators/types';
+import { BuilderInterface } from '@pyxismedia/lib-model';
 
 export enum InputTypeEnum {
-  TEXT = "text",
-  NUMBER = "text",
-  EMAIL = "email"
+  TEXT = 'text',
+  NUMBER = 'text',
+  EMAIL = 'email'
 }
 
 export class InputBuilder {

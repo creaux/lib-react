@@ -1,6 +1,6 @@
-import { IAbode, IAbodeValidated } from "../../forms/Abode";
-import { IRadioStack } from "../Field/RadioStack/types";
-import { ICheckbox } from "../../forms/Checkbox/types";
+import { IAbode, IAbodeValidated } from '../../forms/Abode';
+import { IRadioStack } from '../Field/RadioStack/types';
+import { ICheckbox } from '../../forms/Checkbox/types';
 
 export interface IShippingGroups {
   delivery: IAbode;

@@ -1,18 +1,18 @@
-import React, { FunctionComponent } from "react";
-import { Abode, IAbode } from "../Abode";
+import React, { FunctionComponent } from 'react';
+import { Abode, IAbode } from '../Abode';
 import {
   OnFieldChange,
   OnGroupChange,
   OnValidGroupFieldChange
-} from "../../types/form";
-import { IShippingFields, IShippingGroups } from "./types";
-import { faFileInvoiceDollar, faHome } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { I18nConsumer } from "../../I18n/component";
-import defaultTranslations from "./en.json";
-import { Checkbox } from "../Checkbox/index";
-import { Conditional } from "../../Conditional/component";
-import { CSSTransition } from "react-transition-group";
+} from '../../types/form';
+import { IShippingFields, IShippingGroups } from './types';
+import { faFileInvoiceDollar, faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { I18nConsumer } from '../../I18n/component';
+import defaultTranslations from './en.json';
+import { Checkbox } from '../Checkbox/index';
+import { Conditional } from '../../Conditional/component';
+import { CSSTransition } from 'react-transition-group';
 
 interface ShippingProps extends IShippingGroups, IShippingFields {
   onFieldChange: OnFieldChange<keyof IShippingFields>;
@@ -64,8 +64,8 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
             </h6>
             <Abode
               {...delivery}
-              onFieldChange={handleGroupChange("delivery")}
-              onValidFieldChange={handleValidGroupFieldChange("delivery")}
+              onFieldChange={handleGroupChange('delivery')}
+              onValidFieldChange={handleValidGroupFieldChange('delivery')}
             />
           </div>
           <div>
@@ -87,7 +87,7 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
               <Checkbox
                 title={translations.SHIPPING_IS_COMPANY}
                 {...company}
-                onChange={handleFieldChange("company")}
+                onChange={handleFieldChange('company')}
               />
             </div>
           </div>
@@ -100,8 +100,8 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
               <div>
                 <Abode
                   {...invoicing}
-                  onFieldChange={handleGroupChange("invoicing")}
-                  onValidFieldChange={handleValidGroupFieldChange("invoicing")}
+                  onFieldChange={handleGroupChange('invoicing')}
+                  onValidFieldChange={handleValidGroupFieldChange('invoicing')}
                 />
               </div>
             </CSSTransition>
@@ -111,14 +111,14 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
               <Checkbox
                 title={translations.SHIPPING_TERMS}
                 {...terms}
-                onChange={handleFieldChange("terms")}
+                onChange={handleFieldChange('terms')}
               />
             </div>
             <div className="mb-1">
               <Checkbox
                 title={translations.SHIPPING_DATA}
                 {...data}
-                onChange={handleFieldChange("data")}
+                onChange={handleFieldChange('data')}
               />
             </div>
           </div>

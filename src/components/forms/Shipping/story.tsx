@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { storiesOf } from "@storybook/react";
-import { Shipping } from "./container";
-import { Form, FormType } from "../Form/component";
-import { Button, Type } from "../Button";
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
+import { Shipping } from './container';
+import { Form, FormType } from '../Form/component';
+import { Button, Type } from '../Button';
 
-const story = storiesOf("Organisms/forms/Shipping", module);
+const story = storiesOf('Organisms/forms/Shipping', module);
 
-story.add("normal", () => {
+story.add('normal', () => {
   const [disabled, setDisabled] = useState(true);
   const handleFormChange = () => {
     return;
@@ -27,7 +27,7 @@ story.add("normal", () => {
   );
 });
 
-story.add("onplace", () => {
+story.add('onplace', () => {
   const [disabled, setDisabled] = useState(true);
   const handleFormChange = () => {
     return null;
@@ -53,7 +53,7 @@ story.add("onplace", () => {
   );
 });
 
-story.add("inline", () => {
+story.add('inline', () => {
   const [disabled, setDisabled] = useState(true);
   const handleFormChange = () => {};
   const handleFormValidChange = (valid: boolean) => {

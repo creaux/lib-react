@@ -1,1 +1,1 @@
-export { NavigationClaim } from "./component";
+export { NavigationClaim } from './component';

@@ -1,11 +1,11 @@
-import React, { FunctionComponent, useContext } from "react";
-import { Text, Number, Alpha, Select } from "../Field";
-import { OnFieldChange, OnValidFieldChange } from "../../types/form";
-import { IAddress } from "./types";
-import { I18nConsumer } from "../../I18n";
-import { FormTypeContext, isNormalForm } from "../Form";
-import { Conditional } from "../../Conditional/component";
-import defaultTranslations from "./en.json";
+import React, { FunctionComponent, useContext } from 'react';
+import { Text, Number, Alpha, Select } from '../Field';
+import { OnFieldChange, OnValidFieldChange } from '../../types/form';
+import { IAddress } from './types';
+import { I18nConsumer } from '../../I18n';
+import { FormTypeContext, isNormalForm } from '../Form';
+import { Conditional } from '../../Conditional/component';
+import defaultTranslations from './en.json';
 
 export interface AddressProps extends IAddress {
   onFieldChange: OnFieldChange<keyof IAddress>;
@@ -57,7 +57,7 @@ export const Address: FunctionComponent<AddressProps> = ({
     >
       {translations => (
         <fieldset name="address">
-          <div className={isNormalForm(type) ? "form-row" : "input-group pb-1"}>
+          <div className={isNormalForm(type) ? 'form-row' : 'input-group pb-1'}>
             <Conditional
               condition={isNormalForm(type)}
               when={children => <div className="col-4 mb-3">{children}</div>}
@@ -72,8 +72,8 @@ export const Address: FunctionComponent<AddressProps> = ({
                 }
                 id={street.id}
                 {...street}
-                onChange={handleFieldChange("street")}
-                onValidChange={handleValidFieldChange("street")}
+                onChange={handleFieldChange('street')}
+                onValidChange={handleValidFieldChange('street')}
                 messages={[
                   translations.STREET_MESSAGE_VALID,
                   translations.STREET_MESSAGE_INVALID,
@@ -95,8 +95,8 @@ export const Address: FunctionComponent<AddressProps> = ({
                 }
                 id={streetNo.id}
                 {...streetNo}
-                onChange={handleFieldChange("streetNo")}
-                onValidChange={handleValidFieldChange("streetNo")}
+                onChange={handleFieldChange('streetNo')}
+                onValidChange={handleValidFieldChange('streetNo')}
                 messages={[
                   translations.STREET_NO_MESSAGE_VALID,
                   translations.STREET_NO_MESSAGE_INVALID,
@@ -118,8 +118,8 @@ export const Address: FunctionComponent<AddressProps> = ({
                 }
                 id={postcode.id}
                 {...postcode}
-                onChange={handleFieldChange("postcode")}
-                onValidChange={handleValidFieldChange("postcode")}
+                onChange={handleFieldChange('postcode')}
+                onValidChange={handleValidFieldChange('postcode')}
                 messages={[
                   translations.POSTCODE_MESSAGE_VALID,
                   translations.POSTCODE_MESSAGE_INVALID,
@@ -128,7 +128,7 @@ export const Address: FunctionComponent<AddressProps> = ({
               />
             </Conditional>
           </div>
-          <div className={isNormalForm(type) ? "form-row" : "input-group"}>
+          <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
             <Conditional
               condition={isNormalForm(type)}
               when={children => <div className="col-6 mb-3">{children}</div>}
@@ -143,8 +143,8 @@ export const Address: FunctionComponent<AddressProps> = ({
                 }
                 id={cities.id}
                 {...cities}
-                onChange={handleFieldChange("cities")}
-                onValidChange={handleValidFieldChange("cities")}
+                onChange={handleFieldChange('cities')}
+                onValidChange={handleValidFieldChange('cities')}
                 messages={[
                   translations.CITY_MESSAGE_VALID,
                   translations.CITY_MESSAGE_INVALID,
@@ -166,8 +166,8 @@ export const Address: FunctionComponent<AddressProps> = ({
                 }
                 id={countries.id}
                 {...countries}
-                onChange={handleFieldChange("countries")}
-                onValidChange={handleValidFieldChange("countries")}
+                onChange={handleFieldChange('countries')}
+                onValidChange={handleValidFieldChange('countries')}
                 messages={[
                   translations.COUNTRY_MESSAGE_VALID,
                   translations.COUNTRY_MESSAGE_INVALID,

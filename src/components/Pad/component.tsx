@@ -1,6 +1,6 @@
-import React, { FunctionComponent, ReactNode } from "react";
-import { useWheel } from "react-use-gesture";
-import { useSprings, animated } from "react-spring";
+import React, { FunctionComponent, ReactNode } from 'react';
+import { useWheel } from 'react-use-gesture';
+import { useSprings, animated } from 'react-spring';
 
 export interface PadProps {
   children: ReactNode[];
@@ -8,7 +8,7 @@ export interface PadProps {
   setSpringUp: (i: number) => any;
   position: number;
   velocity: number;
-  axis: "y" | "x";
+  axis: 'y' | 'x';
   direction: {
     down: number;
     up: number;

@@ -16,11 +16,13 @@ storiesOf('Atoms/Viewport', module).add('default', () => {
   const heroProps = {
     position: {
       x: 24,
-      y: 24,
+      y: 24
     }
   };
 
-  return <Viewport {...viewportProps}>
-    <Hero {...heroProps} />
-  </Viewport>;
+  return (
+    <Viewport {...viewportProps}>
+      <Hero {...heroProps} />
+    </Viewport>
+  );
 });

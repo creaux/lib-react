@@ -1,10 +1,10 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Text } from "./component";
-import { Form, FormType } from "../../../Form/component";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Text } from './component';
+import { Form, FormType } from '../../../Form/component';
 
-storiesOf("Atoms/forms/Text", module)
-  .add("normal", () => (
+storiesOf('Atoms/forms/Text', module)
+  .add('normal', () => (
     <Form type={FormType.NORMAL} onSubmit={() => {}}>
       <Text
         placeholder="Please fill some text."
@@ -14,14 +14,14 @@ storiesOf("Atoms/forms/Text", module)
         value=""
         onValidChange={() => {}}
         messages={[
-          "Text is correct",
-          "Please fill valid text.",
-          "Please fill some text"
+          'Text is correct',
+          'Please fill valid text.',
+          'Please fill some text'
         ]}
       />
     </Form>
   ))
-  .add("onplace", () => (
+  .add('onplace', () => (
     <Form type={FormType.ONPLACE} onSubmit={() => {}}>
       <Text
         placeholder="Please fill some text."
@@ -31,14 +31,14 @@ storiesOf("Atoms/forms/Text", module)
         value=""
         onValidChange={() => {}}
         messages={[
-          "Text is correct",
-          "Please fill valid text.",
-          "Please fill some text"
+          'Text is correct',
+          'Please fill valid text.',
+          'Please fill some text'
         ]}
       />
     </Form>
   ))
-  .add("inline", () => (
+  .add('inline', () => (
     <Form type={FormType.INLINE} onSubmit={() => {}}>
       <Text
         placeholder="Please fill some text."
@@ -48,9 +48,9 @@ storiesOf("Atoms/forms/Text", module)
         value=""
         onValidChange={() => {}}
         messages={[
-          "Text is correct",
-          "Please fill valid text.",
-          "Please fill some text"
+          'Text is correct',
+          'Please fill valid text.',
+          'Please fill some text'
         ]}
       />
     </Form>

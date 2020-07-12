@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from "react";
-import { InputTypeEnum } from "../../types";
-import { OnChange } from "../../../../types/form";
+import React, { FunctionComponent } from 'react';
+import { InputTypeEnum } from '../../types';
+import { OnChange } from '../../../../types/form';
 
 export interface InputProps {
   id: string;

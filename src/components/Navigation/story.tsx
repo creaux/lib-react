@@ -5,7 +5,7 @@ import { props } from './mocks';
 import { NavigationBrand } from '../NavigationBrand';
 import { props as navigationBrandProps } from '../NavigationBrand/mock';
 import { NavigationItems } from '../NavigationItems';
-import { props as itemsProps } from '../NavigationItems/mock'
+import { props as itemsProps } from '../NavigationItems/mock';
 import { NavigationButtons } from '../NavigationButtons';
 import { props as buttonProps } from '../NavigationButtons/mock';
 import { NavigationClaim } from '../NavigationClaim';
@@ -15,7 +15,7 @@ const story = storiesOf('Moleculs/Navigation', module);
 story.add('default', () => {
   return (
     <Navigation {...props}>
-      <NavigationBrand {...navigationBrandProps}/>
+      <NavigationBrand {...navigationBrandProps} />
       <NavigationItems {...itemsProps} />
     </Navigation>
   );

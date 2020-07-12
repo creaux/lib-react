@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from "react";
-import { Add } from "../Add";
+import React, { FunctionComponent } from 'react';
+import { Add } from '../Add';
 
 interface SidescriptionProps {
   title: string;

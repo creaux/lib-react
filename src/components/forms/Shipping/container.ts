@@ -1,16 +1,16 @@
-import { Component, FormEvent, createElement, ReactNode } from "react";
-import { Shipping as ShippingComponent } from "./component";
-import { AbodeBuilder, IAbode } from "../Abode";
-import { CheckboxBuilder, ICheckbox } from "../Checkbox/types";
-import { merge } from "lodash";
-import { BuilderInterface } from "@pyxismedia/lib-model";
-import { IShippingFields, IShippingGroups } from "./types";
-import { InputBuilder, OptionBuilder, SelectBuilder } from "../Field/types";
+import { Component, FormEvent, createElement, ReactNode } from 'react';
+import { Shipping as ShippingComponent } from './component';
+import { AbodeBuilder, IAbode } from '../Abode';
+import { CheckboxBuilder, ICheckbox } from '../Checkbox/types';
+import { merge } from 'lodash';
+import { BuilderInterface } from '@pyxismedia/lib-model';
+import { IShippingFields, IShippingGroups } from './types';
+import { InputBuilder, OptionBuilder, SelectBuilder } from '../Field/types';
 
 const { assign } = Object;
 
-type Group = "invoicing" | "delivery";
-type Field = "terms" | "data" | "company";
+type Group = 'invoicing' | 'delivery';
+type Field = 'terms' | 'data' | 'company';
 
 export interface ShippingProps {
   onFormChange: (data: ShippingState) => void;
@@ -73,61 +73,61 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
         new AbodeBuilder()
           .withForname(
             new InputBuilder()
-              .withId("forname2")
-              .withValue("")
+              .withId('forname2')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withSurname(
             new InputBuilder()
-              .withId("surname2")
-              .withValue("")
+              .withId('surname2')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withStreet(
             new InputBuilder()
-              .withId("street2")
-              .withValue("")
+              .withId('street2')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withStreetNo(
             new InputBuilder()
-              .withId("streetNo2")
-              .withValue("")
+              .withId('streetNo2')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withPostcode(
             new InputBuilder()
-              .withId("postcode2")
-              .withValue("")
+              .withId('postcode2')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withCities(
             new SelectBuilder()
-              .withId("city2")
-              .withValue("")
+              .withId('city2')
+              .withValue('')
               .withOptions([
                 new OptionBuilder()
-                  .withId("prague")
-                  .withValue("Prague")
-                  .withTitle("Prague")
+                  .withId('prague')
+                  .withValue('Prague')
+                  .withTitle('Prague')
                   .build()
               ])
               .build()
           )
           .withCountries(
             new SelectBuilder()
-              .withId("country2")
-              .withValue("")
+              .withId('country2')
+              .withValue('')
               .withOptions([
                 new OptionBuilder()
-                  .withId("czechia")
-                  .withValue("Czechia")
-                  .withTitle("Czechia")
+                  .withId('czechia')
+                  .withValue('Czechia')
+                  .withTitle('Czechia')
                   .build()
               ])
               .build()
@@ -138,75 +138,75 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
         new AbodeBuilder()
           .withForname(
             new InputBuilder()
-              .withId("forname1")
-              .withValue("")
+              .withId('forname1')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withSurname(
             new InputBuilder()
-              .withId("surname1")
-              .withValue("")
+              .withId('surname1')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withCompany(
             new InputBuilder()
-              .withId("company")
-              .withValue("")
+              .withId('company')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withVat(
             new InputBuilder()
-              .withId("vat")
-              .withValue("")
+              .withId('vat')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withStreet(
             new InputBuilder()
-              .withId("street1")
-              .withValue("")
+              .withId('street1')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withStreetNo(
             new InputBuilder()
-              .withId("streetNo1")
-              .withValue("")
+              .withId('streetNo1')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withPostcode(
             new InputBuilder()
-              .withId("postcode1")
-              .withValue("")
+              .withId('postcode1')
+              .withValue('')
               .withValid(false)
               .build()
           )
           .withCities(
             new SelectBuilder()
-              .withId("city1")
-              .withValue("")
+              .withId('city1')
+              .withValue('')
               .withOptions([
                 new OptionBuilder()
-                  .withId("prague")
-                  .withTitle("Prague")
-                  .withValue("prague")
+                  .withId('prague')
+                  .withTitle('Prague')
+                  .withValue('prague')
                   .build()
               ])
               .build()
           )
           .withCountries(
             new SelectBuilder()
-              .withId("country1")
-              .withValue("")
+              .withId('country1')
+              .withValue('')
               .withOptions([
                 new OptionBuilder()
-                  .withId("czechia")
-                  .withTitle("Czechia")
-                  .withValue("czechia")
+                  .withId('czechia')
+                  .withTitle('Czechia')
+                  .withValue('czechia')
                   .build()
               ])
               .build()
@@ -215,19 +215,19 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
       )
       .withCompany(
         new CheckboxBuilder()
-          .withId("company")
+          .withId('company')
           .withChecked(true)
           .build()
       )
       .withData(
         new CheckboxBuilder()
-          .withId("data")
+          .withId('data')
           .withChecked(false)
           .build()
       )
       .withTerms(
         new CheckboxBuilder()
-          .withId("terms")
+          .withId('terms')
           .withChecked(false)
           .build()
       )
@@ -262,7 +262,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
   ) => {
     const { value } = event.currentTarget;
     let data = assign({}, this.state);
-    data[group][field]!["value"] = value;
+    data[group][field]!['value'] = value;
     this.setState(data);
   };
 

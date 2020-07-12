@@ -1,4 +1,4 @@
-import { IInput } from "../Field/types";
+import { IInput } from '../Field/types';
 
 export interface IContact {
   email: IInput;

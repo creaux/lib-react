@@ -63,7 +63,7 @@ export class ButtonPropsBuilder {
       className: this.className,
       type: this.type,
       disabled: this.disabled,
-      extended: this.extended,
+      extended: this.extended
     };
   }
 }
@@ -80,20 +80,20 @@ export interface ButtonProps {
 }
 
 export const Button: FunctionComponent<ButtonProps> = ({
-                                                         children = 'Confirm',
-                                                         variant = Variants.PRIMARY,
-                                                         size,
-                                                         onClick,
-                                                         className,
-                                                         type,
-                                                         disabled,
-                                                         extended = false,
-                                                       }) => (
+  children = 'Confirm',
+  variant = Variants.PRIMARY,
+  size,
+  onClick,
+  className,
+  type,
+  disabled,
+  extended = false
+}) => (
   <Btn
     variant={variant}
     size={size}
     onClick={onClick}
-    className={cx(className, {'btn-block': extended})}
+    className={cx(className, { 'btn-block': extended })}
     type={type}
     disabled={disabled}
   >

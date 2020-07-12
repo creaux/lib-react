@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 
 export interface HeroProps {
   position: {
@@ -9,8 +9,8 @@ export interface HeroProps {
 
 export const Hero: FunctionComponent<HeroProps> = ({ position }) => {
   const style = {
-    "--hero__x-position": position.x,
-    "--hero__y-position": position.y
+    '--hero__x-position': position.x,
+    '--hero__y-position': position.y
   };
 
   return (

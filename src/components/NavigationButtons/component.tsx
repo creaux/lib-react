@@ -5,9 +5,11 @@ export interface NavigationButtonsProps {
   buttons: ButtonProps[];
 }
 
-export const NavigationButtons: FunctionComponent<NavigationButtonsProps> = ({ buttons }) => (
+export const NavigationButtons: FunctionComponent<NavigationButtonsProps> = ({
+  buttons
+}) => (
   <form className="form-inline">
-    {buttons.map((button) => (
+    {buttons.map(button => (
       <Button {...button} />
     ))}
   </form>

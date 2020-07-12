@@ -1,1 +1,1 @@
-export { Stripe } from "./component";
+export { Stripe } from './component';

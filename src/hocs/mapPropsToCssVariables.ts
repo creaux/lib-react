@@ -1,6 +1,6 @@
-import { createElement } from "react";
-import { ComponentType } from "react";
-import { omit } from "lodash";
+import { createElement } from 'react';
+import { ComponentType } from 'react';
+import { omit } from 'lodash';
 
 const { assign } = Object;
 
@@ -19,11 +19,11 @@ export interface ResponsiveCss {
 const mapPropToCssVariables = (name: string, props: Literal) => (
   variable: string | number | symbol
 ): Literal => {
-  if (typeof variable === "string" && props.hasOwnProperty(variable)) {
+  if (typeof variable === 'string' && props.hasOwnProperty(variable)) {
     return {
-      [`--${name}__${variable}-portrait`]: props[variable]["portrait"],
-      [`--${name}__${variable}-landscape`]: props[variable]["landscape"],
-      [`--${name}__${variable}-desktop`]: props[variable]["desktop"]
+      [`--${name}__${variable}-portrait`]: props[variable]['portrait'],
+      [`--${name}__${variable}-landscape`]: props[variable]['landscape'],
+      [`--${name}__${variable}-desktop`]: props[variable]['desktop']
     };
   }
   return {};
@@ -40,7 +40,7 @@ export const mapPropsToCssStyle = <
   ...variables: (keyof InputProps)[]
 ) => (Component: ComponentType<OutputProps>) => (props: InputProps) => {
   if (!Component.displayName) {
-    throw new Error("Display name has to be defined");
+    throw new Error('Display name has to be defined');
   }
 
   const cssVariables = variables

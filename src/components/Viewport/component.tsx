@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from "react";
-import { BuilderInterface } from "@pyxismedia/lib-model";
+import React, { FunctionComponent } from 'react';
+import { BuilderInterface } from '@pyxismedia/lib-model';
 import {
   mapPropsToCssStyle,
   StyleProps
-} from "../../hocs/mapPropsToCssVariables";
-import { compose, setDisplayName, mapProps } from "recompose";
-import { omit } from "lodash";
-import cx from "classnames";
+} from '../../hocs/mapPropsToCssVariables';
+import { compose, setDisplayName, mapProps } from 'recompose';
+import { omit } from 'lodash';
+import cx from 'classnames';
 
 export interface PositionInterface {
   portrait: string;
@@ -82,17 +82,17 @@ export const ViewportComponent: FunctionComponent<ViewportComponentProps> = ({
   className
 }) => {
   return (
-    <div className={cx("viewport", className)} style={style}>
+    <div className={cx('viewport', className)} style={style}>
       {children}
     </div>
   );
 };
 
 export const Viewport = compose<ViewportComponentProps, ViewportProps>(
-  mapPropsToCssStyle<ViewportProps, ViewportComponentProps>("xPosition"),
-  setDisplayName("Viewport"),
+  mapPropsToCssStyle<ViewportProps, ViewportComponentProps>('xPosition'),
+  setDisplayName('Viewport'),
   mapProps((props: ViewportComponentProps & ViewportProps) => {
-    const omitedProps = omit(props, "background", "style");
+    const omitedProps = omit(props, 'background', 'style');
 
     let style = {};
 

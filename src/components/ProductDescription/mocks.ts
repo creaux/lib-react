@@ -1,9 +1,9 @@
 import {
   ProductDescriptionProps,
   ProductDescriptionPropsBuilder
-} from "./component";
+} from './component';
 
 export const props: ProductDescriptionProps = new ProductDescriptionPropsBuilder()
-  .withPrice("300")
-  .withTitle("Some title")
+  .withPrice('300')
+  .withTitle('Some title')
   .build();

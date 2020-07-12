@@ -1,53 +1,53 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Address, AddressProps } from "./component";
-import { Form, FormType } from "../Form";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Address, AddressProps } from './component';
+import { Form, FormType } from '../Form';
 
 export const props: AddressProps = {
   street: {
-    id: "123456",
-    value: "Some Street",
-    datalist: ["Vodickova", "Stromovka"]
+    id: '123456',
+    value: 'Some Street',
+    datalist: ['Vodickova', 'Stromovka']
   },
   streetNo: {
-    id: "12345",
-    value: "0",
-    datalist: ["3", "33", "333"]
+    id: '12345',
+    value: '0',
+    datalist: ['3', '33', '333']
   },
   postcode: {
-    id: "1234567",
-    value: "12345",
-    datalist: ["12345", "68789"]
+    id: '1234567',
+    value: '12345',
+    datalist: ['12345', '68789']
   },
   countries: {
-    id: "country",
-    value: "czechRepublic",
+    id: 'country',
+    value: 'czechRepublic',
     options: [
       {
-        id: "czechRepublic",
-        title: "Czech Republic",
-        value: "CZ"
+        id: 'czechRepublic',
+        title: 'Czech Republic',
+        value: 'CZ'
       },
       {
-        id: "germany",
-        title: "Germany",
-        value: "DE"
+        id: 'germany',
+        title: 'Germany',
+        value: 'DE'
       }
     ]
   },
   cities: {
-    id: "city",
-    value: "prague",
+    id: 'city',
+    value: 'prague',
     options: [
       {
-        id: "prague",
-        title: "Prague",
-        value: "prague"
+        id: 'prague',
+        title: 'Prague',
+        value: 'prague'
       },
       {
-        id: "berlin",
-        title: "Berlin",
-        value: "berlin"
+        id: 'berlin',
+        title: 'Berlin',
+        value: 'berlin'
       }
     ]
   },
@@ -55,21 +55,21 @@ export const props: AddressProps = {
   onValidFieldChange: () => () => {}
 };
 
-const story = storiesOf("Moleculs/forms/Address", module);
+const story = storiesOf('Moleculs/forms/Address', module);
 
-story.add("default", () => (
+story.add('default', () => (
   <Form type={FormType.NORMAL} onSubmit={() => {}}>
     <Address {...props} />
   </Form>
 ));
 
-story.add("onplace", () => (
+story.add('onplace', () => (
   <Form type={FormType.ONPLACE} onSubmit={() => {}}>
     <Address {...props} />
   </Form>
 ));
 
-story.add("inline", () => (
+story.add('inline', () => (
   <Form type={FormType.INLINE} onSubmit={() => {}}>
     <Address {...props} />
   </Form>

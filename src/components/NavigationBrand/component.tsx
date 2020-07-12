@@ -6,7 +6,10 @@ interface NavigationBrandProps {
   link: string;
 }
 
-export const NavigationBrand: FunctionComponent<NavigationBrandProps> = ({ brand, link }) => (
+export const NavigationBrand: FunctionComponent<NavigationBrandProps> = ({
+  brand,
+  link
+}) => (
   <a className="navbar-brand mr-0" href="#home">
     <Svg Svg={brand} link={link} fill="black" />
   </a>

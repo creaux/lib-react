@@ -1,1 +1,1 @@
-export { OneCheckout } from "./component";
+export { OneCheckout } from './component';

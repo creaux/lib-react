@@ -1,9 +1,9 @@
-import { compose } from "recompose";
-import { FieldContainer, FieldContainerProps } from "../../container";
-import { FieldOuterProps, InputTypeEnum } from "../../types";
-import { Validators } from "../../hoc/validators/validators";
-import { validator } from "../../hoc/validators/validator";
-import { provideInputType } from "../../hoc/provideInputType";
+import { compose } from 'recompose';
+import { FieldContainer, FieldContainerProps } from '../../container';
+import { FieldOuterProps, InputTypeEnum } from '../../types';
+import { Validators } from '../../hoc/validators/validators';
+import { validator } from '../../hoc/validators/validator';
+import { provideInputType } from '../../hoc/provideInputType';
 
 export const Alpha = compose<FieldContainerProps, FieldOuterProps>(
   provideInputType(InputTypeEnum.TEXT),

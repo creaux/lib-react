@@ -1,5 +1,5 @@
-import React from "react";
-import { AddComponent } from "./component";
+import React from 'react';
+import { AddComponent } from './component';
 
 export interface AddContainerProps {
   title: string;

@@ -1,11 +1,11 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Select } from "./component";
-import { Form, FormType } from "../../../Form/component";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Select } from './component';
+import { Form, FormType } from '../../../Form/component';
 
-const story = storiesOf("Atoms/forms/Select", module);
+const story = storiesOf('Atoms/forms/Select', module);
 
-story.add("normal", () => (
+story.add('normal', () => (
   <Form type={FormType.NORMAL} onSubmit={() => {}}>
     <Select
       id="select"
@@ -14,15 +14,15 @@ story.add("normal", () => (
       value=""
       onValidChange={() => {}}
       messages={[
-        "Text is correct",
-        "Please fill valid number.",
-        "Please fill some number"
+        'Text is correct',
+        'Please fill valid number.',
+        'Please fill some number'
       ]}
       options={[
         {
-          id: "deset",
-          title: "Deset",
-          value: "Deset"
+          id: 'deset',
+          title: 'Deset',
+          value: 'Deset'
         }
       ]}
       placeholder="Etwas"
@@ -30,7 +30,7 @@ story.add("normal", () => (
   </Form>
 ));
 
-story.add("onplace", () => (
+story.add('onplace', () => (
   <Form type={FormType.ONPLACE} onSubmit={() => {}}>
     <Select
       id="select"
@@ -39,15 +39,15 @@ story.add("onplace", () => (
       value=""
       onValidChange={() => {}}
       messages={[
-        "Text is correct",
-        "Please fill valid number.",
-        "Please fill some number"
+        'Text is correct',
+        'Please fill valid number.',
+        'Please fill some number'
       ]}
       options={[
         {
-          id: "deset",
-          title: "Deset",
-          value: "Deset"
+          id: 'deset',
+          title: 'Deset',
+          value: 'Deset'
         }
       ]}
       placeholder="Etwas"
@@ -55,7 +55,7 @@ story.add("onplace", () => (
   </Form>
 ));
 
-story.add("inline", () => (
+story.add('inline', () => (
   <Form type={FormType.INLINE} onSubmit={() => {}}>
     <Select
       id="select"
@@ -64,15 +64,15 @@ story.add("inline", () => (
       value=""
       onValidChange={() => {}}
       messages={[
-        "Text is correct",
-        "Please fill valid number.",
-        "Please fill some number"
+        'Text is correct',
+        'Please fill valid number.',
+        'Please fill some number'
       ]}
       options={[
         {
-          id: "deset",
-          title: "Deset",
-          value: "Deset"
+          id: 'deset',
+          title: 'Deset',
+          value: 'Deset'
         }
       ]}
       placeholder="Etwas"

@@ -1,1 +1,1 @@
-export { NavigationBrand } from "./component";
+export { NavigationBrand } from './component';

@@ -1,8 +1,8 @@
-import React, { FunctionComponent, useContext } from "react";
-import { OnChange } from "../../../../types/form";
-import { IOption, ISelect } from "../../types";
-import cx from "classnames";
-import { FormType, FormTypeContext } from "../../../Form/component";
+import React, { FunctionComponent, useContext } from 'react';
+import { OnChange } from '../../../../types/form';
+import { IOption, ISelect } from '../../types';
+import cx from 'classnames';
+import { FormType, FormTypeContext } from '../../../Form/component';
 
 export interface SelectBasicProps extends ISelect {
   onChange: OnChange;
@@ -23,8 +23,8 @@ export const SelectBasic: FunctionComponent<SelectBasicProps> = ({
   return (
     <select
       value={value}
-      className={cx(className, "custom-select", {
-        "pl-0 pt-0 pb-0":
+      className={cx(className, 'custom-select', {
+        'pl-0 pt-0 pb-0':
           formType === FormType.ONPLACE || formType === FormType.INLINE
       })}
       id={id}
