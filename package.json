@@ -121,7 +121,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "CI=true npm test && npm run storybook:dry-run && npm run lib && ",
+      "pre-push": "CI=true npm audit && npm test && npm run storybook:dry-run && npm run lib",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
