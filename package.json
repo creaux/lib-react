@@ -23,7 +23,7 @@
     "release": "semantic-release",
     "commit": "commit",
     "lib": "rm -rf build && npm run lib:css && NODE_ENV=production babel --extensions \".ts,.tsx\" src --out-dir build --ignore \"src/**/story.tsx,src/**/*.spec.ts,src/**/*.spec.tsx,__snapshots__,src/**/*.d.ts\" && npm run lib:declarations",
-    "lib:css": "node-sass-chokidar src/themes/animo/theme.scss build/themes/animo/animo.css && cp -R src/themes/animo/fonts build/themes/animo/fonts",
+    "lib:css": "node-sass-chokidar src/themes/animo/theme.scss build/themes/animo/animo.css",
     "lib:declarations": "tsc -p tsconfig.d.json",
     "build": "npm run storybook:build",
     "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media",
