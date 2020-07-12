@@ -1,10 +1,10 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Alpha } from "./component";
-import { Form, FormType } from "../../../Form/component";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Alpha } from './component';
+import { Form, FormType } from '../../../Form/component';
 
-storiesOf("Atoms/forms/Alpha", module)
-  .add("normal", () => (
+storiesOf('Atoms/forms/Alpha', module)
+  .add('normal', () => (
     <Form type={FormType.NORMAL} onSubmit={() => {}}>
       <Alpha
         placeholder="Please fill some alpha."
@@ -14,14 +14,14 @@ storiesOf("Atoms/forms/Alpha", module)
         value=""
         onValidChange={() => {}}
         messages={[
-          "Text is correct",
-          "Please fill valid alpha.",
-          "Please fill some alpha"
+          'Text is correct',
+          'Please fill valid alpha.',
+          'Please fill some alpha'
         ]}
       />
     </Form>
   ))
-  .add("onplace", () => (
+  .add('onplace', () => (
     <Form type={FormType.ONPLACE} onSubmit={() => {}}>
       <Alpha
         placeholder="Please fill some alpha."
@@ -31,14 +31,14 @@ storiesOf("Atoms/forms/Alpha", module)
         value=""
         onValidChange={() => {}}
         messages={[
-          "Text is correct",
-          "Please fill valid alpha.",
-          "Please fill some alpha"
+          'Text is correct',
+          'Please fill valid alpha.',
+          'Please fill some alpha'
         ]}
       />
     </Form>
   ))
-  .add("inline", () => (
+  .add('inline', () => (
     <Form type={FormType.INLINE} onSubmit={() => {}}>
       <Alpha
         placeholder="Please fill some alpha."
@@ -48,9 +48,9 @@ storiesOf("Atoms/forms/Alpha", module)
         value=""
         onValidChange={() => {}}
         messages={[
-          "Text is correct",
-          "Please fill valid alpha.",
-          "Please fill some alpha"
+          'Text is correct',
+          'Please fill valid alpha.',
+          'Please fill some alpha'
         ]}
       />
     </Form>

@@ -1,1 +1,1 @@
-export { Alpha } from "./component";
+export { Alpha } from './component';

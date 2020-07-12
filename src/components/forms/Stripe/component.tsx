@@ -1,14 +1,14 @@
-import React, { FormEvent, FunctionComponent } from "react";
+import React, { FormEvent, FunctionComponent } from 'react';
 import {
   CardCvcElement,
   CardExpiryElement,
   CardNumberElement
-} from "@stripe/react-stripe-js";
-import { I18nConsumer } from "../../I18n/component";
-import defaultTranslations from "./en.json";
-import { Button } from "../Button/component";
-import { Type } from "../Button/types";
-import { Form, FormType } from "../Form/component";
+} from '@stripe/react-stripe-js';
+import { I18nConsumer } from '../../I18n/component';
+import defaultTranslations from './en.json';
+import { Button } from '../Button/component';
+import { Type } from '../Button/types';
+import { Form, FormType } from '../Form/component';
 
 export interface StripeTranslations {
   STRIPE_NUMBER_PLACEHOLDER: string;

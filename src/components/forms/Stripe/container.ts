@@ -1,7 +1,7 @@
-import { createElement, Component, FormEvent } from "react";
-import { Stripe as StripeComponent } from "./component";
-import { elementsProvider, ElementsContextValue } from "./elementsConsumer";
-import { CardNumberElement } from "@stripe/react-stripe-js";
+import { createElement, Component, FormEvent } from 'react';
+import { Stripe as StripeComponent } from './component';
+import { elementsProvider, ElementsContextValue } from './elementsConsumer';
+import { CardNumberElement } from '@stripe/react-stripe-js';
 
 interface StripeProps extends ElementsContextValue {}
 
@@ -13,9 +13,9 @@ export class StripeContainer extends Component<StripeProps> {
 
     if (process.env.REST_ENDPOINT_CREATE_PAYMENT) {
       fetch(process.env.REST_ENDPOINT_CREATE_PAYMENT, {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify({
-          productId: "1"
+          productId: '1'
         })
       }).then(response => {
         response.text().then(secret => {
@@ -46,7 +46,7 @@ export class StripeContainer extends Component<StripeProps> {
       payment_method: {
         card: elements.getElement(CardNumberElement),
         billing_details: {
-          name: "Jenny Rosen"
+          name: 'Jenny Rosen'
         },
         metadata: {
           // TODO: customer https://stripe.com/docs/api/payment_intents/create#create_payment_intent-customer
@@ -78,7 +78,7 @@ export class StripeContainer extends Component<StripeProps> {
       console.log(result.error.message);
     } else {
       // The payment has been processed!
-      if (result.paymentIntent.status === "succeeded") {
+      if (result.paymentIntent.status === 'succeeded') {
         // Show a success message to your customer
         // There's a risk of the customer closing the window before callback
         // execution. Set up a webhook or plugin to listen for the

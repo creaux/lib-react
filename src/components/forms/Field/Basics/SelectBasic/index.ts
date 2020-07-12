@@ -1,1 +1,1 @@
-export { SelectBasic } from "./component";
+export { SelectBasic } from './component';

@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
-import cx from "classnames";
+import React, { FunctionComponent, useEffect, useState } from 'react';
+import cx from 'classnames';
 
 export interface DotsProps {
   count: number;
@@ -26,7 +26,7 @@ export const Dots: FunctionComponent<DotsProps> = ({
       {dots.map((_, i) => (
         <button
           key={i}
-          className={cx("dots__dot", { "dots__dot--active": dot === i })}
+          className={cx('dots__dot', { 'dots__dot--active': dot === i })}
           onClick={() => setDot(i)}
         ></button>
       ))}

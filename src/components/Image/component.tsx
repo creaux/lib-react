@@ -47,7 +47,7 @@ export class ImagePropsBuilder {
       variant: this.variant,
       className: this.className,
       children: this.children,
-      rounded: this.rounded,
+      rounded: this.rounded
     };
   }
 }
@@ -65,24 +65,24 @@ export interface ImageProps extends ImageElement {
 }
 
 export const Image: FunctionComponent<ImageProps> = ({
-                                                       variant = ImageVariants.SOLID,
-                                                       src,
-                                                       alt,
-                                                       className,
-                                                       children,
-                                                       rounded = true,
-                                                     }) => {
+  variant = ImageVariants.SOLID,
+  src,
+  alt,
+  className,
+  children,
+  rounded = true
+}) => {
   const attrs =
     variant === ImageVariants.BACKGROUND
-      ? {style: {backgroundImage: `url(${src})`}}
+      ? { style: { backgroundImage: `url(${src})` } }
       : null;
   const isImg = variant === ImageVariants.SOLID;
   return (
     <div
       {...attrs}
-      className={cx('image-background', className, {rounded: rounded})}
+      className={cx('image-background', className, { rounded: rounded })}
     >
-      {isImg ? <img src={src} alt={alt}/> : null}
+      {isImg ? <img src={src} alt={alt} /> : null}
       {children}
     </div>
   );

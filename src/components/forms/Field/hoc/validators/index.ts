@@ -1,2 +1,2 @@
-export { Validators } from "./validators";
-export { validator } from "./validator/index";
+export { Validators } from './validators';
+export { validator } from './validator/index';

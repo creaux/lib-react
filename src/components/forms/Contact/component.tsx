@@ -1,12 +1,12 @@
-import React, { FunctionComponent, useContext } from "react";
-import defaultTranslations from "./en.json";
-import { FormTypeContext, isNormalForm } from "../Form";
-import { Conditional } from "../../Conditional";
-import { I18nConsumer } from "../../I18n";
-import { IContact } from "./types";
-import { OnFieldChange, OnValidFieldChange } from "../../types/form";
-import { Email } from "../Field/Fields/Email";
-import { Phone } from "../Field/Fields/Phone";
+import React, { FunctionComponent, useContext } from 'react';
+import defaultTranslations from './en.json';
+import { FormTypeContext, isNormalForm } from '../Form';
+import { Conditional } from '../../Conditional';
+import { I18nConsumer } from '../../I18n';
+import { IContact } from './types';
+import { OnFieldChange, OnValidFieldChange } from '../../types/form';
+import { Email } from '../Field/Fields/Email';
+import { Phone } from '../Field/Fields/Phone';
 
 export interface ContactTranslations {
   CONTACT_EMAIL_LABEL: string;
@@ -39,7 +39,7 @@ export const Contact: FunctionComponent<ContactProps> = ({
     >
       {translations => (
         <fieldset name="company">
-          <div className={isNormalForm(type) ? "form-row" : "input-group"}>
+          <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
             <Conditional
               condition={isNormalForm(type)}
               when={children => <div className="col-6 mb-3">{children}</div>}
@@ -53,13 +53,13 @@ export const Contact: FunctionComponent<ContactProps> = ({
                 }
                 id={email.id}
                 value={email.value}
-                onChange={handleFieldChange("email")}
+                onChange={handleFieldChange('email')}
                 placeholder={
                   isNormalForm(type)
                     ? translations.CONTACT_EMAIL_PLACEHOLDER
                     : translations.CONTACT_EMAIL_LABEL
                 }
-                onValidChange={handleValidFieldChange("email")}
+                onValidChange={handleValidFieldChange('email')}
                 messages={[
                   translations.CONTACT_EMAIL_MESSAGE_VALID,
                   translations.CONTACT_EMAIL_MESSAGE_VALID,
@@ -80,13 +80,13 @@ export const Contact: FunctionComponent<ContactProps> = ({
                 }
                 id={number.id}
                 value={number.value}
-                onChange={handleFieldChange("number")}
+                onChange={handleFieldChange('number')}
                 placeholder={
                   isNormalForm(type)
                     ? translations.CONTACT_NUMBER_PLACEHOLDER
                     : translations.CONTACT_NUMBER_LABEL
                 }
-                onValidChange={handleValidFieldChange("number")}
+                onValidChange={handleValidFieldChange('number')}
                 messages={[
                   translations.CONTACT_EMAIL_MESSAGE_VALID,
                   translations.CONTACT_NUMBER_MESSAGE_INVALID,

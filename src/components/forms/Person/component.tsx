@@ -1,13 +1,13 @@
-import React, { FunctionComponent, useContext } from "react";
-import { Text } from "../Field";
-import { OnFieldChange, OnValidFieldChange } from "../../types/form";
-import { IPerson, PersonBuilder } from "./types";
-import { I18nConsumer } from "../../I18n";
-import { Translations } from "../../I18n/component";
-import { Conditional } from "../../Conditional/component";
-import { FormTypeContext, isNormalForm } from "../Form";
-import defaultTranslations from "./en.json";
-import { BuilderInterface } from "@pyxismedia/lib-model";
+import React, { FunctionComponent, useContext } from 'react';
+import { Text } from '../Field';
+import { OnFieldChange, OnValidFieldChange } from '../../types/form';
+import { IPerson, PersonBuilder } from './types';
+import { I18nConsumer } from '../../I18n';
+import { Translations } from '../../I18n/component';
+import { Conditional } from '../../Conditional/component';
+import { FormTypeContext, isNormalForm } from '../Form';
+import defaultTranslations from './en.json';
+import { BuilderInterface } from '@pyxismedia/lib-model';
 
 export class PersonPropsBuilder extends PersonBuilder
   implements BuilderInterface<PersonProps> {
@@ -63,7 +63,7 @@ export const Person: FunctionComponent<PersonProps> = ({
     <I18nConsumer<PersonTranslations> defaultTranslations={defaultTranslations}>
       {translations => (
         <fieldset name="person">
-          <div className={isNormalForm(type) ? "form-row" : "input-group"}>
+          <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
             <Conditional
               condition={isNormalForm(type)}
               when={children => <div className="col-6 mb-3">{children}</div>}
@@ -73,8 +73,8 @@ export const Person: FunctionComponent<PersonProps> = ({
                 label={isNormalForm(type) ? translations.FORENAME : undefined}
                 id={forname.id}
                 value={forname.value}
-                onChange={handleFieldChange("forname")}
-                onValidChange={handleFieldValidChange("forname")}
+                onChange={handleFieldChange('forname')}
+                onValidChange={handleFieldValidChange('forname')}
                 messages={[
                   translations.FORENAME_MESSAGE_VALID,
                   translations.FORENAME_MESSAGE_INVALID,
@@ -92,8 +92,8 @@ export const Person: FunctionComponent<PersonProps> = ({
                 label={isNormalForm(type) ? translations.SURNAME : undefined}
                 id={surname.id}
                 value={surname.value}
-                onChange={handleFieldChange("surname")}
-                onValidChange={handleFieldValidChange("surname")}
+                onChange={handleFieldChange('surname')}
+                onValidChange={handleFieldValidChange('surname')}
                 messages={[
                   translations.SURNAME_MESSAGE_VALID,
                   translations.SURNAME_MESSAGE_INVALID,

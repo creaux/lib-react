@@ -1,5 +1,5 @@
-import { Validation } from "./validator/index";
-import { Message } from "./types";
+import { Validation } from './validator/index';
+import { Message } from './types';
 
 export function createValidator(): (message: Message) => Validation;
 export function createValidator(

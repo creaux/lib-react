@@ -1,5 +1,5 @@
-import React, { Children, cloneElement, ReactNode } from "react";
-import get from "lodash/get";
+import React, { Children, cloneElement, ReactNode } from 'react';
+import get from 'lodash/get';
 
 export interface GuardProps<ComponentProps> {
   Component?: ReactNode;
@@ -43,7 +43,7 @@ export class Guard<ComponentProps = string[]> extends React.Component<
         return null;
       }
 
-      if ((when && get(child.props, when)) || typeof when === "undefined") {
+      if ((when && get(child.props, when)) || typeof when === 'undefined') {
         // hasWhen define whether we want to render otherwise or not
         hasWhen = get(child.props, when as any);
         if (

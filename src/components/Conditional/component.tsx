@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement } from "react";
+import { FunctionComponent, ReactElement } from 'react';
 
 export interface ConditionalProps {
   condition: boolean;

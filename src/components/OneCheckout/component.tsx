@@ -1,15 +1,15 @@
-import React, { FunctionComponent } from "react";
-import { ProductDescription } from "../ProductDescription";
-import { ProductDescriptionProps } from "../ProductDescription/component";
-import { asBackgroundProps } from "../Image/mock";
-import { Image } from "../Image";
-import { Button, Variants } from "../forms/Button";
-import { Shipping } from "../forms/Shipping";
-import { Stripe } from "../forms/Stripe";
-import { ShippingState } from "../forms/Shipping/container";
-import { Viewport } from "../Viewport/component";
-import { I18nConsumer } from "../I18n/component";
-import defaultTranslations from "./en.json";
+import React, { FunctionComponent } from 'react';
+import { ProductDescription } from '../ProductDescription';
+import { ProductDescriptionProps } from '../ProductDescription/component';
+import { asBackgroundProps } from '../Image/mock';
+import { Image } from '../Image';
+import { Button, Variants } from '../forms/Button';
+import { Shipping } from '../forms/Shipping';
+import { Stripe } from '../forms/Stripe';
+import { ShippingState } from '../forms/Shipping/container';
+import { Viewport } from '../Viewport/component';
+import { I18nConsumer } from '../I18n/component';
+import defaultTranslations from './en.json';
 
 export interface OneCheckoutProps {
   product: ProductDescriptionProps;

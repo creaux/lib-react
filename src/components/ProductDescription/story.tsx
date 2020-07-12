@@ -14,11 +14,10 @@ const story = storiesOf('Moleculs/ProductDescription', module);
 
 story.add('default', () => (
   <ProductDescription {...props}>
-    <Label>
-      Dolor
-    </Label>
+    <Label>Dolor</Label>
     <Description>
-      Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque
+      penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </Description>
     <Button
       variant={Variants.OUTLINE_DARK}

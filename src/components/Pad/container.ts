@@ -1,6 +1,6 @@
-import { Component, createElement, ReactNode } from "react";
-import { Pad } from "./component";
-import { throttle } from "lodash";
+import { Component, createElement, ReactNode } from 'react';
+import { Pad } from './component';
+import { throttle } from 'lodash';
 
 export interface PadContainerProps {
   children: ReactNode[];
@@ -41,7 +41,7 @@ export class PadContainer extends Component<
   private static readonly VELOCITY = 0.6333;
   private static readonly TIMER = 500;
   private static readonly DURATION = 100;
-  private static readonly AXIS = "y";
+  private static readonly AXIS = 'y';
   private static readonly DIRECTION = {
     down: 1,
     up: -1

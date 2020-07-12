@@ -1,6 +1,6 @@
-import React, { ComponentType, FunctionComponent } from "react";
-import { ElementsConsumer } from "@stripe/react-stripe-js";
-import { Stripe, StripeElements } from "@stripe/stripe-js";
+import React, { ComponentType, FunctionComponent } from 'react';
+import { ElementsConsumer } from '@stripe/react-stripe-js';
+import { Stripe, StripeElements } from '@stripe/stripe-js';
 
 export interface ElementsContextValue {
   stripe: Stripe | null;

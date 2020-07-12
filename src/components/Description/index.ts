@@ -1,1 +1,1 @@
-export { Description } from "./component";
+export { Description } from './component';

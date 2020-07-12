@@ -1,5 +1,5 @@
-import React, { Component, FormEvent } from "react";
-import { EmailCrawler as EmailComponent } from "./component";
+import React, { Component, FormEvent } from 'react';
+import { EmailCrawler as EmailComponent } from './component';
 
 export interface EmailState {
   email: string;
@@ -21,7 +21,7 @@ export class EmailContainer extends Component<EmailProps, EmailState> {
     super(props);
 
     this.state = {
-      email: "",
+      email: '',
       valid: false
     };
   }

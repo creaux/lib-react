@@ -1,1 +1,1 @@
-export { Dots } from "./component";
+export { Dots } from './component';

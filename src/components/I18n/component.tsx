@@ -1,4 +1,4 @@
-import { createContext, ReactNode, Component } from "react";
+import { createContext, ReactNode, Component } from 'react';
 
 const { keys } = Object;
 

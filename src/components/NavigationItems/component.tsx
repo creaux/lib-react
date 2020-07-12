@@ -10,7 +10,9 @@ export interface NavigationItemsProps {
   items: Item[];
 }
 
-export const NavigationItems: FunctionComponent<NavigationItemsProps> = ({ items }) => (
+export const NavigationItems: FunctionComponent<NavigationItemsProps> = ({
+  items
+}) => (
   <ul className="navbar-nav mr-auto">
     {items.map((item: Item, i) => (
       <li className="nav-item active" key={item.id || i}>

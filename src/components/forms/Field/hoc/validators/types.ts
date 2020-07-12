@@ -1,4 +1,4 @@
-import { BuilderInterface } from "@pyxismedia/lib-model";
+import { BuilderInterface } from '@pyxismedia/lib-model';
 
 export enum MessageType {
   valid,

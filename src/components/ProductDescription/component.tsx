@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from "react";
-import { Button } from "../forms/Button";
-import { Guard } from "../Guard";
-import { Description } from "../Description";
-import { Label } from "../Label/component";
-import { Image } from "../Image";
-import { ImageProps } from "../Image/component";
-import cx from "classnames";
-import { BuilderInterface } from "@pyxismedia/lib-model";
+import React, { FunctionComponent } from 'react';
+import { Button } from '../forms/Button';
+import { Guard } from '../Guard';
+import { Description } from '../Description';
+import { Label } from '../Label/component';
+import { Image } from '../Image';
+import { ImageProps } from '../Image/component';
+import cx from 'classnames';
+import { BuilderInterface } from '@pyxismedia/lib-model';
 
 export class ProductDescriptionPropsBuilder implements BuilderInterface {
   protected title!: string;
@@ -51,7 +51,7 @@ export const ProductDescription: FunctionComponent<ProductDescriptionProps> = ({
 }) => (
   <div
     className={cx(
-      "d-flex align-items-center justify-content-center h-100",
+      'd-flex align-items-center justify-content-center h-100',
       className
     )}
   >
@@ -65,7 +65,7 @@ export const ProductDescription: FunctionComponent<ProductDescriptionProps> = ({
         </div>
         <Guard<ImageProps>
           Component={Image}
-          props={{ className: "product-description-image" }}
+          props={{ className: 'product-description-image' }}
         >
           {children}
         </Guard>

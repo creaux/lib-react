@@ -1,5 +1,5 @@
-import React, { ComponentType, ReactElement } from "react";
-import { FieldType } from "../types";
+import React, { ComponentType, ReactElement } from 'react';
+import { FieldType } from '../types';
 
 export const provideFieldType = <P extends { fieldType: FieldType }>(
   fieldType: FieldType
