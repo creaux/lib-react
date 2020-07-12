@@ -1,6 +1,4 @@
-import { BuilderInterface } from '@pyxismedia/lib-model';
-
-export class CheckboxBuilder implements BuilderInterface<ICheckbox> {
+export class CheckboxBuilder {
   private checked!: boolean;
   private id!: string;
 

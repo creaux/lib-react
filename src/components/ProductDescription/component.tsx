@@ -6,9 +6,8 @@ import { Label } from '../Label/component';
 import { Image } from '../Image';
 import { ImageProps } from '../Image/component';
 import cx from 'classnames';
-import { BuilderInterface } from '@pyxismedia/lib-model';
 
-export class ProductDescriptionPropsBuilder implements BuilderInterface {
+export class ProductDescriptionPropsBuilder {
   protected title!: string;
   protected price!: string;
   protected className!: string;

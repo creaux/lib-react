@@ -1,7 +1,6 @@
 import { IInput } from '../Field/types';
-import { BuilderInterface } from '@pyxismedia/lib-model';
 
-export class PersonBuilder implements BuilderInterface<IPerson> {
+export class PersonBuilder {
   private forname!: IInput;
   private surname!: IInput;
 

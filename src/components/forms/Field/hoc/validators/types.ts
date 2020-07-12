@@ -1,12 +1,10 @@
-import { BuilderInterface } from '@pyxismedia/lib-model';
-
 export enum MessageType {
   valid,
   invalid,
   default
 }
 
-export class MessageBuilder implements BuilderInterface<Message> {
+export class MessageBuilder {
   private type!: MessageType;
   private value!: string;
 

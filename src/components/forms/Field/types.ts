@@ -1,6 +1,5 @@
 import { OnChange } from '../../types/form';
 import { Messages } from './hoc/validators/types';
-import { BuilderInterface } from '@pyxismedia/lib-model';
 
 export enum InputTypeEnum {
   TEXT = 'text',
@@ -69,7 +68,7 @@ export enum FieldType {
   INPUT
 }
 
-export class OptionBuilder implements BuilderInterface<IOption> {
+export class OptionBuilder {
   private id!: string;
   private value!: string;
   private title!: string;
@@ -104,7 +103,7 @@ export interface IOption {
   value: string;
 }
 
-export class SelectBuilder implements BuilderInterface<ISelect> {
+export class SelectBuilder {
   private id!: string;
   private value!: string;
   private options!: IOption[];

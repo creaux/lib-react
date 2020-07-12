@@ -1,11 +1,10 @@
 import React, { ComponentType, ReactElement } from 'react';
 import { Message, MessageType } from '../types';
-import { BuilderInterface } from '@pyxismedia/lib-model';
 import { MessagesProps, ValidatorProps } from './props';
 
 export type Validator = (message: Message) => Validation;
 
-export class ValidationBuilder implements BuilderInterface<Validation> {
+export class ValidationBuilder {
   private validator!: (value: string) => boolean;
   private message!: Message;
 
