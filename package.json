@@ -26,7 +26,9 @@
     "lib:css": "node-sass-chokidar src/themes/animo/theme.scss build/themes/animo/animo.css && cp -R src/themes/animo/fonts build/themes/animo/fonts",
     "lib:declarations": "tsc -p tsconfig.d.json",
     "build": "npm run storybook:build",
-    "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media"
+    "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media",
+    "precommit": "lint-staged",
+    "prepush": "npm ci --dry-run"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.17",
