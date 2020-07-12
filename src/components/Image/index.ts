@@ -1,1 +1,1 @@
-export { Image, ImagePropsBuilder, ImageProps } from './component';
+export { Image, ImagePropsBuilder } from './component';
