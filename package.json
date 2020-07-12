@@ -109,6 +109,9 @@
     "storybook-readme": "5.0.2",
     "surge": "0.21.3"
   },
+  "optionalDependencies": {
+    "@pyxismedia/lib-model": "^1.0.33"
+  },
   "engines": {
     "node": "10.15.3",
     "yarn": "1.17.3",
