@@ -27,7 +27,7 @@
     "lib:declarations": "tsc -p tsconfig.d.json",
     "build": "npm run storybook:build",
     "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media",
-    "precommit": "lint-staged",
+    "precommit": "lint-staged -c .lintstagedrc",
     "prepush": "npm ci --dry-run && npm test -- --watchAll=false && npm run lib"
   },
   "dependencies": {
