@@ -29,8 +29,6 @@ const AddPure: FunctionComponent<AddComponentProps> = ({
   </Container>
 );
 
-console.log('Hello!');
-
 export const AddComponent: FunctionComponent<
   AddComponentProps
 > = setDisplayName('AddComponent')(AddPure);
