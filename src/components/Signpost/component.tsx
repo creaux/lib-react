@@ -52,11 +52,10 @@ export const Signpost: FunctionComponent<SignpostProps> = ({ elements }) => (
     <div className="signpost__wrapper">
       {elements.map(({ image }, i) => {
         return (
-          <div className="signpost__item">
+          <div className="signpost__item" key={i}>
             <Image
               variant={ImageVariants.BACKGROUND}
               src={image.src}
-              key={i}
               rounded={image.rounded}
               className="d-flex align-items-center justify-content-center"
             >

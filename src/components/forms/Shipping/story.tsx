@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FunctionComponent } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Shipping } from './container';
 import { Form, FormType } from '../Form/component';
@@ -6,7 +6,11 @@ import { Button, Type } from '../Button';
 
 const story = storiesOf('Organisms/forms/Shipping', module);
 
-story.add('normal', () => {
+interface ParentProps {
+  formType: FormType;
+}
+
+const Parent: FunctionComponent<ParentProps> = ({ formType }) => {
   const [disabled, setDisabled] = useState(true);
   const handleFormChange = () => {
     return;
@@ -15,7 +19,7 @@ story.add('normal', () => {
     return setDisabled(!valid);
   };
   return (
-    <Form type={FormType.NORMAL} onSubmit={() => {}}>
+    <Form type={formType} onSubmit={() => {}}>
       <Shipping
         onFormValidChange={handleFormValidChange}
         onFormChange={handleFormChange}
@@ -25,49 +29,16 @@ story.add('normal', () => {
       </Button>
     </Form>
   );
+};
+
+story.add('normal', () => {
+  return <Parent formType={FormType.NORMAL} />;
 });
 
 story.add('onplace', () => {
-  const [disabled, setDisabled] = useState(true);
-  const handleFormChange = () => {
-    return null;
-  };
-  const handleFormValidChange = (valid: boolean) => {
-    return setDisabled(!valid);
-  };
-  return (
-    <Form
-      type={FormType.ONPLACE}
-      onSubmit={() => {
-        return null;
-      }}
-    >
-      <Shipping
-        onFormValidChange={handleFormValidChange}
-        onFormChange={handleFormChange}
-      />
-      <Button type={Type.SUBMIT} disabled={disabled}>
-        Submit
-      </Button>
-    </Form>
-  );
+  return <Parent formType={FormType.ONPLACE} />;
 });
 
 story.add('inline', () => {
-  const [disabled, setDisabled] = useState(true);
-  const handleFormChange = () => {};
-  const handleFormValidChange = (valid: boolean) => {
-    setDisabled(!valid);
-  };
-  return (
-    <Form type={FormType.INLINE} onSubmit={() => {}}>
-      <Shipping
-        onFormValidChange={handleFormValidChange}
-        onFormChange={handleFormChange}
-      />
-      <Button type={Type.SUBMIT} disabled={disabled}>
-        Submit
-      </Button>
-    </Form>
-  );
+  return <Parent formType={FormType.INLINE} />;
 });

@@ -9,8 +9,8 @@ export const NavigationButtons: FunctionComponent<NavigationButtonsProps> = ({
   buttons
 }) => (
   <form className="form-inline">
-    {buttons.map(button => (
-      <Button {...button} />
+    {buttons.map((button, i) => (
+      <Button {...button} key={i} />
     ))}
   </form>
 );
