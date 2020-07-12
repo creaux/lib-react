@@ -42,7 +42,7 @@ export class PositionBuilder {
   }
 }
 
-export class ViewportPropsBuilder implements BuilderInterface {
+export class ViewportPropsBuilder {
   protected background!: string;
   protected xPosition!: PositionInterface;
 
