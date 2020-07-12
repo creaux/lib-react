@@ -112,12 +112,6 @@
     "yarn": "1.17.3",
     "npm": "6.4.1"
   },
-  "lint-staged": {
-    "{src}/**/*.ts*": [
-      "npm run prettier",
-      "git add"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/creaux/lib-react.git"
