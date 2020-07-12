@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from "react";
-import { Raiser } from "../Raiser";
-import { Button, Variants } from "../forms/Button";
-import setDisplayName from "recompose/setDisplayName";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { FunctionComponent } from 'react';
+import { Raiser } from '../Raiser';
+import { Button, Variants } from '../forms/Button';
+import setDisplayName from 'recompose/setDisplayName';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export interface AddComponentProps {
   title: string;
@@ -29,6 +29,8 @@ const AddPure: FunctionComponent<AddComponentProps> = ({
   </Container>
 );
 
+console.log('Hello!');
+
 export const AddComponent: FunctionComponent<
   AddComponentProps
-> = setDisplayName("AddComponent")(AddPure);
+> = setDisplayName('AddComponent')(AddPure);
