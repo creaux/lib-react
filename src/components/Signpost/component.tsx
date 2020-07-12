@@ -17,8 +17,8 @@ export class SignpostElementBuilder {
 
   public build(): SignpostElement {
     return {
-      image: this.image,
-    }
+      image: this.image
+    };
   }
 }
 
@@ -43,23 +43,37 @@ export class SignpostPropsBuilder {
 
 export interface SignpostProps {
   elements: {
-    image: ImageProps
+    image: ImageProps;
   }[];
 }
 
 export const Signpost: FunctionComponent<SignpostProps> = ({ elements }) => (
   <Viewport>
-    {elements.map(({ image }, i) => {
-      return <div className="signpost__wrapper">
-        <Image variant={ImageVariants.BACKGROUND} src={image.src} key={i} rounded={image.rounded} className="d-flex align-items-center justify-content-center">
-          <Button variant={Variants.OUTLINE_LIGHT} size={Sizes.LG} className="w-75">
-            <>
-              <div>VIRGIN</div>
-              <div>Take a look</div>
-            </>
-          </Button>
-        </Image>
-      </div>;
-    })}
+    <div className="signpost__wrapper">
+      {elements.map(({ image }, i) => {
+        return (
+          <div className="signpost__item">
+            <Image
+              variant={ImageVariants.BACKGROUND}
+              src={image.src}
+              key={i}
+              rounded={image.rounded}
+              className="d-flex align-items-center justify-content-center"
+            >
+              <Button
+                variant={Variants.OUTLINE_LIGHT}
+                size={Sizes.LG}
+                className="w-75"
+              >
+                <>
+                  <div>VIRGIN</div>
+                  <div>Take a look</div>
+                </>
+              </Button>
+            </Image>
+          </div>
+        );
+      })}
+    </div>
   </Viewport>
 );

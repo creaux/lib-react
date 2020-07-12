@@ -1,9 +1,32 @@
 .signpost__wrapper {
-  height: 25vh;
+  display: flex;
+  height: 100vh;
+}
+
+.signpost__item {
   overflow: hidden;
   background-position: center center;
 }
 
 .signport__image {
+}
 
+@include media-breakpoint-down(sm) {
+  .signpost__wrapper {
+    flex-direction: column;
+  }
+
+  .signpost__item {
+    height: 25vh;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .signpost__wrapper {
+    flex-direction: row;
+  }
+
+  .signpost__item {
+    width: 25vw;
+  }
 }
