@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { Viewport } from '../Viewport';
 import { Image } from '../Image';
 import { ImageProps } from '../Image/component';
@@ -6,24 +6,41 @@ import { Button } from '../forms/Button/component';
 import { ImageVariants } from '../Image/types';
 import { Variants } from '../forms/Button/types';
 import { Sizes } from '../types/sizes';
+import { ChevronRight } from 'react-bootstrap-icons';
 
 export class SignpostElementBuilder {
   private image!: ImageProps;
+  private over!: ImageProps;
+  private title!: string;
 
   public withImage(image: ImageProps): SignpostElementBuilder {
     this.image = image;
     return this;
   }
 
+  public withOver(over: ImageProps): SignpostElementBuilder {
+    this.over = over;
+    return this;
+  }
+
+  public withTitle(title: string): SignpostElementBuilder {
+    this.title = title;
+    return this;
+  }
+
   public build(): SignpostElement {
     return {
-      image: this.image
+      image: this.image,
+      over: this.over,
+      title: this.title
     };
   }
 }
 
 export interface SignpostElement {
   image: ImageProps;
+  over: ImageProps;
+  title: string;
 }
 
 export class SignpostPropsBuilder {
@@ -42,37 +59,53 @@ export class SignpostPropsBuilder {
 }
 
 export interface SignpostProps {
-  elements: {
-    image: ImageProps;
-  }[];
+  elements: SignpostElement[];
 }
 
-export const Signpost: FunctionComponent<SignpostProps> = ({ elements }) => (
-  <Viewport>
-    <div className="signpost__wrapper">
-      {elements.map(({ image }, i) => {
-        return (
-          <div className="signpost__item" key={i}>
-            <Image
-              variant={ImageVariants.BACKGROUND}
-              src={image.src}
-              rounded={image.rounded}
-              className="d-flex align-items-center justify-content-center"
+export const Signpost: FunctionComponent<SignpostProps> = ({ elements }) => {
+  const [state, handleMouseEnter] = useState(
+    Array.from(Array(elements.length).keys(), () => false)
+  );
+
+  return (
+    <Viewport>
+      <div className="signpost__wrapper">
+        {elements.map(({ image, over, title }, i) => {
+          return (
+            <div
+              className="signpost__item"
+              key={i}
+              onMouseEnter={() => {
+                handleMouseEnter([...Object.assign(state, { [i]: true })]);
+              }}
+              onMouseLeave={() =>
+                handleMouseEnter([...Object.assign(state, { [i]: false })])
+              }
             >
-              <Button
-                variant={Variants.OUTLINE_LIGHT}
-                size={Sizes.LG}
-                className="w-75"
+              <Image
+                variant={ImageVariants.BACKGROUND}
+                src={state[i] ? over.src : image.src}
+                rounded={image.rounded}
+                className="pb-4 signpost__image"
               >
-                <>
-                  <div>VIRGIN</div>
-                  <div>Take a look</div>
-                </>
-              </Button>
-            </Image>
-          </div>
-        );
-      })}
-    </div>
-  </Viewport>
-);
+                <Button
+                  variant={Variants.LINK}
+                  size={Sizes.LG}
+                  className="signpost__btn"
+                >
+                  <>
+                    <div className="mr-2 signpost__btn-text">
+                      Take a look on me!
+                    </div>
+                    <ChevronRight />
+                  </>
+                </Button>
+                <h2 className="signpost__title">{title}</h2>
+              </Image>
+            </div>
+          );
+        })}
+      </div>
+    </Viewport>
+  );
+};
