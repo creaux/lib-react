@@ -27,7 +27,7 @@
     "build": "npm run storybook:build",
     "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media",
     "precommit": "lint-staged -c .lintstagedrc",
-    "prepush": "npm ci --dry-run && npm test -- --watchAll=false && npm run storybook:build && npm run lib"
+    "prepush": "yarn ci --dry-run && yarn test -- --watchAll=false && yarn run storybook:build && yarn run lib"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.17",
