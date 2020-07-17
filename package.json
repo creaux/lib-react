@@ -6,7 +6,6 @@
   "homepage": "http://pyxis.media",
   "license": "MIT",
   "main": "build/index.js",
-  "private": true,
   "files": [
     "build/**/*"
   ],
@@ -124,11 +123,5 @@
   },
   "resolutions": {
     "**/@babel/runtime": "7.6.0"
-  },
-  "workspaces": {
-    "nohoist": [
-      "node-sass-tilde-importer",
-      "node-sass-tilde-importer/**"
-    ]
   }
 }
