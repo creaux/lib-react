@@ -5,14 +5,14 @@ $font-family-script-secondary: 'Open+Sans';
 $font-weight-script-secondary: '400;600;800';
 
 // Custom variables
-$font-family-primary: "Open Sans", sans-serif;
+$font-family-primary: 'Open Sans', sans-serif;
 $font-family-secondary: 'Catamaran', sans-serif;
 
 // For overriding: https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
 // Bootstrap override
 %scope {
-  @import "../../../node_modules/bootstrap/scss/functions";
-  @import "../../../node_modules/bootstrap/scss/variables";
+  @import '~bootstrap/scss/functions';
+  @import '~bootstrap/scss/variables';
 
   $enable-responsive-font-sizes: true !global;
 

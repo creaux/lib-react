@@ -1,4 +1,4 @@
-@import '../../../node_modules/bootstrap/scss/_variables.scss';
+@import '~bootstrap/scss/_variables.scss';
 
 @include media-breakpoint-down(xs) {
   .input-group {
@@ -12,7 +12,8 @@
   }
 }
 
-.btn:disabled, .btn.disabled {
+.btn:disabled,
+.btn.disabled {
   cursor: default;
 }
 
@@ -27,7 +28,7 @@
 
 .form-check-input {
   transform: scale(1.3333);
-  margin-top: .4rem;
+  margin-top: 0.4rem;
   margin-left: -1.3rem;
 }
 
