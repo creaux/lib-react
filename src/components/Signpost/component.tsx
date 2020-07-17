@@ -86,7 +86,7 @@ export const Signpost: FunctionComponent<SignpostProps> = ({ elements }) => {
                 variant={ImageVariants.BACKGROUND}
                 src={state[i] ? over.src : image.src}
                 rounded={image.rounded}
-                className="pb-4 signpost__image"
+                className="pb-3 signpost__image"
               >
                 <Button
                   variant={Variants.LINK}
@@ -97,7 +97,7 @@ export const Signpost: FunctionComponent<SignpostProps> = ({ elements }) => {
                     <div className="mr-2 signpost__btn-text">
                       Take a look on me!
                     </div>
-                    <ChevronRight />
+                    <ChevronRight className="signpost__btn-icon" />
                   </>
                 </Button>
                 <h2 className="signpost__title">{title}</h2>
