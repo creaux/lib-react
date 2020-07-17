@@ -8,6 +8,10 @@
   background-position: center center;
 }
 
+.signpost__title {
+  color: map-get($theme-colors, light);
+}
+
 .signpost__btn {
 }
 
@@ -19,6 +23,12 @@
   text-transform: uppercase;
   font-weight: 600;
   font-size: 16px;
+
+  color: map-get($theme-colors, light);
+}
+
+.signpost__btn-icon {
+  color: map-get($theme-colors, light);
 }
 
 @include media-breakpoint-down(sm) {
