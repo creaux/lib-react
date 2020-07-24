@@ -38,5 +38,6 @@ export { Address } from './components/forms/Address';
 export { Company } from './components/forms/Company';
 export { EmailCrawler } from './components/forms/EmailCrawler';
 export { Person } from './components/forms/Person';
+export { Signpost } from './components/Signpost';
 // Organisms
 export { Shipping } from './components/forms/Shipping';

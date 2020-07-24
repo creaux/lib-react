@@ -93,7 +93,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
     variant={variant}
     size={size}
     onClick={onClick}
-    className={cx(className, { 'btn-block': extended })}
+    className={cx({ 'btn-block': extended }, className)}
     type={type}
     disabled={disabled}
   >

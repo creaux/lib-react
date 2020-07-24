@@ -2200,172 +2200,204 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
+      <button
+        className="signpost__btn btn btn-link btn-lg"
+        disabled={false}
+        type="button"
+      >
+        <div
+          className="mr-2 signpost__btn-text"
+        >
+          Take a look on me!
+        </div>
+        <svg
+          className="signpost__btn-icon"
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+      <h2
+        className="signpost__title"
+      >
+        First
+      </h2>
       <div
-        className="image-background pb-4 signpost__image"
+        className="image-background pb-3 signpost__image"
+        style={
+          Object {
+            "backgroundImage": "url(https://picsum.photos/1024/768?random=5)",
+          }
+        }
+      />
+      <div
+        className="image-background pb-3 signpost__image signpost__image--active"
         style={
           Object {
             "backgroundImage": "url(https://picsum.photos/1024/768?random=1)",
           }
         }
-      >
-        <button
-          className="signpost__btn btn btn-link btn-lg"
-          disabled={false}
-          type="button"
-        >
-          <div
-            className="mr-2 signpost__btn-text"
-          >
-            Take a look on me!
-          </div>
-          <svg
-            fill="currentColor"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-        <h2
-          className="signpost__title"
-        >
-          First
-        </h2>
-      </div>
+      />
     </div>
     <div
       className="signpost__item"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
+      <button
+        className="signpost__btn btn btn-link btn-lg"
+        disabled={false}
+        type="button"
+      >
+        <div
+          className="mr-2 signpost__btn-text"
+        >
+          Take a look on me!
+        </div>
+        <svg
+          className="signpost__btn-icon"
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+      <h2
+        className="signpost__title"
+      >
+        Second
+      </h2>
       <div
-        className="image-background pb-4 signpost__image"
+        className="image-background pb-3 signpost__image"
+        style={
+          Object {
+            "backgroundImage": "url(https://picsum.photos/1024/768?random=6)",
+          }
+        }
+      />
+      <div
+        className="image-background pb-3 signpost__image signpost__image--active"
         style={
           Object {
             "backgroundImage": "url(https://picsum.photos/1024/768?random=2)",
           }
         }
-      >
-        <button
-          className="signpost__btn btn btn-link btn-lg"
-          disabled={false}
-          type="button"
-        >
-          <div
-            className="mr-2 signpost__btn-text"
-          >
-            Take a look on me!
-          </div>
-          <svg
-            fill="currentColor"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-        <h2
-          className="signpost__title"
-        >
-          Second
-        </h2>
-      </div>
+      />
     </div>
     <div
       className="signpost__item"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
+      <button
+        className="signpost__btn btn btn-link btn-lg"
+        disabled={false}
+        type="button"
+      >
+        <div
+          className="mr-2 signpost__btn-text"
+        >
+          Take a look on me!
+        </div>
+        <svg
+          className="signpost__btn-icon"
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+      <h2
+        className="signpost__title"
+      >
+        Third
+      </h2>
       <div
-        className="image-background pb-4 signpost__image"
+        className="image-background pb-3 signpost__image"
+        style={
+          Object {
+            "backgroundImage": "url(https://picsum.photos/1024/768?random=7)",
+          }
+        }
+      />
+      <div
+        className="image-background pb-3 signpost__image signpost__image--active"
         style={
           Object {
             "backgroundImage": "url(https://picsum.photos/1024/768?random=3)",
           }
         }
-      >
-        <button
-          className="signpost__btn btn btn-link btn-lg"
-          disabled={false}
-          type="button"
-        >
-          <div
-            className="mr-2 signpost__btn-text"
-          >
-            Take a look on me!
-          </div>
-          <svg
-            fill="currentColor"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-        <h2
-          className="signpost__title"
-        >
-          Third
-        </h2>
-      </div>
+      />
     </div>
     <div
       className="signpost__item"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
+      <button
+        className="signpost__btn btn btn-link btn-lg"
+        disabled={false}
+        type="button"
+      >
+        <div
+          className="mr-2 signpost__btn-text"
+        >
+          Take a look on me!
+        </div>
+        <svg
+          className="signpost__btn-icon"
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+      <h2
+        className="signpost__title"
+      >
+        Fourth
+      </h2>
       <div
-        className="image-background pb-4 signpost__image"
+        className="image-background pb-3 signpost__image"
+        style={
+          Object {
+            "backgroundImage": "url(https://picsum.photos/1024/768?random=8)",
+          }
+        }
+      />
+      <div
+        className="image-background pb-3 signpost__image signpost__image--active"
         style={
           Object {
             "backgroundImage": "url(https://picsum.photos/1024/768?random=4)",
           }
         }
-      >
-        <button
-          className="signpost__btn btn btn-link btn-lg"
-          disabled={false}
-          type="button"
-        >
-          <div
-            className="mr-2 signpost__btn-text"
-          >
-            Take a look on me!
-          </div>
-          <svg
-            fill="currentColor"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-        <h2
-          className="signpost__title"
-        >
-          Fourth
-        </h2>
-      </div>
+      />
     </div>
   </div>
 </div>

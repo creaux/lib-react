@@ -7,6 +7,7 @@ import { ImageVariants } from '../Image/types';
 import { Variants } from '../forms/Button/types';
 import { Sizes } from '../types/sizes';
 import { ChevronRight } from 'react-bootstrap-icons';
+import cx from 'classnames';
 
 export class SignpostElementBuilder {
   private image!: ImageProps;
@@ -82,26 +83,37 @@ export const Signpost: FunctionComponent<SignpostProps> = ({ elements }) => {
                 handleMouseEnter([...Object.assign(state, { [i]: false })])
               }
             >
+              <Button
+                variant={Variants.LINK}
+                size={Sizes.LG}
+                className={cx('signpost__btn', {
+                  'signpost__btn--active': state[i]
+                })}
+              >
+                <>
+                  <div className="mr-2 signpost__btn-text">
+                    Take a look on me!
+                  </div>
+                  <ChevronRight className="signpost__btn-icon" />
+                </>
+              </Button>
+              <h2 className="signpost__title">{title}</h2>
               <Image
                 variant={ImageVariants.BACKGROUND}
-                src={state[i] ? over.src : image.src}
+                src={over.src}
                 rounded={image.rounded}
-                className="pb-3 signpost__image"
-              >
-                <Button
-                  variant={Variants.LINK}
-                  size={Sizes.LG}
-                  className="signpost__btn"
-                >
-                  <>
-                    <div className="mr-2 signpost__btn-text">
-                      Take a look on me!
-                    </div>
-                    <ChevronRight className="signpost__btn-icon" />
-                  </>
-                </Button>
-                <h2 className="signpost__title">{title}</h2>
-              </Image>
+                className={cx('pb-3', 'signpost__image', {
+                  'signpost__image--active': state[i]
+                })}
+              />
+              <Image
+                variant={ImageVariants.BACKGROUND}
+                src={image.src}
+                rounded={image.rounded}
+                className={cx('pb-3', 'signpost__image', {
+                  'signpost__image--active': !state[i]
+                })}
+              />
             </div>
           );
         })}
