@@ -1,22 +1,43 @@
 .signpost__wrapper {
   display: flex;
+
   height: 100vh;
 }
 
 .signpost__item {
+  display: flex;
+
   overflow: hidden;
   background-position: center center;
+  position: relative;
 }
 
 .signpost__title {
+  position: relative;
+  z-index: 1;
+
   color: map-get($theme-colors, light);
 }
 
 .signpost__btn {
+  position: relative;
+  z-index: 1;
 }
 
 .signpost__image {
   display: flex;
+  z-index: 0;
+
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.signpost__image--active {
+  opacity: 1;
 }
 
 .signpost__btn-text {
@@ -38,17 +59,14 @@
 
   .signpost__item {
     height: 25vh;
-
-    .signpost__btn {
-      display: flex;
-    }
-  }
-
-  .signpost__image {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-end;
     padding: 16px;
+
+    .signpost__btn {
+      display: flex;
+    }
   }
 
   .signpost__title {
@@ -63,21 +81,26 @@
 
   .signpost__item {
     width: 25vw;
-
-    .signpost__btn {
-      display: none;
-      align-items: center;
-      justify-content: center;
-    }
-
-    &:hover .signpost__btn {
-      display: flex;
-    }
-  }
-
-  .signpost__image {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+
+    .signpost__btn {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+
+    .signpost__btn {
+      transition: opacity 300ms ease-in-out;
+      opacity: 0;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .signpost__btn--active {
+      opacity: 1;
+    }
   }
 }
