@@ -1,7 +1,7 @@
 import React, { createElement, FormEvent } from 'react';
-import { RadioStack, RadioStackProps } from './component';
+import { RadioStack, RadioStackProps as RadioStackProps2 } from './component';
 
-export interface RadioStackProps extends RadioStackProps {}
+export interface RadioStackProps extends RadioStackProps2 {}
 
 export class RadioStackContainer extends React.Component<RadioStackProps> {
   handleChange = (e: FormEvent<HTMLInputElement | HTMLSelectElement>) => {

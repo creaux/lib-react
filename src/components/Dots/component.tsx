@@ -17,6 +17,7 @@ export const Dots: FunctionComponent<DotsProps> = ({
 
   useEffect(() => {
     if (dot) {
+      // @ts-ignore
       onDot(dot);
     }
   });
@@ -27,6 +28,7 @@ export const Dots: FunctionComponent<DotsProps> = ({
         <button
           key={i}
           className={cx('dots__dot', { 'dots__dot--active': dot === i })}
+          // @ts-ignore
           onClick={() => setDot(i)}
         ></button>
       ))}

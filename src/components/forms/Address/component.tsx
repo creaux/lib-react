@@ -70,7 +70,6 @@ export const Address: FunctionComponent<AddressProps> = ({
                     ? translations.STREET_PLACEHOLDER
                     : translations.STREET
                 }
-                id={street.id}
                 {...street}
                 onChange={handleFieldChange('street')}
                 onValidChange={handleValidFieldChange('street')}
@@ -93,7 +92,6 @@ export const Address: FunctionComponent<AddressProps> = ({
                     ? translations.STREET_NO_PLACEHOLDER
                     : translations.STREET_NO
                 }
-                id={streetNo.id}
                 {...streetNo}
                 onChange={handleFieldChange('streetNo')}
                 onValidChange={handleValidFieldChange('streetNo')}
@@ -116,7 +114,6 @@ export const Address: FunctionComponent<AddressProps> = ({
                     ? translations.POSTCODE_PLACEHOLDER
                     : translations.POSTCODE
                 }
-                id={postcode.id}
                 {...postcode}
                 onChange={handleFieldChange('postcode')}
                 onValidChange={handleValidFieldChange('postcode')}
@@ -141,7 +138,6 @@ export const Address: FunctionComponent<AddressProps> = ({
                     ? translations.CITY_PLACEHOLDER
                     : translations.CITY
                 }
-                id={cities.id}
                 {...cities}
                 onChange={handleFieldChange('cities')}
                 onValidChange={handleValidFieldChange('cities')}
@@ -164,7 +160,6 @@ export const Address: FunctionComponent<AddressProps> = ({
                     ? translations.COUNTRY_PLACEHOLDER
                     : translations.COUNTRY
                 }
-                id={countries.id}
                 {...countries}
                 onChange={handleFieldChange('countries')}
                 onValidChange={handleValidFieldChange('countries')}

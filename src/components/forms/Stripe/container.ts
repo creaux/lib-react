@@ -44,6 +44,7 @@ export class StripeContainer extends Component<StripeProps> {
     // @ts-ignore
     const result = await stripe.confirmCardPayment(this.secret, {
       payment_method: {
+        // @ts-ignore
         card: elements.getElement(CardNumberElement),
         billing_details: {
           name: 'Jenny Rosen'
@@ -78,6 +79,7 @@ export class StripeContainer extends Component<StripeProps> {
       console.log(result.error.message);
     } else {
       // The payment has been processed!
+      // @ts-ignore
       if (result.paymentIntent.status === 'succeeded') {
         // Show a success message to your customer
         // There's a risk of the customer closing the window before callback
