@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ComponentClass } from 'react';
 import {
   mapPropsToCssStyle,
   StyleProps
@@ -87,7 +87,10 @@ export const ViewportComponent: FunctionComponent<ViewportComponentProps> = ({
   );
 };
 
-export const Viewport = compose<ViewportComponentProps, ViewportProps>(
+export const Viewport: ComponentClass<ViewportProps> = compose<
+  ViewportComponentProps,
+  ViewportProps
+>(
   mapPropsToCssStyle<ViewportProps, ViewportComponentProps>('xPosition'),
   setDisplayName('Viewport'),
   mapProps((props: ViewportComponentProps & ViewportProps) => {

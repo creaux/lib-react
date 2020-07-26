@@ -8,8 +8,12 @@ import {
 } from '../../hoc/validators/validator/index';
 import { provideFieldType } from '../../hoc/provideFieldType';
 import { validator } from '../../hoc/validators/validator';
+import { ComponentClass } from 'react';
 
-export const Select = compose<FieldContainerProps, FieldOuterProps>(
+export const Select: ComponentClass<FieldOuterProps> = compose<
+  FieldContainerProps,
+  FieldOuterProps
+>(
   provideFieldType(FieldType.SELECT),
   validator<ValidatorProps & MessagesProps>(
     [Validators.isText, 0],

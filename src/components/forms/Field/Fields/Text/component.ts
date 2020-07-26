@@ -8,8 +8,12 @@ import {
 } from '../../hoc/validators/validator/index';
 import { validator } from '../../hoc/validators/validator';
 import { provideInputType } from '../../hoc/provideInputType';
+import { ComponentClass } from 'react';
 
-export const Text = compose<FieldContainerProps, FieldOuterProps>(
+export const Text: ComponentClass<FieldOuterProps> = compose<
+  FieldContainerProps,
+  FieldOuterProps
+>(
   provideInputType<TypeProps>(InputTypeEnum.TEXT),
   validator<ValidatorProps & MessagesProps>(
     [Validators.isText, 0],

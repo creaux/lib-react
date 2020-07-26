@@ -4,8 +4,12 @@ import { compose } from 'recompose';
 import { validator } from '../../hoc/validators/validator';
 import { FieldContainer, FieldContainerProps } from '../../container';
 import { provideInputType } from '../../hoc/provideInputType';
+import { ComponentClass } from 'react';
 
-export const Email = compose<FieldContainerProps, FieldOuterProps>(
+export const Email: ComponentClass<FieldOuterProps> = compose<
+  FieldContainerProps,
+  FieldOuterProps
+>(
   provideInputType<TypeProps>(InputTypeEnum.EMAIL),
   validator(
     [Validators.isEmail, 0],
