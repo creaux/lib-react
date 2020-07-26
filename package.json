@@ -5,11 +5,10 @@
   "author": "Petr Juna <petr.juna@pyxis.media>",
   "homepage": "http://pyxis.media",
   "license": "MIT",
-  "main": "main.ts",
+  "main": "build/index.js",
   "files": [
-    "src/**/*",
-    "main.ts",
-    "animo.theme.scss"
+    "build/**/*",
+    "animo.theme.css"
   ],
   "scripts": {
     "storybook": "start-storybook -p 9001 -h 0.0.0.0 -c .storybook",
@@ -22,6 +21,10 @@
     "test:update": "react-scripts test -u --watch-all=false",
     "eject": "react-scripts eject",
     "release": "semantic-release",
+    "lib": "rm -rf build && npm run lib:css && NODE_ENV=production babel --extensions \".ts,.tsx\" src --out-dir build --ignore \"src/**/story.tsx,src/**/*.spec.ts,src/**/*.spec.tsx,__snapshots__,src/**/*.d.ts\" && npm run lib:declarations && npm run lib:translations",
+    "lib:css": "node-sass-chokidar --importer=node_modules/node-sass-tilde-importer src/themes/animo/theme.scss build/themes/animo/animo.css",
+    "lib:declarations": "tsc -p tsconfig.d.json",
+    "lib:translations": "rsync --include=\"*.json\" --verbose --recursive --exclude=\"*.*\" src/ build",
     "build": "npm run storybook:build",
     "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media"
   },
@@ -63,7 +66,6 @@
     "@commitlint/config-conventional": "8.0.0",
     "@commitlint/prompt-cli": "8.0.0",
     "@fortawesome/fontawesome-free": "5.8.1",
-    "@storybook/addon-a11y": "5.3.19",
     "@storybook/addon-actions": "5.3.19",
     "@storybook/addon-info": "5.3.19",
     "@storybook/addon-knobs": "5.3.19",
@@ -98,13 +100,14 @@
     "husky": "4.2.5",
     "lint-staged": "8.2.1",
     "package-lock-check": "1.1.0",
-    "prettier": "1.18.2",
+    "prettier": "2.0.5",
     "react-scripts": "3.4.1",
     "react-test-renderer": "16.13.1",
     "sinon": "7.1.1",
     "sinon-chai": "3.3.0",
     "storybook-readme": "5.0.8",
-    "surge": "0.21.6"
+    "surge": "0.21.6",
+    "node-sass-chokidar": "1.5.0"
   },
   "engines": {
     "node": "12.*",

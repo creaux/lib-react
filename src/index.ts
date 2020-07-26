@@ -9,7 +9,7 @@ export {
   ImageComponent as Image,
   ImageComponentPropsBuilder as ImagePropsBuilder
 } from './components/image.component';
-export {
+export type {
   ImageComponentProps as ImageProps
 } from './components/image.component';
 export { Sidescription } from './components/Sidescription';
@@ -44,6 +44,7 @@ export { Address } from './components/forms/Address';
 export { Company } from './components/forms/Company';
 export { EmailCrawler } from './components/forms/EmailCrawler';
 export { Person } from './components/forms/Person';
-export { SignpostComponent as Signpost } from './components/signpost.component';
+export { SignpostComponent as Signpost, SignpostElementBuilder, SignpostComponentPropsBuilder as SignpostPropsBuilder } from './components/signpost.component';
+export type { SignpostComponentProps as SignpostProps } from './components/signpost.component';
 // Organisms
 export { Shipping } from './components/forms/Shipping';

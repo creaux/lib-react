@@ -1,3 +1,1 @@
-module.exports = {
-  addons: ['@storybook/addon-a11y/register']
-};
+module.exports = require('./build');
