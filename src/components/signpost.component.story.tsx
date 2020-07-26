@@ -6,6 +6,7 @@ import {
   SignpostComponentPropsBuilder,
 } from './signpost.component';
 import { ImageComponentPropsBuilder as ImagePropsBuilder } from './image.component';
+import { action } from '@storybook/addon-actions';
 
 const props = new SignpostComponentPropsBuilder()
   .withElements([
@@ -23,6 +24,7 @@ const props = new SignpostComponentPropsBuilder()
           .build()
       )
       .withTitle('First')
+      .withOnClick(action('First'))
       .build(),
     new SignpostElementBuilder()
       .withImage(
@@ -38,6 +40,7 @@ const props = new SignpostComponentPropsBuilder()
           .build()
       )
       .withTitle('Second')
+      .withOnClick(action('Second'))
       .build(),
     new SignpostElementBuilder()
       .withImage(
@@ -53,6 +56,7 @@ const props = new SignpostComponentPropsBuilder()
           .build()
       )
       .withTitle('Third')
+      .withOnClick(action('Third'))
       .build(),
     new SignpostElementBuilder()
       .withImage(
@@ -68,6 +72,7 @@ const props = new SignpostComponentPropsBuilder()
           .build()
       )
       .withTitle('Fourth')
+      .withOnClick(action('Fourth'))
       .build(),
   ])
   .build();

@@ -13,6 +13,7 @@ export class SignpostElementBuilder {
   private image!: ImageProps;
   private over!: ImageProps;
   private title!: string;
+  private onClick!: (event: any) => void;
 
   public withImage(image: ImageProps): SignpostElementBuilder {
     this.image = image;
@@ -29,11 +30,17 @@ export class SignpostElementBuilder {
     return this;
   }
 
+  public withOnClick(onClick: (event: any) => void): SignpostElementBuilder {
+    this.onClick = onClick;
+    return this;
+  }
+
   public build(): SignpostElement {
     return {
       image: this.image,
       over: this.over,
       title: this.title,
+      onClick: this.onClick,
     };
   }
 }
@@ -42,6 +49,7 @@ export interface SignpostElement {
   image: ImageProps;
   over: ImageProps;
   title: string;
+  onClick: (event: any) => void;
 }
 
 export class SignpostComponentPropsBuilder {
@@ -75,7 +83,7 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
   return (
     <Viewport>
       <div className="signpost__wrapper">
-        {elements.map(({ image, over, title }, i) => {
+        {elements.map(({ image, over, title, onClick: handleClick }, i) => {
           return (
             <div
               className="signpost__item"
@@ -93,6 +101,7 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
                 className={cx('signpost__btn', {
                   'signpost__btn--active': state[i],
                 })}
+                onClick={handleClick}
               >
                 <>
                   <div className="mr-2 signpost__btn-text">
