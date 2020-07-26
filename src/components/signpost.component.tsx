@@ -127,6 +127,11 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
                   'signpost__image--active': !state[i],
                 })}
               />
+              <div
+                className={cx('signpost__overlay', {
+                  'signpost__overlay--active': !state[i],
+                })}
+              ></div>
             </div>
           );
         })}

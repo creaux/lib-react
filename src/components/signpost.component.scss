@@ -52,6 +52,21 @@
   color: map-get($theme-colors, light);
 }
 
+.signpost__overlay {
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+
+  &--active {
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
 @include media-breakpoint-down(sm) {
   .signpost__wrapper {
     flex-direction: column;

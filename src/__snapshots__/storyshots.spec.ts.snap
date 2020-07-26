@@ -2113,6 +2113,7 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
       <button
         className="signpost__btn btn btn-link btn-lg"
         disabled={false}
+        onClick={[Function]}
         type="button"
       >
         <div
@@ -2155,6 +2156,9 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
           }
         }
       />
+      <div
+        className="signpost__overlay signpost__overlay--active"
+      />
     </div>
     <div
       className="signpost__item"
@@ -2164,6 +2168,7 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
       <button
         className="signpost__btn btn btn-link btn-lg"
         disabled={false}
+        onClick={[Function]}
         type="button"
       >
         <div
@@ -2206,6 +2211,9 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
           }
         }
       />
+      <div
+        className="signpost__overlay signpost__overlay--active"
+      />
     </div>
     <div
       className="signpost__item"
@@ -2215,6 +2223,7 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
       <button
         className="signpost__btn btn btn-link btn-lg"
         disabled={false}
+        onClick={[Function]}
         type="button"
       >
         <div
@@ -2257,6 +2266,9 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
           }
         }
       />
+      <div
+        className="signpost__overlay signpost__overlay--active"
+      />
     </div>
     <div
       className="signpost__item"
@@ -2266,6 +2278,7 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
       <button
         className="signpost__btn btn btn-link btn-lg"
         disabled={false}
+        onClick={[Function]}
         type="button"
       >
         <div
@@ -2307,6 +2320,9 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
             "backgroundImage": "url(https://picsum.photos/1024/768?random=4)",
           }
         }
+      />
+      <div
+        className="signpost__overlay signpost__overlay--active"
       />
     </div>
   </div>
