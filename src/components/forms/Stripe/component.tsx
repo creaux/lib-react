@@ -2,7 +2,7 @@ import React, { FormEvent, FunctionComponent } from 'react';
 import {
   CardCvcElement,
   CardExpiryElement,
-  CardNumberElement
+  CardNumberElement,
 } from '@stripe/react-stripe-js';
 import { I18nConsumer } from '../../I18n/component';
 import defaultTranslations from './en.json';
@@ -23,7 +23,7 @@ export interface StripeProps {
 
 export const Stripe: FunctionComponent<StripeProps> = ({
   onSubmit: handleSubmit,
-  disabled
+  disabled,
 }) => {
   return (
     <Form
@@ -34,20 +34,20 @@ export const Stripe: FunctionComponent<StripeProps> = ({
       <I18nConsumer<StripeTranslations>
         defaultTranslations={defaultTranslations}
       >
-        {translations => (
+        {(translations) => (
           <>
             <CardNumberElement
               className="form-control d-flex flex-column justify-content-center stripe-card-number"
               options={{
                 showIcon: true,
-                placeholder: translations.STRIPE_NUMBER_PLACEHOLDER
+                placeholder: translations.STRIPE_NUMBER_PLACEHOLDER,
               }}
             />
             <div className="input-group mb-4">
               <CardExpiryElement
                 className="form-control d-flex flex-column justify-content-center"
                 options={{
-                  placeholder: translations.STRIPE_EXPIRY_PLACEHOLDER
+                  placeholder: translations.STRIPE_EXPIRY_PLACEHOLDER,
                 }}
               />
               <CardCvcElement

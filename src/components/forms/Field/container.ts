@@ -42,7 +42,7 @@ export class FieldContainer extends Component<
 
     this.state = {
       value: '',
-      message: this.defaultMessage
+      message: this.defaultMessage,
     };
   }
 
@@ -99,7 +99,7 @@ export class FieldContainer extends Component<
       onChange: this.handleChange,
       formType: this.context,
       fieldType,
-      options
+      options,
     };
     return createElement(Field, props);
   }

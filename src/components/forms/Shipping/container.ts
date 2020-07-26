@@ -54,7 +54,7 @@ export class ShippingStateBuilder {
       invoicing: this.invoicing,
       terms: this.terms,
       data: this.data,
-      company: this.company
+      company: this.company,
     };
   }
 }
@@ -114,7 +114,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
                   .withId('prague')
                   .withValue('Prague')
                   .withTitle('Prague')
-                  .build()
+                  .build(),
               ])
               .build()
           )
@@ -127,7 +127,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
                   .withId('czechia')
                   .withValue('Czechia')
                   .withTitle('Czechia')
-                  .build()
+                  .build(),
               ])
               .build()
           )
@@ -193,7 +193,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
                   .withId('prague')
                   .withTitle('Prague')
                   .withValue('prague')
-                  .build()
+                  .build(),
               ])
               .build()
           )
@@ -206,29 +206,18 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
                   .withId('czechia')
                   .withTitle('Czechia')
                   .withValue('czechia')
-                  .build()
+                  .build(),
               ])
               .build()
           )
           .build()
       )
       .withCompany(
-        new CheckboxBuilder()
-          .withId('company')
-          .withChecked(true)
-          .build()
+        new CheckboxBuilder().withId('company').withChecked(true).build()
       )
-      .withData(
-        new CheckboxBuilder()
-          .withId('data')
-          .withChecked(false)
-          .build()
-      )
+      .withData(new CheckboxBuilder().withId('data').withChecked(false).build())
       .withTerms(
-        new CheckboxBuilder()
-          .withId('terms')
-          .withChecked(false)
-          .build()
+        new CheckboxBuilder().withId('terms').withChecked(false).build()
       )
       .build();
   }
@@ -240,7 +229,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
   ) {
     const {
       onFormChange: handleFormChange,
-      onFormValidChange: handleFormValidChange
+      onFormValidChange: handleFormValidChange,
     } = this.props;
 
     handleFormValidChange(this.isValid);
@@ -271,8 +260,8 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
     this.setState(
       merge(this.state, {
         [group]: {
-          [field]: { valid }
-        }
+          [field]: { valid },
+        },
       })
     );
   };
@@ -281,8 +270,8 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
     return (
       Object.keys(this.state.delivery)
         // If it is undefined then it doesn't exists and doesn't need to be validated
-        .filter(key => this.state.delivery[key as keyof IAbode])
-        .every(key => {
+        .filter((key) => this.state.delivery[key as keyof IAbode])
+        .every((key) => {
           const field = this.state.delivery[key as keyof IAbode];
           if (field) {
             return field.valid;
@@ -296,8 +285,8 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
     return (
       Object.keys(this.state.invoicing)
         // If it is undefined then it doesn't exists and doesn't need to be validated
-        .filter(key => this.state.invoicing[key as keyof IAbode])
-        .every(key => {
+        .filter((key) => this.state.invoicing[key as keyof IAbode])
+        .every((key) => {
           const field = this.state.invoicing[key as keyof IAbode];
           if (field) {
             return field.valid;
@@ -325,7 +314,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
       ...this.state,
       onGroupChange: this.handleGroupChange,
       onFieldChange: this.handleCheckboxChange,
-      onValidGroupFieldChange: this.handleValidGroupFieldChange
+      onValidGroupFieldChange: this.handleValidGroupFieldChange,
     };
     return createElement(ShippingComponent, props);
   }

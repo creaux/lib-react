@@ -27,16 +27,16 @@ export const ProductDetail: FunctionComponent<ProductDetailsProps> = ({
   title,
   price,
   image,
-  children
+  children,
 }) => {
   const productDescriptionProps = {
     title,
-    price
+    price,
   };
 
   const navigationProps = {
     className: 'position-absolute',
-    style: { left: 0, right: 0 }
+    style: { left: 0, right: 0 },
   };
 
   return (

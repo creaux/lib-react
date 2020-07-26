@@ -4,7 +4,7 @@ import { Messages } from './hoc/validators/types';
 export enum InputTypeEnum {
   TEXT = 'text',
   NUMBER = 'text',
-  EMAIL = 'email'
+  EMAIL = 'email',
 }
 
 export class InputBuilder {
@@ -31,7 +31,7 @@ export class InputBuilder {
     return {
       id: this.id,
       value: this.value,
-      valid: this.valid
+      valid: this.valid,
     };
   }
 }
@@ -43,7 +43,7 @@ export interface IInput {
 }
 
 export interface IInputData extends IInput {
-  datalist?: (string)[];
+  datalist?: string[];
 }
 
 export type OnValidChange = (valid: boolean) => void;
@@ -65,7 +65,7 @@ export interface TypeProps {
 
 export enum FieldType {
   SELECT,
-  INPUT
+  INPUT,
 }
 
 export class OptionBuilder {
@@ -92,7 +92,7 @@ export class OptionBuilder {
     return {
       id: this.id,
       value: this.value,
-      title: this.title
+      title: this.title,
     };
   }
 }
@@ -127,7 +127,7 @@ export class SelectBuilder {
     return {
       id: this.id,
       value: this.value,
-      options: this.options
+      options: this.options,
     };
   }
 }

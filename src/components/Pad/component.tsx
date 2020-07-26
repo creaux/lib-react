@@ -22,16 +22,16 @@ export const Pad: FunctionComponent<PadProps> = ({
   position,
   velocity,
   axis,
-  direction
+  direction,
 }) => {
   const pages = children.length;
 
-  const [springs, setSprings] = useSprings(pages, i => {
+  const [springs, setSprings] = useSprings(pages, (i) => {
     const indent = i * window.innerHeight;
     return { container: indent, config: { duration: 100 } };
   });
 
-  const bind = useWheel(state => {
+  const bind = useWheel((state) => {
     if (
       state.velocity > velocity &&
       state.axis === axis &&
@@ -44,7 +44,8 @@ export const Pad: FunctionComponent<PadProps> = ({
       state.velocity > velocity &&
       state.axis === axis &&
       state.direction[1] === direction.up &&
-      (position - 1 < children.length && position > 0)
+      position - 1 < children.length &&
+      position > 0
     ) {
       // @ts-ignore
       setSprings(setSpringUp);
@@ -57,9 +58,9 @@ export const Pad: FunctionComponent<PadProps> = ({
         <animated.div
           key={i}
           style={{
-            transform: style.container.interpolate(x => {
+            transform: style.container.interpolate((x) => {
               return `translate3d(0, ${x}px, 0)`;
-            })
+            }),
           }}
           className="pad"
           {...bind()}

@@ -23,7 +23,7 @@ export interface StepsProps {
 export const Steps: FunctionComponent<StepsProps> = ({
   steps,
   active,
-  onStep = () => () => {}
+  onStep = () => () => {},
 }) => (
   <ul className="steps list-group list-group-horizontal list-group-flush justify-content-between mb-3">
     {steps.map((step, i) => (

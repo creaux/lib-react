@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ComponentClass } from 'react';
 import {
   mapPropsToCssStyle,
-  StyleProps
+  StyleProps,
 } from '../../hocs/mapPropsToCssVariables';
 import { compose, setDisplayName, mapProps } from 'recompose';
 import { omit } from 'lodash';
@@ -37,7 +37,7 @@ export class PositionBuilder {
     return {
       portrait: this.portrait,
       landscape: this.landscape,
-      desktop: this.desktop
+      desktop: this.desktop,
     };
   }
 }
@@ -59,7 +59,7 @@ export class ViewportPropsBuilder {
   build(): ViewportProps {
     return {
       background: this.background,
-      xPosition: this.xPosition
+      xPosition: this.xPosition,
     };
   }
 }
@@ -78,7 +78,7 @@ export interface ViewportComponentProps extends StyleProps {
 export const ViewportComponent: FunctionComponent<ViewportComponentProps> = ({
   style,
   children,
-  className
+  className,
 }) => {
   return (
     <div className={cx('viewport', className)} style={style}>

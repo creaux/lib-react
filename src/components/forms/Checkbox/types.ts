@@ -15,7 +15,7 @@ export class CheckboxBuilder {
   build(): ICheckbox {
     return {
       id: this.id,
-      checked: this.checked
+      checked: this.checked,
     };
   }
 }

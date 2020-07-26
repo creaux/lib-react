@@ -4,7 +4,7 @@ import { Hero } from '../Hero';
 import {
   PositionBuilder,
   Viewport,
-  ViewportPropsBuilder
+  ViewportPropsBuilder,
 } from '../Viewport/component';
 import { Navigation } from '../Navigation';
 import { props as navigationProps } from '../Navigation/mocks';
@@ -45,8 +45,8 @@ storiesOf('Organisms/Pad', module).add('default', () => {
   const heroProps = {
     position: {
       x: 24,
-      y: 24
-    }
+      y: 24,
+    },
   };
 
   return (

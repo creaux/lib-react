@@ -12,7 +12,7 @@ export const RadioStack: FunctionComponent<RadioStackProps> = ({
   radios,
   id,
   active,
-  onChange: handleChange
+  onChange: handleChange,
 }) => (
   <div className="btn-group w-100" data-toggle="buttons">
     {radios.map((radio: IRadio) => (

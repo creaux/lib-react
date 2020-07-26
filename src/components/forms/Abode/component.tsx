@@ -22,7 +22,7 @@ export class AbodePropsBuilder extends AbodeBuilder {
     return {
       ...super.build(),
       onFieldChange: this.onFieldChange,
-      onValidFieldChange: this.onValidFieldChange
+      onValidFieldChange: this.onValidFieldChange,
     };
   }
 }
@@ -44,7 +44,7 @@ export const Abode: FunctionComponent<AbodeProps> = ({
   cities,
   countries,
   onFieldChange: handleFieldChange,
-  onValidFieldChange: handleValidFieldChange
+  onValidFieldChange: handleValidFieldChange,
 }) => (
   <>
     <div className="mb-1">

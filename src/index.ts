@@ -7,11 +7,9 @@ export { Cycler } from './components/Cycler';
 export { Guard } from './components/Guard';
 export {
   ImageComponent as Image,
-  ImageComponentPropsBuilder as ImagePropsBuilder
+  ImageComponentPropsBuilder as ImagePropsBuilder,
 } from './components/image.component';
-export type {
-  ImageComponentProps as ImageProps
-} from './components/image.component';
+export type { ImageComponentProps as ImageProps } from './components/image.component';
 export { Sidescription } from './components/Sidescription';
 export { Svg } from './components/Svg';
 // Moleculs
@@ -44,7 +42,11 @@ export { Address } from './components/forms/Address';
 export { Company } from './components/forms/Company';
 export { EmailCrawler } from './components/forms/EmailCrawler';
 export { Person } from './components/forms/Person';
-export { SignpostComponent as Signpost, SignpostElementBuilder, SignpostComponentPropsBuilder as SignpostPropsBuilder } from './components/signpost.component';
+export {
+  SignpostComponent as Signpost,
+  SignpostElementBuilder,
+  SignpostComponentPropsBuilder as SignpostPropsBuilder,
+} from './components/signpost.component';
 export type { SignpostComponentProps as SignpostProps } from './components/signpost.component';
 // Organisms
 export { Shipping } from './components/forms/Shipping';

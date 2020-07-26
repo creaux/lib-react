@@ -22,7 +22,7 @@ export class EmailContainer extends Component<EmailProps, EmailState> {
 
     this.state = {
       email: '',
-      valid: false
+      valid: false,
     };
   }
 
@@ -46,7 +46,7 @@ export class EmailContainer extends Component<EmailProps, EmailState> {
       onSubmit: this.handleSubmit,
       onChange: this.handleChange,
       valid: this.state.valid,
-      onEmailValid: this.handleEmailValid
+      onEmailValid: this.handleEmailValid,
     };
 
     return React.createElement(EmailComponent, props);

@@ -13,7 +13,7 @@ export class Raiser extends React.Component<RaiserProps, RaiserState> {
   constructor(props: RaiserProps) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
     };
   }
 
@@ -43,7 +43,7 @@ export class Raiser extends React.Component<RaiserProps, RaiserState> {
       ...this.props,
       count: this.state.count,
       onDecrease: this.handleDecrease,
-      onRaise: this.handleRaise
+      onRaise: this.handleRaise,
     });
   }
 }

@@ -6,7 +6,7 @@ export const props = {
   checked: false,
   onChange() {},
   id: '123456789',
-  title: 'Please check me!'
+  title: 'Please check me!',
 };
 
 storiesOf('Atoms/forms/Checkbox', module).add('default', () => (

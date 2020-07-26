@@ -29,20 +29,20 @@ export const Company: FunctionComponent<CompanyProps> = ({
   company,
   vat,
   onFieldChange: handleFieldChange,
-  onValidFieldChange: handleValidFieldChange
+  onValidFieldChange: handleValidFieldChange,
 }) => {
   const type = useContext(FormTypeContext);
   return (
     <I18nConsumer<CompanyTranslations>
       defaultTranslations={defaultTranslations}
     >
-      {translations => (
+      {(translations) => (
         <fieldset name="company">
           <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
             <Conditional
               condition={isNormalForm(type)}
-              when={children => <div className="col-6 mb-3">{children}</div>}
-              otherwise={children => children}
+              when={(children) => <div className="col-6 mb-3">{children}</div>}
+              otherwise={(children) => children}
             >
               <Text
                 label={isNormalForm(type) ? translations.COMPANY : undefined}
@@ -58,14 +58,14 @@ export const Company: FunctionComponent<CompanyProps> = ({
                 messages={[
                   translations.COMPANY_MESSAGE_VALID,
                   translations.COMPANY_MESSAGE_INVALID,
-                  translations.COMPANY_MESSAGE_DEFAULT
+                  translations.COMPANY_MESSAGE_DEFAULT,
                 ]}
               />
             </Conditional>
             <Conditional
               condition={isNormalForm(type)}
-              when={children => <div className="col-6 mb-3">{children}</div>}
-              otherwise={children => children}
+              when={(children) => <div className="col-6 mb-3">{children}</div>}
+              otherwise={(children) => children}
             >
               <Text
                 label={isNormalForm(type) ? translations.VAT : undefined}
@@ -81,7 +81,7 @@ export const Company: FunctionComponent<CompanyProps> = ({
                 messages={[
                   translations.VAT_MESSAGE_VALID,
                   translations.VAT_MESSAGE_INVALID,
-                  translations.VAT_MESSAGE_DEFAULT
+                  translations.VAT_MESSAGE_DEFAULT,
                 ]}
               />
             </Conditional>

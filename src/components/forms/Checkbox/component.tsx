@@ -18,7 +18,7 @@ export class CheckboxPropsBuilder extends CheckboxBuilder {
     return {
       ...super.build(),
       title: this.title,
-      onChange: this.onChange
+      onChange: this.onChange,
     };
   }
 }
@@ -32,7 +32,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
   checked,
   id,
   title,
-  onChange: handleChange
+  onChange: handleChange,
 }) => (
   <div className="form-check">
     <input

@@ -19,7 +19,7 @@ export enum Fields {
   DELIVERY_CITY = 'deliveryCity',
   DELIVERY_COUNTRY = 'deliveryCountry',
   TERMS = 'terms',
-  PERSONAL_DATA = 'personalData'
+  PERSONAL_DATA = 'personalData',
 }
 
 export type OnChange = (

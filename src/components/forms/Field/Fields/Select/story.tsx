@@ -16,14 +16,14 @@ story.add('normal', () => (
       messages={[
         'Text is correct',
         'Please fill valid number.',
-        'Please fill some number'
+        'Please fill some number',
       ]}
       options={[
         {
           id: 'deset',
           title: 'Deset',
-          value: 'Deset'
-        }
+          value: 'Deset',
+        },
       ]}
       placeholder="Etwas"
     />
@@ -41,14 +41,14 @@ story.add('onplace', () => (
       messages={[
         'Text is correct',
         'Please fill valid number.',
-        'Please fill some number'
+        'Please fill some number',
       ]}
       options={[
         {
           id: 'deset',
           title: 'Deset',
-          value: 'Deset'
-        }
+          value: 'Deset',
+        },
       ]}
       placeholder="Etwas"
     />
@@ -66,14 +66,14 @@ story.add('inline', () => (
       messages={[
         'Text is correct',
         'Please fill valid number.',
-        'Please fill some number'
+        'Please fill some number',
       ]}
       options={[
         {
           id: 'deset',
           title: 'Deset',
-          value: 'Deset'
-        }
+          value: 'Deset',
+        },
       ]}
       placeholder="Etwas"
     />

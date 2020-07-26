@@ -10,7 +10,7 @@ export interface HeroProps {
 export const Hero: FunctionComponent<HeroProps> = ({ position }) => {
   const style = {
     '--hero__x-position': position.x,
-    '--hero__y-position': position.y
+    '--hero__y-position': position.y,
   };
 
   return (

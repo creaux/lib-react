@@ -47,7 +47,7 @@ export class ImageComponentPropsBuilder {
       variant: this.variant,
       className: this.className,
       children: this.children,
-      rounded: this.rounded
+      rounded: this.rounded,
     };
   }
 }
@@ -70,7 +70,7 @@ export const ImageComponent: FunctionComponent<ImageComponentProps> = ({
   alt,
   className,
   children,
-  rounded = true
+  rounded = true,
 }) => {
   const attrs =
     variant === ImageVariants.BACKGROUND

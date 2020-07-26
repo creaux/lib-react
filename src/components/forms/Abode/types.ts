@@ -66,7 +66,7 @@ export class AbodeBuilder {
       streetNo: this.streetNo,
       postcode: this.postcode,
       cities: this.cities,
-      countries: this.countries
+      countries: this.countries,
     };
   }
 }

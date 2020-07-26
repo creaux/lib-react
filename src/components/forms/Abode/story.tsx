@@ -9,26 +9,26 @@ const { assign } = Object;
 export const deliveryProps: AbodeProps = {
   forname: {
     id: 'forename',
-    value: 'Karel'
+    value: 'Karel',
   },
   surname: {
     id: 'surname',
-    value: 'Vomacka'
+    value: 'Vomacka',
   },
   street: {
     id: 'street',
     value: 'Some Street',
-    datalist: ['Vodickova', 'Stromovka']
+    datalist: ['Vodickova', 'Stromovka'],
   },
   streetNo: {
     id: 'streetNo',
     value: '0',
-    datalist: ['3', '33', '333']
+    datalist: ['3', '33', '333'],
   },
   postcode: {
     id: 'postcode',
     value: '12345',
-    datalist: ['12345', '68789']
+    datalist: ['12345', '68789'],
   },
   countries: {
     id: 'country',
@@ -37,14 +37,14 @@ export const deliveryProps: AbodeProps = {
       {
         id: 'czechRepublic',
         title: 'Czech Republic',
-        value: 'CZ'
+        value: 'CZ',
       },
       {
         id: 'germany',
         title: 'Germany',
-        value: 'DE'
-      }
-    ]
+        value: 'DE',
+      },
+    ],
   },
   cities: {
     id: 'city',
@@ -53,27 +53,27 @@ export const deliveryProps: AbodeProps = {
       {
         id: 'prague',
         title: 'Prague',
-        value: 'prague'
+        value: 'prague',
       },
       {
         id: 'berlin',
         title: 'Berlin',
-        value: 'berlin'
-      }
-    ]
+        value: 'berlin',
+      },
+    ],
   },
   onFieldChange: () => () => {},
-  onValidFieldChange: () => () => {}
+  onValidFieldChange: () => () => {},
 };
 
 export const invoicingProps: AbodeProps = assign({}, deliveryProps, {
   company: {
-    value: 'Neco LTD'
+    value: 'Neco LTD',
   },
   vat: {
-    value: '123456'
+    value: '123456',
   },
-  onFieldChange: () => () => {}
+  onFieldChange: () => () => {},
 });
 
 const story = storiesOf('Moleculs/forms/Abode', module);

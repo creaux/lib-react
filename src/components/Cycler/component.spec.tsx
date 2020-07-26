@@ -17,14 +17,14 @@ const props = {
   items: [
     {
       id: '0',
-      title: 'Title'
-    }
+      title: 'Title',
+    },
   ],
   position: 0,
   up: spy(),
   down: spy(),
   isActive: stub(),
-  handleItemClick: itemWrapperSpy
+  handleItemClick: itemWrapperSpy,
 };
 
 describe('Cycler component', () => {
@@ -39,19 +39,14 @@ describe('Cycler component', () => {
   });
 
   it('should have particular structure', () => {
-    expect(component)
-      .to.have.exactly(1)
-      .descendants('.cycler');
+    expect(component).to.have.exactly(1).descendants('.cycler');
   });
 
   describe('link up', () => {
     let link: ShallowWrapper;
 
     beforeEach(() => {
-      link = component
-        .find('.cycler')
-        .children('button')
-        .first();
+      link = component.find('.cycler').children('button').first();
     });
 
     it('should have link with possibility to handle click event', () => {
@@ -61,16 +56,14 @@ describe('Cycler component', () => {
     });
 
     it('should contain font-awesome icon', () => {
-      expect(link)
-        .to.have.exactly(1)
-        .descendants(FontAwesomeIcon);
+      expect(link).to.have.exactly(1).descendants(FontAwesomeIcon);
     });
 
     it('should contain font-awesome icon with props', () => {
       expect(link.find(FontAwesomeIcon)).with.props({
         icon: faChevronUp,
         size: '2x',
-        className: 'up'
+        className: 'up',
       });
     });
   });
@@ -79,10 +72,7 @@ describe('Cycler component', () => {
     let link: ShallowWrapper;
 
     beforeEach(() => {
-      link = component
-        .find('.cycler')
-        .children('button')
-        .last();
+      link = component.find('.cycler').children('button').last();
     });
 
     it('should have link with possibility to handle click event', () => {
@@ -92,16 +82,14 @@ describe('Cycler component', () => {
     });
 
     it('should contain font-awesome icon', () => {
-      expect(link)
-        .to.have.exactly(1)
-        .descendants(FontAwesomeIcon);
+      expect(link).to.have.exactly(1).descendants(FontAwesomeIcon);
     });
 
     it('should contain font-awesome icon with props', () => {
       expect(link.find(FontAwesomeIcon)).with.props({
         icon: faChevronDown,
         size: '2x',
-        className: 'down'
+        className: 'down',
       });
     });
   });
@@ -120,22 +108,18 @@ describe('Cycler component', () => {
     });
 
     it('should contain list', () => {
-      expect(wrapper)
-        .to.have.exactly(1)
-        .descendants('ul');
+      expect(wrapper).to.have.exactly(1).descendants('ul');
     });
 
     it('should container list with props', () => {
       expect(wrapper.children('ul')).to.have.props({
-        className: 'items'
+        className: 'items',
         // style: { top: '0px' },
       });
     });
 
     it('should have list with exactly one child', () => {
-      expect(wrapper.children('ul'))
-        .to.have.exactly(1)
-        .descendants('li');
+      expect(wrapper.children('ul')).to.have.exactly(1).descendants('li');
     });
 
     it('should have list with one descendant of props', () => {
@@ -150,20 +134,15 @@ describe('Cycler component', () => {
     });
 
     it('should contain one list item with link', () => {
-      expect(wrapper.find('li'))
-        .to.have.exactly(1)
-        .descendants('button');
+      expect(wrapper.find('li')).to.have.exactly(1).descendants('button');
       expect(wrapper.find('li').children('button')).to.have.props({
-        className: 'btn btn-link link'
+        className: 'btn btn-link link',
       });
     });
 
     it('should be possible to click on item link', () => {
       // expect(itemWrapperSpy).to.have.been.calledWith(props.items[0].id);
-      wrapper
-        .find('li')
-        .children('button')
-        .simulate('click');
+      wrapper.find('li').children('button').simulate('click');
       // eslint-disable-next-line no-unused-expressions
       expect(itemClickSpy).to.have.been.calledOnce;
     });

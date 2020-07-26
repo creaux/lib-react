@@ -9,9 +9,9 @@ storiesOf('Atoms/Svg', module).add('default', () => {
     Svg: SvgComponent,
     link: text('Link', '#'),
     aria: {
-      label: text('Label', 'pyxis media')
+      label: text('Label', 'pyxis media'),
     },
-    fill: 'black'
+    fill: 'black',
   };
   return <Svg {...props} />;
 });

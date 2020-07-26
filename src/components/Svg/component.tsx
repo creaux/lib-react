@@ -22,7 +22,7 @@ export const Svg: FunctionComponent<SvgProps> = ({
   Svg,
   link,
   aria = { label: undefined },
-  fill = 'white'
+  fill = 'white',
 }) => (
   <a href={link} aria-label={aria.label} className="svg">
     <Svg styles={{ fill }} />

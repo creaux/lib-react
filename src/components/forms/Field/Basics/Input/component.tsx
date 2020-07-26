@@ -6,7 +6,7 @@ export interface InputProps {
   id: string;
   type: InputTypeEnum;
   value: string;
-  datalist?: (string)[];
+  datalist?: string[];
   onChange: OnChange;
   placeholder: string;
   className: string;
@@ -19,7 +19,7 @@ export const Input: FunctionComponent<InputProps> = ({
   placeholder,
   className,
   value,
-  datalist
+  datalist,
 }) => (
   <>
     <input

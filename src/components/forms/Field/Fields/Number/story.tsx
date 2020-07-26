@@ -16,7 +16,7 @@ storiesOf('Atoms/forms/Number', module)
         messages={[
           'Text is correct',
           'Please fill valid number.',
-          'Please fill some number'
+          'Please fill some number',
         ]}
       />
     </Form>
@@ -33,7 +33,7 @@ storiesOf('Atoms/forms/Number', module)
         messages={[
           'Text is correct',
           'Please fill valid number.',
-          'Please fill some number'
+          'Please fill some number',
         ]}
       />
     </Form>
@@ -50,7 +50,7 @@ storiesOf('Atoms/forms/Number', module)
         messages={[
           'Text is correct',
           'Please fill valid number.',
-          'Please fill some number'
+          'Please fill some number',
         ]}
       />
     </Form>

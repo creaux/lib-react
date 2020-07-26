@@ -47,7 +47,7 @@ export const Address: FunctionComponent<AddressProps> = ({
   cities,
   countries,
   onFieldChange: handleFieldChange,
-  onValidFieldChange: handleValidFieldChange
+  onValidFieldChange: handleValidFieldChange,
 }) => {
   const type = useContext(FormTypeContext);
 
@@ -55,13 +55,13 @@ export const Address: FunctionComponent<AddressProps> = ({
     <I18nConsumer<AddressTranslations>
       defaultTranslations={defaultTranslations}
     >
-      {translations => (
+      {(translations) => (
         <fieldset name="address">
           <div className={isNormalForm(type) ? 'form-row' : 'input-group pb-1'}>
             <Conditional
               condition={isNormalForm(type)}
-              when={children => <div className="col-4 mb-3">{children}</div>}
-              otherwise={children => children}
+              when={(children) => <div className="col-4 mb-3">{children}</div>}
+              otherwise={(children) => children}
             >
               <Text
                 label={isNormalForm(type) ? translations.STREET : undefined}
@@ -76,14 +76,14 @@ export const Address: FunctionComponent<AddressProps> = ({
                 messages={[
                   translations.STREET_MESSAGE_VALID,
                   translations.STREET_MESSAGE_INVALID,
-                  translations.STREET_MESSAGE_DEFAULT
+                  translations.STREET_MESSAGE_DEFAULT,
                 ]}
               />
             </Conditional>
             <Conditional
               condition={isNormalForm(type)}
-              when={children => <div className="col-4 mb-3">{children}</div>}
-              otherwise={children => children}
+              when={(children) => <div className="col-4 mb-3">{children}</div>}
+              otherwise={(children) => children}
             >
               <Number
                 label={isNormalForm(type) ? translations.STREET_NO : undefined}
@@ -98,14 +98,14 @@ export const Address: FunctionComponent<AddressProps> = ({
                 messages={[
                   translations.STREET_NO_MESSAGE_VALID,
                   translations.STREET_NO_MESSAGE_INVALID,
-                  translations.STREET_NO_MESSAGE_DEFAULT
+                  translations.STREET_NO_MESSAGE_DEFAULT,
                 ]}
               />
             </Conditional>
             <Conditional
               condition={isNormalForm(type)}
-              when={children => <div className="col-4 mb-3">{children}</div>}
-              otherwise={children => children}
+              when={(children) => <div className="col-4 mb-3">{children}</div>}
+              otherwise={(children) => children}
             >
               <Alpha
                 label={isNormalForm(type) ? translations.POSTCODE : undefined}
@@ -120,7 +120,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                 messages={[
                   translations.POSTCODE_MESSAGE_VALID,
                   translations.POSTCODE_MESSAGE_INVALID,
-                  translations.POSTCODE_MESSAGE_DEFAULT
+                  translations.POSTCODE_MESSAGE_DEFAULT,
                 ]}
               />
             </Conditional>
@@ -128,8 +128,8 @@ export const Address: FunctionComponent<AddressProps> = ({
           <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
             <Conditional
               condition={isNormalForm(type)}
-              when={children => <div className="col-6 mb-3">{children}</div>}
-              otherwise={children => children}
+              when={(children) => <div className="col-6 mb-3">{children}</div>}
+              otherwise={(children) => children}
             >
               <Select
                 label={isNormalForm(type) ? translations.CITY : undefined}
@@ -144,14 +144,14 @@ export const Address: FunctionComponent<AddressProps> = ({
                 messages={[
                   translations.CITY_MESSAGE_VALID,
                   translations.CITY_MESSAGE_INVALID,
-                  translations.CITY_MESSAGE_DEFAULT
+                  translations.CITY_MESSAGE_DEFAULT,
                 ]}
               />
             </Conditional>
             <Conditional
               condition={isNormalForm(type)}
-              when={children => <div className="col-6 mb-3">{children}</div>}
-              otherwise={children => children}
+              when={(children) => <div className="col-6 mb-3">{children}</div>}
+              otherwise={(children) => children}
             >
               <Select
                 label={isNormalForm(type) ? translations.COUNTRY : undefined}
@@ -166,7 +166,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                 messages={[
                   translations.COUNTRY_MESSAGE_VALID,
                   translations.COUNTRY_MESSAGE_INVALID,
-                  translations.COUNTRY_MESSAGE_DEFAULT
+                  translations.COUNTRY_MESSAGE_DEFAULT,
                 ]}
               />
             </Conditional>

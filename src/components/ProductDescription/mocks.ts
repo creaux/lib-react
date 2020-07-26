@@ -1,6 +1,6 @@
 import {
   ProductDescriptionProps,
-  ProductDescriptionPropsBuilder
+  ProductDescriptionPropsBuilder,
 } from './component';
 
 export const props: ProductDescriptionProps = new ProductDescriptionPropsBuilder()

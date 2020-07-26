@@ -5,5 +5,5 @@ export interface NavigationClaimProps {
 }
 
 export const NavigationClaim: FunctionComponent<NavigationClaimProps> = ({
-  children
+  children,
 }) => <button className="navbar-brand">{children}</button>;

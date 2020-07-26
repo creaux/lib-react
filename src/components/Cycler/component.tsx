@@ -23,7 +23,7 @@ export const Cycler: FunctionComponent<CyclerProps> = ({
   up,
   down,
   isActive,
-  handleItemClick
+  handleItemClick,
 }) => (
   <div className="cycler">
     <button onClick={up} className="btn btn-link link">
@@ -35,7 +35,7 @@ export const Cycler: FunctionComponent<CyclerProps> = ({
           <li
             key={item.id}
             className={cx('item', {
-              active: isActive(index)
+              active: isActive(index),
             })}
           >
             <button

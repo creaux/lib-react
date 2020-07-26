@@ -9,9 +9,9 @@ export interface AddComponentProps {
   onAdd: (event: React.MouseEvent) => void;
   onCount: (count: number) => void;
 }
-export const AddComponent: FunctionComponent<
-  AddComponentProps
-> = setDisplayName('AddComponent')(({ title, onAdd, onCount }) => (
+export const AddComponent: FunctionComponent<AddComponentProps> = setDisplayName(
+  'AddComponent'
+)(({ title, onAdd, onCount }) => (
   <Container>
     <Row>
       <Col>

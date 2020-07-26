@@ -11,7 +11,7 @@ interface RaiserProps {
 export const Raiser: FunctionComponent<RaiserProps> = ({
   onRaise,
   onDecrease,
-  count
+  count,
 }) => (
   <InputGroup className="mb-3">
     <InputGroup.Prepend>

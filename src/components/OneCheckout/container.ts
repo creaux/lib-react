@@ -20,7 +20,7 @@ export class OneCheckoutContainer extends PureComponent<
     super(props);
     this.state = {
       step: 0,
-      isShippingValid: false
+      isShippingValid: false,
     };
   }
 
@@ -41,7 +41,7 @@ export class OneCheckoutContainer extends PureComponent<
       product: this.props.product,
       onShippingValidChange: this.handleShippingValidChange,
       onShippingChange: this.handleShippingChange,
-      isShippingValid: this.state.isShippingValid
+      isShippingValid: this.state.isShippingValid,
     });
   }
 }

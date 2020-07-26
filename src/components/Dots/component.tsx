@@ -10,7 +10,7 @@ export interface DotsProps {
 export const Dots: FunctionComponent<DotsProps> = ({
   count,
   onDot,
-  active
+  active,
 }) => {
   const [dot, setDot] = useState();
   const dots = [...Array(count)];

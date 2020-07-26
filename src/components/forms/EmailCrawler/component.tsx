@@ -35,14 +35,14 @@ export const EmailCrawler: FunctionComponent<EmailProps> = (
     value,
     onSubmit: handleSubmit,
     onEmailValid: handleEmailValid,
-    valid
+    valid,
   } = props;
 
   return (
     <I18nConsumer<EmailCrawlerTranslations>
       defaultTranslations={defaultTranslations}
     >
-      {translations => (
+      {(translations) => (
         <Form
           onSubmit={handleSubmit}
           type={FormType.ONPLACE}
@@ -56,7 +56,7 @@ export const EmailCrawler: FunctionComponent<EmailProps> = (
             messages={[
               translations.EMAIL_CRAWLER_MESSAGE_VALID,
               translations.EMAIL_CRAWLER_MESSAGE_INVALID,
-              translations.EMAIL_CRAWLER_MESSAGE_DEFAULT
+              translations.EMAIL_CRAWLER_MESSAGE_DEFAULT,
             ]}
             onValidChange={handleEmailValid}
           />

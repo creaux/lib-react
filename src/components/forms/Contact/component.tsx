@@ -30,20 +30,20 @@ export const Contact: FunctionComponent<ContactProps> = ({
   email,
   number,
   onFieldChange: handleFieldChange,
-  onValidFieldChange: handleValidFieldChange
+  onValidFieldChange: handleValidFieldChange,
 }) => {
   const type = useContext(FormTypeContext);
   return (
     <I18nConsumer<ContactTranslations>
       defaultTranslations={defaultTranslations}
     >
-      {translations => (
+      {(translations) => (
         <fieldset name="company">
           <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
             <Conditional
               condition={isNormalForm(type)}
-              when={children => <div className="col-6 mb-3">{children}</div>}
-              otherwise={children => children}
+              when={(children) => <div className="col-6 mb-3">{children}</div>}
+              otherwise={(children) => children}
             >
               <Email
                 label={
@@ -63,14 +63,14 @@ export const Contact: FunctionComponent<ContactProps> = ({
                 messages={[
                   translations.CONTACT_EMAIL_MESSAGE_VALID,
                   translations.CONTACT_EMAIL_MESSAGE_VALID,
-                  translations.CONTACT_EMAIL_MESSAGE_DEFAULT
+                  translations.CONTACT_EMAIL_MESSAGE_DEFAULT,
                 ]}
               />
             </Conditional>
             <Conditional
               condition={isNormalForm(type)}
-              when={children => <div className="col-6 mb-3">{children}</div>}
-              otherwise={children => children}
+              when={(children) => <div className="col-6 mb-3">{children}</div>}
+              otherwise={(children) => children}
             >
               <Phone
                 label={
@@ -90,7 +90,7 @@ export const Contact: FunctionComponent<ContactProps> = ({
                 messages={[
                   translations.CONTACT_EMAIL_MESSAGE_VALID,
                   translations.CONTACT_NUMBER_MESSAGE_INVALID,
-                  translations.CONTACT_NUMBER_MESSAGE_DEFAULT
+                  translations.CONTACT_NUMBER_MESSAGE_DEFAULT,
                 ]}
               />
             </Conditional>

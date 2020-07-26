@@ -6,14 +6,14 @@ import { Form, FormType } from '../Form';
 export const props: PersonProps = {
   forname: {
     value: 'Karel',
-    id: 'forname'
+    id: 'forname',
   },
   surname: {
     value: 'Vomacka',
-    id: 'surname'
+    id: 'surname',
   },
   onFieldChange: () => () => {},
-  onFieldValidChange: () => () => {}
+  onFieldValidChange: () => () => {},
 };
 
 const story = storiesOf('Moleculs/forms/Person', module);

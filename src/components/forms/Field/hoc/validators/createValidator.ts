@@ -20,7 +20,7 @@ export function createValidator(regexp?: RegExp, negate = true) {
           }
           return result;
         },
-        message
+        message,
       };
     }
     return {
@@ -30,7 +30,7 @@ export function createValidator(regexp?: RegExp, negate = true) {
         }
         return true;
       },
-      message
+      message,
     };
   };
 }

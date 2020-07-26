@@ -5,58 +5,58 @@ export const mocks = {
     slides: [
       {
         src: 'http://lorempixel.com/640/480/fashion',
-        alt: 'Lorem ipsum'
+        alt: 'Lorem ipsum',
       },
       {
         src: 'http://lorempixel.com/640/480/fashion',
-        alt: 'Lorem ipsum'
+        alt: 'Lorem ipsum',
       },
       {
         src: 'http://lorempixel.com/640/480/fashion',
-        alt: 'Lorem ipsum'
-      }
+        alt: 'Lorem ipsum',
+      },
     ],
-    variant: Variants.SIMPLE
+    variant: Variants.SIMPLE,
   },
   multi: {
     slides: [
       [
         {
           src: 'http://lorempixel.com/640/480/fashion',
-          alt: 'Lorem ipsum'
+          alt: 'Lorem ipsum',
         },
         {
           src: 'http://lorempixel.com/640/480/fashion',
-          alt: 'Lorem ipsum'
+          alt: 'Lorem ipsum',
         },
         {
           src: 'http://lorempixel.com/640/480/fashion',
-          alt: 'Lorem ipsum'
+          alt: 'Lorem ipsum',
         },
         {
           src: 'http://lorempixel.com/640/480/fashion',
-          alt: 'Lorem ipsum'
-        }
+          alt: 'Lorem ipsum',
+        },
       ],
       [
         {
           src: 'http://lorempixel.com/640/480/fashion',
-          alt: 'Lorem ipsum'
+          alt: 'Lorem ipsum',
         },
         {
           src: 'http://lorempixel.com/640/480/fashion',
-          alt: 'Lorem ipsum'
+          alt: 'Lorem ipsum',
         },
         {
           src: 'http://lorempixel.com/640/480/fashion',
-          alt: 'Lorem ipsum'
+          alt: 'Lorem ipsum',
         },
         {
           src: 'http://lorempixel.com/640/480/fashion',
-          alt: 'Lorem ipsum'
-        }
-      ]
+          alt: 'Lorem ipsum',
+        },
+      ],
     ],
-    variant: Variants.MULTI
-  }
+    variant: Variants.MULTI,
+  },
 };

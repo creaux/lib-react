@@ -11,14 +11,14 @@ export const props = {
     {
       id: 'abcdefghc',
       icon: faWalking,
-      title: 'Personal Handover'
+      title: 'Personal Handover',
     },
     {
       id: 'cdefghc',
       icon: faTruck,
-      title: 'Home Delivery'
-    }
-  ]
+      title: 'Home Delivery',
+    },
+  ],
 };
 
 storiesOf('Atoms/forms/RadioStack', module).add('default', () => (

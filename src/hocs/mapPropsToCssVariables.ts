@@ -23,7 +23,7 @@ const mapPropToCssVariables = (name: string, props: Literal) => (
     return {
       [`--${name}__${variable}-portrait`]: props[variable]['portrait'],
       [`--${name}__${variable}-landscape`]: props[variable]['landscape'],
-      [`--${name}__${variable}-desktop`]: props[variable]['desktop']
+      [`--${name}__${variable}-desktop`]: props[variable]['desktop'],
     };
   }
   return {};

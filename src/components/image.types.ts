@@ -1,4 +1,4 @@
 export enum ImageVariants {
   BACKGROUND,
-  SOLID
+  SOLID,
 }

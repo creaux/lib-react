@@ -21,7 +21,7 @@ export class ValidationBuilder {
   build(): Validation {
     return {
       validator: this.validator,
-      message: this.message
+      message: this.message,
     };
   }
 }
@@ -42,8 +42,8 @@ export function validator<O extends ValidatorProps & MessagesProps>(
     validator: [Validation, Validation, Validation];
   };
 
-  return function(Component: ComponentType<Output>) {
-    return function(props: O): ReactElement<Output> {
+  return function (Component: ComponentType<Output>) {
+    return function (props: O): ReactElement<Output> {
       const { messages, ...rest } = props;
 
       let validators: [
@@ -62,7 +62,7 @@ export function validator<O extends ValidatorProps & MessagesProps>(
         validators.push(
           validator({
             type,
-            value: messages[type]
+            value: messages[type],
           })
         );
       }

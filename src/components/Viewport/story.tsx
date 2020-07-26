@@ -9,15 +9,15 @@ storiesOf('Atoms/Viewport', module).add('default', () => {
     xPosition: {
       portrait: 'right',
       landscape: 'center',
-      desktop: 'center'
-    }
+      desktop: 'center',
+    },
   };
 
   const heroProps = {
     position: {
       x: 24,
-      y: 24
-    }
+      y: 24,
+    },
   };
 
   return (

@@ -1,7 +1,7 @@
 export enum MessageType {
   valid,
   invalid,
-  default
+  default,
 }
 
 export class MessageBuilder {
@@ -21,7 +21,7 @@ export class MessageBuilder {
   build(): Message {
     return {
       value: this.value,
-      type: this.type
+      type: this.type,
     };
   }
 }

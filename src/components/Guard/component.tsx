@@ -4,7 +4,7 @@ import get from 'lodash/get';
 export interface GuardProps<ComponentProps> {
   Component?: ReactNode;
   props?: Partial<ComponentProps>;
-  when?: [(keyof ComponentProps), keyof ComponentProps[keyof ComponentProps]];
+  when?: [keyof ComponentProps, keyof ComponentProps[keyof ComponentProps]];
   children?: ReactNode;
   otherwise?: Function;
   defaults?: boolean;
@@ -23,7 +23,7 @@ export class Guard<ComponentProps = string[]> extends React.Component<
       props,
       when,
       otherwise,
-      defaults = false
+      defaults = false,
     } = this.props;
 
     // When children is not defined then we don't want to render anything
@@ -38,7 +38,7 @@ export class Guard<ComponentProps = string[]> extends React.Component<
       return <Component {...props} />;
     }
 
-    return Children.map(children, child => {
+    return Children.map(children, (child) => {
       if (!React.isValidElement(child)) {
         return null;
       }

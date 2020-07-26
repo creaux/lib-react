@@ -12,7 +12,7 @@ export const Sidescription: FunctionComponent<SidescriptionProps> = ({
   title,
   description,
   onAdd,
-  subtitle
+  subtitle,
 }) => (
   <div className="sidescription">
     <h1>{title}</h1>

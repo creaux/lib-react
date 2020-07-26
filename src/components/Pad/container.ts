@@ -44,7 +44,7 @@ export class PadContainer extends Component<
   private static readonly AXIS = 'y';
   private static readonly DIRECTION = {
     down: 1,
-    up: -1
+    up: -1,
   };
 
   private readonly throttler: Throttler;
@@ -56,7 +56,7 @@ export class PadContainer extends Component<
     if (i === this.state.position && this.previousThrottler.isUnlocked) {
       return {
         container: -1 * (window.innerHeight / 6),
-        config: { duration: PadContainer.DURATION }
+        config: { duration: PadContainer.DURATION },
       };
     }
 
@@ -64,7 +64,7 @@ export class PadContainer extends Component<
       this.setState({ position: nextPosition });
       return {
         container: 0,
-        config: { duration: PadContainer.DURATION }
+        config: { duration: PadContainer.DURATION },
       };
     }
   };
@@ -73,7 +73,7 @@ export class PadContainer extends Component<
     if (i === this.state.position - 1 && this.previousThrottler.isUnlocked) {
       return {
         container: 0,
-        config: { duration: PadContainer.DURATION }
+        config: { duration: PadContainer.DURATION },
       };
     }
 
@@ -81,7 +81,7 @@ export class PadContainer extends Component<
       this.setState({ position: this.state.position - 1 });
       return {
         container: window.innerHeight,
-        config: { duration: PadContainer.DURATION }
+        config: { duration: PadContainer.DURATION },
       };
     }
   };
@@ -92,7 +92,7 @@ export class PadContainer extends Component<
     this.previousThrottler = new Throttler(PadContainer.TIMER);
 
     this.state = {
-      position: 0
+      position: 0,
     };
   }
 
@@ -104,7 +104,7 @@ export class PadContainer extends Component<
       setSpringUp: this.slideUp,
       velocity: PadContainer.VELOCITY,
       axis: PadContainer.AXIS,
-      direction: PadContainer.DIRECTION
+      direction: PadContainer.DIRECTION,
     });
   }
 }

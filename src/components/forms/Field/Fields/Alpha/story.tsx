@@ -16,7 +16,7 @@ storiesOf('Atoms/forms/Alpha', module)
         messages={[
           'Text is correct',
           'Please fill valid alpha.',
-          'Please fill some alpha'
+          'Please fill some alpha',
         ]}
       />
     </Form>
@@ -33,7 +33,7 @@ storiesOf('Atoms/forms/Alpha', module)
         messages={[
           'Text is correct',
           'Please fill valid alpha.',
-          'Please fill some alpha'
+          'Please fill some alpha',
         ]}
       />
     </Form>
@@ -50,7 +50,7 @@ storiesOf('Atoms/forms/Alpha', module)
         messages={[
           'Text is correct',
           'Please fill valid alpha.',
-          'Please fill some alpha'
+          'Please fill some alpha',
         ]}
       />
     </Form>

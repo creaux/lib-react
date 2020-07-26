@@ -13,7 +13,7 @@ export const Conditional: FunctionComponent<ConditionalProps> = ({
   condition,
   when,
   otherwise,
-  children
+  children,
 }) => {
   if (condition) {
     return when(children || null);

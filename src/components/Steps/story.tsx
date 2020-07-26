@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 export const props = {
   steps: ['Orders', 'Payment', 'Shipping'],
-  active: 0
+  active: 0,
 };
 
 storiesOf('Moleculs/Steps', module).add('default', () => (

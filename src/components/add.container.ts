@@ -20,7 +20,7 @@ export class AddContainer extends React.Component<AddContainerProps> {
     return React.createElement(AddComponent, {
       title: this.props.title,
       onAdd: this.handleAdd,
-      onCount: this.handleCount
+      onCount: this.handleCount,
     });
   }
 }

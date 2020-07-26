@@ -28,7 +28,7 @@ const Item = compose<ItemProps, ItemProps>(
   setDisplayName('Item'),
   defaultProps<ItemProps>({
     width: 100,
-    slide: { src: '', alt: '' }
+    slide: { src: '', alt: '' },
   })
 )(ItemPure);
 
@@ -53,7 +53,7 @@ export interface CarouselProps {
 
 export const Carousel: React.FunctionComponent<CarouselProps> = ({
   slides,
-  variant = Variants.SIMPLE
+  variant = Variants.SIMPLE,
 }) => (
   <BsCarousel>
     {slides.map((slide: Slide, i: number) => {

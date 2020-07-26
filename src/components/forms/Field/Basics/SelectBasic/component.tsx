@@ -17,7 +17,7 @@ export const SelectBasic: FunctionComponent<SelectBasicProps> = ({
   value,
   onChange,
   placeholder,
-  className
+  className,
 }) => {
   const formType = useContext(FormTypeContext);
   return (
@@ -25,7 +25,7 @@ export const SelectBasic: FunctionComponent<SelectBasicProps> = ({
       value={value}
       className={cx(className, 'custom-select', {
         'pl-0 pt-0 pb-0':
-          formType === FormType.ONPLACE || formType === FormType.INLINE
+          formType === FormType.ONPLACE || formType === FormType.INLINE,
       })}
       id={id}
       onChange={onChange}

@@ -19,11 +19,11 @@ export interface InputProps {
   placeholder: string;
   label?: string;
   fieldType?: FieldType;
-  datalist?: (string)[];
+  datalist?: string[];
   options?: IOption[];
 }
 
-export const Field: FunctionComponent<InputProps> = props => {
+export const Field: FunctionComponent<InputProps> = (props) => {
   const {
     placeholder,
     label,
@@ -34,7 +34,7 @@ export const Field: FunctionComponent<InputProps> = props => {
     onChange: handleChange,
     message,
     fieldType = FieldType.INPUT,
-    options
+    options,
   } = props;
 
   const formType = useContext(FormTypeContext);
@@ -51,7 +51,7 @@ export const Field: FunctionComponent<InputProps> = props => {
       (FormType.ONPLACE === formType || FormType.INLINE) &&
       message.type === 0 &&
       value.length > 0,
-    'd-flex flex-column': fieldType === FieldType.SELECT
+    'd-flex flex-column': fieldType === FieldType.SELECT,
   });
 
   const inputClasses = cx({
@@ -63,14 +63,14 @@ export const Field: FunctionComponent<InputProps> = props => {
     'is-valid':
       FormType.NORMAL === formType && message.type === 0 && value.length > 0,
     'bg-transparent':
-      FormType.ONPLACE === formType || FormType.INLINE === formType
+      FormType.ONPLACE === formType || FormType.INLINE === formType,
   });
 
   return (
     <Conditional
       condition={wrapperClasses.length > 0}
-      when={children => <div className={wrapperClasses}>{children}</div>}
-      otherwise={children => children}
+      when={(children) => <div className={wrapperClasses}>{children}</div>}
+      otherwise={(children) => children}
     >
       <Conditional
         condition={formType === FormType.NORMAL && !!label}

@@ -26,7 +26,7 @@ export class PersonPropsBuilder extends PersonBuilder {
     return {
       ...super.build(),
       onFieldChange: this.onFieldChange,
-      onFieldValidChange: this.onFieldValidChange
+      onFieldValidChange: this.onFieldValidChange,
     };
   }
 }
@@ -53,19 +53,19 @@ export const Person: FunctionComponent<PersonProps> = ({
   forname,
   surname,
   onFieldChange: handleFieldChange,
-  onFieldValidChange: handleFieldValidChange
+  onFieldValidChange: handleFieldValidChange,
 }) => {
   const type = useContext(FormTypeContext);
 
   return (
     <I18nConsumer<PersonTranslations> defaultTranslations={defaultTranslations}>
-      {translations => (
+      {(translations) => (
         <fieldset name="person">
           <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
             <Conditional
               condition={isNormalForm(type)}
-              when={children => <div className="col-6 mb-3">{children}</div>}
-              otherwise={children => children}
+              when={(children) => <div className="col-6 mb-3">{children}</div>}
+              otherwise={(children) => children}
             >
               <Text
                 label={isNormalForm(type) ? translations.FORENAME : undefined}
@@ -76,15 +76,15 @@ export const Person: FunctionComponent<PersonProps> = ({
                 messages={[
                   translations.FORENAME_MESSAGE_VALID,
                   translations.FORENAME_MESSAGE_INVALID,
-                  translations.FORENAME_MESSAGE_DEFAULT
+                  translations.FORENAME_MESSAGE_DEFAULT,
                 ]}
                 placeholder={translations.FORENAME_PLACEHOLDER}
               />
             </Conditional>
             <Conditional
               condition={isNormalForm(type)}
-              when={children => <div className="col-6 mb-3">{children}</div>}
-              otherwise={children => children}
+              when={(children) => <div className="col-6 mb-3">{children}</div>}
+              otherwise={(children) => children}
             >
               <Text
                 label={isNormalForm(type) ? translations.SURNAME : undefined}
@@ -95,7 +95,7 @@ export const Person: FunctionComponent<PersonProps> = ({
                 messages={[
                   translations.SURNAME_MESSAGE_VALID,
                   translations.SURNAME_MESSAGE_INVALID,
-                  translations.SURNAME_MESSAGE_DEFAULT
+                  translations.SURNAME_MESSAGE_DEFAULT,
                 ]}
                 placeholder={translations.SURNAME_PLACEHOLDER}
               />

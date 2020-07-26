@@ -15,10 +15,10 @@ export class StripeContainer extends Component<StripeProps> {
       fetch(process.env.REST_ENDPOINT_CREATE_PAYMENT, {
         method: 'POST',
         body: JSON.stringify({
-          productId: '1'
-        })
-      }).then(response => {
-        response.text().then(secret => {
+          productId: '1',
+        }),
+      }).then((response) => {
+        response.text().then((secret) => {
           const parsed = JSON.parse(secret);
           this.secret = parsed;
         });
@@ -47,7 +47,7 @@ export class StripeContainer extends Component<StripeProps> {
         // @ts-ignore
         card: elements.getElement(CardNumberElement),
         billing_details: {
-          name: 'Jenny Rosen'
+          name: 'Jenny Rosen',
         },
         metadata: {
           // TODO: customer https://stripe.com/docs/api/payment_intents/create#create_payment_intent-customer
@@ -70,8 +70,8 @@ export class StripeContainer extends Component<StripeProps> {
           // customer_billing_postcode: request.billing.postcode,
           // customer_billing_city: request.billing.city,
           // customer_billing_country: request.billing.country
-        }
-      }
+        },
+      },
     });
 
     if (result.error) {
@@ -93,7 +93,7 @@ export class StripeContainer extends Component<StripeProps> {
   render() {
     return createElement(StripeComponent, {
       onSubmit: this.handleSubmit,
-      disabled: false
+      disabled: false,
     });
   }
 }

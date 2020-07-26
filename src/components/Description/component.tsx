@@ -5,5 +5,5 @@ export interface DescriptionProps {
 }
 
 export const Description: FunctionComponent<DescriptionProps> = ({
-  children
+  children,
 }) => <p className="font-weight-light mb-4 mb-sm-3">{children}</p>;

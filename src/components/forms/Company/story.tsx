@@ -6,18 +6,18 @@ import { Form, FormType } from '../Form/component';
 const props: CompanyProps = {
   company: {
     id: '123456',
-    value: 'Neco LTD'
+    value: 'Neco LTD',
   },
   vat: {
     id: '12345',
-    value: '123456'
+    value: '123456',
   },
-  onFieldChange: () => text => {
+  onFieldChange: () => (text) => {
     console.log(text);
   },
-  onValidFieldChange: () => valid => {
+  onValidFieldChange: () => (valid) => {
     console.log(valid);
-  }
+  },
 };
 
 const story = storiesOf('Moleculs/forms/Company', module);

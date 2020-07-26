@@ -15,11 +15,11 @@ export enum Variants {
   OUTLINE_WARNING = 'outline-warning',
   OUTLINE_INFO = 'outline-info',
   OUTLINE_DARK = 'outline-dark',
-  OUTLINE_LIGHT = 'outline-light'
+  OUTLINE_LIGHT = 'outline-light',
 }
 
 export enum Type {
   SUBMIT = 'submit',
   BUTTON = 'button',
-  RESET = 'reset'
+  RESET = 'reset',
 }

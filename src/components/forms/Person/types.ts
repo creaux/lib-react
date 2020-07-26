@@ -15,7 +15,7 @@ export class PersonBuilder {
   build(): IPerson {
     return {
       forname: this.forname,
-      surname: this.surname
+      surname: this.surname,
     };
   }
 }

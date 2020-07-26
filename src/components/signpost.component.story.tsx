@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import {
   SignpostComponent,
   SignpostElementBuilder,
-  SignpostComponentPropsBuilder
+  SignpostComponentPropsBuilder,
 } from './signpost.component';
 import { ImageComponentPropsBuilder as ImagePropsBuilder } from './image.component';
 
@@ -68,7 +68,7 @@ const props = new SignpostComponentPropsBuilder()
           .build()
       )
       .withTitle('Fourth')
-      .build()
+      .build(),
   ])
   .build();
 

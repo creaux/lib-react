@@ -14,7 +14,7 @@ export function elementsProvider<
     keyof ElementsContextValue
   >
 >(Component: ComponentType<P>): FunctionComponent<O> {
-  return function(props: O) {
+  return function (props: O) {
     return (
       <ElementsConsumer>
         {({ stripe, elements }: ElementsContextValue) => (

@@ -63,7 +63,7 @@ export class ButtonPropsBuilder {
       className: this.className,
       type: this.type,
       disabled: this.disabled,
-      extended: this.extended
+      extended: this.extended,
     };
   }
 }
@@ -87,7 +87,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
   className,
   type,
   disabled,
-  extended = false
+  extended = false,
 }) => (
   <Btn
     variant={variant}

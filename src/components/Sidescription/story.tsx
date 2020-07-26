@@ -8,7 +8,7 @@ storiesOf('Atoms/Sidescription', module).add('default', () => {
     title: 'Lorem ipsum',
     description: 'Lorem ipsum dolor sit amet si',
     onAdd: action('Clicked Add!'),
-    subtitle: 'Good one'
+    subtitle: 'Good one',
   };
   return <Sidescription {...props} />;
 });

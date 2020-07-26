@@ -4,7 +4,7 @@ import { NavigationBrand } from '../NavigationBrand';
 import { NavigationItems } from '../NavigationItems';
 import {
   NavigationButtons,
-  NavigationButtonsProps
+  NavigationButtonsProps,
 } from '../NavigationButtons/component';
 import { NavigationItemsProps } from '../NavigationItems/component';
 import { NavigationClaim } from '../NavigationClaim';
@@ -18,7 +18,7 @@ export interface NavigationProps {
 export const Navigation: FunctionComponent<NavigationProps> = ({
   className,
   style,
-  children
+  children,
 }) => (
   <nav
     className={`navbar navbar-expand-lg navbar-light bg-transparent ${className}`}

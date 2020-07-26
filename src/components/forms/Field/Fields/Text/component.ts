@@ -4,7 +4,7 @@ import { Validators } from '../../hoc/validators/index';
 import { compose } from 'recompose';
 import {
   MessagesProps,
-  ValidatorProps
+  ValidatorProps,
 } from '../../hoc/validators/validator/index';
 import { validator } from '../../hoc/validators/validator';
 import { provideInputType } from '../../hoc/provideInputType';

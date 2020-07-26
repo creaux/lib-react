@@ -19,7 +19,7 @@ export class CyclerContainer extends React.Component<CyclerProps, CyclerState> {
   constructor(props: CyclerProps) {
     super(props);
     this.state = {
-      position: 0
+      position: 0,
     };
   }
 
@@ -70,7 +70,7 @@ export class CyclerContainer extends React.Component<CyclerProps, CyclerState> {
       up: this.up,
       down: this.down,
       isActive: this.isActive,
-      handleItemClick: this.handleItemClick
+      handleItemClick: this.handleItemClick,
     });
   }
 }

@@ -3,7 +3,7 @@ import { Abode, IAbode } from '../Abode';
 import {
   OnFieldChange,
   OnGroupChange,
-  OnValidGroupFieldChange
+  OnValidGroupFieldChange,
 } from '../../types/form';
 import { IShippingFields, IShippingGroups } from './types';
 import { faFileInvoiceDollar, faHome } from '@fortawesome/free-solid-svg-icons';
@@ -39,13 +39,13 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
   company,
   onGroupChange: handleGroupChange,
   onFieldChange: handleFieldChange,
-  onValidGroupFieldChange: handleValidGroupFieldChange
+  onValidGroupFieldChange: handleValidGroupFieldChange,
 }) => {
   return (
     <I18nConsumer<ShippingTranslations>
       defaultTranslations={defaultTranslations}
     >
-      {translations => (
+      {(translations) => (
         <>
           <div className="pb-4">
             <h6>

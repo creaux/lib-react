@@ -66,7 +66,7 @@ keys(Variants).forEach((key: string) => {
   story.add((Variants as any)[key], () => {
     const props = {
       children: 'Click me!',
-      variant: (Variants as any)[key]
+      variant: (Variants as any)[key],
     };
     return (
       <Button

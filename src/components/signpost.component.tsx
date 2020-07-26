@@ -33,7 +33,7 @@ export class SignpostElementBuilder {
     return {
       image: this.image,
       over: this.over,
-      title: this.title
+      title: this.title,
     };
   }
 }
@@ -56,7 +56,7 @@ export class SignpostComponentPropsBuilder {
 
   public build(): SignpostComponentProps {
     return {
-      elements: this.elements
+      elements: this.elements,
     };
   }
 }
@@ -66,7 +66,7 @@ export interface SignpostComponentProps {
 }
 
 export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
-  elements
+  elements,
 }) => {
   const [state, handleMouseEnter] = useState(
     Array.from(Array(elements.length).keys(), () => false)
@@ -91,7 +91,7 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
                 variant={Variants.LINK}
                 size={Sizes.LG}
                 className={cx('signpost__btn', {
-                  'signpost__btn--active': state[i]
+                  'signpost__btn--active': state[i],
                 })}
               >
                 <>
@@ -107,7 +107,7 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
                 src={over.src}
                 rounded={image.rounded}
                 className={cx('pb-3', 'signpost__image', {
-                  'signpost__image--active': state[i]
+                  'signpost__image--active': state[i],
                 })}
               />
               <Image
@@ -115,7 +115,7 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
                 src={image.src}
                 rounded={image.rounded}
                 className={cx('pb-3', 'signpost__image', {
-                  'signpost__image--active': !state[i]
+                  'signpost__image--active': !state[i],
                 })}
               />
             </div>
