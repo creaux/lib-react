@@ -1,1 +1,0 @@
-export { Signpost } from './component';

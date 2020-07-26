@@ -1,11 +1,11 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Viewport } from '../Viewport';
-import { Image } from '../Image';
-import { ImageProps } from '../Image/component';
-import { Button } from '../forms/Button/component';
-import { ImageVariants } from '../Image/types';
-import { Variants } from '../forms/Button/types';
-import { Sizes } from '../types/sizes';
+import { Viewport } from './Viewport';
+import { ImageComponent as Image } from './image.component';
+import { ImageComponentProps as ImageProps } from './image.component';
+import { Button } from './forms/Button/component';
+import { ImageVariants } from './image.types';
+import { Variants } from './forms/Button/types';
+import { Sizes } from './types/sizes';
 import { ChevronRight } from 'react-bootstrap-icons';
 import cx from 'classnames';
 
@@ -44,26 +44,30 @@ export interface SignpostElement {
   title: string;
 }
 
-export class SignpostPropsBuilder {
+export class SignpostComponentPropsBuilder {
   private elements!: SignpostElement[];
 
-  public withElements(elements: SignpostElement[]): SignpostPropsBuilder {
+  public withElements(
+    elements: SignpostElement[]
+  ): SignpostComponentPropsBuilder {
     this.elements = elements;
     return this;
   }
 
-  public build(): SignpostProps {
+  public build(): SignpostComponentProps {
     return {
       elements: this.elements
     };
   }
 }
 
-export interface SignpostProps {
+export interface SignpostComponentProps {
   elements: SignpostElement[];
 }
 
-export const Signpost: FunctionComponent<SignpostProps> = ({ elements }) => {
+export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
+  elements
+}) => {
   const [state, handleMouseEnter] = useState(
     Array.from(Array(elements.length).keys(), () => false)
   );

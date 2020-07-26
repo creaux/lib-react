@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Image } from '../Image';
+import { ImageComponent as Image } from '../image.component';
 import { OrderItem } from './types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';

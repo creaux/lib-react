@@ -3,8 +3,8 @@ import { Button } from '../forms/Button';
 import { Guard } from '../Guard';
 import { Description } from '../Description';
 import { Label } from '../Label/component';
-import { Image } from '../Image';
-import { ImageProps } from '../Image/component';
+import { ImageComponent as Image } from '../image.component';
+import { ImageComponentProps as ImageProps } from '../image.component';
 import cx from 'classnames';
 
 export class ProductDescriptionPropsBuilder {

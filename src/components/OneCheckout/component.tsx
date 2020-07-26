@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { ProductDescription } from '../ProductDescription';
 import { ProductDescriptionProps } from '../ProductDescription/component';
-import { asBackgroundProps } from '../Image/mock';
-import { Image } from '../Image';
+import { asBackgroundProps } from '../image.component.mock';
+import { ImageComponent as Image } from '../image.component';
 import { Button, Variants } from '../forms/Button';
 import { Shipping } from '../forms/Shipping';
 import { Stripe } from '../forms/Stripe';

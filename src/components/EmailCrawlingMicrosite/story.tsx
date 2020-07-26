@@ -4,7 +4,7 @@ import {
   EmailCrawlingMicrosite,
   EmailCrawlingMicrositeProps
 } from './component';
-import { asBackgroundProps } from '../Image/mock';
+import { asBackgroundProps } from '../image.component.mock';
 
 const stories = storiesOf('Templates/EmailCrawlingMicrosite', module);
 

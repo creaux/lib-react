@@ -5,7 +5,7 @@
 @import './bootstrap-fixes';
 // Components
 @import '../../components/Cycler/cycler';
-@import '../../components/Image/styles';
+@import '../../components/image.component';
 @import '../../components/ProductDetail/styles';
 @import '../../components/Sidescription/styles';
 @import '../../components/Steps/styles';
@@ -18,4 +18,4 @@
 @import '../../components/Pad/styles';
 @import '../../components/OneCheckout/styles';
 @import '../../components/Dots/styles';
-@import '../../components/Signpost/styles';
+@import '../../components/signpost.component';

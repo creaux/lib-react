@@ -1,9 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { EmailCrawler } from '../forms/EmailCrawler';
 import { Messages } from '../forms/Field/hoc/validators/types';
-import { ImageVariants } from '../Image/types';
-import { Image } from '../Image';
-import { ImageElement } from '../Image/component';
+import { ImageVariants } from '../image.types';
+import { ImageComponent as Image, ImageElement } from '../image.component';
 
 export interface EmailCrawlingMicrositeProps {
   labels: {

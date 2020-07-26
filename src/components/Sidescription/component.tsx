@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Add } from '../Add';
+import { AddContainer as Add } from '../add.container';
 
 interface SidescriptionProps {
   title: string;

@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { ProductDescription } from '../ProductDescription';
-import { ImageVariants } from '../Image/types';
-import { Image } from '../Image';
+import { ImageVariants } from '../image.types';
+import { ImageComponent as Image } from '../image.component';
 import { ProductDescriptionProps } from '../ProductDescription/component';
 import { Navigation } from '../Navigation';
 import { Guard } from '../Guard';

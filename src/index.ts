@@ -5,11 +5,17 @@
 // Atoms
 export { Cycler } from './components/Cycler';
 export { Guard } from './components/Guard';
-export { Image } from './components/Image';
+export {
+  ImageComponent as Image,
+  ImageComponentPropsBuilder as ImagePropsBuilder
+} from './components/image.component';
+export {
+  ImageComponentProps as ImageProps
+} from './components/image.component';
 export { Sidescription } from './components/Sidescription';
 export { Svg } from './components/Svg';
 // Moleculs
-export { Add } from './components/Add';
+export { AddComponent as Add } from './components/add.component';
 export { Carousel } from './components/Carousel';
 export { List } from './components/List';
 export { Navigation } from './components/Navigation';
@@ -38,6 +44,6 @@ export { Address } from './components/forms/Address';
 export { Company } from './components/forms/Company';
 export { EmailCrawler } from './components/forms/EmailCrawler';
 export { Person } from './components/forms/Person';
-export { Signpost } from './components/Signpost';
+export { SignpostComponent as Signpost } from './components/signpost.component';
 // Organisms
 export { Shipping } from './components/forms/Shipping';

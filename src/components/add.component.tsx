@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { Raiser } from '../Raiser';
-import { Button, Variants } from '../forms/Button';
+import { Raiser } from './Raiser';
+import { Button, Variants } from './forms/Button';
 import setDisplayName from 'recompose/setDisplayName';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -9,12 +9,9 @@ export interface AddComponentProps {
   onAdd: (event: React.MouseEvent) => void;
   onCount: (count: number) => void;
 }
-
-const AddPure: FunctionComponent<AddComponentProps> = ({
-  title,
-  onAdd,
-  onCount
-}) => (
+export const AddComponent: FunctionComponent<
+  AddComponentProps
+> = setDisplayName('AddComponent')(({ title, onAdd, onCount }) => (
   <Container>
     <Row>
       <Col>
@@ -27,8 +24,4 @@ const AddPure: FunctionComponent<AddComponentProps> = ({
       </Col>
     </Row>
   </Container>
-);
-
-export const AddComponent: FunctionComponent<
-  AddComponentProps
-> = setDisplayName('AddComponent')(AddPure);
+));

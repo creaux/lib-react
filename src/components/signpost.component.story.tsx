@@ -1,13 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-  Signpost,
+  SignpostComponent,
   SignpostElementBuilder,
-  SignpostPropsBuilder
-} from './component';
-import { ImagePropsBuilder } from '../Image/component';
+  SignpostComponentPropsBuilder
+} from './signpost.component';
+import { ImageComponentPropsBuilder as ImagePropsBuilder } from './image.component';
 
-const props = new SignpostPropsBuilder()
+const props = new SignpostComponentPropsBuilder()
   .withElements([
     new SignpostElementBuilder()
       .withImage(
@@ -75,5 +75,5 @@ const props = new SignpostPropsBuilder()
 const story = storiesOf('Moleculs/Signpost', module);
 
 story.add('default', () => {
-  return <Signpost {...props} />;
+  return <SignpostComponent {...props} />;
 });

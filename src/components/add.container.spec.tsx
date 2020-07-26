@@ -1,13 +1,12 @@
-import React, { FunctionComponent, ReactNode } from 'react';
-import { AddContainer, AddContainerProps } from './container';
-import { AddComponent, AddComponentProps } from './component';
+import React, { FunctionComponent } from 'react';
+import { AddContainer, AddContainerProps } from './add.container';
+import { AddComponent, AddComponentProps } from './add.component';
 import { shallow, ShallowWrapper } from 'enzyme';
 import chai, { expect } from 'chai';
-import { Raiser } from '../Raiser';
-import { Button, Variants } from '../forms/Button';
+import { Raiser } from './Raiser';
+import { Button, Variants } from './forms/Button';
 import { spy, SinonSpy } from 'sinon';
-import { RaiserProps } from '../Raiser/container';
-import { ButtonProps } from 'react-bootstrap';
+import { RaiserProps } from './Raiser/container';
 import chaiSinon from 'sinon-chai';
 import chaiEnzyme from 'chai-enzyme';
 

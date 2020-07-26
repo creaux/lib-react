@@ -1,8 +1,8 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-import { ImageVariants } from './types';
+import { ImageVariants } from './image.types';
 import cx from 'classnames';
 
-export class ImagePropsBuilder {
+export class ImageComponentPropsBuilder {
   private src!: string;
   private alt!: string;
   private variant!: ImageVariants;
@@ -10,37 +10,37 @@ export class ImagePropsBuilder {
   private children!: ReactNode;
   private rounded!: boolean;
 
-  public withSrc(src: string): ImagePropsBuilder {
+  public withSrc(src: string): ImageComponentPropsBuilder {
     this.src = src;
     return this;
   }
 
-  public withAlt(alt: string): ImagePropsBuilder {
+  public withAlt(alt: string): ImageComponentPropsBuilder {
     this.alt = alt;
     return this;
   }
 
-  public withVariant(variant: ImageVariants): ImagePropsBuilder {
+  public withVariant(variant: ImageVariants): ImageComponentPropsBuilder {
     this.variant = variant;
     return this;
   }
 
-  public withClassName(className: string): ImagePropsBuilder {
+  public withClassName(className: string): ImageComponentPropsBuilder {
     this.className = className;
     return this;
   }
 
-  public withChildren(children: ReactNode): ImagePropsBuilder {
+  public withChildren(children: ReactNode): ImageComponentPropsBuilder {
     this.children = children;
     return this;
   }
 
-  public withRounded(rounded: boolean): ImagePropsBuilder {
+  public withRounded(rounded: boolean): ImageComponentPropsBuilder {
     this.rounded = rounded;
     return this;
   }
 
-  public build(): ImageProps {
+  public build(): ImageComponentProps {
     return {
       src: this.src,
       alt: this.alt,
@@ -58,13 +58,13 @@ export interface ImageElement {
   rounded?: boolean;
 }
 
-export interface ImageProps extends ImageElement {
+export interface ImageComponentProps extends ImageElement {
   variant?: ImageVariants;
   className?: string;
   children?: ReactNode;
 }
 
-export const Image: FunctionComponent<ImageProps> = ({
+export const ImageComponent: FunctionComponent<ImageComponentProps> = ({
   variant = ImageVariants.SOLID,
   src,
   alt,
