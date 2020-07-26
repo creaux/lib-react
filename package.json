@@ -5,31 +5,25 @@
   "author": "Petr Juna <petr.juna@pyxis.media>",
   "homepage": "http://pyxis.media",
   "license": "MIT",
-  "main": "build/index.js",
+  "main": "main.ts",
   "files": [
-    "build/**/*"
+    "src/**/*",
+    "main.ts",
+    "animo.theme.scss"
   ],
   "scripts": {
     "storybook": "start-storybook -p 9001 -h 0.0.0.0 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o .storybook/build",
     "storybook:serve": "serve .storybook/build",
-    "prettier:lint": "prettier --single-quote --check \"src/**/*.{ts,tsx}\"",
+    "lint": "prettier --single-quote --check \"src/**/*.{ts,tsx}\"",
     "prettier": "prettier --single-quote --write \"src/**/*.{ts,tsx}\"",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "test:update": "react-scripts test -u --watch-all=false",
     "eject": "react-scripts eject",
     "release": "semantic-release",
-    "commit": "commit",
-    "lib": "rm -rf build && npm run lib:css && NODE_ENV=production babel --extensions \".ts,.tsx\" src --out-dir build --ignore \"src/**/story.tsx,src/**/*.spec.ts,src/**/*.spec.tsx,__snapshots__,src/**/*.d.ts\" && npm run lib:declarations && npm run lib:translations",
-    "lib:css": "node-sass-chokidar --importer=node_modules/node-sass-tilde-importer src/themes/animo/theme.scss build/themes/animo/animo.css",
-    "lib:declarations": "tsc -p tsconfig.d.json",
-    "lib:translations": "rsync --include=\"*.json\" --verbose --recursive --exclude=\"*.*\" src/ build",
     "build": "npm run storybook:build",
-    "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media",
-    "husky:pre-commit": "lint-staged -c .lintstagedrc",
-    "husky:pre-push": "package-lock-check && npm test -- --watchAll=false && npm run storybook:build && npm run lib",
-    "husky:post-commit": "echo 'husky:post-commit is empty'"
+    "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.17",
@@ -63,7 +57,6 @@
     "typescript": "3.9.6"
   },
   "devDependencies": {
-    "@types/react-transition-group": "4.4.0",
     "@babel/cli": "7.6.0",
     "@babel/plugin-transform-react-display-name": "7.8.3",
     "@commitlint/cli": "8.0.0",
@@ -89,6 +82,7 @@
     "@types/react": "16.9.41",
     "@types/react-bootstrap": "0.32.17",
     "@types/react-dom": "16.9.0",
+    "@types/react-transition-group": "4.4.0",
     "@types/recompose": "0.30.5",
     "@types/sinon-chai": "3.2.2",
     "@types/storybook-readme": "4.0.0",
@@ -103,7 +97,6 @@
     "enzyme-adapter-react-16": "1.15.2",
     "husky": "4.2.5",
     "lint-staged": "8.2.1",
-    "node-sass-chokidar": "1.5.0",
     "package-lock-check": "1.1.0",
     "prettier": "1.18.2",
     "react-scripts": "3.4.1",
@@ -114,9 +107,8 @@
     "surge": "0.21.6"
   },
   "engines": {
-    "node": "10.15.3",
-    "yarn": "1.17.3",
-    "npm": "6.4.1"
+    "node": "12.*",
+    "npm": "6.14.7"
   },
   "repository": {
     "type": "git",
@@ -124,8 +116,5 @@
   },
   "bugs": {
     "url": "https://github.com/creaux/lib-react/issues"
-  },
-  "resolutions": {
-    "**/@babel/runtime": "7.6.0"
   }
 }

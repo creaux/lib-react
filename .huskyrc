@@ -1,7 +1,7 @@
 {
   "hooks": {
-    "pre-commit": "lint-staged",
-    "pre-push": "CI=true npm audit && npm test && npm run storybook:dry-run && npm run lib",
+    "pre-commit": "lint-staged -c .lintstagedrc",
+    "pre-push": "package-lock-check && npm test -- --watchAll=false && npm run storybook:build",
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }
 }
