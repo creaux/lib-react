@@ -2107,6 +2107,7 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
   >
     <div
       className="signpost__item"
+      onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
@@ -2157,11 +2158,12 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
         }
       />
       <div
-        className="signpost__overlay signpost__overlay--active"
+        className="signpost__overlay"
       />
     </div>
     <div
       className="signpost__item"
+      onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
@@ -2212,11 +2214,12 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
         }
       />
       <div
-        className="signpost__overlay signpost__overlay--active"
+        className="signpost__overlay"
       />
     </div>
     <div
       className="signpost__item"
+      onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
@@ -2267,11 +2270,12 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
         }
       />
       <div
-        className="signpost__overlay signpost__overlay--active"
+        className="signpost__overlay"
       />
     </div>
     <div
       className="signpost__item"
+      onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
@@ -2322,7 +2326,7 @@ exports[`Storyshots Moleculs/Signpost default 1`] = `
         }
       />
       <div
-        className="signpost__overlay signpost__overlay--active"
+        className="signpost__overlay"
       />
     </div>
   </div>
