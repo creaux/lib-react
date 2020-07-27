@@ -10,7 +10,7 @@ export const NavigationBrand: FunctionComponent<NavigationBrandProps> = ({
   brand,
   link,
 }) => (
-  <a className="navbar-brand mr-0" href="#home">
+  <a className="navbar-brand" href="#home">
     <Svg Svg={brand} link={link} fill="black" />
   </a>
 );

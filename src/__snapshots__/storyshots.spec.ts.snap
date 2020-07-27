@@ -1922,6 +1922,25 @@ exports[`Storyshots Moleculs/Navigation default 1`] = `
 <nav
   className="navbar navbar-expand-lg navbar-light bg-transparent undefined"
 >
+  <a
+    className="navbar-brand"
+    href="#home"
+  >
+    <a
+      className="svg"
+      href="#home"
+    >
+      <svg
+        styles={
+          Object {
+            "fill": "black",
+          }
+        }
+      >
+        svg.svg
+      </svg>
+    </a>
+  </a>
   <ul
     className="navbar-nav mr-auto"
   >
@@ -1946,25 +1965,6 @@ exports[`Storyshots Moleculs/Navigation default 1`] = `
       </a>
     </li>
   </ul>
-  <a
-    className="navbar-brand mr-0"
-    href="#home"
-  >
-    <a
-      className="svg"
-      href="#home"
-    >
-      <svg
-        styles={
-          Object {
-            "fill": "black",
-          }
-        }
-      >
-        svg.svg
-      </svg>
-    </a>
-  </a>
 </nav>
 `;
 
@@ -5272,6 +5272,25 @@ Array [
   <nav
     className="navbar navbar-expand-lg navbar-light bg-transparent justify-content-between fixed-top"
   >
+    <a
+      className="navbar-brand"
+      href="#home"
+    >
+      <a
+        className="svg"
+        href="#home"
+      >
+        <svg
+          styles={
+            Object {
+              "fill": "black",
+            }
+          }
+        >
+          svg.svg
+        </svg>
+      </a>
+    </a>
     <ul
       className="navbar-nav mr-auto"
     >
@@ -5296,25 +5315,6 @@ Array [
         </a>
       </li>
     </ul>
-    <a
-      className="navbar-brand mr-0"
-      href="#home"
-    >
-      <a
-        className="svg"
-        href="#home"
-      >
-        <svg
-          styles={
-            Object {
-              "fill": "black",
-            }
-          }
-        >
-          svg.svg
-        </svg>
-      </a>
-    </a>
   </nav>,
   <div
     className="pad"
@@ -7631,22 +7631,8 @@ exports[`Storyshots Templates/ProductDetail default 1`] = `
               }
             }
           >
-            <ul
-              className="navbar-nav mr-auto"
-            >
-              <li
-                className="nav-item active"
-              >
-                <a
-                  className="nav-link"
-                  href="http://"
-                >
-                  Get to know Animaux!
-                </a>
-              </li>
-            </ul>
             <a
-              className="navbar-brand mr-0"
+              className="navbar-brand"
               href="#home"
             >
               <a
@@ -7664,6 +7650,20 @@ exports[`Storyshots Templates/ProductDetail default 1`] = `
                 </svg>
               </a>
             </a>
+            <ul
+              className="navbar-nav mr-auto"
+            >
+              <li
+                className="nav-item active"
+              >
+                <a
+                  className="nav-link"
+                  href="http://"
+                >
+                  Get to know Animaux!
+                </a>
+              </li>
+            </ul>
           </nav>
         </div>
         <div

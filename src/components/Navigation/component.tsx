@@ -24,6 +24,7 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
     className={`navbar navbar-expand-lg navbar-light bg-transparent ${className}`}
     style={style}
   >
+    <Guard Component={NavigationBrand}>{children}</Guard>
     <Guard Component={NavigationClaim}>{children}</Guard>
     <Guard<NavigationItemsProps>
       Component={NavigationItems}
@@ -31,7 +32,6 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
     >
       {children}
     </Guard>
-    <Guard Component={NavigationBrand}>{children}</Guard>
     <Guard<NavigationButtonsProps>
       Component={NavigationButtons}
       when={['buttons', 'length']}
