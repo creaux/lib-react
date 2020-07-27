@@ -94,6 +94,7 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
               onMouseLeave={() =>
                 handleMouseEnter([...Object.assign(state, { [i]: false })])
               }
+              onClick={handleClick}
             >
               <Button
                 variant={Variants.LINK}
@@ -129,7 +130,8 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
               />
               <div
                 className={cx('signpost__overlay', {
-                  'signpost__overlay--active': !state[i],
+                  'signpost__overlay--active':
+                    !state[i] && state.includes(true),
                 })}
               ></div>
             </div>

@@ -10,6 +10,8 @@
   overflow: hidden;
   background-position: center center;
   position: relative;
+
+  cursor: pointer;
 }
 
 .signpost__title {
@@ -43,7 +45,6 @@
 .signpost__btn-text {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 16px;
 
   color: map-get($theme-colors, light);
 }
@@ -117,5 +118,15 @@
     .signpost__btn--active {
       opacity: 1;
     }
+  }
+
+  .signpost__title {
+    font-size: calc(28px + 1vw);
+    padding-bottom: calc(20px + 1vh);
+  }
+
+  .signpost__btn-text {
+    font-weight: 200;
+    font-size: calc(7px + 1vw);
   }
 }
