@@ -17,7 +17,11 @@ export { AddComponent as Add } from './components/add.component';
 export { Carousel } from './components/Carousel';
 export { List } from './components/List';
 export { Navigation } from './components/Navigation';
+export { NavigationBrand } from './components/NavigationBrand';
 export { ProductDescription } from './components/ProductDescription';
+export { NavigationButtons } from './components/NavigationButtons';
+export { NavigationItems } from './components/NavigationItems';
+export { NavigationClaim } from './components/NavigationClaim';
 export { Raiser } from './components/Raiser';
 export { Steps } from './components/Steps';
 // Organisms
