@@ -6,16 +6,18 @@ import {
   Viewport,
   ViewportPropsBuilder,
 } from '../Viewport/component';
-import { Navigation } from '../Navigation';
-import { props as navigationProps } from '../Navigation/mocks';
-import { NavigationClaim } from '../NavigationClaim';
-import { NavigationButtons } from '../NavigationButtons';
-import { props as buttonProps } from '../NavigationButtons/mock';
-import { NavigationBrand } from '../NavigationBrand';
-import { props as navigationBrandProps } from '../NavigationBrand/mock';
-import { NavigationItems } from '../NavigationItems';
-import { props as navigationItemProps } from '../NavigationItems/mock';
+import { Navigation } from '../navigation.component';
+import { props as navigationProps } from '../navigation.mocks';
+import { NavigationClaim } from '../navigation-claim.component';
+import { NavigationButtons } from '../navigation-buttons.component';
+import { props as buttonProps } from '../navigation-buttons.mocks';
+import { NavigationBrand } from '../navigation-brand.component';
+import { props as navigationBrandProps } from '../navigation-brand.mocks';
+import { NavigationItems } from '../navigation-items.component';
+import { props as navigationItemProps } from '../navigation-items.mocks';
 import { PadContainer } from './container';
+import { JUSTIFY_CONTENT } from '../../schema/justify-content.enum';
+import { FIXED } from '../../schema/fixed.enum';
 
 class ViewportProps {
   private static position = new PositionBuilder()
@@ -53,7 +55,8 @@ storiesOf('Organisms/Pad', module).add('default', () => {
     <>
       <Navigation
         {...navigationProps}
-        className="justify-content-between fixed-top"
+        justifyContent={JUSTIFY_CONTENT.BETWEEN}
+        fixed={FIXED.TOP}
       >
         <NavigationBrand {...navigationBrandProps} />
         <NavigationItems {...navigationItemProps} />
@@ -71,7 +74,8 @@ storiesOf('Organisms/Pad', module).add('default', () => {
       </PadContainer>
       <Navigation
         {...navigationProps}
-        className="justify-content-between fixed-bottom"
+        justifyContent={JUSTIFY_CONTENT.BETWEEN}
+        fixed={FIXED.BOTTOM}
       >
         <NavigationClaim>This is button navigation</NavigationClaim>
         <NavigationButtons {...buttonProps} />

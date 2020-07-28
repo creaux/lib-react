@@ -1897,7 +1897,7 @@ exports[`Storyshots Moleculs/Carousel simple 1`] = `
 
 exports[`Storyshots Moleculs/Navigation buttons 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light bg-transparent justify-content-between fixed-bottom"
+  className="navbar navbar-expand-lg bg-light navbar-light justify-content-between fixed-bottom"
 >
   <button
     className="navbar-brand"
@@ -1920,7 +1920,7 @@ exports[`Storyshots Moleculs/Navigation buttons 1`] = `
 
 exports[`Storyshots Moleculs/Navigation default 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light bg-transparent undefined"
+  className="navbar navbar-expand-lg bg-light navbar-light"
 >
   <a
     className="navbar-brand"
@@ -5270,7 +5270,7 @@ exports[`Storyshots Organisms/Order empty 1`] = `
 exports[`Storyshots Organisms/Pad default 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-transparent justify-content-between fixed-top"
+    className="navbar navbar-expand-lg bg-light navbar-light justify-content-between fixed-top"
   >
     <a
       className="navbar-brand"
@@ -5431,7 +5431,7 @@ Array [
     </div>
   </div>,
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-transparent justify-content-between fixed-bottom"
+    className="navbar navbar-expand-lg bg-light navbar-light justify-content-between fixed-bottom"
   >
     <button
       className="navbar-brand"
@@ -7623,13 +7623,7 @@ exports[`Storyshots Templates/ProductDetail default 1`] = `
           className="w-100 position-relative"
         >
           <nav
-            className="navbar navbar-expand-lg navbar-light bg-transparent position-absolute"
-            style={
-              Object {
-                "left": 0,
-                "right": 0,
-              }
-            }
+            className="navbar navbar-expand-lg bg-light navbar-light"
           >
             <a
               className="navbar-brand"
@@ -7646,7 +7640,7 @@ exports[`Storyshots Templates/ProductDetail default 1`] = `
                     }
                   }
                 >
-                  svg.svg
+                  navigation-brand.svg
                 </svg>
               </a>
             </a>

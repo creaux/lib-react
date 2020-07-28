@@ -1,1 +1,0 @@
-export { NavigationItems } from './component';

@@ -1,4 +1,4 @@
-import { NavigationButtonsProps } from './component';
+import { NavigationButtonsProps } from './navigation-buttons.component';
 
 export const props: NavigationButtonsProps = {
   buttons: [

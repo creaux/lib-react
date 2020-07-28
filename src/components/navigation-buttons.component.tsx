@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Button, ButtonProps } from '../forms/Button';
+import { Button, ButtonProps } from './forms/Button/index';
 
 export interface NavigationButtonsProps {
   buttons: ButtonProps[];

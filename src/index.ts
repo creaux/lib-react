@@ -16,12 +16,27 @@ export { Svg } from './components/Svg';
 export { AddComponent as Add } from './components/add.component';
 export { Carousel } from './components/Carousel';
 export { List } from './components/List';
-export { Navigation } from './components/Navigation';
-export { NavigationBrand } from './components/NavigationBrand';
+export {
+  Navigation,
+  NAVIGATION_SCHEME,
+} from './components/navigation.component';
+export { NavigationPropsBuilder } from './components/navigation.props.builder';
+export { NavigationBrand } from './components/navigation-brand.component';
+export type { NavigationBrandProps } from './components/navigation-brand.component';
+export { NavigationBrandPropsBuilder } from './components/navigation-brand.props.builder';
 export { ProductDescription } from './components/ProductDescription';
-export { NavigationButtons } from './components/NavigationButtons';
-export { NavigationItems } from './components/NavigationItems';
-export { NavigationClaim } from './components/NavigationClaim';
+export { NavigationButtons } from './components/navigation-buttons.component';
+export type { NavigationButtonsProps } from './components/navigation-buttons.component';
+export { NavigationButtonsPropsBuilder } from './components/navigation-buttons.props.builder';
+export { NavigationItems } from './components/navigation-items.component';
+export type {
+  NavigationItemsProps,
+  NavigationItem,
+} from './components/navigation-items.component';
+export { NavigationItemsPropsBuilder } from './components/navigation-items.props.builder';
+export { NavigationClaim } from './components/navigation-claim.component';
+export type { NavigationClaimProps } from './components/navigation-claim.component';
+export { NavigationClaimPropsBuilder } from './components/navigation-claim.props.builder';
 export { Raiser } from './components/Raiser';
 export { Steps } from './components/Steps';
 // Organisms
@@ -54,3 +69,8 @@ export {
 export type { SignpostComponentProps as SignpostProps } from './components/signpost.component';
 // Organisms
 export { Shipping } from './components/forms/Shipping';
+// Scheme
+export { BACKGROUND_COLOR } from './schema/background-color.enum';
+export { TEXT_COLOR } from './schema/text-color.enum';
+export { JUSTIFY_CONTENT } from './schema/justify-content.enum';
+export { FIXED } from './schema/fixed.enum';

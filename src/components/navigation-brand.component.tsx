@@ -1,7 +1,7 @@
 import React, { ReactNode, FunctionComponent } from 'react';
-import { Svg } from '../Svg';
+import { Svg } from './Svg/index';
 
-interface NavigationBrandProps {
+export interface NavigationBrandProps {
   brand: ReactNode;
   link: string;
 }

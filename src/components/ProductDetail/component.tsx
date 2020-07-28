@@ -3,7 +3,7 @@ import { ProductDescription } from '../ProductDescription';
 import { ImageVariants } from '../image.types';
 import { ImageComponent as Image } from '../image.component';
 import { ProductDescriptionProps } from '../ProductDescription/component';
-import { Navigation } from '../Navigation';
+import { Navigation } from '../navigation.component';
 import { Guard } from '../Guard';
 
 export interface ProductDetailsProps extends ProductDescriptionProps {
