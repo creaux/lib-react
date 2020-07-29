@@ -60,7 +60,7 @@ const useOpacity = (opacity?: number) => {
     }
     // Will render based on change of isOpacity (once)
     // No need to check for state in if condition
-  }, [opacity]);
+  }, [opacity, ref]);
 
   return [state, ref];
 };

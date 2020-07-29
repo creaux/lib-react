@@ -55,6 +55,9 @@ export { Form } from './components/forms/Form';
 export { Input } from './components/forms/Field';
 export { RadioStack } from './components/forms/Field/RadioStack';
 export { SelectBasic } from './components/forms/Field/Basics/SelectBasic';
+export { Dots } from './components/dots.component';
+export type { DotsProps } from './components/dots.component';
+export { DotsPropsBuilder } from './components/dots.props.builder';
 // Moleculs
 export { Abode } from './components/forms/Abode';
 export { Address } from './components/forms/Address';
