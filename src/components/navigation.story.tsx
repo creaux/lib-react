@@ -31,7 +31,7 @@ story.add('buttons', () => {
       fixed={FIXED.BOTTOM}
       opacity={0.5}
     >
-      <NavigationClaim>This is button navigation</NavigationClaim>
+      <NavigationClaim>This is claim in navigation</NavigationClaim>
       <NavigationButtons {...buttonProps} />
     </Navigation>
   );

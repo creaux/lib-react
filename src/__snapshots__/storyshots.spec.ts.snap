@@ -1899,11 +1899,11 @@ exports[`Storyshots Moleculs/Navigation buttons 1`] = `
 <nav
   className="navbar navbar-expand-lg bg-light navbar-light justify-content-between fixed-bottom"
 >
-  <button
+  <div
     className="navbar-brand"
   >
-    This is button navigation
-  </button>
+    This is claim in navigation
+  </div>
   <form
     className="form-inline"
   >
@@ -5433,11 +5433,11 @@ Array [
   <nav
     className="navbar navbar-expand-lg bg-light navbar-light justify-content-between fixed-bottom"
   >
-    <button
+    <div
       className="navbar-brand"
     >
       This is button navigation
-    </button>
+    </div>
     <form
       className="form-inline"
     >
