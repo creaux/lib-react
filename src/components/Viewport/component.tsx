@@ -1,9 +1,9 @@
-import React, { FunctionComponent, ComponentClass } from 'react';
+import React, { ComponentClass, FunctionComponent } from 'react';
 import {
   mapPropsToCssStyle,
   StyleProps,
 } from '../../hocs/mapPropsToCssVariables';
-import { compose, setDisplayName, mapProps } from 'recompose';
+import { compose, mapProps, setDisplayName } from 'recompose';
 import { omit } from 'lodash';
 import cx from 'classnames';
 
@@ -94,7 +94,7 @@ export const Viewport: ComponentClass<ViewportProps> = compose<
   mapPropsToCssStyle<ViewportProps, ViewportComponentProps>('xPosition'),
   setDisplayName('Viewport'),
   mapProps((props: ViewportComponentProps & ViewportProps) => {
-    const omitedProps = omit(props, 'background', 'style');
+    const omittedProps = omit(props, 'background', 'style');
 
     let style = {};
 
@@ -106,6 +106,6 @@ export const Viewport: ComponentClass<ViewportProps> = compose<
       Object.assign(style, { backgroundImage: `url(${props.background})` });
     }
 
-    return { ...omitedProps, style };
+    return { ...omittedProps, style };
   })
 )(ViewportComponent);
