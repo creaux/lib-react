@@ -36,22 +36,13 @@ const usePosition = (
       const { height } = viewportYRef.current.getBoundingClientRect();
       setViewportHeight(height);
 
-      let ticking = false;
-
       const listener = (e: WheelEvent) => {
-        if (!ticking) {
-          // Throttle + Direction
-          window.requestAnimationFrame(() => {
-            if (Math.sign(e.deltaY) === 1 && dot + 1 <= count - 1) {
-              setDot(dot + 1);
-            }
+        if (Math.sign(e.deltaY) === 1 && dot + 1 <= count - 1) {
+          setDot(dot + 1);
+        }
 
-            if (Math.sign(e.deltaY) === -1 && dot - 1 >= 0) {
-              setDot(dot - 1);
-            }
-            ticking = false;
-          });
-          ticking = true;
+        if (Math.sign(e.deltaY) === -1 && dot - 1 >= 0) {
+          setDot(dot - 1);
         }
       };
 
