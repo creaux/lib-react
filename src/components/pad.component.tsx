@@ -11,15 +11,18 @@ import React, {
   useState,
 } from 'react';
 import { Dots } from './dots.component';
+import { provideIsTouchDevice } from '../hocs/provideIsTouchDevice';
 
 export interface PadProps {
   children: ReactNode[];
+  isTouchDevice: boolean;
 }
 
 let stopExecution = false;
 
 const usePosition = (
-  count: number
+  count: number,
+  isTouchDevice: boolean
 ): [
   RefObject<HTMLDivElement>,
   number,
@@ -34,8 +37,10 @@ const usePosition = (
     if (refCurrent) return refCurrent.getBoundingClientRect().height;
     return 0;
   }, [refCurrent]);
+  const [startY, setStartY] = useState(0);
 
-  const listener = useCallback(
+
+  const wheelListener = useCallback(
     (e: WheelEvent) => {
       if (stopExecution) return;
 
@@ -54,6 +59,24 @@ const usePosition = (
     [dot]
   );
 
+  const touchMoveListener = useCallback((e: TouchEvent) => {
+    e.preventDefault()
+  }, [dot]);
+
+  const touchStart = useCallback((e: TouchEvent) => {
+    setStartY(e.changedTouches[0].pageY);
+  }, [dot]);
+
+  const touchEnd = useCallback((e: TouchEvent) => {
+    if (e.changedTouches[0].pageY > startY) {
+      setDot(dot - 1);
+    }
+
+    if (e.changedTouches[0].pageY < startY) {
+      setDot(dot + 1);
+    }
+  }, [startY, dot]);
+
   useEffect(() => {
     setPositionY(-(dot * viewportHeight));
   }, [dot, viewportHeight]);
@@ -62,13 +85,41 @@ const usePosition = (
     if (viewportYRef && viewportYRef.current) {
       (viewportYRef.current as HTMLDivElement).addEventListener(
         'wheel',
-        listener
+        wheelListener
       );
+
+      (viewportYRef.current as HTMLDivElement).addEventListener(
+        'touchmove',
+        touchMoveListener
+      );
+
+      (viewportYRef.current as HTMLDivElement).addEventListener(
+        'touchstart',
+        touchStart
+      );
+
+      (viewportYRef.current as HTMLDivElement).addEventListener(
+        'touchend',
+        touchEnd
+      );
+
 
       return () => {
         (viewportYRef.current as HTMLDivElement).removeEventListener(
           'wheel',
-          listener
+          wheelListener
+        );
+        (viewportYRef.current as HTMLDivElement).removeEventListener(
+          'touchmove',
+          touchMoveListener
+        );
+        (viewportYRef.current as HTMLDivElement).removeEventListener(
+          'touchstart',
+          touchStart
+        );
+        (viewportYRef.current as HTMLDivElement).removeEventListener(
+          'touchend',
+          touchEnd
         );
       };
     }
@@ -77,8 +128,8 @@ const usePosition = (
   return [viewportYRef, positionY, setDot, dot];
 };
 
-export const Pad: FunctionComponent<PadProps> = ({ children }) => {
-  const [viewportYRef, positionY, setDot, dot] = usePosition(children.length);
+export const Pad: FunctionComponent<PadProps> = provideIsTouchDevice(({ children, isTouchDevice }) => {
+  const [viewportYRef, positionY, setDot, dot] = usePosition(children.length, isTouchDevice);
 
   return (
     <div className="pad" ref={viewportYRef}>
@@ -120,4 +171,4 @@ export const Pad: FunctionComponent<PadProps> = ({ children }) => {
       </div>
     </div>
   );
-};
+});
