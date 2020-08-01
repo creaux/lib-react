@@ -15,7 +15,6 @@ import { provideIsTouchDevice } from '../hocs/provideIsTouchDevice';
 
 export interface PadProps {
   children: ReactNode[];
-  isTouchDevice: boolean;
 }
 
 let stopExecution = false;
@@ -39,7 +38,6 @@ const usePosition = (
   }, [refCurrent]);
   const [startY, setStartY] = useState(0);
 
-
   const wheelListener = useCallback(
     (e: WheelEvent) => {
       if (stopExecution) return;
@@ -59,23 +57,32 @@ const usePosition = (
     [dot]
   );
 
-  const touchMoveListener = useCallback((e: TouchEvent) => {
-    e.preventDefault()
-  }, [dot]);
+  const touchMoveListener = useCallback(
+    (e: TouchEvent) => {
+      e.preventDefault();
+    },
+    [dot]
+  );
 
-  const touchStart = useCallback((e: TouchEvent) => {
-    setStartY(e.changedTouches[0].pageY);
-  }, [dot]);
+  const touchStart = useCallback(
+    (e: TouchEvent) => {
+      setStartY(e.changedTouches[0].pageY);
+    },
+    [dot]
+  );
 
-  const touchEnd = useCallback((e: TouchEvent) => {
-    if (e.changedTouches[0].pageY > startY) {
-      setDot(dot - 1);
-    }
+  const touchEnd = useCallback(
+    (e: TouchEvent) => {
+      if (e.changedTouches[0].pageY > startY) {
+        setDot(dot - 1);
+      }
 
-    if (e.changedTouches[0].pageY < startY) {
-      setDot(dot + 1);
-    }
-  }, [startY, dot]);
+      if (e.changedTouches[0].pageY < startY) {
+        setDot(dot + 1);
+      }
+    },
+    [startY, dot]
+  );
 
   useEffect(() => {
     setPositionY(-(dot * viewportHeight));
@@ -103,7 +110,6 @@ const usePosition = (
         touchEnd
       );
 
-
       return () => {
         (viewportYRef.current as HTMLDivElement).removeEventListener(
           'wheel',
@@ -128,47 +134,52 @@ const usePosition = (
   return [viewportYRef, positionY, setDot, dot];
 };
 
-export const Pad: FunctionComponent<PadProps> = provideIsTouchDevice(({ children, isTouchDevice }) => {
-  const [viewportYRef, positionY, setDot, dot] = usePosition(children.length, isTouchDevice);
+export const Pad: FunctionComponent<PadProps> = provideIsTouchDevice(
+  ({ children, isTouchDevice }) => {
+    const [viewportYRef, positionY, setDot, dot] = usePosition(
+      children.length,
+      isTouchDevice
+    );
 
-  return (
-    <div className="pad" ref={viewportYRef}>
-      <div className="pad__items" style={{ top: positionY }}>
-        {children.map((child, i) => {
-          return (
-            <div className="pad__item" key={i}>
-              {child}
-            </div>
-          );
-        })}
+    return (
+      <div className="pad" ref={viewportYRef}>
+        <div className="pad__items" style={{ top: positionY }}>
+          {children.map((child, i) => {
+            return (
+              <div className="pad__item" key={i}>
+                {child}
+              </div>
+            );
+          })}
+        </div>
+        <div className="pad__dots">
+          <Dots
+            count={children.length}
+            onDot={(activeDot) => setDot(activeDot)}
+            active={dot}
+          />
+        </div>
+        <div
+          className="pad__prev"
+          onClick={() => {
+            if (dot - 1 >= 0) {
+              setDot(dot - 1);
+            }
+          }}
+        >
+          o
+        </div>
+        <div
+          className="pad__next"
+          onClick={() => {
+            if (dot + 1 <= children.length - 1) {
+              setDot(dot + 1);
+            }
+          }}
+        >
+          o
+        </div>
       </div>
-      <div className="pad__dots">
-        <Dots
-          count={children.length}
-          onDot={(activeDot) => setDot(activeDot)}
-          active={dot}
-        />
-      </div>
-      <div
-        className="pad__prev"
-        onClick={() => {
-          if (dot - 1 >= 0) {
-            setDot(dot - 1);
-          }
-        }}
-      >
-        o
-      </div>
-      <div
-        className="pad__next"
-        onClick={() => {
-          if (dot + 1 <= children.length - 1) {
-            setDot(dot + 1);
-          }
-        }}
-      >
-        o
-      </div>
-    </div>
-  );
-});
+    );
+  }
+);
