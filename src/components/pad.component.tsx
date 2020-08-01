@@ -3,17 +3,19 @@ import React, {
   FunctionComponent,
   ReactNode,
   RefObject,
-  SetStateAction, useCallback,
+  SetStateAction,
+  useCallback,
   useEffect,
   useRef,
-  useState
+  useState,
 } from 'react';
 import { Dots } from './dots.component';
-import { throttle } from 'lodash';
 
 export interface PadProps {
   children: ReactNode[];
 }
+
+let stopExecution = false;
 
 const usePosition = (
   count: number
@@ -27,21 +29,22 @@ const usePosition = (
   const [viewportHeight, setViewportHeight] = useState(0);
   const [positionY, setPositionY] = useState(0);
   const viewportYRef = useRef<HTMLDivElement>(null);
-  const throttledSetDot = useCallback(throttle(setDot, 2000), []);
 
-  const listener = useCallback((e: WheelEvent) => {
-    if (Math.sign(e.deltaY) === 1 && dot + 1 <= count - 1) {
-      throttledSetDot(dot + 1);
-    }
+  const listener = useCallback(
+    (e: WheelEvent) => {
+      if (Math.sign(e.deltaY) === 1 && dot + 1 <= count - 1) {
+        setDot(dot + 1);
+      }
 
-    if (Math.sign(e.deltaY) === -1 && dot - 1 >= 0) {
-      throttledSetDot(dot - 1);
-    }
+      if (Math.sign(e.deltaY) === -1 && dot - 1 >= 0) {
+        setDot(dot - 1);
+      }
 
-    e.preventDefault();
-    e.stopPropagation();
-    return false;
-  }, [dot, throttledSetDot]);
+      // Setting up event register blocker
+      stopExecution = true;
+    },
+    [dot]
+  );
 
   useEffect(() => {
     setPositionY(-(dot * viewportHeight));
@@ -52,10 +55,21 @@ const usePosition = (
       const { height } = viewportYRef.current.getBoundingClientRect();
       setViewportHeight(height);
 
-      (viewportYRef.current as HTMLDivElement).addEventListener('wheel', listener);
+      // Prevent reregistering new event after one dot is changed
+      if (stopExecution) {
+        return;
+      }
+
+      (viewportYRef.current as HTMLDivElement).addEventListener(
+        'wheel',
+        listener
+      );
 
       return () => {
-        (viewportYRef.current as HTMLDivElement).removeEventListener('wheel', listener);
+        (viewportYRef.current as HTMLDivElement).removeEventListener(
+          'wheel',
+          listener
+        );
       };
     }
   }, [viewportHeight, dot, viewportYRef, count]);
