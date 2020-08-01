@@ -7,7 +7,9 @@ export const provideIsTouchDevice = <P>(
     ...props,
     isTouchDevice:
       'ontouchstart' in window ||
+      // @ts-ignore
       (typeof window.DocumentTouch !== 'undefined' &&
+        // @ts-ignore
         document instanceof window.DocumentTouch),
   });
 };

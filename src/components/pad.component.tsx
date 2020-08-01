@@ -18,6 +18,7 @@ export interface PadProps {
 }
 
 let stopExecution = false;
+let startY = 0;
 
 const usePosition = (
   count: number,
@@ -36,7 +37,6 @@ const usePosition = (
     if (refCurrent) return refCurrent.getBoundingClientRect().height;
     return 0;
   }, [refCurrent]);
-  const [startY, setStartY] = useState(0);
 
   const wheelListener = useCallback(
     (e: WheelEvent) => {
@@ -66,22 +66,22 @@ const usePosition = (
 
   const touchStart = useCallback(
     (e: TouchEvent) => {
-      setStartY(e.changedTouches[0].pageY);
+      startY = e.changedTouches[0].pageY;
     },
     [dot]
   );
 
   const touchEnd = useCallback(
     (e: TouchEvent) => {
-      if (e.changedTouches[0].pageY > startY) {
+      if (e.changedTouches[0].pageY > startY && dot > 0) {
         setDot(dot - 1);
       }
 
-      if (e.changedTouches[0].pageY < startY) {
+      if (e.changedTouches[0].pageY < startY && dot < count - 1) {
         setDot(dot + 1);
       }
     },
-    [startY, dot]
+    [startY, dot, count]
   );
 
   useEffect(() => {
