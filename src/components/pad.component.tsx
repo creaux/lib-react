@@ -3,12 +3,13 @@ import React, {
   FunctionComponent,
   ReactNode,
   RefObject,
-  SetStateAction,
+  SetStateAction, useCallback,
   useEffect,
   useRef,
-  useState,
+  useState
 } from 'react';
 import { Dots } from './dots.component';
+import { throttle } from 'lodash';
 
 export interface PadProps {
   children: ReactNode[];
@@ -26,6 +27,21 @@ const usePosition = (
   const [viewportHeight, setViewportHeight] = useState(0);
   const [positionY, setPositionY] = useState(0);
   const viewportYRef = useRef<HTMLDivElement>(null);
+  const throttledSetDot = useCallback(throttle(setDot, 2000), []);
+
+  const listener = useCallback((e: WheelEvent) => {
+    if (Math.sign(e.deltaY) === 1 && dot + 1 <= count - 1) {
+      throttledSetDot(dot + 1);
+    }
+
+    if (Math.sign(e.deltaY) === -1 && dot - 1 >= 0) {
+      throttledSetDot(dot - 1);
+    }
+
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  }, [dot, throttledSetDot]);
 
   useEffect(() => {
     setPositionY(-(dot * viewportHeight));
@@ -36,22 +52,10 @@ const usePosition = (
       const { height } = viewportYRef.current.getBoundingClientRect();
       setViewportHeight(height);
 
-      const listener = (e: WheelEvent) => {
-        if (Math.sign(e.deltaY) === 1 && dot + 1 <= count - 1) {
-          setDot(dot + 1);
-        }
-
-        if (Math.sign(e.deltaY) === -1 && dot - 1 >= 0) {
-          setDot(dot - 1);
-        }
-      };
-
-      const currentViewportYRef: HTMLDivElement = viewportYRef.current;
-
-      currentViewportYRef.addEventListener('wheel', listener);
+      (viewportYRef.current as HTMLDivElement).addEventListener('wheel', listener);
 
       return () => {
-        currentViewportYRef.removeEventListener('wheel', listener);
+        (viewportYRef.current as HTMLDivElement).removeEventListener('wheel', listener);
       };
     }
   }, [viewportHeight, dot, viewportYRef, count]);
