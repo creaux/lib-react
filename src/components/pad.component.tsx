@@ -5,9 +5,10 @@ import React, {
   RefObject,
   SetStateAction,
   useCallback,
-  useEffect, useMemo,
+  useEffect,
+  useMemo,
   useRef,
-  useState
+  useState,
 } from 'react';
 import { Dots } from './dots.component';
 
@@ -48,7 +49,7 @@ const usePosition = (
 
       stopExecution = true;
 
-      setTimeout(() => stopExecution = false, 1200);
+      setTimeout(() => (stopExecution = false), 1200);
     },
     [dot]
   );
