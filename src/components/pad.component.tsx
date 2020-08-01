@@ -5,9 +5,9 @@ import React, {
   RefObject,
   SetStateAction,
   useCallback,
-  useEffect,
+  useEffect, useMemo,
   useRef,
-  useState,
+  useState
 } from 'react';
 import { Dots } from './dots.component';
 
@@ -26,12 +26,18 @@ const usePosition = (
   number
 ] => {
   const [dot, setDot] = useState(0);
-  const [viewportHeight, setViewportHeight] = useState(0);
   const [positionY, setPositionY] = useState(0);
   const viewportYRef = useRef<HTMLDivElement>(null);
+  const { current: refCurrent } = viewportYRef;
+  const viewportHeight = useMemo(() => {
+    if (refCurrent) return refCurrent.getBoundingClientRect().height;
+    return 0;
+  }, [refCurrent]);
 
   const listener = useCallback(
     (e: WheelEvent) => {
+      if (stopExecution) return;
+
       if (Math.sign(e.deltaY) === 1 && dot + 1 <= count - 1) {
         setDot(dot + 1);
       }
@@ -40,8 +46,9 @@ const usePosition = (
         setDot(dot - 1);
       }
 
-      // Setting up event register blocker
       stopExecution = true;
+
+      setTimeout(() => stopExecution = false, 1200);
     },
     [dot]
   );
@@ -52,14 +59,6 @@ const usePosition = (
 
   useEffect(() => {
     if (viewportYRef && viewportYRef.current) {
-      const { height } = viewportYRef.current.getBoundingClientRect();
-      setViewportHeight(height);
-
-      // Prevent reregistering new event after one dot is changed
-      if (stopExecution) {
-        return;
-      }
-
       (viewportYRef.current as HTMLDivElement).addEventListener(
         'wheel',
         listener
