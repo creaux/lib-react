@@ -39,6 +39,17 @@ export type { NavigationClaimProps } from './components/navigation-claim.compone
 export { NavigationClaimPropsBuilder } from './components/navigation-claim.props.builder';
 export { Raiser } from './components/Raiser';
 export { Steps } from './components/Steps';
+export { Headline } from './components/headline.component';
+export type {
+  HeadlinePosition,
+  HeadlinePositions,
+  HeadlineProps,
+} from './components/headline.component';
+export {
+  HeadlinePositionBuilder,
+  HeadlinePositionsBuilder,
+  HeadlinePropsBuilder,
+} from './components/headline-props.builder';
 // Organisms
 export { Blog } from './components/Blog';
 export { Order } from './components/Order';
