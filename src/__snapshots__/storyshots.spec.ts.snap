@@ -437,19 +437,27 @@ exports[`Storyshots Organisms/Pad default 1`] = `
         }
       >
         <div
-          className="hero"
+          className="headline"
           style={
             Object {
-              "--hero__x-position": 24,
-              "--hero__y-position": 24,
+              "--headline__lg-x-position": 5,
+              "--headline__lg-y-position": 5,
+              "--headline__md-x-position": 5,
+              "--headline__md-y-position": 5,
+              "--headline__sm-x-position": 5,
+              "--headline__sm-y-position": 5,
+              "--headline__xl-x-position": 5,
+              "--headline__xl-y-position": 5,
+              "--headline__xs-x-position": 5,
+              "--headline__xs-y-position": 5,
             }
           }
         >
           <h1>
-            Title
+            First
           </h1>
           <p>
-            Lorem ipsum
+            Cobaltum persuaderes, tanquam fortis habitio.
           </p>
         </div>
       </div>
@@ -469,19 +477,27 @@ exports[`Storyshots Organisms/Pad default 1`] = `
         }
       >
         <div
-          className="hero"
+          className="headline"
           style={
             Object {
-              "--hero__x-position": 24,
-              "--hero__y-position": 24,
+              "--headline__lg-x-position": 5,
+              "--headline__lg-y-position": 5,
+              "--headline__md-x-position": 5,
+              "--headline__md-y-position": 5,
+              "--headline__sm-x-position": 5,
+              "--headline__sm-y-position": 5,
+              "--headline__xl-x-position": 5,
+              "--headline__xl-y-position": 5,
+              "--headline__xs-x-position": 5,
+              "--headline__xs-y-position": 5,
             }
           }
         >
           <h1>
-            Title
+            Second
           </h1>
           <p>
-            Lorem ipsum
+            Cobaltum persuaderes, tanquam fortis habitio.
           </p>
         </div>
       </div>
@@ -501,19 +517,27 @@ exports[`Storyshots Organisms/Pad default 1`] = `
         }
       >
         <div
-          className="hero"
+          className="headline"
           style={
             Object {
-              "--hero__x-position": 24,
-              "--hero__y-position": 24,
+              "--headline__lg-x-position": 5,
+              "--headline__lg-y-position": 5,
+              "--headline__md-x-position": 5,
+              "--headline__md-y-position": 5,
+              "--headline__sm-x-position": 5,
+              "--headline__sm-y-position": 5,
+              "--headline__xl-x-position": 5,
+              "--headline__xl-y-position": 5,
+              "--headline__xs-x-position": 5,
+              "--headline__xs-y-position": 5,
             }
           }
         >
           <h1>
-            Title
+            Third
           </h1>
           <p>
-            Lorem ipsum
+            Cobaltum persuaderes, tanquam fortis habitio.
           </p>
         </div>
       </div>
@@ -533,19 +557,27 @@ exports[`Storyshots Organisms/Pad default 1`] = `
         }
       >
         <div
-          className="hero"
+          className="headline"
           style={
             Object {
-              "--hero__x-position": 24,
-              "--hero__y-position": 24,
+              "--headline__lg-x-position": 5,
+              "--headline__lg-y-position": 5,
+              "--headline__md-x-position": 5,
+              "--headline__md-y-position": 5,
+              "--headline__sm-x-position": 5,
+              "--headline__sm-y-position": 5,
+              "--headline__xl-x-position": 5,
+              "--headline__xl-y-position": 5,
+              "--headline__xs-x-position": 5,
+              "--headline__xs-y-position": 5,
             }
           }
         >
           <h1>
-            Title
+            Fourth
           </h1>
           <p>
-            Lorem ipsum
+            Cobaltum persuaderes, tanquam fortis habitio.
           </p>
         </div>
       </div>
