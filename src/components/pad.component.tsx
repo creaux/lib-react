@@ -5,6 +5,7 @@ import React, {
   RefObject,
   SetStateAction,
   useCallback,
+  useEffect,
   useLayoutEffect,
   useMemo,
   useRef,
@@ -27,6 +28,7 @@ const usePosition = (
   Dispatch<SetStateAction<number>>,
   number
 ] => {
+  const [rerender, setRerender] = useState(0);
   const [dot, setDot] = useState(0);
   const [positionY, setPositionY] = useState(0);
   const viewportYRef = useRef<HTMLDivElement>(null);
@@ -34,9 +36,24 @@ const usePosition = (
   const viewportHeight = useMemo(() => {
     if (refCurrent) return refCurrent.getBoundingClientRect().height;
     return 0;
-  }, [refCurrent]);
+    // Due to rerender has to be excluded as it is legit
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [refCurrent, rerender]);
   const [startYRef, setStartY] = useStateRef(0);
   const [stopExecutionRef, setStopExecution] = useStateRef(false);
+  const viewportRefCurrent = viewportYRef.current;
+
+  useEffect(() => {
+    const resizeListener = () => {
+      setRerender(rerender + 1);
+    };
+    // Make sure component rerenders when window is resized or portrait changed to landscape and oppose
+    window.addEventListener('resize', resizeListener);
+
+    return () => {
+      window.removeEventListener('resize', resizeListener);
+    };
+  });
 
   const wheelListener = useCallback(
     (e: WheelEvent) => {
@@ -88,50 +105,61 @@ const usePosition = (
   }, [dot, viewportHeight]);
 
   useLayoutEffect(() => {
-    if (viewportYRef && viewportYRef.current) {
-      (viewportYRef.current as HTMLDivElement).addEventListener(
+    if (viewportYRef && viewportRefCurrent) {
+      (viewportRefCurrent as HTMLDivElement).addEventListener(
         'wheel',
         wheelListener
       );
 
       if (isTouchDevice) {
-        (viewportYRef.current as HTMLDivElement).addEventListener(
+        (viewportRefCurrent as HTMLDivElement).addEventListener(
           'touchmove',
           touchMoveListener
         );
-        (viewportYRef.current as HTMLDivElement).addEventListener(
+        (viewportRefCurrent as HTMLDivElement).addEventListener(
           'touchstart',
           touchStart
         );
-        (viewportYRef.current as HTMLDivElement).addEventListener(
+        (viewportRefCurrent as HTMLDivElement).addEventListener(
           'touchend',
           touchEnd
         );
       }
 
       return () => {
-        (viewportYRef.current as HTMLDivElement).removeEventListener(
+        (viewportRefCurrent as HTMLDivElement).removeEventListener(
           'wheel',
           wheelListener
         );
 
         if (isTouchDevice) {
-          (viewportYRef.current as HTMLDivElement).removeEventListener(
+          (viewportRefCurrent as HTMLDivElement).removeEventListener(
             'touchmove',
             touchMoveListener
           );
-          (viewportYRef.current as HTMLDivElement).removeEventListener(
+          (viewportRefCurrent as HTMLDivElement).removeEventListener(
             'touchstart',
             touchStart
           );
-          (viewportYRef.current as HTMLDivElement).removeEventListener(
+          (viewportRefCurrent as HTMLDivElement).removeEventListener(
             'touchend',
             touchEnd
           );
         }
       };
     }
-  }, [viewportHeight, dot, viewportYRef, count]);
+  }, [
+    viewportHeight,
+    dot,
+    viewportYRef,
+    count,
+    isTouchDevice,
+    touchEnd,
+    touchMoveListener,
+    touchStart,
+    viewportRefCurrent,
+    wheelListener,
+  ]);
 
   return [viewportYRef, positionY, setDot, dot];
 };
