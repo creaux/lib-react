@@ -1,49 +1,37 @@
 import React, { ComponentClass, FunctionComponent } from 'react';
-import { mapPropsToCssStyle, StyleProps } from '../hocs/mapPropsToCssVariables';
+import { mapBreakpointCoordinatesToStyle } from './map-breakpoint-coordinates-to-style.hoc';
 import { compose, mapProps, setDisplayName } from 'recompose';
 import { omit } from 'lodash';
 import cx from 'classnames';
+import {
+  MapPropsToCssVariablesInputProps,
+  MapPropsToCssVariablesOutputProps,
+} from './map-breakpoint-coordinates-to-style.props';
 
-/**
- * xs, sm, md, lg, xl refactoring
- */
-export interface ViewportPositionInterface {
-  portrait: string;
-  landscape: string;
-  desktop: string;
-}
+const { assign } = Object;
 
-/**
- * position should have x and y
- */
-export interface ViewportProps {
-  background?: string;
-  xPosition?: ViewportPositionInterface;
-  className?: string;
-}
+interface ViewportComponentProps extends MapPropsToCssVariablesOutputProps {}
 
-export interface ViewportComponentProps extends StyleProps {
-  style: { [key: string]: string };
-  className?: string;
-}
-
-export const ViewportComponent: FunctionComponent<ViewportComponentProps> = ({
+const ViewportComponent: FunctionComponent<ViewportComponentProps> = ({
   style,
   children,
-  className,
 }) => {
   return (
-    <div className={cx('viewport', className)} style={style}>
+    <div className={cx('viewport')} style={style}>
       {children}
     </div>
   );
 };
 
+export interface ViewportProps extends MapPropsToCssVariablesInputProps {
+  backgroundImage?: string;
+}
+
 export const Viewport: ComponentClass<ViewportProps> = compose<
   ViewportComponentProps,
   ViewportProps
 >(
-  mapPropsToCssStyle<ViewportProps, ViewportComponentProps>('xPosition'),
+  mapBreakpointCoordinatesToStyle,
   setDisplayName('Viewport'),
   mapProps((props: ViewportComponentProps & ViewportProps) => {
     const omittedProps = omit(props, 'background', 'style');
@@ -51,11 +39,11 @@ export const Viewport: ComponentClass<ViewportProps> = compose<
     let style = {};
 
     if (props.style) {
-      Object.assign(style, props.style);
+      assign(style, props.style);
     }
 
-    if (props.background) {
-      Object.assign(style, { backgroundImage: `url(${props.background})` });
+    if (props.backgroundImage) {
+      assign(style, { backgroundImage: `url(${props.backgroundImage})` });
     }
 
     return { ...omittedProps, style };

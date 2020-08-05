@@ -3,25 +3,24 @@ import { storiesOf } from '@storybook/react';
 import { Viewport } from './viewport.component';
 import { Pad } from './pad.component';
 import { Headline } from './headline.component';
+import { HeadlinePropsBuilder } from './headline-props.builder';
+import { ViewportPropsBuilder } from './viewport-props.builder';
 import {
-  HeadlinePositionBuilder,
-  HeadlinePositionsBuilder,
-  HeadlinePropsBuilder,
-} from './headline-props.builder';
-import {
-  ViewportPositionBuilder,
-  ViewportPropsBuilder,
-} from './viewport-props.builder';
+  BreakpointCoordinatesBuilder,
+  CoordinatesBuilder,
+} from './map-breakpoint-coordinates-to-style.builder';
 
 class ViewportProps {
-  private static position = new ViewportPositionBuilder()
-    .withPortrait('right')
-    .withLandscape('center')
-    .withDesktop('center')
+  private static coordinates = new BreakpointCoordinatesBuilder()
+    .withXs(new CoordinatesBuilder().withX('right').withY('center'))
+    .withSm(new CoordinatesBuilder().withX('right').withY('center'))
+    .withMd(new CoordinatesBuilder().withX('right').withY('center'))
+    .withLg(new CoordinatesBuilder().withX('right').withY('center'))
+    .withXl(new CoordinatesBuilder().withX('right').withY('center'))
     .build();
 
-  private static props = new ViewportPropsBuilder().withXPosition(
-    ViewportProps.position
+  private static props = new ViewportPropsBuilder().withBreakpointCoordinates(
+    ViewportProps.coordinates
   );
 
   static readonly first = ViewportProps.props
@@ -45,52 +44,52 @@ export class HeadlineProps {
   public static first = new HeadlinePropsBuilder()
     .withTitle('First')
     .withParagraph('Cobaltum persuaderes, tanquam fortis habitio.')
-    .withPositions(
-      new HeadlinePositionsBuilder()
-        .withXs(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withSm(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withMd(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withLg(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withXl(new HeadlinePositionBuilder().withX(5).withY(5).build())
+    .withBreakpointCoordinates(
+      new BreakpointCoordinatesBuilder()
+        .withXs(new CoordinatesBuilder().withX('right').withY('center'))
+        .withSm(new CoordinatesBuilder().withX('right').withY('center'))
+        .withMd(new CoordinatesBuilder().withX('right').withY('center'))
+        .withLg(new CoordinatesBuilder().withX('right').withY('center'))
+        .withXl(new CoordinatesBuilder().withX('right').withY('center'))
         .build()
     );
 
   public static second = new HeadlinePropsBuilder()
     .withTitle('Second')
     .withParagraph('Cobaltum persuaderes, tanquam fortis habitio.')
-    .withPositions(
-      new HeadlinePositionsBuilder()
-        .withXs(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withSm(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withMd(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withLg(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withXl(new HeadlinePositionBuilder().withX(5).withY(5).build())
+    .withBreakpointCoordinates(
+      new BreakpointCoordinatesBuilder()
+        .withXs(new CoordinatesBuilder().withX('right').withY('center'))
+        .withSm(new CoordinatesBuilder().withX('right').withY('center'))
+        .withMd(new CoordinatesBuilder().withX('right').withY('center'))
+        .withLg(new CoordinatesBuilder().withX('right').withY('center'))
+        .withXl(new CoordinatesBuilder().withX('right').withY('center'))
         .build()
     );
 
   public static third = new HeadlinePropsBuilder()
     .withTitle('Third')
     .withParagraph('Cobaltum persuaderes, tanquam fortis habitio.')
-    .withPositions(
-      new HeadlinePositionsBuilder()
-        .withXs(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withSm(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withMd(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withLg(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withXl(new HeadlinePositionBuilder().withX(5).withY(5).build())
+    .withBreakpointCoordinates(
+      new BreakpointCoordinatesBuilder()
+        .withXs(new CoordinatesBuilder().withX('right').withY('center'))
+        .withSm(new CoordinatesBuilder().withX('right').withY('center'))
+        .withMd(new CoordinatesBuilder().withX('right').withY('center'))
+        .withLg(new CoordinatesBuilder().withX('right').withY('center'))
+        .withXl(new CoordinatesBuilder().withX('right').withY('center'))
         .build()
     );
 
   public static fourth = new HeadlinePropsBuilder()
     .withTitle('Fourth')
     .withParagraph('Cobaltum persuaderes, tanquam fortis habitio.')
-    .withPositions(
-      new HeadlinePositionsBuilder()
-        .withXs(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withSm(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withMd(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withLg(new HeadlinePositionBuilder().withX(5).withY(5).build())
-        .withXl(new HeadlinePositionBuilder().withX(5).withY(5).build())
+    .withBreakpointCoordinates(
+      new BreakpointCoordinatesBuilder()
+        .withXs(new CoordinatesBuilder().withX('right').withY('center'))
+        .withSm(new CoordinatesBuilder().withX('right').withY('center'))
+        .withMd(new CoordinatesBuilder().withX('right').withY('center'))
+        .withLg(new CoordinatesBuilder().withX('right').withY('center'))
+        .withXl(new CoordinatesBuilder().withX('right').withY('center'))
         .build()
     );
 }

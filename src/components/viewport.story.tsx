@@ -1,39 +1,44 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Viewport } from './viewport.component';
+import { Viewport, ViewportProps } from './viewport.component';
 import { Headline } from './headline.component';
+import { HeadlinePropsBuilder } from './headline-props.builder';
+import { ViewportPropsBuilder } from './viewport-props.builder';
 import {
-  HeadlinePositionBuilder,
-  HeadlinePositionsBuilder,
-  HeadlinePropsBuilder,
-} from './headline-props.builder';
+  BreakpointCoordinatesBuilder,
+  CoordinatesBuilder,
+} from './map-breakpoint-coordinates-to-style.builder';
 
 storiesOf('Atoms/Viewport', module).add('default', () => {
-  const viewportProps = {
-    background: 'https://picsum.photos/id/100/2500/1656',
-    xPosition: {
-      portrait: 'right',
-      landscape: 'center',
-      desktop: 'center',
-    },
-  };
+  const viewportProps: ViewportProps = new ViewportPropsBuilder()
+    .withBackground('https://picsum.photos/id/100/2500/1656')
+    .withBreakpointCoordinates(
+      new BreakpointCoordinatesBuilder()
+        .withXs(new CoordinatesBuilder().withX('right').withY('center'))
+        .withSm(new CoordinatesBuilder().withX('right').withY('center'))
+        .withMd(new CoordinatesBuilder().withX('right').withY('center'))
+        .withLg(new CoordinatesBuilder().withX('right').withY('center'))
+        .withXl(new CoordinatesBuilder().withX('right').withY('center'))
+        .build()
+    )
+    .build();
+
+  const headlineProps = new HeadlinePropsBuilder()
+    .withTitle('First')
+    .withParagraph('Cobaltum persuaderes, tanquam fortis habitio.')
+    .withBreakpointCoordinates(
+      new BreakpointCoordinatesBuilder()
+        .withXs(new CoordinatesBuilder().withX('right').withY('center'))
+        .withSm(new CoordinatesBuilder().withX('right').withY('center'))
+        .withMd(new CoordinatesBuilder().withX('right').withY('center'))
+        .withLg(new CoordinatesBuilder().withX('right').withY('center'))
+        .withXl(new CoordinatesBuilder().withX('right').withY('center'))
+        .build()
+    );
 
   return (
     <Viewport {...viewportProps}>
-      <Headline
-        {...new HeadlinePropsBuilder()
-          .withTitle('First')
-          .withParagraph('Cobaltum persuaderes, tanquam fortis habitio.')
-          .withPositions(
-            new HeadlinePositionsBuilder()
-              .withXs(new HeadlinePositionBuilder().withX(5).withY(5).build())
-              .withSm(new HeadlinePositionBuilder().withX(5).withY(5).build())
-              .withMd(new HeadlinePositionBuilder().withX(5).withY(5).build())
-              .withLg(new HeadlinePositionBuilder().withX(5).withY(5).build())
-              .withXl(new HeadlinePositionBuilder().withX(5).withY(5).build())
-              .build()
-          )}
-      />
+      <Headline {...headlineProps} />
     </Viewport>
   );
 });
