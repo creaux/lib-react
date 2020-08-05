@@ -1,3 +1,38 @@
+@import "./functions";
+
+$xs: (
+  x: var(--Headline__breakpointCoordinates-xs-x),
+  y: var(--Headline__breakpointCoordinates-xs-y)
+);
+
+$sm: (
+  x: var(--Headline__breakpointCoordinates-sm-x),
+  y: var(--Headline__breakpointCoordinates-sm-y)
+);
+
+$md: (
+  x: var(--Headline__breakpointCoordinates-md-x),
+  y: var(--Headline__breakpointCoordinates-md-y)
+);
+
+$lg: (
+  x: var(--Headline__breakpointCoordinates-lg-x),
+  y: var(--Headline__breakpointCoordinates-lg-y)
+);
+
+$xl: (
+  x: var(--Headline__breakpointCoordinates-xl-x),
+  y: var(--Headline__breakpointCoordinates-xl-y)
+);
+
+$breakpointCoordinates: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl
+);
+
 $x-xs-position: calc(var(--headline__xs-x-position) * 1vw);
 $y-xs-position: calc(var(--headline__xs-y-position) * 1vh);
 $x-sm-position: calc(var(--headline__sm-x-position) * 1vw);
@@ -26,32 +61,32 @@ $y-xl-position: calc(var(--headline__xl-y-position) * 1vh);
 
   @include media-breakpoint-up(xs) {
     display: block;
-    left: $x-xs-position;
-    top: $y-xs-position;
+    left: map-get-second($breakpointCoordinates, 'xs', 'x');;
+    top: map-get-second($breakpointCoordinates, 'xs', 'y');
   }
 
   @include media-breakpoint-up(sm) {
     display: block;
-    left: $x-sm-position;
-    top: $y-sm-position;
+    left: map-get-second($breakpointCoordinates, 'sm', 'x');;
+    top: map-get-second($breakpointCoordinates, 'sm', 'y');
   }
 
   @include media-breakpoint-up(md) {
     display: block;
-    left: $x-md-position;
-    top: $y-md-position;
+    left: map-get-second($breakpointCoordinates, 'md', 'x');;
+    top: map-get-second($breakpointCoordinates, 'md', 'y');
   }
 
   @include media-breakpoint-up(lg) {
     display: block;
-    left: $x-lg-position;
-    top: $y-lg-position;
+    left: map-get-second($breakpointCoordinates, 'lg', 'x');;
+    top: map-get-second($breakpointCoordinates, 'lg', 'y');
   }
 
   @include media-breakpoint-up(xl) {
     display: block;
-    left: $x-xl-position;
-    top: $y-xl-position;
+    left: map-get-second($breakpointCoordinates, 'xl', 'x');;
+    top: map-get-second($breakpointCoordinates, 'xl', 'y');
   }
 }
 
