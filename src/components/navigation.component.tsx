@@ -109,6 +109,9 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
         {
           'flex-row': isNavigationScreenContent(children as ReactElement),
           'flex-column': !isNavigationScreenContent(children as ReactElement),
+          'vh-100':
+            !isNavigationScreenContent(children as ReactElement) &&
+            isScreenOpen,
         }
       )}
       ref={(opacityRef as unknown) as MutableRefObject<HTMLBaseElement>}

@@ -10,27 +10,35 @@ $font-family-secondary: 'Baloo 2', sans-serif;
 
 // For overriding: https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
 // Bootstrap override
+
+$display1-weight: 600;
+$display2-weight: 600;
+$display3-weight: 600;
+$display4-weight: 600;
+
+$enable-responsive-font-sizes: true !global;
+
+$enable-rounded: true !global;
+
+$font-family-sans-serif: $font-family-primary !global;
+$headings-font-family: $font-family-secondary !global;
+$headings-font-weight: 600 !global;
+
+$navbar-light-toggler-border-color: rgba(0, 0, 0, 0);
+
+// 1rem is default value of bootstrap $spacer
+// which is not available here
+$spacers: (
+  8: (
+    1rem * 8
+  )
+) !global;
+
 %scope {
   @import '~bootstrap/scss/functions';
   @import '~bootstrap/scss/variables';
 
-  $enable-responsive-font-sizes: true !global;
-
   $theme-colors: (
     primary: $gray-700
-  ) !global;
-
-  $enable-rounded: true !global;
-
-  $font-family-sans-serif: $font-family-primary !global;
-  $headings-font-family: $font-family-secondary !global;
-  $headings-font-weight: 600 !global;
-
-  // 1rem is default value of bootstrap $spacer
-  // which is not available here
-  $spacers: (
-    8: (
-      1rem * 8
-    )
   ) !global;
 }

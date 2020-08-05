@@ -13,6 +13,11 @@ import { JUSTIFY_CONTENT } from '../schema/justify-content.enum';
 import { FIXED } from '../schema/fixed.enum';
 import { NavigationToggler } from './navigation-toggler.component';
 import { NavigationScreen } from './navigation-screen.component';
+import { NavigationScreenContent } from './navigation-screen-content.component';
+import {
+  NavigationScreenContentLinkBuilder,
+  NavigationScreenContentPropsBuilder,
+} from './navigation-screen-content.builder';
 
 const story = storiesOf('Moleculs/Navigation', module);
 
@@ -39,12 +44,42 @@ story.add('buttons', () => {
   );
 });
 
+const navigationScreenContentProps = new NavigationScreenContentPropsBuilder()
+  .withEmail('ahoj@nekdo.cz')
+  .withPhone('9999')
+  .withCompany('Corporation')
+  .withStreet('Zelena')
+  .withStreetNo('256')
+  .withCity('San Francisco')
+  .withPostcode('123 12')
+  .withLinks([
+    new NavigationScreenContentLinkBuilder()
+      .withHref('http://#')
+      .withTitle('Products')
+      .build(),
+    new NavigationScreenContentLinkBuilder()
+      .withHref('http://#')
+      .withTitle('About')
+      .build(),
+    new NavigationScreenContentLinkBuilder()
+      .withHref('http://#')
+      .withTitle('Conditions')
+      .build(),
+    new NavigationScreenContentLinkBuilder()
+      .withHref('http://#')
+      .withTitle('Privacy Policy')
+      .build(),
+  ])
+  .build();
+
 story.add('toggler', () => {
   return (
     <Navigation justifyContent={JUSTIFY_CONTENT.BETWEEN}>
       <NavigationBrand {...navigationBrandProps} />
-      <NavigationToggler onToggle={() => {}} />
-      <NavigationScreen isOpen={true}>Hello World!</NavigationScreen>
+      <NavigationToggler />
+      <NavigationScreen>
+        <NavigationScreenContent {...navigationScreenContentProps} />
+      </NavigationScreen>
     </Navigation>
   );
 });
