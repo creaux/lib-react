@@ -1,10 +1,10 @@
 import React, {
   FunctionComponent,
+  MutableRefObject,
   ReactNode,
   useLayoutEffect,
   useRef,
   useState,
-  MutableRefObject,
 } from 'react';
 import { Guard } from './Guard/index';
 import { NavigationBrand } from './navigation-brand.component';
@@ -21,6 +21,14 @@ import cx from 'classnames';
 import { BACKGROUND_COLOR } from '../schema/background-color.enum';
 import { JUSTIFY_CONTENT } from '../schema/justify-content.enum';
 import { FIXED } from '../schema/fixed.enum';
+import {
+  NavigationToggler,
+  NavigationTogglerProps,
+} from './navigation-toggler.component';
+import {
+  NavigationScreen,
+  NavigationScreenProps,
+} from './navigation-screen.component';
 
 export enum NAVIGATION_SCHEME {
   DARK = 'navbar-dark',
@@ -100,6 +108,12 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
         Component={NavigationButtons}
         when={['buttons', 'length']}
       >
+        {children}
+      </Guard>
+      <Guard<NavigationTogglerProps> Component={NavigationToggler}>
+        {children}
+      </Guard>
+      <Guard<NavigationScreenProps> Component={NavigationScreen}>
         {children}
       </Guard>
     </nav>

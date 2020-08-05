@@ -11,6 +11,8 @@ import { props as buttonProps } from './navigation-buttons.mocks';
 import { NavigationClaim } from './navigation-claim.component';
 import { JUSTIFY_CONTENT } from '../schema/justify-content.enum';
 import { FIXED } from '../schema/fixed.enum';
+import { NavigationToggler } from './navigation-toggler.component';
+import { NavigationScreen } from './navigation-screen.component';
 
 const story = storiesOf('Moleculs/Navigation', module);
 
@@ -33,6 +35,16 @@ story.add('buttons', () => {
     >
       <NavigationClaim>This is claim in navigation</NavigationClaim>
       <NavigationButtons {...buttonProps} />
+    </Navigation>
+  );
+});
+
+story.add('toggler', () => {
+  return (
+    <Navigation justifyContent={JUSTIFY_CONTENT.BETWEEN}>
+      <NavigationBrand {...navigationBrandProps} />
+      <NavigationToggler onToggle={() => {}} />
+      <NavigationScreen isOpen={true} />
     </Navigation>
   );
 });

@@ -1,72 +1,24 @@
 import React, { ComponentClass, FunctionComponent } from 'react';
-import {
-  mapPropsToCssStyle,
-  StyleProps,
-} from '../../hocs/mapPropsToCssVariables';
+import { mapPropsToCssStyle, StyleProps } from '../hocs/mapPropsToCssVariables';
 import { compose, mapProps, setDisplayName } from 'recompose';
 import { omit } from 'lodash';
 import cx from 'classnames';
 
-export interface PositionInterface {
+/**
+ * xs, sm, md, lg, xl refactoring
+ */
+export interface ViewportPositionInterface {
   portrait: string;
   landscape: string;
   desktop: string;
 }
 
-export class PositionBuilder {
-  protected portrait!: string;
-  protected landscape!: string;
-  protected desktop!: string;
-
-  withPortrait(portrait: string) {
-    this.portrait = portrait;
-    return this;
-  }
-
-  withLandscape(landscape: string) {
-    this.landscape = landscape;
-    return this;
-  }
-
-  withDesktop(desktop: string) {
-    this.desktop = desktop;
-    return this;
-  }
-
-  build(): PositionInterface {
-    return {
-      portrait: this.portrait,
-      landscape: this.landscape,
-      desktop: this.desktop,
-    };
-  }
-}
-
-export class ViewportPropsBuilder {
-  protected background!: string;
-  protected xPosition!: PositionInterface;
-
-  withBackground(background: string) {
-    this.background = background;
-    return this;
-  }
-
-  withXPosition(xPosition: PositionInterface) {
-    this.xPosition = xPosition;
-    return this;
-  }
-
-  build(): ViewportProps {
-    return {
-      background: this.background,
-      xPosition: this.xPosition,
-    };
-  }
-}
-
+/**
+ * position should have x and y
+ */
 export interface ViewportProps {
   background?: string;
-  xPosition?: PositionInterface;
+  xPosition?: ViewportPositionInterface;
   className?: string;
 }
 

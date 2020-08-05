@@ -1,10 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import {
-  PositionBuilder,
-  Viewport,
-  ViewportPropsBuilder,
-} from './Viewport/component';
+import { Viewport } from './viewport.component';
 import { Pad } from './pad.component';
 import { Headline } from './headline.component';
 import {
@@ -12,9 +8,13 @@ import {
   HeadlinePositionsBuilder,
   HeadlinePropsBuilder,
 } from './headline-props.builder';
+import {
+  ViewportPositionBuilder,
+  ViewportPropsBuilder,
+} from './viewport-props.builder';
 
 class ViewportProps {
-  private static position = new PositionBuilder()
+  private static position = new ViewportPositionBuilder()
     .withPortrait('right')
     .withLandscape('center')
     .withDesktop('center')

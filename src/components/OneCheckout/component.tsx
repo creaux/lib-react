@@ -7,7 +7,7 @@ import { Button, Variants } from '../forms/Button';
 import { Shipping } from '../forms/Shipping';
 import { Stripe } from '../forms/Stripe';
 import { ShippingState } from '../forms/Shipping/container';
-import { Viewport } from '../Viewport/component';
+import { Viewport } from '../viewport.component';
 import { I18nConsumer } from '../I18n/component';
 import defaultTranslations from './en.json';
 

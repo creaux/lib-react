@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Viewport } from './component';
-import { Headline } from '../headline.component';
+import { Viewport } from './viewport.component';
+import { Headline } from './headline.component';
 import {
   HeadlinePositionBuilder,
   HeadlinePositionsBuilder,
   HeadlinePropsBuilder,
-} from '../headline-props.builder';
+} from './headline-props.builder';
 
 storiesOf('Atoms/Viewport', module).add('default', () => {
   const viewportProps = {
