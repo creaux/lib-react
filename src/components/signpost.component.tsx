@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Viewport } from './Viewport';
+import { Viewport } from './viewport.component';
 import { ImageComponent as Image } from './image.component';
 import { ImageComponentProps as ImageProps } from './image.component';
 import { Button } from './forms/Button/component';
