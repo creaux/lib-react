@@ -37,25 +37,27 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
       defaultTranslations={defaultTranslations}
     >
       {(translations) => (
-        <Viewport className="d-flex align-items-md-center">
-          <div className="container-fluid one-checkout">
-            <div className="row justify-content-between">
-              <div className="col-md-5 col-s-12 justify-content-center d-flex flex-column pb-xs-4">
-                <Button variant={Variants.LINK} className="align-self-start">
-                  {translations.BUTTON_GO_BACK}
-                </Button>
-                <ProductDescription {...product}>
-                  <Image {...asBackgroundProps} />
-                </ProductDescription>
-              </div>
-              <div className="col-md-6 col-s-12 justify-content-center d-flex flex-column border-left-1">
-                <div className="mb-4">
-                  <Shipping
-                    onFormChange={handleShippingChange}
-                    onFormValidChange={handleShippingValidChange}
-                  />
+        <Viewport>
+          <div className="d-flex align-items-md-center">
+            <div className="container-fluid one-checkout">
+              <div className="row justify-content-between">
+                <div className="col-md-5 col-s-12 justify-content-center d-flex flex-column pb-xs-4">
+                  <Button variant={Variants.LINK} className="align-self-start">
+                    {translations.BUTTON_GO_BACK}
+                  </Button>
+                  <ProductDescription {...product}>
+                    <Image {...asBackgroundProps} />
+                  </ProductDescription>
                 </div>
-                <Stripe disabled={!isShippingValid} onSubmit={() => {}} />
+                <div className="col-md-6 col-s-12 justify-content-center d-flex flex-column border-left-1">
+                  <div className="mb-4">
+                    <Shipping
+                      onFormChange={handleShippingChange}
+                      onFormValidChange={handleShippingValidChange}
+                    />
+                  </div>
+                  <Stripe disabled={!isShippingValid} onSubmit={() => {}} />
+                </div>
               </div>
             </div>
           </div>

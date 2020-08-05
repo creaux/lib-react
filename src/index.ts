@@ -42,16 +42,8 @@ export { NavigationClaimPropsBuilder } from './components/navigation-claim.props
 export { Raiser } from './components/Raiser';
 export { Steps } from './components/Steps';
 export { Headline } from './components/headline.component';
-export type {
-  HeadlinePosition,
-  HeadlinePositions,
-  HeadlineProps,
-} from './components/headline.component';
-export {
-  HeadlinePositionBuilder,
-  HeadlinePositionsBuilder,
-  HeadlinePropsBuilder,
-} from './components/headline-props.builder';
+export type { HeadlineProps } from './components/headline.component';
+export { HeadlinePropsBuilder } from './components/headline-props.builder';
 // Organisms
 export { Blog } from './components/Blog';
 export { Order } from './components/Order';
@@ -72,14 +64,8 @@ export { Dots } from './components/dots.component';
 export type { DotsProps } from './components/dots.component';
 export { DotsPropsBuilder } from './components/dots.props.builder';
 export { Viewport } from './components/viewport.component';
-export type {
-  ViewportProps,
-  ViewportPositionInterface,
-} from './components/viewport.component';
-export {
-  ViewportPropsBuilder,
-  ViewportPositionBuilder,
-} from './components/viewport-props.builder';
+export type { ViewportProps } from './components/viewport.component';
+export { ViewportPropsBuilder } from './components/viewport-props.builder';
 // Moleculs
 export { Abode } from './components/forms/Abode';
 export { Address } from './components/forms/Address';

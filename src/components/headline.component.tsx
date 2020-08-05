@@ -1,47 +1,35 @@
 import React, { FunctionComponent } from 'react';
+import { mapBreakpointCoordinatesToStyle } from './map-breakpoint-coordinates-to-style.hoc';
+import { compose, setDisplayName } from 'recompose';
+import {
+  MapPropsToCssVariablesInputProps,
+  MapPropsToCssVariablesOutputProps,
+} from './map-breakpoint-coordinates-to-style.props';
 
-export interface HeadlinePosition {
-  x: number;
-  y: number;
-}
-
-export interface HeadlinePositions {
-  xs: HeadlinePosition;
-  sm: HeadlinePosition;
-  md: HeadlinePosition;
-  lg: HeadlinePosition;
-  xl: HeadlinePosition;
-}
-
-export interface HeadlineProps {
+interface HeadlineComponentProps extends MapPropsToCssVariablesOutputProps {
   title: string;
   paragraph: string;
-  positions: HeadlinePositions;
 }
 
-export const Headline: FunctionComponent<HeadlineProps> = ({
-  positions,
+const HeadlineComponent: FunctionComponent<HeadlineComponentProps> = ({
+  style,
   title,
   paragraph,
 }) => {
-  const style = {
-    '--headline__xs-x-position': positions.xs.x,
-    '--headline__xs-y-position': positions.xs.y,
-    '--headline__sm-x-position': positions.sm.x,
-    '--headline__sm-y-position': positions.sm.y,
-    '--headline__md-x-position': positions.md.x,
-    '--headline__md-y-position': positions.md.y,
-    '--headline__lg-x-position': positions.lg.x,
-    '--headline__lg-y-position': positions.lg.y,
-    '--headline__xl-x-position': positions.xl.x,
-    '--headline__xl-y-position': positions.xl.y,
-  };
-
   return (
-    // @ts-ignore
     <div className="headline" style={style}>
       <h1>{title}</h1>
       <p>{paragraph}</p>
     </div>
   );
 };
+
+export interface HeadlineProps extends MapPropsToCssVariablesInputProps {
+  title: string;
+  paragraph: string;
+}
+
+export const Headline = compose<HeadlineComponentProps, HeadlineProps>(
+  mapBreakpointCoordinatesToStyle,
+  setDisplayName('Headline')
+)(HeadlineComponent);

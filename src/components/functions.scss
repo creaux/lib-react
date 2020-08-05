@@ -1,0 +1,4 @@
+
+@function map-get-second($map, $first, $second) {
+  @return map-get(map-get($map, $first), $second);
+}

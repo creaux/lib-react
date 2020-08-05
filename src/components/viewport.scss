@@ -1,5 +1,37 @@
-$portrait-coordinates: var(--Viewport__xPosition-portrait);
-$landscape-coordinates: var(--Viewport__xPosition-landscape);
+@import "./functions";
+
+$xs: (
+  x: var(--Viewport__coordinates-xs-x),
+  y: var(--Viewport__coordinates-xs-y)
+);
+
+$sm: (
+  x: var(--Viewport__coordinates-sm-x),
+  y: var(--Viewport__coordinates-sm-y)
+);
+
+$md: (
+  x: var(--Viewport__coordinates-md-x),
+  y: var(--Viewport__coordinates-md-y)
+);
+
+$lg: (
+  x: var(--Viewport__coordinates-lg-x),
+  y: var(--Viewport__coordinates-lg-y)
+);
+
+$xl: (
+  x: var(--Viewport__coordinates-xl-x),
+  y: var(--Viewport__coordinates-xl-y)
+);
+
+$coordinates: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl
+);
 
 .viewport {
   position: relative;
@@ -7,12 +39,36 @@ $landscape-coordinates: var(--Viewport__xPosition-landscape);
   width: 100vw;
   background-size: cover;
   overflow: hidden;
+}
 
-  @include media-breakpoint-down(sm) {
-    background-position-x: $portrait-coordinates;
+.viewport {
+  @include media-breakpoint-down(xs) {
+    background-position-x: map-get-second($coordinates, 'xs', 'x');
+    background-position-y: map-get-second($coordinates, 'xs', 'y');
+  }
+
+  @include media-breakpoint-up(xs) {
+    background-position-x: map-get-second($coordinates, 'xs', 'x');
+    background-position-y: map-get-second($coordinates, 'xs', 'y');
   }
 
   @include media-breakpoint-up(sm) {
-    background-position-x: $landscape-coordinates;
+    background-position-x: map-get-second($coordinates, 'sm', 'x');
+    background-position-y: map-get-second($coordinates, 'sm', 'y');
+  }
+
+  @include media-breakpoint-up(md) {
+    background-position-x: map-get-second($coordinates, 'md', 'x');
+    background-position-y: map-get-second($coordinates, 'md', 'y');
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-position-x: map-get-second($coordinates, 'lg', 'x');
+    background-position-y: map-get-second($coordinates, 'lg', 'y');
+  }
+
+  @include media-breakpoint-up(xl) {
+    background-position-x: map-get-second($coordinates, 'xl', 'x');
+    background-position-y: map-get-second($coordinates, 'xl', 'y');
   }
 }

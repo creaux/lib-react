@@ -12,7 +12,7 @@ import React, {
   useState,
 } from 'react';
 import { Dots } from './dots.component';
-import { provideIsTouchDevice } from '../hocs/provideIsTouchDevice';
+import { provideIsTouchDevice } from './provide-is-touch-device.hoc';
 import { useStateRef } from '../hooks/use-current-state.hook';
 
 export interface PadProps {
