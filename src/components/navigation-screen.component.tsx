@@ -1,24 +1,25 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { Conditional } from './Conditional/component';
-import { Viewport } from './viewport.component';
+import { NavigationScreenContent } from './navigation-screen-content.component';
+import { Guard } from './Guard/component';
 
 export interface NavigationScreenProps {
-  isOpen: boolean;
+  isOpen?: boolean;
   children: ReactNode;
 }
 
 export const NavigationScreen: FunctionComponent<NavigationScreenProps> = ({
-  isOpen,
+  isOpen = false,
   children,
 }) => {
   return (
     <Conditional
       condition={isOpen}
       when={() => (
-        <Viewport>
-          <div className="p-4">{children}</div>
-        </Viewport>
+        <div className="p-4 flex-grow-1 d-flex align-items-center justify-content-center">
+          <Guard Component={NavigationScreenContent}>{children}</Guard>
+        </div>
       )}
-    ></Conditional>
+    />
   );
 };

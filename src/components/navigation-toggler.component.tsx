@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
 export interface NavigationTogglerProps {
-  onToggle: () => void;
+  onToggle?: () => void;
 }
 
 export const NavigationToggler: FunctionComponent<NavigationTogglerProps> = ({
@@ -14,6 +14,6 @@ export const NavigationToggler: FunctionComponent<NavigationTogglerProps> = ({
     aria-label="Toggle navigation"
     onClick={handleToggle}
   >
-    <span className="navbar-toggler-icon"></span>
+    <span className="navbar-toggler-icon" />
   </button>
 );

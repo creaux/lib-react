@@ -7,17 +7,21 @@ import {
   MapPropsToCssVariablesInputProps,
   MapPropsToCssVariablesOutputProps,
 } from './map-breakpoint-coordinates-to-style.props';
+import { Position } from '../schema/position.enum';
 
 const { assign } = Object;
 
-interface ViewportComponentProps extends MapPropsToCssVariablesOutputProps {}
+interface ViewportComponentProps extends MapPropsToCssVariablesOutputProps {
+  className: string;
+}
 
 const ViewportComponent: FunctionComponent<ViewportComponentProps> = ({
   style,
   children,
+  className,
 }) => {
   return (
-    <div className={cx('viewport')} style={style}>
+    <div className={cx('viewport', className)} style={style}>
       {children}
     </div>
   );
@@ -25,6 +29,7 @@ const ViewportComponent: FunctionComponent<ViewportComponentProps> = ({
 
 export interface ViewportProps extends MapPropsToCssVariablesInputProps {
   backgroundImage?: string;
+  position?: Position;
 }
 
 export const Viewport: ComponentClass<ViewportProps> = compose<
@@ -34,7 +39,7 @@ export const Viewport: ComponentClass<ViewportProps> = compose<
   mapBreakpointCoordinatesToStyle,
   setDisplayName('Viewport'),
   mapProps((props: ViewportComponentProps & ViewportProps) => {
-    const omittedProps = omit(props, 'background', 'style');
+    const omittedProps = omit(props, 'background', 'style', 'position');
 
     let style = {};
 
@@ -43,9 +48,13 @@ export const Viewport: ComponentClass<ViewportProps> = compose<
     }
 
     if (props.backgroundImage) {
-      assign(style, { backgroundImage: `url(${props.backgroundImage})` });
+      assign(style, {
+        backgroundImage: `url(${props.backgroundImage})`,
+      });
     }
 
-    return { ...omittedProps, style };
+    const className = cx({ [props.position as Position]: !!props.position });
+
+    return { ...omittedProps, style, className };
   })
 )(ViewportComponent);

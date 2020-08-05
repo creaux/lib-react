@@ -263,9 +263,16 @@ exports[`Storyshots Atoms/Viewport default 1`] = `
   className="viewport"
   style={
     Object {
-      "--Viewport__xPosition-desktop": "center",
-      "--Viewport__xPosition-landscape": "center",
-      "--Viewport__xPosition-portrait": "right",
+      "--Viewport__breakpointCoordinates-lg-x": "right",
+      "--Viewport__breakpointCoordinates-lg-y": "center",
+      "--Viewport__breakpointCoordinates-md-x": "right",
+      "--Viewport__breakpointCoordinates-md-y": "center",
+      "--Viewport__breakpointCoordinates-sm-x": "right",
+      "--Viewport__breakpointCoordinates-sm-y": "center",
+      "--Viewport__breakpointCoordinates-xl-x": "right",
+      "--Viewport__breakpointCoordinates-xl-y": "center",
+      "--Viewport__breakpointCoordinates-xs-x": "right",
+      "--Viewport__breakpointCoordinates-xs-y": "center",
       "backgroundImage": "url(https://picsum.photos/id/100/2500/1656)",
     }
   }
@@ -274,16 +281,16 @@ exports[`Storyshots Atoms/Viewport default 1`] = `
     className="headline"
     style={
       Object {
-        "--headline__lg-x-position": 5,
-        "--headline__lg-y-position": 5,
-        "--headline__md-x-position": 5,
-        "--headline__md-y-position": 5,
-        "--headline__sm-x-position": 5,
-        "--headline__sm-y-position": 5,
-        "--headline__xl-x-position": 5,
-        "--headline__xl-y-position": 5,
-        "--headline__xs-x-position": 5,
-        "--headline__xs-y-position": 5,
+        "--Headline__breakpointCoordinates-lg-x": "right",
+        "--Headline__breakpointCoordinates-lg-y": "center",
+        "--Headline__breakpointCoordinates-md-x": "right",
+        "--Headline__breakpointCoordinates-md-y": "center",
+        "--Headline__breakpointCoordinates-sm-x": "right",
+        "--Headline__breakpointCoordinates-sm-y": "center",
+        "--Headline__breakpointCoordinates-xl-x": "right",
+        "--Headline__breakpointCoordinates-xl-y": "center",
+        "--Headline__breakpointCoordinates-xs-x": "right",
+        "--Headline__breakpointCoordinates-xs-y": "center",
       }
     }
   >
@@ -1619,74 +1626,123 @@ exports[`Storyshots Moleculs/Carousel simple 1`] = `
 
 exports[`Storyshots Moleculs/Navigation buttons 1`] = `
 <nav
-  className="navbar navbar-expand-lg bg-light navbar-light justify-content-between fixed-bottom"
+  className="navbar navbar-expand-lg bg-light navbar-light justify-content-between fixed-bottom flex-column"
 >
   <div
-    className="navbar-brand"
+    className="w-100 d-flex flex-row justify-content-between"
   >
-    This is claim in navigation
-  </div>
-  <form
-    className="form-inline"
-  >
-    <button
-      className="btn btn-primary"
-      disabled={false}
-      type="button"
+    <div
+      className="navbar-brand"
     >
-      Click Me!
-    </button>
-  </form>
+      This is claim in navigation
+    </div>
+    <form
+      className="form-inline"
+    >
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        type="button"
+      >
+        Click Me!
+      </button>
+    </form>
+  </div>
 </nav>
 `;
 
 exports[`Storyshots Moleculs/Navigation default 1`] = `
 <nav
-  className="navbar navbar-expand-lg bg-light navbar-light"
+  className="navbar navbar-expand-lg bg-light navbar-light flex-column"
 >
-  <a
-    className="navbar-brand"
-    href="#home"
+  <div
+    className="w-100 d-flex flex-row justify-content-between"
   >
     <a
-      className="svg"
+      className="navbar-brand"
       href="#home"
     >
-      <svg
-        styles={
-          Object {
-            "fill": "black",
+      <a
+        className="svg"
+        href="#home"
+      >
+        <svg
+          styles={
+            Object {
+              "fill": "black",
+            }
           }
-        }
-      >
-        svg.svg
-      </svg>
+        >
+          svg.svg
+        </svg>
+      </a>
     </a>
-  </a>
-  <ul
-    className="navbar-nav mr-auto"
+    <ul
+      className="navbar-nav mr-auto"
+    >
+      <li
+        className="nav-item active"
+      >
+        <a
+          className="nav-link"
+          href="#lorem"
+        >
+          Lorem
+        </a>
+      </li>
+      <li
+        className="nav-item active"
+      >
+        <a
+          className="nav-link"
+          href="#ipsum"
+        >
+          ipsum
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;
+
+exports[`Storyshots Moleculs/Navigation toggler 1`] = `
+<nav
+  className="navbar navbar-expand-lg bg-light navbar-light justify-content-between flex-column"
+>
+  <div
+    className="w-100 d-flex flex-row justify-content-between"
   >
-    <li
-      className="nav-item active"
+    <a
+      className="navbar-brand"
+      href="#home"
     >
       <a
-        className="nav-link"
-        href="#lorem"
+        className="svg"
+        href="#home"
       >
-        Lorem
+        <svg
+          styles={
+            Object {
+              "fill": "black",
+            }
+          }
+        >
+          svg.svg
+        </svg>
       </a>
-    </li>
-    <li
-      className="nav-item active"
+    </a>
+    <button
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler d-block"
+      onClick={[Function]}
+      type="button"
     >
-      <a
-        className="nav-link"
-        href="#ipsum"
-      >
-        ipsum
-      </a>
-    </li>
-  </ul>
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+  </div>
 </nav>
 `;
 
@@ -5008,9 +5064,16 @@ exports[`Storyshots Organisms/Pad default 1`] = `
         className="viewport"
         style={
           Object {
-            "--Viewport__xPosition-desktop": "center",
-            "--Viewport__xPosition-landscape": "center",
-            "--Viewport__xPosition-portrait": "right",
+            "--Viewport__breakpointCoordinates-lg-x": "right",
+            "--Viewport__breakpointCoordinates-lg-y": "center",
+            "--Viewport__breakpointCoordinates-md-x": "right",
+            "--Viewport__breakpointCoordinates-md-y": "center",
+            "--Viewport__breakpointCoordinates-sm-x": "right",
+            "--Viewport__breakpointCoordinates-sm-y": "center",
+            "--Viewport__breakpointCoordinates-xl-x": "right",
+            "--Viewport__breakpointCoordinates-xl-y": "center",
+            "--Viewport__breakpointCoordinates-xs-x": "right",
+            "--Viewport__breakpointCoordinates-xs-y": "center",
             "backgroundImage": "url(https://picsum.photos/id/100/2500/1656)",
           }
         }
@@ -5019,16 +5082,16 @@ exports[`Storyshots Organisms/Pad default 1`] = `
           className="headline"
           style={
             Object {
-              "--headline__lg-x-position": 5,
-              "--headline__lg-y-position": 5,
-              "--headline__md-x-position": 5,
-              "--headline__md-y-position": 5,
-              "--headline__sm-x-position": 5,
-              "--headline__sm-y-position": 5,
-              "--headline__xl-x-position": 5,
-              "--headline__xl-y-position": 5,
-              "--headline__xs-x-position": 5,
-              "--headline__xs-y-position": 5,
+              "--Headline__breakpointCoordinates-lg-x": "right",
+              "--Headline__breakpointCoordinates-lg-y": "center",
+              "--Headline__breakpointCoordinates-md-x": "right",
+              "--Headline__breakpointCoordinates-md-y": "center",
+              "--Headline__breakpointCoordinates-sm-x": "right",
+              "--Headline__breakpointCoordinates-sm-y": "center",
+              "--Headline__breakpointCoordinates-xl-x": "right",
+              "--Headline__breakpointCoordinates-xl-y": "center",
+              "--Headline__breakpointCoordinates-xs-x": "right",
+              "--Headline__breakpointCoordinates-xs-y": "center",
             }
           }
         >
@@ -5048,9 +5111,16 @@ exports[`Storyshots Organisms/Pad default 1`] = `
         className="viewport"
         style={
           Object {
-            "--Viewport__xPosition-desktop": "center",
-            "--Viewport__xPosition-landscape": "center",
-            "--Viewport__xPosition-portrait": "right",
+            "--Viewport__breakpointCoordinates-lg-x": "right",
+            "--Viewport__breakpointCoordinates-lg-y": "center",
+            "--Viewport__breakpointCoordinates-md-x": "right",
+            "--Viewport__breakpointCoordinates-md-y": "center",
+            "--Viewport__breakpointCoordinates-sm-x": "right",
+            "--Viewport__breakpointCoordinates-sm-y": "center",
+            "--Viewport__breakpointCoordinates-xl-x": "right",
+            "--Viewport__breakpointCoordinates-xl-y": "center",
+            "--Viewport__breakpointCoordinates-xs-x": "right",
+            "--Viewport__breakpointCoordinates-xs-y": "center",
             "backgroundImage": "url(https://picsum.photos/id/101/2500/1656)",
           }
         }
@@ -5059,16 +5129,16 @@ exports[`Storyshots Organisms/Pad default 1`] = `
           className="headline"
           style={
             Object {
-              "--headline__lg-x-position": 5,
-              "--headline__lg-y-position": 5,
-              "--headline__md-x-position": 5,
-              "--headline__md-y-position": 5,
-              "--headline__sm-x-position": 5,
-              "--headline__sm-y-position": 5,
-              "--headline__xl-x-position": 5,
-              "--headline__xl-y-position": 5,
-              "--headline__xs-x-position": 5,
-              "--headline__xs-y-position": 5,
+              "--Headline__breakpointCoordinates-lg-x": "right",
+              "--Headline__breakpointCoordinates-lg-y": "center",
+              "--Headline__breakpointCoordinates-md-x": "right",
+              "--Headline__breakpointCoordinates-md-y": "center",
+              "--Headline__breakpointCoordinates-sm-x": "right",
+              "--Headline__breakpointCoordinates-sm-y": "center",
+              "--Headline__breakpointCoordinates-xl-x": "right",
+              "--Headline__breakpointCoordinates-xl-y": "center",
+              "--Headline__breakpointCoordinates-xs-x": "right",
+              "--Headline__breakpointCoordinates-xs-y": "center",
             }
           }
         >
@@ -5088,9 +5158,16 @@ exports[`Storyshots Organisms/Pad default 1`] = `
         className="viewport"
         style={
           Object {
-            "--Viewport__xPosition-desktop": "center",
-            "--Viewport__xPosition-landscape": "center",
-            "--Viewport__xPosition-portrait": "right",
+            "--Viewport__breakpointCoordinates-lg-x": "right",
+            "--Viewport__breakpointCoordinates-lg-y": "center",
+            "--Viewport__breakpointCoordinates-md-x": "right",
+            "--Viewport__breakpointCoordinates-md-y": "center",
+            "--Viewport__breakpointCoordinates-sm-x": "right",
+            "--Viewport__breakpointCoordinates-sm-y": "center",
+            "--Viewport__breakpointCoordinates-xl-x": "right",
+            "--Viewport__breakpointCoordinates-xl-y": "center",
+            "--Viewport__breakpointCoordinates-xs-x": "right",
+            "--Viewport__breakpointCoordinates-xs-y": "center",
             "backgroundImage": "url(https://picsum.photos/id/102/2500/1656)",
           }
         }
@@ -5099,16 +5176,16 @@ exports[`Storyshots Organisms/Pad default 1`] = `
           className="headline"
           style={
             Object {
-              "--headline__lg-x-position": 5,
-              "--headline__lg-y-position": 5,
-              "--headline__md-x-position": 5,
-              "--headline__md-y-position": 5,
-              "--headline__sm-x-position": 5,
-              "--headline__sm-y-position": 5,
-              "--headline__xl-x-position": 5,
-              "--headline__xl-y-position": 5,
-              "--headline__xs-x-position": 5,
-              "--headline__xs-y-position": 5,
+              "--Headline__breakpointCoordinates-lg-x": "right",
+              "--Headline__breakpointCoordinates-lg-y": "center",
+              "--Headline__breakpointCoordinates-md-x": "right",
+              "--Headline__breakpointCoordinates-md-y": "center",
+              "--Headline__breakpointCoordinates-sm-x": "right",
+              "--Headline__breakpointCoordinates-sm-y": "center",
+              "--Headline__breakpointCoordinates-xl-x": "right",
+              "--Headline__breakpointCoordinates-xl-y": "center",
+              "--Headline__breakpointCoordinates-xs-x": "right",
+              "--Headline__breakpointCoordinates-xs-y": "center",
             }
           }
         >
@@ -5128,9 +5205,16 @@ exports[`Storyshots Organisms/Pad default 1`] = `
         className="viewport"
         style={
           Object {
-            "--Viewport__xPosition-desktop": "center",
-            "--Viewport__xPosition-landscape": "center",
-            "--Viewport__xPosition-portrait": "right",
+            "--Viewport__breakpointCoordinates-lg-x": "right",
+            "--Viewport__breakpointCoordinates-lg-y": "center",
+            "--Viewport__breakpointCoordinates-md-x": "right",
+            "--Viewport__breakpointCoordinates-md-y": "center",
+            "--Viewport__breakpointCoordinates-sm-x": "right",
+            "--Viewport__breakpointCoordinates-sm-y": "center",
+            "--Viewport__breakpointCoordinates-xl-x": "right",
+            "--Viewport__breakpointCoordinates-xl-y": "center",
+            "--Viewport__breakpointCoordinates-xs-x": "right",
+            "--Viewport__breakpointCoordinates-xs-y": "center",
             "backgroundImage": "url(https://picsum.photos/id/103/2500/1656)",
           }
         }
@@ -5139,16 +5223,16 @@ exports[`Storyshots Organisms/Pad default 1`] = `
           className="headline"
           style={
             Object {
-              "--headline__lg-x-position": 5,
-              "--headline__lg-y-position": 5,
-              "--headline__md-x-position": 5,
-              "--headline__md-y-position": 5,
-              "--headline__sm-x-position": 5,
-              "--headline__sm-y-position": 5,
-              "--headline__xl-x-position": 5,
-              "--headline__xl-y-position": 5,
-              "--headline__xs-x-position": 5,
-              "--headline__xs-y-position": 5,
+              "--Headline__breakpointCoordinates-lg-x": "right",
+              "--Headline__breakpointCoordinates-lg-y": "center",
+              "--Headline__breakpointCoordinates-md-x": "right",
+              "--Headline__breakpointCoordinates-md-y": "center",
+              "--Headline__breakpointCoordinates-sm-x": "right",
+              "--Headline__breakpointCoordinates-sm-y": "center",
+              "--Headline__breakpointCoordinates-xl-x": "right",
+              "--Headline__breakpointCoordinates-xl-y": "center",
+              "--Headline__breakpointCoordinates-xs-x": "right",
+              "--Headline__breakpointCoordinates-xs-y": "center",
             }
           }
         >
@@ -6891,241 +6975,75 @@ exports[`Storyshots Templates/OneCheckout default 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="viewport d-flex align-items-md-center"
+    className="viewport"
     style={Object {}}
   >
     <div
-      className="container-fluid one-checkout"
+      className="d-flex align-items-md-center"
     >
       <div
-        className="row justify-content-between"
+        className="container-fluid one-checkout"
       >
         <div
-          className="col-md-5 col-s-12 justify-content-center d-flex flex-column pb-xs-4"
+          className="row justify-content-between"
         >
-          <button
-            className="align-self-start btn btn-link"
-            disabled={false}
-            type="button"
-          >
-            Go back
-          </button>
           <div
-            className="d-flex align-items-center justify-content-center h-100"
+            className="col-md-5 col-s-12 justify-content-center d-flex flex-column pb-xs-4"
           >
-            <div
-              className="d-flex flex-column w-100"
+            <button
+              className="align-self-start btn btn-link"
+              disabled={false}
+              type="button"
             >
-              <h3>
-                Some title
-              </h3>
+              Go back
+            </button>
+            <div
+              className="d-flex align-items-center justify-content-center h-100"
+            >
               <div
-                className="d-flex justify-content-between flex-column justify-content-sm-center"
+                className="d-flex flex-column w-100"
               >
+                <h3>
+                  Some title
+                </h3>
                 <div
-                  className="align-self-center align-self-sm-start mb-sm-3"
+                  className="d-flex justify-content-between flex-column justify-content-sm-center"
                 >
-                  <span
-                    className="h1"
+                  <div
+                    className="align-self-center align-self-sm-start mb-sm-3"
                   >
-                    300
-                  </span>
-                </div>
-                <div
-                  className="image-background product-description-image rounded"
-                  style={
-                    Object {
-                      "backgroundImage": "url(https://picsum.photos/id/250/640/480)",
+                    <span
+                      className="h1"
+                    >
+                      300
+                    </span>
+                  </div>
+                  <div
+                    className="image-background product-description-image rounded"
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://picsum.photos/id/250/640/480)",
+                      }
                     }
-                  }
-                />
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          className="col-md-6 col-s-12 justify-content-center d-flex flex-column border-left-1"
-        >
           <div
-            className="mb-4"
+            className="col-md-6 col-s-12 justify-content-center d-flex flex-column border-left-1"
           >
-            <div
-              className="pb-4"
-            >
-              <h6>
-                <span>
-                  Delivery details
-                </span>
-              </h6>
-              <div
-                className="mb-1"
-              >
-                <fieldset
-                  name="person"
-                >
-                  <div
-                    className="input-group"
-                  >
-                    <div
-                      className="form-control"
-                    >
-                      <input
-                        className="border-0 w-100 bg-transparent"
-                        id="forname2"
-                        name="forname2"
-                        onChange={[Function]}
-                        placeholder="Karel"
-                        type="text"
-                        value=""
-                      />
-                    </div>
-                    <div
-                      className="form-control"
-                    >
-                      <input
-                        className="border-0 w-100 bg-transparent"
-                        id="surname2"
-                        name="surname2"
-                        onChange={[Function]}
-                        placeholder="Vomacka"
-                        type="text"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-              <fieldset
-                name="address"
-              >
-                <div
-                  className="input-group pb-1"
-                >
-                  <div
-                    className="form-control"
-                  >
-                    <input
-                      className="border-0 w-100 bg-transparent"
-                      id="street2"
-                      name="street2"
-                      onChange={[Function]}
-                      placeholder="Street"
-                      type="text"
-                      value=""
-                    />
-                  </div>
-                  <div
-                    className="form-control"
-                  >
-                    <input
-                      className="border-0 w-100 bg-transparent"
-                      id="streetNo2"
-                      name="streetNo2"
-                      onChange={[Function]}
-                      placeholder="Street No."
-                      type="text"
-                      value=""
-                    />
-                  </div>
-                  <div
-                    className="form-control"
-                  >
-                    <input
-                      className="border-0 w-100 bg-transparent"
-                      id="postcode2"
-                      name="postcode2"
-                      onChange={[Function]}
-                      placeholder="Postcode"
-                      type="text"
-                      value=""
-                    />
-                  </div>
-                </div>
-                <div
-                  className="input-group"
-                >
-                  <div
-                    className="form-control d-flex flex-column"
-                  >
-                    <select
-                      className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
-                      id="city2"
-                      onChange={[Function]}
-                      value=""
-                    >
-                      <option
-                        disabled={true}
-                        value=""
-                      >
-                        City
-                      </option>
-                      <option
-                        value="Prague"
-                      >
-                        Prague
-                      </option>
-                    </select>
-                  </div>
-                  <div
-                    className="form-control d-flex flex-column"
-                  >
-                    <select
-                      className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
-                      id="country2"
-                      onChange={[Function]}
-                      value=""
-                    >
-                      <option
-                        disabled={true}
-                        value=""
-                      >
-                        Country
-                      </option>
-                      <option
-                        value="Czechia"
-                      >
-                        Czechia
-                      </option>
-                    </select>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-            <div>
-              <h6>
-                <span>
-                  Billing details
-                </span>
-              </h6>
-              <div
-                className="mb-1"
-              >
-                <div
-                  className="form-check"
-                >
-                  <input
-                    checked={true}
-                    className="form-check-input"
-                    id="company"
-                    name="company"
-                    onChange={[Function]}
-                    type="checkbox"
-                  />
-                  <label
-                    className="form-check-label small"
-                    htmlFor="company"
-                  >
-                    My billing details are same as delivery details
-                  </label>
-                </div>
-              </div>
-            </div>
             <div
               className="mb-4"
             >
               <div
-                className="shipping__billing"
+                className="pb-4"
               >
+                <h6>
+                  <span>
+                    Delivery details
+                  </span>
+                </h6>
                 <div
                   className="mb-1"
                 >
@@ -7140,8 +7058,8 @@ exports[`Storyshots Templates/OneCheckout default 1`] = `
                       >
                         <input
                           className="border-0 w-100 bg-transparent"
-                          id="forname1"
-                          name="forname1"
+                          id="forname2"
+                          name="forname2"
                           onChange={[Function]}
                           placeholder="Karel"
                           type="text"
@@ -7153,48 +7071,10 @@ exports[`Storyshots Templates/OneCheckout default 1`] = `
                       >
                         <input
                           className="border-0 w-100 bg-transparent"
-                          id="surname1"
-                          name="surname1"
+                          id="surname2"
+                          name="surname2"
                           onChange={[Function]}
                           placeholder="Vomacka"
-                          type="text"
-                          value=""
-                        />
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-                <div
-                  className="mb-1"
-                >
-                  <fieldset
-                    name="company"
-                  >
-                    <div
-                      className="input-group"
-                    >
-                      <div
-                        className="form-control"
-                      >
-                        <input
-                          className="border-0 w-100 bg-transparent"
-                          id="company"
-                          name="company"
-                          onChange={[Function]}
-                          placeholder="Company"
-                          type="text"
-                          value=""
-                        />
-                      </div>
-                      <div
-                        className="form-control"
-                      >
-                        <input
-                          className="border-0 w-100 bg-transparent"
-                          id="vat"
-                          name="vat"
-                          onChange={[Function]}
-                          placeholder="VAT"
                           type="text"
                           value=""
                         />
@@ -7213,8 +7093,8 @@ exports[`Storyshots Templates/OneCheckout default 1`] = `
                     >
                       <input
                         className="border-0 w-100 bg-transparent"
-                        id="street1"
-                        name="street1"
+                        id="street2"
+                        name="street2"
                         onChange={[Function]}
                         placeholder="Street"
                         type="text"
@@ -7226,8 +7106,8 @@ exports[`Storyshots Templates/OneCheckout default 1`] = `
                     >
                       <input
                         className="border-0 w-100 bg-transparent"
-                        id="streetNo1"
-                        name="streetNo1"
+                        id="streetNo2"
+                        name="streetNo2"
                         onChange={[Function]}
                         placeholder="Street No."
                         type="text"
@@ -7239,8 +7119,8 @@ exports[`Storyshots Templates/OneCheckout default 1`] = `
                     >
                       <input
                         className="border-0 w-100 bg-transparent"
-                        id="postcode1"
-                        name="postcode1"
+                        id="postcode2"
+                        name="postcode2"
                         onChange={[Function]}
                         placeholder="Postcode"
                         type="text"
@@ -7256,7 +7136,7 @@ exports[`Storyshots Templates/OneCheckout default 1`] = `
                     >
                       <select
                         className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
-                        id="city1"
+                        id="city2"
                         onChange={[Function]}
                         value=""
                       >
@@ -7267,7 +7147,7 @@ exports[`Storyshots Templates/OneCheckout default 1`] = `
                           City
                         </option>
                         <option
-                          value="prague"
+                          value="Prague"
                         >
                           Prague
                         </option>
@@ -7278,7 +7158,7 @@ exports[`Storyshots Templates/OneCheckout default 1`] = `
                     >
                       <select
                         className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
-                        id="country1"
+                        id="country2"
                         onChange={[Function]}
                         value=""
                       >
@@ -7289,7 +7169,7 @@ exports[`Storyshots Templates/OneCheckout default 1`] = `
                           Country
                         </option>
                         <option
-                          value="czechia"
+                          value="Czechia"
                         >
                           Czechia
                         </option>
@@ -7298,79 +7178,287 @@ exports[`Storyshots Templates/OneCheckout default 1`] = `
                   </div>
                 </fieldset>
               </div>
-            </div>
-            <div>
-              <div
-                className="mb-1"
-              >
+              <div>
+                <h6>
+                  <span>
+                    Billing details
+                  </span>
+                </h6>
                 <div
-                  className="form-check"
+                  className="mb-1"
                 >
-                  <input
-                    checked={false}
-                    className="form-check-input"
-                    id="terms"
-                    name="terms"
-                    onChange={[Function]}
-                    type="checkbox"
-                  />
-                  <label
-                    className="form-check-label small"
-                    htmlFor="terms"
+                  <div
+                    className="form-check"
                   >
-                    I agree with terms and conditions
-                  </label>
+                    <input
+                      checked={true}
+                      className="form-check-input"
+                      id="company"
+                      name="company"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="form-check-label small"
+                      htmlFor="company"
+                    >
+                      My billing details are same as delivery details
+                    </label>
+                  </div>
                 </div>
               </div>
               <div
-                className="mb-1"
+                className="mb-4"
               >
                 <div
-                  className="form-check"
+                  className="shipping__billing"
                 >
-                  <input
-                    checked={false}
-                    className="form-check-input"
-                    id="data"
-                    name="data"
-                    onChange={[Function]}
-                    type="checkbox"
-                  />
-                  <label
-                    className="form-check-label small"
-                    htmlFor="data"
+                  <div
+                    className="mb-1"
                   >
-                    I agree that my data can be used by third-party
-                  </label>
+                    <fieldset
+                      name="person"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <div
+                          className="form-control"
+                        >
+                          <input
+                            className="border-0 w-100 bg-transparent"
+                            id="forname1"
+                            name="forname1"
+                            onChange={[Function]}
+                            placeholder="Karel"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                        <div
+                          className="form-control"
+                        >
+                          <input
+                            className="border-0 w-100 bg-transparent"
+                            id="surname1"
+                            name="surname1"
+                            onChange={[Function]}
+                            placeholder="Vomacka"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div
+                    className="mb-1"
+                  >
+                    <fieldset
+                      name="company"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <div
+                          className="form-control"
+                        >
+                          <input
+                            className="border-0 w-100 bg-transparent"
+                            id="company"
+                            name="company"
+                            onChange={[Function]}
+                            placeholder="Company"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                        <div
+                          className="form-control"
+                        >
+                          <input
+                            className="border-0 w-100 bg-transparent"
+                            id="vat"
+                            name="vat"
+                            onChange={[Function]}
+                            placeholder="VAT"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <fieldset
+                    name="address"
+                  >
+                    <div
+                      className="input-group pb-1"
+                    >
+                      <div
+                        className="form-control"
+                      >
+                        <input
+                          className="border-0 w-100 bg-transparent"
+                          id="street1"
+                          name="street1"
+                          onChange={[Function]}
+                          placeholder="Street"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        className="form-control"
+                      >
+                        <input
+                          className="border-0 w-100 bg-transparent"
+                          id="streetNo1"
+                          name="streetNo1"
+                          onChange={[Function]}
+                          placeholder="Street No."
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        className="form-control"
+                      >
+                        <input
+                          className="border-0 w-100 bg-transparent"
+                          id="postcode1"
+                          name="postcode1"
+                          onChange={[Function]}
+                          placeholder="Postcode"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="input-group"
+                    >
+                      <div
+                        className="form-control d-flex flex-column"
+                      >
+                        <select
+                          className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+                          id="city1"
+                          onChange={[Function]}
+                          value=""
+                        >
+                          <option
+                            disabled={true}
+                            value=""
+                          >
+                            City
+                          </option>
+                          <option
+                            value="prague"
+                          >
+                            Prague
+                          </option>
+                        </select>
+                      </div>
+                      <div
+                        className="form-control d-flex flex-column"
+                      >
+                        <select
+                          className="border-0 w-100 bg-transparent custom-select pl-0 pt-0 pb-0"
+                          id="country1"
+                          onChange={[Function]}
+                          value=""
+                        >
+                          <option
+                            disabled={true}
+                            value=""
+                          >
+                            Country
+                          </option>
+                          <option
+                            value="czechia"
+                          >
+                            Czechia
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="mb-1"
+                >
+                  <div
+                    className="form-check"
+                  >
+                    <input
+                      checked={false}
+                      className="form-check-input"
+                      id="terms"
+                      name="terms"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="form-check-label small"
+                      htmlFor="terms"
+                    >
+                      I agree with terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <div
+                  className="mb-1"
+                >
+                  <div
+                    className="form-check"
+                  >
+                    <input
+                      checked={false}
+                      className="form-check-input"
+                      id="data"
+                      name="data"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="form-check-label small"
+                      htmlFor="data"
+                    >
+                      I agree that my data can be used by third-party
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
+            <form
+              className="d-flex flex-column"
+              onSubmit={[Function]}
+            >
+              <div
+                className="form-control d-flex flex-column justify-content-center stripe-card-number"
+              />
+              <div
+                className="input-group mb-4"
+              >
+                <div
+                  className="form-control d-flex flex-column justify-content-center"
+                />
+                <div
+                  className="form-control d-flex flex-column justify-content-center"
+                />
+              </div>
+              <button
+                className="btn-block btn btn-primary"
+                disabled={true}
+                type="submit"
+              >
+                Pay
+              </button>
+            </form>
           </div>
-          <form
-            className="d-flex flex-column"
-            onSubmit={[Function]}
-          >
-            <div
-              className="form-control d-flex flex-column justify-content-center stripe-card-number"
-            />
-            <div
-              className="input-group mb-4"
-            >
-              <div
-                className="form-control d-flex flex-column justify-content-center"
-              />
-              <div
-                className="form-control d-flex flex-column justify-content-center"
-              />
-            </div>
-            <button
-              className="btn-block btn btn-primary"
-              disabled={true}
-              type="submit"
-            >
-              Pay
-            </button>
-          </form>
         </div>
       </div>
     </div>
@@ -7395,41 +7483,45 @@ exports[`Storyshots Templates/ProductDetail default 1`] = `
           className="w-100 position-relative"
         >
           <nav
-            className="navbar navbar-expand-lg bg-light navbar-light"
+            className="navbar navbar-expand-lg bg-light navbar-light flex-column"
           >
-            <a
-              className="navbar-brand"
-              href="#home"
+            <div
+              className="w-100 d-flex flex-row justify-content-between"
             >
               <a
-                className="svg"
+                className="navbar-brand"
                 href="#home"
               >
-                <svg
-                  styles={
-                    Object {
-                      "fill": "black",
-                    }
-                  }
-                >
-                  navigation-brand.svg
-                </svg>
-              </a>
-            </a>
-            <ul
-              className="navbar-nav mr-auto"
-            >
-              <li
-                className="nav-item active"
-              >
                 <a
-                  className="nav-link"
-                  href="http://"
+                  className="svg"
+                  href="#home"
                 >
-                  Get to know Animaux!
+                  <svg
+                    styles={
+                      Object {
+                        "fill": "black",
+                      }
+                    }
+                  >
+                    navigation-brand.svg
+                  </svg>
                 </a>
-              </li>
-            </ul>
+              </a>
+              <ul
+                className="navbar-nav mr-auto"
+              >
+                <li
+                  className="nav-item active"
+                >
+                  <a
+                    className="nav-link"
+                    href="http://"
+                  >
+                    Get to know Animaux!
+                  </a>
+                </li>
+              </ul>
+            </div>
           </nav>
         </div>
         <div
