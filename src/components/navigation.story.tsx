@@ -44,7 +44,7 @@ story.add('toggler', () => {
     <Navigation justifyContent={JUSTIFY_CONTENT.BETWEEN}>
       <NavigationBrand {...navigationBrandProps} />
       <NavigationToggler onToggle={() => {}} />
-      <NavigationScreen isOpen={true} />
+      <NavigationScreen isOpen={true}>Hello World!</NavigationScreen>
     </Navigation>
   );
 });
