@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { CarouselSlide, Variants, Slide, Slides } from './types';
+import {
+  CarouselSlide,
+  CarouselVariants,
+  Slide,
+  Slides,
+} from './carousel.types';
 import { Carousel as BsCarousel } from 'react-bootstrap';
 import defaultProps from 'recompose/defaultProps';
 import setDisplayName from 'recompose/setDisplayName';
@@ -48,28 +53,28 @@ const Items: React.FunctionComponent<ItemsProps> = setDisplayName('Items')(
 
 export interface CarouselProps {
   slides: Slides;
-  variant: Variants;
+  variant: CarouselVariants;
 }
 
 export const Carousel: React.FunctionComponent<CarouselProps> = ({
-  slides,
-  variant = Variants.SIMPLE,
-}) => (
-  <BsCarousel>
-    {slides.map((slide: Slide, i: number) => {
-      if (Array.isArray(slide)) {
-        return (
-          <BsCarousel.Item key={i}>
-            <Items slide={slide} />
-          </BsCarousel.Item>
-        );
-      }
+         slides,
+         variant = CarouselVariants.SIMPLE,
+       }) => (
+         <BsCarousel>
+           {slides.map((slide: Slide, i: number) => {
+             if (Array.isArray(slide)) {
+               return (
+                 <BsCarousel.Item key={i}>
+                   <Items slide={slide} />
+                 </BsCarousel.Item>
+               );
+             }
 
-      return (
-        <BsCarousel.Item key={i}>
-          <Item slide={slide} />
-        </BsCarousel.Item>
-      );
-    })}
-  </BsCarousel>
-);
+             return (
+               <BsCarousel.Item key={i}>
+                 <Item slide={slide} />
+               </BsCarousel.Item>
+             );
+           })}
+         </BsCarousel>
+       );

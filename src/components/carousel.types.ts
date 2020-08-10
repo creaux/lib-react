@@ -3,7 +3,7 @@ export interface CarouselSlide {
   src: string;
 }
 
-export enum Variants {
+export enum CarouselVariants {
   SIMPLE = 'simple',
   MULTI = 'multi',
 }
