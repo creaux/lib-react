@@ -23,7 +23,10 @@ export {
   NAVIGATION_SCHEME,
 } from './components/navigation.component';
 export { NavigationPropsBuilder } from './components/navigation.props.builder';
-export { NavigationBrand } from './components/navigation-brand.component';
+export {
+  NavigationBrand,
+  NavigationBrandColor,
+} from './components/navigation-brand.component';
 export type { NavigationBrandProps } from './components/navigation-brand.component';
 export { NavigationBrandPropsBuilder } from './components/navigation-brand.props.builder';
 export { ProductDescription } from './components/ProductDescription';
