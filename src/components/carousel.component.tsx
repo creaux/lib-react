@@ -57,24 +57,24 @@ export interface CarouselProps {
 }
 
 export const Carousel: React.FunctionComponent<CarouselProps> = ({
-         slides,
-         variant = CarouselVariants.SIMPLE,
-       }) => (
-         <BsCarousel>
-           {slides.map((slide: Slide, i: number) => {
-             if (Array.isArray(slide)) {
-               return (
-                 <BsCarousel.Item key={i}>
-                   <Items slide={slide} />
-                 </BsCarousel.Item>
-               );
-             }
+  slides,
+  variant = CarouselVariants.SIMPLE,
+}) => (
+  <BsCarousel>
+    {slides.map((slide: Slide, i: number) => {
+      if (Array.isArray(slide)) {
+        return (
+          <BsCarousel.Item key={i}>
+            <Items slide={slide} />
+          </BsCarousel.Item>
+        );
+      }
 
-             return (
-               <BsCarousel.Item key={i}>
-                 <Item slide={slide} />
-               </BsCarousel.Item>
-             );
-           })}
-         </BsCarousel>
-       );
+      return (
+        <BsCarousel.Item key={i}>
+          <Item slide={slide} />
+        </BsCarousel.Item>
+      );
+    })}
+  </BsCarousel>
+);

@@ -27,7 +27,7 @@
     "lib:translations": "rsync --include=\"*.json\" --verbose --recursive --exclude=\"*.*\" src/ build",
     "build": "npm run storybook:build",
     "deploy": "surge --project .storybook/build --domain lib-react.pyxis.media",
-    "chromatic": "npx chromatic --build-script-name storybook:build"
+    "chromatic": "npx chromatic --build-script-name storybook:build --exit-once-uploaded"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.17",
