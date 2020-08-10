@@ -10,7 +10,7 @@ import { NavigationBrand } from '../navigation-brand.component';
 storiesOf('Templates/ProductDetail', module).add('default', () => (
   <ProductDetail
     {...productDescriptionProps}
-    image="http://lorempixel.com/640/480/fashion"
+    image="https://picsum.photos/id/745/1600/1200"
   >
     <Navigation>
       <NavigationItems

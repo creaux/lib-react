@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
   SignpostComponent,
-  SignpostElementBuilder,
   SignpostComponentPropsBuilder,
+  SignpostElementBuilder,
 } from './signpost.component';
 import { ImageComponentPropsBuilder as ImagePropsBuilder } from './image.component';
 import { action } from '@storybook/addon-actions';
@@ -13,13 +13,13 @@ const props = new SignpostComponentPropsBuilder()
     new SignpostElementBuilder()
       .withImage(
         new ImagePropsBuilder()
-          .withSrc('https://picsum.photos/1024/768?random=1')
+          .withSrc('https://picsum.photos/id/402/1600/1200')
           .withRounded(false)
           .build()
       )
       .withOver(
         new ImagePropsBuilder()
-          .withSrc('https://picsum.photos/1024/768?random=5')
+          .withSrc('https://picsum.photos/id/403/1600/1200')
           .withRounded(false)
           .build()
       )
@@ -29,13 +29,13 @@ const props = new SignpostComponentPropsBuilder()
     new SignpostElementBuilder()
       .withImage(
         new ImagePropsBuilder()
-          .withSrc('https://picsum.photos/1024/768?random=2')
+          .withSrc('https://picsum.photos/id/405/1600/1200')
           .withRounded(false)
           .build()
       )
       .withOver(
         new ImagePropsBuilder()
-          .withSrc('https://picsum.photos/1024/768?random=6')
+          .withSrc('https://picsum.photos/id/406/1600/1200')
           .withRounded(false)
           .build()
       )
@@ -45,13 +45,13 @@ const props = new SignpostComponentPropsBuilder()
     new SignpostElementBuilder()
       .withImage(
         new ImagePropsBuilder()
-          .withSrc('https://picsum.photos/1024/768?random=3')
+          .withSrc('https://picsum.photos/id/409/1600/1200')
           .withRounded(false)
           .build()
       )
       .withOver(
         new ImagePropsBuilder()
-          .withSrc('https://picsum.photos/1024/768?random=7')
+          .withSrc('https://picsum.photos/id/410/1600/1200')
           .withRounded(false)
           .build()
       )
@@ -61,13 +61,13 @@ const props = new SignpostComponentPropsBuilder()
     new SignpostElementBuilder()
       .withImage(
         new ImagePropsBuilder()
-          .withSrc('https://picsum.photos/1024/768?random=4')
+          .withSrc('https://picsum.photos/id/411/1600/1200')
           .withRounded(false)
           .build()
       )
       .withOver(
         new ImagePropsBuilder()
-          .withSrc('https://picsum.photos/1024/768?random=8')
+          .withSrc('https://picsum.photos/id/412/1600/1200')
           .withRounded(false)
           .build()
       )

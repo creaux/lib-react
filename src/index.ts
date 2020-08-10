@@ -14,7 +14,9 @@ export { Sidescription } from './components/Sidescription';
 export { Svg } from './components/Svg';
 // Moleculs
 export { AddComponent as Add } from './components/add.component';
-export { Carousel } from './components/Carousel';
+export { Carousel } from './components/carousel.component';
+export type { CarouselProps } from './components/carousel.component';
+export { CarouselPropsBuilder } from './components/carousel.builder';
 export { List } from './components/List';
 export {
   Navigation,
