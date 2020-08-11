@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Navigation } from './navigation.component';
+import { Navigation, NAVIGATION_SCHEME } from './navigation.component';
 import { props } from './navigation.mocks';
 import { NavigationBrand } from './navigation-brand.component';
 import { props as navigationBrandProps } from './navigation-brand.mocks';
@@ -18,6 +18,7 @@ import {
   NavigationScreenContentLinkBuilder,
   NavigationScreenContentPropsBuilder,
 } from './navigation-screen-content.builder';
+import { Viewport } from './viewport.component';
 
 const story = storiesOf('Moleculs/Navigation', module);
 
@@ -74,12 +75,14 @@ const navigationScreenContentProps = new NavigationScreenContentPropsBuilder()
 
 story.add('toggler', () => {
   return (
-    <Navigation justifyContent={JUSTIFY_CONTENT.BETWEEN}>
-      <NavigationBrand {...navigationBrandProps} />
-      <NavigationToggler />
-      <NavigationScreen>
-        <NavigationScreenContent {...navigationScreenContentProps} />
-      </NavigationScreen>
-    </Navigation>
+    <Viewport backgroundImage="https://picsum.photos/id/450/1600/1200">
+      <Navigation justifyContent={JUSTIFY_CONTENT.BETWEEN} opacity={0.00001}>
+        <NavigationBrand {...navigationBrandProps} />
+        <NavigationToggler />
+        <NavigationScreen>
+          <NavigationScreenContent {...navigationScreenContentProps} />
+        </NavigationScreen>
+      </Navigation>
+    </Viewport>
   );
 });

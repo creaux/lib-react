@@ -102,7 +102,7 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
       className={cx(
         'navbar',
         'navbar-expand-lg',
-        isNotOpacity ? background : null,
+        isNotOpacity ? background : isScreenOpen ? background : null,
         navigationScheme,
         justifyContent,
         fixed,
