@@ -80,6 +80,8 @@ export { DotsPropsBuilder } from './components/dots.props.builder';
 export { Viewport } from './components/viewport.component';
 export type { ViewportProps } from './components/viewport.component';
 export { ViewportPropsBuilder } from './components/viewport-props.builder';
+export { Markdown } from './components/markdown.component';
+export type { MarkdownProps } from './components/markdown.component';
 // Moleculs
 export { Abode } from './components/forms/Abode';
 export { Address } from './components/forms/Address';
