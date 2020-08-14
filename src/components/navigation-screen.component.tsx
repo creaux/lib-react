@@ -16,7 +16,7 @@ export const NavigationScreen: FunctionComponent<NavigationScreenProps> = ({
     <Conditional
       condition={isOpen}
       when={() => (
-        <div className="p-4 flex-grow-1 d-flex align-items-center justify-content-center">
+        <div className="p-4 flex-grow-1 d-flex align-items-center justify-content-center navbar-screen">
           <Guard Component={NavigationScreenContent}>{children}</Guard>
         </div>
       )}

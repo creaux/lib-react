@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Navigation, NAVIGATION_SCHEME } from './navigation.component';
+import { Navigation, NavigationScheme } from './navigation.component';
 import { props } from './navigation.mocks';
 import { NavigationBrand } from './navigation-brand.component';
 import { props as navigationBrandProps } from './navigation-brand.mocks';
@@ -9,8 +9,8 @@ import { props as itemsProps } from './navigation-items.mocks';
 import { NavigationButtons } from './navigation-buttons.component';
 import { props as buttonProps } from './navigation-buttons.mocks';
 import { NavigationClaim } from './navigation-claim.component';
-import { JUSTIFY_CONTENT } from '../schema/justify-content.enum';
-import { FIXED } from '../schema/fixed.enum';
+import { JustifyContent } from '../schema/justify-content.enum';
+import { Fixed } from '../schema/fixed.enum';
 import { NavigationToggler } from './navigation-toggler.component';
 import { NavigationScreen } from './navigation-screen.component';
 import { NavigationScreenContent } from './navigation-screen-content.component';
@@ -19,29 +19,97 @@ import {
   NavigationScreenContentPropsBuilder,
 } from './navigation-screen-content.builder';
 import { Viewport } from './viewport.component';
+import { NavigationPropsBuilder } from './navigation.props.builder';
+import { ViewportPropsBuilder } from './viewport-props.builder';
+
+const viewportProps = new ViewportPropsBuilder()
+  .withBackground('https://picsum.photos/id/450/1600/1200')
+  .build();
 
 const story = storiesOf('Moleculs/Navigation', module);
 
 story.add('default', () => {
   return (
-    <Navigation {...props}>
-      <NavigationBrand {...navigationBrandProps} />
-      <NavigationItems {...itemsProps} />
-    </Navigation>
+    <Viewport {...viewportProps}>
+      <Navigation>
+        <NavigationBrand {...navigationBrandProps} />
+        <NavigationItems {...itemsProps} />
+      </Navigation>
+    </Viewport>
+  );
+});
+
+story.add('light', () => {
+  const props = new NavigationPropsBuilder()
+    .withNavigationScheme(NavigationScheme.LIGHT)
+    .build();
+  return (
+    <Viewport {...viewportProps}>
+      <Navigation {...props}>
+        <NavigationBrand {...navigationBrandProps} />
+        <NavigationItems {...itemsProps} />
+      </Navigation>
+    </Viewport>
+  );
+});
+
+story.add('dark', () => {
+  const props = new NavigationPropsBuilder()
+    .withNavigationScheme(NavigationScheme.DARK)
+    .build();
+  return (
+    <Viewport {...viewportProps}>
+      <Navigation {...props}>
+        <NavigationBrand {...navigationBrandProps} />
+        <NavigationItems {...itemsProps} />
+      </Navigation>
+    </Viewport>
+  );
+});
+
+story.add('light opacity', () => {
+  const props = new NavigationPropsBuilder()
+    .withNavigationScheme(NavigationScheme.LIGHT)
+    .withOpacity(0.2)
+    .build();
+  return (
+    <Viewport {...viewportProps}>
+      <Navigation {...props}>
+        <NavigationBrand {...navigationBrandProps} />
+        <NavigationItems {...itemsProps} />
+      </Navigation>
+    </Viewport>
+  );
+});
+
+story.add('dark opacity', () => {
+  const props = new NavigationPropsBuilder()
+    .withOpacity(0.2)
+    .withNavigationScheme(NavigationScheme.DARK)
+    .build();
+  return (
+    <Viewport {...viewportProps}>
+      <Navigation {...props}>
+        <NavigationBrand {...navigationBrandProps} />
+        <NavigationItems {...itemsProps} />
+      </Navigation>
+    </Viewport>
   );
 });
 
 story.add('buttons', () => {
   return (
-    <Navigation
-      {...props}
-      justifyContent={JUSTIFY_CONTENT.BETWEEN}
-      fixed={FIXED.BOTTOM}
-      opacity={0.5}
-    >
-      <NavigationClaim>This is claim in navigation</NavigationClaim>
-      <NavigationButtons {...buttonProps} />
-    </Navigation>
+    <Viewport {...viewportProps}>
+      <Navigation
+        {...props}
+        justifyContent={JustifyContent.BETWEEN}
+        fixed={Fixed.BOTTOM}
+        opacity={0.5}
+      >
+        <NavigationClaim>This is claim in navigation</NavigationClaim>
+        <NavigationButtons {...buttonProps} />
+      </Navigation>
+    </Viewport>
   );
 });
 
@@ -75,8 +143,8 @@ const navigationScreenContentProps = new NavigationScreenContentPropsBuilder()
 
 story.add('toggler', () => {
   return (
-    <Viewport backgroundImage="https://picsum.photos/id/450/1600/1200">
-      <Navigation justifyContent={JUSTIFY_CONTENT.BETWEEN} opacity={0.00001}>
+    <Viewport {...viewportProps}>
+      <Navigation justifyContent={JustifyContent.BETWEEN} opacity={0}>
         <NavigationBrand {...navigationBrandProps} />
         <NavigationToggler />
         <NavigationScreen>

@@ -1,15 +1,15 @@
-import { NAVIGATION_SCHEME, NavigationProps } from './navigation.component';
+import { NavigationProps, NavigationScheme } from './navigation.component';
 import { ReactNode } from 'react';
-import { BACKGROUND_COLOR } from '../schema/background-color.enum';
-import { JUSTIFY_CONTENT } from '../schema/justify-content.enum';
-import { FIXED } from '../schema/fixed.enum';
+import { BackgroundColor } from '../schema/background-color.enum';
+import { JustifyContent } from '../schema/justify-content.enum';
+import { Fixed } from '../schema/fixed.enum';
 
 export class NavigationPropsBuilder {
   private children!: ReactNode;
-  private background!: BACKGROUND_COLOR;
-  private navigationScheme!: NAVIGATION_SCHEME;
-  private justifyContent!: JUSTIFY_CONTENT;
-  private fixed!: FIXED;
+  private background!: BackgroundColor;
+  private navigationScheme!: NavigationScheme;
+  private justifyContent!: JustifyContent;
+  private fixed!: Fixed;
   private opacity!: number;
 
   public withChildren(children: ReactNode): NavigationPropsBuilder {
@@ -17,22 +17,22 @@ export class NavigationPropsBuilder {
     return this;
   }
 
-  public withBackground(background: BACKGROUND_COLOR): NavigationPropsBuilder {
+  public withBackground(background: BackgroundColor): NavigationPropsBuilder {
     this.background = background;
     return this;
   }
 
-  public withNavigationScheme(navigationScheme: NAVIGATION_SCHEME) {
+  public withNavigationScheme(navigationScheme: NavigationScheme) {
     this.navigationScheme = navigationScheme;
     return this;
   }
 
-  public withJustifyContent(justifyContent: JUSTIFY_CONTENT) {
+  public withJustifyContent(justifyContent: JustifyContent) {
     this.justifyContent = justifyContent;
     return this;
   }
 
-  public withFixed(fixed: FIXED): NavigationPropsBuilder {
+  public withFixed(fixed: Fixed): NavigationPropsBuilder {
     this.fixed = fixed;
     return this;
   }

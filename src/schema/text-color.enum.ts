@@ -1,4 +1,4 @@
-export enum TEXT_COLOR {
+export enum TextColor {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
   SUCCESS = 'success',

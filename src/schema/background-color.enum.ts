@@ -1,4 +1,4 @@
-export enum BACKGROUND_COLOR {
+export enum BackgroundColor {
   PRIMARY = `bg-primary`,
   SECONDARY = 'bg-secondary',
   SUCCESS = 'bg-success',

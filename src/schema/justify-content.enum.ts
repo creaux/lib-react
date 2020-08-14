@@ -1,4 +1,4 @@
-export enum JUSTIFY_CONTENT {
+export enum JustifyContent {
   START = 'justify-content-start',
   END = 'justify-content-end',
   CENTER = 'justify-content-center',
