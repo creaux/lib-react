@@ -76,7 +76,7 @@ export const invoicingProps: AbodeProps = assign({}, deliveryProps, {
   onFieldChange: () => () => {},
 });
 
-const story = storiesOf('Moleculs/forms/Abode', module);
+const story = storiesOf('Atomic Design/Moleculs/forms/Abode', module);
 
 story.add('invoicing/normal', () => (
   <Form type={FormType.NORMAL} onSubmit={() => {}}>

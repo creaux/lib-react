@@ -25,4 +25,6 @@ export const props = {
   ],
 };
 
-storiesOf('moleculs/List', module).add('default', () => <List {...props} />);
+storiesOf('Atomic Design/moleculs/List', module).add('default', () => (
+  <List {...props} />
+));

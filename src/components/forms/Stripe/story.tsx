@@ -4,7 +4,7 @@ import { Stripe } from './container';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-const story = storiesOf('Organisms/forms/Stripe', module);
+const story = storiesOf('Atomic Design/Organisms/forms/Stripe', module);
 
 story.add('default', () => {
   return (

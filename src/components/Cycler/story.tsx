@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { CyclerContainer as Cycler } from './container';
 
-storiesOf('Atoms/Cycler', module).add('default', () => {
+storiesOf('Atomic Design/Atoms/Cycler', module).add('default', () => {
   const props = {
     items: [
       {

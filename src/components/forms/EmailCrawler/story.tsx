@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { EmailContainer as Email, EmailProps } from './container';
 
-const stories = storiesOf('Organisms/forms/EmailCrawler', module);
+const stories = storiesOf('Atomic Design/Organisms/forms/EmailCrawler', module);
 
 const name = 'default';
 

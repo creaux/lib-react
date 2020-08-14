@@ -9,7 +9,7 @@ import {
   CoordinatesBuilder,
 } from './map-breakpoint-coordinates-to-style.builder';
 
-storiesOf('Atoms/Viewport', module).add('default', () => {
+storiesOf('Atomic Design/Atoms/Viewport', module).add('default', () => {
   const viewportProps: ViewportProps = new ViewportPropsBuilder()
     .withBackground('https://picsum.photos/id/100/2500/1656')
     .withBreakpointCoordinates(

@@ -77,7 +77,7 @@ const props = new SignpostComponentPropsBuilder()
   ])
   .build();
 
-const story = storiesOf('Moleculs/Signpost', module);
+const story = storiesOf('Atomic Design/Moleculs/Signpost', module);
 
 story.add('default', () => {
   return <SignpostComponent {...props} />;

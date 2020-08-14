@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Email } from './component';
 import { Form, FormType } from '../../../Form/component';
 
-const story = storiesOf('Atoms/forms/Email', module);
+const story = storiesOf('Atomic Design/Atoms/forms/Email', module);
 
 story.add('normal', () => (
   <Form type={FormType.NORMAL} onSubmit={() => {}}>

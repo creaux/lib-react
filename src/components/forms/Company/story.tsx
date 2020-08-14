@@ -20,7 +20,7 @@ const props: CompanyProps = {
   },
 };
 
-const story = storiesOf('Moleculs/forms/Company', module);
+const story = storiesOf('Atomic Design/Moleculs/forms/Company', module);
 
 story.add('normal', () => (
   <Form type={FormType.NORMAL} onSubmit={() => {}}>

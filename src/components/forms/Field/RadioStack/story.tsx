@@ -21,6 +21,6 @@ export const props = {
   ],
 };
 
-storiesOf('Atoms/forms/RadioStack', module).add('default', () => (
+storiesOf('Atomic Design/Atoms/forms/RadioStack', module).add('default', () => (
   <RadioStack {...props} />
 ));

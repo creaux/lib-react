@@ -10,7 +10,7 @@ import { asBackgroundProps } from '../image.component.mock';
 
 const onAdd = () => {};
 
-const story = storiesOf('Moleculs/ProductDescription', module);
+const story = storiesOf('Atomic Design/Moleculs/ProductDescription', module);
 
 story.add('default', () => (
   <ProductDescription {...props}>

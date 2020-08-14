@@ -7,16 +7,19 @@ import { ReactComponent as Brand } from '../navigation-brand.svg';
 import { NavigationItems } from '../navigation-items.component';
 import { NavigationBrand } from '../navigation-brand.component';
 
-storiesOf('Templates/ProductDetail', module).add('default', () => (
-  <ProductDetail
-    {...productDescriptionProps}
-    image="https://picsum.photos/id/745/1600/1200"
-  >
-    <Navigation>
-      <NavigationItems
-        items={[{ title: 'Get to know Animaux!', link: 'http://' }]}
-      />
-      <NavigationBrand brand={Brand} link="#home" />
-    </Navigation>
-  </ProductDetail>
-));
+storiesOf('Atomic Design/Templates/ProductDetail', module).add(
+  'default',
+  () => (
+    <ProductDetail
+      {...productDescriptionProps}
+      image="https://picsum.photos/id/745/1600/1200"
+    >
+      <Navigation>
+        <NavigationItems
+          items={[{ title: 'Get to know Animaux!', link: 'http://' }]}
+        />
+        <NavigationBrand brand={Brand} link="#home" />
+      </Navigation>
+    </ProductDetail>
+  )
+);

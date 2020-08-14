@@ -26,7 +26,7 @@ const viewportProps = new ViewportPropsBuilder()
   .withBackground('https://picsum.photos/id/450/1600/1200')
   .build();
 
-const story = storiesOf('Moleculs/Navigation', module);
+const story = storiesOf('Atomic Design/Moleculs/Navigation', module);
 
 story.add('default', () => {
   return (

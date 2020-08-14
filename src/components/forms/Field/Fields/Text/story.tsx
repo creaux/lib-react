@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Text } from './component';
 import { Form, FormType } from '../../../Form/component';
 
-storiesOf('Atoms/forms/Text', module)
+storiesOf('Atomic Design/Atoms/forms/Text', module)
   .add('normal', () => (
     <Form type={FormType.NORMAL} onSubmit={() => {}}>
       <Text

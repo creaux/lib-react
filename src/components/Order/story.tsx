@@ -10,7 +10,7 @@ import { action } from '@storybook/addon-actions';
 const listEmptyProps = Object.assign({}, listProps);
 listEmptyProps.items = [];
 
-storiesOf('Organisms/Order', module)
+storiesOf('Atomic Design/Organisms/Order', module)
   .add('default', () => (
     <Order bare="There is no product in the checkout.">
       <List {...listProps} onRemove={action('Clicked on remove!')} />

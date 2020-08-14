@@ -4,7 +4,7 @@ import { Shipping } from './container';
 import { Form, FormType } from '../Form/component';
 import { Button, Type } from '../Button';
 
-const story = storiesOf('Organisms/forms/Shipping', module);
+const story = storiesOf('Atomic Design/Organisms/forms/Shipping', module);
 
 interface ParentProps {
   formType: FormType;

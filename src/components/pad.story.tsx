@@ -94,7 +94,7 @@ export class HeadlineProps {
     );
 }
 
-storiesOf('Organisms/Pad', module).add('default', () => {
+storiesOf('Atomic Design/Organisms/Pad', module).add('default', () => {
   return (
     <>
       <Pad>

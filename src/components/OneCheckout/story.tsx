@@ -6,7 +6,7 @@ import { props as productDescriptionProps } from '../ProductDescription/mocks';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-const story = storiesOf('Templates/OneCheckout', module);
+const story = storiesOf('Atomic Design/Templates/OneCheckout', module);
 
 story.add('default', () => {
   return (

@@ -55,7 +55,7 @@ export const props: AddressProps = {
   onValidFieldChange: () => () => {},
 };
 
-const story = storiesOf('Moleculs/forms/Address', module);
+const story = storiesOf('Atomic Design/Moleculs/forms/Address', module);
 
 story.add('default', () => (
   <Form type={FormType.NORMAL} onSubmit={() => {}}>

@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 
 const { keys } = Object;
 
-const story = storiesOf('Atoms/forms/Button', module);
+const story = storiesOf('Atomic Design/Atoms/forms/Button', module);
 
 keys(Variants).forEach((key: string) => {
   story.add((Variants as any)[key], () => {

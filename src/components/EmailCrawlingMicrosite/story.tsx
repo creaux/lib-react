@@ -6,7 +6,10 @@ import {
 } from './component';
 import { asBackgroundProps } from '../image.component.mock';
 
-const stories = storiesOf('Templates/EmailCrawlingMicrosite', module);
+const stories = storiesOf(
+  'Atomic Design/Templates/EmailCrawlingMicrosite',
+  module
+);
 
 const name = 'default';
 

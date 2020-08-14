@@ -16,7 +16,7 @@ export const props: PersonProps = {
   onFieldValidChange: () => () => {},
 };
 
-const story = storiesOf('Moleculs/forms/Person', module);
+const story = storiesOf('Atomic Design/Moleculs/forms/Person', module);
 
 story.add('normal', () => (
   <Form type={FormType.NORMAL} onSubmit={() => {}}>
