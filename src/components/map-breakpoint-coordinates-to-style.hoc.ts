@@ -26,7 +26,11 @@ enum Coordinate {
 const mapCoordinatesToVariables = (name: string, props: Literal) => (
   variable: string | number | symbol
 ): Literal => {
-  if (typeof variable === 'string' && props.hasOwnProperty(variable)) {
+  if (
+    typeof variable === 'string' &&
+    props.hasOwnProperty(variable) &&
+    props[variable] !== undefined
+  ) {
     // --component__position-xs-x
     return {
       [`--${name}__${variable}-${Breakpoint.XS}-${Coordinate.X}`]: props[
@@ -73,10 +77,6 @@ export const mapBreakpointCoordinatesToStyle = <
   if (!Component.displayName) {
     throw new Error('Display name has to be defined');
   }
-  mapCoordinatesToVariables(
-    Component.displayName,
-    props
-  )('breakpointCoordinates');
   const cssVariables = mapCoordinatesToVariables(
     Component.displayName,
     props

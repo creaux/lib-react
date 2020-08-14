@@ -21,7 +21,7 @@ export { List } from './components/List';
 // Navigation
 export {
   Navigation,
-  NAVIGATION_SCHEME,
+  NavigationScheme,
 } from './components/navigation.component';
 export { NavigationPropsBuilder } from './components/navigation.props.builder';
 export {
@@ -95,7 +95,7 @@ export type { SignpostComponentProps as SignpostProps } from './components/signp
 // Organisms
 export { Shipping } from './components/forms/Shipping';
 // Scheme
-export { BACKGROUND_COLOR } from './schema/background-color.enum';
-export { TEXT_COLOR } from './schema/text-color.enum';
-export { JUSTIFY_CONTENT } from './schema/justify-content.enum';
-export { FIXED } from './schema/fixed.enum';
+export { BackgroundColor } from './schema/background-color.enum';
+export { TextColor } from './schema/text-color.enum';
+export { JustifyContent } from './schema/justify-content.enum';
+export { Fixed } from './schema/fixed.enum';

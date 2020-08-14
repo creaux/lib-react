@@ -19,9 +19,9 @@ import {
 } from './navigation-buttons.component';
 import { NavigationClaim } from './navigation-claim.component';
 import cx from 'classnames';
-import { BACKGROUND_COLOR } from '../schema/background-color.enum';
-import { JUSTIFY_CONTENT } from '../schema/justify-content.enum';
-import { FIXED } from '../schema/fixed.enum';
+import { BackgroundColor } from '../schema/background-color.enum';
+import { JustifyContent } from '../schema/justify-content.enum';
+import { Fixed } from '../schema/fixed.enum';
 import {
   NavigationScreen,
   NavigationScreenProps,
@@ -31,17 +31,27 @@ import {
   NavigationTogglerProps,
 } from './navigation-toggler.component';
 
-export enum NAVIGATION_SCHEME {
-  DARK = 'navbar-dark',
-  LIGHT = 'navbar-light',
+export enum NavigationScheme {
+  LIGHT,
+  DARK,
 }
+
+const navigationSchemeClassNameTuple = ['navbar-light', 'navbar-dark'];
+const navigationSchemeClassNameBgTuple = ['bg-light', 'bg-dark'];
+
+const navigationSchemeColorTuple = ['#000', '#FFF'];
+const isZeroOpacity = (opacity?: number) =>
+  typeof opacity === 'number' && opacity === 0;
+
+const navigationSchemeOpacityBased = (isScreenOpen: boolean) =>
+  !isScreenOpen ? NavigationScheme.DARK : NavigationScheme.LIGHT;
 
 export interface NavigationProps {
   children?: ReactNode;
-  background?: BACKGROUND_COLOR;
-  navigationScheme?: NAVIGATION_SCHEME;
-  justifyContent?: JUSTIFY_CONTENT;
-  fixed?: FIXED;
+  background?: BackgroundColor;
+  navigationScheme?: NavigationScheme;
+  justifyContent?: JustifyContent;
+  fixed?: Fixed;
   opacity?: number;
 }
 
@@ -49,7 +59,7 @@ const useOpacity = (opacity?: number) => {
   const ref = useRef() as MutableRefObject<HTMLBaseElement>;
   const [state, setState] = useState(true);
 
-  if (opacity) {
+  if (typeof opacity === 'number') {
     document.documentElement.style.setProperty(
       '--navbar-opacity',
       opacity.toString()
@@ -57,7 +67,7 @@ const useOpacity = (opacity?: number) => {
   }
 
   useLayoutEffect(() => {
-    if (ref && ref.current && opacity) {
+    if (ref && ref.current && typeof opacity === 'number') {
       const backgroundColor = window
         .getComputedStyle((ref.current as unknown) as Element)
         .getPropertyValue('background-color');
@@ -87,8 +97,7 @@ const isNavigationScreenContent = (children?: ReactElement) => {
 
 export const Navigation: FunctionComponent<NavigationProps> = ({
   children,
-  background = BACKGROUND_COLOR.LIGHT,
-  navigationScheme = NAVIGATION_SCHEME.LIGHT,
+  navigationScheme = NavigationScheme.LIGHT,
   justifyContent,
   fixed,
   opacity,
@@ -102,8 +111,20 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
       className={cx(
         'navbar',
         'navbar-expand-lg',
-        isNotOpacity ? background : isScreenOpen ? background : null,
-        navigationScheme,
+        isNotOpacity
+          ? navigationSchemeClassNameBgTuple[navigationScheme]
+          : isZeroOpacity(opacity)
+          ? isScreenOpen
+            ? navigationSchemeClassNameBgTuple[navigationScheme]
+            : null
+          : null,
+        isNotOpacity
+          ? navigationSchemeClassNameTuple[navigationScheme]
+          : isZeroOpacity(opacity)
+          ? navigationSchemeClassNameTuple[
+              navigationSchemeOpacityBased(isScreenOpen)
+            ]
+          : navigationSchemeClassNameTuple[navigationScheme],
         justifyContent,
         fixed,
         {
@@ -112,18 +133,32 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
           'vh-100':
             !isNavigationScreenContent(children as ReactElement) &&
             isScreenOpen,
+          'navbar-shadow': !isZeroOpacity(opacity) ? false : !isScreenOpen,
         }
       )}
       ref={(opacityRef as unknown) as MutableRefObject<HTMLBaseElement>}
     >
       <div
-        className={cx('w-100', {
+        className={cx('w-100', 'navbar-content', {
           'd-flex flex-row justify-content-between': !isNavigationScreenContent(
             children as ReactElement
           ),
         })}
       >
-        <Guard Component={NavigationBrand}>{children}</Guard>
+        <Guard
+          Component={NavigationBrand}
+          props={{
+            color: !isNotOpacity
+              ? isZeroOpacity(opacity)
+                ? navigationSchemeColorTuple[
+                    navigationSchemeOpacityBased(isScreenOpen)
+                  ]
+                : navigationSchemeColorTuple[navigationScheme]
+              : navigationSchemeColorTuple[navigationScheme],
+          }}
+        >
+          {children}
+        </Guard>
         <Guard Component={NavigationClaim}>{children}</Guard>
         <Guard<NavigationItemsProps>
           Component={NavigationItems}
