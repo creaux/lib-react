@@ -3,7 +3,7 @@ import { OnChange } from '../../types/form';
 import { FieldType, InputTypeEnum, IOption } from './types';
 import { FormType, FormTypeContext } from '../Form/component';
 import cx from 'classnames';
-import { Conditional } from '../../Conditional/component';
+import { Conditional } from '../../conditional.component';
 import { Message } from './hoc/validators/types';
 import { Input } from './Basics/Input/component';
 import { Switch } from '../../Switch/component';

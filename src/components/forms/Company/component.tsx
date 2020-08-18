@@ -4,7 +4,7 @@ import { OnFieldChange, OnValidFieldChange } from '../../types/form';
 import { ICompany } from './types';
 import { I18nConsumer } from '../../I18n/component';
 import defaultTranslations from './en.json';
-import { Conditional } from '../../Conditional/component';
+import { Conditional } from '../../conditional.component';
 import { FormTypeContext, isNormalForm } from '../Form/component';
 
 export interface CompanyProps extends ICompany {

@@ -18,6 +18,8 @@ export { Carousel } from './components/carousel.component';
 export type { CarouselProps } from './components/carousel.component';
 export { CarouselPropsBuilder } from './components/carousel.builder';
 export { List } from './components/List';
+export { Conditional } from './components/conditional.component';
+export type { ConditionalProps } from './components/conditional.component';
 // Navigation
 export {
   Navigation,

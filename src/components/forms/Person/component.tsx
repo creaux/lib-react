@@ -4,7 +4,7 @@ import { OnFieldChange, OnValidFieldChange } from '../../types/form';
 import { IPerson, PersonBuilder } from './types';
 import { I18nConsumer } from '../../I18n';
 import { Translations } from '../../I18n/component';
-import { Conditional } from '../../Conditional/component';
+import { Conditional } from '../../conditional.component';
 import { FormTypeContext, isNormalForm } from '../Form';
 import defaultTranslations from './en.json';
 

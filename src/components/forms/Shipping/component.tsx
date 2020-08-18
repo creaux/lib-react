@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { I18nConsumer } from '../../I18n/component';
 import defaultTranslations from './en.json';
 import { Checkbox } from '../Checkbox/index';
-import { Conditional } from '../../Conditional/component';
+import { Conditional } from '../../conditional.component';
 import { CSSTransition } from 'react-transition-group';
 
 interface ShippingProps extends IShippingGroups, IShippingFields {

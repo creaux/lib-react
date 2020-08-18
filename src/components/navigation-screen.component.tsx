@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-import { Conditional } from './Conditional/component';
+import { Conditional } from './conditional.component';
 import { NavigationScreenContent } from './navigation-screen-content.component';
 import { Guard } from './Guard/component';
 

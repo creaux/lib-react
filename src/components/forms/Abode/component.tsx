@@ -4,7 +4,7 @@ import { Company } from '../Company';
 import { Person } from '../Person';
 import { OnFieldChange, OnValidFieldChange } from '../../types/form';
 import { AbodeBuilder, IAbode } from './types';
-import { Conditional } from '../../Conditional/component';
+import { Conditional } from '../../conditional.component';
 
 export class AbodePropsBuilder extends AbodeBuilder {
   onFieldChange!: OnFieldChange<keyof IAbode>;

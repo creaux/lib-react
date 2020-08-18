@@ -4,7 +4,7 @@ import { OnFieldChange, OnValidFieldChange } from '../../types/form';
 import { IAddress } from './types';
 import { I18nConsumer } from '../../I18n';
 import { FormTypeContext, isNormalForm } from '../Form';
-import { Conditional } from '../../Conditional/component';
+import { Conditional } from '../../conditional.component';
 import defaultTranslations from './en.json';
 
 export interface AddressProps extends IAddress {

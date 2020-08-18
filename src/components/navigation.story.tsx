@@ -6,7 +6,7 @@ import { NavigationBrand } from './navigation-brand.component';
 import { props as navigationBrandProps } from './navigation-brand.mocks';
 import { NavigationItems } from './navigation-items.component';
 import { props as itemsProps } from './navigation-items.mocks';
-import { NavigationButtons } from './navigation-buttons.component';
+import { NavigationButtons } from './navigation-buttons.comp\onent';
 import { props as buttonProps } from './navigation-buttons.mocks';
 import { NavigationClaim } from './navigation-claim.component';
 import { JustifyContent } from '../schema/justify-content.enum';
