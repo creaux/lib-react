@@ -41,7 +41,10 @@ export type {
   NavigationItemsProps,
   NavigationItem,
 } from './components/navigation-items.component';
-export { NavigationItemsPropsBuilder } from './components/navigation-items.props.builder';
+export {
+  NavigationItemsPropsBuilder,
+  NavigationItemBuilder,
+} from './components/navigation-items.props.builder';
 export { NavigationClaim } from './components/navigation-claim.component';
 export type { NavigationClaimProps } from './components/navigation-claim.component';
 export { NavigationClaimPropsBuilder } from './components/navigation-claim.props.builder';
