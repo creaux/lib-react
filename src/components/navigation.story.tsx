@@ -21,6 +21,10 @@ import {
 import { Viewport } from './viewport.component';
 import { NavigationPropsBuilder } from './navigation.props.builder';
 import { ViewportPropsBuilder } from './viewport-props.builder';
+import {
+  NavigationItemBuilder,
+  NavigationItemsPropsBuilder,
+} from './navigation-items.props.builder';
 
 const viewportProps = new ViewportPropsBuilder()
   .withBackground('https://picsum.photos/id/450/1600/1200')
@@ -141,11 +145,37 @@ const navigationScreenContentProps = new NavigationScreenContentPropsBuilder()
   ])
   .build();
 
+const navigationItems = new NavigationItemsPropsBuilder()
+  .withItems([
+    new NavigationItemBuilder()
+      .withId('pure')
+      .withTitle('Pure')
+      .withLink('/pure')
+      .build(),
+    new NavigationItemBuilder()
+      .withId('romance')
+      .withTitle('Romance')
+      .withLink('/romance')
+      .build(),
+    new NavigationItemBuilder()
+      .withId('luxury')
+      .withTitle('Luxury')
+      .withLink('/luxury')
+      .build(),
+    new NavigationItemBuilder()
+      .withId('passion')
+      .withTitle('Passion')
+      .withLink('/passion')
+      .build(),
+  ])
+  .build();
+
 story.add('toggler', () => {
   return (
     <Viewport {...viewportProps}>
       <Navigation justifyContent={JustifyContent.BETWEEN} opacity={0}>
         <NavigationBrand {...navigationBrandProps} />
+        <NavigationItems {...navigationItems} />
         <NavigationToggler />
         <NavigationScreen>
           <NavigationScreenContent {...navigationScreenContentProps} />
