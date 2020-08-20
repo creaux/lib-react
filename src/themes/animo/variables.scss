@@ -26,6 +26,12 @@ $headings-font-weight: 600 !global;
 
 $navbar-light-toggler-border-color: rgba(0, 0, 0, 0);
 
+$primary: #F36772;
+$navbar-nav-link-padding-x: 1rem;
+$navbar-nav-link-padding-y: 0;
+$nav-link-padding-y: 0;
+$nav-link-padding-x: 1rem;
+
 // 1rem is default value of bootstrap $spacer
 // which is not available here
 $spacers: (

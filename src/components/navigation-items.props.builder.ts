@@ -34,13 +34,25 @@ export class NavigationItemBuilder {
 
 export class NavigationItemsPropsBuilder {
   private items!: NavigationItem[];
+  private active!: number;
+  private border!: boolean;
 
   withItems(items: NavigationItem[]): NavigationItemsPropsBuilder {
     this.items = items;
     return this;
   }
 
+  withActive(active: number): NavigationItemsPropsBuilder {
+    this.active = active;
+    return this;
+  }
+
+  withBorder(border: boolean): NavigationItemsPropsBuilder {
+    this.border = border;
+    return this;
+  }
+
   build(): NavigationItemsProps {
-    return { items: this.items };
+    return { items: this.items, active: this.active, border: this.border };
   }
 }

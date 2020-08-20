@@ -149,25 +149,27 @@ const navigationItems = new NavigationItemsPropsBuilder()
   .withItems([
     new NavigationItemBuilder()
       .withId('pure')
-      .withTitle('Pure')
+      .withTitle('PURE')
       .withLink('/pure')
       .build(),
     new NavigationItemBuilder()
       .withId('romance')
-      .withTitle('Romance')
+      .withTitle('ROMANCE')
       .withLink('/romance')
       .build(),
     new NavigationItemBuilder()
       .withId('luxury')
-      .withTitle('Luxury')
+      .withTitle('LUXURY')
       .withLink('/luxury')
       .build(),
     new NavigationItemBuilder()
       .withId('passion')
-      .withTitle('Passion')
+      .withTitle('PASSION')
       .withLink('/passion')
       .build(),
   ])
+  .withActive(1)
+  .withBorder(true)
   .build();
 
 story.add('toggler', () => {
