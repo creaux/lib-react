@@ -11,6 +11,7 @@ export interface SvgProps {
     label: string;
   };
   fill?: string;
+  width?: number;
 }
 
 /**
@@ -23,8 +24,14 @@ export const Svg: FunctionComponent<SvgProps> = ({
   link,
   aria = { label: undefined },
   fill = 'white',
+  width = 100,
 }) => (
-  <a href={link} aria-label={aria.label} className="svg">
+  <a
+    href={link}
+    aria-label={aria.label}
+    className="svg"
+    style={{ width: `${width}px` }}
+  >
     <Svg style={{ fill }} />
   </a>
 );

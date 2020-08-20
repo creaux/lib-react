@@ -13,7 +13,7 @@ export interface NavigationItemsProps {
 export const NavigationItems: FunctionComponent<NavigationItemsProps> = ({
   items,
 }) => (
-  <ul className="navbar-nav mr-auto">
+  <ul className="navbar-nav align-items-center">
     {items.map((item: NavigationItem, i) => (
       <li className="nav-item active" key={item.id || i}>
         <a className="nav-link" href={item.link}>

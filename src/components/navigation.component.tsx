@@ -125,7 +125,6 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
               navigationSchemeOpacityBased(isScreenOpen)
             ]
           : navigationSchemeClassNameTuple[navigationScheme],
-        justifyContent,
         fixed,
         {
           'flex-row': isNavigationScreenContent(children as ReactElement),
@@ -139,8 +138,8 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
       ref={(opacityRef as unknown) as MutableRefObject<HTMLBaseElement>}
     >
       <div
-        className={cx('w-100', 'navbar-content', {
-          'd-flex flex-row justify-content-between': !isNavigationScreenContent(
+        className={cx('w-100', 'navbar-content', justifyContent, {
+          'd-flex flex-row': !isNavigationScreenContent(
             children as ReactElement
           ),
         })}
