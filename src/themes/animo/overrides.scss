@@ -1,0 +1,14 @@
+a {
+  position: relative;
+}
+
+a:hover::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: $link-border-color;
+  width: 100%;
+  bottom: 1px;
+  left: 0;
+}
