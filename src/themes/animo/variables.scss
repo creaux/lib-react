@@ -32,6 +32,9 @@ $navbar-nav-link-padding-y: 0;
 $nav-link-padding-y: 0;
 $nav-link-padding-x: 1rem;
 
+$link-hover-decoration: none;
+$link-border-color: $primary;
+
 // 1rem is default value of bootstrap $spacer
 // which is not available here
 $spacers: (
