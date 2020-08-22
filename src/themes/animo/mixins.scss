@@ -1,0 +1,9 @@
+
+@mixin link-hover {
+  position: static;
+  content: "";
+  display: block;
+  height: .1em;
+  background-color: $link-border-color;
+  width: 100%;
+}

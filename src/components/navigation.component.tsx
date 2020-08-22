@@ -1,4 +1,5 @@
 import React, {
+  Children,
   FunctionComponent,
   MutableRefObject,
   ReactElement,
@@ -30,6 +31,7 @@ import {
   NavigationToggler,
   NavigationTogglerProps,
 } from './navigation-toggler.component';
+import CSSTransition from 'react-transition-group/CSSTransition';
 
 export enum NavigationScheme {
   LIGHT,
@@ -107,83 +109,93 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
   const [isScreenOpen, setIsScreenOpen] = useState(false);
 
   return (
-    <nav
-      className={cx(
-        'navbar',
-        'navbar-expand-lg',
-        isNotOpacity
-          ? navigationSchemeClassNameBgTuple[navigationScheme]
-          : isZeroOpacity(opacity)
-          ? isScreenOpen
+    <CSSTransition in={isScreenOpen} timeout={8900} classNames="navbar">
+      <nav
+        className={cx(
+          'navbar',
+          'navbar-expand-lg',
+          isNotOpacity
             ? navigationSchemeClassNameBgTuple[navigationScheme]
-            : null
-          : null,
-        isNotOpacity
-          ? navigationSchemeClassNameTuple[navigationScheme]
-          : isZeroOpacity(opacity)
-          ? navigationSchemeClassNameTuple[
-              navigationSchemeOpacityBased(isScreenOpen)
-            ]
-          : navigationSchemeClassNameTuple[navigationScheme],
-        fixed,
-        {
-          'flex-row': isNavigationScreenContent(children as ReactElement),
-          'flex-column': !isNavigationScreenContent(children as ReactElement),
-          'vh-100':
-            !isNavigationScreenContent(children as ReactElement) &&
-            isScreenOpen,
-          'navbar-shadow': !isZeroOpacity(opacity) ? false : !isScreenOpen,
-        }
-      )}
-      ref={(opacityRef as unknown) as MutableRefObject<HTMLBaseElement>}
-    >
-      <div
-        className={cx('w-100', 'navbar-content', justifyContent, {
-          'd-flex flex-row': !isNavigationScreenContent(
-            children as ReactElement
-          ),
-        })}
+            : isZeroOpacity(opacity)
+            ? isScreenOpen
+              ? navigationSchemeClassNameBgTuple[navigationScheme]
+              : null
+            : null,
+          isNotOpacity
+            ? navigationSchemeClassNameTuple[navigationScheme]
+            : isZeroOpacity(opacity)
+            ? navigationSchemeClassNameTuple[
+                navigationSchemeOpacityBased(isScreenOpen)
+              ]
+            : navigationSchemeClassNameTuple[navigationScheme],
+          fixed,
+          {
+            'flex-row': isNavigationScreenContent(children as ReactElement),
+            'flex-column': !isNavigationScreenContent(children as ReactElement),
+            'vh-100':
+              !isNavigationScreenContent(children as ReactElement) &&
+              isScreenOpen,
+            'navbar-shadow': !isZeroOpacity(opacity) ? false : !isScreenOpen,
+            'navbar-background': !isZeroOpacity(opacity),
+            'navbar-with-screen': Children.toArray(children).some(
+              (child: ReactNode) =>
+                child && (child as any).type === NavigationScreen
+            ),
+          }
+        )}
+        ref={(opacityRef as unknown) as MutableRefObject<HTMLBaseElement>}
       >
-        <Guard
-          Component={NavigationBrand}
-          props={{
-            color: !isNotOpacity
-              ? isZeroOpacity(opacity)
-                ? navigationSchemeColorTuple[
-                    navigationSchemeOpacityBased(isScreenOpen)
-                  ]
-                : navigationSchemeColorTuple[navigationScheme]
-              : navigationSchemeColorTuple[navigationScheme],
-          }}
+        <div
+          className={cx('w-100', 'navbar-content', justifyContent, {
+            'd-flex flex-row': !isNavigationScreenContent(
+              children as ReactElement
+            ),
+          })}
+        >
+          <Guard
+            Component={NavigationBrand}
+            props={{
+              color: !isNotOpacity
+                ? isZeroOpacity(opacity)
+                  ? navigationSchemeColorTuple[
+                      navigationSchemeOpacityBased(isScreenOpen)
+                    ]
+                  : navigationSchemeColorTuple[navigationScheme]
+                : navigationSchemeColorTuple[navigationScheme],
+            }}
+          >
+            {children}
+          </Guard>
+          <Guard Component={NavigationClaim}>{children}</Guard>
+          <Guard<NavigationItemsProps>
+            Component={NavigationItems}
+            when={['items', 'length']}
+          >
+            {children}
+          </Guard>
+          <Guard<NavigationButtonsProps>
+            Component={NavigationButtons}
+            when={['buttons', 'length']}
+          >
+            {children}
+          </Guard>
+          <Guard<NavigationTogglerProps>
+            Component={NavigationToggler}
+            props={{
+              onToggle: () => setIsScreenOpen(!isScreenOpen),
+              isExpanded: isScreenOpen,
+            }}
+          >
+            {children}
+          </Guard>
+        </div>
+        <Guard<NavigationScreenProps>
+          Component={NavigationScreen}
+          props={{ isOpen: isScreenOpen }}
         >
           {children}
         </Guard>
-        <Guard Component={NavigationClaim}>{children}</Guard>
-        <Guard<NavigationItemsProps>
-          Component={NavigationItems}
-          when={['items', 'length']}
-        >
-          {children}
-        </Guard>
-        <Guard<NavigationButtonsProps>
-          Component={NavigationButtons}
-          when={['buttons', 'length']}
-        >
-          {children}
-        </Guard>
-        <Guard<NavigationTogglerProps>
-          Component={NavigationToggler}
-          props={{ onToggle: () => setIsScreenOpen(!isScreenOpen) }}
-        >
-          {children}
-        </Guard>
-      </div>
-      <Guard<NavigationScreenProps>
-        Component={NavigationScreen}
-        props={{ isOpen: isScreenOpen }}
-      >
-        {children}
-      </Guard>
-    </nav>
+      </nav>
+    </CSSTransition>
   );
 };

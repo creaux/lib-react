@@ -71,7 +71,7 @@ stories.add('Example', () => (
     <h1>Headline h1</h1>
     <h2>Headline h2</h2>
     <p>
-      Lorem ipsum dolor sit amet, <a href="">consectetur</a> adipiscing elit.
+      Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipiscing elit.
       Vestibulum nec dapibus arcu. Donec eget eleifend augue. Nullam eget
       vestibulum turpis. Vivamus in elit lectus. Nam risus est, bibendum non mi
       eget, porta fermentum urna. In in mi a dui malesuada dictum. Quisque

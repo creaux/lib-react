@@ -1,0 +1,7 @@
+@import './mixins';
+
+a {
+  &:hover:not(.nav-brand)::after, .nav-item.active &::after {
+    @include link-hover;
+  }
+}
