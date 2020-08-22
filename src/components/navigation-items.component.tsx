@@ -10,13 +10,11 @@ export interface NavigationItem {
 export interface NavigationItemsProps {
   items: NavigationItem[];
   active?: number;
-  border?: boolean;
 }
 
 export const NavigationItems: FunctionComponent<NavigationItemsProps> = ({
   items,
   active,
-  border = false,
 }) => (
   <ul className="navbar-nav align-items-center">
     {items.map((item: NavigationItem, i) => (
@@ -27,13 +25,7 @@ export const NavigationItems: FunctionComponent<NavigationItemsProps> = ({
         key={item.id || i}
       >
         <a className={cx('nav-link')} href={item.link}>
-          <span
-            className={cx({
-              'nav-link__content--border': border,
-            })}
-          >
-            {item.title}
-          </span>
+          {item.title}
         </a>
       </li>
     ))}
