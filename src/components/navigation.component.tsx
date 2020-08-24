@@ -135,7 +135,7 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
             'vh-100':
               !isNavigationScreenContent(children as ReactElement) &&
               isScreenOpen,
-            'navbar-shadow': !isZeroOpacity(opacity) ? false : !isScreenOpen,
+            'navbar-shadow': !isZeroOpacity(opacity) ? false : true,
             'navbar-background': !isZeroOpacity(opacity),
             'navbar-with-screen': Children.toArray(children).some(
               (child: ReactNode) =>

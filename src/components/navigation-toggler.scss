@@ -1,6 +1,10 @@
 .navbar-toggler {
   background: none;
 
+  .navbar-bar {
+    transition: all 0.2s;
+  }
+
   .navbar-dark & .navbar-bar {
     background-color: $light;
   }
