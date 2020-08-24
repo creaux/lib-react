@@ -170,7 +170,6 @@ const navigationItems = new NavigationItemsPropsBuilder()
       .build(),
   ])
   .withActive(1)
-  .withBorder(true)
   .build();
 
 story.add('toggler', () => {

@@ -35,7 +35,6 @@ export class NavigationItemBuilder {
 export class NavigationItemsPropsBuilder {
   private items!: NavigationItem[];
   private active!: number;
-  private border!: boolean;
 
   withItems(items: NavigationItem[]): NavigationItemsPropsBuilder {
     this.items = items;
@@ -47,12 +46,7 @@ export class NavigationItemsPropsBuilder {
     return this;
   }
 
-  withBorder(border: boolean): NavigationItemsPropsBuilder {
-    this.border = border;
-    return this;
-  }
-
   build(): NavigationItemsProps {
-    return { items: this.items, active: this.active, border: this.border };
+    return { items: this.items, active: this.active };
   }
 }
