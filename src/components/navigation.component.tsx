@@ -109,7 +109,7 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
   const [isScreenOpen, setIsScreenOpen] = useState(false);
 
   return (
-    <CSSTransition in={isScreenOpen} timeout={8900} classNames="navbar">
+    <CSSTransition in={isScreenOpen} timeout={890} classNames="navbar">
       <nav
         className={cx(
           'navbar',
