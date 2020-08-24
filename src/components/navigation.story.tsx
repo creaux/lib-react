@@ -6,7 +6,7 @@ import { NavigationBrand } from './navigation-brand.component';
 import { props as navigationBrandProps } from './navigation-brand.mocks';
 import { NavigationItems } from './navigation-items.component';
 import { props as itemsProps } from './navigation-items.mocks';
-import { NavigationButtons } from './navigation-buttons.comp\onent';
+import { NavigationButtons } from './navigation-buttons.component';
 import { props as buttonProps } from './navigation-buttons.mocks';
 import { NavigationClaim } from './navigation-claim.component';
 import { JustifyContent } from '../schema/justify-content.enum';
@@ -93,9 +93,10 @@ story.add('dark opacity', () => {
     .build();
   return (
     <Viewport {...viewportProps}>
-      <Navigation {...props}>
+      <Navigation {...props} justifyContent={JustifyContent.BETWEEN}>
         <NavigationBrand {...navigationBrandProps} />
         <NavigationItems {...itemsProps} />
+        <NavigationToggler />
       </Navigation>
     </Viewport>
   );
@@ -169,7 +170,6 @@ const navigationItems = new NavigationItemsPropsBuilder()
       .build(),
   ])
   .withActive(1)
-  .withBorder(true)
   .build();
 
 story.add('toggler', () => {

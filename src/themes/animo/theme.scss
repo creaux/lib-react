@@ -3,6 +3,7 @@
 @import './fonts.scss';
 @import '~bootstrap/scss/bootstrap';
 @import './bootstrap-fixes';
+@import './design-system';
 // Components
 @import '../../components/Cycler/cycler';
 @import '../../components/image.component';
@@ -21,3 +22,4 @@
 @import '../../components/signpost.component';
 @import '../../components/navigation';
 @import '../../components/navigation-items';
+@import '../../components/navigation-toggler';
