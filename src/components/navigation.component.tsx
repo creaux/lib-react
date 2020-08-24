@@ -169,6 +169,7 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
           <Guard Component={NavigationClaim}>{children}</Guard>
           <Guard<NavigationItemsProps>
             Component={NavigationItems}
+            // @ts-ignore
             when={['items', 'length']}
           >
             {children}
