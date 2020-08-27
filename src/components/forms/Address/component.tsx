@@ -3,7 +3,13 @@ import { Text, Number, Alpha, Select } from '../Field';
 import { OnFieldChange, OnValidFieldChange } from '../../types/form';
 import { IAddress } from './types';
 import { I18nConsumer } from '../../I18n';
-import { FormTypeContext, isNormalForm } from '../Form';
+import {
+  FormTypeContext,
+  hasGridRow,
+  hasLabel,
+  hasPlaceholder,
+  isNormalForm,
+} from '../Form';
 import { Conditional } from '../../conditional.component';
 import defaultTranslations from './en.json';
 
@@ -57,16 +63,16 @@ export const Address: FunctionComponent<AddressProps> = ({
     >
       {(translations) => (
         <fieldset name="address">
-          <div className={isNormalForm(type) ? 'form-row' : 'input-group pb-1'}>
+          <div className={hasGridRow(type) ? 'form-row' : 'input-group pb-1'}>
             <Conditional
-              condition={isNormalForm(type)}
+              condition={hasGridRow(type)}
               when={(children) => <div className="col-4 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Text
-                label={isNormalForm(type) ? translations.STREET : undefined}
+                label={hasLabel(type) ? translations.STREET : undefined}
                 placeholder={
-                  isNormalForm(type)
+                  hasPlaceholder(type)
                     ? translations.STREET_PLACEHOLDER
                     : translations.STREET
                 }
@@ -81,12 +87,12 @@ export const Address: FunctionComponent<AddressProps> = ({
               />
             </Conditional>
             <Conditional
-              condition={isNormalForm(type)}
+              condition={hasGridRow(type)}
               when={(children) => <div className="col-4 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Number
-                label={isNormalForm(type) ? translations.STREET_NO : undefined}
+                label={hasLabel(type) ? translations.STREET_NO : undefined}
                 placeholder={
                   isNormalForm(type)
                     ? translations.STREET_NO_PLACEHOLDER
@@ -103,14 +109,14 @@ export const Address: FunctionComponent<AddressProps> = ({
               />
             </Conditional>
             <Conditional
-              condition={isNormalForm(type)}
+              condition={hasGridRow(type)}
               when={(children) => <div className="col-4 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Alpha
-                label={isNormalForm(type) ? translations.POSTCODE : undefined}
+                label={hasLabel(type) ? translations.POSTCODE : undefined}
                 placeholder={
-                  isNormalForm(type)
+                  hasPlaceholder(type)
                     ? translations.POSTCODE_PLACEHOLDER
                     : translations.POSTCODE
                 }
@@ -125,16 +131,16 @@ export const Address: FunctionComponent<AddressProps> = ({
               />
             </Conditional>
           </div>
-          <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
+          <div className={hasGridRow(type) ? 'form-row' : 'input-group'}>
             <Conditional
-              condition={isNormalForm(type)}
+              condition={hasGridRow(type)}
               when={(children) => <div className="col-6 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Select
-                label={isNormalForm(type) ? translations.CITY : undefined}
+                label={hasLabel(type) ? translations.CITY : undefined}
                 placeholder={
-                  isNormalForm(type)
+                  hasPlaceholder(type)
                     ? translations.CITY_PLACEHOLDER
                     : translations.CITY
                 }
@@ -149,14 +155,14 @@ export const Address: FunctionComponent<AddressProps> = ({
               />
             </Conditional>
             <Conditional
-              condition={isNormalForm(type)}
+              condition={hasGridRow(type)}
               when={(children) => <div className="col-6 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Select
-                label={isNormalForm(type) ? translations.COUNTRY : undefined}
+                label={hasLabel(type) ? translations.COUNTRY : undefined}
                 placeholder={
-                  isNormalForm(type)
+                  hasPlaceholder(type)
                     ? translations.COUNTRY_PLACEHOLDER
                     : translations.COUNTRY
                 }

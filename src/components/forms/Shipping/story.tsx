@@ -42,3 +42,7 @@ story.add('onplace', () => {
 story.add('inline', () => {
   return <Parent formType={FormType.INLINE} />;
 });
+
+story.add('material', () => {
+  return <Parent formType={FormType.MATERIAL} />;
+});

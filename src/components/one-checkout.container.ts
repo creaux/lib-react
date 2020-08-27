@@ -1,7 +1,7 @@
 import { createElement, PureComponent } from 'react';
-import { OneCheckout } from './component';
-import { ProductDescriptionProps } from '../ProductDescription/component';
-import { ShippingState } from '../forms/Shipping/container';
+import { OneCheckout } from './one-checkout.component';
+import { ProductDescriptionProps } from './ProductDescription/component';
+import { ShippingState } from './forms/Shipping/container';
 
 export interface OneCheckoutContainerProps {
   product: ProductDescriptionProps;

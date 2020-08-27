@@ -1,7 +1,12 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { OnChange } from '../../types/form';
 import { FieldType, InputTypeEnum, IOption } from './types';
-import { FormType, FormTypeContext } from '../Form/component';
+import {
+  FormType,
+  FormTypeContext,
+  isMaterialForm,
+  isOnPlaceForm,
+} from '../Form/component';
 import cx from 'classnames';
 import { Conditional } from '../../conditional.component';
 import { Message } from './hoc/validators/types';
@@ -41,14 +46,21 @@ export const Field: FunctionComponent<InputProps> = (props) => {
 
   const wrapperClasses = cx({
     'form-group': FormType.NORMAL === formType,
-    'h-100': FormType.ONPLACE === formType,
+    'h-100': isOnPlaceForm(formType),
     'form-control':
-      FormType.ONPLACE === formType || FormType.INLINE === formType,
+      FormType.ONPLACE === formType ||
+      FormType.INLINE === formType ||
+      isMaterialForm(formType),
+    'h-auto': isMaterialForm(formType),
     'is-invalid':
-      (FormType.ONPLACE === formType || FormType.INLINE) === formType &&
+      (FormType.ONPLACE === formType ||
+        FormType.INLINE === formType ||
+        isMaterialForm(formType)) &&
       message.type === 1,
     'is-valid':
-      (FormType.ONPLACE === formType || FormType.INLINE) &&
+      (FormType.ONPLACE === formType ||
+        FormType.INLINE ||
+        isMaterialForm(formType)) &&
       message.type === 0 &&
       value.length > 0,
     'd-flex flex-column': fieldType === FieldType.SELECT,
@@ -56,14 +68,20 @@ export const Field: FunctionComponent<InputProps> = (props) => {
 
   const inputClasses = cx({
     'form-control': FormType.NORMAL === formType,
-    'h-auto': FieldType.SELECT === fieldType && FormType.ONPLACE === formType,
+    'h-auto':
+      FieldType.SELECT === fieldType &&
+      (FormType.ONPLACE === formType || isMaterialForm(formType)),
     'border-0 w-100':
-      FormType.ONPLACE === formType || FormType.INLINE === formType,
+      FormType.ONPLACE === formType ||
+      FormType.INLINE === formType ||
+      isMaterialForm(formType),
     'is-invalid': FormType.NORMAL === formType && message.type === 1,
     'is-valid':
       FormType.NORMAL === formType && message.type === 0 && value.length > 0,
     'bg-transparent':
-      FormType.ONPLACE === formType || FormType.INLINE === formType,
+      FormType.ONPLACE === formType ||
+      FormType.INLINE === formType ||
+      isMaterialForm(formType),
   });
 
   return (
@@ -73,7 +91,10 @@ export const Field: FunctionComponent<InputProps> = (props) => {
       otherwise={(children) => children}
     >
       <Conditional
-        condition={formType === FormType.NORMAL && !!label}
+        condition={
+          (formType === FormType.NORMAL || formType === FormType.MATERIAL) &&
+          !!label
+        }
         when={() => (
           <label htmlFor={id} className="mr-3">
             {label}

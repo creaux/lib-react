@@ -1,6 +1,12 @@
 import React, { FunctionComponent, useContext } from 'react';
 import defaultTranslations from './en.json';
-import { FormTypeContext, isNormalForm } from '../Form';
+import {
+  FormTypeContext,
+  hasGridRow,
+  hasLabel,
+  hasPlaceholder,
+  isNormalForm,
+} from '../Form';
 import { Conditional } from '../../conditional.component';
 import { I18nConsumer } from '../../I18n';
 import { IContact } from './types';
@@ -39,23 +45,21 @@ export const Contact: FunctionComponent<ContactProps> = ({
     >
       {(translations) => (
         <fieldset name="company">
-          <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
+          <div className={hasGridRow(type) ? 'form-row' : 'input-group'}>
             <Conditional
-              condition={isNormalForm(type)}
+              condition={hasGridRow(type)}
               when={(children) => <div className="col-6 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Email
                 label={
-                  isNormalForm(type)
-                    ? translations.CONTACT_EMAIL_LABEL
-                    : undefined
+                  hasLabel(type) ? translations.CONTACT_EMAIL_LABEL : undefined
                 }
                 id={email.id}
                 value={email.value}
                 onChange={handleFieldChange('email')}
                 placeholder={
-                  isNormalForm(type)
+                  hasPlaceholder(type)
                     ? translations.CONTACT_EMAIL_PLACEHOLDER
                     : translations.CONTACT_EMAIL_LABEL
                 }
@@ -68,21 +72,19 @@ export const Contact: FunctionComponent<ContactProps> = ({
               />
             </Conditional>
             <Conditional
-              condition={isNormalForm(type)}
+              condition={hasGridRow(type)}
               when={(children) => <div className="col-6 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Phone
                 label={
-                  isNormalForm(type)
-                    ? translations.CONTACT_NUMBER_LABEL
-                    : undefined
+                  hasLabel(type) ? translations.CONTACT_NUMBER_LABEL : undefined
                 }
                 id={number.id}
                 value={number.value}
                 onChange={handleFieldChange('number')}
                 placeholder={
-                  isNormalForm(type)
+                  hasPlaceholder(type)
                     ? translations.CONTACT_NUMBER_PLACEHOLDER
                     : translations.CONTACT_NUMBER_LABEL
                 }

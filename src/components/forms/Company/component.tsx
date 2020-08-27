@@ -5,7 +5,13 @@ import { ICompany } from './types';
 import { I18nConsumer } from '../../I18n/component';
 import defaultTranslations from './en.json';
 import { Conditional } from '../../conditional.component';
-import { FormTypeContext, isNormalForm } from '../Form/component';
+import {
+  FormTypeContext,
+  hasGridRow,
+  hasLabel,
+  hasPlaceholder,
+  isNormalForm,
+} from '../Form/component';
 
 export interface CompanyProps extends ICompany {
   onFieldChange: OnFieldChange<keyof ICompany>;
@@ -38,19 +44,19 @@ export const Company: FunctionComponent<CompanyProps> = ({
     >
       {(translations) => (
         <fieldset name="company">
-          <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
+          <div className={hasGridRow(type) ? 'form-row' : 'input-group'}>
             <Conditional
-              condition={isNormalForm(type)}
+              condition={hasGridRow(type)}
               when={(children) => <div className="col-6 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Text
-                label={isNormalForm(type) ? translations.COMPANY : undefined}
+                label={hasLabel(type) ? translations.COMPANY : undefined}
                 id={company.id}
                 value={company.value}
                 onChange={handleFieldChange('company')}
                 placeholder={
-                  isNormalForm(type)
+                  hasPlaceholder(type)
                     ? translations.COMPANY_PLACEHOLDER
                     : translations.COMPANY
                 }
@@ -63,17 +69,17 @@ export const Company: FunctionComponent<CompanyProps> = ({
               />
             </Conditional>
             <Conditional
-              condition={isNormalForm(type)}
+              condition={hasGridRow(type)}
               when={(children) => <div className="col-6 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Text
-                label={isNormalForm(type) ? translations.VAT : undefined}
+                label={hasLabel(type) ? translations.VAT : undefined}
                 id={vat.id}
                 value={vat.value}
                 onChange={handleFieldChange('vat')}
                 placeholder={
-                  isNormalForm(type)
+                  hasPlaceholder(type)
                     ? translations.VAT_PLACEHOLDER
                     : translations.VAT
                 }

@@ -10,6 +10,7 @@ export enum FormType {
   NORMAL = 'normal',
   INLINE = 'inline',
   ONPLACE = 'onplace', // When we need to have error message in the field
+  MATERIAL = 'material',
 }
 
 export function isInlineForm(type: FormType) {
@@ -18,6 +19,26 @@ export function isInlineForm(type: FormType) {
 
 export function isNormalForm(type: FormType) {
   return FormType.NORMAL === type;
+}
+
+export function isOnPlaceForm(type: FormType) {
+  return FormType.ONPLACE === type;
+}
+
+export function isMaterialForm(type: FormType) {
+  return FormType.MATERIAL === type;
+}
+
+export function hasLabel(type: FormType) {
+  return isNormalForm(type) || isMaterialForm(type);
+}
+
+export function hasPlaceholder(type: FormType) {
+  return isNormalForm(type);
+}
+
+export function hasGridRow(type: FormType) {
+  return isNormalForm(type) || isMaterialForm(type);
 }
 
 interface FormProps {

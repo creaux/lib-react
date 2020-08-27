@@ -5,7 +5,13 @@ import { IPerson, PersonBuilder } from './types';
 import { I18nConsumer } from '../../I18n';
 import { Translations } from '../../I18n/component';
 import { Conditional } from '../../conditional.component';
-import { FormTypeContext, isNormalForm } from '../Form';
+import {
+  FormTypeContext,
+  hasGridRow,
+  hasLabel,
+  hasPlaceholder,
+  isNormalForm,
+} from '../Form';
 import defaultTranslations from './en.json';
 
 export class PersonPropsBuilder extends PersonBuilder {
@@ -61,14 +67,14 @@ export const Person: FunctionComponent<PersonProps> = ({
     <I18nConsumer<PersonTranslations> defaultTranslations={defaultTranslations}>
       {(translations) => (
         <fieldset name="person">
-          <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
+          <div className={hasGridRow(type) ? 'form-row' : 'input-group'}>
             <Conditional
-              condition={isNormalForm(type)}
+              condition={hasGridRow(type)}
               when={(children) => <div className="col-6 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Text
-                label={isNormalForm(type) ? translations.FORENAME : undefined}
+                label={hasLabel(type) ? translations.FORENAME : undefined}
                 id={forname.id}
                 value={forname.value}
                 onChange={handleFieldChange('forname')}
@@ -78,16 +84,20 @@ export const Person: FunctionComponent<PersonProps> = ({
                   translations.FORENAME_MESSAGE_INVALID,
                   translations.FORENAME_MESSAGE_DEFAULT,
                 ]}
-                placeholder={translations.FORENAME_PLACEHOLDER}
+                placeholder={
+                  hasPlaceholder(type)
+                    ? translations.FORENAME_PLACEHOLDER
+                    : translations.FORENAME
+                }
               />
             </Conditional>
             <Conditional
-              condition={isNormalForm(type)}
+              condition={hasGridRow(type)}
               when={(children) => <div className="col-6 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Text
-                label={isNormalForm(type) ? translations.SURNAME : undefined}
+                label={hasLabel(type) ? translations.SURNAME : undefined}
                 id={surname.id}
                 value={surname.value}
                 onChange={handleFieldChange('surname')}
@@ -97,7 +107,11 @@ export const Person: FunctionComponent<PersonProps> = ({
                   translations.SURNAME_MESSAGE_INVALID,
                   translations.SURNAME_MESSAGE_DEFAULT,
                 ]}
-                placeholder={translations.SURNAME_PLACEHOLDER}
+                placeholder={
+                  hasPlaceholder(type)
+                    ? translations.SURNAME_PLACEHOLDER
+                    : translations.SURNAME
+                }
               />
             </Conditional>
           </div>

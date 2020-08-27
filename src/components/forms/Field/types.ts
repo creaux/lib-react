@@ -49,7 +49,7 @@ export interface IInputData extends IInput {
 export type OnValidChange = (valid: boolean) => void;
 
 export interface FieldOuterProps {
-  placeholder: string;
+  placeholder?: string;
   label?: string;
   value: string;
   id: string;

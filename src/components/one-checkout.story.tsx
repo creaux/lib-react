@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { OneCheckoutContainer } from './container';
-import { Form, FormType } from '../forms/Form/component';
-import { props as productDescriptionProps } from '../ProductDescription/mocks';
+import { OneCheckoutContainer } from './one-checkout.container';
+import { Form, FormType } from './forms/Form/component';
+import { props as productDescriptionProps } from './ProductDescription/mocks';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
@@ -15,7 +15,7 @@ story.add('default', () => {
         process.env.STRIPE_SECRET ? process.env.STRIPE_SECRET : ''
       )}
     >
-      <Form type={FormType.INLINE} onSubmit={() => {}}>
+      <Form type={FormType.ONPLACE} onSubmit={() => {}}>
         <OneCheckoutContainer product={productDescriptionProps} />
       </Form>
     </Elements>
