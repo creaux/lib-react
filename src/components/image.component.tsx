@@ -1,56 +1,12 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { ImageVariants } from './image.types';
 import cx from 'classnames';
-
-export class ImageComponentPropsBuilder {
-  private src!: string;
-  private alt!: string;
-  private variant!: ImageVariants;
-  private className!: string;
-  private children!: ReactNode;
-  private rounded!: boolean;
-
-  public withSrc(src: string): ImageComponentPropsBuilder {
-    this.src = src;
-    return this;
-  }
-
-  public withAlt(alt: string): ImageComponentPropsBuilder {
-    this.alt = alt;
-    return this;
-  }
-
-  public withVariant(variant: ImageVariants): ImageComponentPropsBuilder {
-    this.variant = variant;
-    return this;
-  }
-
-  public withClassName(className: string): ImageComponentPropsBuilder {
-    this.className = className;
-    return this;
-  }
-
-  public withChildren(children: ReactNode): ImageComponentPropsBuilder {
-    this.children = children;
-    return this;
-  }
-
-  public withRounded(rounded: boolean): ImageComponentPropsBuilder {
-    this.rounded = rounded;
-    return this;
-  }
-
-  public build(): ImageComponentProps {
-    return {
-      src: this.src,
-      alt: this.alt,
-      variant: this.variant,
-      className: this.className,
-      children: this.children,
-      rounded: this.rounded,
-    };
-  }
-}
+import {
+  MapPropsToCssVariablesInputProps,
+  MapPropsToCssVariablesOutputProps
+} from './map-breakpoint-coordinates-to-style.props';
+import { mapBreakpointCoordinatesToStyle } from './map-breakpoint-coordinates-to-style.hoc';
+import { compose, setDisplayName } from 'recompose';
 
 export interface ImageElement {
   src: string;
@@ -58,23 +14,26 @@ export interface ImageElement {
   rounded?: boolean;
 }
 
-export interface ImageComponentProps extends ImageElement {
+interface ImageComponentProps
+  extends ImageElement,
+    MapPropsToCssVariablesOutputProps {
   variant?: ImageVariants;
   className?: string;
   children?: ReactNode;
 }
 
-export const ImageComponent: FunctionComponent<ImageComponentProps> = ({
+const ImageComponent: FunctionComponent<ImageComponentProps> = ({
   variant = ImageVariants.SOLID,
   src,
   alt,
   className,
   children,
   rounded = true,
+  style
 }) => {
   const attrs =
     variant === ImageVariants.BACKGROUND
-      ? { style: { backgroundImage: `url(${src})` } }
+      ? { style: { backgroundImage: `url(${src})`, ...style } }
       : null;
   const isImg = variant === ImageVariants.SOLID;
   return (
@@ -87,3 +46,16 @@ export const ImageComponent: FunctionComponent<ImageComponentProps> = ({
     </div>
   );
 };
+
+export interface ImageProps
+  extends ImageElement,
+    MapPropsToCssVariablesInputProps {
+  variant?: ImageVariants;
+  className?: string;
+  children?: ReactNode;
+}
+
+export const Image = compose<ImageComponentProps, ImageProps>(
+  mapBreakpointCoordinatesToStyle,
+  setDisplayName('Image')
+)(ImageComponent);

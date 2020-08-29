@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { ProductDescription } from '../ProductDescription';
 import { ProductDescriptionProps } from '../ProductDescription/component';
 import { asBackgroundProps } from '../image.component.mock';
-import { ImageComponent as Image } from '../image.component';
+import { Image } from '../image.component';
 import { Button, Variants } from '../forms/Button';
 import { Shipping } from '../forms/Shipping';
 import { Stripe } from '../forms/Stripe';
@@ -30,13 +30,13 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
   onStep: handleStep,
   onShippingValidChange: handleShippingValidChange,
   onShippingChange: handleShippingChange,
-  isShippingValid,
+  isShippingValid
 }) => {
   return (
     <I18nConsumer<OneCheckoutTranslations>
       defaultTranslations={defaultTranslations}
     >
-      {(translations) => (
+      {translations => (
         <Viewport>
           <div className="d-flex align-items-md-center">
             <div className="container-fluid one-checkout">

@@ -5,7 +5,7 @@ import { props } from './mocks';
 import { Button, Variants } from '../forms/Button';
 import { Description } from '../Description';
 import { Label } from '../Label/component';
-import { ImageComponent as Image } from '../image.component';
+import { Image } from '../image.component';
 import { asBackgroundProps } from '../image.component.mock';
 
 const onAdd = () => {};

@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { ProductDescription } from '../ProductDescription';
 import { ImageVariants } from '../image.types';
-import { ImageComponent as Image } from '../image.component';
+import { Image } from '../image.component';
 import { ProductDescriptionProps } from '../ProductDescription/component';
 import { Navigation } from '../navigation.component';
 import { Guard } from '../Guard';
@@ -27,16 +27,16 @@ export const ProductDetail: FunctionComponent<ProductDetailsProps> = ({
   title,
   price,
   image,
-  children,
+  children
 }) => {
   const productDescriptionProps = {
     title,
-    price,
+    price
   };
 
   const navigationProps = {
     className: 'position-absolute',
-    style: { left: 0, right: 0 },
+    style: { left: 0, right: 0 }
   };
 
   return (
