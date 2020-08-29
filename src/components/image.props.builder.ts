@@ -42,7 +42,9 @@ export class ImagePropsBuilder {
     return this;
   }
 
-  public withBreakpointCoordinates(breakpointCoordinates: BreakpointCoordinates): ImagePropsBuilder {
+  public withBreakpointCoordinates(
+    breakpointCoordinates: BreakpointCoordinates
+  ): ImagePropsBuilder {
     this.breakpointCoordinates = breakpointCoordinates;
     return this;
   }
@@ -55,7 +57,7 @@ export class ImagePropsBuilder {
       className: this.className,
       children: this.children,
       rounded: this.rounded,
-      breakpointCoordinates: this.breakpointCoordinates
+      breakpointCoordinates: this.breakpointCoordinates,
     };
   }
 }

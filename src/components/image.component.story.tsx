@@ -5,7 +5,7 @@ import { ImagePropsBuilder } from './image.props.builder';
 import { ImageVariants } from './image.types';
 import {
   BreakpointCoordinatesBuilder,
-  CoordinatesBuilder
+  CoordinatesBuilder,
 } from './map-breakpoint-coordinates-to-style.builder';
 
 const imagePropsAsImage = new ImagePropsBuilder()
@@ -26,36 +26,11 @@ const imagePropsAsBackgroundWithPosition = new ImagePropsBuilder()
   .withVariant(ImageVariants.BACKGROUND)
   .withBreakpointCoordinates(
     new BreakpointCoordinatesBuilder()
-      .withXs(
-        new CoordinatesBuilder()
-          .withX('100px')
-          .withY('500px')
-          .build()
-      )
-      .withSm(
-        new CoordinatesBuilder()
-          .withX('100px')
-          .withY('500px')
-          .build()
-      )
-      .withMd(
-        new CoordinatesBuilder()
-          .withX('100px')
-          .withY('500px')
-          .build()
-      )
-      .withLg(
-        new CoordinatesBuilder()
-          .withX('100px')
-          .withY('500px')
-          .build()
-      )
-      .withXl(
-        new CoordinatesBuilder()
-          .withX('100px')
-          .withY('500px')
-          .build()
-      )
+      .withXs(new CoordinatesBuilder().withX('100px').withY('500px').build())
+      .withSm(new CoordinatesBuilder().withX('100px').withY('500px').build())
+      .withMd(new CoordinatesBuilder().withX('100px').withY('500px').build())
+      .withLg(new CoordinatesBuilder().withX('100px').withY('500px').build())
+      .withXl(new CoordinatesBuilder().withX('100px').withY('500px').build())
       .build()
   )
   .build();

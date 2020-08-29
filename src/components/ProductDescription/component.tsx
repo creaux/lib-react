@@ -31,7 +31,7 @@ export class ProductDescriptionPropsBuilder {
     return {
       title: this.title,
       price: this.price,
-      className: this.className
+      className: this.className,
     };
   }
 }
@@ -46,7 +46,7 @@ export const ProductDescription: FunctionComponent<ProductDescriptionProps> = ({
   title,
   price,
   className,
-  children
+  children,
 }) => (
   <div
     className={cx(
