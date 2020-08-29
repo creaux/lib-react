@@ -1,35 +1,50 @@
 import React, { FunctionComponent } from 'react';
-import { mapBreakpointCoordinatesToStyle } from './map-breakpoint-coordinates-to-style.hoc';
-import { compose, setDisplayName } from 'recompose';
-import {
-  MapPropsToCssVariablesInputProps,
-  MapPropsToCssVariablesOutputProps,
-} from './map-breakpoint-coordinates-to-style.props';
+import { BreakpointCoordinates } from './breakpoint-coordinates.type';
+import { useCssRegister } from './use-css-register';
+import { get } from 'lodash';
 
-interface HeadlineComponentProps extends MapPropsToCssVariablesOutputProps {
+export interface HeadlineProps {
   title: string;
   paragraph: string;
+  breakpointCoordinates?: BreakpointCoordinates;
 }
 
-const HeadlineComponent: FunctionComponent<HeadlineComponentProps> = ({
-  style,
+export const Headline: FunctionComponent<HeadlineProps> = ({
   title,
   paragraph,
+  breakpointCoordinates,
 }) => {
+  useCssRegister(
+    [
+      '--Headline__breakpointCoordinates-xs-x',
+      '--Headline__breakpointCoordinates-xs-y',
+      '--Headline__breakpointCoordinates-sm-x',
+      '--Headline__breakpointCoordinates-sm-y',
+      '--Headline__breakpointCoordinates-md-x',
+      '--Headline__breakpointCoordinates-md-y',
+      '--Headline__breakpointCoordinates-lg-x',
+      '--Headline__breakpointCoordinates-lg-y',
+      '--Headline__breakpointCoordinates-xl-x',
+      '--Headline__breakpointCoordinates-xl-y',
+    ],
+    [
+      get(breakpointCoordinates, ['xs', 'x']),
+      get(breakpointCoordinates, ['xs', 'y']),
+      get(breakpointCoordinates, ['sm', 'x']),
+      get(breakpointCoordinates, ['sm', 'y']),
+      get(breakpointCoordinates, ['md', 'x']),
+      get(breakpointCoordinates, ['md', 'y']),
+      get(breakpointCoordinates, ['lg', 'x']),
+      get(breakpointCoordinates, ['lg', 'y']),
+      get(breakpointCoordinates, ['xl', 'x']),
+      get(breakpointCoordinates, ['xl', 'y']),
+    ]
+  );
+
   return (
-    <div className="headline" style={style}>
+    <div className="headline">
       <h1>{title}</h1>
       <p>{paragraph}</p>
     </div>
   );
 };
-
-export interface HeadlineProps extends MapPropsToCssVariablesInputProps {
-  title: string;
-  paragraph: string;
-}
-
-export const Headline = compose<HeadlineComponentProps, HeadlineProps>(
-  mapBreakpointCoordinatesToStyle,
-  setDisplayName('Headline')
-)(HeadlineComponent);
