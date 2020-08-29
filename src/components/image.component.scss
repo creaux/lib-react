@@ -1,6 +1,65 @@
+@import "./functions";
+
+$xs: (
+  x: var(--Image__breakpointCoordinates-xs-x),
+  y: var(--Image__breakpointCoordinates-xs-y)
+);
+
+$sm: (
+  x: var(--Image__breakpointCoordinates-sm-x),
+  y: var(--Image__breakpointCoordinates-sm-y)
+);
+
+$md: (
+  x: var(--Image__breakpointCoordinates-md-x),
+  y: var(--Image__breakpointCoordinates-md-y)
+);
+
+$lg: (
+  x: var(--Image__breakpointCoordinates-lg-x),
+  y: var(--Image__breakpointCoordinates-lg-y)
+);
+
+$xl: (
+  x: var(--Image__breakpointCoordinates-xl-x),
+  y: var(--Image__breakpointCoordinates-xl-y)
+);
+
+$breakpointCoordinates: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl
+);
 
 .image-background {
   width: 100%;
   background-size: cover;
   height: 100%;
+
+  @include media-breakpoint-down(xs) {
+    background-position-x: map-get-second($breakpointCoordinates, 'xs', 'x');
+    background-position-y: map-get-second($breakpointCoordinates, 'xs', 'y');
+  }
+
+  @include media-breakpoint-down(sm) {
+    background-position-x: map-get-second($breakpointCoordinates, 'sm', 'x');
+    background-position-y: map-get-second($breakpointCoordinates, 'sm', 'y');
+  }
+
+  @include media-breakpoint-down(md) {
+    background-position-x: map-get-second($breakpointCoordinates, 'md', 'x');
+    background-position-y: map-get-second($breakpointCoordinates, 'md', 'y');
+  }
+
+  @include media-breakpoint-down(lg) {
+    background-position-x: map-get-second($breakpointCoordinates, 'lg', 'x');
+    background-position-y: map-get-second($breakpointCoordinates, 'lg', 'y');
+  }
+
+  @include media-breakpoint-down(xl) {
+    background-position-x: map-get-second($breakpointCoordinates, 'xl', 'x');
+    background-position-y: map-get-second($breakpointCoordinates, 'xl', 'y');
+  }
 }

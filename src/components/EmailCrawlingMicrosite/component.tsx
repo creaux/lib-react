@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { EmailCrawler } from '../forms/EmailCrawler';
 import { Messages } from '../forms/Field/hoc/validators/types';
 import { ImageVariants } from '../image.types';
-import { ImageComponent as Image, ImageElement } from '../image.component';
+import { Image, ImageElement } from '../image.component';
 
 export interface EmailCrawlingMicrositeProps {
   labels: {
@@ -14,12 +14,9 @@ export interface EmailCrawlingMicrositeProps {
   background: ImageElement;
 }
 
-export const EmailCrawlingMicrosite: FunctionComponent<EmailCrawlingMicrositeProps> = ({
-  labels,
-  onEmailSubmit: handleEmailSubmit,
-  messages,
-  background,
-}) => (
+export const EmailCrawlingMicrosite: FunctionComponent<
+  EmailCrawlingMicrositeProps
+> = ({ labels, onEmailSubmit: handleEmailSubmit, messages, background }) => (
   <Image
     variant={ImageVariants.BACKGROUND}
     className="vh-100 vw-100 d-flex align-items-center justify-content-center"

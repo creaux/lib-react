@@ -3,8 +3,8 @@ import { Button } from '../forms/Button';
 import { Guard } from '../Guard';
 import { Description } from '../Description';
 import { Label } from '../Label/component';
-import { ImageComponent as Image } from '../image.component';
-import { ImageComponentProps as ImageProps } from '../image.component';
+import { Image } from '../image.component';
+import { ImageProps } from '../image.component';
 import cx from 'classnames';
 
 export class ProductDescriptionPropsBuilder {
@@ -31,7 +31,7 @@ export class ProductDescriptionPropsBuilder {
     return {
       title: this.title,
       price: this.price,
-      className: this.className,
+      className: this.className
     };
   }
 }
@@ -46,7 +46,7 @@ export const ProductDescription: FunctionComponent<ProductDescriptionProps> = ({
   title,
   price,
   className,
-  children,
+  children
 }) => (
   <div
     className={cx(

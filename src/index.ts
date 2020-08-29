@@ -5,11 +5,9 @@
 // Atoms
 export { Cycler } from './components/Cycler';
 export { Guard } from './components/Guard';
-export {
-  ImageComponent as Image,
-  ImageComponentPropsBuilder as ImagePropsBuilder,
-} from './components/image.component';
-export type { ImageComponentProps as ImageProps } from './components/image.component';
+export { Image } from './components/image.component';
+export { ImagePropsBuilder } from './components/image.props.builder';
+export type { ImageProps } from './components/image.component';
 export { Sidescription } from './components/Sidescription';
 export { Svg } from './components/Svg';
 // Moleculs

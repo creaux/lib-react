@@ -1,8 +1,77 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { ImageComponent } from './image.component';
-import { asBackgroundProps, asImgProps } from './image.component.mock';
+import { Image } from './image.component';
+import { ImagePropsBuilder } from './image.props.builder';
+import { ImageVariants } from './image.types';
+import {
+  BreakpointCoordinatesBuilder,
+  CoordinatesBuilder
+} from './map-breakpoint-coordinates-to-style.builder';
 
-storiesOf('Atomic Design/Atoms/Image', module)
-  .add('as img', () => <ImageComponent {...asImgProps} />)
-  .add('as background', () => <ImageComponent {...asBackgroundProps} />);
+const imagePropsAsImage = new ImagePropsBuilder()
+  .withSrc('https://picsum.photos/id/251/640/480')
+  .withAlt('Lorem ipsum')
+  .withVariant(ImageVariants.SOLID)
+  .build();
+
+const imagePropsAsBackground = new ImagePropsBuilder()
+  .withSrc('https://picsum.photos/id/251/640/480')
+  .withAlt('Lorem ipsum')
+  .withVariant(ImageVariants.BACKGROUND)
+  .build();
+
+const imagePropsAsBackgroundWithPosition = new ImagePropsBuilder()
+  .withSrc('https://picsum.photos/id/251/640/480')
+  .withAlt('Lorem ipsum')
+  .withVariant(ImageVariants.BACKGROUND)
+  .withBreakpointCoordinates(
+    new BreakpointCoordinatesBuilder()
+      .withXs(
+        new CoordinatesBuilder()
+          .withX('100px')
+          .withY('500px')
+          .build()
+      )
+      .withSm(
+        new CoordinatesBuilder()
+          .withX('100px')
+          .withY('500px')
+          .build()
+      )
+      .withMd(
+        new CoordinatesBuilder()
+          .withX('100px')
+          .withY('500px')
+          .build()
+      )
+      .withLg(
+        new CoordinatesBuilder()
+          .withX('100px')
+          .withY('500px')
+          .build()
+      )
+      .withXl(
+        new CoordinatesBuilder()
+          .withX('100px')
+          .withY('500px')
+          .build()
+      )
+      .build()
+  )
+  .build();
+
+const story = storiesOf('Atomic Design/Atoms/Image', module);
+
+story.add('as img', () => <Image {...imagePropsAsImage} />);
+
+story.add('as background', () => (
+  <div style={{ width: '640px', height: '480px' }}>
+    <Image {...imagePropsAsBackground} />
+  </div>
+));
+
+story.add('as background with position', () => (
+  <div style={{ width: '640px', height: '480px' }}>
+    <Image {...imagePropsAsBackgroundWithPosition} />
+  </div>
+));

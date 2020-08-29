@@ -61,7 +61,7 @@ $y-xl-position: calc(var(--headline__xl-y-position) * 1vh);
 
   @include media-breakpoint-up(xs) {
     display: block;
-    left: map-get-second($breakpointCoordinates, 'xs', 'x');;
+    left: map-get-second($breakpointCoordinates, 'xs', 'x');
     top: map-get-second($breakpointCoordinates, 'xs', 'y');
   }
 
