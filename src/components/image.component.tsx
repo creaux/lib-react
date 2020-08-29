@@ -3,7 +3,7 @@ import { ImageVariants } from './image.types';
 import cx from 'classnames';
 import {
   MapPropsToCssVariablesInputProps,
-  MapPropsToCssVariablesOutputProps
+  MapPropsToCssVariablesOutputProps,
 } from './map-breakpoint-coordinates-to-style.props';
 import { mapBreakpointCoordinatesToStyle } from './map-breakpoint-coordinates-to-style.hoc';
 import { compose, setDisplayName } from 'recompose';
@@ -29,7 +29,7 @@ const ImageComponent: FunctionComponent<ImageComponentProps> = ({
   className,
   children,
   rounded = true,
-  style
+  style,
 }) => {
   const attrs =
     variant === ImageVariants.BACKGROUND

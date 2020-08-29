@@ -30,13 +30,13 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
   onStep: handleStep,
   onShippingValidChange: handleShippingValidChange,
   onShippingChange: handleShippingChange,
-  isShippingValid
+  isShippingValid,
 }) => {
   return (
     <I18nConsumer<OneCheckoutTranslations>
       defaultTranslations={defaultTranslations}
     >
-      {translations => (
+      {(translations) => (
         <Viewport>
           <div className="d-flex align-items-md-center">
             <div className="container-fluid one-checkout">
