@@ -1,12 +1,20 @@
 import { HeadlineProps } from './headline.component';
-import { MapPropsToCssVariablesInputPropsBuilder } from './map-breakpoint-coordinates-to-style.builder';
+import { BreakpointCoordinates } from './breakpoint-coordinates.type';
 
-export class HeadlinePropsBuilder extends MapPropsToCssVariablesInputPropsBuilder {
+export class HeadlinePropsBuilder {
   title!: string;
   paragraph!: string;
+  breakpointCoordinates!: BreakpointCoordinates;
 
   withTitle(title: string): HeadlinePropsBuilder {
     this.title = title;
+    return this;
+  }
+
+  public withBreakpointCoordinates(
+    breakpointCoordinates: BreakpointCoordinates
+  ) {
+    this.breakpointCoordinates = breakpointCoordinates;
     return this;
   }
 

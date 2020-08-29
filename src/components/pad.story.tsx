@@ -8,7 +8,7 @@ import { ViewportPropsBuilder } from './viewport-props.builder';
 import {
   BreakpointCoordinatesBuilder,
   CoordinatesBuilder,
-} from './map-breakpoint-coordinates-to-style.builder';
+} from './breakpoint-coordinates.builder';
 
 class ViewportProps {
   private static coordinates = new BreakpointCoordinatesBuilder()

@@ -7,7 +7,7 @@ import { ViewportPropsBuilder } from './viewport-props.builder';
 import {
   BreakpointCoordinatesBuilder,
   CoordinatesBuilder,
-} from './map-breakpoint-coordinates-to-style.builder';
+} from './breakpoint-coordinates.builder';
 
 storiesOf('Atomic Design/Atoms/Viewport', module).add('default', () => {
   const viewportProps: ViewportProps = new ViewportPropsBuilder()

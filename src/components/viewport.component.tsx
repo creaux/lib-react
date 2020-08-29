@@ -1,60 +1,55 @@
-import React, { ComponentClass, FunctionComponent } from 'react';
-import { mapBreakpointCoordinatesToStyle } from './map-breakpoint-coordinates-to-style.hoc';
-import { compose, mapProps, setDisplayName } from 'recompose';
-import { omit } from 'lodash';
+import React, { FunctionComponent } from 'react';
 import cx from 'classnames';
-import {
-  MapPropsToCssVariablesInputProps,
-  MapPropsToCssVariablesOutputProps,
-} from './map-breakpoint-coordinates-to-style.props';
 import { Position } from '../schema/position.enum';
+import { useCssRegister } from './use-css-register';
+import { BreakpointCoordinates } from './breakpoint-coordinates.type';
+import { get } from 'lodash';
 
-const { assign } = Object;
-
-interface ViewportComponentProps extends MapPropsToCssVariablesOutputProps {
-  className: string;
+export interface ViewportProps {
+  backgroundImage?: string;
+  position?: Position;
+  breakpointCoordinates?: BreakpointCoordinates;
 }
 
-const ViewportComponent: FunctionComponent<ViewportComponentProps> = ({
-  style,
+export const Viewport: FunctionComponent<ViewportProps> = ({
   children,
-  className,
+  backgroundImage,
+  position,
+  breakpointCoordinates,
 }) => {
+  useCssRegister(
+    [
+      '--Viewport__breakpointCoordinates-xs-x',
+      '--Viewport__breakpointCoordinates-xs-y',
+      '--Viewport__breakpointCoordinates-sm-x',
+      '--Viewport__breakpointCoordinates-sm-y',
+      '--Viewport__breakpointCoordinates-md-x',
+      '--Viewport__breakpointCoordinates-md-y',
+      '--Viewport__breakpointCoordinates-lg-x',
+      '--Viewport__breakpointCoordinates-lg-y',
+      '--Viewport__breakpointCoordinates-xl-x',
+      '--Viewport__breakpointCoordinates-xl-y',
+    ],
+    [
+      get(breakpointCoordinates, ['xs', 'x']),
+      get(breakpointCoordinates, ['xs', 'y']),
+      get(breakpointCoordinates, ['sm', 'x']),
+      get(breakpointCoordinates, ['sm', 'y']),
+      get(breakpointCoordinates, ['md', 'x']),
+      get(breakpointCoordinates, ['md', 'y']),
+      get(breakpointCoordinates, ['lg', 'x']),
+      get(breakpointCoordinates, ['lg', 'y']),
+      get(breakpointCoordinates, ['xl', 'x']),
+      get(breakpointCoordinates, ['xl', 'y']),
+    ]
+  );
+
   return (
-    <div className={cx('viewport', className)} style={style}>
+    <div
+      className={cx('viewport', position)}
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       {children}
     </div>
   );
 };
-
-export interface ViewportProps extends MapPropsToCssVariablesInputProps {
-  backgroundImage?: string;
-  position?: Position;
-}
-
-export const Viewport: ComponentClass<ViewportProps> = compose<
-  ViewportComponentProps,
-  ViewportProps
->(
-  mapBreakpointCoordinatesToStyle,
-  setDisplayName('Viewport'),
-  mapProps((props: ViewportComponentProps & ViewportProps) => {
-    const omittedProps = omit(props, 'background', 'style', 'position');
-
-    let style = {};
-
-    if (props.style) {
-      assign(style, props.style);
-    }
-
-    if (props.backgroundImage) {
-      assign(style, {
-        backgroundImage: `url(${props.backgroundImage})`,
-      });
-    }
-
-    const className = cx({ [props.position as Position]: !!props.position });
-
-    return { ...omittedProps, style, className };
-  })
-)(ViewportComponent);
