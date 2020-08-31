@@ -2,10 +2,7 @@ import { FieldContainer, FieldContainerProps } from '../../container';
 import { FieldOuterProps, FieldType } from '../../types';
 import { Validators } from '../../hoc/validators';
 import { compose } from 'recompose';
-import {
-  MessagesProps,
-  ValidatorProps,
-} from '../../hoc/validators/validator';
+import { MessagesProps, ValidatorProps } from '../../hoc/validators/validator';
 import { provideFieldType } from '../../hoc/provideFieldType';
 import { validator } from '../../hoc/validators/validator';
 import { ComponentClass } from 'react';
