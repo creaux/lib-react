@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Button } from './forms/Button/index';
+import { Button } from '../forms/Button/index';
 import { Guard } from './guard.component';
 import { Description } from './description.component';
 import { Label } from './label.component';

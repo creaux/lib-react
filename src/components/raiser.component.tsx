@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { FormControl, InputGroup } from 'react-bootstrap';
-import { Button, Variants } from './forms/Button/index';
+import { Button, Variants } from '../forms/Button/index';
 
 interface RaiserProps {
   onRaise: (event: MouseEvent) => void;

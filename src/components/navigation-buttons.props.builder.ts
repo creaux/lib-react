@@ -1,4 +1,4 @@
-import { ButtonProps } from './forms/Button/component';
+import { ButtonProps } from '../forms/Button/component';
 import { NavigationButtonsProps } from './navigation-buttons.component';
 
 export class NavigationButtonsPropsBuilder {

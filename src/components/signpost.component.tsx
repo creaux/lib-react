@@ -2,9 +2,9 @@ import React, { FunctionComponent, useState } from 'react';
 import { Viewport } from './viewport.component';
 import { Image } from './image.component';
 import { ImageProps } from './image.component';
-import { Button } from './forms/Button/component';
+import { Button } from '../forms/Button/component';
 import { ImageVariants } from './image.types';
-import { Variants } from './forms/Button/types';
+import { Variants } from '../forms/Button/types';
 import { Sizes } from './sizes.types';
 import cx from 'classnames';
 

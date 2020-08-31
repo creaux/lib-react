@@ -71,12 +71,12 @@ export { ProductDetail } from './components/product-detail.component';
 // Forms
 //
 // Atoms
-export { Button } from './components/forms/Button';
-export { Checkbox } from './components/forms/Checkbox';
-export { Form } from './components/forms/Form';
-export { Input } from './components/forms/Field';
-export { RadioStack } from './components/forms/Field/RadioStack';
-export { SelectBasic } from './components/forms/Field/Basics/SelectBasic';
+export { Button } from './forms/Button';
+export { Checkbox } from './forms/Checkbox';
+export { Form } from './forms/Form';
+export { Input } from './forms/Field';
+export { RadioStack } from './forms/Field/RadioStack';
+export { SelectBasic } from './forms/Field/Basics/SelectBasic';
 export { Dots } from './components/dots.component';
 export type { DotsProps } from './components/dots.component';
 export { DotsPropsBuilder } from './components/dots.props.builder';
@@ -86,11 +86,11 @@ export { ViewportPropsBuilder } from './components/viewport-props.builder';
 export { Markdown } from './components/markdown.component';
 export type { MarkdownProps } from './components/markdown.component';
 // Moleculs
-export { Abode } from './components/forms/Abode';
-export { Address } from './components/forms/Address';
-export { Company } from './components/forms/Company';
-export { EmailCrawler } from './components/forms/EmailCrawler';
-export { Person } from './components/forms/Person';
+export { Abode } from './forms/Abode';
+export { Address } from './forms/Address';
+export { Company } from './forms/Company';
+export { EmailCrawler } from './forms/EmailCrawler';
+export { Person } from './forms/Person';
 export {
   SignpostComponent as Signpost,
   SignpostElementBuilder,
@@ -98,7 +98,7 @@ export {
 } from './components/signpost.component';
 export type { SignpostComponentProps as SignpostProps } from './components/signpost.component';
 // Organisms
-export { Shipping } from './components/forms/Shipping';
+export { Shipping } from './forms/Shipping';
 // Scheme
 export { BackgroundColor } from './schema/background-color.enum';
 export { TextColor } from './schema/text-color.enum';

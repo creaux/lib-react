@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { ProductDescription } from './product-description.component';
 import { props } from './product-description.mocks';
-import { Button, Variants } from './forms/Button/index';
+import { Button, Variants } from '../forms/Button/index';
 import { Description } from './description.component';
 import { Label } from './label.component';
 import { Image } from './image.component';

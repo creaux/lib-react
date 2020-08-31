@@ -4,7 +4,7 @@ import { AddComponent, AddComponentProps } from './add.component';
 import { shallow, ShallowWrapper } from 'enzyme';
 import chai, { expect } from 'chai';
 import { Raiser, RaiserProps } from './raiser.container';
-import { Button, Variants } from './forms/Button';
+import { Button, Variants } from '../forms/Button';
 import { spy, SinonSpy } from 'sinon';
 import chaiSinon from 'sinon-chai';
 import chaiEnzyme from 'chai-enzyme';

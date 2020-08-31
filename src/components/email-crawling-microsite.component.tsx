@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { EmailCrawler } from './forms/EmailCrawler/index';
-import { Messages } from './forms/Field/hoc/validators/types';
+import { EmailCrawler } from '../forms/EmailCrawler/index';
+import { Messages } from '../forms/Field/hoc/validators/types';
 import { ImageVariants } from './image.types';
 import { Image, ImageElement } from './image.component';
 
