@@ -1,31 +1,31 @@
 @import "./functions";
 
 $xs: (
-  x: var(--Image__breakpointCoordinates-xs-x),
-  y: var(--Image__breakpointCoordinates-xs-y)
+  x: var(--Image__backgroundPositions-xs-x),
+  y: var(--Image__backgroundPositions-xs-y)
 );
 
 $sm: (
-  x: var(--Image__breakpointCoordinates-sm-x),
-  y: var(--Image__breakpointCoordinates-sm-y)
+  x: var(--Image__backgroundPositions-sm-x),
+  y: var(--Image__backgroundPositions-sm-y)
 );
 
 $md: (
-  x: var(--Image__breakpointCoordinates-md-x),
-  y: var(--Image__breakpointCoordinates-md-y)
+  x: var(--Image__backgroundPositions-md-x),
+  y: var(--Image__backgroundPositions-md-y)
 );
 
 $lg: (
-  x: var(--Image__breakpointCoordinates-lg-x),
-  y: var(--Image__breakpointCoordinates-lg-y)
+  x: var(--Image__backgroundPositions-lg-x),
+  y: var(--Image__backgroundPositions-lg-y)
 );
 
 $xl: (
-  x: var(--Image__breakpointCoordinates-xl-x),
-  y: var(--Image__breakpointCoordinates-xl-y)
+  x: var(--Image__backgroundPositions-xl-x),
+  y: var(--Image__backgroundPositions-xl-y)
 );
 
-$breakpointCoordinates: (
+$backgroundPositions: (
   xs: $xs,
   sm: $sm,
   md: $md,
@@ -39,27 +39,27 @@ $breakpointCoordinates: (
   height: 100%;
 
   @include media-breakpoint-down(xs) {
-    background-position-x: map-get-second($breakpointCoordinates, 'xs', 'x');
-    background-position-y: map-get-second($breakpointCoordinates, 'xs', 'y');
+    background-position-x: map-get-second($backgroundPositions, 'xs', 'x');
+    background-position-y: map-get-second($backgroundPositions, 'xs', 'y');
   }
 
   @include media-breakpoint-down(sm) {
-    background-position-x: map-get-second($breakpointCoordinates, 'sm', 'x');
-    background-position-y: map-get-second($breakpointCoordinates, 'sm', 'y');
+    background-position-x: map-get-second($backgroundPositions, 'sm', 'x');
+    background-position-y: map-get-second($backgroundPositions, 'sm', 'y');
   }
 
   @include media-breakpoint-down(md) {
-    background-position-x: map-get-second($breakpointCoordinates, 'md', 'x');
-    background-position-y: map-get-second($breakpointCoordinates, 'md', 'y');
+    background-position-x: map-get-second($backgroundPositions, 'md', 'x');
+    background-position-y: map-get-second($backgroundPositions, 'md', 'y');
   }
 
   @include media-breakpoint-down(lg) {
-    background-position-x: map-get-second($breakpointCoordinates, 'lg', 'x');
-    background-position-y: map-get-second($breakpointCoordinates, 'lg', 'y');
+    background-position-x: map-get-second($backgroundPositions, 'lg', 'x');
+    background-position-y: map-get-second($backgroundPositions, 'lg', 'y');
   }
 
   @include media-breakpoint-down(xl) {
-    background-position-x: map-get-second($breakpointCoordinates, 'xl', 'x');
-    background-position-y: map-get-second($breakpointCoordinates, 'xl', 'y');
+    background-position-x: map-get-second($backgroundPositions, 'xl', 'x');
+    background-position-y: map-get-second($backgroundPositions, 'xl', 'y');
   }
 }

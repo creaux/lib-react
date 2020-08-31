@@ -6,7 +6,7 @@ import { ImageVariants } from './image.types';
 import {
   BreakpointCoordinatesBuilder,
   CoordinatesBuilder,
-} from './map-breakpoint-coordinates-to-style.builder';
+} from './breakpoint-coordinates.builder';
 
 const imagePropsAsImage = new ImagePropsBuilder()
   .withSrc('https://picsum.photos/id/251/640/480')
@@ -24,7 +24,7 @@ const imagePropsAsBackgroundWithPosition = new ImagePropsBuilder()
   .withSrc('https://picsum.photos/id/251/640/480')
   .withAlt('Lorem ipsum')
   .withVariant(ImageVariants.BACKGROUND)
-  .withBreakpointCoordinates(
+  .withBackgroundPositions(
     new BreakpointCoordinatesBuilder()
       .withXs(new CoordinatesBuilder().withX('100px').withY('500px').build())
       .withSm(new CoordinatesBuilder().withX('100px').withY('500px').build())

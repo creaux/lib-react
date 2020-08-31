@@ -1,12 +1,9 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { ImageVariants } from './image.types';
 import cx from 'classnames';
-import {
-  MapPropsToCssVariablesInputProps,
-  MapPropsToCssVariablesOutputProps,
-} from './map-breakpoint-coordinates-to-style.props';
-import { mapBreakpointCoordinatesToStyle } from './map-breakpoint-coordinates-to-style.hoc';
-import { compose, setDisplayName } from 'recompose';
+import { useCssRegister } from './use-css-register';
+import { get } from 'lodash';
+import { BreakpointCoordinates } from './breakpoint-coordinates.type';
 
 export interface ImageElement {
   src: string;
@@ -14,26 +11,51 @@ export interface ImageElement {
   rounded?: boolean;
 }
 
-interface ImageComponentProps
-  extends ImageElement,
-    MapPropsToCssVariablesOutputProps {
+export interface ImageProps extends ImageElement {
   variant?: ImageVariants;
   className?: string;
   children?: ReactNode;
+  backgroundPositions?: BreakpointCoordinates;
 }
 
-const ImageComponent: FunctionComponent<ImageComponentProps> = ({
+export const Image: FunctionComponent<ImageProps> = ({
   variant = ImageVariants.SOLID,
   src,
   alt,
   className,
   children,
   rounded = true,
-  style,
+  backgroundPositions,
 }) => {
+  useCssRegister(
+    [
+      '--Image__backgroundPositions-xs-x',
+      '--Image__backgroundPositions-xs-y',
+      '--Image__backgroundPositions-sm-x',
+      '--Image__backgroundPositions-sm-y',
+      '--Image__backgroundPositions-md-x',
+      '--Image__backgroundPositions-md-y',
+      '--Image__backgroundPositions-lg-x',
+      '--Image__backgroundPositions-lg-y',
+      '--Image__backgroundPositions-xl-x',
+      '--Image__backgroundPositions-xl-y',
+    ],
+    [
+      get(backgroundPositions, ['xs', 'x']),
+      get(backgroundPositions, ['xs', 'y']),
+      get(backgroundPositions, ['sm', 'x']),
+      get(backgroundPositions, ['sm', 'y']),
+      get(backgroundPositions, ['md', 'x']),
+      get(backgroundPositions, ['md', 'y']),
+      get(backgroundPositions, ['lg', 'x']),
+      get(backgroundPositions, ['lg', 'y']),
+      get(backgroundPositions, ['xl', 'x']),
+      get(backgroundPositions, ['xl', 'y']),
+    ]
+  );
   const attrs =
     variant === ImageVariants.BACKGROUND
-      ? { style: { backgroundImage: `url(${src})`, ...style } }
+      ? { style: { backgroundImage: `url(${src})` } }
       : null;
   const isImg = variant === ImageVariants.SOLID;
   return (
@@ -46,16 +68,3 @@ const ImageComponent: FunctionComponent<ImageComponentProps> = ({
     </div>
   );
 };
-
-export interface ImageProps
-  extends ImageElement,
-    MapPropsToCssVariablesInputProps {
-  variant?: ImageVariants;
-  className?: string;
-  children?: ReactNode;
-}
-
-export const Image = compose<ImageComponentProps, ImageProps>(
-  mapBreakpointCoordinatesToStyle,
-  setDisplayName('Image')
-)(ImageComponent);
