@@ -105,7 +105,7 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
               >
                 <>
                   <div className="mr-2 signpost__btn-text">
-                    Take a look on me!
+                    Go to the detail
                   </div>
                   <svg
                     width="1em"

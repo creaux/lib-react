@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import cx from 'classnames';
 import { Position } from '../schema/position.enum';
-import { useCssRegister } from './use-css-register';
+import { useCssRegister } from '../hooks/use-css-register';
 import { BreakpointCoordinates } from './breakpoint-coordinates.type';
 import { get } from 'lodash';
 
