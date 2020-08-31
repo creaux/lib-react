@@ -1,7 +1,7 @@
 import { ImageVariants } from './image.types';
 import { ReactNode } from 'react';
-import { BreakpointCoordinates } from './map-breakpoint-coordinates-to-style.props';
 import { ImageProps } from './image.component';
+import { BreakpointCoordinates } from './breakpoint-coordinates.type';
 
 export class ImagePropsBuilder {
   private src!: string;
@@ -10,7 +10,7 @@ export class ImagePropsBuilder {
   private className!: string;
   private children!: ReactNode;
   private rounded!: boolean;
-  private breakpointCoordinates!: BreakpointCoordinates;
+  private backgroundPositions!: BreakpointCoordinates;
 
   public withSrc(src: string): ImagePropsBuilder {
     this.src = src;
@@ -42,10 +42,10 @@ export class ImagePropsBuilder {
     return this;
   }
 
-  public withBreakpointCoordinates(
-    breakpointCoordinates: BreakpointCoordinates
+  public withBackgroundPositions(
+    backgroundPositions: BreakpointCoordinates
   ): ImagePropsBuilder {
-    this.breakpointCoordinates = breakpointCoordinates;
+    this.backgroundPositions = backgroundPositions;
     return this;
   }
 
@@ -57,7 +57,7 @@ export class ImagePropsBuilder {
       className: this.className,
       children: this.children,
       rounded: this.rounded,
-      breakpointCoordinates: this.breakpointCoordinates,
+      backgroundPositions: this.backgroundPositions,
     };
   }
 }
