@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { BreakpointCoordinates } from './breakpoint-coordinates.type';
-import { useCssRegister } from '../hooks/use-css-register';
+import { useCssRegister } from '../hooks/use-css-register.hook';
 import { get } from 'lodash';
 
 export interface HeadlineProps {

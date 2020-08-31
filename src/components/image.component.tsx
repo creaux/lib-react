@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { ImageVariants } from './image.types';
 import cx from 'classnames';
-import { useCssRegister } from '../hooks/use-css-register';
+import { useCssRegister } from '../hooks/use-css-register.hook';
 import { get } from 'lodash';
 import { BreakpointCoordinates } from './breakpoint-coordinates.type';
 
