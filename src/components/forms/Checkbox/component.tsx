@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { OnChange } from '../../types/form';
+import { OnChange } from '../../form.types';
 import { CheckboxBuilder, ICheckbox } from './types';
 
 export class CheckboxPropsBuilder extends CheckboxBuilder {

@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-import { Svg } from './Svg/index';
+import { Svg } from './svg.component';
 
 export enum NavigationBrandColor {
   DARK = 'black',

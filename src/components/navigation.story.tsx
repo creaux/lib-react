@@ -119,29 +119,29 @@ story.add('buttons', () => {
 });
 
 const navigationScreenContentProps = new NavigationScreenContentPropsBuilder()
-  .withEmail('ahoj@nekdo.cz')
-  .withPhone('9999')
-  .withCompany('Corporation')
-  .withStreet('Zelena')
+  .withEmail('example@example.com')
+  .withPhone('+44 777 778 888')
+  .withCompany('Sample LTD')
+  .withStreet('Downing street')
   .withStreetNo('256')
   .withCity('San Francisco')
   .withPostcode('123 12')
   .withLinks([
     new NavigationScreenContentLinkBuilder()
       .withHref('http://#')
-      .withTitle('Products')
-      .build(),
-    new NavigationScreenContentLinkBuilder()
-      .withHref('http://#')
       .withTitle('About')
       .build(),
     new NavigationScreenContentLinkBuilder()
       .withHref('http://#')
-      .withTitle('Conditions')
+      .withTitle('Topics')
       .build(),
     new NavigationScreenContentLinkBuilder()
       .withHref('http://#')
-      .withTitle('Privacy Policy')
+      .withTitle('Terms')
+      .build(),
+    new NavigationScreenContentLinkBuilder()
+      .withHref('http://#')
+      .withTitle('Policy')
       .build(),
   ])
   .build();
@@ -149,24 +149,24 @@ const navigationScreenContentProps = new NavigationScreenContentPropsBuilder()
 const navigationItems = new NavigationItemsPropsBuilder()
   .withItems([
     new NavigationItemBuilder()
-      .withId('pure')
-      .withTitle('PURE')
-      .withLink('/pure')
+      .withId('first')
+      .withTitle('FIRST')
+      .withLink('')
       .build(),
     new NavigationItemBuilder()
-      .withId('romance')
-      .withTitle('ROMANCE')
-      .withLink('/romance')
+      .withId('second')
+      .withTitle('SECOND')
+      .withLink('')
       .build(),
     new NavigationItemBuilder()
-      .withId('luxury')
-      .withTitle('LUXURY')
-      .withLink('/luxury')
+      .withId('third')
+      .withTitle('THIRD')
+      .withLink('')
       .build(),
     new NavigationItemBuilder()
-      .withId('passion')
-      .withTitle('PASSION')
-      .withLink('/passion')
+      .withId('fourth')
+      .withTitle('FOURTH')
+      .withLink('')
       .build(),
   ])
   .withActive(1)

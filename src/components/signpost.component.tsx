@@ -5,7 +5,7 @@ import { ImageProps } from './image.component';
 import { Button } from './forms/Button/component';
 import { ImageVariants } from './image.types';
 import { Variants } from './forms/Button/types';
-import { Sizes } from './types/sizes';
+import { Sizes } from './sizes.types';
 import cx from 'classnames';
 
 export class SignpostElementBuilder {

@@ -1,1 +1,0 @@
-export { Sidescription } from './component';

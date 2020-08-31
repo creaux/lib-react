@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useContext } from 'react';
-import { OnChange } from '../../../../types/form';
+import { OnChange } from '../../../../form.types';
 import { IOption, ISelect } from '../../types';
 import cx from 'classnames';
 import { FormType, FormTypeContext } from '../../../Form/component';

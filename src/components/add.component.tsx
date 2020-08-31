@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Raiser } from './Raiser';
+import { Raiser } from './raiser.container';
 import { Button, Variants } from './forms/Button';
 import setDisplayName from 'recompose/setDisplayName';
 import { Container, Row, Col } from 'react-bootstrap';

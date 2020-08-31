@@ -4,11 +4,11 @@ import {
   OnFieldChange,
   OnGroupChange,
   OnValidGroupFieldChange,
-} from '../../types/form';
+} from '../../form.types';
 import { IShippingFields, IShippingGroups } from './types';
 import { faFileInvoiceDollar, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { I18nConsumer } from '../../I18n/component';
+import { I18nConsumer } from '../../i18n.component';
 import defaultTranslations from './en.json';
 import { Checkbox } from '../Checkbox/index';
 import { Conditional } from '../../conditional.component';

@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Address } from '../Address';
 import { Company } from '../Company';
 import { Person } from '../Person';
-import { OnFieldChange, OnValidFieldChange } from '../../types/form';
+import { OnFieldChange, OnValidFieldChange } from '../../form.types';
 import { AbodeBuilder, IAbode } from './types';
 import { Conditional } from '../../conditional.component';
 

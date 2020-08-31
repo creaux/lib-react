@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useContext } from 'react';
-import { OnChange } from '../../types/form';
+import { OnChange } from '../../form.types';
 import { FieldType, InputTypeEnum, IOption } from './types';
 import { FormType, FormTypeContext } from '../Form/component';
 import cx from 'classnames';
 import { Conditional } from '../../conditional.component';
 import { Message } from './hoc/validators/types';
 import { Input } from './Basics/Input/component';
-import { Switch } from '../../Switch/component';
+import { Switch } from '../../switch.component';
 import { SelectBasic } from './Basics/SelectBasic/component';
 
 export interface InputProps {

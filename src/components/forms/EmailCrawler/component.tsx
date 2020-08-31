@@ -1,11 +1,11 @@
 import React, { FormEvent, FunctionComponent } from 'react';
 import { Button, Type } from '../Button';
-import { OnChange } from '../../types/form';
+import { OnChange } from '../../form.types';
 import { Email } from '../Field/Fields/Email';
 import { Form } from '../Form';
 import { FormType } from '../Form/component';
 import { OnValidChange } from '../Field/types';
-import { I18nConsumer } from '../../I18n/component';
+import { I18nConsumer } from '../../i18n.component';
 import defaultTranslations from './en.json';
 
 export interface EmailProps {

@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactChild } from 'react';
 import { Type, Variants } from './types';
 import { Button as Btn } from 'react-bootstrap';
-import { Sizes } from '../../types/sizes';
+import { Sizes } from '../../sizes.types';
 import cx from 'classnames';
 
 export class ButtonPropsBuilder {

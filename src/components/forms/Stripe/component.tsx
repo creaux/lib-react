@@ -4,7 +4,7 @@ import {
   CardExpiryElement,
   CardNumberElement,
 } from '@stripe/react-stripe-js';
-import { I18nConsumer } from '../../I18n/component';
+import { I18nConsumer } from '../../i18n.component';
 import defaultTranslations from './en.json';
 import { Button } from '../Button/component';
 import { Type } from '../Button/types';

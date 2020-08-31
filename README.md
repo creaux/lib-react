@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/creaux/lib-react.svg?branch=master)](https://travis-ci.org/creaux/lib-react)
 
+![https://5f21a8605d292e0022c33ef7-bwyzybpumv.chromatic.com](https://raw.githubusercontent.com/storybookjs/brand/master/badge/badge-storybook.svg)
+
 # 1. Install Dependencies
 
 `npm i`

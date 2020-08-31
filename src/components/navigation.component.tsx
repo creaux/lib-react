@@ -8,7 +8,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Guard } from './Guard/index';
+import { Guard } from './guard.component';
 import { NavigationBrand } from './navigation-brand.component';
 import {
   NavigationItems,

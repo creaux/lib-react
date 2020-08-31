@@ -3,10 +3,9 @@ import { AddContainer, AddContainerProps } from './add.container';
 import { AddComponent, AddComponentProps } from './add.component';
 import { shallow, ShallowWrapper } from 'enzyme';
 import chai, { expect } from 'chai';
-import { Raiser } from './Raiser';
+import { Raiser, RaiserProps } from './raiser.container';
 import { Button, Variants } from './forms/Button';
 import { spy, SinonSpy } from 'sinon';
-import { RaiserProps } from './Raiser/container';
 import chaiSinon from 'sinon-chai';
 import chaiEnzyme from 'chai-enzyme';
 

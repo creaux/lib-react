@@ -1,1 +1,0 @@
-export { Guard } from './component';

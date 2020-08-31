@@ -2,9 +2,9 @@ import React, { FunctionComponent, useContext } from 'react';
 import defaultTranslations from './en.json';
 import { FormTypeContext, isNormalForm } from '../Form';
 import { Conditional } from '../../conditional.component';
-import { I18nConsumer } from '../../I18n';
+import { I18nConsumer } from '../../i18n.component';
 import { IContact } from './types';
-import { OnFieldChange, OnValidFieldChange } from '../../types/form';
+import { OnFieldChange, OnValidFieldChange } from '../../form.types';
 import { Email } from '../Field/Fields/Email';
 import { Phone } from '../Field/Fields/Phone';
 

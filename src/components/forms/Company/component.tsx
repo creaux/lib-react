@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { Text } from '../Field';
-import { OnFieldChange, OnValidFieldChange } from '../../types/form';
+import { OnFieldChange, OnValidFieldChange } from '../../form.types';
 import { ICompany } from './types';
-import { I18nConsumer } from '../../I18n/component';
+import { I18nConsumer } from '../../i18n.component';
 import defaultTranslations from './en.json';
 import { Conditional } from '../../conditional.component';
 import { FormTypeContext, isNormalForm } from '../Form/component';

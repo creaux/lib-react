@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cx from 'classnames';
-import { OnChange } from '../../../types/form';
+import { OnChange } from '../../../form.types';
 import { IRadioStack, IRadio } from './types';
 
 export interface RadioStackProps extends IRadioStack {

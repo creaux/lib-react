@@ -1,4 +1,4 @@
-import { OnChange } from '../../types/form';
+import { OnChange } from '../../form.types';
 import { Messages } from './hoc/validators/types';
 
 export enum InputTypeEnum {

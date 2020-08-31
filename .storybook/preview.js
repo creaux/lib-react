@@ -1,1 +1,1 @@
-import '../src/themes/animo/theme.scss';
+import '../src/themes/default/theme.scss';

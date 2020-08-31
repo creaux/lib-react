@@ -1,1 +1,0 @@
-export { Cycler } from './component';

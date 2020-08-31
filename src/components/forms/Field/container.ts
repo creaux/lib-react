@@ -4,7 +4,7 @@ import { FormTypeContext } from '../Form/component';
 import { FieldType, InputTypeEnum, IOption, OnValidChange } from './types';
 import { Message, MessageBuilder, MessageType } from './hoc/validators/types';
 import { Validation } from './hoc/validators/validator/validator';
-import { OnChange } from '../../types/form';
+import { OnChange } from '../../form.types';
 
 export interface FieldContainerProps {
   id: string;
