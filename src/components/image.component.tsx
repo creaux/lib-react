@@ -27,18 +27,18 @@ export const Image: FunctionComponent<ImageProps> = ({
   rounded = true,
   backgroundPositions,
 }) => {
-  useCssRegister(
+  const ref = useCssRegister(
     [
-      '--Image__backgroundPositions-xs-x',
-      '--Image__backgroundPositions-xs-y',
-      '--Image__backgroundPositions-sm-x',
-      '--Image__backgroundPositions-sm-y',
-      '--Image__backgroundPositions-md-x',
-      '--Image__backgroundPositions-md-y',
-      '--Image__backgroundPositions-lg-x',
-      '--Image__backgroundPositions-lg-y',
-      '--Image__backgroundPositions-xl-x',
-      '--Image__backgroundPositions-xl-y',
+      '--background-position-xs-x',
+      '--background-position-xs-y',
+      '--background-position-sm-x',
+      '--background-position-sm-y',
+      '--background-position-md-x',
+      '--background-position-md-y',
+      '--background-position-lg-x',
+      '--background-position-lg-y',
+      '--background-position-xl-x',
+      '--background-position-xl-y',
     ],
     [
       get(backgroundPositions, ['xs', 'x']),
@@ -62,6 +62,7 @@ export const Image: FunctionComponent<ImageProps> = ({
     <div
       {...attrs}
       className={cx('image-background', className, { rounded: rounded })}
+      ref={ref}
     >
       {isImg ? <img src={src} alt={alt} /> : null}
       {children}

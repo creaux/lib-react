@@ -35,6 +35,12 @@ const imagePropsAsBackgroundWithPosition = new ImagePropsBuilder()
   )
   .build();
 
+const imagePropsAsBackgroundWithoutPosition = new ImagePropsBuilder()
+  .withSrc('https://picsum.photos/id/251/640/480')
+  .withAlt('Lorem ipsum')
+  .withVariant(ImageVariants.BACKGROUND)
+  .build();
+
 const story = storiesOf('Atomic Design/Atoms/Image', module);
 
 story.add('as img', () => <Image {...imagePropsAsImage} />);
@@ -48,5 +54,6 @@ story.add('as background', () => (
 story.add('as background with position', () => (
   <div style={{ width: '640px', height: '480px' }}>
     <Image {...imagePropsAsBackgroundWithPosition} />
+    <Image {...imagePropsAsBackgroundWithoutPosition} />
   </div>
 ));

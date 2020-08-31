@@ -14,7 +14,7 @@ export const Headline: FunctionComponent<HeadlineProps> = ({
   paragraph,
   breakpointCoordinates,
 }) => {
-  useCssRegister(
+  const ref = useCssRegister(
     [
       '--Headline__breakpointCoordinates-xs-x',
       '--Headline__breakpointCoordinates-xs-y',
@@ -42,7 +42,7 @@ export const Headline: FunctionComponent<HeadlineProps> = ({
   );
 
   return (
-    <div className="headline">
+    <div className="headline" ref={ref}>
       <h1>{title}</h1>
       <p>{paragraph}</p>
     </div>

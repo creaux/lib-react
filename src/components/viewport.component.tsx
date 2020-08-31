@@ -17,7 +17,7 @@ export const Viewport: FunctionComponent<ViewportProps> = ({
   position,
   breakpointCoordinates,
 }) => {
-  useCssRegister(
+  const ref = useCssRegister(
     [
       '--Viewport__breakpointCoordinates-xs-x',
       '--Viewport__breakpointCoordinates-xs-y',
@@ -48,6 +48,7 @@ export const Viewport: FunctionComponent<ViewportProps> = ({
     <div
       className={cx('viewport', position)}
       style={{ backgroundImage: `url(${backgroundImage})` }}
+      ref={ref}
     >
       {children}
     </div>

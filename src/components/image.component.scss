@@ -1,28 +1,28 @@
 @import "./functions";
 
 $xs: (
-  x: var(--Image__backgroundPositions-xs-x),
-  y: var(--Image__backgroundPositions-xs-y)
+  x: var(--background-position-xs-x),
+  y: var(--background-position-xs-y)
 );
 
 $sm: (
-  x: var(--Image__backgroundPositions-sm-x),
-  y: var(--Image__backgroundPositions-sm-y)
+  x: var(--background-position-sm-x),
+  y: var(--background-position-sm-y)
 );
 
 $md: (
-  x: var(--Image__backgroundPositions-md-x),
-  y: var(--Image__backgroundPositions-md-y)
+  x: var(--background-position-md-x),
+  y: var(--background-position-md-y)
 );
 
 $lg: (
-  x: var(--Image__backgroundPositions-lg-x),
-  y: var(--Image__backgroundPositions-lg-y)
+  x: var(--background-position-lg-x),
+  y: var(--background-position-lg-y)
 );
 
 $xl: (
-  x: var(--Image__backgroundPositions-xl-x),
-  y: var(--Image__backgroundPositions-xl-y)
+  x: var(--background-position-xl-x),
+  y: var(--background-position-xl-y)
 );
 
 $backgroundPositions: (
