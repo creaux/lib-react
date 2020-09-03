@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "release": "semantic-release",
-    "lib": "rm -rf build && npm run lib:css && NODE_ENV=production babel --extensions \".ts,.tsx\" src --out-dir build --ignore \"src/**/story.tsx,src/**/*.spec.ts,src/**/*.spec.tsx,__snapshots__,src/**/*.d.ts\" && npm run lib:declarations && npm run lib:translations",
+    "lib": "rm -rf build && npm run lib:css && NODE_ENV=production babel --extensions \".ts,.tsx\" src --out-dir build --ignore \"src/**/story.tsx,src/**/*.spec.ts,src/**/*.spec.tsx,__snapshots__,src/**/*.d.ts\" --source-maps inline && npm run lib:declarations && npm run lib:translations",
     "lib:css": "node-sass-chokidar --importer=node_modules/node-sass-tilde-importer src/themes/default/theme.scss build/themes/default/default.css",
     "lib:declarations": "tsc -p tsconfig.d.json",
     "lib:translations": "rsync --include=\"*.json\" --verbose --recursive --exclude=\"*.*\" src/ build",

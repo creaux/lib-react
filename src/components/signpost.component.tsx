@@ -127,6 +127,7 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
                 variant={ImageVariants.BACKGROUND}
                 src={over.src}
                 rounded={image.rounded}
+                backgroundPositions={over.backgroundPositions}
                 className={cx('pb-3', 'signpost__image', {
                   'signpost__image--active': state[i],
                 })}
@@ -135,6 +136,7 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
                 variant={ImageVariants.BACKGROUND}
                 src={image.src}
                 rounded={image.rounded}
+                backgroundPositions={image.backgroundPositions}
                 className={cx('pb-3', 'signpost__image', {
                   'signpost__image--active': !state[i],
                 })}

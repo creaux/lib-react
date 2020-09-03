@@ -104,3 +104,13 @@ export { BackgroundColor } from './schema/background-color.enum';
 export { TextColor } from './schema/text-color.enum';
 export { JustifyContent } from './schema/justify-content.enum';
 export { Fixed } from './schema/fixed.enum';
+
+export type {
+  BreakpointCoordinates,
+  Coordinates,
+} from './components/breakpoint-coordinates.type';
+export {
+  BreakpointCoordinatesBuilder,
+  CoordinatesBuilder,
+} from './components/breakpoint-coordinates.builder';
+export { ImageVariants } from './components/image.types';

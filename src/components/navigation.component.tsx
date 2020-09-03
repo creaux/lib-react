@@ -108,6 +108,7 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
   const [isNotOpacity, opacityRef] = useOpacity(opacity);
   const [isScreenOpen, setIsScreenOpen] = useState(false);
 
+  // TODO: navigation 890 has to be provided from one place
   return (
     <CSSTransition in={isScreenOpen} timeout={890} classNames="navbar">
       <nav

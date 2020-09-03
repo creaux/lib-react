@@ -43,22 +43,27 @@ $backgroundPositions: (
     background-position-y: map-get-second($backgroundPositions, 'xs', 'y');
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-up(xs) {
+    background-position-x: map-get-second($backgroundPositions, 'xs', 'x');
+    background-position-y: map-get-second($backgroundPositions, 'xs', 'y');
+  }
+
+  @include media-breakpoint-up(sm) {
     background-position-x: map-get-second($backgroundPositions, 'sm', 'x');
     background-position-y: map-get-second($backgroundPositions, 'sm', 'y');
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-up(md) {
     background-position-x: map-get-second($backgroundPositions, 'md', 'x');
     background-position-y: map-get-second($backgroundPositions, 'md', 'y');
   }
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-up(lg) {
     background-position-x: map-get-second($backgroundPositions, 'lg', 'x');
     background-position-y: map-get-second($backgroundPositions, 'lg', 'y');
   }
 
-  @include media-breakpoint-down(xl) {
+  @include media-breakpoint-up(xl) {
     background-position-x: map-get-second($backgroundPositions, 'xl', 'x');
     background-position-y: map-get-second($backgroundPositions, 'xl', 'y');
   }
