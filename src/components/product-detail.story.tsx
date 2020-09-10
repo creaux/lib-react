@@ -15,10 +15,10 @@ storiesOf('Atomic Design/Templates/ProductDetail', module).add(
       image="https://picsum.photos/id/745/1600/1200"
     >
       <Navigation>
-        <NavigationItems
-          items={[{ title: 'Get to know Animaux!', link: 'http://' }]}
-        />
-        <NavigationBrand brand={Brand} link="#home" />
+        <NavigationItems>
+          {[{ title: 'Get to know Animaux!', link: 'http://' }]}
+        </NavigationItems>
+        <NavigationBrand link="#home">{Brand}</NavigationBrand>
       </Navigation>
     </ProductDetail>
   )

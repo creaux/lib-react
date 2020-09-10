@@ -51,10 +51,10 @@ const navigationSchemeOpacityBased = (isScreenOpen: boolean) =>
 export interface NavigationProps {
   children?: ReactNode;
   background?: BackgroundColor;
-  navigationScheme?: NavigationScheme;
   justifyContent?: JustifyContent;
   fixed?: Fixed;
   opacity?: number;
+  dark?: boolean;
 }
 
 const useOpacity = (opacity?: number) => {
@@ -99,14 +99,18 @@ const isNavigationScreenContent = (children?: ReactElement) => {
 
 export const Navigation: FunctionComponent<NavigationProps> = ({
   children,
-  navigationScheme = NavigationScheme.LIGHT,
   justifyContent,
   fixed,
   opacity,
+  dark,
 }) => {
   // Moving background to replacing div as background doesn't support opacity without modifying color
   const [isNotOpacity, opacityRef] = useOpacity(opacity);
   const [isScreenOpen, setIsScreenOpen] = useState(false);
+
+  const navigationScheme = dark
+    ? NavigationScheme.DARK
+    : NavigationScheme.LIGHT;
 
   // TODO: navigation 890 has to be provided from one place
   return (
@@ -171,13 +175,13 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
           <Guard<NavigationItemsProps>
             Component={NavigationItems}
             // @ts-ignore
-            when={['items', 'length']}
+            when={['children', 'length']}
           >
             {children}
           </Guard>
           <Guard<NavigationButtonsProps>
             Component={NavigationButtons}
-            when={['buttons', 'length']}
+            when={['children', 'length']}
           >
             {children}
           </Guard>

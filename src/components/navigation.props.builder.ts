@@ -7,7 +7,7 @@ import { Fixed } from '../schema/fixed.enum';
 export class NavigationPropsBuilder {
   private children!: ReactNode;
   private background!: BackgroundColor;
-  private navigationScheme!: NavigationScheme;
+  private dark!: boolean;
   private justifyContent!: JustifyContent;
   private fixed!: Fixed;
   private opacity!: number;
@@ -22,8 +22,8 @@ export class NavigationPropsBuilder {
     return this;
   }
 
-  public withNavigationScheme(navigationScheme: NavigationScheme) {
-    this.navigationScheme = navigationScheme;
+  public witDark(dark: boolean) {
+    this.dark = dark;
     return this;
   }
 
@@ -46,7 +46,7 @@ export class NavigationPropsBuilder {
     return {
       children: this.children,
       background: this.background,
-      navigationScheme: this.navigationScheme,
+      dark: this.dark,
       justifyContent: this.justifyContent,
       fixed: this.fixed,
       opacity: this.opacity,

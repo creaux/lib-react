@@ -33,11 +33,11 @@ export class NavigationItemBuilder {
 }
 
 export class NavigationItemsPropsBuilder {
-  private items!: NavigationItem[];
+  private children!: NavigationItem[];
   private active!: number;
 
   withItems(items: NavigationItem[]): NavigationItemsPropsBuilder {
-    this.items = items;
+    this.children = items;
     return this;
   }
 
@@ -47,6 +47,6 @@ export class NavigationItemsPropsBuilder {
   }
 
   build(): NavigationItemsProps {
-    return { items: this.items, active: this.active };
+    return { children: this.children, active: this.active };
   }
 }

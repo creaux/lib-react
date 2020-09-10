@@ -8,16 +8,16 @@ export interface NavigationItem {
 }
 
 export interface NavigationItemsProps {
-  items: NavigationItem[];
+  children: NavigationItem[];
   active?: number;
 }
 
 export const NavigationItems: FunctionComponent<NavigationItemsProps> = ({
-  items,
+  children,
   active,
 }) => (
   <ul className="navbar-nav align-items-center">
-    {items.map((item: NavigationItem, i) => (
+    {children.map((item: NavigationItem, i) => (
       <li
         className={cx('nav-item', {
           active: i === active,
