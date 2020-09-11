@@ -175,13 +175,13 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
           <Guard<NavigationItemsProps>
             Component={NavigationItems}
             // @ts-ignore
-            when={['children', 'length']}
+            when={['items', 'length']}
           >
             {children}
           </Guard>
           <Guard<NavigationButtonsProps>
             Component={NavigationButtons}
-            when={['children', 'length']}
+            when={['buttons', 'length']}
           >
             {children}
           </Guard>

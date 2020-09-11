@@ -2,14 +2,14 @@ import React, { FunctionComponent } from 'react';
 import { Button, ButtonProps } from '../forms/Button/index';
 
 export interface NavigationButtonsProps {
-  children: ButtonProps[];
+  buttons: ButtonProps[];
 }
 
 export const NavigationButtons: FunctionComponent<NavigationButtonsProps> = ({
-  children,
+  buttons,
 }) => (
   <form className="form-inline">
-    {children.map((button, i) => (
+    {buttons.map((button, i) => (
       <Button {...button} key={i} />
     ))}
   </form>

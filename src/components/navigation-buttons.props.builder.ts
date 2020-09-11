@@ -2,16 +2,16 @@ import { ButtonProps } from '../forms/Button/component';
 import { NavigationButtonsProps } from './navigation-buttons.component';
 
 export class NavigationButtonsPropsBuilder {
-  private children!: ButtonProps[];
+  private buttons!: ButtonProps[];
 
   withButtons(buttons: ButtonProps[]): NavigationButtonsPropsBuilder {
-    this.children = buttons;
+    this.buttons = buttons;
     return this;
   }
 
   build(): NavigationButtonsProps {
     return {
-      children: this.children,
+      buttons: this.buttons,
     };
   }
 }

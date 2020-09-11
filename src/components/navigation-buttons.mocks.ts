@@ -1,7 +1,7 @@
 import { NavigationButtonsProps } from './navigation-buttons.component';
 
 export const props: NavigationButtonsProps = {
-  children: [
+  buttons: [
     {
       children: 'Click Me!',
     },
