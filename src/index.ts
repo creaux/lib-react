@@ -9,7 +9,7 @@ export { Image } from './components/image.component';
 export { ImagePropsBuilder } from './components/image.props.builder';
 export type { ImageProps } from './components/image.component';
 export { Sidescription } from './components/sidescription.component';
-export { Svg } from './components/svg.component';
+export { Render } from './components/render.component';
 // Moleculs
 export { AddComponent as Add } from './components/add.component';
 export { Carousel } from './components/carousel.component';
