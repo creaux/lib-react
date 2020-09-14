@@ -61,19 +61,17 @@ const useOpacity = (opacity?: number) => {
   const ref = useRef() as MutableRefObject<HTMLBaseElement>;
   const [state, setState] = useState(true);
 
-  if (typeof opacity === 'number') {
-    document.documentElement.style.setProperty(
-      '--navbar-opacity',
-      opacity.toString()
-    );
-  }
-
   useLayoutEffect(() => {
     if (ref && ref.current && typeof opacity === 'number') {
+      ((ref.current as unknown) as HTMLElement).style.setProperty(
+        '--navbar-opacity',
+        opacity.toString()
+      );
+
       const backgroundColor = window
         .getComputedStyle((ref.current as unknown) as Element)
         .getPropertyValue('background-color');
-      document.documentElement.style.setProperty(
+      ((ref.current as unknown) as HTMLElement).style.setProperty(
         '--navbar-background-color',
         backgroundColor
       );

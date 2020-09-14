@@ -1,4 +1,5 @@
 import React, { FunctionComponent, ReactNode } from 'react';
+import cx from 'classnames';
 
 export interface NavigationBrandProps {
   children: ReactNode;
@@ -9,7 +10,11 @@ export const NavigationBrand: FunctionComponent<NavigationBrandProps> = ({
   children,
   link,
 }) => (
-  <a className="navbar-brand" href={link} style={{ width: '100px' }}>
+  <button
+    className={cx('navbar-brand', 'btn', 'btn-link')}
+    href={link}
+    style={{ width: '100px' }}
+  >
     {children}
-  </a>
+  </button>
 );
