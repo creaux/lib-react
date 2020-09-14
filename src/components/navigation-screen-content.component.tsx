@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import cx from 'classnames';
 
 export interface NavigationScreenContentLink {
   href: string;
@@ -14,6 +15,7 @@ export interface NavigationScreenContentProps {
   city: string;
   postcode: string;
   links: NavigationScreenContentLink[];
+  onClick: (link: string) => void;
 }
 
 export const NavigationScreenContent: FunctionComponent<NavigationScreenContentProps> = ({
@@ -25,6 +27,7 @@ export const NavigationScreenContent: FunctionComponent<NavigationScreenContentP
   city,
   postcode,
   links,
+  onClick: handleClick
 }) => (
   <div>
     <div className="row flex-column-reverse flex-lg-row">
@@ -92,9 +95,9 @@ export const NavigationScreenContent: FunctionComponent<NavigationScreenContentP
       <div className="col-lg-1 border-lg-left border-top border-lg-top-0 mb-5 mt-5"></div>
       <div className="col-lg-6">
         {links.map((link, index) => (
-          <a href={link.href} className="h1 display-3 d-block text-nowrap">
+          <span onClick={() => handleClick(link.href)} key={index} className={cx("btn", "btn-link", "h1", "display-3", "d-block", "text-nowrap")}>
             {link.title}
-          </a>
+          </span>
         ))}
       </div>
     </div>
