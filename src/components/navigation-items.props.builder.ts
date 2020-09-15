@@ -35,6 +35,7 @@ export class NavigationItemBuilder {
 export class NavigationItemsPropsBuilder {
   private items!: NavigationItem[];
   private active!: number;
+  private onClick!: (link: string) => void;
 
   withItems(items: NavigationItem[]): NavigationItemsPropsBuilder {
     this.items = items;
@@ -46,7 +47,12 @@ export class NavigationItemsPropsBuilder {
     return this;
   }
 
+  withOnClick(onClick: (link: string) => void) {
+    this.onClick = onClick;
+    return this;
+  }
+
   build(): NavigationItemsProps {
-    return { items: this.items, active: this.active };
+    return { items: this.items, active: this.active, onClick: this.onClick};
   }
 }

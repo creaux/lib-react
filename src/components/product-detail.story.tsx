@@ -17,8 +17,9 @@ storiesOf('Atomic Design/Templates/ProductDetail', module).add(
       <Navigation>
         <NavigationItems
           items={[{ title: 'Get to know Animaux!', link: 'http://' }]}
+          onClick={() => {}}
         ></NavigationItems>
-        <NavigationBrand link="#home">{Brand}</NavigationBrand>
+        <NavigationBrand onClick={() => {}}>{Brand}</NavigationBrand>
       </Navigation>
     </ProductDetail>
   )

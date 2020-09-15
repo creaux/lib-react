@@ -17,6 +17,11 @@
     position: relative;
     z-index: 1;
     text-decoration: none;
+
+    // To fix link underline
+    &:hover::after {
+      display: none !important;
+    }
   }
 }
 

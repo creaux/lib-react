@@ -4,7 +4,7 @@ import React, { FunctionComponent, ReactNode, cloneElement } from 'react';
  * Svg properties.
  */
 export interface RenderProps {
-  children: any
+  children: any;
 }
 
 /**
@@ -15,6 +15,4 @@ export interface RenderProps {
 export const Render: FunctionComponent<RenderProps> = ({
   children,
   ...props
-}) => (
-  cloneElement(children, props)
-);
+}) => cloneElement(children, props);

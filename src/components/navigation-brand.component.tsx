@@ -5,14 +5,14 @@ import { Render } from './render.component';
 
 export interface NavigationBrandProps {
   children: ReactNode;
-  onClick: () => {};
-  color: string;
+  onClick: () => void;
+  color?: string;
 }
 
 export const NavigationBrand: FunctionComponent<NavigationBrandProps> = ({
   children,
   onClick: handleClick,
-  color
+  color = 'white',
 }) => (
   <button
     className={cx('navbar-brand', 'btn', 'btn-link')}
