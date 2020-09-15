@@ -3,10 +3,10 @@ import React, {
   FunctionComponent,
   MutableRefObject,
   ReactElement,
-  ReactNode,
+  ReactNode, useEffect,
   useLayoutEffect,
   useRef,
-  useState,
+  useState
 } from 'react';
 import { Guard } from './guard.component';
 import { NavigationBrand } from './navigation-brand.component';
@@ -55,6 +55,7 @@ export interface NavigationProps {
   fixed?: Fixed;
   opacity?: number;
   dark?: boolean;
+  path?: string;
 }
 
 const useOpacity = (opacity?: number) => {
@@ -101,6 +102,7 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
   fixed,
   opacity,
   dark,
+  path
 }) => {
   // Moving background to replacing div as background doesn't support opacity without modifying color
   const [isNotOpacity, opacityRef] = useOpacity(opacity);
@@ -109,6 +111,10 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
   const navigationScheme = dark
     ? NavigationScheme.DARK
     : NavigationScheme.LIGHT;
+
+  useEffect(() => {
+    setIsScreenOpen(false);
+  }, [path]);
 
   // TODO: navigation 890 has to be provided from one place
   return (

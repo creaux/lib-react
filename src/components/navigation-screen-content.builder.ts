@@ -34,6 +34,7 @@ export class NavigationScreenContentPropsBuilder {
   private city!: string;
   private postcode!: string;
   private links!: NavigationScreenContentLink[];
+  private onClick!: (link: string) => void;
 
   withEmail(email: string): NavigationScreenContentPropsBuilder {
     this.email = email;
@@ -77,6 +78,11 @@ export class NavigationScreenContentPropsBuilder {
     return this;
   }
 
+  withOnClick(onClick: (link: string) => void): NavigationScreenContentPropsBuilder {
+    this.onClick = onClick;
+    return this;
+  }
+
   build(): NavigationScreenContentProps {
     return {
       email: this.email,
@@ -87,6 +93,7 @@ export class NavigationScreenContentPropsBuilder {
       city: this.city,
       postcode: this.postcode,
       links: this.links,
+      onClick: this.onClick
     };
   }
 }

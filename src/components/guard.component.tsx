@@ -26,7 +26,7 @@ export class Guard<ComponentProps = string[]> extends React.Component<
       when,
       otherwise,
       defaults = false,
-      mandatory
+      mandatory,
     } = this.props;
 
     // When children is not defined then we don't want to render anything
@@ -47,7 +47,9 @@ export class Guard<ComponentProps = string[]> extends React.Component<
       }
 
       if (mandatory && Component && Component.isPrototypeOf(child.type)) {
-        console.error(`${Component.name} has to be provided as children to render.`);
+        console.error(
+          `${(Component as Function).name} has to be provided as children to render.`
+        );
       }
 
       if ((when && get(child.props, when)) || typeof when === 'undefined') {
