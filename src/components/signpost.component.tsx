@@ -8,42 +8,6 @@ import { Variants } from '../forms/Button/types';
 import { Sizes } from './sizes.types';
 import cx from 'classnames';
 
-export class SignpostElementBuilder {
-  private image!: ImageProps;
-  private over!: ImageProps;
-  private title!: string;
-  private onClick!: (event: any) => void;
-
-  public withImage(image: ImageProps): SignpostElementBuilder {
-    this.image = image;
-    return this;
-  }
-
-  public withOver(over: ImageProps): SignpostElementBuilder {
-    this.over = over;
-    return this;
-  }
-
-  public withTitle(title: string): SignpostElementBuilder {
-    this.title = title;
-    return this;
-  }
-
-  public withOnClick(onClick: (event: any) => void): SignpostElementBuilder {
-    this.onClick = onClick;
-    return this;
-  }
-
-  public build(): SignpostElement {
-    return {
-      image: this.image,
-      over: this.over,
-      title: this.title,
-      onClick: this.onClick,
-    };
-  }
-}
-
 export interface SignpostElement {
   image: ImageProps;
   over: ImageProps;
@@ -51,29 +15,14 @@ export interface SignpostElement {
   onClick: (event: any) => void;
 }
 
-export class SignpostComponentPropsBuilder {
-  private elements!: SignpostElement[];
-
-  public withElements(
-    elements: SignpostElement[]
-  ): SignpostComponentPropsBuilder {
-    this.elements = elements;
-    return this;
-  }
-
-  public build(): SignpostComponentProps {
-    return {
-      elements: this.elements,
-    };
-  }
-}
-
 export interface SignpostComponentProps {
   elements: SignpostElement[];
+  linkText: string;
 }
 
 export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
   elements,
+  linkText,
 }) => {
   const [state, handleMouseEnter] = useState(
     Array.from(Array(elements.length).keys(), () => false)
@@ -104,9 +53,7 @@ export const SignpostComponent: FunctionComponent<SignpostComponentProps> = ({
                 onClick={handleClick}
               >
                 <>
-                  <div className="mr-2 signpost__btn-text">
-                    Go to the detail
-                  </div>
+                  <div className="mr-2 signpost__btn-text">{linkText}</div>
                   <svg
                     width="1em"
                     height="1em"

@@ -1,0 +1,23 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Aspect } from './aspect.component'
+import { BsCircleHalf } from 'react-icons/bs';
+
+<Meta title="Atomic Design/Atoms/Aspect" />
+
+# Aspect
+
+Aspect component shows feature icon with title and description.
+
+## Default
+
+<Canvas>
+  <Story name="default">
+    <Aspect
+      title="Lorem ipsum dolor sit amet"
+      description="Maecenas ac eros ultrices, sodales turpis id, commodo felis."
+      horizontal
+    >
+      <BsCircleHalf />
+    </Aspect>
+  </Story>
+</Canvas>

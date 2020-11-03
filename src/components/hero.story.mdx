@@ -1,0 +1,69 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Hero } from './hero.component';
+import { Builder } from '../builder';
+
+<Meta title="Atomic Design/I18n/Hero" />
+
+# Hero
+
+Hero component renders headline with background image and option to position such title based on responsivity.
+
+export const HeroProps = {
+  default: Builder()
+    .viewport(Builder()
+      .breakpointCoordinates(Builder()
+        .xl(Builder()
+          .x('0')
+          .y('0')
+          .build())
+        .lg(Builder()
+          .x('0')
+          .y('0')
+          .build())
+        .md(Builder()
+          .x('0')
+          .y('0')
+          .build())
+        .sm(Builder()
+          .x('0')
+          .y('0')
+          .build())
+        .xs(Builder()
+          .x('0')
+          .y('0')
+          .build())
+        .build())
+      .backgroundImage('https://picsum.photos/id/501/2500/1656')
+      .build())
+    .headline(Builder()
+      .breakpointCoordinates(Builder()
+        .xl(Builder()
+          .x('26vw')
+          .y('53vh')
+          .build())
+        .lg(Builder()
+          .x('26vw')
+          .y('53vh')
+          .build())
+        .md(Builder()
+          .x('26vw')
+          .y('53vh')
+          .build())
+        .sm(Builder()
+          .x('26vw')
+          .y('53vh')
+          .build())
+        .xs(Builder()
+          .x('26vw')
+          .y('53vh')
+          .build())
+        .build())
+      .build())
+    .build()
+}
+
+<Canvas>
+  <Story name="default">
+    <Hero {...HeroProps.default} />
+  </Story>
+</Canvas>

@@ -1,0 +1,58 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Placard } from './placard.component';
+import { Builder } from '../builder';
+
+<Meta title="Atomic Design/I18n/Placard" />
+
+# Questions
+
+Questions component provides template for creating page with questions and answers.
+
+## Default
+
+export const props = Builder()
+  .elements([
+    Builder()
+      .image(Builder()
+        .src('https://picsum.photos/id/402/1600/1200')
+        .build())
+      .over(Builder()
+        .src('https://picsum.photos/id/403/1600/1200')
+        .build())
+      .onClick(() => {})
+      .build(),
+    Builder()
+      .image(Builder()
+        .src('https://picsum.photos/id/404/1600/1200')
+        .build())
+      .over(Builder()
+        .src('https://picsum.photos/id/405/1600/1200')
+        .build())
+      .onClick(() => {})
+      .build(),
+    Builder()
+      .image(Builder()
+        .src('https://picsum.photos/id/406/1600/1200')
+        .build())
+      .over(Builder()
+        .src('https://picsum.photos/id/407/1600/1200')
+        .build())
+      .onClick(() => {})
+      .build(),
+    Builder()
+      .image(Builder()
+        .src('https://picsum.photos/id/408/1600/1200')
+        .build())
+      .over(Builder()
+        .src('https://picsum.photos/id/409/1600/1200')
+        .build())
+      .onClick(() => {})
+      .build()
+  ])
+  .build();
+
+<Canvas>
+  <Story name="default">
+    <Placard {...props} />
+  </Story>
+</Canvas>

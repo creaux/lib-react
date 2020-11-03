@@ -1,0 +1,31 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Features } from './features.component';
+import { Builder } from '../builder';
+import { BsBarChart, BsFillAwardFill, BsFillClockFill, BsFillBrightnessHighFill, BsTrash2Fill, BsTriangleHalf } from "react-icons/bs";
+
+<Meta title="Atomic Design/I18n/Features" />
+
+# Headline
+
+Features component provides template for creating page with aspects.
+
+## Default
+
+export const FeaturesProps = {
+  default: Builder()
+    .icons([
+      <BsBarChart />,
+      <BsFillAwardFill />,
+      <BsFillClockFill />,
+      <BsFillBrightnessHighFill />,
+      <BsTrash2Fill />,
+      <BsTriangleHalf />,
+    ])
+    .build()
+};
+
+<Canvas>
+  <Story name="default">
+    <Features {...FeaturesProps.default} />
+  </Story>
+</Canvas>

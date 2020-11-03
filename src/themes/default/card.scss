@@ -1,0 +1,10 @@
+
+.accordion {
+  > .card {
+    border-bottom: 1px solid black !important;
+
+    > .card-body {
+      padding-top: 0;
+    }
+  }
+}

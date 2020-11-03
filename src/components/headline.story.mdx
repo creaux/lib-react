@@ -1,0 +1,57 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Headline } from './headline.component';
+import { Gloom } from './gloom.component';
+
+<Meta title="Atomic Design/Moleculs/Headline" />
+
+# Headline
+
+Headline component is used for providing titles with paragraphs on graphical elements and photos.
+
+Headline can be positioned absolutely in relation to its parent.
+
+## Basic usage with properties
+
+### Default
+
+Just default variant without any additional functionality.
+
+<Canvas>
+  <Story name="Default">
+    <Headline title="This is title" paragraph="Lorem ipsum dolor sit amet" />
+  </Story>
+</Canvas>
+
+### Breakpoint Coordinates
+
+Suppose to position headline absolutely to its parent.
+
+<Canvas>
+  <Story name="With Breakpoint Coordinates">
+    <Headline title="This is title" paragraph="Lorem ipsum dolor sit amet" />
+  </Story>
+</Canvas>
+
+### Breakpoint Width
+
+Maintain width based on breakpoint.
+
+<Canvas>
+  <Story name="With Breakpoint Width">
+    <Headline title="This is title" paragraph="Lorem ipsum dolor sit amet" />
+  </Story>
+</Canvas>
+
+## Additional functionality
+
+### With Gloom
+
+Gloom component aas a child suppose to make shadow below the headline.
+
+<Canvas>
+  <Story name="With Gloom">
+    <Headline title="This is title" paragraph="Lorem ipsum dolor sit amet">
+      <Gloom />
+    </Headline>
+  </Story>
+</Canvas>

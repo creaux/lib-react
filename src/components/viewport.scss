@@ -72,3 +72,10 @@ $breakpointCoordinates: (
     background-position-y: map-get-second($breakpointCoordinates, 'xl', 'y');
   }
 }
+
+.viewport--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

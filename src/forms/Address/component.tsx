@@ -2,7 +2,7 @@ import React, { FunctionComponent, useContext } from 'react';
 import { Text, Number, Alpha, Select } from '../Field';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { IAddress } from './types';
-import { I18nConsumer } from '../../components/i18n.component';
+import { I18n, Translations } from '../../components/i18n.component';
 import { FormTypeContext, isNormalForm } from '../Form';
 import { Conditional } from '../../components/conditional.component';
 import defaultTranslations from './en.json';
@@ -12,7 +12,7 @@ export interface AddressProps extends IAddress {
   onValidFieldChange: OnValidFieldChange<keyof IAddress>;
 }
 
-export interface AddressTranslations {
+export interface AddressTranslations extends Translations {
   STREET: string;
   STREET_PLACEHOLDER: string;
   STREET_MESSAGE_VALID: string;
@@ -52,7 +52,7 @@ export const Address: FunctionComponent<AddressProps> = ({
   const type = useContext(FormTypeContext);
 
   return (
-    <I18nConsumer<AddressTranslations>
+    <I18n.Consumer<AddressTranslations>
       defaultTranslations={defaultTranslations}
     >
       {(translations) => (
@@ -173,6 +173,6 @@ export const Address: FunctionComponent<AddressProps> = ({
           </div>
         </fieldset>
       )}
-    </I18nConsumer>
+    </I18n.Consumer>
   );
 };

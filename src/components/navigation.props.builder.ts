@@ -1,4 +1,4 @@
-import { NavigationProps, NavigationScheme } from './navigation.component';
+import { NavigationProps } from './navigation.component';
 import { ReactNode } from 'react';
 import { BackgroundColor } from '../schema/background-color.enum';
 import { JustifyContent } from '../schema/justify-content.enum';
@@ -11,6 +11,7 @@ export class NavigationPropsBuilder {
   private justifyContent!: JustifyContent;
   private fixed!: Fixed;
   private opacity!: number;
+  private path!: string;
 
   public withChildren(children: ReactNode): NavigationPropsBuilder {
     this.children = children;
@@ -42,6 +43,11 @@ export class NavigationPropsBuilder {
     return this;
   }
 
+  public withPath(path: string): NavigationPropsBuilder {
+    this.path = path;
+    return this;
+  }
+
   public build(): NavigationProps {
     return {
       children: this.children,
@@ -50,6 +56,7 @@ export class NavigationPropsBuilder {
       justifyContent: this.justifyContent,
       fixed: this.fixed,
       opacity: this.opacity,
+      path: this.path,
     };
   }
 }

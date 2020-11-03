@@ -1,0 +1,56 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { BreakpointCoordinatesBuilder, CoordinatesBuilder } from './breakpoint-coordinates.builder';
+import { ViewportPropsBuilder } from './viewport-props.builder';
+import { HeadlinePropsBuilder } from './headline-props.builder';
+import { Viewport } from './viewport.component';
+import { Headline } from './headline.component';
+
+<Meta title="Atomic Design/Atoms/Viewport" />
+
+# Headline
+
+Viewport component suppose extend content over whole viewport.
+
+## Default
+
+<Canvas>
+  <Story name="default">
+    <Viewport {...new ViewportPropsBuilder()
+      .withBackground('https://picsum.photos/id/100/2500/1656')
+      .withBreakpointCoordinates(
+        new BreakpointCoordinatesBuilder()
+          .withXs(new CoordinatesBuilder().withX('left').withY('center'))
+          .withSm(new CoordinatesBuilder().withX('center').withY('center'))
+          .withMd(new CoordinatesBuilder().withX('right').withY('center'))
+          .withLg(new CoordinatesBuilder().withX('left').withY('center'))
+          .withXl(new CoordinatesBuilder().withX('center').withY('center'))
+          .build()
+      )
+      .build()}>
+      <Headline {...new HeadlinePropsBuilder()
+        .withTitle('First')
+        .withParagraph('Cobaltum persuaderes, tanquam fortis habitio.')
+        .withBreakpointCoordinates(
+          new BreakpointCoordinatesBuilder()
+            .withXs(new CoordinatesBuilder().withX('right').withY('center'))
+            .withSm(new CoordinatesBuilder().withX('right').withY('center'))
+            .withMd(new CoordinatesBuilder().withX('right').withY('center'))
+            .withLg(new CoordinatesBuilder().withX('right').withY('center'))
+            .withXl(new CoordinatesBuilder().withX('right').withY('center'))
+            .build()
+        )} />
+    </Viewport>
+  </Story>
+  <Story name="center">
+    <Viewport {...new ViewportPropsBuilder()
+      .withBackground('https://picsum.photos/id/100/2500/1656')
+      .withCenter()
+      .build()}>
+      <Headline {...new HeadlinePropsBuilder()
+        .withTitle('First')
+        .withParagraph('Cobaltum persuaderes, tanquam fortis habitio.')
+        .withCenter()
+        .build()} />
+    </Viewport>
+  </Story>
+</Canvas>

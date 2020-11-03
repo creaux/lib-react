@@ -4,11 +4,17 @@ import { Position } from '../schema/position.enum';
 import { useCssRegister } from '../hooks/use-css-register.hook';
 import { BreakpointCoordinates } from './breakpoint-coordinates.type';
 import { get } from 'lodash';
+import { Padding } from '../schema/padding.enum';
+import { Color } from '..';
+import { textColorMapper } from '../schema/color.enum';
 
 export interface ViewportProps {
   backgroundImage?: string;
   position?: Position;
   breakpointCoordinates?: BreakpointCoordinates;
+  center?: boolean;
+  padding?: Padding;
+  color?: Color;
 }
 
 export const Viewport: FunctionComponent<ViewportProps> = ({
@@ -16,6 +22,9 @@ export const Viewport: FunctionComponent<ViewportProps> = ({
   backgroundImage,
   position,
   breakpointCoordinates,
+  center = false,
+  padding,
+  color,
 }) => {
   const ref = useCssRegister(
     [
@@ -46,8 +55,18 @@ export const Viewport: FunctionComponent<ViewportProps> = ({
 
   return (
     <div
-      className={cx('viewport', position)}
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      className={cx(
+        'viewport',
+        color ? textColorMapper[color] : undefined,
+        padding,
+        position,
+        {
+          'viewport--center': center,
+        }
+      )}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
       ref={ref}
     >
       {children}

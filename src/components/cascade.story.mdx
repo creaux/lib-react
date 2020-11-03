@@ -1,0 +1,44 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Cascade } from './cascade.component';
+import { Padding } from '../schema/padding.enum';
+import { BsGearWide, BsGiftFill, BsGrid1X2Fill, BsKanban, BsMusicPlayerFill, BsPieChartFill } from 'react-icons/bs';
+
+<Meta title="Atomic Design/Moleculs/Cascade" />
+
+# Cascade
+
+Cascade suppose to create cascaded elements in the couple of lines.
+
+## No constrain
+
+This shows simeple example how divs with textual content are rendered without any constrain.
+
+<Canvas>
+  <Story name="without constrain">
+      <Cascade center>
+        <BsPieChartFill />
+        <BsMusicPlayerFill />
+        <BsKanban />
+        <BsGiftFill />
+        <BsGrid1X2Fill />
+        <BsGearWide />
+      </Cascade>
+  </Story>
+</Canvas>
+
+## With constrain
+
+This shows simeple example how divs with textual content are rendered with constrain.
+
+<Canvas>
+  <Story name="with constrain">
+    <Cascade layout={{ xs: 12, sm: 12, md: 6, lg: 4, xl: 3 }} center padding={Padding.P2}>
+      <BsPieChartFill />
+      <BsMusicPlayerFill />
+      <BsKanban />
+      <BsGiftFill />
+      <BsGrid1X2Fill />
+      <BsGearWide />
+    </Cascade>
+  </Story>
+</Canvas>

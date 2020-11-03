@@ -33,63 +33,58 @@ $breakpointCoordinates: (
   xl: $xl
 );
 
-$x-xs-position: calc(var(--headline__xs-x-position) * 1vw);
-$y-xs-position: calc(var(--headline__xs-y-position) * 1vh);
-$x-sm-position: calc(var(--headline__sm-x-position) * 1vw);
-$y-sm-position: calc(var(--headline__sm-y-position) * 1vh);
-$x-md-position: calc(var(--headline__md-x-position) * 1vw);
-$y-md-position: calc(var(--headline__md-y-position) * 1vh);
-$x-lg-position: calc(var(--headline__lg-x-position) * 1vw);
-$y-lg-position: calc(var(--headline__lg-y-position) * 1vh);
-$x-xl-position: calc(var(--headline__xl-x-position) * 1vw);
-$y-xl-position: calc(var(--headline__xl-y-position) * 1vh);
-
 .headline {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  &.headline--absolute {
+    position: absolute;
+  }
 
-  padding: 50px;
-
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(md) {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   @include media-breakpoint-up(xs) {
     display: block;
     left: map-get-second($breakpointCoordinates, 'xs', 'x');
     top: map-get-second($breakpointCoordinates, 'xs', 'y');
+    width: var(--bw-xs, auto);
   }
 
   @include media-breakpoint-up(sm) {
     display: block;
-    left: map-get-second($breakpointCoordinates, 'sm', 'x');;
+    left: map-get-second($breakpointCoordinates, 'sm', 'x');
     top: map-get-second($breakpointCoordinates, 'sm', 'y');
+    width: var(--bw-sm, auto);
   }
 
   @include media-breakpoint-up(md) {
     display: block;
-    left: map-get-second($breakpointCoordinates, 'md', 'x');;
+    left: map-get-second($breakpointCoordinates, 'md', 'x');
     top: map-get-second($breakpointCoordinates, 'md', 'y');
+    width: var(--bw-md, auto);
   }
 
   @include media-breakpoint-up(lg) {
     display: block;
-    left: map-get-second($breakpointCoordinates, 'lg', 'x');;
+    left: map-get-second($breakpointCoordinates, 'lg', 'x');
     top: map-get-second($breakpointCoordinates, 'lg', 'y');
+    width: var(--bw-lg, auto);
   }
 
   @include media-breakpoint-up(xl) {
     display: block;
-    left: map-get-second($breakpointCoordinates, 'xl', 'x');;
+    left: map-get-second($breakpointCoordinates, 'xl', 'x');
     top: map-get-second($breakpointCoordinates, 'xl', 'y');
+    width: var(--bw-xl, auto);
   }
 }
 
 .headline__content {
   position: absolute;
+}
+
+.headline--center {
+  text-align: center;
 }

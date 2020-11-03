@@ -20,7 +20,7 @@
   "CITY_MESSAGE_INVALID": "City is not valid",
   "CITY_MESSAGE_DEFAULT": "Choose city",
   "COUNTRY": "Country",
-  "COUTRY_PLACEHOLDER": "Austria",
+  "COUNTRY_PLACEHOLDER": "Austria",
   "COUNTRY_MESSAGE_VALID": "Country is valid",
   "COUNTRY_MESSAGE_INVALID": "Country is not valid",
   "COUNTRY_MESSAGE_DEFAULT": "Choose country"

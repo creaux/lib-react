@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Collapsable } from './collapsable.component'
+
+<Meta title="Atomic Design/Moleculs/Collapsable" />
+
+# Headline
+
+Collapsable component suppose to provide collapsable title with description after opening.
+
+## Default
+
+<Canvas>
+  <Story name="default">
+    <Collapsable
+      elements={[
+        { title: 'Lorem ipsum dolor sit amet?', description: 'Lorem ipsum dolor sit amet' },
+        { title: 'Lorem ipsum dolor sit amet?', description: 'Lorem ipsum dolor sit amet' },
+        { title: 'Lorem ipsum dolor sit amet?', description: 'Lorem ipsum dolor sit amet' },
+        { title: 'Lorem ipsum dolor sit amet?', description: 'Lorem ipsum dolor sit amet' },
+        { title: 'Lorem ipsum dolor sit amet?', description: 'Lorem ipsum dolor sit amet' },
+        { title: 'Lorem ipsum dolor sit amet?', description: 'Lorem ipsum dolor sit amet' },
+      ]} />
+  </Story>
+</Canvas>

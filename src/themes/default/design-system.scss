@@ -8,8 +8,12 @@
   height: 100%;
 }
 
+a:not(.nav-brand):not(.carousel-control-next):not(.carousel-control-prev):hover::after, .link:hover::after {
+  @include link-hover;
+}
+
 // To provide bottom line with different gap
-a, .btn.btn-link {
+.btn.btn-link {
   &:hover:not(.nav-brand)::after, .nav-item.active &::after {
     @include link-hover;
   }

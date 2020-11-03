@@ -5,19 +5,21 @@ import { Render } from './render.component';
 
 export interface NavigationBrandProps {
   children: ReactNode;
-  onClick: () => void;
+  onClick: (link: string) => void;
   color?: string;
+  link?: string;
 }
 
 export const NavigationBrand: FunctionComponent<NavigationBrandProps> = ({
   children,
   onClick: handleClick,
   color = 'white',
+  link = '/',
 }) => (
   <button
     className={cx('navbar-brand', 'btn', 'btn-link')}
     style={{ width: '100px' }}
-    onClick={() => handleClick()}
+    onClick={() => handleClick(link)}
   >
     <Guard Component={Render} props={{ fill: color }} mandatory>
       {children}

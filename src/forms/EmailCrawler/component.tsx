@@ -5,7 +5,7 @@ import { Email } from '../Field/Fields/Email';
 import { Form } from '../Form';
 import { FormType } from '../Form/component';
 import { OnValidChange } from '../Field/types';
-import { I18nConsumer } from '../../components/i18n.component';
+import { I18n, Translations } from '../../components/i18n.component';
 import defaultTranslations from './en.json';
 
 export interface EmailProps {
@@ -20,7 +20,7 @@ export interface EmailProps {
   valid: boolean;
 }
 
-export interface EmailCrawlerTranslations {
+export interface EmailCrawlerTranslations extends Translations {
   EMAIL_CRAWLER_MESSAGE_VALID: string;
   EMAIL_CRAWLER_MESSAGE_INVALID: string;
   EMAIL_CRAWLER_MESSAGE_DEFAULT: string;
@@ -39,7 +39,7 @@ export const EmailCrawler: FunctionComponent<EmailProps> = (
   } = props;
 
   return (
-    <I18nConsumer<EmailCrawlerTranslations>
+    <I18n.Consumer<EmailCrawlerTranslations>
       defaultTranslations={defaultTranslations}
     >
       {(translations) => (
@@ -65,6 +65,6 @@ export const EmailCrawler: FunctionComponent<EmailProps> = (
           </Button>
         </Form>
       )}
-    </I18nConsumer>
+    </I18n.Consumer>
   );
 };

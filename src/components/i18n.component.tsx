@@ -1,26 +1,116 @@
-import { createContext, ReactNode, Component } from 'react';
+import React, { createContext, ReactNode, Component, useContext } from 'react';
 
 const { keys } = Object;
 
-export interface Translations {
-  [key: string]: string;
+export interface Translations {}
+
+export enum Languages {
+  CS = 'cs',
+  DE = 'de',
+  EN = 'en',
 }
 
-export const I18nContext = createContext({});
-
-export interface I18nConsumerProps<T> {
-  defaultTranslations: Translations;
-  children: (translations: T | Translations) => ReactNode;
+export interface I18nProviderProps<T extends Translations> {
+  [Languages.CS]: T;
+  [Languages.DE]: T;
+  [Languages.EN]: T;
 }
 
-export class I18nConsumer<T> extends Component<I18nConsumerProps<T>> {
-  static contextType = I18nContext;
+export interface I18nMapperProps<K, V> {
+  value: Map<K, V>;
+}
 
-  render() {
-    return this.props.children(
-      keys(this.context).length > 0
-        ? this.context
-        : this.props.defaultTranslations
-    );
-  }
+export interface I18nConsumerProps<T extends Translations> {
+  defaultTranslations: T;
+  children: (translations: T) => ReactNode;
+}
+
+export class I18n<T> {
+  public static readonly Context = createContext<Translations>({});
+
+  public static readonly useTranslations = <T extends Translations>(
+    defaultTranslations: T
+  ): Map<keyof T, T[keyof T]> => {
+    const output = new Map<keyof T, T[keyof T]>();
+    // @ts-ignore
+    const translations = useContext<T>(I18n.Context);
+    for (const key in defaultTranslations) {
+      if (defaultTranslations.hasOwnProperty(key)) {
+        output.set(key, translations[key] || defaultTranslations[key]);
+      }
+    }
+    return output;
+  };
+
+  private static readonly initialState: Translations = {};
+
+  public static readonly TranslationsMap = class TranslationsMap<
+    K,
+    V
+  > extends Map<keyof K, keyof V> {};
+
+  public static readonly Provider = class Provider<
+    K extends Translations
+  > extends Component<I18nProviderProps<K>> {
+    constructor(props: I18nProviderProps<K>) {
+      super(props);
+      this.state = this.props[Languages.EN]; //I18n.initialState;
+    }
+
+    public render() {
+      return (
+        <I18n.Context.Provider value={this.state}>
+          {this.props.children}
+        </I18n.Context.Provider>
+      );
+    }
+  };
+
+  public static readonly Mapper = class Mapper<
+    L extends Translations,
+    G extends Translations,
+    K = keyof L,
+    V = keyof G
+  > extends Component<I18nMapperProps<K, V>> {
+    static contextType = I18n.Context;
+    public context!: G;
+
+    public render() {
+      const entries: Map<K, V> = this.props.value;
+      const translations = new Map();
+      for (const property of entries.keys()) {
+        translations.set(
+          property,
+          // @ts-ignore V cannot be used to index G Why???
+          this.context[entries.get(property as K) as V]
+        );
+      }
+
+      const value = Array.from(translations).reduce(
+        (obj, [key, value]) => Object.assign(obj, { [key]: value }),
+        {}
+      );
+
+      return (
+        <I18n.Context.Provider value={value}>
+          {this.props.children}
+        </I18n.Context.Provider>
+      );
+    }
+  };
+
+  public static readonly Consumer = class<
+    T extends Translations
+  > extends Component<I18nConsumerProps<T>> {
+    static contextType = I18n.Context;
+    public context!: T;
+
+    public render() {
+      return this.props.children(
+        keys(this.context).length > 0
+          ? this.context
+          : this.props.defaultTranslations
+      );
+    }
+  };
 }

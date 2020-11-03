@@ -2,77 +2,78 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
   SignpostComponent,
-  SignpostComponentPropsBuilder,
-  SignpostElementBuilder,
+  SignpostComponentProps,
+  SignpostElement,
 } from './signpost.component';
 import { action } from '@storybook/addon-actions';
 import { ImagePropsBuilder } from './image.props.builder';
+import { Builder } from '../builder';
 
-const props = new SignpostComponentPropsBuilder()
-  .withElements([
-    new SignpostElementBuilder()
-      .withImage(
+const props = Builder<SignpostComponentProps>()
+  .elements([
+    Builder<SignpostElement>()
+      .image(
         new ImagePropsBuilder()
           .withSrc('https://picsum.photos/id/402/1600/1200')
           .withRounded(false)
           .build()
       )
-      .withOver(
+      .over(
         new ImagePropsBuilder()
           .withSrc('https://picsum.photos/id/403/1600/1200')
           .withRounded(false)
           .build()
       )
-      .withTitle('First')
-      .withOnClick(action('First'))
+      .title('First')
+      .onClick(action('First'))
       .build(),
-    new SignpostElementBuilder()
-      .withImage(
+    Builder<SignpostElement>()
+      .image(
         new ImagePropsBuilder()
           .withSrc('https://picsum.photos/id/405/1600/1200')
           .withRounded(false)
           .build()
       )
-      .withOver(
+      .over(
         new ImagePropsBuilder()
           .withSrc('https://picsum.photos/id/406/1600/1200')
           .withRounded(false)
           .build()
       )
-      .withTitle('Second')
-      .withOnClick(action('Second'))
+      .title('Second')
+      .onClick(action('Second'))
       .build(),
-    new SignpostElementBuilder()
-      .withImage(
+    Builder<SignpostElement>()
+      .image(
         new ImagePropsBuilder()
           .withSrc('https://picsum.photos/id/409/1600/1200')
           .withRounded(false)
           .build()
       )
-      .withOver(
+      .over(
         new ImagePropsBuilder()
           .withSrc('https://picsum.photos/id/410/1600/1200')
           .withRounded(false)
           .build()
       )
-      .withTitle('Third')
-      .withOnClick(action('Third'))
+      .title('Third')
+      .onClick(action('Third'))
       .build(),
-    new SignpostElementBuilder()
-      .withImage(
+    Builder<SignpostElement>()
+      .image(
         new ImagePropsBuilder()
           .withSrc('https://picsum.photos/id/411/1600/1200')
           .withRounded(false)
           .build()
       )
-      .withOver(
+      .over(
         new ImagePropsBuilder()
           .withSrc('https://picsum.photos/id/412/1600/1200')
           .withRounded(false)
           .build()
       )
-      .withTitle('Fourth')
-      .withOnClick(action('Fourth'))
+      .title('Fourth')
+      .onClick(action('Fourth'))
       .build(),
   ])
   .build();
