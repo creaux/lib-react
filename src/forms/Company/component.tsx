@@ -2,7 +2,7 @@ import React, { FunctionComponent, useContext } from 'react';
 import { Text } from '../Field';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { ICompany } from './types';
-import { I18nConsumer } from '../../components/i18n.component';
+import { I18n, Translations } from '../../components/i18n.component';
 import defaultTranslations from './en.json';
 import { Conditional } from '../../components/conditional.component';
 import { FormTypeContext, isNormalForm } from '../Form/component';
@@ -12,7 +12,7 @@ export interface CompanyProps extends ICompany {
   onValidFieldChange: OnValidFieldChange<keyof ICompany>;
 }
 
-export interface CompanyTranslations {
+export interface CompanyTranslations extends Translations {
   COMPANY: string;
   COMPANY_PLACEHOLDER: string;
   COMPANY_MESSAGE_VALID: string;
@@ -33,7 +33,7 @@ export const Company: FunctionComponent<CompanyProps> = ({
 }) => {
   const type = useContext(FormTypeContext);
   return (
-    <I18nConsumer<CompanyTranslations>
+    <I18n.Consumer<CompanyTranslations>
       defaultTranslations={defaultTranslations}
     >
       {(translations) => (
@@ -88,6 +88,6 @@ export const Company: FunctionComponent<CompanyProps> = ({
           </div>
         </fieldset>
       )}
-    </I18nConsumer>
+    </I18n.Consumer>
   );
 };

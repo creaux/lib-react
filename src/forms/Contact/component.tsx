@@ -2,13 +2,13 @@ import React, { FunctionComponent, useContext } from 'react';
 import defaultTranslations from './en.json';
 import { FormTypeContext, isNormalForm } from '../Form';
 import { Conditional } from '../../components/conditional.component';
-import { I18nConsumer } from '../../components/i18n.component';
+import { I18n, Translations } from '../../components/i18n.component';
 import { IContact } from './types';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { Email } from '../Field/Fields/Email';
 import { Phone } from '../Field/Fields/Phone';
 
-export interface ContactTranslations {
+export interface ContactTranslations extends Translations {
   CONTACT_EMAIL_LABEL: string;
   CONTACT_EMAIL_PLACEHOLDER: string;
   CONTACT_EMAIL_MESSAGE_VALID: string;
@@ -34,7 +34,7 @@ export const Contact: FunctionComponent<ContactProps> = ({
 }) => {
   const type = useContext(FormTypeContext);
   return (
-    <I18nConsumer<ContactTranslations>
+    <I18n.Consumer<ContactTranslations>
       defaultTranslations={defaultTranslations}
     >
       {(translations) => (
@@ -97,6 +97,6 @@ export const Contact: FunctionComponent<ContactProps> = ({
           </div>
         </fieldset>
       )}
-    </I18nConsumer>
+    </I18n.Consumer>
   );
 };

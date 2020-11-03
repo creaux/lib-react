@@ -19,7 +19,8 @@
     "jsx": "preserve",
     "experimentalDecorators": true,
     "isolatedModules": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "strictNullChecks": true
   },
   "include": [
     "src"

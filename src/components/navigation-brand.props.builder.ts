@@ -25,7 +25,7 @@ export class NavigationBrandPropsBuilder {
     return {
       children: this.children,
       onClick: this.onClick,
-      color: this.color
+      color: this.color,
     };
   }
 }

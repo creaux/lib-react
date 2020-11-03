@@ -8,8 +8,8 @@ import { Shipping } from '../forms/Shipping/index';
 import { Stripe } from '../forms/Stripe/index';
 import { ShippingState } from '../forms/Shipping/container';
 import { Viewport } from './viewport.component';
-import { I18nConsumer } from './i18n.component';
 import defaultTranslations from './one-checkout.en.json';
+import { Translations, I18n } from './i18n.component';
 
 export interface OneCheckoutProps {
   product: ProductDescriptionProps;
@@ -20,7 +20,7 @@ export interface OneCheckoutProps {
   isShippingValid: boolean;
 }
 
-export interface OneCheckoutTranslations {
+export interface OneCheckoutTranslations extends Translations {
   BUTTON_GO_BACK: string;
   BUTTON_NEXT: string;
 }
@@ -33,7 +33,7 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
   isShippingValid,
 }) => {
   return (
-    <I18nConsumer<OneCheckoutTranslations>
+    <I18n.Consumer<OneCheckoutTranslations>
       defaultTranslations={defaultTranslations}
     >
       {(translations) => (
@@ -63,6 +63,6 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
           </div>
         </Viewport>
       )}
-    </I18nConsumer>
+    </I18n.Consumer>
   );
 };

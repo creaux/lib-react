@@ -2,7 +2,7 @@ import React, { FunctionComponent, useContext } from 'react';
 import { Text } from '../Field';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { IPerson, PersonBuilder } from './types';
-import { I18nConsumer } from '../../components/i18n.component';
+import { I18n } from '../../components/i18n.component';
 import { Translations } from '../../components/i18n.component';
 import { Conditional } from '../../components/conditional.component';
 import { FormTypeContext, isNormalForm } from '../Form';
@@ -58,7 +58,9 @@ export const Person: FunctionComponent<PersonProps> = ({
   const type = useContext(FormTypeContext);
 
   return (
-    <I18nConsumer<PersonTranslations> defaultTranslations={defaultTranslations}>
+    <I18n.Consumer<PersonTranslations>
+      defaultTranslations={defaultTranslations}
+    >
       {(translations) => (
         <fieldset name="person">
           <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
@@ -103,6 +105,6 @@ export const Person: FunctionComponent<PersonProps> = ({
           </div>
         </fieldset>
       )}
-    </I18nConsumer>
+    </I18n.Consumer>
   );
 };

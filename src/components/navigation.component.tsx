@@ -3,10 +3,11 @@ import React, {
   FunctionComponent,
   MutableRefObject,
   ReactElement,
-  ReactNode, useEffect,
+  ReactNode,
+  useEffect,
   useLayoutEffect,
   useRef,
-  useState
+  useState,
 } from 'react';
 import { Guard } from './guard.component';
 import { NavigationBrand } from './navigation-brand.component';
@@ -102,7 +103,7 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
   fixed,
   opacity,
   dark,
-  path
+  path,
 }) => {
   // Moving background to replacing div as background doesn't support opacity without modifying color
   const [isNotOpacity, opacityRef] = useOpacity(opacity);

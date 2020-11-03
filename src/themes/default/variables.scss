@@ -35,6 +35,14 @@ $nav-link-padding-x: 1rem;
 $link-hover-decoration: none;
 $link-border-color: $primary;
 
+$card-border-width: 0;
+$card-border-radius: 0;
+$card-border-color: none;
+$card-cap-bg: none;
+$card-spacer-x: 1.25rem;
+$card-spacer-y: $card-spacer-x;
+$card-bg: none;
+
 // 1rem is default value of bootstrap $spacer
 // which is not available here
 $spacers: (

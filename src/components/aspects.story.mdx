@@ -1,0 +1,40 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Aspects } from './aspects.component';
+import { BsTrash2, BsTrophy, BsSun, BsTagFill } from 'react-icons/bs';
+
+export const aspects = [
+  {
+    children: <BsTrash2 />,
+    title: 'Lorem ipsum',
+    description: 'Nulla facilisi. Sed pharetra mauris non sollicitudin placerat. Integer id est nec lorem ultrices iaculis sit amet sit amet velit.'
+  },
+  {
+    children: <BsTrophy />,
+    title: 'Dolor sit amet',
+    description: 'Phasellus bibendum eleifend luctus. Nunc orci nibh, tincidunt eget porttitor in.'
+  },
+  {
+    children: <BsSun />,
+    title: 'Nulla aliquet lacus.',
+    description: 'Duis fringilla nibh urna, quis pretium ligula volutpat nec. Phasellus neque dolor, lobortis vitae posuere id.'
+  },
+  {
+    children: <BsTagFill />,
+    title: 'Vestibulum congue velit',
+    description: 'Proin nisl quam, mattis ut placerat a, cursus vitae quam. Integer rhoncus neque felis.'
+  }
+];
+
+<Meta title="Atomic Design/Organisms/Aspects" />
+
+# Aspects
+
+Aspects component provide way to visualise multiple features as part of one widget.
+
+## Default
+
+<Canvas>
+  <Story name="default">
+    <Aspects aspects={aspects} />
+  </Story>
+</Canvas>

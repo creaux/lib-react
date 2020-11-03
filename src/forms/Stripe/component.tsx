@@ -4,13 +4,13 @@ import {
   CardExpiryElement,
   CardNumberElement,
 } from '@stripe/react-stripe-js';
-import { I18nConsumer } from '../../components/i18n.component';
+import { I18n, Translations } from '../../components/i18n.component';
 import defaultTranslations from './en.json';
 import { Button } from '../Button/component';
 import { Type } from '../Button/types';
 import { Form, FormType } from '../Form/component';
 
-export interface StripeTranslations {
+export interface StripeTranslations extends Translations {
   STRIPE_NUMBER_PLACEHOLDER: string;
   STRIPE_EXPIRY_PLACEHOLDER: string;
   STRIPE_CVC_PLACEHOLDER: string;
@@ -31,7 +31,7 @@ export const Stripe: FunctionComponent<StripeProps> = ({
       onSubmit={handleSubmit}
       className="d-flex flex-column"
     >
-      <I18nConsumer<StripeTranslations>
+      <I18n.Consumer<StripeTranslations>
         defaultTranslations={defaultTranslations}
       >
         {(translations) => (
@@ -60,7 +60,7 @@ export const Stripe: FunctionComponent<StripeProps> = ({
             </Button>
           </>
         )}
-      </I18nConsumer>
+      </I18n.Consumer>
     </Form>
   );
 };

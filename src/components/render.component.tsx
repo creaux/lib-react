@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode, cloneElement } from 'react';
+import { FunctionComponent, cloneElement } from 'react';
 
 /**
  * Svg properties.

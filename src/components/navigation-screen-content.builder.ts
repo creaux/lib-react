@@ -78,7 +78,9 @@ export class NavigationScreenContentPropsBuilder {
     return this;
   }
 
-  withOnClick(onClick: (link: string) => void): NavigationScreenContentPropsBuilder {
+  withOnClick(
+    onClick: (link: string) => void
+  ): NavigationScreenContentPropsBuilder {
     this.onClick = onClick;
     return this;
   }
@@ -93,7 +95,7 @@ export class NavigationScreenContentPropsBuilder {
       city: this.city,
       postcode: this.postcode,
       links: this.links,
-      onClick: this.onClick
+      onClick: this.onClick,
     };
   }
 }

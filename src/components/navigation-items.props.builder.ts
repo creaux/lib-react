@@ -53,6 +53,6 @@ export class NavigationItemsPropsBuilder {
   }
 
   build(): NavigationItemsProps {
-    return { items: this.items, active: this.active, onClick: this.onClick};
+    return { items: this.items, active: this.active, onClick: this.onClick };
   }
 }

@@ -14,9 +14,20 @@ import React, {
 import { Dots } from './dots.component';
 import { provideIsTouchDevice } from './provide-is-touch-device.hoc';
 import { useStateRef } from '../hooks/use-current-state.hook';
+import { Conditional } from './conditional.component';
+import {
+  backgroundColorMapper,
+  borderColorMapper,
+  Color,
+  textColorMapper,
+} from '../schema/color.enum';
+import cx from 'classnames';
+import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs';
 
 export interface PadProps {
   children: ReactNode[];
+  prev?: boolean;
+  color?: Color;
 }
 
 const usePosition = (
@@ -165,7 +176,7 @@ const usePosition = (
 };
 
 export const Pad: FunctionComponent<PadProps> = provideIsTouchDevice<PadProps>(
-  ({ children, isTouchDevice }) => {
+  ({ children, isTouchDevice, prev = false, color = Color.DARK }) => {
     const [viewportYRef, positionY, setDot, dot] = usePosition(
       children.length,
       isTouchDevice
@@ -188,7 +199,7 @@ export const Pad: FunctionComponent<PadProps> = provideIsTouchDevice<PadProps>(
         <div className="pad__items" style={{ top: positionY }}>
           {children.map((child, i) => {
             return (
-              <div className="pad__item" key={i}>
+              <div className={cx('pad__item', textColorMapper[color])} key={i}>
                 {child}
               </div>
             );
@@ -199,37 +210,20 @@ export const Pad: FunctionComponent<PadProps> = provideIsTouchDevice<PadProps>(
             count={children.length}
             onDot={(activeDot) => setDot(activeDot)}
             active={dot}
+            backgroundColor={backgroundColorMapper[color]}
+            borderColor={borderColorMapper[color]}
           />
         </div>
-        <div className="pad__prev" onClick={prevSlide}>
-          <svg
-            width="3rem"
-            height="3rem"
-            viewBox="0 0 16 16"
-            className="bi bi-chevron-compact-up"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M7.776 5.553a.5.5 0 0 1 .448 0l6 3a.5.5 0 1 1-.448.894L8 6.56 2.224 9.447a.5.5 0 1 1-.448-.894l6-3z"
-            />
-          </svg>
-        </div>
+        <Conditional
+          condition={prev}
+          when={() => (
+            <div className="pad__prev" onClick={prevSlide}>
+              <BsChevronCompactUp />
+            </div>
+          )}
+        ></Conditional>
         <div className="pad__next" onClick={nextSlide}>
-          <svg
-            width="3rem"
-            height="3rem"
-            viewBox="0 0 16 16"
-            className="bi bi-chevron-compact-down"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"
-            />
-          </svg>
+          <BsChevronCompactDown />
         </div>
       </div>
     );

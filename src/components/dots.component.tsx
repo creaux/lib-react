@@ -1,16 +1,22 @@
 import React, { FunctionComponent } from 'react';
 import cx from 'classnames';
+import { BackgroundColor } from '..';
+import { BorderColor } from '../schema/border-color.enum';
 
 export interface DotsProps {
   count: number;
   onDot: (position: number) => void;
   active: number;
+  borderColor?: BorderColor;
+  backgroundColor?: BackgroundColor;
 }
 
 export const Dots: FunctionComponent<DotsProps> = ({
   count,
   onDot: handleDot,
   active,
+  borderColor = BorderColor.DARK,
+  backgroundColor = BackgroundColor.DARK,
 }) => {
   const dots = [...Array(count)];
 
@@ -19,7 +25,9 @@ export const Dots: FunctionComponent<DotsProps> = ({
       {dots.map((_, i) => (
         <button
           key={i}
-          className={cx('dots__dot', { 'dots__dot--active': active === i })}
+          className={cx('border', borderColor, 'dots__dot', {
+            [backgroundColor]: active === i,
+          })}
           // @ts-ignore
           onClick={() => handleDot(i)}
         ></button>

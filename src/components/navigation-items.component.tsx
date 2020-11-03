@@ -18,7 +18,7 @@ export const NavigationItems: FunctionComponent<NavigationItemsProps> = ({
   active,
   onClick: handleClick,
 }) => (
-  <ul className="navbar-nav align-items-center">
+  <ul className="navbar-nav align-items-center d-none d-lg-flex">
     {items.map((item: NavigationItem, i) => (
       <li
         className={cx('nav-item', {

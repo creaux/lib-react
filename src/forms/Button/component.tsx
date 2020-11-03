@@ -83,8 +83,9 @@ export const Button: FunctionComponent<ButtonProps> = ({
   children = 'Confirm',
   variant = Variants.PRIMARY,
   size,
-  onClick,
+  onClick: handleClick,
   className,
+
   type,
   disabled,
   extended = false,
@@ -92,7 +93,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
   <Btn
     variant={variant}
     size={size}
-    onClick={onClick}
+    onClick={handleClick}
     className={cx({ 'btn-block': extended }, className)}
     type={type}
     disabled={disabled}

@@ -8,7 +8,7 @@ import {
 import { IShippingFields, IShippingGroups } from './types';
 import { faFileInvoiceDollar, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { I18nConsumer } from '../../components/i18n.component';
+import { I18n, Translations } from '../../components/i18n.component';
 import defaultTranslations from './en.json';
 import { Checkbox } from '../Checkbox';
 import { Conditional } from '../../components/conditional.component';
@@ -23,7 +23,7 @@ interface ShippingProps extends IShippingGroups, IShippingFields {
   >;
 }
 
-export interface ShippingTranslations {
+export interface ShippingTranslations extends Translations {
   SHIPPING_COMPANY_DETAILS: string;
   SHIPPING_DELIVERY_ADDRESS: string;
   SHIPPING_IS_COMPANY: string;
@@ -42,7 +42,7 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
   onValidGroupFieldChange: handleValidGroupFieldChange,
 }) => {
   return (
-    <I18nConsumer<ShippingTranslations>
+    <I18n.Consumer<ShippingTranslations>
       defaultTranslations={defaultTranslations}
     >
       {(translations) => (
@@ -124,6 +124,6 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
           </div>
         </>
       )}
-    </I18nConsumer>
+    </I18n.Consumer>
   );
 };

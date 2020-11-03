@@ -1,6 +1,5 @@
 import React, { Children, cloneElement, ReactNode } from 'react';
 import get from 'lodash/get';
-import { findDOMNode } from 'react-dom';
 
 export interface GuardProps<ComponentProps> {
   Component?: ReactNode | string;
@@ -48,7 +47,9 @@ export class Guard<ComponentProps = string[]> extends React.Component<
 
       if (mandatory && Component && Component.isPrototypeOf(child.type)) {
         console.error(
-          `${(Component as Function).name} has to be provided as children to render.`
+          `${
+            (Component as Function).name
+          } has to be provided as children to render.`
         );
       }
 

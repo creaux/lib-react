@@ -1,0 +1,16 @@
+
+.card__image {
+  font-size: 14vw;
+}
+
+@include media-breakpoint-up(sm) {
+  .card__image {
+    font-size: 10vw;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .card__image {
+    font-size: 6vw;
+  }
+}
