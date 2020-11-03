@@ -17,7 +17,7 @@ export interface I18nProviderProps<T extends Translations> {
 }
 
 export interface I18nMapperProps<K, V> {
-  value: Map<K, V>;
+  value: Map<keyof K, keyof V>;
 }
 
 export interface I18nConsumerProps<T extends Translations> {
@@ -71,12 +71,12 @@ export class I18n<T> {
     G extends Translations,
     K = keyof L,
     V = keyof G
-  > extends Component<I18nMapperProps<K, V>> {
+  > extends Component<I18nMapperProps<L, G>> {
     static contextType = I18n.Context;
     public context!: G;
 
     public render() {
-      const entries: Map<K, V> = this.props.value;
+      const entries: Map<keyof L, keyof G> = this.props.value;
       const translations = new Map();
       for (const property of entries.keys()) {
         translations.set(
