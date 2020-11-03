@@ -1,6 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import chai, { expect } from 'chai';
-import { I18n, Translations, I18nProviderProps } from './i18n.component';
+import {
+  I18n,
+  Translations,
+  I18nProviderProps,
+  I18nMapperProps,
+} from './i18n.component';
 import { mount } from 'enzyme';
 import { Builder } from '../builder';
 import chaiEnzyme from 'chai-enzyme';
@@ -61,11 +66,17 @@ describe('I18n', function I18nSpec() {
         ['MOCK_SUBTITLE', 'SUBTITLE'],
       ]);
 
+      const mapperProps = Builder<
+        I18nMapperProps<MockTranslations, GlobalTranslations>
+      >()
+        .value(map)
+        .build();
+
       const component = mount(
         <I18n.Provider<GlobalTranslations> {...provider}>
           <div>Lorem ipsum</div>
           <div>
-            <I18n.Mapper<MockTranslations, GlobalTranslations> value={map}>
+            <I18n.Mapper<MockTranslations, GlobalTranslations> {...mapperProps}>
               <Mock />
             </I18n.Mapper>
           </div>

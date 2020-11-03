@@ -11,9 +11,9 @@ export enum Languages {
 }
 
 export interface I18nProviderProps<T extends Translations> {
-  [Languages.CS]: T;
-  [Languages.DE]: T;
-  [Languages.EN]: T;
+  cs: T;
+  de: T;
+  en: T;
 }
 
 export interface I18nMapperProps<K, V> {

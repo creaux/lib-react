@@ -86,11 +86,15 @@ export type {
 } from './components/hero.component';
 export { Hero } from './components/hero.component';
 export { Navbar } from './components/navbar.component';
-export type { NavbarProps } from './components/navbar.component';
+export type {
+  NavbarProps,
+  NavbarTranslations,
+} from './components/navbar.component';
 export { Placard } from './components/placard.component';
 export type {
   PlacardProps,
   PlacardElement,
+  PlacardTranslations,
 } from './components/placard.component';
 //
 // Forms
@@ -145,4 +149,10 @@ export { BreakpointValueBuilder } from './components/breakpoint-value.type';
 export { Builder } from './builder';
 // Context
 export { I18n } from './components/i18n.component';
+export type {
+  I18nProviderProps,
+  I18nMapperProps,
+  I18nConsumerProps,
+  Languages,
+} from './components/i18n.component';
 export type { Translations } from './components/i18n.component';
