@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="nodemon/lib-react" type="NodeJSConfigurationType" application-parameters="--delay 2500ms --watch src -e ts,tsx,json --exec &quot;npm run lib&quot;" node-parameters="$USER_HOME$/.nvm/versions/node/v12.18.3/bin/nodemon" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="BROWSER" value="none" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>
