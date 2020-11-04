@@ -1,4 +1,11 @@
-import React, { createContext, ReactNode, Component, useContext } from 'react';
+import React, {
+  createContext,
+  ReactNode,
+  Component,
+  useContext,
+  ComponentType,
+} from 'react';
+import { Builder } from '../builder';
 
 const { keys } = Object;
 
@@ -48,6 +55,17 @@ export class I18n<T> {
     K,
     V
   > extends Map<keyof K, keyof V> {};
+
+  public static mapTranslations = <K, V, P = {}>(
+    map: Map<keyof K, keyof V>
+  ) => (Component: ComponentType<P>) => (staticProps: P = {} as P) => () => {
+    const mapperProps = Builder<I18nMapperProps<K, V>>().value(map).build();
+    return (
+      <I18n.Mapper<K, V> {...mapperProps}>
+        <Component {...staticProps} />
+      </I18n.Mapper>
+    );
+  };
 
   public static readonly Provider = class Provider<
     K extends Translations
