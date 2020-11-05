@@ -1,13 +1,17 @@
 import { Component, FormEvent, createElement, ReactNode } from 'react';
-import { Shipping as ShippingComponent, ShippingProps as ShippingComponentProps } from './component';
-import { AbodeBuilder, IAbode } from '../Abode';
-import { CheckboxBuilder, ICheckbox } from '../Checkbox/types';
+import {
+  Shipping as ShippingComponent,
+  ShippingProps as ShippingComponentProps,
+  ShippingTitles,
+} from './component';
+import { IAbode } from '../Abode';
+import { ICheckbox } from '../Checkbox/types';
 import { merge } from 'lodash';
 import { IShippingFields, IShippingGroups } from './types';
-import { InputBuilder, OptionBuilder, SelectBuilder } from '../Field/types';
 import { Builder } from '../../builder';
+import { shippingState } from './shipping.props';
 
-const { assign } = Object;
+const { assign, keys } = Object;
 
 type Group = 'invoicing' | 'delivery';
 type Field = 'terms' | 'data' | 'company';
@@ -15,49 +19,7 @@ type Field = 'terms' | 'data' | 'company';
 export interface ShippingProps {
   onFormChange: (data: ShippingState) => void;
   onFormValidChange: (valid: boolean) => void;
-}
-
-export class ShippingStateBuilder {
-  private delivery!: IAbode;
-  private invoicing!: IAbode;
-  private terms!: ICheckbox;
-  private data!: ICheckbox;
-  private company!: ICheckbox;
-
-  withDelivery(delivery: IAbode) {
-    this.delivery = delivery;
-    return this;
-  }
-
-  withInvoicing(invoicing: IAbode) {
-    this.invoicing = invoicing;
-    return this;
-  }
-
-  withTerms(terms: ICheckbox) {
-    this.terms = terms;
-    return this;
-  }
-
-  withData(data: ICheckbox) {
-    this.data = data;
-    return this;
-  }
-
-  withCompany(company: ICheckbox) {
-    this.company = company;
-    return this;
-  }
-
-  build(): ShippingState {
-    return {
-      delivery: this.delivery,
-      invoicing: this.invoicing,
-      terms: this.terms,
-      data: this.data,
-      company: this.company,
-    };
-  }
+  titles: ShippingTitles;
 }
 
 export interface ShippingState extends IShippingGroups, IShippingFields {}
@@ -67,160 +29,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
 
   constructor(props: ShippingProps) {
     super(props);
-
-    this.state = new ShippingStateBuilder()
-      .withDelivery(
-        new AbodeBuilder()
-          .withForname(
-            new InputBuilder()
-              .withId('forname2')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withSurname(
-            new InputBuilder()
-              .withId('surname2')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withStreet(
-            new InputBuilder()
-              .withId('street2')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withStreetNo(
-            new InputBuilder()
-              .withId('streetNo2')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withPostcode(
-            new InputBuilder()
-              .withId('postcode2')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withCities(
-            new SelectBuilder()
-              .withId('city2')
-              .withValue('')
-              .withOptions([
-                new OptionBuilder()
-                  .withId('prague')
-                  .withValue('Prague')
-                  .withTitle('Prague')
-                  .build(),
-              ])
-              .build()
-          )
-          .withCountries(
-            new SelectBuilder()
-              .withId('country2')
-              .withValue('')
-              .withOptions([
-                new OptionBuilder()
-                  .withId('czechia')
-                  .withValue('Czechia')
-                  .withTitle('Czechia')
-                  .build(),
-              ])
-              .build()
-          )
-          .build()
-      )
-      .withInvoicing(
-        new AbodeBuilder()
-          .withForname(
-            new InputBuilder()
-              .withId('forname1')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withSurname(
-            new InputBuilder()
-              .withId('surname1')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withCompany(
-            new InputBuilder()
-              .withId('company')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withVat(
-            new InputBuilder()
-              .withId('vat')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withStreet(
-            new InputBuilder()
-              .withId('street1')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withStreetNo(
-            new InputBuilder()
-              .withId('streetNo1')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withPostcode(
-            new InputBuilder()
-              .withId('postcode1')
-              .withValue('')
-              .withValid(false)
-              .build()
-          )
-          .withCities(
-            new SelectBuilder()
-              .withId('city1')
-              .withValue('')
-              .withOptions([
-                new OptionBuilder()
-                  .withId('prague')
-                  .withTitle('Prague')
-                  .withValue('prague')
-                  .build(),
-              ])
-              .build()
-          )
-          .withCountries(
-            new SelectBuilder()
-              .withId('country1')
-              .withValue('')
-              .withOptions([
-                new OptionBuilder()
-                  .withId('czechia')
-                  .withTitle('Czechia')
-                  .withValue('czechia')
-                  .build(),
-              ])
-              .build()
-          )
-          .build()
-      )
-      .withCompany(
-        new CheckboxBuilder().withId('company').withChecked(true).build()
-      )
-      .withData(new CheckboxBuilder().withId('data').withChecked(false).build())
-      .withTerms(
-        new CheckboxBuilder().withId('terms').withChecked(false).build()
-      )
-      .build();
+    this.state = shippingState;
   }
 
   componentDidUpdate(
@@ -269,7 +78,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
 
   private get isValidDelivery() {
     return (
-      Object.keys(this.state.delivery)
+      keys(this.state.delivery)
         // If it is undefined then it doesn't exists and doesn't need to be validated
         .filter((key) => this.state.delivery[key as keyof IAbode])
         .every((key) => {
@@ -284,7 +93,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
 
   private get isValidBilling() {
     return (
-      Object.keys(this.state.invoicing)
+      keys(this.state.invoicing)
         // If it is undefined then it doesn't exists and doesn't need to be validated
         .filter((key) => this.state.invoicing[key as keyof IAbode])
         .every((key) => {
@@ -315,19 +124,14 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
       .onGroupChange(this.handleGroupChange)
       .onFieldChange(this.handleCheckboxChange)
       .onValidGroupFieldChange(this.handleValidGroupFieldChange)
-      .deliveryAddressTitle()
-      .companyDetailsTitle()
-      .isCompanyTitle()
-      .termsTitle()
-      .dataTitle()
+      .titles(this.props.titles)
       .build();
   }
 
   render(): ReactNode {
-    const props = {
+    return createElement(ShippingComponent, {
       ...this.state,
       ...this.shippingProps,
-    };
-    return createElement(ShippingComponent, props);
+    });
   }
 }

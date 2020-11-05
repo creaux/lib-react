@@ -12,6 +12,14 @@ import { Checkbox } from '../Checkbox';
 import { Conditional } from '../../components/conditional.component';
 import { CSSTransition } from 'react-transition-group';
 
+export interface ShippingTitles {
+  delivery: string;
+  company: string;
+  isCompany: string;
+  terms: string;
+  data: string;
+}
+
 export interface ShippingProps extends IShippingGroups, IShippingFields {
   onFieldChange: OnFieldChange<keyof IShippingFields>;
   onGroupChange: OnGroupChange<keyof IShippingGroups, keyof IAbode>;
@@ -19,11 +27,7 @@ export interface ShippingProps extends IShippingGroups, IShippingFields {
     keyof IShippingGroups,
     keyof IAbode
   >;
-  deliveryAddressTitle: string;
-  companyDetailsTitle: string;
-  isCompanyTitle: string;
-  termsTitle: string;
-  dataTitle: string;
+  titles: ShippingTitles;
 }
 
 export const Shipping: FunctionComponent<ShippingProps> = ({
@@ -39,7 +43,7 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
   companyDetailsTitle,
   isCompanyTitle,
   termsTitle,
-  dataTitle
+  dataTitle,
 }) => {
   return (
     <>
