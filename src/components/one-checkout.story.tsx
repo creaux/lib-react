@@ -16,7 +16,7 @@ story.add('default', () => {
       )}
     >
       <Form type={FormType.INLINE} onSubmit={() => {}}>
-        <OneCheckoutContainer product={productDescriptionProps} />
+        <OneCheckoutContainer product={productDescriptionProps} onGoBack={() => {}} goBack="Go Back" />
       </Form>
     </Elements>
   );

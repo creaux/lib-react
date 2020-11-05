@@ -5,6 +5,8 @@ import { ShippingState } from '../forms/Shipping/container';
 
 export interface OneCheckoutContainerProps {
   product: ProductDescriptionProps;
+  goBack: string;
+  onGoBack: () => void;
 }
 
 export interface OneCheckoutState {
@@ -24,6 +26,10 @@ export class OneCheckoutContainer extends PureComponent<
     };
   }
 
+  private readonly handleGoBack = () => {
+    this.props.onGoBack();
+  }
+
   private readonly handleStep = (step: number) => {
     this.setState({ step });
   };
@@ -37,6 +43,8 @@ export class OneCheckoutContainer extends PureComponent<
   render() {
     return createElement(OneCheckout, {
       step: this.state.step,
+      goBack: this.props.goBack,
+      onGoBack: this.handleGoBack,
       onStep: this.handleStep,
       product: this.props.product,
       onShippingValidChange: this.handleShippingValidChange,

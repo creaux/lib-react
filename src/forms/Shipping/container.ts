@@ -1,10 +1,11 @@
 import { Component, FormEvent, createElement, ReactNode } from 'react';
-import { Shipping as ShippingComponent } from './component';
+import { Shipping as ShippingComponent, ShippingProps as ShippingComponentProps } from './component';
 import { AbodeBuilder, IAbode } from '../Abode';
 import { CheckboxBuilder, ICheckbox } from '../Checkbox/types';
 import { merge } from 'lodash';
 import { IShippingFields, IShippingGroups } from './types';
 import { InputBuilder, OptionBuilder, SelectBuilder } from '../Field/types';
+import { Builder } from '../../builder';
 
 const { assign } = Object;
 
@@ -309,12 +310,23 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
     );
   }
 
+  private get shippingProps() {
+    return Builder<ShippingComponentProps>()
+      .onGroupChange(this.handleGroupChange)
+      .onFieldChange(this.handleCheckboxChange)
+      .onValidGroupFieldChange(this.handleValidGroupFieldChange)
+      .deliveryAddressTitle()
+      .companyDetailsTitle()
+      .isCompanyTitle()
+      .termsTitle()
+      .dataTitle()
+      .build();
+  }
+
   render(): ReactNode {
     const props = {
       ...this.state,
-      onGroupChange: this.handleGroupChange,
-      onFieldChange: this.handleCheckboxChange,
-      onValidGroupFieldChange: this.handleValidGroupFieldChange,
+      ...this.shippingProps,
     };
     return createElement(ShippingComponent, props);
   }
