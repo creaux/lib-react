@@ -5,7 +5,7 @@ import {
   OnGroupChange,
   OnValidGroupFieldChange,
 } from '../../components/form.types';
-import { IShippingFields, IShippingGroups } from './types';
+import { IShippingFields, IShippingGroups } from './shipping.types';
 import { faFileInvoiceDollar, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Checkbox } from '../Checkbox';
@@ -19,10 +19,13 @@ export interface ShippingProps extends IShippingGroups, IShippingFields {
     keyof IShippingGroups,
     keyof IAbode
   >;
+  delivery: IAbode;
+  invoicing: IAbode;
   deliveryHeading: string;
   billingHeading: string;
-  delivery: IAbode & { title: string };
-  invoicing: IAbode & { title: string };
+  dataDescription: string;
+  termsDescription: string;
+  companyDescription: string;
 }
 
 export const Shipping: FunctionComponent<ShippingProps> = ({
@@ -34,6 +37,11 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
   onGroupChange: handleGroupChange,
   onFieldChange: handleFieldChange,
   onValidGroupFieldChange: handleValidGroupFieldChange,
+  deliveryHeading,
+  billingHeading,
+  dataDescription,
+  termsDescription,
+  companyDescription,
 }) => {
   return (
     <>
@@ -50,7 +58,7 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
               </>
             )}
           />
-          <span>{delivery.title}</span>
+          <span>{deliveryHeading}</span>
         </h6>
         <Abode
           {...delivery}
@@ -71,10 +79,14 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
               </>
             )}
           />
-          <span>{invoicing.title}</span>
+          <span>{billingHeading}</span>
         </h6>
         <div className="mb-1">
-          <Checkbox {...company} onChange={handleFieldChange('company')} />
+          <Checkbox
+            {...company}
+            title={companyDescription}
+            onChange={handleFieldChange('company')}
+          />
         </div>
       </div>
       <div className="mb-4">
@@ -94,10 +106,18 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
       </div>
       <div>
         <div className="mb-1">
-          <Checkbox {...terms} onChange={handleFieldChange('terms')} />
+          <Checkbox
+            {...terms}
+            title={termsDescription}
+            onChange={handleFieldChange('terms')}
+          />
         </div>
         <div className="mb-1">
-          <Checkbox {...data} onChange={handleFieldChange('data')} />
+          <Checkbox
+            {...data}
+            title={dataDescription}
+            onChange={handleFieldChange('data')}
+          />
         </div>
       </div>
     </>

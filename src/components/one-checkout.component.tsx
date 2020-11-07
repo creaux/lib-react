@@ -4,9 +4,9 @@ import { ProductDescriptionProps } from './product-description.component';
 import { asBackgroundProps } from './image.component.mock';
 import { Image } from './image.component';
 import { Button, Variants } from '../forms/Button/index';
-import { Shipping } from '../forms/Shipping/index';
+import { ShippingAbstract } from '../forms/Shipping/index';
 import { Stripe } from '../forms/Stripe/index';
-import { ShippingState } from '../forms/Shipping/container';
+import { ShippingAbstractState } from '../forms/Shipping/shipping.abstract.container';
 import { Viewport } from './viewport.component';
 import { ButtonProps } from '../forms/Button/index';
 import { Builder } from '../builder';
@@ -18,7 +18,7 @@ export interface OneCheckoutProps {
   onGoBack: () => void;
   onStep: (step: number) => void;
   onShippingValidChange: (valid: boolean) => void;
-  onShippingChange: (data: ShippingState) => void;
+  onShippingChange: (data: ShippingAbstractState) => void;
   isShippingValid: boolean;
 }
 
@@ -51,7 +51,7 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
             </div>
             <div className="col-md-6 col-s-12 justify-content-center d-flex flex-column border-left-1">
               <div className="mb-4">
-                <Shipping
+                <ShippingAbstract
                   onFormChange={handleShippingChange}
                   onFormValidChange={handleShippingValidChange}
                 />

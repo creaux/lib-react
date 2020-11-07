@@ -1,1 +1,1 @@
-export { Shipping } from './container';
+export { ShippingAbstract } from './shipping.abstract.container';

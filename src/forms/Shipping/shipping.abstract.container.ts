@@ -2,43 +2,35 @@ import { Component, FormEvent, createElement, ReactNode } from 'react';
 import {
   Shipping as ShippingComponent,
   ShippingProps as ShippingComponentProps,
-  ShippingTitles,
-} from './component';
+} from './shipping.i18n';
 import { IAbode } from '../Abode';
 import { ICheckbox } from '../Checkbox/types';
 import { merge } from 'lodash';
-import { IShippingFields, IShippingGroups } from './types';
+import { IShippingFields, IShippingGroups } from './shipping.types';
 import { Builder } from '../../builder';
-import { shippingState } from './shipping.props';
 
 const { assign, keys } = Object;
 
 type Group = 'invoicing' | 'delivery';
 type Field = 'terms' | 'data' | 'company';
 
-export interface ShippingProps {
-  onFormChange: (data: ShippingState) => void;
+export interface ShippingAbstractProps {
+  onFormChange: (data: ShippingAbstractState) => void;
   onFormValidChange: (valid: boolean) => void;
-  delivery: string;
-  billing: string;
-  same: string;
-  terms: string;
-  data: string;
 }
 
-export interface ShippingState extends IShippingGroups, IShippingFields {}
+export interface ShippingAbstractState
+  extends IShippingGroups,
+    IShippingFields {}
 
-export class Shipping extends Component<ShippingProps, ShippingState> {
-  state: ShippingState;
+export abstract class ShippingAbstract<
+  P extends ShippingAbstractProps
+> extends Component<ShippingAbstractProps, ShippingAbstractState> {
+  public abstract readonly state: ShippingAbstractState;
 
-  constructor(props: ShippingProps) {
-    super(props);
-    this.state = assign({}, shippingState);
-  }
-
-  componentDidUpdate(
-    prevProps: Readonly<ShippingProps>,
-    prevState: Readonly<ShippingState>,
+  public componentDidUpdate(
+    prevProps: Readonly<ShippingAbstractProps>,
+    prevState: Readonly<ShippingAbstractState>,
     snapshot?: any
   ) {
     const {
@@ -50,7 +42,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
     handleFormChange(this.state);
   }
 
-  private handleCheckboxChange = (field: Field) => (
+  private readonly handleCheckboxChange = (field: Field) => (
     event: FormEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     let data = assign({}, this.state);
@@ -59,16 +51,16 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
     this.setState(data);
   };
 
-  private handleGroupChange = (group: Group) => (field: keyof IAbode) => (
-    event: FormEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  private readonly handleGroupChange = (group: Group) => (
+    field: keyof IAbode
+  ) => (event: FormEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { value } = event.currentTarget;
     let data = assign({}, this.state);
     data[group][field]!['value'] = value;
     this.setState(data);
   };
 
-  private handleValidGroupFieldChange = (group: Group) => (
+  private readonly handleValidGroupFieldChange = (group: Group) => (
     field: keyof IAbode
   ) => (valid: boolean) => {
     const state = merge(this.state, {

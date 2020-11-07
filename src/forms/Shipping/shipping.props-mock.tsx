@@ -2,10 +2,10 @@ import { Builder } from '../../builder';
 import { IAbode } from '../Abode';
 import { IInput, IOption, ISelect } from '../Field/types';
 import { ICheckbox } from '../Checkbox/types';
-import { ShippingState } from './container';
+import { ShippingAbstractState } from './shipping.abstract.container';
 import { ShippingFields } from './shipping.fields';
 
-export const shippingState = Builder<ShippingState>()
+export const shippingState = Builder<ShippingAbstractState>()
   .delivery(
     Builder<IAbode>()
       .forname(

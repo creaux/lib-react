@@ -127,7 +127,7 @@ export type {
   SignpostElement,
 } from './components/signpost.component';
 // Organisms
-export { Shipping } from './forms/Shipping';
+export { ShippingAbstract } from './forms/Shipping';
 // Scheme
 export { BackgroundColor } from './schema/background-color.enum';
 export { TextColor } from './schema/text-color.enum';

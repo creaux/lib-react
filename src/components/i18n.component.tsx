@@ -6,6 +6,7 @@ import React, {
   ComponentType,
 } from 'react';
 import { Builder } from '../builder';
+import defaultTranslations from '../forms/Person/en.json';
 
 const { keys } = Object;
 
@@ -56,7 +57,7 @@ export class I18n<T> {
     V
   > extends Map<keyof K, keyof V> {};
 
-  public static mapTranslations = <K, V, P = {}>(
+  public static readonly mapTranslations = <K, V, P = {}>(
     map: Map<keyof K, keyof V>
   ) => (Component: ComponentType<P>) => (staticProps: P = {} as P) => () => {
     const mapperProps = Builder<I18nMapperProps<K, V>>().value(map).build();
@@ -66,6 +67,15 @@ export class I18n<T> {
       </I18n.Mapper>
     );
   };
+
+  // public static readonly consumeTranslations = <M, P, T extends Translations>(map: M, defaultTranslations: T) => (Component: ComponentType<P>) => (props: P) => (
+  //   <I18n.Consumer<T> defaultTranslations={defaultTranslations}>
+  //     {(translations) => {
+  //       const mappedTranslations = map
+  //       return <Component {...props} {...translations} />
+  //     }}
+  //   </I18n.Consumer>
+  // )
 
   public static readonly Provider = class Provider<
     K extends Translations

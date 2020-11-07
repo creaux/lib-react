@@ -1,21 +1,25 @@
 import React from 'react';
-import { Shipping, ShippingProps, ShippingState } from './container';
+import {
+  ShippingAbstract,
+  ShippingAbstractProps,
+  ShippingAbstractState,
+} from './shipping.abstract.container';
 import { mount, ReactWrapper } from 'enzyme';
 import chai, { expect } from 'chai';
 import { SinonSpy, spy } from 'sinon';
 import chaiEnzyme from 'chai-enzyme';
 import sinonChai from 'sinon-chai';
 import { Builder } from '../../builder';
-import { ShippingTitles } from './component';
+import { ShippingTitles } from './shipping.component';
 import { ShippingFields } from './shipping.fields';
 import { shippingState } from './shipping.props-mock';
 
 describe('Shipping', () => {
-  let component: ReactWrapper<Shipping>;
-  let props: ShippingProps;
+  let component: ReactWrapper<ShippingAbstract>;
+  let props: ShippingAbstractProps;
   let handleFormChangeSpy: SinonSpy;
   let handleFormChangeValidSpy: SinonSpy;
-  let shippingPropsTest: ShippingState;
+  let shippingPropsTest: ShippingAbstractState;
   let forename: string;
   let surname: string;
   let street: string;
@@ -44,7 +48,7 @@ describe('Shipping', () => {
 
     shippingPropsTest = Object.assign({}, shippingState);
 
-    props = Builder<ShippingProps>()
+    props = Builder<ShippingAbstractProps>()
       .titles(
         Builder<ShippingTitles>()
           .delivery('Delivery')
@@ -57,7 +61,7 @@ describe('Shipping', () => {
       .onFormValidChange(handleFormChangeValidSpy)
       .onFormChange(handleFormChangeSpy)
       .build();
-    component = mount(<Shipping {...props} />);
+    component = mount(<ShippingAbstract {...props} />);
   });
 
   it('should propagate forename change', () => {
