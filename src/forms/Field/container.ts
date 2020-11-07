@@ -13,7 +13,6 @@ export interface FieldContainerProps {
   onValidChange: OnValidChange;
   placeholder: string;
   label?: string;
-  defaultValidType?: number;
   type: InputTypeEnum;
   fieldType?: FieldType;
   options?: IOption[];
@@ -70,9 +69,7 @@ export class FieldContainer extends Component<
     if (validation && validation.message) {
       this.setState({ message: validation.message, value });
 
-      if (this.props.defaultValidType === validation.message.type) {
-        handleChange(e, value);
-      }
+      handleChange(e, value);
 
       if (validation.message.type === MessageType.valid) {
         this.validChange(true);

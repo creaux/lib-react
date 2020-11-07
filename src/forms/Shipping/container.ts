@@ -19,7 +19,11 @@ type Field = 'terms' | 'data' | 'company';
 export interface ShippingProps {
   onFormChange: (data: ShippingState) => void;
   onFormValidChange: (valid: boolean) => void;
-  titles: ShippingTitles;
+  delivery: string;
+  billing: string;
+  same: string;
+  terms: string;
+  data: string;
 }
 
 export interface ShippingState extends IShippingGroups, IShippingFields {}
@@ -29,7 +33,7 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
 
   constructor(props: ShippingProps) {
     super(props);
-    this.state = shippingState;
+    this.state = assign({}, shippingState);
   }
 
   componentDidUpdate(
@@ -67,13 +71,12 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
   private handleValidGroupFieldChange = (group: Group) => (
     field: keyof IAbode
   ) => (valid: boolean) => {
-    this.setState(
-      merge(this.state, {
-        [group]: {
-          [field]: { valid },
-        },
-      })
-    );
+    const state = merge(this.state, {
+      [group]: {
+        [field]: { valid },
+      },
+    });
+    this.setState(state);
   };
 
   private get isValidDelivery() {
@@ -124,7 +127,6 @@ export class Shipping extends Component<ShippingProps, ShippingState> {
       .onGroupChange(this.handleGroupChange)
       .onFieldChange(this.handleCheckboxChange)
       .onValidGroupFieldChange(this.handleValidGroupFieldChange)
-      .titles(this.props.titles)
       .build();
   }
 

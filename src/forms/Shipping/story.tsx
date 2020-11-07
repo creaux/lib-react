@@ -1,44 +1,28 @@
-import React, { useState, FunctionComponent } from 'react';
-import { storiesOf } from '@storybook/react';
-import { Shipping } from './container';
-import { Form, FormType } from '../Form/component';
-import { Button, Type } from '../Button';
+import React from 'react';
+import { Shipping, ShippingProps } from './container';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { Builder } from '../../builder';
+import { ShippingTitles } from './component';
+import { action } from '@storybook/addon-actions';
 
-const story = storiesOf('Atomic Design/Organisms/forms/Shipping', module);
+export default Builder<Meta>()
+  .title('Controls/Forms/Shipping')
+  .component(Shipping)
+  .argTypes({ titles: { control: 'object' }})
+  .build();
 
-interface ParentProps {
-  formType: FormType;
-}
+const Template: Story<ShippingProps> = args => <Shipping {...args} />;
 
-const Parent: FunctionComponent<ParentProps> = ({ formType }) => {
-  const [disabled, setDisabled] = useState(true);
-  const handleFormChange = () => {
-    return;
-  };
-  const handleFormValidChange = (valid: boolean) => {
-    return setDisabled(!valid);
-  };
-  return (
-    <Form type={formType} onSubmit={() => {}}>
-      <Shipping
-        onFormValidChange={handleFormValidChange}
-        onFormChange={handleFormChange}
-      />
-      <Button type={Type.SUBMIT} disabled={disabled}>
-        Submit
-      </Button>
-    </Form>
-  );
-};
+export const Default = Template.bind({});
 
-story.add('normal', () => {
-  return <Parent formType={FormType.NORMAL} />;
-});
-
-story.add('onplace', () => {
-  return <Parent formType={FormType.ONPLACE} />;
-});
-
-story.add('inline', () => {
-  return <Parent formType={FormType.INLINE} />;
-});
+Default.args = Builder<ShippingProps>()
+  .onFormChange(action('onFormChange'))
+  .onFormValidChange(action('onFormValidChange'))
+  .titles(Builder<ShippingTitles>()
+    .delivery('Delivery')
+    .company('Company')
+    .isCompany('Is that company')
+    .terms('Agree with Terms and Conditions')
+    .data('Agree with Privacy Policy')
+    .build())
+  .build();

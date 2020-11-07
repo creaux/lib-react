@@ -12,14 +12,6 @@ import { Checkbox } from '../Checkbox';
 import { Conditional } from '../../components/conditional.component';
 import { CSSTransition } from 'react-transition-group';
 
-export interface ShippingTitles {
-  delivery: string;
-  company: string;
-  isCompany: string;
-  terms: string;
-  data: string;
-}
-
 export interface ShippingProps extends IShippingGroups, IShippingFields {
   onFieldChange: OnFieldChange<keyof IShippingFields>;
   onGroupChange: OnGroupChange<keyof IShippingGroups, keyof IAbode>;
@@ -27,7 +19,10 @@ export interface ShippingProps extends IShippingGroups, IShippingFields {
     keyof IShippingGroups,
     keyof IAbode
   >;
-  titles: ShippingTitles;
+  deliveryHeading: string;
+  billingHeading: string;
+  delivery: IAbode & { title: string };
+  invoicing: IAbode & { title: string };
 }
 
 export const Shipping: FunctionComponent<ShippingProps> = ({
@@ -39,11 +34,6 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
   onGroupChange: handleGroupChange,
   onFieldChange: handleFieldChange,
   onValidGroupFieldChange: handleValidGroupFieldChange,
-  deliveryAddressTitle,
-  companyDetailsTitle,
-  isCompanyTitle,
-  termsTitle,
-  dataTitle,
 }) => {
   return (
     <>
@@ -60,7 +50,7 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
               </>
             )}
           />
-          <span>{deliveryAddressTitle}</span>
+          <span>{delivery.title}</span>
         </h6>
         <Abode
           {...delivery}
@@ -81,11 +71,10 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
               </>
             )}
           />
-          <span>{companyDetailsTitle}</span>
+          <span>{invoicing.title}</span>
         </h6>
         <div className="mb-1">
           <Checkbox
-            title={isCompanyTitle}
             {...company}
             onChange={handleFieldChange('company')}
           />
@@ -109,14 +98,12 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
       <div>
         <div className="mb-1">
           <Checkbox
-            title={termsTitle}
             {...terms}
             onChange={handleFieldChange('terms')}
           />
         </div>
         <div className="mb-1">
           <Checkbox
-            title={dataTitle}
             {...data}
             onChange={handleFieldChange('data')}
           />

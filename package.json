@@ -65,6 +65,7 @@
     "@commitlint/prompt-cli": "8.0.0",
     "@fortawesome/fontawesome-free": "5.8.1",
     "@storybook/addon-actions": "6.0.21",
+    "@storybook/addon-controls": "^6.0.28",
     "@storybook/addon-docs": "^6.0.21",
     "@storybook/addon-info": "5.3.21",
     "@storybook/addon-knobs": "6.0.21",
@@ -84,7 +85,7 @@
     "@types/react-dom": "16.9.0",
     "@types/react-transition-group": "4.4.0",
     "@types/recompose": "0.30.5",
-    "@types/sinon-chai": "3.2.2",
+    "@types/sinon-chai": "3.2.5",
     "@types/storybook__addon-actions": "5.2.1",
     "@types/storybook__addon-info": "5.2.1",
     "@types/storybook__addon-knobs": "5.2.1",
@@ -103,8 +104,8 @@
     "react-is": "^16.13.1",
     "react-scripts": "3.4.1",
     "react-test-renderer": "16.13.1",
-    "sinon": "7.1.1",
-    "sinon-chai": "3.3.0",
+    "sinon": "9.2.0",
+    "sinon-chai": "3.5.0",
     "surge": "0.21.6"
   },
   "engines": {
