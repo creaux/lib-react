@@ -74,10 +74,7 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
           <span>{invoicing.title}</span>
         </h6>
         <div className="mb-1">
-          <Checkbox
-            {...company}
-            onChange={handleFieldChange('company')}
-          />
+          <Checkbox {...company} onChange={handleFieldChange('company')} />
         </div>
       </div>
       <div className="mb-4">
@@ -97,16 +94,10 @@ export const Shipping: FunctionComponent<ShippingProps> = ({
       </div>
       <div>
         <div className="mb-1">
-          <Checkbox
-            {...terms}
-            onChange={handleFieldChange('terms')}
-          />
+          <Checkbox {...terms} onChange={handleFieldChange('terms')} />
         </div>
         <div className="mb-1">
-          <Checkbox
-            {...data}
-            onChange={handleFieldChange('data')}
-          />
+          <Checkbox {...data} onChange={handleFieldChange('data')} />
         </div>
       </div>
     </>

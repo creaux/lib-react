@@ -1,4 +1,3 @@
-
 export enum ShippingFields {
   DELIVERY_FORENAME = 'forname2',
   DELIVERY_SURNAME = 'surname2',
@@ -18,5 +17,5 @@ export enum ShippingFields {
   BILLING_COUNTRY = 'country1',
   COMPANY = 'company',
   DATA = 'data',
-  TERMS = 'terms'
+  TERMS = 'terms',
 }

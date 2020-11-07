@@ -28,5 +28,9 @@ export class CheckboxBuilder {
 }
 
 export class ICheckbox {
-  constructor(public checked: boolean, public id: string, public title: string) {}
+  constructor(
+    public checked: boolean,
+    public id: string,
+    public title: string
+  ) {}
 }

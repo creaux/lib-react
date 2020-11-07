@@ -33,7 +33,7 @@ describe('Shipping', () => {
     street = 'Strasse';
     streetNo = '5';
     city = 'Prague';
-    country = 'Czechia'
+    country = 'Czechia';
     postcode = '120 00';
     company = true;
     data = false;
@@ -45,13 +45,15 @@ describe('Shipping', () => {
     shippingPropsTest = Object.assign({}, shippingState);
 
     props = Builder<ShippingProps>()
-      .titles(Builder<ShippingTitles>()
-        .delivery('Delivery')
-        .company('Billing')
-        .terms('Agree with Terms and Conditions')
-        .data('Agree with Personal data processing')
-        .isCompany('Are billing details same as delivery details')
-        .build())
+      .titles(
+        Builder<ShippingTitles>()
+          .delivery('Delivery')
+          .company('Billing')
+          .terms('Agree with Terms and Conditions')
+          .data('Agree with Personal data processing')
+          .isCompany('Are billing details same as delivery details')
+          .build()
+      )
       .onFormValidChange(handleFormChangeValidSpy)
       .onFormChange(handleFormChangeSpy)
       .build();
@@ -61,101 +63,119 @@ describe('Shipping', () => {
   it('should propagate forename change', () => {
     const field = component.find(`input#${ShippingFields.DELIVERY_FORENAME}`);
     // @ts-ignore
-    field.instance().value = forename
+    field.instance().value = forename;
     field.simulate('change');
     shippingPropsTest.delivery.forname.value = forename;
     shippingPropsTest.delivery.forname.valid = true;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
   });
 
   it('should propagate surname change', () => {
     const field = component.find(`input#${ShippingFields.DELIVERY_SURNAME}`);
     // @ts-ignore
-    field.instance().value = surname
+    field.instance().value = surname;
     field.simulate('change');
     shippingPropsTest.delivery.surname.value = surname;
     shippingPropsTest.delivery.surname.valid = true;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
-  })
+  });
 
   it('should propagate street change', () => {
     const field = component.find(`input#${ShippingFields.DELIVERY_STREET}`);
     // @ts-ignore
-    field.instance().value = street
+    field.instance().value = street;
     field.simulate('change');
     shippingPropsTest.delivery.street.value = street;
     shippingPropsTest.delivery.street.valid = true;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
-  })
+  });
 
   it('should propagate street change', () => {
     const field = component.find(`input#${ShippingFields.DELIVERY_STREET_NO}`);
     // @ts-ignore
-    field.instance().value = streetNo
+    field.instance().value = streetNo;
     field.simulate('change');
     shippingPropsTest.delivery.streetNo.value = streetNo;
     shippingPropsTest.delivery.streetNo.valid = true;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
-  })
+  });
 
   it('should propagate city change', () => {
     const field = component.find(`select#${ShippingFields.DELIVERY_CITY}`);
     // @ts-ignore
-    field.instance().value = city
+    field.instance().value = city;
     field.simulate('change');
     shippingPropsTest.delivery.cities.value = city;
     shippingPropsTest.delivery.cities.valid = true;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
-  })
+  });
 
   it('should propagate country change', () => {
     const field = component.find(`select#${ShippingFields.DELIVERY_COUNTRY}`);
     // @ts-ignore
-    field.instance().value = country
+    field.instance().value = country;
     field.simulate('change');
     shippingPropsTest.delivery.countries.value = country;
     shippingPropsTest.delivery.countries.valid = true;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
-  })
+  });
 
   it('should propagate postcode change', () => {
     const field = component.find(`input#${ShippingFields.DELIVERY_POSTCODE}`);
     // @ts-ignore
-    field.instance().value = postcode
+    field.instance().value = postcode;
     field.simulate('change');
     shippingPropsTest.delivery.postcode.value = postcode;
     shippingPropsTest.delivery.postcode.valid = true;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
-  })
+  });
 
   it('should propagate billing forename change', () => {
     const field = component.find(`input#${ShippingFields.BILLING_FORENAME}`);
     // @ts-ignore
-    field.instance().value = forename
+    field.instance().value = forename;
     field.simulate('change');
     shippingPropsTest.invoicing.forname.value = forename;
     shippingPropsTest.invoicing.forname.valid = true;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
   });
 
   it('should propagate billing surname change', () => {
     const field = component.find(`input#${ShippingFields.BILLING_SURNAME}`);
     // @ts-ignore
-    field.instance().value = surname
+    field.instance().value = surname;
     field.simulate('change');
     shippingPropsTest.invoicing.surname.value = surname;
     shippingPropsTest.invoicing.surname.valid = true;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
-  })
+  });
 
   it('should propagate company change', () => {
     const field = component.find(`input#${ShippingFields.COMPANY}`);
@@ -164,9 +184,11 @@ describe('Shipping', () => {
     field.instance().checked = company;
     field.simulate('change');
     shippingPropsTest.company.checked = company;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
-  })
+  });
 
   it('should propagate data change', () => {
     const field = component.find(`input#${ShippingFields.DATA}`);
@@ -175,9 +197,11 @@ describe('Shipping', () => {
     field.instance().checked = data;
     field.simulate('change');
     shippingPropsTest.data.checked = data;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
-  })
+  });
 
   it('should propagate terms change', () => {
     const field = component.find(`input#${ShippingFields.TERMS}`);
@@ -186,9 +210,11 @@ describe('Shipping', () => {
     field.instance().checked = terms;
     field.simulate('change');
     shippingPropsTest.data.checked = terms;
-    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(shippingPropsTest);
+    expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
+      shippingPropsTest
+    );
     expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(false);
-  })
+  });
 });
 
 chai.use(sinonChai);
