@@ -1,8 +1,8 @@
 import React from 'react';
-import { Shipping } from './shipping.container';
+import { Shipping } from './shipping.mixin';
 import { ShippingAbstractProps } from './shipping.abstract.container';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Builder } from '../../builder';
+import { Builder } from '../builder';
 import { action } from '@storybook/addon-actions';
 
 export default Builder<Meta>()

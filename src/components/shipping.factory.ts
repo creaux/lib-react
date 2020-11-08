@@ -1,13 +1,22 @@
-import { Builder } from '../../builder';
-import { IAbode } from '../Abode';
-import { IInput, IOption, ISelect } from '../Field/types';
-import { ICheckbox } from '../Checkbox/types';
-import { ShippingAbstractState } from './shipping.abstract.container';
+import { ShippingState } from './shipping.abstract.container';
 import { ShippingFields } from './shipping.fields';
+import { Builder } from '../builder';
+import { IAbode } from '../forms/Abode';
+import { IInput, IOption, ISelect } from '../forms/Field/types';
+import { ICheckbox } from '../forms/Checkbox/types';
 
-export const shippingState = Builder<ShippingAbstractState>()
+export class ShippingFactory {
+  public static readonly DELIVERY_FORENAME = Builder<IInput>()
+    .id(ShippingFields.DELIVERY_FORENAME)
+    .value('')
+    .valid(false)
+    .build();
+}
+
+export const shippingState = Builder<ShippingState>()
   .delivery(
-    Builder<IAbode>()
+    Builder<IAbode & { title: string }>()
+      .title('Delivery')
       .forname(
         Builder<IInput>()
           .id(ShippingFields.DELIVERY_FORENAME)
@@ -72,7 +81,8 @@ export const shippingState = Builder<ShippingAbstractState>()
       .build()
   )
   .invoicing(
-    Builder<IAbode>()
+    Builder<IAbode & { title: string }>()
+      .title('Billing')
       .forname(
         Builder<IInput>()
           .id(ShippingFields.BILLING_FORENAME)
@@ -151,8 +161,24 @@ export const shippingState = Builder<ShippingAbstractState>()
       .build()
   )
   .company(
-    Builder<ICheckbox>().id(ShippingFields.COMPANY).checked(true).build()
+    Builder<ICheckbox>()
+      .id(ShippingFields.COMPANY)
+      .title('Is billing address same as delivery address?')
+      .checked(true)
+      .build()
   )
-  .data(Builder<ICheckbox>().id(ShippingFields.DATA).checked(false).build())
-  .terms(Builder<ICheckbox>().id(ShippingFields.TERMS).checked(false).build())
+  .data(
+    Builder<ICheckbox>()
+      .id(ShippingFields.DATA)
+      .title('Agreement with personal data processing')
+      .checked(false)
+      .build()
+  )
+  .terms(
+    Builder<ICheckbox>()
+      .id(ShippingFields.TERMS)
+      .title('Agreement with terms and conditions')
+      .checked(false)
+      .build()
+  )
   .build();

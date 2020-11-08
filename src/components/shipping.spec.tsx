@@ -2,7 +2,7 @@ import React from 'react';
 import {
   ShippingAbstract,
   ShippingAbstractProps,
-  ShippingAbstractState,
+  ShippingState,
 } from './shipping.abstract.container';
 import { mount, ReactWrapper } from 'enzyme';
 import chai, { expect } from 'chai';
@@ -19,7 +19,7 @@ describe('Shipping', () => {
   let props: ShippingAbstractProps;
   let handleFormChangeSpy: SinonSpy;
   let handleFormChangeValidSpy: SinonSpy;
-  let shippingPropsTest: ShippingAbstractState;
+  let shippingPropsTest: ShippingState;
   let forename: string;
   let surname: string;
   let street: string;

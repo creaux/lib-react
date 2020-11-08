@@ -3,34 +3,26 @@ import {
   Shipping as ShippingComponent,
   ShippingProps as ShippingComponentProps,
 } from './shipping.i18n';
-import { IAbode } from '../Abode';
-import { ICheckbox } from '../Checkbox/types';
 import { merge } from 'lodash';
-import { IShippingFields, IShippingGroups } from './shipping.types';
-import { Builder } from '../../builder';
+import { ICheckbox } from '../forms/Checkbox/types';
+import { IAbode } from '../forms/Abode';
+import { Builder } from '../builder';
+import { ShippingProps } from './shipping.props';
+import { ShippingState } from './shipping.state';
 
 const { assign, keys } = Object;
 
 type Group = 'invoicing' | 'delivery';
 type Field = 'terms' | 'data' | 'company';
 
-export interface ShippingAbstractProps {
-  onFormChange: (data: ShippingAbstractState) => void;
-  onFormValidChange: (valid: boolean) => void;
-}
-
-export interface ShippingAbstractState
-  extends IShippingGroups,
-    IShippingFields {}
-
 export abstract class ShippingAbstract<
-  P extends ShippingAbstractProps
-> extends Component<ShippingAbstractProps, ShippingAbstractState> {
-  public abstract readonly state: ShippingAbstractState;
+  P extends ShippingProps
+> extends Component<ShippingProps, ShippingState> {
+  public abstract readonly state: ShippingState;
 
   public componentDidUpdate(
-    prevProps: Readonly<ShippingAbstractProps>,
-    prevState: Readonly<ShippingAbstractState>,
+    prevProps: Readonly<ShippingProps>,
+    prevState: Readonly<ShippingState>,
     snapshot?: any
   ) {
     const {

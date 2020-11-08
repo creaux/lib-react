@@ -6,7 +6,6 @@ import React, {
   ComponentType,
 } from 'react';
 import { Builder } from '../builder';
-import defaultTranslations from '../forms/Person/en.json';
 
 const { keys } = Object;
 

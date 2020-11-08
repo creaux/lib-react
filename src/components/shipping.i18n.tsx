@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Builder, I18n, Translations } from '../..';
-import defaultTranslations from '../Shipping/en.json';
+import defaultTranslations from './shipping.default.json';
 import {
   Shipping as ShippingComponent,
   ShippingProps as ShippingComponentProps,

@@ -1,16 +1,16 @@
 import React, { FunctionComponent } from 'react';
-import { Abode, IAbode } from '../Abode';
 import {
   OnFieldChange,
   OnGroupChange,
   OnValidGroupFieldChange,
-} from '../../components/form.types';
+} from './form.types';
 import { IShippingFields, IShippingGroups } from './shipping.types';
 import { faFileInvoiceDollar, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Checkbox } from '../Checkbox';
-import { Conditional } from '../../components/conditional.component';
+import { Conditional } from './conditional.component';
 import { CSSTransition } from 'react-transition-group';
+import { Checkbox } from '../forms/Checkbox';
+import { Abode, IAbode } from '../forms/Abode';
 
 export interface ShippingProps extends IShippingGroups, IShippingFields {
   onFieldChange: OnFieldChange<keyof IShippingFields>;

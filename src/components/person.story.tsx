@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Person, PersonProps } from './component';
 import { Form, FormType } from '../Form';
+import { PersonProps } from './person.props';
+import { Person } from './person';
 
 export const props: PersonProps = {
   forname: {
