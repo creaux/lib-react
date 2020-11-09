@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  ShippingAbstractContainer,
-} from './shipping.abstract.container';
+import { ShippingAbstractContainer } from './shipping.abstract.container';
 import { mount, ReactWrapper } from 'enzyme';
 import chai, { expect } from 'chai';
 import { SinonSpy, spy } from 'sinon';

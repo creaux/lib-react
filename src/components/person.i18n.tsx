@@ -24,7 +24,11 @@ export interface PersonI18nProps extends IPerson {
   onFieldValidChange: OnValidFieldChange<keyof IPerson>;
 }
 
-export class PersonI18n extends Translate<PersonI18nProps, PersonProps, PersonTranslations> {
+export class PersonI18n extends Translate<
+  PersonI18nProps,
+  PersonProps,
+  PersonTranslations
+> {
   protected defaultTranslations = defaultTranslations;
   protected readonly Component = Person;
 
@@ -46,12 +50,8 @@ export class PersonI18n extends Translate<PersonI18nProps, PersonProps, PersonTr
       .surnameLabel(this.i18n.get('SURNAME') as string)
       .surnamePlaceholder(this.i18n.get('SURNAME_PLACEHOLDER') as string)
       .surnameMessageValid(this.i18n.get('SURNAME_MESSAGE_VALID') as string)
-      .surnameMessageInvalid(
-        this.i18n.get('SURNAME_MESSAGE_INVALID') as string
-      )
-      .surnameMessageDefault(
-        this.i18n.get('SURNAME_MESSAGE_DEFAULT') as string
-      )
+      .surnameMessageInvalid(this.i18n.get('SURNAME_MESSAGE_INVALID') as string)
+      .surnameMessageDefault(this.i18n.get('SURNAME_MESSAGE_DEFAULT') as string)
       .build();
   }
 }

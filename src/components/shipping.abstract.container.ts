@@ -1,8 +1,5 @@
 import { Component, FormEvent, createElement, ReactNode } from 'react';
-import {
-  ShippingI18n,
-  ShippingI18nProps,
-} from './shipping.i18n';
+import { ShippingI18n, ShippingI18nProps } from './shipping.i18n';
 import { merge } from 'lodash';
 import { ICheckbox } from '../forms/Checkbox/types';
 import { IAbode } from '../forms/Abode';
@@ -15,7 +12,10 @@ const { assign, keys } = Object;
 type Group = 'invoicing' | 'delivery';
 type Field = 'terms' | 'data' | 'company';
 
-export abstract class ShippingAbstractContainer extends Component<ShippingProps, ShippingState> {
+export abstract class ShippingAbstractContainer extends Component<
+  ShippingProps,
+  ShippingState
+> {
   public abstract readonly state: ShippingState;
 
   public componentDidUpdate(

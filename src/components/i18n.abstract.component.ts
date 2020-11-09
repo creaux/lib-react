@@ -3,7 +3,11 @@ import { I18n, Translations } from './i18n.component';
 
 export interface TranslateProps {}
 
-export abstract class Translate<I, O, T extends Translations> extends Component<I, {}, T> {
+export abstract class Translate<I, O, T extends Translations> extends Component<
+  I,
+  {},
+  T
+> {
   static contextType = I18n.Context;
 
   protected abstract readonly defaultTranslations: T;
@@ -21,6 +25,6 @@ export abstract class Translate<I, O, T extends Translations> extends Component<
   }
 
   public render() {
-    return createElement(this.Component, this.getProps())
+    return createElement(this.Component, this.getProps());
   }
 }

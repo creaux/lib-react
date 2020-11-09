@@ -7,7 +7,6 @@ import { IInput, IOption, ISelect } from '../forms/Field/types';
 import { ShippingFields } from './shipping.fields';
 import { ICheckbox } from '../forms/Checkbox/types';
 
-
 export class ShippingContainer extends ShippingAbstractContainer {
   public readonly state: ShippingState;
 

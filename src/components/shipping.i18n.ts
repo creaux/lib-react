@@ -5,7 +5,11 @@ import {
 } from './shipping.component';
 import { Builder } from '../builder';
 import { Translations } from './i18n.component';
-import { OnFieldChange, OnGroupChange, OnValidGroupFieldChange } from './form.types';
+import {
+  OnFieldChange,
+  OnGroupChange,
+  OnValidGroupFieldChange,
+} from './form.types';
 import { IShippingFields, IShippingGroups } from './shipping.types';
 import { IAbode } from '../forms/Abode/types';
 import { Translate } from './i18n.abstract.component';
@@ -13,7 +17,10 @@ import { Translate } from './i18n.abstract.component';
 export interface ShippingI18nProps extends IShippingGroups, IShippingFields {
   onFieldChange: OnFieldChange<keyof IShippingFields>;
   onGroupChange: OnGroupChange<keyof IShippingGroups, keyof IAbode>;
-  onValidGroupFieldChange: OnValidGroupFieldChange<keyof IShippingGroups, keyof IAbode>;
+  onValidGroupFieldChange: OnValidGroupFieldChange<
+    keyof IShippingGroups,
+    keyof IAbode
+  >;
 }
 
 export interface ShippingTranslations extends Translations {
@@ -24,7 +31,11 @@ export interface ShippingTranslations extends Translations {
   SHIPPING_DATA: string;
 }
 
-export class ShippingI18n extends Translate<ShippingI18nProps, ShippingComponentProps, ShippingTranslations> {
+export class ShippingI18n extends Translate<
+  ShippingI18nProps,
+  ShippingComponentProps,
+  ShippingTranslations
+> {
   protected defaultTranslations = defaultTranslations;
   protected readonly Component = ShippingComponent;
 
