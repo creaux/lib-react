@@ -1,7 +1,7 @@
 import { Component, FormEvent, createElement, ReactNode } from 'react';
 import {
-  Shipping as ShippingComponent,
-  ShippingProps as ShippingComponentProps,
+  ShippingI18n,
+  ShippingI18nProps,
 } from './shipping.i18n';
 import { merge } from 'lodash';
 import { ICheckbox } from '../forms/Checkbox/types';
@@ -15,9 +15,7 @@ const { assign, keys } = Object;
 type Group = 'invoicing' | 'delivery';
 type Field = 'terms' | 'data' | 'company';
 
-export abstract class ShippingAbstract<
-  P extends ShippingProps
-> extends Component<ShippingProps, ShippingState> {
+export abstract class ShippingAbstractContainer extends Component<ShippingProps, ShippingState> {
   public abstract readonly state: ShippingState;
 
   public componentDidUpdate(
@@ -107,7 +105,7 @@ export abstract class ShippingAbstract<
   }
 
   private get shippingProps() {
-    return Builder<ShippingComponentProps>()
+    return Builder<ShippingI18nProps>()
       .onGroupChange(this.handleGroupChange)
       .onFieldChange(this.handleCheckboxChange)
       .onValidGroupFieldChange(this.handleValidGroupFieldChange)
@@ -115,7 +113,7 @@ export abstract class ShippingAbstract<
   }
 
   render(): ReactNode {
-    return createElement(ShippingComponent, {
+    return createElement(ShippingI18n, {
       ...this.state,
       ...this.shippingProps,
     });

@@ -1,7 +1,7 @@
 import { createElement, PureComponent } from 'react';
 import { OneCheckout } from './one-checkout.component';
 import { ProductDescriptionProps } from './product-description.component';
-import { ShippingAbstractState } from '../forms/Shipping/shipping.abstract.container';
+import { ShippingState } from './shipping.state';
 
 export interface OneCheckoutContainerProps {
   product: ProductDescriptionProps;
@@ -38,7 +38,7 @@ export class OneCheckoutContainer extends PureComponent<
     this.setState({ isShippingValid: valid });
   };
 
-  private readonly handleShippingChange = (data: ShippingAbstractState) => {};
+  private readonly handleShippingChange = (data: ShippingState) => {};
 
   render() {
     return createElement(OneCheckout, {

@@ -1,9 +1,10 @@
-import { createElement, FunctionComponent } from 'react';
-import { Builder, I18n, Translations } from '../..';
 import { IPerson } from './types';
 import defaultTranslations from './person.default.json';
 import { Person, PersonProps } from './person.component';
 import { OnFieldChange, OnValidFieldChange } from './form.types';
+import { Translate } from './i18n.abstract.component';
+import { Translations } from './i18n.component';
+import { Builder } from '../builder';
 
 interface PersonTranslations extends Translations {
   FORENAME: string;
@@ -23,38 +24,34 @@ export interface PersonI18nProps extends IPerson {
   onFieldValidChange: OnValidFieldChange<keyof IPerson>;
 }
 
-export const PersonI18n: FunctionComponent<PersonI18nProps> = ({
-  forname,
-  surname,
-  onFieldChange: handleFieldChange,
-  onFieldValidChange: handleFieldValidChange,
-}: PersonI18nProps) => {
-  const translations = I18n.useTranslations<PersonTranslations>(
-    defaultTranslations
-  );
-  const person = Builder<PersonProps>()
-    .forname(forname)
-    .surname(surname)
-    .onFieldChange(handleFieldChange)
-    .onFieldValidChange(handleFieldValidChange)
-    .forenameLabel(translations.get('FORENAME') as string)
-    .forenamePlaholder(translations.get('FORENAME_PLACEHOLDER') as string)
-    .forenameMessageValid(translations.get('FORENAME_MESSAGE_VALID') as string)
-    .forenameMessageInvalid(
-      translations.get('FORENAME_MESSAGE_INVALID') as string
-    )
-    .forenameMessageDefault(
-      translations.get('FORENAME_MESSAGE_DEFAULT') as string
-    )
-    .surnameLabel(translations.get('SURNAME') as string)
-    .surnamePlaholder(translations.get('SURNAME_PLACEHOLDER') as string)
-    .surnameMessageValid(translations.get('SURNAME_MESSAGE_VALID') as string)
-    .surnameMessageInvalid(
-      translations.get('SURNAME_MESSAGE_INVALID') as string
-    )
-    .surnameMessageDefault(
-      translations.get('SURNAME_MESSAGE_DEFAULT') as string
-    )
-    .build();
-  return createElement(Person, person);
-};
+export class PersonI18n extends Translate<PersonI18nProps, PersonProps, PersonTranslations> {
+  protected defaultTranslations = defaultTranslations;
+  protected readonly Component = Person;
+
+  protected getProps(): PersonProps {
+    return Builder<PersonProps>()
+      .forname(this.props.forname)
+      .surname(this.props.surname)
+      .onFieldChange(this.props.onFieldChange)
+      .onFieldValidChange(this.props.onFieldValidChange)
+      .forenameLabel(this.i18n.get('FORENAME') as string)
+      .forenamePlaceholder(this.i18n.get('FORENAME_PLACEHOLDER') as string)
+      .forenameMessageValid(this.i18n.get('FORENAME_MESSAGE_VALID') as string)
+      .forenameMessageInvalid(
+        this.i18n.get('FORENAME_MESSAGE_INVALID') as string
+      )
+      .forenameMessageDefault(
+        this.i18n.get('FORENAME_MESSAGE_DEFAULT') as string
+      )
+      .surnameLabel(this.i18n.get('SURNAME') as string)
+      .surnamePlaceholder(this.i18n.get('SURNAME_PLACEHOLDER') as string)
+      .surnameMessageValid(this.i18n.get('SURNAME_MESSAGE_VALID') as string)
+      .surnameMessageInvalid(
+        this.i18n.get('SURNAME_MESSAGE_INVALID') as string
+      )
+      .surnameMessageDefault(
+        this.i18n.get('SURNAME_MESSAGE_DEFAULT') as string
+      )
+      .build();
+  }
+}

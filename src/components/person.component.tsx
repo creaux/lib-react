@@ -6,12 +6,12 @@ import { Conditional } from './conditional.component';
 
 export interface PersonProps extends PersonI18nProps {
   forenameLabel: string;
-  forenamePlaholder: string;
+  forenamePlaceholder: string;
   forenameMessageValid: string;
   forenameMessageInvalid: string;
   forenameMessageDefault: string;
   surnameLabel: string;
-  surnamePlaholder: string;
+  surnamePlaceholder: string;
   surnameMessageValid: string;
   surnameMessageInvalid: string;
   surnameMessageDefault: string;
@@ -23,12 +23,12 @@ export const Person: FunctionComponent<PersonProps> = ({
   onFieldChange: handleFieldChange,
   onFieldValidChange: handleFieldValidChange,
   forenameLabel,
-  forenamePlaholder,
+  forenamePlaceholder,
   forenameMessageValid,
   forenameMessageInvalid,
   forenameMessageDefault,
   surnameLabel,
-  surnamePlaholder,
+  surnamePlaceholder,
   surnameMessageValid,
   surnameMessageInvalid,
   surnameMessageDefault,
@@ -55,7 +55,7 @@ export const Person: FunctionComponent<PersonProps> = ({
               forenameMessageInvalid,
               forenameMessageDefault,
             ]}
-            placeholder={forenamePlaholder}
+            placeholder={forenamePlaceholder}
           />
         </Conditional>
         <Conditional
@@ -74,7 +74,7 @@ export const Person: FunctionComponent<PersonProps> = ({
               surnameMessageInvalid,
               surnameMessageDefault,
             ]}
-            placeholder={surnamePlaholder}
+            placeholder={surnamePlaceholder}
           />
         </Conditional>
       </div>

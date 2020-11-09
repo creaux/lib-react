@@ -1,10 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import { Address } from '../Address';
 import { Company } from '../Company';
-import { Person } from '../Person';
+import { Person } from '../../components/person';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { AbodeBuilder, IAbode } from './types';
 import { Conditional } from '../../components/conditional.component';
+import { IInput } from '../Field/types';
 
 export class AbodePropsBuilder extends AbodeBuilder {
   onFieldChange!: OnFieldChange<keyof IAbode>;
@@ -32,7 +33,6 @@ export interface AbodeProps extends IAbode {
   onValidFieldChange: OnValidFieldChange<keyof IAbode>;
 }
 
-// @ts-ignore
 export const Abode: FunctionComponent<AbodeProps> = ({
   forname,
   surname,
@@ -60,12 +60,8 @@ export const Abode: FunctionComponent<AbodeProps> = ({
       when={() => (
         <div className="mb-1">
           <Company
-            // This is correct as it is under condition!!!
-            // @ts-ignore
-            company={company}
-            // This is correct as it is under condition!!!
-            // @ts-ignore
-            vat={vat}
+            company={company as IInput}
+            vat={vat as IInput}
             onFieldChange={handleFieldChange}
             onValidFieldChange={handleValidFieldChange}
           />

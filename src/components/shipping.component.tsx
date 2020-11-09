@@ -1,26 +1,13 @@
 import React, { FunctionComponent } from 'react';
-import {
-  OnFieldChange,
-  OnGroupChange,
-  OnValidGroupFieldChange,
-} from './form.types';
-import { IShippingFields, IShippingGroups } from './shipping.types';
 import { faFileInvoiceDollar, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Conditional } from './conditional.component';
 import { CSSTransition } from 'react-transition-group';
 import { Checkbox } from '../forms/Checkbox';
-import { Abode, IAbode } from '../forms/Abode';
+import { Abode } from '../forms/Abode';
+import { ShippingI18nProps } from './shipping.i18n';
 
-export interface ShippingProps extends IShippingGroups, IShippingFields {
-  onFieldChange: OnFieldChange<keyof IShippingFields>;
-  onGroupChange: OnGroupChange<keyof IShippingGroups, keyof IAbode>;
-  onValidGroupFieldChange: OnValidGroupFieldChange<
-    keyof IShippingGroups,
-    keyof IAbode
-  >;
-  delivery: IAbode;
-  invoicing: IAbode;
+export interface ShippingComponentProps extends ShippingI18nProps {
   deliveryHeading: string;
   billingHeading: string;
   dataDescription: string;
@@ -28,7 +15,7 @@ export interface ShippingProps extends IShippingGroups, IShippingFields {
   companyDescription: string;
 }
 
-export const Shipping: FunctionComponent<ShippingProps> = ({
+export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
   invoicing,
   delivery,
   terms,

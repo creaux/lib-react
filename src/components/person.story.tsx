@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Form, FormType } from '../Form';
+import { Form, FormType } from '../forms/Form';
 import { PersonProps } from './person.props';
 import { Person } from './person';
 

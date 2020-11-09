@@ -1,9 +1,9 @@
-import { Builder } from '../../builder';
-import { IAbode } from '../Abode';
-import { IInput, IOption, ISelect } from '../Field/types';
-import { ICheckbox } from '../Checkbox/types';
-import { ShippingState } from './shipping.abstract.container';
 import { ShippingFields } from './shipping.fields';
+import { ShippingState } from './shipping.state';
+import { IAbode } from '../forms/Abode/types';
+import { IInput, IOption, ISelect } from '../forms/Field/types';
+import { ICheckbox } from '../forms/Checkbox/types';
+import { Builder } from '../builder';
 
 export const shippingState = Builder<ShippingState>()
   .delivery(

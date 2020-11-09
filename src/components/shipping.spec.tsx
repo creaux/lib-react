@@ -1,22 +1,22 @@
 import React from 'react';
 import {
-  ShippingAbstract,
-  ShippingAbstractProps,
-  ShippingState,
+  ShippingAbstractContainer,
 } from './shipping.abstract.container';
 import { mount, ReactWrapper } from 'enzyme';
 import chai, { expect } from 'chai';
 import { SinonSpy, spy } from 'sinon';
 import chaiEnzyme from 'chai-enzyme';
 import sinonChai from 'sinon-chai';
-import { Builder } from '../../builder';
-import { ShippingTitles } from './shipping.component';
 import { ShippingFields } from './shipping.fields';
 import { shippingState } from './shipping.props-mock';
+import { ShippingProps } from './shipping.props';
+import { ShippingState } from './shipping.state';
+import { Builder } from '../builder';
+import { Shipping } from './shipping';
 
 describe('Shipping', () => {
-  let component: ReactWrapper<ShippingAbstract>;
-  let props: ShippingAbstractProps;
+  let component: ReactWrapper<ShippingAbstractContainer>;
+  let props: ShippingProps;
   let handleFormChangeSpy: SinonSpy;
   let handleFormChangeValidSpy: SinonSpy;
   let shippingPropsTest: ShippingState;
@@ -48,20 +48,11 @@ describe('Shipping', () => {
 
     shippingPropsTest = Object.assign({}, shippingState);
 
-    props = Builder<ShippingAbstractProps>()
-      .titles(
-        Builder<ShippingTitles>()
-          .delivery('Delivery')
-          .company('Billing')
-          .terms('Agree with Terms and Conditions')
-          .data('Agree with Personal data processing')
-          .isCompany('Are billing details same as delivery details')
-          .build()
-      )
+    props = Builder<ShippingProps>()
       .onFormValidChange(handleFormChangeValidSpy)
       .onFormChange(handleFormChangeSpy)
       .build();
-    component = mount(<ShippingAbstract {...props} />);
+    component = mount(<Shipping {...props} />);
   });
 
   it('should propagate forename change', () => {

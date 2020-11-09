@@ -120,14 +120,14 @@ export { Abode } from './forms/Abode';
 export { Address } from './forms/Address';
 export { Company } from './forms/Company';
 export { EmailCrawler } from './forms/EmailCrawler';
-export { Person } from './forms/Person';
+export { Person } from './components/person';
 export { SignpostComponent as Signpost } from './components/signpost.component';
 export type {
   SignpostComponentProps as SignpostProps,
   SignpostElement,
 } from './components/signpost.component';
 // Organisms
-export { Shipping } from './components/shipping.mixin';
+export { Shipping } from './components/shipping';
 // Scheme
 export { BackgroundColor } from './schema/background-color.enum';
 export { TextColor } from './schema/text-color.enum';
