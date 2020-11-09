@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Company, CompanyProps } from './component';
-import { Form, FormType } from '../Form/component';
+import { Company, CompanyProps } from './company.component';
+import { Form, FormType } from '../forms/Form/component';
 
 const props: CompanyProps = {
   company: {
@@ -20,21 +20,21 @@ const props: CompanyProps = {
   },
 };
 
-const story = storiesOf('Atomic Design/Moleculs/forms/Company', module);
+const companyStory = storiesOf('Atomic Design/Moleculs/forms/Company', module);
 
-story.add('normal', () => (
+companyStory.add('normal', () => (
   <Form type={FormType.NORMAL} onSubmit={() => {}}>
     <Company {...props} />
   </Form>
 ));
 
-story.add('onplace', () => (
+companyStory.add('onplace', () => (
   <Form type={FormType.ONPLACE} onSubmit={() => {}}>
     <Company {...props} />
   </Form>
 ));
 
-story.add('inline', () => (
+companyStory.add('inline', () => (
   <Form type={FormType.INLINE} onSubmit={() => {}}>
     <Company {...props} />
   </Form>

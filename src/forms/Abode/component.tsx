@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Address } from '../Address';
-import { Company } from '../Company';
+import { Company } from '../../components/company';
 import { Person } from '../../components/person';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { AbodeBuilder, IAbode } from './types';

@@ -6,6 +6,7 @@ import { IAbode } from '../forms/Abode/types';
 import { IInput, IOption, ISelect } from '../forms/Field/types';
 import { ShippingFields } from './shipping.fields';
 import { ICheckbox } from '../forms/Checkbox/types';
+import { EMPTY } from './empty';
 
 export class ShippingContainer extends ShippingAbstractContainer {
   public readonly state: ShippingState;
@@ -15,8 +16,7 @@ export class ShippingContainer extends ShippingAbstractContainer {
 
     this.state = Builder<ShippingState>()
       .delivery(
-        Builder<IAbode & { title: string }>()
-          .title('Delivery')
+        Builder<IAbode>()
           .forname(
             Builder<IInput>()
               .id(ShippingFields.DELIVERY_FORENAME)
@@ -81,8 +81,7 @@ export class ShippingContainer extends ShippingAbstractContainer {
           .build()
       )
       .invoicing(
-        Builder<IAbode & { title: string }>()
-          .title('Billing')
+        Builder<IAbode>()
           .forname(
             Builder<IInput>()
               .id(ShippingFields.BILLING_FORENAME)
@@ -140,7 +139,7 @@ export class ShippingContainer extends ShippingAbstractContainer {
                 Builder<IOption>()
                   .id('prague')
                   .title('Prague')
-                  .value('prague')
+                  .value('Prague')
                   .build(),
               ])
               .build()
@@ -153,7 +152,7 @@ export class ShippingContainer extends ShippingAbstractContainer {
                 Builder<IOption>()
                   .id('czechia')
                   .title('Czechia')
-                  .value('czechia')
+                  .value('Czechia')
                   .build(),
               ])
               .build()
@@ -163,22 +162,22 @@ export class ShippingContainer extends ShippingAbstractContainer {
       .company(
         Builder<ICheckbox>()
           .id(ShippingFields.COMPANY)
-          .title('Is billing address same as delivery address?')
           .checked(true)
+          .title(EMPTY)
           .build()
       )
       .data(
         Builder<ICheckbox>()
           .id(ShippingFields.DATA)
-          .title('Agreement with personal data processing')
           .checked(false)
+          .title(EMPTY)
           .build()
       )
       .terms(
         Builder<ICheckbox>()
           .id(ShippingFields.TERMS)
-          .title('Agreement with terms and conditions')
           .checked(false)
+          .title(EMPTY)
           .build()
       )
       .build();

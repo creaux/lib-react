@@ -1,3 +1,3 @@
-import { IShippingFields, IShippingGroups } from './shipping.types';
+import { ShippingFields, ShippingGroups } from './shipping.types';
 
-export interface ShippingState extends IShippingGroups, IShippingFields {}
+export interface ShippingState extends ShippingGroups, ShippingFields {}

@@ -10,9 +10,6 @@ import { ShippingI18nProps } from './shipping.i18n';
 export interface ShippingComponentProps extends ShippingI18nProps {
   deliveryHeading: string;
   billingHeading: string;
-  dataDescription: string;
-  termsDescription: string;
-  companyDescription: string;
 }
 
 export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
@@ -26,9 +23,6 @@ export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
   onValidGroupFieldChange: handleValidGroupFieldChange,
   deliveryHeading,
   billingHeading,
-  dataDescription,
-  termsDescription,
-  companyDescription,
 }) => {
   return (
     <>
@@ -69,11 +63,7 @@ export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
           <span>{billingHeading}</span>
         </h6>
         <div className="mb-1">
-          <Checkbox
-            {...company}
-            title={companyDescription}
-            onChange={handleFieldChange('company')}
-          />
+          <Checkbox {...company} onChange={handleFieldChange('company')} />
         </div>
       </div>
       <div className="mb-4">
@@ -93,18 +83,10 @@ export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
       </div>
       <div>
         <div className="mb-1">
-          <Checkbox
-            {...terms}
-            title={termsDescription}
-            onChange={handleFieldChange('terms')}
-          />
+          <Checkbox {...terms} onChange={handleFieldChange('terms')} />
         </div>
         <div className="mb-1">
-          <Checkbox
-            {...data}
-            title={dataDescription}
-            onChange={handleFieldChange('data')}
-          />
+          <Checkbox {...data} onChange={handleFieldChange('data')} />
         </div>
       </div>
     </>

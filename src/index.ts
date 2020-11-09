@@ -118,7 +118,7 @@ export type { MarkdownProps } from './components/markdown.component';
 // Moleculs
 export { Abode } from './forms/Abode';
 export { Address } from './forms/Address';
-export { Company } from './forms/Company';
+export { Company } from './components/company';
 export { EmailCrawler } from './forms/EmailCrawler';
 export { Person } from './components/person';
 export { SignpostComponent as Signpost } from './components/signpost.component';
