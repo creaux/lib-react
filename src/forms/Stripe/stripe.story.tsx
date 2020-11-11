@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Stripe } from './container';
+import { Stripe } from './stripe.container';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-const story = storiesOf('Atomic Design/Organisms/forms/Stripe', module);
+const stripeStory = storiesOf('Atomic Design/Organisms/forms/Stripe', module);
 
-story.add('default', () => {
+stripeStory.add('default', () => {
   return (
     <Elements
       stripe={loadStripe(

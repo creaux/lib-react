@@ -25,7 +25,7 @@ export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
   billingHeading,
 }) => {
   return (
-    <>
+    <div className="shipping">
       <div className="pb-4">
         <h6>
           <Conditional
@@ -69,7 +69,7 @@ export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
       <div className="mb-4">
         <CSSTransition
           in={!company.checked}
-          timeout={400}
+          timeout={1}
           className="shipping__billing"
         >
           <div>
@@ -89,6 +89,6 @@ export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
           <Checkbox {...data} onChange={handleFieldChange('data')} />
         </div>
       </div>
-    </>
+    </div>
   );
 };

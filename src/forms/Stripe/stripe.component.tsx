@@ -5,7 +5,7 @@ import {
   CardNumberElement,
 } from '@stripe/react-stripe-js';
 import { I18n, Translations } from '../../components/i18n.component';
-import defaultTranslations from './en.json';
+import defaultTranslations from './stripe.default.json';
 import { Button } from '../Button/component';
 import { Type } from '../Button/types';
 import { Form, FormType } from '../Form/component';

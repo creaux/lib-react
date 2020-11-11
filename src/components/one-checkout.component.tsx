@@ -4,7 +4,7 @@ import { ProductDescriptionProps } from './product-description.component';
 import { asBackgroundProps } from './image.component.mock';
 import { Image } from './image.component';
 import { Button, Variants } from '../forms/Button/index';
-import { Stripe } from '../forms/Stripe/index';
+import { Stripe } from '../forms/Stripe/stripe';
 import { Shipping } from './shipping';
 import { Viewport } from './viewport.component';
 import { ButtonProps } from '../forms/Button/index';

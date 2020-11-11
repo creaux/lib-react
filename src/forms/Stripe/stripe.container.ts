@@ -1,5 +1,5 @@
 import { createElement, Component, FormEvent } from 'react';
-import { Stripe as StripeComponent } from './component';
+import { Stripe as StripeComponent } from './stripe.component';
 import { elementsProvider, ElementsContextValue } from './elementsConsumer';
 import { CardNumberElement } from '@stripe/react-stripe-js';
 

@@ -5,7 +5,7 @@ import { Builder } from '../builder';
 import { action } from '@storybook/addon-actions';
 
 export default Builder<Meta>()
-  .title('Controls/Forms/Shipping')
+  .title('Atomic Design/Organisms/Forms/Shipping')
   .component(Shipping)
   .build();
 
