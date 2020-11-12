@@ -9,17 +9,10 @@ import { Shipping } from './shipping';
 import { Viewport } from './viewport.component';
 import { ButtonProps } from '../forms/Button/index';
 import { Builder } from '../builder';
-import { ShippingState } from './shipping.state';
+import { OneCheckoutI18nProps } from './one-checkout.i18n';
 
-export interface OneCheckoutProps {
-  product: ProductDescriptionProps;
-  step: number;
+export interface OneCheckoutProps extends OneCheckoutI18nProps {
   goBack: string;
-  onGoBack: () => void;
-  onStep: (step: number) => void;
-  onShippingValidChange: (valid: boolean) => void;
-  onShippingChange: (data: ShippingState) => void;
-  isShippingValid: boolean;
 }
 
 export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
