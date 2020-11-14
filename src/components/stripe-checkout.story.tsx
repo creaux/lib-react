@@ -1,14 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { OneCheckoutContainer } from './one-checkout.container';
+import { StripeCheckout } from './stripe-checkout';
 import { Form, FormType } from '../forms/Form/component';
 import { props as productDescriptionProps } from './product-description.mocks';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-const story = storiesOf('Atomic Design/Templates/OneCheckout', module);
+const story = storiesOf('Atomic Design/Templates/StripeCheckout', module);
 
 story.add('default', () => {
+  console.log('STRIPE', process.env.STRIPE_SECRET);
   return (
     <Elements
       stripe={loadStripe(
@@ -16,7 +17,12 @@ story.add('default', () => {
       )}
     >
       <Form type={FormType.INLINE} onSubmit={() => {}}>
-        <OneCheckoutContainer product={productDescriptionProps} onGoBack={() => {}} goBack="Go Back" />
+        <StripeCheckout
+          product={productDescriptionProps}
+          onGoBack={() => {}}
+          goBack="Go Back"
+          onCheckout={() => {}}
+        />
       </Form>
     </Elements>
   );

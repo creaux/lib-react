@@ -1,7 +1,16 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { OnChange } from '../../components/form.types';
 import { FieldType, InputTypeEnum, IOption } from './types';
-import { FormType, FormTypeContext } from '../Form/component';
+import {
+  FormType,
+  FormTypeContext,
+  isFloatingForm,
+  isInlineForm,
+  isNormalFloatingForm,
+  isNormalForm,
+  isOnplaceForm,
+  isOnplaceInlineFloatingForm,
+} from '../Form/component';
 import cx from 'classnames';
 import { Conditional } from '../../components/conditional.component';
 import { Message } from './hoc/validators/types';
@@ -39,31 +48,31 @@ export const Field: FunctionComponent<InputProps> = (props) => {
 
   const formType = useContext(FormTypeContext);
 
+  const labelClasses = cx('mr-3');
+
   const wrapperClasses = cx({
-    'form-group': FormType.NORMAL === formType,
-    'h-100': FormType.ONPLACE === formType,
-    'form-control':
-      FormType.ONPLACE === formType || FormType.INLINE === formType,
-    'is-invalid':
-      (FormType.ONPLACE === formType || FormType.INLINE) === formType &&
-      message.type === 1,
+    'floating-group': isFloatingForm(formType),
+    'position-relative': isFloatingForm(formType),
+    'form-group': isNormalForm(formType),
+    'h-100': isOnplaceForm(formType),
+    'h-auto': isFloatingForm(formType),
+    'form-control': isOnplaceInlineFloatingForm(formType),
+    'is-invalid': isOnplaceInlineFloatingForm(formType) && message.type === 1,
     'is-valid':
-      (FormType.ONPLACE === formType || FormType.INLINE) &&
+      isOnplaceInlineFloatingForm(formType) &&
       message.type === 0 &&
       value.length > 0,
     'd-flex flex-column': fieldType === FieldType.SELECT,
   });
 
   const inputClasses = cx({
-    'form-control': FormType.NORMAL === formType,
+    'form-control': isNormalForm(formType),
     'h-auto': FieldType.SELECT === fieldType && FormType.ONPLACE === formType,
-    'border-0 w-100':
-      FormType.ONPLACE === formType || FormType.INLINE === formType,
+    'border-0 w-100': isOnplaceInlineFloatingForm(formType),
     'is-invalid': FormType.NORMAL === formType && message.type === 1,
     'is-valid':
       FormType.NORMAL === formType && message.type === 0 && value.length > 0,
-    'bg-transparent':
-      FormType.ONPLACE === formType || FormType.INLINE === formType,
+    'bg-transparent': isOnplaceInlineFloatingForm(formType),
   });
 
   return (
@@ -73,9 +82,9 @@ export const Field: FunctionComponent<InputProps> = (props) => {
       otherwise={(children) => children}
     >
       <Conditional
-        condition={formType === FormType.NORMAL && !!label}
+        condition={isNormalFloatingForm(formType) && !!label}
         when={() => (
-          <label htmlFor={id} className="mr-3">
+          <label htmlFor={id} className={labelClasses}>
             {label}
           </label>
         )}
@@ -108,7 +117,7 @@ export const Field: FunctionComponent<InputProps> = (props) => {
         )}
       />
       <Conditional
-        condition={formType !== FormType.INLINE}
+        condition={!isInlineForm(formType)}
         when={() => (
           <Switch cases={message.type}>
             <small className="form-text valid-feedback d-block text-nowrap text-truncate">

@@ -7,7 +7,7 @@ export interface ElementsContextValue {
   elements: StripeElements | null;
 }
 
-export function elementsProvider<
+export function stripeElementsConsumer<
   P extends ElementsContextValue,
   O extends Omit<P, keyof ElementsContextValue> = Omit<
     P,

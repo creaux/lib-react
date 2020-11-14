@@ -1,0 +1,42 @@
+$animation-duration: .3s;
+
+.floating-group {
+  &.form-control {
+    & > label {
+      transform: translateY(0);
+
+      display: block;
+      font-weight: normal;
+      left: 0;
+      margin: 0;
+      padding: 1.25rem .75rem 0;
+      position: absolute;
+      top: 0;
+      transition: all $animation-duration;
+      width: 100%;
+    }
+
+    &:focus-within {
+      & > label {
+        font-size: 0.75rem;
+        transform: translateY(-1rem);
+
+        color: #b11adc;
+      }
+    }
+
+    & > input:focus::placeholder, & > input:focus::-moz-placeholder {
+      color: black;
+    }
+
+    input {
+      margin-top: .75rem;
+
+      &::placeholder, &::-moz-placeholder {
+        transition-delay: $animation-duration;
+        transition: color .4s;
+        color: transparent;
+      }
+    }
+  }
+}

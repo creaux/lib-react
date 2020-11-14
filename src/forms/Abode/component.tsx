@@ -47,7 +47,7 @@ export const Abode: FunctionComponent<AbodeProps> = ({
   onValidFieldChange: handleValidFieldChange,
 }) => (
   <>
-    <div className="mb-1">
+    <div>
       <Person
         forname={forname}
         surname={surname}
@@ -58,14 +58,12 @@ export const Abode: FunctionComponent<AbodeProps> = ({
     <Conditional
       condition={!!(vat && company)}
       when={() => (
-        <div className="mb-1">
-          <Company
-            company={company as IInput}
-            vat={vat as IInput}
-            onFieldChange={handleFieldChange}
-            onValidFieldChange={handleValidFieldChange}
-          />
-        </div>
+        <Company
+          company={company as IInput}
+          vat={vat as IInput}
+          onFieldChange={handleFieldChange}
+          onValidFieldChange={handleValidFieldChange}
+        />
       )}
     />
     <Address

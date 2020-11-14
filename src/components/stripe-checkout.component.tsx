@@ -1,25 +1,23 @@
 import React, { FunctionComponent } from 'react';
 import { ProductDescription } from './product-description.component';
-import { ProductDescriptionProps } from './product-description.component';
 import { asBackgroundProps } from './image.component.mock';
 import { Image } from './image.component';
-import { Button, Variants } from '../forms/Button/index';
-import { Stripe } from '../forms/Stripe/stripe';
+import { Button, Type, Variants } from '../forms/Button/index';
+import { Stripe } from './stripe';
 import { Shipping } from './shipping';
 import { Viewport } from './viewport.component';
 import { ButtonProps } from '../forms/Button/index';
 import { Builder } from '../builder';
-import { OneCheckoutI18nProps } from './one-checkout.i18n';
+import { StripeCheckoutI18nProps } from './stripe-checkout.i18n';
 
-export interface OneCheckoutProps extends OneCheckoutI18nProps {
-  goBack: string;
+export interface OneCheckoutProps extends StripeCheckoutI18nProps {
+  back: string;
 }
 
-export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
+export const StripeCheckout: FunctionComponent<OneCheckoutProps> = ({
   product,
-  goBack,
+  back,
   onGoBack: handleGoBack,
-  onStep: handleStep,
   onShippingValidChange: handleShippingValidChange,
   onShippingChange: handleShippingChange,
   isShippingValid,
@@ -27,14 +25,14 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
   const buttonBack = Builder<ButtonProps>()
     .className('align-self-start')
     .variant(Variants.LINK)
-    .children(goBack)
+    .children(back)
     .onClick(handleGoBack)
     .build();
 
   return (
     <Viewport>
       <div className="d-flex align-items-md-center">
-        <div className="container-fluid one-checkout">
+        <div className="container-fluid stripe-checkout">
           <div className="row justify-content-between">
             <div className="col-md-5 col-s-12 justify-content-center d-flex flex-column pb-xs-4">
               <Button {...buttonBack} />
@@ -49,7 +47,8 @@ export const OneCheckout: FunctionComponent<OneCheckoutProps> = ({
                   onFormValidChange={handleShippingValidChange}
                 />
               </div>
-              <Stripe disabled={!isShippingValid} onSubmit={() => {}} />
+              <Stripe />
+              <Button type={Type.SUBMIT} />
             </div>
           </div>
         </div>

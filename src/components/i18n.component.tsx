@@ -32,7 +32,7 @@ export interface I18nConsumerProps<T extends Translations> {
   children: (translations: T) => ReactNode;
 }
 
-export class I18n<T> {
+export class I18n {
   public static readonly Context = createContext<Translations>({});
 
   public static readonly useTranslations = <T extends Translations>(
@@ -40,6 +40,7 @@ export class I18n<T> {
   ): Map<keyof T, T[keyof T]> => {
     const output = new Map<keyof T, T[keyof T]>();
     // @ts-ignore
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const translations = useContext<T>(I18n.Context);
     for (const key in defaultTranslations) {
       if (defaultTranslations.hasOwnProperty(key)) {

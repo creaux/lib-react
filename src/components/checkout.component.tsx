@@ -1,8 +1,8 @@
 import React, { FunctionComponent }, { FunctionComponent } from 'react';
-import { OneCheckout, OneCheckoutProps } from './one-checkout.component';
+import { StripeCheckout, OneCheckoutProps } from './stripe-checkout.component';
 import { Builder } from '../builder';
 import { I18n, Translations } from './i18n.component';
-import defaultTranslations from './one-checkout.en.json';
+import defaultTranslations from './stripe-checkout.en.json';
 
 export interface CheckoutTranslations extends Translations {
   BUTTON_BACK: string;
@@ -20,7 +20,7 @@ export const Checkout: FunctionComponent = () => {
       defaultTranslations={defaultTranslations}
     >
       {(translations) => (
-        <OneCheckout {...oneCheckoutProps} />
+        <StripeCheckout {...oneCheckoutProps} />
       )}
     </I18n.Consumer>
   );

@@ -57,7 +57,7 @@ export const Address: FunctionComponent<AddressProps> = ({
     >
       {(translations) => (
         <fieldset name="address">
-          <div className={isNormalForm(type) ? 'form-row' : 'input-group pb-1'}>
+          <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
             <Conditional
               condition={isNormalForm(type)}
               when={(children) => <div className="col-4 mb-3">{children}</div>}

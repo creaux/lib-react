@@ -43,6 +43,10 @@ $card-spacer-x: 1.25rem;
 $card-spacer-y: $card-spacer-x;
 $card-bg: none;
 
+$input-border-width: 0;
+// Border color doesn't matter as border width is 0
+$input-border-color: #FFF;
+
 // 1rem is default value of bootstrap $spacer
 // which is not available here
 $spacers: (
@@ -52,8 +56,8 @@ $spacers: (
 ) !global;
 
 %scope {
-  @import '~bootstrap/scss/functions';
-  @import '~bootstrap/scss/variables';
+  @import '../../../../node_modules/bootstrap/scss/functions';
+  @import '../../../../node_modules/bootstrap/scss/variables';
 
   $theme-colors: (
     primary: $gray-700
