@@ -40,3 +40,12 @@
 .form-control {
   @include input-border;
 }
+
+.custom-checkbox .custom-control-label::before {
+  @include input-border;
+}
+
+.custom-select {
+  padding: 0;
+  margin-left: -4px;
+}

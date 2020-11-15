@@ -35,7 +35,7 @@ export { NavigationPropsBuilder } from './components/navigation.props.builder';
 export { NavigationBrand } from './components/navigation-brand.component';
 export type { NavigationBrandProps } from './components/navigation-brand.component';
 export { NavigationBrandPropsBuilder } from './components/navigation-brand.props.builder';
-export { ProductDescription } from './components/product-description.component';
+export { ProductCard } from './components/product-card.component';
 export { NavigationButtons } from './components/navigation-buttons.component';
 export type { NavigationButtonsProps } from './components/navigation-buttons.component';
 export { NavigationButtonsPropsBuilder } from './components/navigation-buttons.props.builder';

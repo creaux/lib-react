@@ -6,43 +6,13 @@ import { Label } from './label.component';
 import { Image } from './image.component';
 import { ImageProps } from './image.component';
 import cx from 'classnames';
+import { Product } from './product';
 
-export class ProductDescriptionPropsBuilder {
-  protected title!: string;
-  protected price!: string;
-  protected className!: string;
-
-  withTitle(title: string) {
-    this.title = title;
-    return this;
-  }
-
-  withPrice(price: string) {
-    this.price = price;
-    return this;
-  }
-
-  withClassName(className: string) {
-    this.className = className;
-    return this;
-  }
-
-  build(): ProductDescriptionProps {
-    return {
-      title: this.title,
-      price: this.price,
-      className: this.className,
-    };
-  }
-}
-
-export interface ProductDescriptionProps {
-  title: string;
-  price: string;
+export interface ProductCardProps extends Product {
   className?: string;
 }
 
-export const ProductDescription: FunctionComponent<ProductDescriptionProps> = ({
+export const ProductCard: FunctionComponent<ProductCardProps> = ({
   title,
   price,
   className,
@@ -64,7 +34,7 @@ export const ProductDescription: FunctionComponent<ProductDescriptionProps> = ({
         </div>
         <Guard<ImageProps>
           Component={Image}
-          props={{ className: 'product-description-image' }}
+          props={{ className: 'product-card-image' }}
         >
           {children}
         </Guard>

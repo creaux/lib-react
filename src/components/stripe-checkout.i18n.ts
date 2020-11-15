@@ -1,5 +1,5 @@
 import { Translate } from './i18n.abstract.component';
-import { ProductDescriptionProps } from './product-description.component';
+import { ProductCardProps } from './product-card.component';
 import { ShippingState } from './shipping.state';
 import {
   StripeCheckout,
@@ -11,14 +11,16 @@ import {
 } from './stripe-checkout.translations';
 import defaultTranslations from './stripe-checkout.en.json';
 import { Builder } from '../builder';
+import { FormEvent } from 'react';
 
 export interface StripeCheckoutI18nProps {
-  product: ProductDescriptionProps;
+  product: ProductCardProps;
   onGoBack: () => void;
   onShippingValidChange: (valid: boolean) => void;
   onPaymentValidChange: (valid: boolean) => void;
   onShippingChange: (data: ShippingState) => void;
   isCheckoutValid: boolean;
+  onCheckout: (event: FormEvent<HTMLFormElement>) => void;
 }
 
 export class StripeCheckoutI18n extends Translate<
@@ -44,6 +46,10 @@ export class StripeCheckoutI18n extends Translate<
       .checkoutButton(
         this.i18n.get(StripeCheckoutTranslation.CHECKOUT_BUTTON) as string
       )
+      .processingPayment(
+        this.i18n.get(StripeCheckoutTranslation.PROCESSING_PAYMENT) as string
+      )
+      .onCheckout(this.props.onCheckout)
       .build();
   }
 }

@@ -1,19 +1,24 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { ProductDescription } from './product-description.component';
-import { props } from './product-description.mocks';
+import { ProductCard, ProductCardProps } from './product-card.component';
 import { Button, Variants } from '../forms/Button/index';
 import { Description } from './description.component';
 import { Label } from './label.component';
 import { Image } from './image.component';
 import { asBackgroundProps } from './image.component.mock';
+import { Builder } from '../builder';
 
 const onAdd = () => {};
 
-const story = storiesOf('Atomic Design/Moleculs/ProductDescription', module);
+const productCardProps = Builder<ProductCardProps>()
+  .price('300')
+  .title('Some title')
+  .build();
+
+const story = storiesOf('Atomic Design/Moleculs/ProductCard', module);
 
 story.add('default', () => (
-  <ProductDescription {...props}>
+  <ProductCard {...productCardProps}>
     <Label>Dolor</Label>
     <Description>
       Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque
@@ -26,7 +31,7 @@ story.add('default', () => (
     >
       Add to Cart
     </Button>
-  </ProductDescription>
+  </ProductCard>
 ));
 
 story.add('checkout', () => {
@@ -35,9 +40,9 @@ story.add('checkout', () => {
       <div className="w-100 ml-sm-8 mr-sm-8">
         <Button variant={Variants.LINK}>Go back</Button>
       </div>
-      <ProductDescription {...props}>
+      <ProductCard {...productCardProps}>
         <Image {...asBackgroundProps} />
-      </ProductDescription>
+      </ProductCard>
     </>
   );
 });

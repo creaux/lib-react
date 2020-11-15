@@ -1,5 +1,4 @@
 import { createElement, FormEvent, PureComponent } from 'react';
-import { ProductDescriptionProps } from './product-description.component';
 import { ShippingState } from './shipping.state';
 import { StripeCheckoutI18n } from './stripe-checkout.i18n';
 import { CardNumberElement } from '@stripe/react-stripe-js';
@@ -7,9 +6,10 @@ import {
   ElementsContextValue,
   stripeElementsConsumer,
 } from './stripe-elements-consumer.hoc';
+import { Product } from './product';
 
 export interface StripeCheckoutContainerProps extends ElementsContextValue {
-  product: ProductDescriptionProps;
+  product: Product;
   onCheckout: () => void;
   onGoBack: () => void;
 }
@@ -17,12 +17,15 @@ export interface StripeCheckoutContainerProps extends ElementsContextValue {
 export interface OneCheckoutState {
   isShippingValid: boolean;
   isPaymentValid: boolean;
+  isPaymentProcessing: boolean;
 }
 
 class StripeCheckoutContainerImpl extends PureComponent<
   StripeCheckoutContainerProps,
   OneCheckoutState
 > {
+  private static SECRET_ENDPOINT?: string =
+    process.env.REST_ENDPOINT_CREATE_PAYMENT;
   private secret!: string;
 
   constructor(props: StripeCheckoutContainerProps) {
@@ -30,24 +33,37 @@ class StripeCheckoutContainerImpl extends PureComponent<
     this.state = {
       isShippingValid: false,
       isPaymentValid: false,
+      isPaymentProcessing: false,
     };
-    if (process.env.REST_ENDPOINT_CREATE_PAYMENT) {
-      fetch(process.env.REST_ENDPOINT_CREATE_PAYMENT, {
-        method: 'POST',
-        body: JSON.stringify({
-          productId: '1',
-        }),
-      }).then((response) => {
-        response.text().then((secret) => {
-          this.secret = JSON.parse(secret);
-        });
-      });
+
+    if (StripeCheckoutContainerImpl.SECRET_ENDPOINT) {
+      this.fetchSecretForProduct(StripeCheckoutContainerImpl.SECRET_ENDPOINT);
     } else {
       new Error(`Variable REST_ENDPOINT_CREATE_PAYMENT is not defined.`);
     }
   }
 
-  private readonly handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  private async fetchSecretForProduct(endpoint: string) {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      body: JSON.stringify({
+        productId: this.props.product.id,
+      }),
+    });
+
+    if (response.status === 200) {
+      this.secret = await response.text();
+    }
+  }
+
+  private processPayment(isProcessingPayment: boolean) {
+    this.setState({ isPaymentProcessing: isProcessingPayment });
+  }
+
+  private readonly handleCheckout = async (
+    event: FormEvent<HTMLFormElement>
+  ) => {
+    this.processPayment(true);
     // We don't want to let default form submission happen here,
     // which would refresh the page.
     event.preventDefault();
@@ -106,6 +122,7 @@ class StripeCheckoutContainerImpl extends PureComponent<
       onPaymentValidChange: this.handlePaymentValidChange,
       onShippingChange: this.handleShippingChange,
       isCheckoutValid: this.isCheckoutValid,
+      onCheckout: this.handleCheckout,
     });
   }
 }
