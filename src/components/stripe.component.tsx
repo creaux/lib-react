@@ -35,7 +35,7 @@ export const Stripe: FunctionComponent<StripeProps> = ({
     } else {
       handleValidChange(false);
     }
-  }, state);
+  }, [state, handleValidChange]);
 
   const handleCardNumberChange = (
     event: stripeJs.StripeCardNumberElementChangeEvent

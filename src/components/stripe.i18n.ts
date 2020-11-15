@@ -1,7 +1,7 @@
 import { Translate } from './i18n.abstract.component';
 import { Stripe, StripeProps } from './stripe.component';
 import { StripeTranslation, StripeTranslations } from './stripe.translations';
-import { ComponentType, FormEvent } from 'react';
+import { ComponentType } from 'react';
 import defaultTranslations from './stripe.default.json';
 import { Builder } from '../builder';
 

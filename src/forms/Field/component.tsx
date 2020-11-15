@@ -6,8 +6,6 @@ import {
   FormTypeContext,
   isFloatingForm,
   isInlineFloatingForm,
-  isInlineForm,
-  isNormalFloatingForm,
   isNormalForm,
   isOnplaceForm,
   isOnplaceInlineFloatingForm,
