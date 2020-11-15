@@ -3,7 +3,7 @@ import { Text, Number, Alpha, Select } from '../Field';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { IAddress } from './types';
 import { I18n, Translations } from '../../components/i18n.component';
-import { FormTypeContext, isNormalForm } from '../Form';
+import { FormTypeContext, isNormalFloatingForm, isNormalForm } from '../Form';
 import { Conditional } from '../../components/conditional.component';
 import defaultTranslations from './en.json';
 
@@ -64,7 +64,9 @@ export const Address: FunctionComponent<AddressProps> = ({
               otherwise={(children) => children}
             >
               <Text
-                label={isNormalForm(type) ? translations.STREET : undefined}
+                label={
+                  isNormalFloatingForm(type) ? translations.STREET : undefined
+                }
                 placeholder={
                   isNormalForm(type)
                     ? translations.STREET_PLACEHOLDER
@@ -86,7 +88,11 @@ export const Address: FunctionComponent<AddressProps> = ({
               otherwise={(children) => children}
             >
               <Number
-                label={isNormalForm(type) ? translations.STREET_NO : undefined}
+                label={
+                  isNormalFloatingForm(type)
+                    ? translations.STREET_NO
+                    : undefined
+                }
                 placeholder={
                   isNormalForm(type)
                     ? translations.STREET_NO_PLACEHOLDER
@@ -108,7 +114,9 @@ export const Address: FunctionComponent<AddressProps> = ({
               otherwise={(children) => children}
             >
               <Alpha
-                label={isNormalForm(type) ? translations.POSTCODE : undefined}
+                label={
+                  isNormalFloatingForm(type) ? translations.POSTCODE : undefined
+                }
                 placeholder={
                   isNormalForm(type)
                     ? translations.POSTCODE_PLACEHOLDER

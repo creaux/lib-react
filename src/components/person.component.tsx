@@ -1,6 +1,10 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { PersonI18nProps } from './person.i18n';
-import { FormTypeContext, isNormalForm } from '../forms/Form';
+import {
+  FormTypeContext,
+  isNormalFloatingForm,
+  isNormalForm,
+} from '../forms/Form';
 import { Text } from '../forms/Field/Fields/Text';
 import { Conditional } from './conditional.component';
 
@@ -45,7 +49,7 @@ export const Person: FunctionComponent<PersonProps> = ({
           otherwise={(children) => children}
         >
           <Text
-            label={isNormalForm(type) ? forenameLabel : undefined}
+            label={isNormalFloatingForm(type) ? forenameLabel : undefined}
             id={forname.id}
             value={forname.value}
             onChange={handleFieldChange('forname')}
@@ -64,7 +68,7 @@ export const Person: FunctionComponent<PersonProps> = ({
           otherwise={(children) => children}
         >
           <Text
-            label={isNormalForm(type) ? surnameLabel : undefined}
+            label={isNormalFloatingForm(type) ? surnameLabel : undefined}
             id={surname.id}
             value={surname.value}
             onChange={handleFieldChange('surname')}

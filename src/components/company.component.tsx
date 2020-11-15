@@ -1,7 +1,11 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { Alpha } from '../forms/Field';
 import { Conditional } from './conditional.component';
-import { FormTypeContext, isNormalForm } from '../forms/Form/component';
+import {
+  FormTypeContext,
+  isNormalFloatingForm,
+  isNormalForm,
+} from '../forms/Form/component';
 import { CompanyI18nProps } from './company.i18n';
 
 export interface CompanyProps extends CompanyI18nProps {
@@ -43,7 +47,7 @@ export const Company: FunctionComponent<CompanyProps> = ({
           otherwise={(children) => children}
         >
           <Alpha
-            label={isNormalForm(type) ? companyHeading : undefined}
+            label={isNormalFloatingForm(type) ? companyHeading : undefined}
             id={company.id}
             value={company.value}
             onChange={handleFieldChange('company')}
@@ -64,7 +68,7 @@ export const Company: FunctionComponent<CompanyProps> = ({
           otherwise={(children) => children}
         >
           <Alpha
-            label={isNormalForm(type) ? vatHeading : undefined}
+            label={isNormalFloatingForm(type) ? vatHeading : undefined}
             id={vat.id}
             value={vat.value}
             onChange={handleFieldChange('vat')}
