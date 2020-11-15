@@ -4,12 +4,13 @@ import { FieldType, InputTypeEnum, IOption } from './types';
 import {
   FormType,
   FormTypeContext,
-  isFloatingForm, isInlineFloatingForm,
+  isFloatingForm,
+  isInlineFloatingForm,
   isInlineForm,
   isNormalFloatingForm,
   isNormalForm,
   isOnplaceForm,
-  isOnplaceInlineFloatingForm
+  isOnplaceInlineFloatingForm,
 } from '../Form/component';
 import cx from 'classnames';
 import { Conditional } from '../../components/conditional.component';
@@ -82,7 +83,7 @@ export const Field: FunctionComponent<InputProps> = (props) => {
       otherwise={(children) => children}
     >
       <Conditional
-        condition={isNormalFloatingForm(formType) && !!label}
+        condition={isNormalForm(formType) && !!label}
         when={() => (
           <label htmlFor={id} className={labelClasses}>
             {label}
@@ -101,6 +102,14 @@ export const Field: FunctionComponent<InputProps> = (props) => {
             onChange={handleChange}
             datalist={datalist}
           />
+        )}
+      />
+      <Conditional
+        condition={isFloatingForm(formType) && !!label}
+        when={() => (
+          <label htmlFor={id} className={labelClasses}>
+            {label}
+          </label>
         )}
       />
       <Conditional
