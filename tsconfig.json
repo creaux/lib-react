@@ -20,7 +20,8 @@
     "experimentalDecorators": true,
     "isolatedModules": true,
     "downlevelIteration": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src"
