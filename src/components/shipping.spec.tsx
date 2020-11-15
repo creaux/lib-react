@@ -341,15 +341,191 @@ describe('Shipping', () => {
   });
 
   describe('billing', () => {
+    let shippingPropsBillingTest: ShippingState;
+    // TODO
+    beforeEach(() => {
+      shippingPropsBillingTest = Builder<ShippingState>()
+        .delivery(
+          Builder<IAbode>()
+            .forname(
+              Builder<IInput>()
+                .id(ShippingFields.DELIVERY_FORENAME)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .surname(
+              Builder<IInput>()
+                .id(ShippingFields.DELIVERY_SURNAME)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .street(
+              Builder<IInput>()
+                .id(ShippingFields.DELIVERY_STREET)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .streetNo(
+              Builder<IInput>()
+                .id(ShippingFields.DELIVERY_STREET_NO)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .postcode(
+              Builder<IInput>()
+                .id(ShippingFields.DELIVERY_POSTCODE)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .cities(
+              Builder<ISelect>()
+                .id(ShippingFields.DELIVERY_CITY)
+                .value('')
+                .options([
+                  Builder<IOption>()
+                    .id('prague')
+                    .value('Prague')
+                    .title('Prague')
+                    .build(),
+                ])
+                .build()
+            )
+            .countries(
+              Builder<ISelect>()
+                .id(ShippingFields.DELIVERY_COUNTRY)
+                .value('')
+                .options([
+                  Builder<IOption>()
+                    .id('czechia')
+                    .value('Czechia')
+                    .title('Czechia')
+                    .build(),
+                ])
+                .build()
+            )
+            .build()
+        )
+        .invoicing(
+          Builder<IAbode>()
+            .forname(
+              Builder<IInput>()
+                .id(ShippingFields.BILLING_FORENAME)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .surname(
+              Builder<IInput>()
+                .id(ShippingFields.BILLING_SURNAME)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .company(
+              Builder<IInput>()
+                .id(ShippingFields.BILLING_COMPANY)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .vat(
+              Builder<IInput>()
+                .id(ShippingFields.BILLING_VAT)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .street(
+              Builder<IInput>()
+                .id(ShippingFields.BILLING_STREET)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .streetNo(
+              Builder<IInput>()
+                .id(ShippingFields.BILLING_STREET_NO)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .postcode(
+              Builder<IInput>()
+                .id(ShippingFields.BILLING_POSTCODE)
+                .value('')
+                .valid(false)
+                .build()
+            )
+            .cities(
+              Builder<ISelect>()
+                .id(ShippingFields.BILLING_CITY)
+                .value('')
+                .options([
+                  Builder<IOption>()
+                    .id('prague')
+                    .title('Prague')
+                    .value('Prague')
+                    .build(),
+                ])
+                .build()
+            )
+            .countries(
+              Builder<ISelect>()
+                .id(ShippingFields.BILLING_COUNTRY)
+                .value('')
+                .options([
+                  Builder<IOption>()
+                    .id('czechia')
+                    .title('Czechia')
+                    .value('Czechia')
+                    .build(),
+                ])
+                .build()
+            )
+            .build()
+        )
+        .company(
+          Builder<ICheckbox>()
+            .id(ShippingFields.COMPANY)
+            .checked(false)
+            .title(EMPTY)
+            .build()
+        )
+        .data(
+          Builder<ICheckbox>()
+            .id(ShippingFields.DATA)
+            .checked(false)
+            .title(EMPTY)
+            .build()
+        )
+        .terms(
+          Builder<ICheckbox>()
+            .id(ShippingFields.TERMS)
+            .checked(false)
+            .title(EMPTY)
+            .build()
+        )
+        .build();
+      const checkbox = component.find(`input#${ShippingFields.COMPANY}`);
+      // @ts-ignore
+      checkbox.instance().checked = false;
+      checkbox.simulate('change');
+    });
+
     it('forename', () => {
       const field = component.find(`input#${ShippingFields.BILLING_FORENAME}`);
       // @ts-ignore
       field.instance().value = forename;
       field.simulate('change');
-      shippingPropsTest.invoicing.forname.value = forename;
-      shippingPropsTest.invoicing.forname.valid = true;
+      shippingPropsBillingTest.invoicing.forname.value = forename;
+      shippingPropsBillingTest.invoicing.forname.valid = true;
       expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
-        shippingPropsTest
+        shippingPropsBillingTest
       );
       expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(
         false
@@ -361,10 +537,10 @@ describe('Shipping', () => {
       // @ts-ignore
       field.instance().value = surname;
       field.simulate('change');
-      shippingPropsTest.invoicing.surname.value = surname;
-      shippingPropsTest.invoicing.surname.valid = true;
+      shippingPropsBillingTest.invoicing.surname.value = surname;
+      shippingPropsBillingTest.invoicing.surname.valid = true;
       expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
-        shippingPropsTest
+        shippingPropsBillingTest
       );
       expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(
         false
@@ -376,10 +552,10 @@ describe('Shipping', () => {
       // @ts-ignore
       field.instance().value = postcode;
       field.simulate('change');
-      shippingPropsTest.invoicing.postcode.value = postcode;
-      shippingPropsTest.invoicing.postcode.valid = true;
+      shippingPropsBillingTest.invoicing.postcode.value = postcode;
+      shippingPropsBillingTest.invoicing.postcode.valid = true;
       expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
-        shippingPropsTest
+        shippingPropsBillingTest
       );
       expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(
         false
@@ -393,10 +569,10 @@ describe('Shipping', () => {
           // @ts-ignore
           field.instance().value = vat;
           field.simulate('change');
-          (shippingPropsTest.invoicing.vat as IInput).value = vat;
-          (shippingPropsTest.invoicing.vat as IInput).valid = true;
+          (shippingPropsBillingTest.invoicing.vat as IInput).value = vat;
+          (shippingPropsBillingTest.invoicing.vat as IInput).valid = true;
           expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
-            shippingPropsTest
+            shippingPropsBillingTest
           );
           expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(
             false
@@ -409,10 +585,10 @@ describe('Shipping', () => {
           // @ts-ignore
           field.instance().value = vat;
           field.simulate('change');
-          (shippingPropsTest.invoicing.vat as IInput).value = vat;
-          (shippingPropsTest.invoicing.vat as IInput).valid = true;
+          (shippingPropsBillingTest.invoicing.vat as IInput).value = vat;
+          (shippingPropsBillingTest.invoicing.vat as IInput).valid = true;
           expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
-            shippingPropsTest
+            shippingPropsBillingTest
           );
           expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(
             false
@@ -425,10 +601,10 @@ describe('Shipping', () => {
           // @ts-ignore
           field.instance().value = vat;
           field.simulate('change');
-          (shippingPropsTest.invoicing.vat as IInput).value = vat;
-          (shippingPropsTest.invoicing.vat as IInput).valid = true;
+          (shippingPropsBillingTest.invoicing.vat as IInput).value = vat;
+          (shippingPropsBillingTest.invoicing.vat as IInput).valid = true;
           expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
-            shippingPropsTest
+            shippingPropsBillingTest
           );
           expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(
             false
@@ -443,10 +619,10 @@ describe('Shipping', () => {
           // @ts-ignore
           field.instance().value = vat;
           field.simulate('change');
-          (shippingPropsTest.invoicing.vat as IInput).value = vat;
-          (shippingPropsTest.invoicing.vat as IInput).valid = false;
+          (shippingPropsBillingTest.invoicing.vat as IInput).value = vat;
+          (shippingPropsBillingTest.invoicing.vat as IInput).valid = false;
           expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
-            shippingPropsTest
+            shippingPropsBillingTest
           );
           expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(
             false
@@ -460,10 +636,10 @@ describe('Shipping', () => {
       // @ts-ignore
       field.instance().value = street;
       field.simulate('change');
-      shippingPropsTest.invoicing.street.value = street;
-      shippingPropsTest.invoicing.street.valid = true;
+      shippingPropsBillingTest.invoicing.street.value = street;
+      shippingPropsBillingTest.invoicing.street.valid = true;
       expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
-        shippingPropsTest
+        shippingPropsBillingTest
       );
       expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(
         false
@@ -475,10 +651,10 @@ describe('Shipping', () => {
       // @ts-ignore
       field.instance().value = streetNo;
       field.simulate('change');
-      shippingPropsTest.invoicing.streetNo.value = streetNo;
-      shippingPropsTest.invoicing.streetNo.valid = true;
+      shippingPropsBillingTest.invoicing.streetNo.value = streetNo;
+      shippingPropsBillingTest.invoicing.streetNo.valid = true;
       expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
-        shippingPropsTest
+        shippingPropsBillingTest
       );
       expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(
         false
@@ -490,10 +666,10 @@ describe('Shipping', () => {
       // @ts-ignore
       field.instance().value = city;
       field.simulate('change');
-      shippingPropsTest.invoicing.cities.value = city;
-      shippingPropsTest.invoicing.cities.valid = true;
+      shippingPropsBillingTest.invoicing.cities.value = city;
+      shippingPropsBillingTest.invoicing.cities.valid = true;
       expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
-        shippingPropsTest
+        shippingPropsBillingTest
       );
       expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(
         false
@@ -505,10 +681,10 @@ describe('Shipping', () => {
       // @ts-ignore
       field.instance().value = country;
       field.simulate('change');
-      shippingPropsTest.invoicing.countries.value = country;
-      shippingPropsTest.invoicing.countries.valid = true;
+      shippingPropsBillingTest.invoicing.countries.value = country;
+      shippingPropsBillingTest.invoicing.countries.valid = true;
       expect(handleFormChangeSpy).to.have.been.always.calledWithMatch(
-        shippingPropsTest
+        shippingPropsBillingTest
       );
       expect(handleFormChangeValidSpy).to.have.been.always.calledWithMatch(
         false
@@ -577,6 +753,11 @@ describe('Shipping', () => {
     const deliveryCountry = component.find(
       `select#${ShippingFields.DELIVERY_COUNTRY}`
     );
+    const companyCheckbox = component.find(`input#${ShippingFields.COMPANY}`);
+    // @ts-ignore
+    companyCheckbox.instance().checked = false;
+    companyCheckbox.simulate('change');
+
     const billingForename = component.find(
       `input#${ShippingFields.BILLING_FORENAME}`
     );
@@ -600,7 +781,6 @@ describe('Shipping', () => {
     const billingCountry = component.find(
       `select#${ShippingFields.BILLING_COUNTRY}`
     );
-    const companyCheckbox = component.find(`input#${ShippingFields.COMPANY}`);
     const dataCheckbox = component.find(`input#${ShippingFields.DATA}`);
     const termsCheckbox = component.find(`input#${ShippingFields.TERMS}`);
     // @ts-ignore
@@ -624,6 +804,7 @@ describe('Shipping', () => {
     // @ts-ignore
     deliveryPostcode.instance().value = postcode;
     deliveryPostcode.simulate('change');
+
     // @ts-ignore
     billingForename.instance().value = forename;
     billingForename.simulate('change');
@@ -652,15 +833,11 @@ describe('Shipping', () => {
     billingStreetNo.instance().value = streetNo;
     billingStreetNo.simulate('change');
     // @ts-ignore
-    companyCheckbox.instance().checked = false;
-    companyCheckbox.simulate('change');
-    // @ts-ignore
     dataCheckbox.instance().checked = true;
     dataCheckbox.simulate('change');
     // @ts-ignore
     termsCheckbox.instance().checked = true;
     termsCheckbox.simulate('change');
-    console.log(handleFormChangeSpy);
 
     expect(handleFormChangeValidSpy).to.have.been.calledWith(true);
   });
