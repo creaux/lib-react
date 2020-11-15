@@ -4,12 +4,12 @@ import { FieldType, InputTypeEnum, IOption } from './types';
 import {
   FormType,
   FormTypeContext,
-  isFloatingForm,
+  isFloatingForm, isInlineFloatingForm,
   isInlineForm,
   isNormalFloatingForm,
   isNormalForm,
   isOnplaceForm,
-  isOnplaceInlineFloatingForm,
+  isOnplaceInlineFloatingForm
 } from '../Form/component';
 import cx from 'classnames';
 import { Conditional } from '../../components/conditional.component';
@@ -117,7 +117,7 @@ export const Field: FunctionComponent<InputProps> = (props) => {
         )}
       />
       <Conditional
-        condition={!isInlineForm(formType)}
+        condition={!isInlineFloatingForm(formType)}
         when={() => (
           <Switch cases={message.type}>
             <small className="form-text valid-feedback d-block text-nowrap text-truncate">

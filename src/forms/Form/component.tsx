@@ -29,6 +29,10 @@ export function isOnplaceForm(type: FormType) {
   return FormType.ONPLACE === type;
 }
 
+export function isInlineFloatingForm(type: FormType) {
+  return isInlineForm(type) || isFloatingForm(type);
+}
+
 export function isNormalFloatingForm(type: FormType) {
   return isNormalForm(type) || isFloatingForm(type);
 }
