@@ -16,6 +16,7 @@ export interface StripeCheckoutContainerProps extends ElementsContextValue {
 
 export interface OneCheckoutState {
   isShippingValid: boolean;
+  isPaymentValid: boolean;
 }
 
 class StripeCheckoutContainerImpl extends PureComponent<
@@ -28,6 +29,7 @@ class StripeCheckoutContainerImpl extends PureComponent<
     super(props);
     this.state = {
       isShippingValid: false,
+      isPaymentValid: false,
     };
     if (process.env.REST_ENDPOINT_CREATE_PAYMENT) {
       fetch(process.env.REST_ENDPOINT_CREATE_PAYMENT, {
@@ -82,19 +84,28 @@ class StripeCheckoutContainerImpl extends PureComponent<
     }
   };
 
+  private readonly handleShippingChange = (data: ShippingState) => {};
+
   private readonly handleShippingValidChange = (valid: boolean) => {
     this.setState({ isShippingValid: valid });
   };
 
-  private readonly handleShippingChange = (data: ShippingState) => {};
+  private readonly handlePaymentValidChange = (valid: boolean) => {
+    this.setState({ isPaymentValid: valid });
+  };
+
+  private get isCheckoutValid(): boolean {
+    return this.state.isShippingValid && this.state.isPaymentValid;
+  }
 
   render() {
     return createElement(StripeCheckoutI18n, {
       onGoBack: this.props.onGoBack,
       product: this.props.product,
       onShippingValidChange: this.handleShippingValidChange,
+      onPaymentValidChange: this.handlePaymentValidChange,
       onShippingChange: this.handleShippingChange,
-      isShippingValid: this.state.isShippingValid,
+      isCheckoutValid: this.isCheckoutValid,
     });
   }
 }

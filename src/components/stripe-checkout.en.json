@@ -1,3 +1,5 @@
 {
-  "BACK": "Go back"
+  "BACK": "Go back",
+  "PAYMENT_TITLE": "Payment",
+  "CHECKOUT_BUTTON": "Checkout"
 }

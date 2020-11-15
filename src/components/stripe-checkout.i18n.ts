@@ -1,7 +1,10 @@
 import { Translate } from './i18n.abstract.component';
 import { ProductDescriptionProps } from './product-description.component';
 import { ShippingState } from './shipping.state';
-import { StripeCheckout, OneCheckoutProps } from './stripe-checkout.component';
+import {
+  StripeCheckout,
+  StripeCheckoutProps,
+} from './stripe-checkout.component';
 import {
   StripeCheckoutTranslation,
   StripeCheckoutTranslations,
@@ -13,26 +16,34 @@ export interface StripeCheckoutI18nProps {
   product: ProductDescriptionProps;
   onGoBack: () => void;
   onShippingValidChange: (valid: boolean) => void;
+  onPaymentValidChange: (valid: boolean) => void;
   onShippingChange: (data: ShippingState) => void;
-  isShippingValid: boolean;
+  isCheckoutValid: boolean;
 }
 
 export class StripeCheckoutI18n extends Translate<
   StripeCheckoutI18nProps,
-  OneCheckoutProps,
+  StripeCheckoutProps,
   StripeCheckoutTranslations
 > {
   protected readonly Component = StripeCheckout;
   protected readonly defaultTranslations: StripeCheckoutTranslations = defaultTranslations;
 
-  protected getProps(): OneCheckoutProps {
-    return Builder<OneCheckoutProps>()
+  protected getProps(): StripeCheckoutProps {
+    return Builder<StripeCheckoutProps>()
       .product(this.props.product)
       .onGoBack(this.props.onGoBack)
       .onShippingValidChange(this.props.onShippingValidChange)
+      .onPaymentValidChange(this.props.onPaymentValidChange)
+      .isCheckoutValid(this.props.isCheckoutValid)
       .onShippingChange(this.props.onShippingChange)
-      .isShippingValid(this.props.isShippingValid)
       .back(this.i18n.get(StripeCheckoutTranslation.BACK) as string)
+      .paymentTitle(
+        this.i18n.get(StripeCheckoutTranslation.PAYMENT_TITLE) as string
+      )
+      .checkoutButton(
+        this.i18n.get(StripeCheckoutTranslation.CHECKOUT_BUTTON) as string
+      )
       .build();
   }
 }

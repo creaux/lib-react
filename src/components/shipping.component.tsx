@@ -67,19 +67,16 @@ export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
         </div>
       </div>
       <div className="mb-4">
-        <CSSTransition
-          in={!company.checked}
-          timeout={1}
-          className="shipping__billing"
-        >
-          <div>
+        <Conditional
+          condition={!company.checked}
+          when={() => (
             <Abode
               {...invoicing}
               onFieldChange={handleGroupChange('invoicing')}
               onValidFieldChange={handleValidGroupFieldChange('invoicing')}
             />
-          </div>
-        </CSSTransition>
+          )}
+        />
       </div>
       <div>
         <div className="mb-1">

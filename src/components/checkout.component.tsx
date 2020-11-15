@@ -1,5 +1,5 @@
 import React, { FunctionComponent }, { FunctionComponent } from 'react';
-import { StripeCheckout, OneCheckoutProps } from './stripe-checkout.component';
+import { StripeCheckout, StripeCheckoutProps } from './stripe-checkout.component';
 import { Builder } from '../builder';
 import { I18n, Translations } from './i18n.component';
 import defaultTranslations from './stripe-checkout.en.json';
@@ -10,7 +10,7 @@ export interface CheckoutTranslations extends Translations {
 }
 
 export const Checkout: FunctionComponent = () => {
-  const oneCheckoutProps = Builder<OneCheckoutProps>()
+  const oneCheckoutProps = Builder<StripeCheckoutProps>()
     .back()
     .next()
     .build();

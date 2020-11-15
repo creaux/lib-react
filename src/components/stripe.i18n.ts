@@ -5,7 +5,9 @@ import { ComponentType, FormEvent } from 'react';
 import defaultTranslations from './stripe.default.json';
 import { Builder } from '../builder';
 
-export interface StripeI18nProps {}
+export interface StripeI18nProps {
+  onPaymentValid: (valid: boolean) => void;
+}
 
 export class StripeI18n extends Translate<
   StripeI18nProps,
@@ -26,6 +28,7 @@ export class StripeI18n extends Translate<
       .cardCvcPlaceholder(
         this.i18n.get(StripeTranslation.STRIPE_CVC_PLACEHOLDER) as string
       )
+      .onPaymentValid(this.props.onPaymentValid)
       .build();
   }
 }

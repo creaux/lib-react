@@ -22,27 +22,3 @@
   transition: all 0.001s ease-in-out;
   flex: 1;
 }
-
-.shipping__billing.enter {
-  height: 0;
-}
-
-.shipping__billing.enter-active {
-  height: 100%;
-}
-
-.shipping__billing.exit {
-  height: 100%;
-}
-
-.shipping__billing.exit-active {
-  height: 0;
-}
-
-.shipping__billing.exit-done {
-  height: 0;
-}
-
-.shipping__billing.enter-done {
-  height: 100%;
-}
