@@ -12,16 +12,13 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "noEmit": true,
-    "jsx": "preserve",
-    "experimentalDecorators": true,
     "isolatedModules": true,
-    "downlevelIteration": true,
-    "strictNullChecks": true,
-    "noFallthroughCasesInSwitch": true
+    "noEmit": true,
+    "jsx": "react"
   },
   "include": [
     "src"
