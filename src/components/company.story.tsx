@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Company, CompanyProps } from './company.component';
+import { Company, CompanyProps } from './company';
 import { Form, FormType } from '../forms/Form/component';
 
 const props: CompanyProps = {

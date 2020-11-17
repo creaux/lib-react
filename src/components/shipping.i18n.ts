@@ -1,4 +1,6 @@
-import defaultTranslations from './shipping.default.json';
+import defaultTrans
+
+lations from './shipping.default.json';
 import {
   ShippingComponent,
   ShippingComponentProps,
@@ -32,7 +34,7 @@ export class ShippingI18n extends Translate<
   ShippingComponentProps,
   ShippingTranslations
 > {
-  protected defaultTranslations = defaultTranslations;
+  protected defaultTranslations: ShippingTranslations = defaultTranslations;
   protected readonly Component = ShippingComponent;
 
   protected getProps(): ShippingComponentProps {
