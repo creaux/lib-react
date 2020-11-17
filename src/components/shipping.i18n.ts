@@ -1,6 +1,4 @@
-import defaultTrans
-
-lations from './shipping.default.json';
+import defaultTranslations from './shipping.default.json';
 import {
   ShippingComponent,
   ShippingComponentProps,
