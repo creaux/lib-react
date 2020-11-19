@@ -10,6 +10,7 @@ import defaultTranslations from './en.json';
 export interface AddressProps extends IAddress {
   onFieldChange: OnFieldChange<keyof IAddress>;
   onValidFieldChange: OnValidFieldChange<keyof IAddress>;
+  disabled: boolean;
 }
 
 export interface AddressTranslations extends Translations {
@@ -48,6 +49,7 @@ export const Address: FunctionComponent<AddressProps> = ({
   countries,
   onFieldChange: handleFieldChange,
   onValidFieldChange: handleValidFieldChange,
+  disabled,
 }) => {
   const type = useContext(FormTypeContext);
 
@@ -80,6 +82,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                   translations.STREET_MESSAGE_INVALID,
                   translations.STREET_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
             <Conditional
@@ -106,6 +109,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                   translations.STREET_NO_MESSAGE_INVALID,
                   translations.STREET_NO_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
             <Conditional
@@ -130,6 +134,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                   translations.POSTCODE_MESSAGE_INVALID,
                   translations.POSTCODE_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
           </div>
@@ -154,6 +159,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                   translations.CITY_MESSAGE_INVALID,
                   translations.CITY_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
             <Conditional
@@ -176,6 +182,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                   translations.COUNTRY_MESSAGE_INVALID,
                   translations.COUNTRY_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
           </div>

@@ -15,18 +15,15 @@ const product = Builder<ProductCardProps>()
   .build();
 
 story.add('default', () => {
+  console.log(process.env.STRIPE_PUBLISHABLE_KEY);
   return (
-    <Elements
-      stripe={loadStripe(
-        process.env.STRIPE_PUBLISHABLE_KEY
-          ? process.env.STRIPE_PUBLISHABLE_KEY
-          : ''
-      )}
-    >
+    <Elements stripe={loadStripe(process.env.STRIPE_PUBLISHABLE_KEY as string)}>
       <StripeCheckout
         product={product}
         onGoBack={() => {}}
         onCheckout={() => {}}
+        onSuccess={() => {}}
+        onError={() => {}}
       />
     </Elements>
   );

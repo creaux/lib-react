@@ -9,6 +9,7 @@ import { PersonTranslation, PersonTranslations } from './person.translations';
 export interface PersonI18nProps extends IPerson {
   onFieldChange: OnFieldChange<keyof IPerson>;
   onFieldValidChange: OnValidFieldChange<keyof IPerson>;
+  disabled: boolean;
 }
 
 export class PersonI18n extends Translate<
@@ -51,6 +52,7 @@ export class PersonI18n extends Translate<
       .surnameMessageDefault(
         this.i18n.get(PersonTranslation.SURNAME_MESSAGE_DEFAULT) as string
       )
+      .disabled(this.props.disabled)
       .build();
   }
 }

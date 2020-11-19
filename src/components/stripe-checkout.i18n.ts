@@ -21,6 +21,8 @@ export interface StripeCheckoutI18nProps {
   onShippingChange: (data: ShippingState) => void;
   isCheckoutValid: boolean;
   onCheckout: (event: FormEvent<HTMLFormElement>) => void;
+  isCheckoutDisabled: boolean;
+  onPaymentReady: () => void;
 }
 
 export class StripeCheckoutI18n extends Translate<
@@ -50,6 +52,8 @@ export class StripeCheckoutI18n extends Translate<
         this.i18n.get(StripeCheckoutTranslation.PROCESSING_PAYMENT) as string
       )
       .onCheckout(this.props.onCheckout)
+      .isCheckoutDisabled(this.props.isCheckoutDisabled)
+      .onPaymentReady(this.props.onPaymentReady)
       .build();
   }
 }

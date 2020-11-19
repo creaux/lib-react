@@ -57,6 +57,7 @@ export interface FieldOuterProps {
   onValidChange: OnValidChange;
   messages: Messages;
   options?: IOption[];
+  disabled: boolean;
 }
 
 export interface TypeProps {

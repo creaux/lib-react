@@ -29,6 +29,7 @@ export interface InputProps {
   fieldType?: FieldType;
   datalist?: string[];
   options?: IOption[];
+  disabled: boolean;
 }
 
 export const Field: FunctionComponent<InputProps> = (props) => {
@@ -43,6 +44,7 @@ export const Field: FunctionComponent<InputProps> = (props) => {
     message,
     fieldType = FieldType.INPUT,
     options,
+    disabled,
   } = props;
 
   const formType = useContext(FormTypeContext);
@@ -62,6 +64,7 @@ export const Field: FunctionComponent<InputProps> = (props) => {
       message.type === 0 &&
       value.length > 0,
     'd-flex flex-column': fieldType === FieldType.SELECT,
+    disabled: isOnplaceInlineFloatingForm(formType) && disabled,
   });
 
   const inputClasses = cx({
@@ -99,6 +102,7 @@ export const Field: FunctionComponent<InputProps> = (props) => {
             value={value}
             onChange={handleChange}
             datalist={datalist}
+            disabled={disabled}
           />
         )}
       />
@@ -120,6 +124,7 @@ export const Field: FunctionComponent<InputProps> = (props) => {
             value={value}
             onChange={handleChange}
             options={options as IOption[]}
+            disabled={disabled}
           />
         )}
       />

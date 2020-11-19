@@ -36,6 +36,7 @@ export const Person: FunctionComponent<PersonProps> = ({
   surnameMessageValid,
   surnameMessageInvalid,
   surnameMessageDefault,
+  disabled,
 }) => {
   const type = useContext(FormTypeContext);
 
@@ -60,6 +61,7 @@ export const Person: FunctionComponent<PersonProps> = ({
               forenameMessageDefault,
             ]}
             placeholder={forenamePlaceholder}
+            disabled={disabled}
           />
         </Conditional>
         <Conditional
@@ -79,6 +81,7 @@ export const Person: FunctionComponent<PersonProps> = ({
               surnameMessageDefault,
             ]}
             placeholder={surnamePlaceholder}
+            disabled={disabled}
           />
         </Conditional>
       </div>

@@ -12,6 +12,7 @@ import { Builder } from '../builder';
 export interface CompanyI18nProps extends ICompany {
   onFieldChange: OnFieldChange<keyof ICompany>;
   onValidFieldChange: OnValidFieldChange<keyof ICompany>;
+  disabled: boolean;
 }
 
 export class CompanyI18n extends Translate<
@@ -54,6 +55,7 @@ export class CompanyI18n extends Translate<
       .vatMessageDefault(
         this.i18n.get(CompanyTranslation.VAT_MESSAGE_DEFAULT) as string
       )
+      .disabled(this.props.disabled)
       .build();
   }
 }

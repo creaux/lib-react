@@ -7,6 +7,8 @@ import { Builder } from '../builder';
 
 export interface StripeI18nProps {
   onPaymentValid: (valid: boolean) => void;
+  disabled: boolean;
+  onReady: () => void;
 }
 
 export class StripeI18n extends Translate<
@@ -29,6 +31,8 @@ export class StripeI18n extends Translate<
         this.i18n.get(StripeTranslation.STRIPE_CVC_PLACEHOLDER) as string
       )
       .onPaymentValid(this.props.onPaymentValid)
+      .disabled(this.props.disabled)
+      .onReady(this.props.onReady)
       .build();
   }
 }

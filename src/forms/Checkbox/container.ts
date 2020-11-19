@@ -10,8 +10,8 @@ export class CheckboxContainer extends React.Component<CheckboxContainerProps> {
   };
 
   render() {
-    const { id, checked, title } = this.props;
-    const props = { id, checked, title, onChange: this.handleChange };
+    const { id, checked, title, disabled } = this.props;
+    const props = { id, checked, title, onChange: this.handleChange, disabled };
     return createElement(Checkbox, props);
   }
 }

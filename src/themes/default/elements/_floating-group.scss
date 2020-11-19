@@ -13,6 +13,10 @@ $animation-duration: .3s;
 .floating-group.form-control {
   padding-bottom: .1rem;
 
+  label {
+    cursor: text;
+  }
+
   & > input {
     margin-top: .75rem;
   }
@@ -40,7 +44,7 @@ $animation-duration: .3s;
   }
 
   & > input::placeholder {
-    transition: color $animation-duration ease $animation-duration;
+    transition: color 0 ease $animation-duration;
     color: transparent;
   }
 

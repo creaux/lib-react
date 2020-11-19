@@ -16,6 +16,7 @@ export interface FieldContainerProps {
   type: InputTypeEnum;
   fieldType?: FieldType;
   options?: IOption[];
+  disabled: boolean;
 }
 
 export interface FieldContainerState {
@@ -84,7 +85,15 @@ export class FieldContainer extends Component<
   };
 
   render() {
-    const { id, label, placeholder, type, fieldType, options } = this.props;
+    const {
+      id,
+      label,
+      placeholder,
+      type,
+      fieldType,
+      options,
+      disabled,
+    } = this.props;
     const { message, value } = this.state;
     const props = {
       id,
@@ -97,6 +106,7 @@ export class FieldContainer extends Component<
       formType: this.context,
       fieldType,
       options,
+      disabled,
     };
     return createElement(Field, props);
   }

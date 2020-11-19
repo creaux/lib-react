@@ -109,6 +109,7 @@ export abstract class ShippingAbstractContainer extends Component<
       .onGroupChange(this.handleGroupChange)
       .onFieldChange(this.handleCheckboxChange)
       .onValidGroupFieldChange(this.handleValidGroupFieldChange)
+      .disabled(this.props.disabled)
       .build();
   }
 

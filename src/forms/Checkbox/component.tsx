@@ -4,6 +4,7 @@ import { CheckboxBuilder, ICheckbox } from './types';
 
 export class CheckboxPropsBuilder extends CheckboxBuilder {
   private onChange!: OnChange;
+  private disabled!: boolean;
 
   withOnChange(onChange: OnChange) {
     this.onChange = onChange;
@@ -13,12 +14,14 @@ export class CheckboxPropsBuilder extends CheckboxBuilder {
     return {
       ...super.build(),
       onChange: this.onChange,
+      disabled: this.disabled,
     };
   }
 }
 
 export interface CheckboxProps extends ICheckbox {
   onChange: OnChange;
+  disabled: boolean;
 }
 
 export const Checkbox: FunctionComponent<CheckboxProps> = ({
@@ -26,6 +29,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
   id,
   title,
   onChange: handleChange,
+  disabled,
 }) => (
   <div className="custom-control custom-checkbox">
     <input
@@ -35,6 +39,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
       id={id}
       onChange={handleChange}
       name={id}
+      disabled={disabled}
     />
     <label className="custom-control-label" htmlFor={id}>
       {title}

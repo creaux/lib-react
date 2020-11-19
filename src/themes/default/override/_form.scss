@@ -49,3 +49,7 @@
   padding: 0;
   margin-left: -4px;
 }
+
+.form-control.disabled {
+  background-color: $input-disabled-bg;
+}

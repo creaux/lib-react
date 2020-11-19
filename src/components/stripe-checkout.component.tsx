@@ -10,6 +10,7 @@ import { ButtonProps } from '../forms/Button/index';
 import { Builder } from '../builder';
 import { StripeCheckoutI18nProps } from './stripe-checkout.i18n';
 import { Form, FormType } from '../forms/Form';
+import { Conditional } from './conditional.component';
 
 export interface StripeCheckoutProps extends StripeCheckoutI18nProps {
   back: string;
@@ -30,6 +31,8 @@ export const StripeCheckout: FunctionComponent<StripeCheckoutProps> = ({
   isCheckoutValid,
   onPaymentValidChange: handlePaymentValid,
   onCheckout,
+  isCheckoutDisabled,
+  onPaymentReady: handlePaymentReady,
 }) => {
   const buttonBack = Builder<ButtonProps>()
     .className('align-self-start')
@@ -45,7 +48,7 @@ export const StripeCheckout: FunctionComponent<StripeCheckoutProps> = ({
           <div className="container-fluid stripe-checkout">
             <div className="row justify-content-between">
               <div className="col-md-5 col-s-12 justify-content-center d-flex flex-column pb-xs-4">
-                <Button {...buttonBack} />
+                <Button {...buttonBack} disabled={isCheckoutDisabled} />
                 <ProductCard {...product}>
                   <Image {...asBackgroundProps} />
                 </ProductCard>
@@ -55,12 +58,33 @@ export const StripeCheckout: FunctionComponent<StripeCheckoutProps> = ({
                   <Shipping
                     onFormChange={handleShippingChange}
                     onFormValidChange={handleShippingValidChange}
+                    disabled={isCheckoutDisabled}
                   />
                 </div>
                 <h6>{paymentTitle}</h6>
-                <Stripe onPaymentValid={handlePaymentValid} />
-                <Button type={Type.SUBMIT} disabled={!isCheckoutValid}>
-                  {checkoutButton}
+                <Stripe
+                  onPaymentValid={handlePaymentValid}
+                  disabled={isCheckoutDisabled}
+                  onReady={handlePaymentReady}
+                />
+                <Button
+                  type={Type.SUBMIT}
+                  disabled={!isCheckoutValid || isCheckoutDisabled}
+                >
+                  <Conditional
+                    condition={isCheckoutDisabled}
+                    when={() => (
+                      <>
+                        <span
+                          className="spinner-grow spinner-grow-sm"
+                          role="status"
+                          aria-hidden="true"
+                        />
+                        {processingPayment}...
+                      </>
+                    )}
+                    otherwise={() => <>{checkoutButton}</>}
+                  />
                 </Button>
               </div>
             </div>

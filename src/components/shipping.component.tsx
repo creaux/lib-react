@@ -22,6 +22,7 @@ export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
   onValidGroupFieldChange: handleValidGroupFieldChange,
   deliveryHeading,
   billingHeading,
+  disabled,
 }) => {
   return (
     <div className="shipping">
@@ -44,6 +45,7 @@ export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
           {...delivery}
           onFieldChange={handleGroupChange('delivery')}
           onValidFieldChange={handleValidGroupFieldChange('delivery')}
+          disabled={disabled}
         />
       </div>
       <div>
@@ -62,7 +64,11 @@ export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
           <span>{billingHeading}</span>
         </h6>
         <div className="mb-1">
-          <Checkbox {...company} onChange={handleFieldChange('company')} />
+          <Checkbox
+            {...company}
+            onChange={handleFieldChange('company')}
+            disabled={disabled}
+          />
         </div>
       </div>
       <div className="mb-4">
@@ -73,16 +79,25 @@ export const ShippingComponent: FunctionComponent<ShippingComponentProps> = ({
               {...invoicing}
               onFieldChange={handleGroupChange('invoicing')}
               onValidFieldChange={handleValidGroupFieldChange('invoicing')}
+              disabled={disabled}
             />
           )}
         />
       </div>
       <div>
         <div className="mb-1">
-          <Checkbox {...terms} onChange={handleFieldChange('terms')} />
+          <Checkbox
+            {...terms}
+            onChange={handleFieldChange('terms')}
+            disabled={disabled}
+          />
         </div>
         <div className="mb-1">
-          <Checkbox {...data} onChange={handleFieldChange('data')} />
+          <Checkbox
+            {...data}
+            onChange={handleFieldChange('data')}
+            disabled={disabled}
+          />
         </div>
       </div>
     </div>

@@ -25,6 +25,7 @@ export interface ShippingI18nProps extends ShippingGroups, ShippingFields {
     keyof ShippingGroups,
     keyof IAbode
   >;
+  disabled: boolean;
 }
 
 export class ShippingI18n extends Translate<
@@ -71,6 +72,7 @@ export class ShippingI18n extends Translate<
       .onValidGroupFieldChange(this.props.onValidGroupFieldChange)
       .onFieldChange(this.props.onFieldChange)
       .onGroupChange(this.props.onGroupChange)
+      .disabled(this.props.disabled)
       .build();
   }
 }

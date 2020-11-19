@@ -36,6 +36,7 @@ export const Company: FunctionComponent<CompanyProps> = ({
   vatMessageValid,
   vatMessageInvalid,
   vatMessageDefault,
+  disabled,
 }) => {
   const type = useContext(FormTypeContext);
   return (
@@ -60,6 +61,7 @@ export const Company: FunctionComponent<CompanyProps> = ({
               companyMessageInvalid,
               companyMessageDefault,
             ]}
+            disabled={disabled}
           />
         </Conditional>
         <Conditional
@@ -75,6 +77,7 @@ export const Company: FunctionComponent<CompanyProps> = ({
             placeholder={isNormalForm(type) ? vatPlaceholder : vatHeading}
             onValidChange={handleValidFieldChange('vat')}
             messages={[vatMessageValid, vatMessageInvalid, vatMessageDefault]}
+            disabled={disabled}
           />
         </Conditional>
       </div>

@@ -9,6 +9,7 @@ export interface SelectBasicProps extends ISelect {
   placeholder: string;
   label?: string;
   className?: string;
+  disabled: boolean;
 }
 
 export const SelectBasic: FunctionComponent<SelectBasicProps> = ({
@@ -18,6 +19,7 @@ export const SelectBasic: FunctionComponent<SelectBasicProps> = ({
   onChange,
   placeholder,
   className,
+  disabled,
 }) => {
   const formType = useContext(FormTypeContext);
   return (
@@ -29,6 +31,7 @@ export const SelectBasic: FunctionComponent<SelectBasicProps> = ({
       })}
       id={id}
       onChange={onChange}
+      disabled={disabled}
     >
       <option value="" disabled>
         {placeholder}

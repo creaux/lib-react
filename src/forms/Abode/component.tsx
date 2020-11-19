@@ -10,6 +10,7 @@ import { IInput } from '../Field/types';
 export class AbodePropsBuilder extends AbodeBuilder {
   onFieldChange!: OnFieldChange<keyof IAbode>;
   onValidFieldChange!: OnValidFieldChange<keyof IAbode>;
+  disabled!: boolean;
 
   withOnFieldChange(onFieldChange: OnFieldChange<keyof IAbode>) {
     this.onFieldChange = onFieldChange;
@@ -24,6 +25,7 @@ export class AbodePropsBuilder extends AbodeBuilder {
       ...super.build(),
       onFieldChange: this.onFieldChange,
       onValidFieldChange: this.onValidFieldChange,
+      disabled: this.disabled,
     };
   }
 }
@@ -31,6 +33,7 @@ export class AbodePropsBuilder extends AbodeBuilder {
 export interface AbodeProps extends IAbode {
   onFieldChange: OnFieldChange<keyof IAbode>;
   onValidFieldChange: OnValidFieldChange<keyof IAbode>;
+  disabled: boolean;
 }
 
 export const Abode: FunctionComponent<AbodeProps> = ({
@@ -45,6 +48,7 @@ export const Abode: FunctionComponent<AbodeProps> = ({
   countries,
   onFieldChange: handleFieldChange,
   onValidFieldChange: handleValidFieldChange,
+  disabled,
 }) => (
   <>
     <div>
@@ -53,6 +57,7 @@ export const Abode: FunctionComponent<AbodeProps> = ({
         surname={surname}
         onFieldChange={handleFieldChange}
         onFieldValidChange={handleValidFieldChange}
+        disabled={disabled}
       />
     </div>
     <Conditional
@@ -63,6 +68,7 @@ export const Abode: FunctionComponent<AbodeProps> = ({
           vat={vat as IInput}
           onFieldChange={handleFieldChange}
           onValidFieldChange={handleValidFieldChange}
+          disabled={disabled}
         />
       )}
     />
@@ -74,6 +80,7 @@ export const Abode: FunctionComponent<AbodeProps> = ({
       countries={countries}
       onFieldChange={handleFieldChange}
       onValidFieldChange={handleValidFieldChange}
+      disabled={disabled}
     />
   </>
 );
