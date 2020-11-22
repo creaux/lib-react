@@ -1,41 +1,42 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Company, CompanyProps } from './company';
 import { Form, FormType } from '../forms/Form/component';
+import { Builder } from '../builder';
+import { IInput } from '../forms/Field/types';
 
-const props: CompanyProps = {
-  company: {
-    id: '123456',
-    value: 'Neco LTD',
-  },
-  vat: {
-    id: '12345',
-    value: '123456',
-  },
-  onFieldChange: () => (text) => {
-    console.log(text);
-  },
-  onValidFieldChange: () => (valid) => {
-    console.log(valid);
-  },
-};
+const props: CompanyProps = Builder<CompanyProps>()
+  .company(Builder<IInput>().id('company').value('').valid(false).build())
+  .disabled(false)
+  .vat(Builder<IInput>().id('vat').value('').valid(false).build())
+  .onFieldChange(
+    () => (event: FormEvent<HTMLInputElement | HTMLSelectElement>) => {}
+  )
+  .onValidFieldChange(() => (valid: boolean) => {})
+  .build();
 
-const companyStory = storiesOf('Atomic Design/Moleculs/forms/Company', module);
+const story = storiesOf('Atomic Design/Moleculs/forms/Company', module);
 
-companyStory.add('normal', () => (
+story.add('normal', () => (
   <Form type={FormType.NORMAL} onSubmit={() => {}}>
     <Company {...props} />
   </Form>
 ));
 
-companyStory.add('onplace', () => (
+story.add('onplace', () => (
   <Form type={FormType.ONPLACE} onSubmit={() => {}}>
     <Company {...props} />
   </Form>
 ));
 
-companyStory.add('inline', () => (
+story.add('inline', () => (
   <Form type={FormType.INLINE} onSubmit={() => {}}>
+    <Company {...props} />
+  </Form>
+));
+
+story.add('floating', () => (
+  <Form type={FormType.FLOATING} onSubmit={() => {}}>
     <Company {...props} />
   </Form>
 ));

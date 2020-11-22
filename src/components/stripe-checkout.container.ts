@@ -17,6 +17,7 @@ import {
 import { StripeCheckoutPay } from './stripe-checkout-pay.model';
 import { PaymentIntent, StripeError } from '@stripe/stripe-js';
 import { Stripe, StripeElements } from '@stripe/stripe-js';
+import stripeJs from '@stripe/stripe-js';
 
 export interface StripeCheckoutContainerProps extends ElementsContextValue {
   product: Product;
@@ -128,7 +129,9 @@ class StripeCheckoutContainerImpl extends PureComponent<
     // as for isPaymentReady disabling form
     return await (stripe as Stripe).confirmCardPayment(secret as string, {
       payment_method: {
-        card: (elements as StripeElements).getElement(CardNumberElement),
+        card: (elements as StripeElements).getElement(
+          CardNumberElement
+        ) as stripeJs.StripeCardNumberElement,
         // TODO
         billing_details: {
           name: 'Jenny Rosen',

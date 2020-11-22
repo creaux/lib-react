@@ -1,6 +1,6 @@
 {
   "hooks": {
-    "pre-commit": "lint-staged -c .lintstagedrc",
+    "pre-commit": "lint-staged -c .lintstagedrc && tsc -noEmit -p tsconfig.d.json",
     "pre-push": "package-lock-check && npm test -- --watchAll=false && npm run storybook:build",
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }

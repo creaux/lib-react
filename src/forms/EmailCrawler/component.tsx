@@ -59,6 +59,7 @@ export const EmailCrawler: FunctionComponent<EmailProps> = (
               translations.EMAIL_CRAWLER_MESSAGE_DEFAULT,
             ]}
             onValidChange={handleEmailValid}
+            disabled={false}
           />
           <Button type={Type.SUBMIT} disabled={!valid}>
             {labels.button}

@@ -64,6 +64,7 @@ export const deliveryProps: AbodeProps = {
   },
   onFieldChange: () => () => {},
   onValidFieldChange: () => () => {},
+  disabled: false,
 };
 
 export const invoicingProps: AbodeProps = assign({}, deliveryProps, {

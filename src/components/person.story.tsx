@@ -15,6 +15,7 @@ export const props: PersonProps = {
   },
   onFieldChange: () => () => {},
   onFieldValidChange: () => () => {},
+  disabled: false,
 };
 
 const story = storiesOf('Atomic Design/Moleculs/forms/Person', module);

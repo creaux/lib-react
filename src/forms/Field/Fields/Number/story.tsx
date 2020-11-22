@@ -18,6 +18,7 @@ storiesOf('Atomic Design/Atoms/forms/Number', module)
           'Please fill valid number.',
           'Please fill some number',
         ]}
+        disabled={false}
       />
     </Form>
   ))
@@ -35,6 +36,7 @@ storiesOf('Atomic Design/Atoms/forms/Number', module)
           'Please fill valid number.',
           'Please fill some number',
         ]}
+        disabled={false}
       />
     </Form>
   ))
@@ -52,6 +54,7 @@ storiesOf('Atomic Design/Atoms/forms/Number', module)
           'Please fill valid number.',
           'Please fill some number',
         ]}
+        disabled={false}
       />
     </Form>
   ));

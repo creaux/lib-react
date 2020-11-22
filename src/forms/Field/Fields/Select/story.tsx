@@ -26,6 +26,7 @@ story.add('normal', () => (
         },
       ]}
       placeholder="Etwas"
+      disabled={false}
     />
   </Form>
 ));
@@ -51,6 +52,7 @@ story.add('onplace', () => (
         },
       ]}
       placeholder="Etwas"
+      disabled={false}
     />
   </Form>
 ));
@@ -76,6 +78,7 @@ story.add('inline', () => (
         },
       ]}
       placeholder="Etwas"
+      disabled={false}
     />
   </Form>
 ));

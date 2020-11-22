@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { StripeI18n as Stripe } from './stripe.i18n';
+import { Stripe } from './stripe';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
@@ -13,7 +13,7 @@ stripeStory.add('default', () => {
         process.env.STRIPE_SECRET ? process.env.STRIPE_SECRET : ''
       )}
     >
-      <Stripe />
+      <Stripe onReady={() => {}} onPaymentValid={() => {}} disabled={false} />
     </Elements>
   );
 });

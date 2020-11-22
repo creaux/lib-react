@@ -19,6 +19,7 @@ story.add('normal', () => (
         'Please fill valid alpha.',
         'Please fill some alpha',
       ]}
+      disabled={false}
     />
   </Form>
 ));
@@ -37,6 +38,7 @@ story.add('onplace', () => (
         'Please fill valid alpha.',
         'Please fill some alpha',
       ]}
+      disabled={false}
     />
   </Form>
 ));
@@ -55,6 +57,7 @@ story.add('inline', () => (
         'Please fill valid alpha.',
         'Please fill some alpha',
       ]}
+      disabled={false}
     />
   </Form>
 ));
@@ -74,6 +77,7 @@ story.add('floating', () => (
           'Please fill valid alpha.',
           'Please fill some alpha',
         ]}
+        disabled={false}
       />
     </Form>
   </div>
