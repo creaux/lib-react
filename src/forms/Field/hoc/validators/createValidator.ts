@@ -25,10 +25,7 @@ export function createValidator(regexp?: RegExp, negate = true) {
     }
     return {
       validator() {
-        if (negate) {
-          return false;
-        }
-        return true;
+        return !negate;
       },
       message,
     };

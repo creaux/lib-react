@@ -53,6 +53,7 @@ export const props: AddressProps = {
   },
   onFieldChange: () => () => {},
   onValidFieldChange: () => () => {},
+  disabled: false,
 };
 
 const story = storiesOf('Atomic Design/Moleculs/forms/Address', module);

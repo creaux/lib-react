@@ -1,0 +1,33 @@
+  // 1. Overriding has to be before bootstrap
+@import 'override/variables';
+@import 'base/fonts';
+
+// 2. Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// 3. All the rest
+// Bootstrap fixes
+@import "override/form";
+@import "override/card";
+//
+// ...
+
+// 4. Mixins
+@import 'mixins/form-control';
+@import 'mixins/link';
+@import 'mixins/floating-lable-input';
+
+// 5. Reset
+@import 'reset/navbar';
+@import 'reset/link';
+
+// 6. Elements
+// This is unrelated reusable structure to react components
+@import "elements/responsive-border";
+@import "elements/z-index";
+@import "elements/floating-group";
+@import 'elements/fieldset';
+@import 'elements/not-rounded';
+
+// 7. Components
+@import 'components/components';

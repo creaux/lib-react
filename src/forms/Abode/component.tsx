@@ -1,14 +1,16 @@
 import React, { FunctionComponent } from 'react';
 import { Address } from '../Address';
-import { Company } from '../Company';
-import { Person } from '../Person';
+import { Company } from '../../components/company';
+import { Person } from '../../components/person';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { AbodeBuilder, IAbode } from './types';
 import { Conditional } from '../../components/conditional.component';
+import { IInput } from '../Field/types';
 
 export class AbodePropsBuilder extends AbodeBuilder {
   onFieldChange!: OnFieldChange<keyof IAbode>;
   onValidFieldChange!: OnValidFieldChange<keyof IAbode>;
+  disabled!: boolean;
 
   withOnFieldChange(onFieldChange: OnFieldChange<keyof IAbode>) {
     this.onFieldChange = onFieldChange;
@@ -23,6 +25,7 @@ export class AbodePropsBuilder extends AbodeBuilder {
       ...super.build(),
       onFieldChange: this.onFieldChange,
       onValidFieldChange: this.onValidFieldChange,
+      disabled: this.disabled,
     };
   }
 }
@@ -30,9 +33,9 @@ export class AbodePropsBuilder extends AbodeBuilder {
 export interface AbodeProps extends IAbode {
   onFieldChange: OnFieldChange<keyof IAbode>;
   onValidFieldChange: OnValidFieldChange<keyof IAbode>;
+  disabled: boolean;
 }
 
-// @ts-ignore
 export const Abode: FunctionComponent<AbodeProps> = ({
   forname,
   surname,
@@ -45,31 +48,28 @@ export const Abode: FunctionComponent<AbodeProps> = ({
   countries,
   onFieldChange: handleFieldChange,
   onValidFieldChange: handleValidFieldChange,
+  disabled,
 }) => (
   <>
-    <div className="mb-1">
+    <div>
       <Person
         forname={forname}
         surname={surname}
         onFieldChange={handleFieldChange}
         onFieldValidChange={handleValidFieldChange}
+        disabled={disabled}
       />
     </div>
     <Conditional
       condition={!!(vat && company)}
       when={() => (
-        <div className="mb-1">
-          <Company
-            // This is correct as it is under condition!!!
-            // @ts-ignore
-            company={company}
-            // This is correct as it is under condition!!!
-            // @ts-ignore
-            vat={vat}
-            onFieldChange={handleFieldChange}
-            onValidFieldChange={handleValidFieldChange}
-          />
-        </div>
+        <Company
+          company={company as IInput}
+          vat={vat as IInput}
+          onFieldChange={handleFieldChange}
+          onValidFieldChange={handleValidFieldChange}
+          disabled={disabled}
+        />
       )}
     />
     <Address
@@ -80,6 +80,7 @@ export const Abode: FunctionComponent<AbodeProps> = ({
       countries={countries}
       onFieldChange={handleFieldChange}
       onValidFieldChange={handleValidFieldChange}
+      disabled={disabled}
     />
   </>
 );

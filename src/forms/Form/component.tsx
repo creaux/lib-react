@@ -10,6 +10,7 @@ export enum FormType {
   NORMAL = 'normal',
   INLINE = 'inline',
   ONPLACE = 'onplace', // When we need to have error message in the field
+  FLOATING = 'floating',
 }
 
 export function isInlineForm(type: FormType) {
@@ -18,6 +19,30 @@ export function isInlineForm(type: FormType) {
 
 export function isNormalForm(type: FormType) {
   return FormType.NORMAL === type;
+}
+
+export function isFloatingForm(type: FormType) {
+  return FormType.FLOATING === type;
+}
+
+export function isOnplaceForm(type: FormType) {
+  return FormType.ONPLACE === type;
+}
+
+export function isInlineFloatingForm(type: FormType) {
+  return isInlineForm(type) || isFloatingForm(type);
+}
+
+export function isNormalFloatingForm(type: FormType) {
+  return isNormalForm(type) || isFloatingForm(type);
+}
+
+export function isOnPlaceFloatingForm(type: FormType) {
+  return FormType.FLOATING === type || FormType.ONPLACE === type;
+}
+
+export function isOnplaceInlineFloatingForm(type: FormType) {
+  return isOnplaceForm(type) || isInlineForm(type) || isFloatingForm(type);
 }
 
 interface FormProps {

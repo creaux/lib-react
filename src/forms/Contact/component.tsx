@@ -24,6 +24,7 @@ export interface ContactTranslations extends Translations {
 export interface ContactProps extends IContact {
   onFieldChange: OnFieldChange<keyof IContact>;
   onValidFieldChange: OnValidFieldChange<keyof IContact>;
+  disabled: boolean;
 }
 
 export const Contact: FunctionComponent<ContactProps> = ({
@@ -31,6 +32,7 @@ export const Contact: FunctionComponent<ContactProps> = ({
   number,
   onFieldChange: handleFieldChange,
   onValidFieldChange: handleValidFieldChange,
+  disabled,
 }) => {
   const type = useContext(FormTypeContext);
   return (
@@ -65,6 +67,7 @@ export const Contact: FunctionComponent<ContactProps> = ({
                   translations.CONTACT_EMAIL_MESSAGE_VALID,
                   translations.CONTACT_EMAIL_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
             <Conditional
@@ -92,6 +95,7 @@ export const Contact: FunctionComponent<ContactProps> = ({
                   translations.CONTACT_NUMBER_MESSAGE_INVALID,
                   translations.CONTACT_NUMBER_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
           </div>

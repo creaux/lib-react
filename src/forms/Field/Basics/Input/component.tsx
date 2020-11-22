@@ -10,6 +10,7 @@ export interface InputProps {
   onChange: OnChange;
   placeholder: string;
   className: string;
+  disabled: boolean;
 }
 
 export const Input: FunctionComponent<InputProps> = ({
@@ -20,6 +21,7 @@ export const Input: FunctionComponent<InputProps> = ({
   className,
   value,
   datalist,
+  disabled,
 }) => (
   <>
     <input
@@ -30,6 +32,7 @@ export const Input: FunctionComponent<InputProps> = ({
       value={value}
       onChange={handleChange}
       name={id}
+      disabled={disabled}
     />
     {datalist && datalist.length > 0 ? (
       <datalist>

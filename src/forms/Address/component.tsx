@@ -3,13 +3,14 @@ import { Text, Number, Alpha, Select } from '../Field';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { IAddress } from './types';
 import { I18n, Translations } from '../../components/i18n.component';
-import { FormTypeContext, isNormalForm } from '../Form';
+import { FormTypeContext, isNormalFloatingForm, isNormalForm } from '../Form';
 import { Conditional } from '../../components/conditional.component';
 import defaultTranslations from './en.json';
 
 export interface AddressProps extends IAddress {
   onFieldChange: OnFieldChange<keyof IAddress>;
   onValidFieldChange: OnValidFieldChange<keyof IAddress>;
+  disabled: boolean;
 }
 
 export interface AddressTranslations extends Translations {
@@ -48,6 +49,7 @@ export const Address: FunctionComponent<AddressProps> = ({
   countries,
   onFieldChange: handleFieldChange,
   onValidFieldChange: handleValidFieldChange,
+  disabled,
 }) => {
   const type = useContext(FormTypeContext);
 
@@ -57,14 +59,16 @@ export const Address: FunctionComponent<AddressProps> = ({
     >
       {(translations) => (
         <fieldset name="address">
-          <div className={isNormalForm(type) ? 'form-row' : 'input-group pb-1'}>
+          <div className={isNormalForm(type) ? 'form-row' : 'input-group'}>
             <Conditional
               condition={isNormalForm(type)}
               when={(children) => <div className="col-4 mb-3">{children}</div>}
               otherwise={(children) => children}
             >
               <Text
-                label={isNormalForm(type) ? translations.STREET : undefined}
+                label={
+                  isNormalFloatingForm(type) ? translations.STREET : undefined
+                }
                 placeholder={
                   isNormalForm(type)
                     ? translations.STREET_PLACEHOLDER
@@ -78,6 +82,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                   translations.STREET_MESSAGE_INVALID,
                   translations.STREET_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
             <Conditional
@@ -86,7 +91,11 @@ export const Address: FunctionComponent<AddressProps> = ({
               otherwise={(children) => children}
             >
               <Number
-                label={isNormalForm(type) ? translations.STREET_NO : undefined}
+                label={
+                  isNormalFloatingForm(type)
+                    ? translations.STREET_NO
+                    : undefined
+                }
                 placeholder={
                   isNormalForm(type)
                     ? translations.STREET_NO_PLACEHOLDER
@@ -100,6 +109,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                   translations.STREET_NO_MESSAGE_INVALID,
                   translations.STREET_NO_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
             <Conditional
@@ -108,7 +118,9 @@ export const Address: FunctionComponent<AddressProps> = ({
               otherwise={(children) => children}
             >
               <Alpha
-                label={isNormalForm(type) ? translations.POSTCODE : undefined}
+                label={
+                  isNormalFloatingForm(type) ? translations.POSTCODE : undefined
+                }
                 placeholder={
                   isNormalForm(type)
                     ? translations.POSTCODE_PLACEHOLDER
@@ -122,6 +134,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                   translations.POSTCODE_MESSAGE_INVALID,
                   translations.POSTCODE_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
           </div>
@@ -146,6 +159,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                   translations.CITY_MESSAGE_INVALID,
                   translations.CITY_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
             <Conditional
@@ -168,6 +182,7 @@ export const Address: FunctionComponent<AddressProps> = ({
                   translations.COUNTRY_MESSAGE_INVALID,
                   translations.COUNTRY_MESSAGE_DEFAULT,
                 ]}
+                disabled={disabled}
               />
             </Conditional>
           </div>

@@ -15,6 +15,7 @@ story.add('normal', () => (
       value=""
       onValidChange={() => {}}
       messages={['Valid', 'Invalid', 'Default']}
+      disabled={false}
     />
   </Form>
 ));
@@ -29,6 +30,7 @@ story.add('onplace', () => (
       value=""
       onValidChange={() => {}}
       messages={['Valid', 'Invalid', 'Default']}
+      disabled={false}
     />
   </Form>
 ));
@@ -43,6 +45,7 @@ story.add('inline', () => (
       value=""
       onValidChange={() => {}}
       messages={['Valid', 'Invalid', 'Default']}
+      disabled={false}
     />
   </Form>
 ));

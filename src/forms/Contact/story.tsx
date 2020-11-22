@@ -18,6 +18,7 @@ const props: ContactProps = {
   onValidFieldChange: () => (valid) => {
     console.log(valid);
   },
+  disabled: false,
 };
 
 const story = storiesOf('Atomic Design/Moleculs/forms/Contact', module);

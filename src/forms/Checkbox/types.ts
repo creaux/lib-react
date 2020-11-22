@@ -1,6 +1,7 @@
 export class CheckboxBuilder {
   private checked!: boolean;
   private id!: string;
+  private title!: string;
 
   withChecked(checked: boolean) {
     this.checked = checked;
@@ -12,14 +13,24 @@ export class CheckboxBuilder {
     return this;
   }
 
+  withTitle(title: string) {
+    this.title = title;
+    return this;
+  }
+
   build(): ICheckbox {
     return {
       id: this.id,
       checked: this.checked,
+      title: this.title,
     };
   }
 }
 
 export class ICheckbox {
-  constructor(public checked: boolean, public id: string) {}
+  constructor(
+    public checked: boolean,
+    public id: string,
+    public title: string
+  ) {}
 }

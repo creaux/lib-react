@@ -1,4 +1,11 @@
-import React, { createContext, ReactNode, Component, useContext } from 'react';
+import React, {
+  createContext,
+  ReactNode,
+  Component,
+  useContext,
+  ComponentType,
+} from 'react';
+import { Builder } from '../builder';
 
 const { keys } = Object;
 
@@ -25,7 +32,7 @@ export interface I18nConsumerProps<T extends Translations> {
   children: (translations: T) => ReactNode;
 }
 
-export class I18n<T> {
+export class I18n {
   public static readonly Context = createContext<Translations>({});
 
   public static readonly useTranslations = <T extends Translations>(
@@ -33,6 +40,7 @@ export class I18n<T> {
   ): Map<keyof T, T[keyof T]> => {
     const output = new Map<keyof T, T[keyof T]>();
     // @ts-ignore
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const translations = useContext<T>(I18n.Context);
     for (const key in defaultTranslations) {
       if (defaultTranslations.hasOwnProperty(key)) {
@@ -48,6 +56,26 @@ export class I18n<T> {
     K,
     V
   > extends Map<keyof K, keyof V> {};
+
+  public static readonly mapTranslations = <K, V, P = {}>(
+    map: Map<keyof K, keyof V>
+  ) => (Component: ComponentType<P>) => (staticProps: P = {} as P) => () => {
+    const mapperProps = Builder<I18nMapperProps<K, V>>().value(map).build();
+    return (
+      <I18n.Mapper<K, V> {...mapperProps}>
+        <Component {...staticProps} />
+      </I18n.Mapper>
+    );
+  };
+
+  // public static readonly consumeTranslations = <M, P, T extends Translations>(map: M, defaultTranslations: T) => (Component: ComponentType<P>) => (props: P) => (
+  //   <I18n.Consumer<T> defaultTranslations={defaultTranslations}>
+  //     {(translations) => {
+  //       const mappedTranslations = map
+  //       return <Component {...props} {...translations} />
+  //     }}
+  //   </I18n.Consumer>
+  // )
 
   public static readonly Provider = class Provider<
     K extends Translations

@@ -13,10 +13,10 @@ export interface FieldContainerProps {
   onValidChange: OnValidChange;
   placeholder: string;
   label?: string;
-  defaultValidType?: number;
   type: InputTypeEnum;
   fieldType?: FieldType;
   options?: IOption[];
+  disabled: boolean;
 }
 
 export interface FieldContainerState {
@@ -70,9 +70,7 @@ export class FieldContainer extends Component<
     if (validation && validation.message) {
       this.setState({ message: validation.message, value });
 
-      if (this.props.defaultValidType === validation.message.type) {
-        handleChange(e, value);
-      }
+      handleChange(e, value);
 
       if (validation.message.type === MessageType.valid) {
         this.validChange(true);
@@ -87,7 +85,15 @@ export class FieldContainer extends Component<
   };
 
   render() {
-    const { id, label, placeholder, type, fieldType, options } = this.props;
+    const {
+      id,
+      label,
+      placeholder,
+      type,
+      fieldType,
+      options,
+      disabled,
+    } = this.props;
     const { message, value } = this.state;
     const props = {
       id,
@@ -100,6 +106,7 @@ export class FieldContainer extends Component<
       formType: this.context,
       fieldType,
       options,
+      disabled,
     };
     return createElement(Field, props);
   }

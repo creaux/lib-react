@@ -35,7 +35,7 @@ export { NavigationPropsBuilder } from './components/navigation.props.builder';
 export { NavigationBrand } from './components/navigation-brand.component';
 export type { NavigationBrandProps } from './components/navigation-brand.component';
 export { NavigationBrandPropsBuilder } from './components/navigation-brand.props.builder';
-export { ProductDescription } from './components/product-description.component';
+export { ProductCard } from './components/product-card.component';
 export { NavigationButtons } from './components/navigation-buttons.component';
 export type { NavigationButtonsProps } from './components/navigation-buttons.component';
 export { NavigationButtonsPropsBuilder } from './components/navigation-buttons.props.builder';
@@ -118,16 +118,16 @@ export type { MarkdownProps } from './components/markdown.component';
 // Moleculs
 export { Abode } from './forms/Abode';
 export { Address } from './forms/Address';
-export { Company } from './forms/Company';
+export { Company } from './components/company';
 export { EmailCrawler } from './forms/EmailCrawler';
-export { Person } from './forms/Person';
+export { Person } from './components/person';
 export { SignpostComponent as Signpost } from './components/signpost.component';
 export type {
   SignpostComponentProps as SignpostProps,
   SignpostElement,
 } from './components/signpost.component';
 // Organisms
-export { Shipping } from './forms/Shipping';
+export { Shipping } from './components/shipping';
 // Scheme
 export { BackgroundColor } from './schema/background-color.enum';
 export { TextColor } from './schema/text-color.enum';
