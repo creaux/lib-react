@@ -72,7 +72,7 @@ export const Detail = () => (
 
         <hr />
 
-        <div className="card my-4">
+        <div className="card my-4 border-0">
           <h5 className="card-header">Leave a Comment:</h5>
           <div className="card-body">
             <form>
@@ -148,7 +148,7 @@ export const Detail = () => (
       </div>
 
       <div className="col-md-4">
-        <div className="card my-4">
+        <div className="card my-4 border-0">
           <h5 className="card-header">Search</h5>
           <div className="card-body">
             <div className="input-group">
@@ -166,7 +166,7 @@ export const Detail = () => (
           </div>
         </div>
 
-        <div className="card my-4">
+        <div className="card my-4 border-0">
           <h5 className="card-header">Categories</h5>
           <div className="card-body">
             <div className="row">
@@ -200,7 +200,7 @@ export const Detail = () => (
           </div>
         </div>
 
-        <div className="card my-4">
+        <div className="card my-4 border-0">
           <h5 className="card-header">Side Widget</h5>
           <div className="card-body">
             You can put anything you want inside of these side widgets. They are

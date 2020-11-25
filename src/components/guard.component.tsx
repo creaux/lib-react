@@ -17,6 +17,8 @@ export interface GuardProps<ComponentProps> {
 export class Guard<ComponentProps = string[]> extends React.Component<
   GuardProps<ComponentProps>
 > {
+  static displayName = 'Guard';
+
   render() {
     const {
       Component,
@@ -33,8 +35,6 @@ export class Guard<ComponentProps = string[]> extends React.Component<
       return null;
     }
 
-    let hasWhen: any;
-
     if (!children && defaults) {
       // @ts-ignore
       return <Component {...props} />;
@@ -45,13 +45,20 @@ export class Guard<ComponentProps = string[]> extends React.Component<
         return null;
       }
 
-      if (mandatory && Component && Component.isPrototypeOf(child.type)) {
-        console.error(
-          `${
-            (Component as Function).name
-          } has to be provided as children to render.`
-        );
+      if (!Component && !mandatory) {
+        return cloneElement(child, props);
       }
+
+      if (Guard === child.type)
+        if (mandatory && Component && Component.isPrototypeOf(child.type)) {
+          console.error(
+            `${
+              (Component as Function).name
+            } has to be provided as children to render.`
+          );
+        }
+
+      let hasWhen: any;
 
       if ((when && get(child.props, when)) || typeof when === 'undefined') {
         // hasWhen define whether we want to render otherwise or not

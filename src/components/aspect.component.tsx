@@ -11,7 +11,7 @@ export const Aspect: FunctionComponent<AspectProps> = ({
   title,
   description,
 }) => (
-  <div className="card text-md-center flex-row flex-md-column">
+  <div className="card text-md-center flex-row flex-md-column border-0">
     <div className="card__image flex-md-shrink-0 w-md-100 d-flex align-items-center d-md-block">
       {children}
     </div>
