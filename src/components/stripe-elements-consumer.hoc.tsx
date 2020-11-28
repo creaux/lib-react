@@ -7,21 +7,17 @@ export interface ElementsContextValue {
   elements: StripeElements | null;
 }
 
-export function stripeElementsConsumer<
-  P extends ElementsContextValue,
-  O extends Omit<P, keyof ElementsContextValue> = Omit<
-    P,
-    keyof ElementsContextValue
-  >
->(Component: ComponentType<P>): FunctionComponent<O> {
-  return function (props: O) {
+export function stripeElementsConsumer<P, O extends ElementsContextValue>(
+  Component: ComponentType<O>
+): FunctionComponent<P> {
+  return function (props: P) {
     return (
       <ElementsConsumer>
         {({ stripe, elements }: ElementsContextValue) => (
           <Component
             stripe={stripe}
             elements={elements}
-            {...((props as unknown) as P)}
+            {...((props as unknown) as O)}
           />
         )}
       </ElementsConsumer>

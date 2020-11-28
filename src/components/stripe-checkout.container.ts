@@ -19,7 +19,7 @@ import { PaymentIntent, StripeError } from '@stripe/stripe-js';
 import { Stripe, StripeElements } from '@stripe/stripe-js';
 import stripeJs from '@stripe/stripe-js';
 
-export interface StripeCheckoutContainerProps extends ElementsContextValue {
+export interface StripeCheckoutContainerProps {
   product: Product;
   onCheckout: () => void;
   onGoBack: () => void;
@@ -27,6 +27,10 @@ export interface StripeCheckoutContainerProps extends ElementsContextValue {
   onError: () => void;
   paymentEndpoint: string;
 }
+
+export interface StripeCheckoutContainerImplProps
+  extends ElementsContextValue,
+    StripeCheckoutContainerProps {}
 
 export interface OneCheckoutState {
   isShippingValid: boolean;
@@ -37,10 +41,10 @@ export interface OneCheckoutState {
 }
 
 class StripeCheckoutContainerImpl extends PureComponent<
-  StripeCheckoutContainerProps,
+  StripeCheckoutContainerImplProps,
   OneCheckoutState
 > {
-  constructor(props: StripeCheckoutContainerProps) {
+  constructor(props: StripeCheckoutContainerImplProps) {
     super(props);
     this.state = {
       isShippingValid: false,
@@ -204,5 +208,6 @@ class StripeCheckoutContainerImpl extends PureComponent<
 }
 
 export const StripeCheckoutContainer = stripeElementsConsumer<
-  StripeCheckoutContainerProps
+  StripeCheckoutContainerProps,
+  StripeCheckoutContainerImplProps
 >(StripeCheckoutContainerImpl);

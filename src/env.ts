@@ -22,12 +22,12 @@ export class Environment {
         process.env.STORYBOOK_REST_ENDPOINT_CREATE_PAYMENT;
     }
 
-    if (this.REST_ENDPOINT_CREATE_PAYMENT) {
-      throw new Error('Env variable REST_ENDPOINT_CREATE_PAYMENT not set!');
+    if (!this.REST_ENDPOINT_CREATE_PAYMENT) {
+      console.error('Env variable REST_ENDPOINT_CREATE_PAYMENT not set!');
     }
 
-    if (this.STRIPE_PUBLISHABLE_KEY) {
-      throw new Error('Env variable STRIPE_PUBLISHABLE_KEY not set!');
+    if (!this.STRIPE_PUBLISHABLE_KEY) {
+      console.error('Env variable STRIPE_PUBLISHABLE_KEY not set!');
     }
   }
 }
