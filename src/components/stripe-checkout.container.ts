@@ -25,6 +25,7 @@ export interface StripeCheckoutContainerProps extends ElementsContextValue {
   onGoBack: () => void;
   onSuccess: () => void;
   onError: () => void;
+  paymentEndpoint: string;
 }
 
 export interface OneCheckoutState {
@@ -48,10 +49,6 @@ class StripeCheckoutContainerImpl extends PureComponent<
       shipping: Builder<ShippingState>().build(),
       isPaymentReady: false,
     };
-
-    if (!process.env.REST_ENDPOINT_CREATE_PAYMENT) {
-      new Error(`Variable REST_ENDPOINT_CREATE_PAYMENT is not defined.`);
-    }
   }
 
   private get payload(): StripeCheckoutPay {
@@ -149,9 +146,7 @@ class StripeCheckoutContainerImpl extends PureComponent<
     // which would refresh the page.
     event.preventDefault();
 
-    const secret = await this.fetchSecretForPayment(
-      process.env.REST_ENDPOINT_CREATE_PAYMENT as string
-    );
+    const secret = await this.fetchSecretForPayment(this.props.paymentEndpoint);
 
     if (!secret) {
       return;
