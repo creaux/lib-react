@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Address } from '../Address';
 import { Company } from '../../components/company';
-import { Person } from '../../components/person';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { AbodeBuilder, IAbode } from './types';
 import { Conditional } from '../../components/conditional.component';
@@ -37,8 +36,6 @@ export interface AbodeProps extends IAbode {
 }
 
 export const Abode: FunctionComponent<AbodeProps> = ({
-  forname,
-  surname,
   company,
   vat,
   street,
@@ -51,15 +48,6 @@ export const Abode: FunctionComponent<AbodeProps> = ({
   disabled,
 }) => (
   <>
-    <div>
-      <Person
-        forname={forname}
-        surname={surname}
-        onFieldChange={handleFieldChange}
-        onFieldValidChange={handleValidFieldChange}
-        disabled={disabled}
-      />
-    </div>
     <Conditional
       condition={!!(vat && company)}
       when={() => (

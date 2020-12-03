@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Button } from '../forms/Button/index';
+import { Button } from '../forms/Button';
 import { Guard } from './guard.component';
 import { Description } from './description.component';
 import { Label } from './label.component';
@@ -13,7 +13,7 @@ export interface ProductCardProps extends Product {
 }
 
 export const ProductCard: FunctionComponent<ProductCardProps> = ({
-  title,
+  name,
   price,
   className,
   children,
@@ -25,7 +25,7 @@ export const ProductCard: FunctionComponent<ProductCardProps> = ({
     )}
   >
     <div className="d-flex flex-column w-100">
-      <h3>{title}</h3>
+      <h3>{name}</h3>
       <Guard Component={Label}>{children}</Guard>
       <Guard Component={Description}>{children}</Guard>
       <div className="d-flex justify-content-between flex-column justify-content-sm-center">

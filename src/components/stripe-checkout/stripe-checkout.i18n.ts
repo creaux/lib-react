@@ -1,6 +1,6 @@
-import { Translate } from './i18n.abstract.component';
-import { ProductCardProps } from './product-card.component';
-import { ShippingState } from './shipping.state';
+import { Translate } from '../i18n.abstract.component';
+import { ProductCardProps } from '../product-card.component';
+import { ShippingState } from '../shipping.state';
 import {
   StripeCheckout,
   StripeCheckoutProps,
@@ -10,8 +10,10 @@ import {
   StripeCheckoutTranslations,
 } from './stripe-checkout.translations';
 import defaultTranslations from './stripe-checkout.en.json';
-import { Builder } from '../builder';
+import { Builder } from '../../builder';
 import { FormEvent } from 'react';
+import { ContactDetailsState } from '../contact-details.component';
+import { ImageElement } from '../image.component';
 
 export interface StripeCheckoutI18nProps {
   product: ProductCardProps;
@@ -23,6 +25,9 @@ export interface StripeCheckoutI18nProps {
   onCheckout: (event: FormEvent<HTMLFormElement>) => void;
   isCheckoutDisabled: boolean;
   onPaymentReady: () => void;
+  onContactChange: (data: ContactDetailsState) => void;
+  onContactValidChange: (valid: boolean) => void;
+  image: ImageElement;
 }
 
 export class StripeCheckoutI18n extends Translate<
@@ -54,6 +59,9 @@ export class StripeCheckoutI18n extends Translate<
       .onCheckout(this.props.onCheckout)
       .isCheckoutDisabled(this.props.isCheckoutDisabled)
       .onPaymentReady(this.props.onPaymentReady)
+      .onContactChange(this.props.onContactChange)
+      .onContactValidChange(this.props.onContactValidChange)
+      .image(this.props.image)
       .build();
   }
 }

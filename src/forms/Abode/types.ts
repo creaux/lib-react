@@ -1,8 +1,6 @@
 import { IInput, IInputData, ISelect } from '../Field/types';
 
 export class AbodeBuilder {
-  private forname!: IInput & { valid?: boolean };
-  private surname!: IInput;
   private company!: IInput;
   private vat!: IInput;
   private street!: IInputData;
@@ -10,16 +8,6 @@ export class AbodeBuilder {
   private postcode!: IInputData;
   private cities!: ISelect;
   private countries!: ISelect;
-
-  withForname(forename: IInput) {
-    this.forname = forename;
-    return this;
-  }
-
-  withSurname(surname: IInput) {
-    this.surname = surname;
-    return this;
-  }
 
   withCompany(company: IInput) {
     this.company = company;
@@ -58,8 +46,6 @@ export class AbodeBuilder {
 
   build(): IAbode {
     return {
-      forname: this.forname,
-      surname: this.surname,
       company: this.company,
       vat: this.vat,
       street: this.street,
@@ -72,8 +58,6 @@ export class AbodeBuilder {
 }
 
 export interface IAbode {
-  forname: IInput;
-  surname: IInput;
   company?: IInput;
   vat?: IInput;
   street: IInputData;
@@ -84,8 +68,6 @@ export interface IAbode {
 }
 
 export interface IAbodeValidated extends IAbode {
-  forname: IInput & { valid: boolean };
-  surname: IInput & { valid: boolean };
   company?: IInput & { valid: boolean };
   vat?: IInput & { valid: boolean };
   street: IInputData & { valid: boolean };

@@ -4,7 +4,7 @@ import {
   CardExpiryElement,
   CardNumberElement,
 } from '@stripe/react-stripe-js';
-import { Translations } from './i18n.component';
+import { Translations } from '../i18n.component';
 import { StripeI18nProps } from './stripe.i18n';
 import stripeJs, { StripeElementChangeEvent } from '@stripe/stripe-js';
 import cx from 'classnames';

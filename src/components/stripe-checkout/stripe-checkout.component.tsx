@@ -1,16 +1,17 @@
 import React, { FunctionComponent } from 'react';
-import { ProductCard } from './product-card.component';
-import { asBackgroundProps } from './image.component.mock';
-import { Image } from './image.component';
-import { Button, Type, Variants } from '../forms/Button/index';
+import { ProductCard } from '../product-card.component';
+import { Image } from '../image.component';
+import { Button, Type, Variants } from '../../forms/Button';
 import { Stripe } from './stripe';
-import { Shipping } from './shipping';
-import { Viewport } from './viewport.component';
-import { ButtonProps } from '../forms/Button/index';
-import { Builder } from '../builder';
+import { Shipping } from '../shipping';
+import { Viewport } from '../viewport.component';
+import { ButtonProps } from '../../forms/Button';
+import { Builder } from '../../builder';
 import { StripeCheckoutI18nProps } from './stripe-checkout.i18n';
-import { Form, FormType } from '../forms/Form';
-import { Conditional } from './conditional.component';
+import { Form, FormType } from '../../forms/Form';
+import { Conditional } from '../conditional.component';
+import { ContactDetails } from '../contact-details.component';
+import { ImageVariants } from '../image.types';
 
 export interface StripeCheckoutProps extends StripeCheckoutI18nProps {
   back: string;
@@ -25,6 +26,8 @@ export const StripeCheckout: FunctionComponent<StripeCheckoutProps> = ({
   onGoBack: handleGoBack,
   onShippingValidChange: handleShippingValidChange,
   onShippingChange: handleShippingChange,
+  onContactChange: handleContactChange,
+  onContactValidChange: handleContactValidChange,
   paymentTitle,
   checkoutButton,
   processingPayment,
@@ -33,6 +36,7 @@ export const StripeCheckout: FunctionComponent<StripeCheckoutProps> = ({
   onCheckout,
   isCheckoutDisabled,
   onPaymentReady: handlePaymentReady,
+  image,
 }) => {
   const buttonBack = Builder<ButtonProps>()
     .className('align-self-start')
@@ -50,10 +54,18 @@ export const StripeCheckout: FunctionComponent<StripeCheckoutProps> = ({
               <div className="col-md-5 col-s-12 justify-content-center d-flex flex-column pb-xs-4">
                 <Button {...buttonBack} disabled={isCheckoutDisabled} />
                 <ProductCard {...product}>
-                  <Image {...asBackgroundProps} />
+                  <Image {...image} variant={ImageVariants.BACKGROUND} />
                 </ProductCard>
               </div>
               <div className="col-md-6 col-s-12 justify-content-center d-flex flex-column border-left-1">
+                <h6>Contact details</h6>
+                <div className="mb-4">
+                  <ContactDetails
+                    disabled={isCheckoutDisabled}
+                    onContactChange={handleContactChange}
+                    onContactValidChange={handleContactValidChange}
+                  />
+                </div>
                 <div className="mb-4">
                   <Shipping
                     onFormChange={handleShippingChange}

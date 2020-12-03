@@ -5,7 +5,7 @@ export class ValidatorPatterns {
   public static readonly regExpText = /^[a-zA-Z\s]+$/i;
   public static readonly regExpNumber = /^[0-9\s]+$/i;
   public static readonly regExpAlpha = /^[A-Z0-9\s]+$/i;
-  public static readonly regExpPhone = /^[0-9]{9}$/i;
+  public static readonly regExpPhone = /^[+]?[\s./0-9]*[(]?[0-9]{1,4}[)]?[-\s./0-9]*$/i;
 }
 
 export class Validators {
