@@ -6,9 +6,9 @@ import {
 } from './billing.types';
 
 const initialState: BillingState = {
-  cities: '',
+  city: '',
   company: '',
-  countries: '',
+  country: '',
   postcode: '',
   street: '',
   streetNo: '',

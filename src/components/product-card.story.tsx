@@ -12,7 +12,7 @@ const onAdd = () => {};
 
 const productCardProps = Builder<ProductCardProps>()
   .price('300')
-  .title('Some title')
+  .name('Some title')
   .build();
 
 const story = storiesOf('Atomic Design/Moleculs/ProductCard', module);

@@ -1,4 +1,4 @@
-import { createElement, FormEvent, PureComponent } from 'react';
+import { ComponentType, createElement, FormEvent, FunctionComponent, PureComponent } from 'react';
 import { ShippingState } from '../shipping.state';
 import { StripeCheckoutI18n } from './stripe-checkout.i18n';
 import { CardNumberElement } from '@stripe/react-stripe-js';
@@ -40,13 +40,16 @@ import {
 import { Delivery } from './store/delivery/delivery.types';
 import { fetchPaymentIntent } from './store/payment-intent/payment-intent.thunk';
 
-export interface StripeCheckoutContainerProps {
+export interface StripeCheckoutOuterProps {
   productId: string;
   onCheckout: () => void;
   onGoBack: () => void;
   onSuccess: () => void;
   onError: () => void;
   paymentEndpoint: string;
+}
+
+export interface StripeCheckoutContainerProps extends StripeCheckoutOuterProps {
   product: ProductState;
   fetchProduct: (id: string) => void;
   setContact: (contact: Contact) => void;
@@ -320,7 +323,6 @@ class StripeCheckoutContainerImpl extends PureComponent<
 const mapStateToProps = (state: RootState) => ({
   product: state.product,
 });
-
 const mapDispatchToProps = {
   fetchProduct,
   setContact,
@@ -331,11 +333,9 @@ const mapDispatchToProps = {
   setDeliveryValid,
   fetchPaymentIntent,
 };
-
 const connector = connect(mapStateToProps, mapDispatchToProps);
-
 export const StripeCheckoutContainer = compose(
   storeProvider(store),
   connector,
   stripeElementsConsumer
-)(StripeCheckoutContainerImpl);
+)(StripeCheckoutContainerImpl) as FunctionComponent<StripeCheckoutOuterProps>;
