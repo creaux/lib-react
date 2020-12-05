@@ -1,4 +1,4 @@
-import { Translations } from './i18n.component';
+import { Translations } from '../i18n.component';
 
 export enum StripeTranslation {
   STRIPE_NUMBER_PLACEHOLDER = 'STRIPE_NUMBER_PLACEHOLDER',

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Stripe } from './stripe';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
-import { Environment } from '../env';
+import { Environment } from '../../env';
 
 const stripeStory = storiesOf('Atomic Design/Organisms/forms/Stripe', module);
 

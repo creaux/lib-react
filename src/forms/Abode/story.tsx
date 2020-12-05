@@ -7,14 +7,6 @@ import { FormType } from '../Form/component';
 const { assign } = Object;
 
 export const deliveryProps: AbodeProps = {
-  forname: {
-    id: 'forename',
-    value: 'Karel',
-  },
-  surname: {
-    id: 'surname',
-    value: 'Vomacka',
-  },
   street: {
     id: 'street',
     value: 'Some Street',

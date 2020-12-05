@@ -17,20 +17,6 @@ export class ShippingContainer extends ShippingAbstractContainer {
     this.state = Builder<ShippingState>()
       .delivery(
         Builder<IAbode>()
-          .forname(
-            Builder<IInput>()
-              .id(ShippingFields.DELIVERY_FORENAME)
-              .value('')
-              .valid(false)
-              .build()
-          )
-          .surname(
-            Builder<IInput>()
-              .id(ShippingFields.DELIVERY_SURNAME)
-              .value('')
-              .valid(false)
-              .build()
-          )
           .street(
             Builder<IInput>()
               .id(ShippingFields.DELIVERY_STREET)
@@ -72,7 +58,7 @@ export class ShippingContainer extends ShippingAbstractContainer {
               .options([
                 Builder<IOption>()
                   .id('czechia')
-                  .value('Czechia')
+                  .value('CZ')
                   .title('Czechia')
                   .build(),
               ])
@@ -82,20 +68,6 @@ export class ShippingContainer extends ShippingAbstractContainer {
       )
       .invoicing(
         Builder<IAbode>()
-          .forname(
-            Builder<IInput>()
-              .id(ShippingFields.BILLING_FORENAME)
-              .value('')
-              .valid(false)
-              .build()
-          )
-          .surname(
-            Builder<IInput>()
-              .id(ShippingFields.BILLING_SURNAME)
-              .value('')
-              .valid(false)
-              .build()
-          )
           .company(
             Builder<IInput>()
               .id(ShippingFields.BILLING_COMPANY)
