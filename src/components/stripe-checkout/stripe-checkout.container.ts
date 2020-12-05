@@ -1,4 +1,10 @@
-import { ComponentType, createElement, FormEvent, FunctionComponent, PureComponent } from 'react';
+import {
+  ComponentType,
+  createElement,
+  FormEvent,
+  FunctionComponent,
+  PureComponent,
+} from 'react';
 import { ShippingState } from '../shipping.state';
 import { StripeCheckoutI18n } from './stripe-checkout.i18n';
 import { CardNumberElement } from '@stripe/react-stripe-js';
