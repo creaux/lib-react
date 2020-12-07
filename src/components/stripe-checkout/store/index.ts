@@ -5,12 +5,14 @@ import { contactReducer } from './contact/contact.reducer';
 import { billingReducer } from './billing/billing.reducer';
 import { deliveryReducer } from './delivery/delivery.reducer';
 import { paymentIntentReducer } from './payment-intent/payment-intent.reducer';
+import { conditionsReducer } from './conditions/conditions.reducer';
 
 export const rootReducer = combineReducers({
   product: productReducer,
   contact: contactReducer,
   billing: billingReducer,
   delivery: deliveryReducer,
+  conditions: conditionsReducer,
   paymentIntent: paymentIntentReducer,
 });
 

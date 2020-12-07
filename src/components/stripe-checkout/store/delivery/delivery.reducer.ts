@@ -11,6 +11,7 @@ const initialState: DeliveryState = {
   postcode: '',
   street: '',
   streetNo: '',
+  valid: false
 };
 
 export function deliveryReducer(

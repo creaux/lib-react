@@ -45,6 +45,8 @@ import {
 } from './store/delivery/delivery.actions';
 import { Delivery } from './store/delivery/delivery.types';
 import { fetchPaymentIntent } from './store/payment-intent/payment-intent.thunk';
+import { IInput } from '../../forms/Field/types';
+import { setData, setTerms } from './store/conditions/conditions.actions';
 
 export interface StripeCheckoutOuterProps {
   productId: string;
@@ -65,6 +67,9 @@ export interface StripeCheckoutContainerProps extends StripeCheckoutOuterProps {
   setDelivery: (delivery: Delivery) => void;
   setDeliveryValid: (valid: boolean) => void;
   fetchPaymentIntent: (checkout: StripeCheckoutPay) => void;
+  isValid: boolean;
+  setTerms: (terms: boolean) => void;
+  setData: (data: boolean) => void;
 }
 
 export interface StripeCheckoutContainerImplProps
@@ -94,7 +99,28 @@ class StripeCheckoutContainerImpl extends PureComponent<
       shipping: Builder<ShippingState>().build(),
       isPaymentReady: false,
       isContactValid: false,
-      contact: Builder<ContactDetailsState>().build(),
+      contact: Builder<ContactDetailsState>()
+        .email(Builder<IInput>()
+          .value('')
+          .id('email')
+          .valid(false)
+          .build())
+        .forname(Builder<IInput>()
+          .value('')
+          .id('forename')
+          .valid(false)
+          .build())
+        .surname(Builder<IInput>()
+          .value('')
+          .id('surname')
+          .valid(false)
+          .build())
+        .number(Builder<IInput>()
+          .value('')
+          .id('number')
+          .valid(false)
+          .build())
+        .build(),
       // TODO: Add product from stripe and consume it in render
     };
   }
@@ -223,6 +249,7 @@ class StripeCheckoutContainerImpl extends PureComponent<
     // which would refresh the page.
     event.preventDefault();
 
+    // this.props.fetchPaymentIntent(this.payload);
     const secret = await this.fetchSecretForPayment(this.props.paymentEndpoint);
 
     if (!secret) {
@@ -245,17 +272,34 @@ class StripeCheckoutContainerImpl extends PureComponent<
   };
 
   private readonly handleShippingChange = (shipping: ShippingState) => {
-    this.props.setBilling(
-      Builder<Billing>()
-        .postcode(shipping.invoicing.postcode.value)
-        .street(shipping.invoicing.street.value)
-        .city(shipping.invoicing.cities.value)
-        .country(shipping.invoicing.countries.value)
-        .company(shipping.invoicing.company?.value)
-        .streetNo(shipping.invoicing.streetNo.value)
-        .vat(shipping.invoicing.vat?.value)
-        .build()
-    );
+    // TODO: Separate shipping component to billing and delivery
+    if (!shipping.company.checked) {
+      this.props.setBilling(
+        Builder<Billing>()
+          .postcode(shipping.invoicing.postcode.value)
+          .street(shipping.invoicing.street.value)
+          .city(shipping.invoicing.cities.value)
+          .country(shipping.invoicing.countries.value)
+          .company(shipping.invoicing.company?.value)
+          .streetNo(shipping.invoicing.streetNo.value)
+          .vat(shipping.invoicing.vat?.value)
+          .build()
+      );
+
+    } else {
+      this.props.setBilling(
+        Builder<Billing>()
+          .postcode('')
+          .street('')
+          .city('')
+          .country('')
+          .company(undefined)
+          .streetNo('')
+          .vat(undefined)
+          .build()
+      );
+    }
+
     this.props.setDelivery(
       Builder<Delivery>()
         .postcode(shipping.delivery.postcode.value)
@@ -265,12 +309,13 @@ class StripeCheckoutContainerImpl extends PureComponent<
         .streetNo(shipping.delivery.streetNo.value)
         .build()
     );
-    this.setState({ shipping });
+    this.props.setData(shipping.data.checked);
+    this.props.setTerms(shipping.terms.checked);
   };
 
   private readonly handleShippingValidChange = (valid: boolean) => {
     this.props.setBillingValid(valid);
-    this.setState({ isShippingValid: valid });
+    this.props.setDeliveryValid(valid);
   };
 
   private readonly handlePaymentValidChange = (valid: boolean) => {
@@ -281,14 +326,6 @@ class StripeCheckoutContainerImpl extends PureComponent<
     this.setState({ isPaymentReady: true });
   };
 
-  private get isCheckoutValid(): boolean {
-    return (
-      this.state.isShippingValid &&
-      this.state.isPaymentValid &&
-      this.state.isContactValid
-    );
-  }
-
   private readonly handleContactChange = (contact: ContactDetailsState) => {
     this.props.setContact(
       Builder<Contact>()
@@ -298,12 +335,10 @@ class StripeCheckoutContainerImpl extends PureComponent<
         .surname(contact.surname.value)
         .build()
     );
-    this.setState({ contact });
   };
 
   private readonly handleContactValidChange = (isContactValid: boolean) => {
     this.props.setContactValid(isContactValid);
-    this.setState({ isContactValid });
   };
 
   render() {
@@ -314,7 +349,7 @@ class StripeCheckoutContainerImpl extends PureComponent<
       onShippingValidChange: this.handleShippingValidChange,
       onPaymentValidChange: this.handlePaymentValidChange,
       onShippingChange: this.handleShippingChange,
-      isCheckoutValid: this.isCheckoutValid,
+      isCheckoutValid: this.props.isValid,
       onCheckout: this.handleCheckout,
       isCheckoutDisabled:
         this.state.isPaymentProcessing || !this.state.isPaymentReady,
@@ -328,6 +363,7 @@ class StripeCheckoutContainerImpl extends PureComponent<
 
 const mapStateToProps = (state: RootState) => ({
   product: state.product,
+  isValid: state.contact.valid && state.billing.valid && state.delivery.valid && state.conditions.data && state.conditions.terms,
 });
 const mapDispatchToProps = {
   fetchProduct,
@@ -338,6 +374,8 @@ const mapDispatchToProps = {
   setDelivery,
   setDeliveryValid,
   fetchPaymentIntent,
+  setData,
+  setTerms,
 };
 const connector = connect(mapStateToProps, mapDispatchToProps);
 export const StripeCheckoutContainer = compose(

@@ -3,11 +3,12 @@ import { saveProduct } from './product.actions';
 import { ProductState } from './product.types';
 import { headers } from '../headers';
 import { ThunkType } from '../thunk.type';
+import { Endpoints } from '../endpoints';
 
 export const fetchProduct = (id: string): ThunkType => async (dispatch) => {
   try {
     const response: Response = await fetch(
-      `http://localhost:5000/product/${id}`,
+      Endpoints.join(Endpoints.PRODUCT.toString(), id).toString(),
       Builder<RequestInit>().method('GET').headers(headers).build()
     );
 
@@ -24,6 +25,7 @@ export const fetchProduct = (id: string): ThunkType => async (dispatch) => {
         dispatch(saveProduct(product));
         break;
       case 400:
+        // TODO
         break;
       default:
         console.error(

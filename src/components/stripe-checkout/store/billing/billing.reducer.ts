@@ -13,6 +13,7 @@ const initialState: BillingState = {
   street: '',
   streetNo: '',
   vat: '',
+  valid: false,
 };
 
 export function billingReducer(

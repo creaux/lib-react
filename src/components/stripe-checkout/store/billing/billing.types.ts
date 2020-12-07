@@ -6,6 +6,7 @@ export interface BillingState {
   postcode: string;
   city: string;
   country: string;
+  valid: boolean;
 }
 
 export interface Billing {

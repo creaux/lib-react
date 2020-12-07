@@ -4,6 +4,7 @@ export interface DeliveryState {
   postcode: string;
   city: string;
   country: string;
+  valid: boolean;
 }
 
 export interface Delivery {
@@ -23,7 +24,7 @@ export const SET_DELIVERY_VALID = 'SET_DELIVERY_VALID';
 
 export interface SetDeliveryAction {
   type: typeof SET_DELIVERY;
-  delivery: DeliveryState;
+  delivery: Delivery;
 }
 
 export interface SetDeliveryValidAction {

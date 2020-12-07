@@ -4,17 +4,18 @@ import { headers } from '../headers';
 import { PaymentIntentResponse } from './payment-intent.types';
 import { setSecret } from './payment-intent.actions';
 import { StripeCheckoutPay } from '../../stripe-checkout-pay.model';
+import { Endpoints } from '../endpoints';
 
 export const fetchPaymentIntent = (
   checkout: StripeCheckoutPay
-): ThunkType => async (dispatch) => {
+): ThunkType => async (dispatch, getState) => {
   try {
-    const stringified = JSON.stringify(checkout);
-    const response: Response = await fetch(
-      `http://localhost:5000/payment`,
+    const state = getState();
+    const request = JSON.stringify(checkout);
+    const response: Response = await fetch(Endpoints.PAYMENT.toString(),
       Builder<RequestInit>()
         .method('POST')
-        .body(stringified)
+        .body(request)
         .headers(headers)
         .build()
     );
@@ -25,6 +26,7 @@ export const fetchPaymentIntent = (
         dispatch(setSecret(data.client_secret));
         break;
       case 400:
+        // TODO
         break;
       default:
         console.error(
