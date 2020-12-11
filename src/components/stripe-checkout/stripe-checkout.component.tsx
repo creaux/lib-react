@@ -1,31 +1,68 @@
 import React, { FunctionComponent } from 'react';
-import { ProductCard } from '../product-card.component';
-import { Image } from '../image.component';
+import { ProductCard, ProductCardProps } from '../product-card.component';
+import { Image, ImageElement } from '../image.component';
 import { Button, Type, Variants } from '../../forms/Button';
 import { Stripe } from './stripe';
-import { Shipping } from '../shipping';
 import { Viewport } from '../viewport.component';
 import { ButtonProps } from '../../forms/Button';
 import { Builder } from '../../builder';
-import { StripeCheckoutI18nProps } from './stripe-checkout.i18n';
 import { Form, FormType } from '../../forms/Form';
 import { Conditional } from '../conditional.component';
-import { ContactDetails } from '../contact-details.component';
+import {
+  ContactDetails,
+  ContactDetailsState,
+} from '../contact-details.component';
 import { ImageVariants } from '../image.types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileInvoiceDollar, faHome } from '@fortawesome/free-solid-svg-icons';
+import { IAbode } from '../../forms/Abode';
+import { Checkbox } from '../../forms/Checkbox';
+import { OnChange } from '../form.types';
+import { ICheckbox } from '../../forms/Checkbox/types';
+import { Delivery } from '../delivery.component';
+import { Billing } from '../billing.component';
 
-export interface StripeCheckoutProps extends StripeCheckoutI18nProps {
+export enum Step {
+  DELIVERY,
+  BILLING,
+}
+
+export interface StripeCheckoutProps {
+  product: ProductCardProps;
+  onGoBack: () => void;
+  onPaymentValidChange: (valid: boolean) => void;
+  isCheckoutValid: boolean;
+  onCheckout: OnChange<HTMLFormElement>;
+  isCheckoutDisabled: boolean;
+  onPaymentReady: () => void;
+  onContactChange: (data: ContactDetailsState) => void;
+  onContactValidChange: (valid: boolean) => void;
+  image: ImageElement;
+  onDeliveryChange: (delivery: IAbode) => void;
+  onDeliveryValidChange: (valid: boolean) => void;
+  isBilling: ICheckbox;
+  onIsBillingChange: OnChange<HTMLInputElement>;
+  onBillingChange: (billing: IAbode) => void;
+  onBillingValidChange: (valid: boolean) => void;
+  terms: ICheckbox;
+  onTermsChange: OnChange<HTMLInputElement>;
+  data: ICheckbox;
+  onDataChange: OnChange<HTMLInputElement>;
   back: string;
   paymentTitle: string;
   checkoutButton: string;
   processingPayment: string;
+  deliveryHeading: string;
+  billingHeading: string;
+  onNextStep: (step: Step) => void;
+  step: Step;
+  isDeliveryStepValid: boolean;
 }
 
 export const StripeCheckout: FunctionComponent<StripeCheckoutProps> = ({
   product,
   back,
   onGoBack: handleGoBack,
-  onShippingValidChange: handleShippingValidChange,
-  onShippingChange: handleShippingChange,
   onContactChange: handleContactChange,
   onContactValidChange: handleContactValidChange,
   paymentTitle,
@@ -37,6 +74,21 @@ export const StripeCheckout: FunctionComponent<StripeCheckoutProps> = ({
   isCheckoutDisabled,
   onPaymentReady: handlePaymentReady,
   image,
+  deliveryHeading,
+  onDeliveryChange: handleDeliveryChange,
+  onDeliveryValidChange: handleDeliveryValidChange,
+  billingHeading,
+  isBilling,
+  onIsBillingChange: handleIsBillingChange,
+  onBillingChange: handleBillingChange,
+  onBillingValidChange: handleBillingValidChange,
+  terms,
+  data,
+  onTermsChange: handleTermsChange,
+  onDataChange: handleDataChange,
+  onNextStep: handleNextStep,
+  step,
+  isDeliveryStepValid,
 }) => {
   const buttonBack = Builder<ButtonProps>()
     .className('align-self-start')
@@ -57,48 +109,152 @@ export const StripeCheckout: FunctionComponent<StripeCheckoutProps> = ({
                   <Image {...image} variant={ImageVariants.BACKGROUND} />
                 </ProductCard>
               </div>
-              <div className="col-md-6 col-s-12 justify-content-center d-flex flex-column border-left-1">
-                <h6>Contact details</h6>
-                <div className="mb-4">
-                  <ContactDetails
-                    disabled={isCheckoutDisabled}
-                    onContactChange={handleContactChange}
-                    onContactValidChange={handleContactValidChange}
-                  />
-                </div>
-                <div className="mb-4">
-                  <Shipping
-                    onFormChange={handleShippingChange}
-                    onFormValidChange={handleShippingValidChange}
-                    disabled={isCheckoutDisabled}
-                  />
-                </div>
-                <h6>{paymentTitle}</h6>
-                <Stripe
-                  onPaymentValid={handlePaymentValid}
-                  disabled={isCheckoutDisabled}
-                  onReady={handlePaymentReady}
-                />
-                <Button
-                  type={Type.SUBMIT}
-                  disabled={!isCheckoutValid || isCheckoutDisabled}
-                >
-                  <Conditional
-                    condition={isCheckoutDisabled}
-                    when={() => (
-                      <>
-                        <span
-                          className="spinner-grow spinner-grow-sm"
-                          role="status"
-                          aria-hidden="true"
+              <Conditional
+                condition={step === Step.DELIVERY}
+                when={() => (
+                  <div className="col-md-6 col-s-12 justify-content-center d-flex flex-column border-left-1">
+                    <h5>Getting your personal details</h5>
+                    <hr className="w-100 mb-4" />
+                    <h6>Contact details</h6>
+                    <div className="mb-4">
+                      <ContactDetails
+                        disabled={false}
+                        onContactChange={handleContactChange}
+                        onContactValidChange={handleContactValidChange}
+                      />
+                    </div>
+                    <div className="pb-4">
+                      <h6>
+                        <Conditional
+                          condition={false}
+                          when={() => (
+                            <>
+                              <span className="shipping__icon">
+                                <FontAwesomeIcon icon={faHome} size="1x" />
+                              </span>
+                              &nbsp;&nbsp;
+                            </>
+                          )}
                         />
-                        {processingPayment}...
-                      </>
-                    )}
-                    otherwise={() => <>{checkoutButton}</>}
-                  />
-                </Button>
-              </div>
+                        <span>{deliveryHeading}</span>
+                      </h6>
+                      <Delivery
+                        onDeliveryChange={handleDeliveryChange}
+                        onDeliveryValidChange={handleDeliveryValidChange}
+                        disabled={false}
+                      />
+                    </div>
+                    <div>
+                      <div className="mb-1">
+                        <Checkbox
+                          {...terms}
+                          onChange={handleTermsChange}
+                          disabled={false}
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <Checkbox
+                          {...data}
+                          onChange={handleDataChange}
+                          disabled={false}
+                        />
+                      </div>
+                    </div>
+                    <Button
+                      type={Type.BUTTON}
+                      disabled={!isDeliveryStepValid}
+                      onClick={() => handleNextStep(Step.BILLING)}
+                    >
+                      <Conditional
+                        condition={false}
+                        when={() => (
+                          <>
+                            <span
+                              className="spinner-grow spinner-grow-sm"
+                              role="status"
+                              aria-hidden="true"
+                            />
+                            {processingPayment}...
+                          </>
+                        )}
+                        otherwise={() => <>Go to billing & payment</>}
+                      />
+                    </Button>
+                  </div>
+                )}
+              />
+              <Conditional
+                condition={step === Step.BILLING}
+                when={() => (
+                  <div className="col-md-6 col-s-12 justify-content-center d-flex flex-column border-left-1">
+                    <h5>Getting your billing details</h5>
+                    <hr className="w-100 mb-4" />
+                    <div>
+                      <h6>
+                        <Conditional
+                          condition={false}
+                          when={() => (
+                            <>
+                              <span className="shipping__icon">
+                                <FontAwesomeIcon
+                                  icon={faFileInvoiceDollar}
+                                  size="1x"
+                                />
+                              </span>
+                              &nbsp;&nbsp;
+                            </>
+                          )}
+                        />
+                        <span>{billingHeading}</span>
+                      </h6>
+                      <div className="mb-1">
+                        <Checkbox
+                          {...isBilling}
+                          onChange={handleIsBillingChange}
+                          disabled={isCheckoutDisabled}
+                        />
+                      </div>
+                    </div>
+                    <div className="mb-4">
+                      <Conditional
+                        condition={!isBilling.checked}
+                        when={() => (
+                          <Billing
+                            onBillingChange={handleBillingChange}
+                            onBillingValidChange={handleBillingValidChange}
+                            disabled={isCheckoutDisabled}
+                          />
+                        )}
+                      />
+                    </div>
+                    <h6>{paymentTitle}</h6>
+                    <Stripe
+                      onPaymentValid={handlePaymentValid}
+                      disabled={isCheckoutDisabled}
+                      onReady={handlePaymentReady}
+                    />
+                    <Button
+                      type={Type.SUBMIT}
+                      disabled={!isCheckoutValid || isCheckoutDisabled}
+                    >
+                      <Conditional
+                        condition={isCheckoutDisabled}
+                        when={() => (
+                          <>
+                            <span
+                              className="spinner-grow spinner-grow-sm"
+                              role="status"
+                              aria-hidden="true"
+                            />
+                            {processingPayment}...
+                          </>
+                        )}
+                        otherwise={() => <>{checkoutButton}</>}
+                      />
+                    </Button>
+                  </div>
+                )}
+              />
             </div>
           </div>
         </div>

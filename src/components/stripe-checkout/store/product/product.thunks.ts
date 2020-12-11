@@ -1,6 +1,6 @@
 import { Builder } from '../../../../builder';
 import { saveProduct } from './product.actions';
-import { ProductState } from './product.types';
+import { ProductResponse, ProductState } from './product.types';
 import { headers } from '../headers';
 import { ThunkType } from '../thunk.type';
 import { Endpoints } from '../endpoints';
@@ -14,9 +14,9 @@ export const fetchProduct = (id: string): ThunkType => async (dispatch) => {
 
     switch (response.status) {
       case 200:
-        const data: ProductState = await response.json();
+        const data: ProductResponse = await response.json();
         const product = Builder<ProductState>()
-          .id(data.id)
+          .id(data.productId)
           .images(data.images)
           .name(data.name)
           .price(data.price)

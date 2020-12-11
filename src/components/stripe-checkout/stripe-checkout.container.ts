@@ -1,32 +1,16 @@
 import {
-  ComponentType,
   createElement,
   FormEvent,
   FunctionComponent,
   PureComponent,
 } from 'react';
-import { ShippingState } from '../shipping.state';
 import { StripeCheckoutI18n } from './stripe-checkout.i18n';
-import { CardNumberElement } from '@stripe/react-stripe-js';
 import {
   ElementsContextValue,
   stripeElementsConsumer,
 } from './stripe-elements-consumer.hoc';
 import { Builder } from '../../builder';
-import {
-  StripeCheckoutBilling,
-  StripeCheckoutConditions,
-  StripeCheckoutDelivery,
-  StripeCheckoutModel,
-} from './stripe-checkout.model';
-import { StripeCheckoutPay } from './stripe-checkout-pay.model';
-import {
-  PaymentIntent,
-  PaymentMethodCreateParams,
-  StripeError,
-} from '@stripe/stripe-js';
 import { Stripe, StripeElements } from '@stripe/stripe-js';
-import stripeJs from '@stripe/stripe-js';
 import { ContactDetailsState } from '../contact-details.component';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -37,16 +21,32 @@ import { storeProvider } from './store/store-provider';
 import { ImageElement } from '../image.component';
 import { setContact, setContactValid } from './store/contact/contact.actions';
 import { Contact } from './store/contact/contact.types';
-import { setBilling, setBillingValid } from './store/billing/billing.actions';
+import {
+  setBilling,
+  setBillingSameAsDelivery,
+  setBillingValid,
+} from './store/billing/billing.actions';
 import { Billing } from './store/billing/billing.types';
 import {
   setDelivery,
   setDeliveryValid,
 } from './store/delivery/delivery.actions';
 import { Delivery } from './store/delivery/delivery.types';
-import { fetchPaymentIntent } from './store/payment-intent/payment-intent.thunk';
-import { IInput } from '../../forms/Field/types';
+import {
+  fetchPaymentIntent,
+  postPaymentIntent,
+} from './store/payment-intent/payment-intent.thunk';
 import { setData, setTerms } from './store/conditions/conditions.actions';
+import { IAbode } from '../../forms/Abode';
+import { ICheckbox } from '../../forms/Checkbox/types';
+import { OnChange } from '../form.types';
+import {
+  setPaymentProcessing,
+  setPaymentReady,
+  setPaymentValid,
+} from './store/payment-intent/payment-intent.actions';
+import { Step } from './stripe-checkout.component';
+import { setStep } from './store/process/process.actions';
 
 export interface StripeCheckoutOuterProps {
   productId: string;
@@ -66,178 +66,48 @@ export interface StripeCheckoutContainerProps extends StripeCheckoutOuterProps {
   setBillingValid: (valid: boolean) => void;
   setDelivery: (delivery: Delivery) => void;
   setDeliveryValid: (valid: boolean) => void;
-  fetchPaymentIntent: (checkout: StripeCheckoutPay) => void;
+  fetchPaymentIntent: () => void;
   isValid: boolean;
   setTerms: (terms: boolean) => void;
   setData: (data: boolean) => void;
+  setProductID: (id: string) => void;
+  postPaymentIntent: (
+    stripe: Stripe | null,
+    elements: StripeElements | null,
+    onError: () => void,
+    onSuccess: () => void
+  ) => void;
+  billingSameAsDelivery: boolean;
+  setBillingSameAsDelivery: (billingSameAsDelivery: boolean) => void;
+  setPaymentReady: (ready: boolean) => void;
+  isPaymentReady: boolean;
+  setPaymentValid: (valid: boolean) => void;
+  isPaymentValid: boolean;
+  setPaymentProcessing: (processing: boolean) => void;
+  isPaymentProcessing: boolean;
+  setStep: (step: Step) => void;
+  step: Step;
+  isDeliveryStepValid: boolean;
 }
 
 export interface StripeCheckoutContainerImplProps
   extends ElementsContextValue,
     StripeCheckoutContainerProps {}
 
-export interface OneCheckoutState {
-  isShippingValid: boolean;
-  isPaymentValid: boolean;
-  isPaymentProcessing: boolean;
-  shipping: ShippingState;
-  isPaymentReady: boolean;
-  contact: ContactDetailsState;
-  isContactValid: boolean;
-}
-
 class StripeCheckoutContainerImpl extends PureComponent<
-  StripeCheckoutContainerImplProps,
-  OneCheckoutState
+  StripeCheckoutContainerImplProps
 > {
-  constructor(props: StripeCheckoutContainerImplProps) {
-    super(props);
-    this.state = {
-      isShippingValid: false,
-      isPaymentValid: false,
-      isPaymentProcessing: false,
-      shipping: Builder<ShippingState>().build(),
-      isPaymentReady: false,
-      isContactValid: false,
-      contact: Builder<ContactDetailsState>()
-        .email(Builder<IInput>()
-          .value('')
-          .id('email')
-          .valid(false)
-          .build())
-        .forname(Builder<IInput>()
-          .value('')
-          .id('forename')
-          .valid(false)
-          .build())
-        .surname(Builder<IInput>()
-          .value('')
-          .id('surname')
-          .valid(false)
-          .build())
-        .number(Builder<IInput>()
-          .value('')
-          .id('number')
-          .valid(false)
-          .build())
-        .build(),
-      // TODO: Add product from stripe and consume it in render
-    };
-  }
+  private readonly constants = {
+    terms: Builder<Pick<ICheckbox, 'id'>>().id('terms').build(),
+    data: Builder<Pick<ICheckbox, 'id'>>().id('data').build(),
+  };
 
   componentDidMount() {
     this.props.fetchProduct(this.props.productId);
   }
 
-  private get payload(): StripeCheckoutPay {
-    return Builder<StripeCheckoutPay>()
-      .productId(this.props.productId)
-      .checkout(
-        Builder<StripeCheckoutModel>()
-          .forename(this.state.contact.forname.value)
-          .surname(this.state.contact.surname.value)
-          .email(this.state.contact.email.value)
-          .phone(this.state.contact.number.value)
-          .carrier('Post')
-          .delivery(
-            Builder<StripeCheckoutDelivery>()
-              .street(this.state.shipping.delivery.street.value)
-              .streetNo(this.state.shipping.delivery.streetNo.value)
-              .postcode(this.state.shipping.delivery.postcode.value)
-              .city(this.state.shipping.delivery.cities.value)
-              .country(this.state.shipping.delivery.countries.value)
-              .build()
-          )
-          .conditions(
-            Builder<StripeCheckoutConditions>()
-              .terms(this.state.shipping.terms.checked)
-              .data(this.state.shipping.data.checked)
-              .build()
-          )
-          .build()
-      )
-      .build();
-  }
-
-  private get billing(): StripeCheckoutBilling {
-    return Builder<StripeCheckoutBilling>()
-      .name(
-        `${this.state.contact.forname.value} ${this.state.contact.surname.value}`
-      )
-      .phone(this.state.contact.number.value)
-      .email(this.state.contact.email.value)
-      .address(
-        Builder<PaymentMethodCreateParams.BillingDetails.Address>()
-          .city(
-            this.state.shipping.invoicing.cities.value.length > 0
-              ? this.state.shipping.invoicing.cities.value
-              : this.state.shipping.delivery.cities.value
-          )
-          .country(
-            this.state.shipping.invoicing.countries.value.length > 0
-              ? this.state.shipping.invoicing.countries.value
-              : this.state.shipping.delivery.countries.value
-          )
-          .postal_code(
-            this.state.shipping.invoicing.postcode.value.length > 0
-              ? this.state.shipping.invoicing.postcode.value
-              : this.state.shipping.delivery.postcode.value
-          )
-          .line1(
-            `${this.state.shipping.invoicing.company?.value} ${this.state.shipping.invoicing.vat?.value}`
-          )
-          .line2('')
-          .build()
-      )
-      .build();
-  }
-
-  private async fetchSecretForPayment(endpoint: string) {
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      body: JSON.stringify(this.payload),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const data = await response.json();
-
-    if (response.status === 200) {
-      return data.client_secret;
-    }
-
-    if (response.status === 400) {
-      throw new Error(JSON.stringify(data.validationErrors));
-    }
-
-    if (response.status === 404) {
-      throw new Error(data.dataError);
-    }
-
-    return data.client_secret;
-  }
-
   private set isPaymentProcessing(isPaymentProcessing: boolean) {
-    this.setState({ isPaymentProcessing });
-  }
-
-  private async processPaymentWithSecret(
-    secret: string
-  ): Promise<
-    { paymentIntent?: PaymentIntent; error?: StripeError } | undefined
-  > {
-    const { stripe, elements } = this.props;
-
-    // stripe and elements suppose to be in this state ready
-    // as for isPaymentReady disabling form
-    return await (stripe as Stripe).confirmCardPayment(secret as string, {
-      payment_method: {
-        card: (elements as StripeElements).getElement(
-          CardNumberElement
-        ) as stripeJs.StripeCardNumberElement,
-        billing_details: this.billing,
-      },
-    });
+    this.props.setPaymentProcessing(isPaymentProcessing);
   }
 
   private readonly handleCheckout = async (
@@ -249,81 +119,64 @@ class StripeCheckoutContainerImpl extends PureComponent<
     // which would refresh the page.
     event.preventDefault();
 
-    // this.props.fetchPaymentIntent(this.payload);
-    const secret = await this.fetchSecretForPayment(this.props.paymentEndpoint);
-
-    if (!secret) {
-      return;
-    }
-
-    const result = await this.processPaymentWithSecret(secret);
-
-    if (!result) {
-      return;
-    }
-
-    if (result.error) {
-      this.props.onError();
-    } else {
-      if (result.paymentIntent?.status === 'succeeded') {
-        this.props.onSuccess();
-      }
-    }
+    // Wait since intent is fetched
+    await this.props.fetchPaymentIntent();
+    // and then post
+    const { stripe, elements } = this.props;
+    this.props.postPaymentIntent(
+      stripe,
+      elements,
+      this.props.onError,
+      this.props.onSuccess
+    );
   };
 
-  private readonly handleShippingChange = (shipping: ShippingState) => {
-    // TODO: Separate shipping component to billing and delivery
-    if (!shipping.company.checked) {
-      this.props.setBilling(
-        Builder<Billing>()
-          .postcode(shipping.invoicing.postcode.value)
-          .street(shipping.invoicing.street.value)
-          .city(shipping.invoicing.cities.value)
-          .country(shipping.invoicing.countries.value)
-          .company(shipping.invoicing.company?.value)
-          .streetNo(shipping.invoicing.streetNo.value)
-          .vat(shipping.invoicing.vat?.value)
-          .build()
-      );
-
-    } else {
-      this.props.setBilling(
-        Builder<Billing>()
-          .postcode('')
-          .street('')
-          .city('')
-          .country('')
-          .company(undefined)
-          .streetNo('')
-          .vat(undefined)
-          .build()
-      );
-    }
-
+  private readonly handleDeliveryChange = (delivery: IAbode) => {
     this.props.setDelivery(
       Builder<Delivery>()
-        .postcode(shipping.delivery.postcode.value)
-        .street(shipping.delivery.street.value)
-        .city(shipping.delivery.cities.value)
-        .country(shipping.delivery.countries.value)
-        .streetNo(shipping.delivery.streetNo.value)
+        .postcode(delivery.postcode.value)
+        .street(delivery.street.value)
+        .city(delivery.cities.value)
+        .country(delivery.countries.value)
+        .streetNo(delivery.streetNo.value)
         .build()
     );
-    this.props.setData(shipping.data.checked);
-    this.props.setTerms(shipping.terms.checked);
   };
 
-  private readonly handleShippingValidChange = (valid: boolean) => {
-    this.props.setBillingValid(valid);
+  private readonly handleDeliveryValidChange = (valid: boolean) => {
     this.props.setDeliveryValid(valid);
   };
 
+  private readonly handleBillingChange = (billing: IAbode) => {
+    this.props.setBilling(
+      Builder<Billing>()
+        .postcode(billing.postcode.value)
+        .street(billing.street.value)
+        .city(billing.cities.value)
+        .country(billing.countries.value)
+        .streetNo(billing.streetNo.value)
+        .company(billing.company?.value)
+        .vat(billing.vat?.value)
+        .build()
+    );
+  };
+
+  private readonly handleIsBillingChange: OnChange<HTMLInputElement> = (
+    e: FormEvent<HTMLInputElement>
+  ) => {
+    this.props.setBillingSameAsDelivery(e.currentTarget.checked);
+  };
+
+  private readonly handleBillingValidChange = (valid: boolean) => {
+    this.props.setBillingValid(valid);
+  };
+
   private readonly handlePaymentValidChange = (valid: boolean) => {
-    this.setState({ isPaymentValid: valid });
+    this.props.setPaymentValid(valid);
   };
 
   private readonly handlePaymentReady = () => {
-    this.setState({ isPaymentReady: true });
+    this.props.setPaymentReady(true);
   };
 
   private readonly handleContactChange = (contact: ContactDetailsState) => {
@@ -341,30 +194,72 @@ class StripeCheckoutContainerImpl extends PureComponent<
     this.props.setContactValid(isContactValid);
   };
 
+  private readonly handleTermsChange: OnChange<HTMLInputElement> = (
+    e: FormEvent<HTMLInputElement>
+  ) => {
+    const checked = e.currentTarget.checked;
+    this.props.setTerms(checked);
+  };
+
+  private readonly handleDataChange: OnChange<HTMLInputElement> = (
+    e: FormEvent<HTMLInputElement>
+  ) => {
+    const checked = e.currentTarget.checked;
+    this.props.setData(checked);
+  };
+
+  private readonly handleNextStep = (step: Step) => {
+    this.props.setStep(step);
+  };
+
   render() {
     return createElement(StripeCheckoutI18n, {
       onGoBack: this.props.onGoBack,
-      // FIXME
       product: this.props.product,
-      onShippingValidChange: this.handleShippingValidChange,
       onPaymentValidChange: this.handlePaymentValidChange,
-      onShippingChange: this.handleShippingChange,
-      isCheckoutValid: this.props.isValid,
+      isCheckoutValid: this.props.isValid && this.props.isPaymentValid,
       onCheckout: this.handleCheckout,
       isCheckoutDisabled:
-        this.state.isPaymentProcessing || !this.state.isPaymentReady,
+        this.props.isPaymentProcessing || !this.props.isPaymentReady,
       onPaymentReady: this.handlePaymentReady,
       onContactChange: this.handleContactChange,
       onContactValidChange: this.handleContactValidChange,
       image: Builder<ImageElement>().src(this.props.product.images[0]).build(),
+      onDeliveryChange: this.handleDeliveryChange,
+      onDeliveryValidChange: this.handleDeliveryValidChange,
+      onBillingChange: this.handleBillingChange,
+      onBillingValidChange: this.handleBillingValidChange,
+      onIsBillingChange: this.handleIsBillingChange,
+      isBillingSameAsDelivery: Builder<Pick<ICheckbox, 'id' | 'checked'>>()
+        .id('isBillingSameAsDelivery')
+        .checked(this.props.billingSameAsDelivery)
+        .build(),
+      onTermsChange: this.handleTermsChange,
+      onDataChange: this.handleDataChange,
+      data: this.constants.data,
+      terms: this.constants.terms,
+      onNextStep: this.handleNextStep,
+      step: this.props.step,
+      isDeliveryStepValid: this.props.isDeliveryStepValid,
     });
   }
 }
 
 const mapStateToProps = (state: RootState) => ({
   product: state.product,
-  isValid: state.contact.valid && state.billing.valid && state.delivery.valid && state.conditions.data && state.conditions.terms,
+  billingSameAsDelivery: state.billing.sameAsDelivery,
+  isDeliveryStepValid:
+    state.contact.valid &&
+    state.delivery.valid &&
+    state.conditions.data &&
+    state.conditions.terms,
+  isValid: state.billing.sameAsDelivery ? true : state.billing.valid,
+  isPaymentReady: state.paymentIntent.ready,
+  isPaymentValid: state.paymentIntent.valid,
+  isPaymentProcessing: state.paymentIntent.processing,
+  step: state.process.step,
 });
+
 const mapDispatchToProps = {
   fetchProduct,
   setContact,
@@ -376,8 +271,16 @@ const mapDispatchToProps = {
   fetchPaymentIntent,
   setData,
   setTerms,
+  postPaymentIntent,
+  setBillingSameAsDelivery,
+  setPaymentReady,
+  setPaymentValid,
+  setPaymentProcessing,
+  setStep,
 };
+
 const connector = connect(mapStateToProps, mapDispatchToProps);
+
 export const StripeCheckoutContainer = compose(
   storeProvider(store),
   connector,

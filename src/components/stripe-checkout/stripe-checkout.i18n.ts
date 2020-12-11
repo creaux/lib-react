@@ -1,7 +1,7 @@
 import { Translate } from '../i18n.abstract.component';
 import { ProductCardProps } from '../product-card.component';
-import { ShippingState } from '../shipping.state';
 import {
+  Step,
   StripeCheckout,
   StripeCheckoutProps,
 } from './stripe-checkout.component';
@@ -14,13 +14,14 @@ import { Builder } from '../../builder';
 import { FormEvent } from 'react';
 import { ContactDetailsState } from '../contact-details.component';
 import { ImageElement } from '../image.component';
+import { IAbode } from '../../forms/Abode';
+import { OnChange } from '../form.types';
+import { ICheckbox } from '../../forms/Checkbox/types';
 
 export interface StripeCheckoutI18nProps {
   product: ProductCardProps;
   onGoBack: () => void;
-  onShippingValidChange: (valid: boolean) => void;
   onPaymentValidChange: (valid: boolean) => void;
-  onShippingChange: (data: ShippingState) => void;
   isCheckoutValid: boolean;
   onCheckout: (event: FormEvent<HTMLFormElement>) => void;
   isCheckoutDisabled: boolean;
@@ -28,6 +29,19 @@ export interface StripeCheckoutI18nProps {
   onContactChange: (data: ContactDetailsState) => void;
   onContactValidChange: (valid: boolean) => void;
   image: ImageElement;
+  onDeliveryChange: (delivery: IAbode) => void;
+  onDeliveryValidChange: (valid: boolean) => void;
+  onBillingChange: (billing: IAbode) => void;
+  onBillingValidChange: (valid: boolean) => void;
+  isBillingSameAsDelivery: Pick<ICheckbox, 'id' | 'checked'>;
+  onIsBillingChange: OnChange<HTMLInputElement>;
+  onTermsChange: OnChange<HTMLInputElement>;
+  onDataChange: OnChange<HTMLInputElement>;
+  data: Pick<ICheckbox, 'id'>;
+  terms: Pick<ICheckbox, 'id'>;
+  onNextStep: (step: Step) => void;
+  step: Step;
+  isDeliveryStepValid: boolean;
 }
 
 export class StripeCheckoutI18n extends Translate<
@@ -42,10 +56,8 @@ export class StripeCheckoutI18n extends Translate<
     return Builder<StripeCheckoutProps>()
       .product(this.props.product)
       .onGoBack(this.props.onGoBack)
-      .onShippingValidChange(this.props.onShippingValidChange)
       .onPaymentValidChange(this.props.onPaymentValidChange)
       .isCheckoutValid(this.props.isCheckoutValid)
-      .onShippingChange(this.props.onShippingChange)
       .back(this.i18n.get(StripeCheckoutTranslation.BACK) as string)
       .paymentTitle(
         this.i18n.get(StripeCheckoutTranslation.PAYMENT_TITLE) as string
@@ -62,6 +74,41 @@ export class StripeCheckoutI18n extends Translate<
       .onContactChange(this.props.onContactChange)
       .onContactValidChange(this.props.onContactValidChange)
       .image(this.props.image)
+      .onDeliveryChange(this.props.onDeliveryChange)
+      .onDeliveryValidChange(this.props.onDeliveryValidChange)
+      .isBilling(
+        Builder<ICheckbox>()
+          .checked(this.props.isBillingSameAsDelivery.checked)
+          .id(this.props.isBillingSameAsDelivery.id)
+          .title(this.i18n.get(StripeCheckoutTranslation.IS_BILLING) as string)
+          .build()
+      )
+      .onIsBillingChange(this.props.onIsBillingChange)
+      .onBillingChange(this.props.onBillingChange)
+      .onBillingValidChange(this.props.onBillingValidChange)
+      .terms(
+        Builder<ICheckbox>()
+          .title(this.i18n.get(StripeCheckoutTranslation.TERMS) as string)
+          .id(this.props.terms.id)
+          .build()
+      )
+      .onTermsChange(this.props.onTermsChange)
+      .data(
+        Builder<ICheckbox>()
+          .title(this.i18n.get(StripeCheckoutTranslation.DATA) as string)
+          .id(this.props.data.id)
+          .build()
+      )
+      .onDataChange(this.props.onDataChange)
+      .deliveryHeading(
+        this.i18n.get(StripeCheckoutTranslation.DELIVERY_TITLE) as string
+      )
+      .billingHeading(
+        this.i18n.get(StripeCheckoutTranslation.BILLING_TITLE) as string
+      )
+      .onNextStep(this.props.onNextStep)
+      .step(this.props.step)
+      .isDeliveryStepValid(this.props.isDeliveryStepValid)
       .build();
   }
 }

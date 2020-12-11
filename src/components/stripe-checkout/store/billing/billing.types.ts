@@ -7,6 +7,7 @@ export interface BillingState {
   city: string;
   country: string;
   valid: boolean;
+  sameAsDelivery: boolean;
 }
 
 export interface Billing {
@@ -23,8 +24,13 @@ export interface BillingValid {
   valid: boolean;
 }
 
+export interface BillingDelivery {
+  sameAsDelivery: boolean;
+}
+
 export const SET_BILLING = 'SET_BILLING';
 export const SET_BILLING_VALID = 'SET_BILLING_VALID';
+export const SET_SAME_AS_DELIVERY = 'SET_SAME_AS_DELIVERY';
 
 export interface SetBillingAction {
   type: typeof SET_BILLING;
@@ -36,4 +42,12 @@ export interface SetBillingValidAction {
   valid: boolean;
 }
 
-export type BillingActionTypes = SetBillingAction | SetBillingValidAction;
+export interface SetBillingSameAsDeliveryAction {
+  type: typeof SET_SAME_AS_DELIVERY;
+  sameAsDelivery: boolean;
+}
+
+export type BillingActionTypes =
+  | SetBillingAction
+  | SetBillingValidAction
+  | SetBillingSameAsDeliveryAction;

@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import { Person } from './person';
 import { Contact } from '../forms/Contact';
-import { IInput } from '../forms/Field/types';
+import { IInput, OnValidChange } from '../forms/Field/types';
 import { Builder } from '../builder';
 import { OnFieldChange, OnValidFieldChange } from './form.types';
 import { IPerson } from './types';
@@ -14,9 +14,11 @@ import { IContact } from '../forms/Contact/types';
 
 const { values, assign } = Object;
 
+export type OnContactChange = (state: ContactDetailsState) => void;
+
 export interface ContactDetailsProps {
-  onContactChange: (state: ContactDetailsState) => void;
-  onContactValidChange: (valid: boolean) => void;
+  onContactChange: OnContactChange;
+  onContactValidChange: OnValidChange;
   disabled: boolean;
 }
 

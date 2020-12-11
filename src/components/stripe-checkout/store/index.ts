@@ -6,6 +6,7 @@ import { billingReducer } from './billing/billing.reducer';
 import { deliveryReducer } from './delivery/delivery.reducer';
 import { paymentIntentReducer } from './payment-intent/payment-intent.reducer';
 import { conditionsReducer } from './conditions/conditions.reducer';
+import { processReducer } from './process/process.reducer';
 
 export const rootReducer = combineReducers({
   product: productReducer,
@@ -14,6 +15,7 @@ export const rootReducer = combineReducers({
   delivery: deliveryReducer,
   conditions: conditionsReducer,
   paymentIntent: paymentIntentReducer,
+  process: processReducer,
 });
 
 const composeEnhancers =
