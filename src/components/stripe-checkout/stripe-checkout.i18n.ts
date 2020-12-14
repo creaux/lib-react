@@ -1,7 +1,6 @@
 import { Translate } from '../i18n.abstract.component';
 import { ProductCardProps } from '../product-card.component';
 import {
-  Step,
   StripeCheckout,
   StripeCheckoutProps,
 } from './stripe-checkout.component';
@@ -17,6 +16,7 @@ import { ImageElement } from '../image.component';
 import { IAbode } from '../../forms/Abode';
 import { OnChange } from '../form.types';
 import { ICheckbox } from '../../forms/Checkbox/types';
+import { Step } from './store/process/process.types';
 
 export interface StripeCheckoutI18nProps {
   product: ProductCardProps;

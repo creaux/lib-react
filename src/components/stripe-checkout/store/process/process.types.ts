@@ -1,4 +1,7 @@
-import { Step } from '../../stripe-checkout.component';
+export enum Step {
+  DELIVERY,
+  BILLING,
+}
 
 export interface ProcessState {
   step: Step;

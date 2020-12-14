@@ -1,10 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { ProductCard, ProductCardProps } from '../product-card.component';
 import { Image, ImageElement } from '../image.component';
-import { Button, Type, Variants } from '../../forms/Button';
+import { Button, ButtonProps, Type, Variants } from '../../forms/Button';
 import { Stripe } from './stripe';
 import { Viewport } from '../viewport.component';
-import { ButtonProps } from '../../forms/Button';
 import { Builder } from '../../builder';
 import { Form, FormType } from '../../forms/Form';
 import { Conditional } from '../conditional.component';
@@ -21,11 +20,7 @@ import { OnChange } from '../form.types';
 import { ICheckbox } from '../../forms/Checkbox/types';
 import { Delivery } from '../delivery.component';
 import { Billing } from '../billing.component';
-
-export enum Step {
-  DELIVERY,
-  BILLING,
-}
+import { Step } from './store/process/process.types';
 
 export interface StripeCheckoutProps {
   product: ProductCardProps;

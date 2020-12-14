@@ -1,5 +1,4 @@
-import { SET_STEP, SetStepAction } from './process.types';
-import { Step } from '../../stripe-checkout.component';
+import { SET_STEP, SetStepAction, Step } from './process.types';
 
 export const setStep = (step: Step): SetStepAction => ({
   type: SET_STEP,

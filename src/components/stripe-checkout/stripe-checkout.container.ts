@@ -45,8 +45,8 @@ import {
   setPaymentReady,
   setPaymentValid,
 } from './store/payment-intent/payment-intent.actions';
-import { Step } from './stripe-checkout.component';
 import { setStep } from './store/process/process.actions';
+import { Step } from './store/process/process.types';
 
 export interface StripeCheckoutOuterProps {
   productId: string;

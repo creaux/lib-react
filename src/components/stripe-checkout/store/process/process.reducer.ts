@@ -1,5 +1,4 @@
-import { ProcessActions, ProcessState, SET_STEP } from './process.types';
-import { Step } from '../../stripe-checkout.component';
+import { ProcessActions, ProcessState, SET_STEP, Step } from './process.types';
 
 const initialState: ProcessState = {
   step: Step.DELIVERY,

@@ -1,3 +1,3 @@
-import { Step } from './stripe-checkout.component';
+import { Step } from './store/process/process.types';
 
 export type OnNextStep = (step: Step) => void;

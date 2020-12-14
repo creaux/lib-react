@@ -10,7 +10,6 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { OnDeliveryChange } from '../delivery.component';
 import { Checkbox } from '../../forms/Checkbox';
 import { Button, Type } from '../../forms/Button';
-import { Step } from './stripe-checkout.component';
 import { useDispatch, useSelector } from 'react-redux';
 import { OnValidChange } from '../../forms/Field/types';
 import { OnChange } from '../form.types';
@@ -28,8 +27,15 @@ import { setData, setTerms } from './store/conditions/conditions.actions';
 import { RootState } from './store';
 import { ICheckbox } from '../../forms/Checkbox/types';
 import { I18n, Translations } from '../i18n.component';
+import { Step } from './store/process/process.types';
+import defaultTranslations from './stripe-delivery.default.json';
 
-export interface DeliveryTranslations extends Translations {}
+export interface DeliveryTranslations extends Translations {
+  DELIVERY_HEADING: string;
+  DELIVERY_CONTACT_DETAILS_HEADING: string;
+  DELIVERY_DETAILS_HEADING: string;
+  DELIVERY_NEXT_STEP_LABEL: string;
+}
 
 export interface StripeDeliveryProps {
   deliveryHeading: string;
@@ -41,7 +47,9 @@ export const StripeDelivery: FunctionComponent<StripeDeliveryProps> = ({
   processingPayment,
 }) => {
   const dispatch = useDispatch();
-  const translations = I18n.useTranslations();
+  const translations = I18n.useTranslations<DeliveryTranslations>(
+    defaultTranslations
+  );
 
   const handleContactChange: OnContactChange = (
     contact: ContactDetailsState
@@ -163,20 +171,7 @@ export const StripeDelivery: FunctionComponent<StripeDeliveryProps> = ({
         disabled={!isDeliveryStepValid}
         onClick={() => handleNextStep(Step.BILLING)}
       >
-        <Conditional
-          condition={false}
-          when={() => (
-            <>
-              <span
-                className="spinner-grow spinner-grow-sm"
-                role="status"
-                aria-hidden="true"
-              />
-              {processingPayment}...
-            </>
-          )}
-          otherwise={() => <>Go to billing & payment</>}
-        />
+        {nextStepLabel}
       </Button>
     </div>
   );
