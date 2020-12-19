@@ -1,2 +1,2 @@
-export { StripeCheckoutContainer as StripeCheckout } from './stripe-checkout.container';
-export type { StripeCheckoutContainerProps as StripeCheckoutProps } from './stripe-checkout.container';
+export { StripeCheckout } from './stripe-checkout.component';
+export type { CheckoutProps } from './components/checkout.component';

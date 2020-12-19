@@ -4,22 +4,15 @@ import {
   CardExpiryElement,
   CardNumberElement,
 } from '@stripe/react-stripe-js';
-import { Translations } from '../i18n.component';
-import { StripeI18nProps } from './stripe.i18n';
 import stripeJs, { StripeElementChangeEvent } from '@stripe/stripe-js';
 import cx from 'classnames';
+import { useStripeTranslations } from '../hooks/translations/stripe-translations.hook';
+import { StripeTranslation } from '../hooks/translations/stripe-translations.hook';
 
-export interface StripeTranslations extends Translations {
-  STRIPE_NUMBER_PLACEHOLDER: string;
-  STRIPE_EXPIRY_PLACEHOLDER: string;
-  STRIPE_CVC_PLACEHOLDER: string;
-}
-
-export interface StripeProps extends StripeI18nProps {
-  cardNumberPlaceholder: string;
-  cardExpiryPlaceholder: string;
-  cardCvcPlaceholder: string;
+export interface StripeProps {
   onPaymentValid: (error: boolean) => void;
+  disabled: boolean;
+  onReady: () => void;
 }
 
 enum StripeFieldValidity {
@@ -38,13 +31,11 @@ const isStripeFieldPristine = (valid: StripeFieldValidity) =>
   valid === StripeFieldValidity.PRISTINE;
 
 export const Stripe: FunctionComponent<StripeProps> = ({
-  cardNumberPlaceholder,
-  cardExpiryPlaceholder,
-  cardCvcPlaceholder,
   onPaymentValid: handleValidChange,
   disabled,
   onReady: handleReady,
 }) => {
+  const translations = useStripeTranslations();
   const [valid, setValidity] = useState([
     StripeFieldValidity.PRISTINE,
     StripeFieldValidity.PRISTINE,
@@ -129,7 +120,9 @@ export const Stripe: FunctionComponent<StripeProps> = ({
         )}
         options={{
           showIcon: true,
-          placeholder: cardNumberPlaceholder,
+          placeholder: translations.get(
+            StripeTranslation.STRIPE_NUMBER_PLACEHOLDER
+          ),
           disabled,
         }}
         onChange={handleCardNumberChange}
@@ -149,7 +142,9 @@ export const Stripe: FunctionComponent<StripeProps> = ({
             }
           )}
           options={{
-            placeholder: cardExpiryPlaceholder,
+            placeholder: translations.get(
+              StripeTranslation.STRIPE_EXPIRY_PLACEHOLDER
+            ),
             disabled,
           }}
           onChange={handleCardExpiryChange}
@@ -167,7 +162,12 @@ export const Stripe: FunctionComponent<StripeProps> = ({
               'is-invalid': isStripeFieldInvalid(valid[2]),
             }
           )}
-          options={{ placeholder: cardCvcPlaceholder, disabled }}
+          options={{
+            placeholder: translations.get(
+              StripeTranslation.STRIPE_CVC_PLACEHOLDER
+            ),
+            disabled,
+          }}
           onChange={handleCardCvcChange}
           onReady={handleReadyCvc}
         />

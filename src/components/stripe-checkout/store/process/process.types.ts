@@ -1,6 +1,8 @@
 export enum Step {
   DELIVERY,
   BILLING,
+  SUCCEEDED,
+  FAILED,
 }
 
 export interface ProcessState {

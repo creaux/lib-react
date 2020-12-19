@@ -1,1 +1,1 @@
-export { Address } from './component';
+export { Address } from './address.component';

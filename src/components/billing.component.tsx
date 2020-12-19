@@ -63,18 +63,23 @@ export const Billing: FunctionComponent<BillingProps> = ({
           .value('')
           .build()
       )
+      .company(
+        Builder<IInputData>().id('company').value('').valid(false).build()
+      )
+      .vat(Builder<IInputData>().id('vat').value('').valid(false).build())
       .build()
   );
 
   useEffect(() => {
     handleBillingChange(state);
-    handleBillingValidChange(
-      (state.street.valid &&
-        state.streetNo.valid &&
-        state.postcode.valid &&
-        state.cities.valid &&
-        state.countries.valid) as boolean
-    );
+
+    const validAddress = (state.street.valid &&
+      state.streetNo.valid &&
+      state.postcode.valid &&
+      state.cities.valid &&
+      state.countries.valid) as boolean;
+
+    handleBillingValidChange(validAddress);
   }, [state, handleBillingChange, handleBillingValidChange]);
 
   const handleFieldChange: OnFieldChange<keyof IAbode> = (

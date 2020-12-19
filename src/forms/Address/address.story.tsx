@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Address, AddressProps } from './component';
+import { Address, AddressProps } from './address.component';
 import { Form, FormType } from '../Form';
 
 export const props: AddressProps = {

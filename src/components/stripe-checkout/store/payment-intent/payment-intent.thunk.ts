@@ -2,16 +2,11 @@ import { ThunkType } from '../thunk.type';
 import { Builder } from '../../../../builder';
 import { headers } from '../headers';
 import { PaymentIntentResponse } from './payment-intent.types';
-import { setSecret } from './payment-intent.actions';
-import { StripeCheckoutPay } from '../../stripe-checkout-pay.model';
+import { setPaymentProcessing, setSecret } from './payment-intent.actions';
+import { StripeCheckoutPay } from '../../dto/stripe-checkout-pay.model';
 import { Endpoints } from '../endpoints';
 import { RootState } from '../index';
-import {
-  StripeCheckoutBilling,
-  StripeCheckoutConditions,
-  StripeCheckoutDelivery,
-  StripeCheckoutModel,
-} from '../../stripe-checkout.model';
+import { StripeCheckoutDto } from '../../dto/stripe-checkout.dto';
 import {
   Stripe,
   StripeElements,
@@ -21,24 +16,32 @@ import {
   StripeError,
 } from '@stripe/stripe-js';
 import { CardNumberElement } from '@stripe/react-stripe-js';
+import { setDeliveryDisabled } from '../delivery/delivery.actions';
+import { setStep } from '../process/process.actions';
+import { Step } from '../process/process.types';
+import { StripeCheckoutDeliveryDto } from '../../dto/stripe-checkout-delivery.dto';
+import { StripeCheckoutBillingDto } from '../../dto/stripe-checkout-billing.dto';
+import { StripeCheckoutConditionsDto } from '../../dto/stripe-checkout-conditions.dto';
 
 export const fetchPaymentIntent = (): ThunkType => async (
   dispatch,
   getState
 ) => {
   try {
+    dispatch(setDeliveryDisabled(true));
+
     const state: RootState = getState();
     const checkout = Builder<StripeCheckoutPay>()
       .productId(state.product.id)
       .checkout(
-        Builder<StripeCheckoutModel>()
+        Builder<StripeCheckoutDto>()
           .forename(state.contact.forename)
           .surname(state.contact.surname)
           .email(state.contact.email)
           .phone(state.contact.phone)
           .carrier('Post')
           .delivery(
-            Builder<StripeCheckoutDelivery>()
+            Builder<StripeCheckoutDeliveryDto>()
               .street(state.delivery.street)
               .streetNo(state.delivery.streetNo)
               .postcode(state.delivery.postcode)
@@ -47,7 +50,7 @@ export const fetchPaymentIntent = (): ThunkType => async (
               .build()
           )
           .conditions(
-            Builder<StripeCheckoutConditions>()
+            Builder<StripeCheckoutConditionsDto>()
               .terms(state.conditions.terms)
               .data(state.conditions.data)
               .build()
@@ -86,12 +89,14 @@ export const fetchPaymentIntent = (): ThunkType => async (
 
 export const postPaymentIntent = (
   stripe: Stripe,
-  elements: StripeElements,
-  onError: () => void,
-  onSuccess: () => void
+  elements: StripeElements
 ): ThunkType => async (dispatch, getState) => {
+  dispatch(setPaymentProcessing(true));
+
   const state: RootState = getState();
-  const billingDetails: StripeCheckoutBilling = Builder<StripeCheckoutBilling>()
+  const billingDetails: StripeCheckoutBillingDto = Builder<
+    StripeCheckoutBillingDto
+  >()
     .phone(state.contact.phone)
     .email(state.contact.email)
     .name(`${state.contact.forename} ${state.contact.surname}`)
@@ -135,17 +140,16 @@ export const postPaymentIntent = (
     }
   );
 
+  // FIXME: WTF?
   if (!response) {
     return;
   }
 
   if (response.error) {
-    // TODO: Error page
-    onError();
+    dispatch(setStep(Step.FAILED));
   } else {
     if (response.paymentIntent?.status === 'succeeded') {
-      // TODO: Save Payment Intent Result
-      onSuccess();
+      dispatch(setStep(Step.SUCCEEDED));
     }
   }
 };

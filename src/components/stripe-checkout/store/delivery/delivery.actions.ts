@@ -1,12 +1,14 @@
 import {
-  Delivery,
+  DeliveryStore,
   SET_DELIVERY,
+  SET_DELIVERY_DISABLED,
   SET_DELIVERY_VALID,
   SetDeliveryAction,
-  SetDeliveryValidAction
+  SetDeliveryDisabledAction,
+  SetDeliveryValidAction,
 } from './delivery.types';
 
-export const setDelivery = (delivery: Delivery): SetDeliveryAction => ({
+export const setDelivery = (delivery: DeliveryStore): SetDeliveryAction => ({
   type: SET_DELIVERY,
   delivery,
 });
@@ -14,4 +16,11 @@ export const setDelivery = (delivery: Delivery): SetDeliveryAction => ({
 export const setDeliveryValid = (valid: boolean): SetDeliveryValidAction => ({
   type: SET_DELIVERY_VALID,
   valid,
+});
+
+export const setDeliveryDisabled = (
+  disabled: boolean
+): SetDeliveryDisabledAction => ({
+  type: SET_DELIVERY_DISABLED,
+  disabled,
 });

@@ -31,7 +31,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
   );
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    // Due to event pooling in react each synthetic eventy is nullified
+    // Due to event pooling in react each synthetic event is nullified
     // So it has to be cached in the variable
     const changeEvent = Builder<ChangeEvent<HTMLInputElement>>()
       .currentTarget(e.currentTarget)
@@ -41,7 +41,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
 
   useEffect(() => {
     onChange(state);
-  }, [state, onChange]);
+  }, [state.currentTarget.checked]);
 
   return (
     <div className="custom-control custom-checkbox">

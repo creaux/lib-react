@@ -12,6 +12,7 @@ const initialState: PaymentIntentState = {
   ready: false,
   valid: false,
   processing: false,
+  succeeded: undefined,
 };
 
 export function paymentIntentReducer(
