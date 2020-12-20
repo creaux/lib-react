@@ -124,7 +124,7 @@ export class ShippingContainer extends ShippingAbstractContainer {
                 Builder<IOption>()
                   .id('czechia')
                   .title('Czechia')
-                  .value('Czechia')
+                  .value('CZ')
                   .build(),
               ])
               .build()

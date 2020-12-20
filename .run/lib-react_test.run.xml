@@ -4,7 +4,7 @@
     <node-options value="" />
     <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
     <working-dir value="$PROJECT_DIR$" />
-    <jest-options value="--watch" />
+    <jest-options value="--watchAll" />
     <envs>
       <env name="SKIP_PREFLIGHT_CHECK" value="true" />
     </envs>
