@@ -52,7 +52,7 @@
     "react-use-gesture": "7.0.15",
     "recompose": "0.30.0",
     "require-context": "1.1.0",
-    "semantic-release": "15.13.17",
+    "semantic-release": "17.2.3",
     "serve": "10.1.2",
     "svg-inline-react": "3.1.0",
     "typescript": "3.9.6"
