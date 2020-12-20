@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useContext } from 'react';
 import defaultTranslations from './en.json';
-import { FormTypeContext, isNormalForm } from '../Form';
+import { FormTypeContext, isNormalFloatingForm, isNormalForm } from '../Form';
 import { Conditional } from '../../components/conditional.component';
 import { I18n, Translations } from '../../components/i18n.component';
 import { IContact } from './types';
@@ -49,7 +49,7 @@ export const Contact: FunctionComponent<ContactProps> = ({
             >
               <Email
                 label={
-                  isNormalForm(type)
+                  isNormalFloatingForm(type)
                     ? translations.CONTACT_EMAIL_LABEL
                     : undefined
                 }
@@ -57,7 +57,7 @@ export const Contact: FunctionComponent<ContactProps> = ({
                 value={email.value}
                 onChange={handleFieldChange('email')}
                 placeholder={
-                  isNormalForm(type)
+                  isNormalFloatingForm(type)
                     ? translations.CONTACT_EMAIL_PLACEHOLDER
                     : translations.CONTACT_EMAIL_LABEL
                 }
@@ -77,7 +77,7 @@ export const Contact: FunctionComponent<ContactProps> = ({
             >
               <Phone
                 label={
-                  isNormalForm(type)
+                  isNormalFloatingForm(type)
                     ? translations.CONTACT_NUMBER_LABEL
                     : undefined
                 }
@@ -85,7 +85,7 @@ export const Contact: FunctionComponent<ContactProps> = ({
                 value={number.value}
                 onChange={handleFieldChange('number')}
                 placeholder={
-                  isNormalForm(type)
+                  isNormalFloatingForm(type)
                     ? translations.CONTACT_NUMBER_PLACEHOLDER
                     : translations.CONTACT_NUMBER_LABEL
                 }

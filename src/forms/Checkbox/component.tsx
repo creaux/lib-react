@@ -1,48 +1,62 @@
-import React, { FunctionComponent } from 'react';
+import React, {
+  ChangeEvent,
+  FunctionComponent,
+  useEffect,
+  useState,
+} from 'react';
 import { OnChange } from '../../components/form.types';
-import { CheckboxBuilder, ICheckbox } from './types';
+import { Builder } from '../../builder';
 
-export class CheckboxPropsBuilder extends CheckboxBuilder {
-  private onChange!: OnChange;
-  private disabled!: boolean;
-
-  withOnChange(onChange: OnChange) {
-    this.onChange = onChange;
-  }
-
-  build(): CheckboxProps {
-    return {
-      ...super.build(),
-      onChange: this.onChange,
-      disabled: this.disabled,
-    };
-  }
-}
-
-export interface CheckboxProps extends ICheckbox {
-  onChange: OnChange;
+export interface CheckboxProps {
+  onChange: OnChange<HTMLInputElement>;
+  id: string;
+  title: string;
+  checked?: boolean;
   disabled: boolean;
 }
 
 export const Checkbox: FunctionComponent<CheckboxProps> = ({
-  checked,
+  checked = false,
   id,
   title,
-  onChange: handleChange,
+  onChange,
   disabled,
-}) => (
-  <div className="custom-control custom-checkbox">
-    <input
-      className="custom-control-input"
-      type="checkbox"
-      checked={checked}
-      id={id}
-      onChange={handleChange}
-      name={id}
-      disabled={disabled}
-    />
-    <label className="custom-control-label" htmlFor={id}>
-      {title}
-    </label>
-  </div>
-);
+}) => {
+  const [state, setState] = useState<ChangeEvent<HTMLInputElement>>(
+    Builder<ChangeEvent<HTMLInputElement>>()
+      .currentTarget(
+        Builder<HTMLInputElement>().title(title).id(id).checked(checked).build()
+      )
+      .build()
+  );
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    // Due to event pooling in react each synthetic event is nullified
+    // So it has to be cached in the variable
+    const changeEvent = Builder<ChangeEvent<HTMLInputElement>>()
+      .currentTarget(e.currentTarget)
+      .build();
+    setState(changeEvent);
+  };
+
+  useEffect(() => {
+    onChange(state);
+  }, [state.currentTarget.checked]);
+
+  return (
+    <div className="custom-control custom-checkbox">
+      <input
+        className="custom-control-input"
+        type="checkbox"
+        checked={state.currentTarget.checked}
+        id={state.currentTarget.id}
+        onChange={handleChange}
+        name={state.currentTarget.id}
+        disabled={disabled}
+      />
+      <label className="custom-control-label" htmlFor={id}>
+        {title}
+      </label>
+    </div>
+  );
+};
