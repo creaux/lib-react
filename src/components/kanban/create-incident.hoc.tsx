@@ -1,4 +1,4 @@
-import React, { ComponentType, forwardRef, ReactNode } from 'react';
+import React, { ComponentType, forwardRef } from 'react';
 import {
   DraggableProvidedDraggableProps,
   DraggableProvidedDragHandleProps,

@@ -1,0 +1,9 @@
+{
+  "DELIVERY_HEADING": "Delivery details",
+  "DELIVERY_CONTACT_DETAILS_HEADING": "Contact details",
+  "DELIVERY_DETAILS_HEADING": "Delivery details",
+  "DELIVERY_NEXT_STEP_LABEL": "Go to Payment",
+  "DELIVERY_TERMS_LABEL": "I consent I agree with terms and conditions",
+  "DELIVERY_DATA_LABEL": "I consent for data collection",
+  "DELIVERY_NEXT_STEP_DISABLED_LABEL": "Moving to payment..."
+}
