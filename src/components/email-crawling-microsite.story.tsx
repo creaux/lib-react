@@ -4,7 +4,7 @@ import {
   EmailCrawlingMicrosite,
   EmailCrawlingMicrositeProps,
 } from './email-crawling-microsite.component';
-import { asBackgroundProps } from './image.component.mock';
+import { asBackgroundProps } from './bits/visual/image/image.component.mock';
 
 const stories = storiesOf(
   'Atomic Design/Templates/EmailCrawlingMicrosite',

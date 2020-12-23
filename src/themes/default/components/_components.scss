@@ -1,10 +1,10 @@
 @import '../../../components/cycler';
-@import '../../../components/image.component';
+@import '../../../components/bits/visual/image/image.component';
 @import '../../../components/sidescription';
 @import '../../../components/steps';
 @import '../../../components/viewport';
 @import '../../../components/headline';
-@import '../../../components/product-card';
+@import '../../../components/composable/card/card';
 @import '../../../components/shipping';
 @import '../../../components/pad';
 @import '../../../components/dots';
@@ -14,3 +14,6 @@
 @import '../../../components/navigation-toggler';
 @import '../../../components/gloom';
 @import '../../../components/aspect';
+@import '../../../components/explicit/stripe/stripe';
+@import '../../../components/explicit/checkout/collect/collect';
+@import '../../../components/bits/divider/divider';

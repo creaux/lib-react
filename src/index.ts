@@ -4,10 +4,10 @@
 //
 // Atoms
 export { Cycler } from './components/cycler.component';
-export { Guard } from './components/guard.component';
-export { Image } from './components/image.component';
-export { ImagePropsBuilder } from './components/image.props.builder';
-export type { ImageProps } from './components/image.component';
+export { Guard } from './components/utility/guard.component';
+export { Image } from './components/bits/visual/image/image.component';
+export { ImagePropsBuilder } from './components/bits/visual/image/image.props.builder';
+export type { ImageProps } from './components/bits/visual/image/image.component';
 export { Sidescription } from './components/sidescription.component';
 export { Render } from './components/render.component';
 export { Gloom } from './components/gloom.component';
@@ -20,8 +20,8 @@ export { Carousel } from './components/carousel.component';
 export type { CarouselProps } from './components/carousel.component';
 export { CarouselPropsBuilder } from './components/carousel.builder';
 export { List } from './components/list.component';
-export { Conditional } from './components/conditional.component';
-export type { ConditionalProps } from './components/conditional.component';
+export { Conditional } from './components/utility/conditional.component';
+export type { ConditionalProps } from './components/utility/conditional.component';
 export type {
   CollapsableProps,
   CollapsableElement,
@@ -40,16 +40,23 @@ export type {
   DeliveryProps,
   OnDeliveryChange,
 } from './components/delivery.component';
-export { DeliveryStep } from './components/delivery-step/delivery-step.component';
-export type { DeliveryStepProps } from './components/delivery-step/delivery-step.component';
+export { DeliveryStep } from './components/explicit/checkout/delivery-step/delivery-step.component';
+export type { DeliveryStepProps } from './components/explicit/checkout/delivery-step/delivery-step.component';
 
 // Billing Step
-export { BillingStep } from './components/billing-step/billing-step.component';
-export type { BillingStepProps } from './components/billing-step/billing-step.component';
+export { BillingStep } from './components/explicit/checkout/billing-step/billing-step.component';
+export type { BillingStepProps } from './components/explicit/checkout/billing-step/billing-step.component';
+
+// Collect Step
+export { Collect } from './components/explicit/checkout/collect/collect.component';
+export type {
+  CollectProps,
+  CollectProduct,
+} from './components/explicit/checkout/collect/collect.component';
 
 // Stripe
-export { Stripe } from './components/stripe/stripe.component';
-export type { StripeProps } from './components/stripe/stripe.component';
+export { Stripe } from './components/explicit/stripe/stripe.component';
+export type { StripeProps } from './components/explicit/stripe/stripe.component';
 
 // Navigation
 export {
@@ -60,8 +67,10 @@ export { NavigationPropsBuilder } from './components/navigation.props.builder';
 export { NavigationBrand } from './components/navigation-brand.component';
 export type { NavigationBrandProps } from './components/navigation-brand.component';
 export { NavigationBrandPropsBuilder } from './components/navigation-brand.props.builder';
-export { ProductCard } from './components/product-card.component';
-export type { ProductCardProps } from './components/product-card.component';
+// Card
+export { Card } from './components/composable/card/card.component';
+export type { CardProps } from './components/composable/card/card.component';
+// Navigation
 export { NavigationButtons } from './components/navigation-buttons.component';
 export type { NavigationButtonsProps } from './components/navigation-buttons.component';
 export { NavigationButtonsPropsBuilder } from './components/navigation-buttons.props.builder';
@@ -178,7 +187,7 @@ export {
   BreakpointCoordinatesBuilder,
   CoordinatesBuilder,
 } from './components/breakpoint-coordinates.builder';
-export { ImageVariants } from './components/image.types';
+export { ImageVariants } from './components/bits/visual/image/image.types';
 export type { BreakpointValue } from './components/breakpoint-value.type';
 export { BreakpointValueBuilder } from './components/breakpoint-value.type';
 export { Builder } from './builder';
@@ -192,4 +201,4 @@ export type {
   Languages,
 } from './components/i18n.component';
 export type { Translations } from './components/i18n.component';
-export { Environment } from './env';
+export { Environment, environment } from './env';

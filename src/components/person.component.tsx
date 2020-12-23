@@ -6,7 +6,7 @@ import {
   isNormalForm,
 } from '../forms/Form';
 import { Text } from '../forms/Field/Fields/Text';
-import { Conditional } from './conditional.component';
+import { Conditional } from './utility/conditional.component';
 
 export interface PersonProps extends PersonI18nProps {
   forenameLabel: string;

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { faFileInvoiceDollar, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Conditional } from './conditional.component';
+import { Conditional } from './utility/conditional.component';
 import { Checkbox } from '../forms/Checkbox';
 import { Abode } from '../forms/Abode';
 import { ShippingI18nProps } from './shipping.i18n';

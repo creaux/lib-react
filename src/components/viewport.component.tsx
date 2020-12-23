@@ -40,16 +40,16 @@ export const Viewport: FunctionComponent<ViewportProps> = ({
       '--Viewport__breakpointCoordinates-xl-y',
     ],
     [
-      get(breakpointCoordinates, ['xs', 'x']),
-      get(breakpointCoordinates, ['xs', 'y']),
-      get(breakpointCoordinates, ['sm', 'x']),
-      get(breakpointCoordinates, ['sm', 'y']),
-      get(breakpointCoordinates, ['md', 'x']),
-      get(breakpointCoordinates, ['md', 'y']),
-      get(breakpointCoordinates, ['lg', 'x']),
-      get(breakpointCoordinates, ['lg', 'y']),
-      get(breakpointCoordinates, ['xl', 'x']),
-      get(breakpointCoordinates, ['xl', 'y']),
+      get(breakpointCoordinates, ['xs', 'x'], 'center'),
+      get(breakpointCoordinates, ['xs', 'y'], 'center'),
+      get(breakpointCoordinates, ['sm', 'x'], 'center'),
+      get(breakpointCoordinates, ['sm', 'y'], 'center'),
+      get(breakpointCoordinates, ['md', 'x'], 'center'),
+      get(breakpointCoordinates, ['md', 'y'], 'center'),
+      get(breakpointCoordinates, ['lg', 'x'], 'center'),
+      get(breakpointCoordinates, ['lg', 'y'], 'center'),
+      get(breakpointCoordinates, ['xl', 'x'], 'center'),
+      get(breakpointCoordinates, ['xl', 'y'], 'center'),
     ]
   );
 

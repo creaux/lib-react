@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { Alpha } from '../forms/Field';
-import { Conditional } from './conditional.component';
+import { Conditional } from './utility/conditional.component';
 import {
   FormTypeContext,
   isNormalFloatingForm,
