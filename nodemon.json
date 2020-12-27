@@ -1,7 +1,7 @@
 {
   "verbose": false,
   "ignore": ["build/*", ".storybook/*", "node_modules/*", ".run/*"],
-  "watch": ["src/*.ts", "src/*.tsx", "src/*.json"],
+  "watch": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json"],
   "ext": "ts,tsx",
   "exec": "npm run lib"
 }
