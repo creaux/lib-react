@@ -6,6 +6,7 @@
   "homepage": "http://pyxis.media",
   "license": "MIT",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
   "files": [
     "build/**/*",
     "default.theme.css"
