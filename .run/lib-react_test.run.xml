@@ -4,6 +4,18 @@
     <node-options value="" />
     <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
     <working-dir value="$PROJECT_DIR$" />
+    <jest-options value="--watch" />
+    <envs>
+      <env name="SKIP_PREFLIGHT_CHECK" value="true" />
+    </envs>
+    <scope-kind value="ALL" />
+    <method v="2" />
+  </configuration>
+  <configuration default="false" name="lib-react : test" type="JavaScriptTestRunnerJest">
+    <node-interpreter value="project" />
+    <node-options value="" />
+    <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+    <working-dir value="$PROJECT_DIR$" />
     <jest-options value="--watchAll" />
     <envs>
       <env name="SKIP_PREFLIGHT_CHECK" value="true" />
