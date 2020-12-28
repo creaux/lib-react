@@ -21,7 +21,7 @@ export const Price: FunctionComponent<PriceProps> = ({
   );
   return (
     <span className="h1 font-weight-bold">
-      {amount.format(parseInt(children))}
+      {amount.format(parseInt(children, 10))}
     </span>
   );
 };
