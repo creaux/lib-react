@@ -9,7 +9,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Guard } from './guard.component';
+import { Guard } from './utility/guard.component';
 import { NavigationBrand } from './navigation-brand.component';
 import {
   NavigationItems,

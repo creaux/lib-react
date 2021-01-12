@@ -6,7 +6,7 @@ import {
   SignpostElement,
 } from './signpost.component';
 import { action } from '@storybook/addon-actions';
-import { ImagePropsBuilder } from './image.props.builder';
+import { ImagePropsBuilder } from './bits/visual/image/image.props.builder';
 import { Builder } from '../builder';
 
 const props = Builder<SignpostComponentProps>()

@@ -3,7 +3,7 @@ import { Alpha, Number, Select, Text } from '../Field';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { IAddress } from './address.types';
 import { FormTypeContext, isNormalFloatingForm, isNormalForm } from '../Form';
-import { Conditional } from '../../components/conditional.component';
+import { Conditional } from '../../components/utility/conditional.component';
 import {
   AddressTranslation,
   useAddressTranslations,

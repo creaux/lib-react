@@ -22,7 +22,6 @@ describe('Guard', () => {
 
   it('should not render anything when children is not present', () => {
     component = shallow(<Guard Component={Component} />);
-    console.log(component.debug());
     expect(component).to.be.blank();
   });
 

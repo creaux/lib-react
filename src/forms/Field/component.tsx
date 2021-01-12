@@ -11,7 +11,7 @@ import {
   isOnplaceInlineFloatingForm,
 } from '../Form/component';
 import cx from 'classnames';
-import { Conditional } from '../../components/conditional.component';
+import { Conditional } from '../../components/utility/conditional.component';
 import { Message } from './hoc/validators/types';
 import { Input } from './Basics/Input/component';
 import { Switch } from '../../components/switch.component';

@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Modal as Dialog } from 'react-bootstrap';
 import { Button, Variants } from '../forms/Button';
 import { ModalI18nProps } from './modal.i18n';
-import { Conditional } from './conditional.component';
+import { Conditional } from './utility/conditional.component';
 
 export interface ModalProps extends ModalI18nProps {
   title: string;

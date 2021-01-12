@@ -1,6 +1,6 @@
 import React, { ComponentType, FunctionComponent } from 'react';
 import { Column, ColumnProps } from './column.component';
-import { Builder } from '../../builder';
+import { Builder } from '../../../builder';
 import { DragDropContext, Draggable, DropResult } from 'react-beautiful-dnd';
 import { Column as IColumn, Incident, KanbanState } from './kanban.state';
 

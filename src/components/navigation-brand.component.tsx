@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import cx from 'classnames';
-import { Guard } from './guard.component';
+import { Guard } from './utility/guard.component';
 import { Render } from './render.component';
 
 export interface NavigationBrandProps {

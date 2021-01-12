@@ -1,7 +1,7 @@
 import { ImageVariants } from './image.types';
 import { ReactNode } from 'react';
 import { ImageProps } from './image.component';
-import { BreakpointCoordinates } from './breakpoint-coordinates.type';
+import { BreakpointCoordinates } from '../../../breakpoint-coordinates.type';
 
 export class ImagePropsBuilder {
   private src!: string;

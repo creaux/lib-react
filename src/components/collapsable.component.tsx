@@ -21,10 +21,10 @@ export const Collapsable: FunctionComponent<CollapsableProps> = ({
       {elements.map(({ title, description }: CollapsableElement, i: number) => (
         <Card>
           <Card.Header className="d-flex justify-content-between align-items-center">
-            <Accordion.Toggle as="a" variant="link" eventKey={i.toString()}>
+            <Accordion.Toggle as="a" eventKey={i.toString()}>
               <strong>{title}</strong>
             </Accordion.Toggle>
-            <Accordion.Toggle as="div" variant="link" eventKey={i.toString()}>
+            <Accordion.Toggle as="div" eventKey={i.toString()}>
               <CollapsableChevron eventKey={i.toString()} />
             </Accordion.Toggle>
           </Card.Header>

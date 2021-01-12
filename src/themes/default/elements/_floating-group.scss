@@ -10,6 +10,12 @@ $animation-duration: .3s;
   transform: translateY(0);
 }
 
+@include media-breakpoint-down(md) {
+  .floating-group.form-control {
+    width: 100%;
+  }
+}
+
 .floating-group.form-control {
   padding-bottom: .1rem;
 

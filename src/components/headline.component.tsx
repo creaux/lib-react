@@ -2,7 +2,7 @@ import React, { FunctionComponent, ReactNode } from 'react';
 import { BreakpointCoordinates } from './breakpoint-coordinates.type';
 import { useCssRegister } from '../hooks/use-css-register.hook';
 import { get } from 'lodash';
-import { Guard } from './guard.component';
+import { Guard } from './utility/guard.component';
 import { Gloom } from './gloom.component';
 import { BreakpointValue } from './breakpoint-value.type';
 import cx from 'classnames';
@@ -48,21 +48,21 @@ export const Headline: FunctionComponent<HeadlineProps> = ({
       '--bw-xl',
     ],
     [
-      get(breakpointCoordinates, ['xs', 'x']),
-      get(breakpointCoordinates, ['xs', 'y']),
-      get(breakpointCoordinates, ['sm', 'x']),
-      get(breakpointCoordinates, ['sm', 'y']),
-      get(breakpointCoordinates, ['md', 'x']),
-      get(breakpointCoordinates, ['md', 'y']),
-      get(breakpointCoordinates, ['lg', 'x']),
-      get(breakpointCoordinates, ['lg', 'y']),
-      get(breakpointCoordinates, ['xl', 'x']),
-      get(breakpointCoordinates, ['xl', 'y']),
-      get(breakpointWidth, ['xs']),
-      get(breakpointWidth, ['sm']),
-      get(breakpointWidth, ['md']),
-      get(breakpointWidth, ['lg']),
-      get(breakpointWidth, ['xl']),
+      get(breakpointCoordinates, ['xs', 'x'], 'center'),
+      get(breakpointCoordinates, ['xs', 'y'], 'center'),
+      get(breakpointCoordinates, ['sm', 'x'], 'center'),
+      get(breakpointCoordinates, ['sm', 'y'], 'center'),
+      get(breakpointCoordinates, ['md', 'x'], 'center'),
+      get(breakpointCoordinates, ['md', 'y'], 'center'),
+      get(breakpointCoordinates, ['lg', 'x'], 'center'),
+      get(breakpointCoordinates, ['lg', 'y'], 'center'),
+      get(breakpointCoordinates, ['xl', 'x'], 'center'),
+      get(breakpointCoordinates, ['xl', 'y'], 'center'),
+      get(breakpointWidth, ['xs'], 'center'),
+      get(breakpointWidth, ['sm'], 'center'),
+      get(breakpointWidth, ['md'], 'center'),
+      get(breakpointWidth, ['lg'], 'center'),
+      get(breakpointWidth, ['xl'], 'center'),
     ]
   );
 

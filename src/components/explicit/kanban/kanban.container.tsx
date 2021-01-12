@@ -1,5 +1,5 @@
 import React, { ComponentType, FunctionComponent } from 'react';
-import { Builder } from '../../builder';
+import { Builder } from '../../../builder';
 import {
   Kanban as KanbanComponent,
   KanbanProps as KanbanComponentProps,

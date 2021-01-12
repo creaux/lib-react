@@ -1,13 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Builder } from '../../builder';
+import { Builder } from '../../../builder';
 import { Kanban, KanbanProps } from './kanban.container';
 import { Task, TaskProps } from './task.component';
 import { Column } from './kanban.state';
 import { KanbanConfirm, KanbanConfirmProps } from './kanban-confirm.container';
+import { createKind, Kinds } from '../../structure.enum';
 
 export default Builder<Meta>()
-  .title('Atomic Design/Organisms/Kanban')
+  .title(createKind(Kinds.EXPLICIT, 'Kanban'))
   .component(Kanban)
   .build();
 

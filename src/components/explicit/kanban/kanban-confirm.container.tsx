@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Builder } from '../../builder';
-import { Modal, ModalProps } from '../modal';
+import { Builder } from '../../../builder';
+import { Modal, ModalProps } from '../../modal';
 import { KanbanProps as KanbanContainerProps } from './kanban.container';
 import { KanbanProps, Kanban } from './kanban.component';
 import { useDragAndDrop } from './use-drag-and-drop.hook';

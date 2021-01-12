@@ -1,9 +1,9 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { ImageVariants } from './image.types';
 import cx from 'classnames';
-import { useCssRegister } from '../hooks/use-css-register.hook';
+import { useCssRegister } from '../../../../hooks/use-css-register.hook';
 import { get } from 'lodash';
-import { BreakpointCoordinates } from './breakpoint-coordinates.type';
+import { BreakpointCoordinates } from '../../../breakpoint-coordinates.type';
 
 export interface ImageElement {
   src: string;
@@ -41,16 +41,16 @@ export const Image: FunctionComponent<ImageProps> = ({
       '--background-position-xl-y',
     ],
     [
-      get(backgroundPositions, ['xs', 'x']),
-      get(backgroundPositions, ['xs', 'y']),
-      get(backgroundPositions, ['sm', 'x']),
-      get(backgroundPositions, ['sm', 'y']),
-      get(backgroundPositions, ['md', 'x']),
-      get(backgroundPositions, ['md', 'y']),
-      get(backgroundPositions, ['lg', 'x']),
-      get(backgroundPositions, ['lg', 'y']),
-      get(backgroundPositions, ['xl', 'x']),
-      get(backgroundPositions, ['xl', 'y']),
+      get(backgroundPositions, ['xs', 'x'], 'center'),
+      get(backgroundPositions, ['xs', 'y'], 'center'),
+      get(backgroundPositions, ['sm', 'x'], 'center'),
+      get(backgroundPositions, ['sm', 'y'], 'center'),
+      get(backgroundPositions, ['md', 'x'], 'center'),
+      get(backgroundPositions, ['md', 'y'], 'center'),
+      get(backgroundPositions, ['lg', 'x'], 'center'),
+      get(backgroundPositions, ['lg', 'y'], 'center'),
+      get(backgroundPositions, ['xl', 'x'], 'center'),
+      get(backgroundPositions, ['xl', 'y'], 'center'),
     ]
   );
   const attrs =

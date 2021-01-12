@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import { List } from './list.component';
 import { ListProps } from './list.component';
-import { Guard } from './guard.component';
+import { Guard } from './utility/guard.component';
 import { Steps } from './steps.component';
 import { StepsProps } from './steps.component';
 

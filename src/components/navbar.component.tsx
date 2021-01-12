@@ -73,9 +73,10 @@ export const Navbar: FunctionComponent<NavbarProps> = ({
   areButtons,
   onButtonClick: handleButtonClick,
 }) => {
-  const translations: Map<string, string> = I18n.useTranslations<
-    NavbarTranslations
-  >(defaultTranslations);
+  const translations: Map<
+    string,
+    string
+  > = I18n.useTranslations<NavbarTranslations>(defaultTranslations);
 
   const navigation = Builder<NavigationProps>()
     .background(dark ? BackgroundColor.DARK : BackgroundColor.LIGHT)

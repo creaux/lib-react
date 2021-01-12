@@ -3,7 +3,7 @@ import { Address } from '../Address';
 import { Company } from '../../components/company';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
 import { IAbode } from './types';
-import { Conditional } from '../../components/conditional.component';
+import { Conditional } from '../../components/utility/conditional.component';
 import { IInput } from '../Field/types';
 
 export interface AbodeProps extends IAbode {

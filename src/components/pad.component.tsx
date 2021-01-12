@@ -14,7 +14,7 @@ import React, {
 import { Dots } from './dots.component';
 import { provideIsTouchDevice } from './provide-is-touch-device.hoc';
 import { useStateRef } from '../hooks/use-current-state.hook';
-import { Conditional } from './conditional.component';
+import { Conditional } from './utility/conditional.component';
 import {
   backgroundColorMapper,
   borderColorMapper,

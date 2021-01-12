@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useContext } from 'react';
 import defaultTranslations from './en.json';
 import { FormTypeContext, isNormalFloatingForm, isNormalForm } from '../Form';
-import { Conditional } from '../../components/conditional.component';
+import { Conditional } from '../../components/utility/conditional.component';
 import { I18n, Translations } from '../../components/i18n.component';
 import { IContact } from './types';
 import { OnFieldChange, OnValidFieldChange } from '../../components/form.types';
