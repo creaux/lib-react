@@ -7,7 +7,6 @@ import { ImageVariants } from '../../../bits/visual/image/image.types';
 import { Name } from '../../../bits/typographical/name.component';
 import { Price } from '../../../bits/typographical/price.component';
 import { Brand } from '../../../bits/typographical/brand.component';
-import { Button } from '../../../../forms/Button/component';
 
 export interface CollectProduct {
   id: string;

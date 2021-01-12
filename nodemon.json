@@ -3,5 +3,5 @@
   "ignore": ["build/*", ".storybook/*", "node_modules/*", ".run/*"],
   "watch": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json"],
   "ext": "ts,tsx",
-  "exec": "npm run lib"
+  "exec": "npm run lib && npm pack"
 }
