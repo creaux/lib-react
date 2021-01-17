@@ -1,8 +1,10 @@
+export { ICheckbox } from './forms/Checkbox/types';
 // Here please add each component which should be exposed
 //
 // Others
 //
 // Atoms
+
 export { Cycler } from './components/cycler.component';
 export { Guard } from './components/utility/guard.component';
 export { Image } from './components/bits/visual/image/image.component';
