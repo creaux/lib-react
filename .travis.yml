@@ -12,7 +12,7 @@ jobs:
   include:
     # Define the release stage that runs semantic-release
     - stage: release
-      node_js: 10.15.3
+      node_js: 12.13
       # Advanced: optionally overwrite your default `script` step to skip the tests
       # script: skip
       deploy:
