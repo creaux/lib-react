@@ -1,0 +1,29 @@
+{
+  "plugins": [
+    {
+      "name": "@zeplin/cli-connect-react-plugin"
+    },
+    {
+      "name": "@zeplin/cli-connect-storybook-plugin",
+      "config": {
+        "url": "http://0.0.0.0:9001/",
+        "format": "new",
+        "startScript": "storybook"
+      }
+    }
+  ],
+  "projects": [
+    "6046a5e594128a11971b98e8"
+  ],
+  "components": [
+    {
+      "path": "src/forms/Field/Basics/Input/component.tsx",
+      "zeplinIds": [
+        "6046a8abe54624a7ee62dc04"
+      ]
+    }
+  ],
+  "github": {
+    "repository": "creaux/lib-react"
+  }
+}

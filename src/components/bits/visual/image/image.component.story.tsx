@@ -7,7 +7,10 @@ import {
   BreakpointCoordinatesBuilder,
   CoordinatesBuilder,
 } from '../../../breakpoint-coordinates.builder';
-import { createKind, Kinds } from '../../../structure.enum';
+import {
+  createFunctionalityDesign,
+  FunctionalityDesignKind,
+} from '../../../structure.enum';
 
 const imagePropsAsImage = new ImagePropsBuilder()
   .withSrc('https://picsum.photos/id/251/640/480')
@@ -42,7 +45,10 @@ const imagePropsAsBackgroundWithoutPosition = new ImagePropsBuilder()
   .withVariant(ImageVariants.BACKGROUND)
   .build();
 
-const story = storiesOf(createKind(Kinds.BITS, 'Image'), module);
+const story = storiesOf(
+  createFunctionalityDesign(FunctionalityDesignKind.BITS, 'Image'),
+  module
+);
 
 story.add('as img', () => <Image {...imagePropsAsImage} />);
 

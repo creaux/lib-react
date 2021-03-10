@@ -1,11 +1,16 @@
 import { Builder } from '../../../../builder';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { createKind, Kinds } from '../../../structure.enum';
+import {
+  createFunctionalityDesign,
+  FunctionalityDesignKind,
+} from '../../../structure.enum';
 import { DeliveryStep, DeliveryStepProps } from './delivery-step.component';
 import React from 'react';
 
 export default Builder<Meta>()
-  .title(createKind(Kinds.EXPLICIT, 'Delivery Step'))
+  .title(
+    createFunctionalityDesign(FunctionalityDesignKind.EXPLICIT, 'Delivery Step')
+  )
   .component(DeliveryStep)
   .build();
 
