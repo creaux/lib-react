@@ -3,12 +3,15 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { Builder } from '../../../../builder';
 import { Collect, CollectProduct, CollectProps } from './collect.component';
-import { createKind, Kinds } from '../../../structure.enum';
+import {
+  createFunctionalityDesign,
+  FunctionalityDesignKind,
+} from '../../../structure.enum';
 import { Default as DeliveryStepDefault } from '../delivery-step/delivery-step.story';
 import { DeliveryStepProps } from '../delivery-step/delivery-step.component';
 
 export default Builder<Meta>()
-  .title(createKind(Kinds.EXPLICIT, 'Collect'))
+  .title(createFunctionalityDesign(FunctionalityDesignKind.EXPLICIT, 'Collect'))
   .component(Collect)
   .build();
 

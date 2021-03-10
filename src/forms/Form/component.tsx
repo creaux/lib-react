@@ -45,7 +45,7 @@ export function isOnplaceInlineFloatingForm(type: FormType) {
   return isOnplaceForm(type) || isInlineForm(type) || isFloatingForm(type);
 }
 
-interface FormProps {
+export interface FormProps {
   children: ReactNode;
   type: FormType;
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;

@@ -5,10 +5,13 @@ import { Kanban, KanbanProps } from './kanban.container';
 import { Task, TaskProps } from './task.component';
 import { Column } from './kanban.state';
 import { KanbanConfirm, KanbanConfirmProps } from './kanban-confirm.container';
-import { createKind, Kinds } from '../../structure.enum';
+import {
+  createFunctionalityDesign,
+  FunctionalityDesignKind,
+} from '../../structure.enum';
 
 export default Builder<Meta>()
-  .title(createKind(Kinds.EXPLICIT, 'Kanban'))
+  .title(createFunctionalityDesign(FunctionalityDesignKind.EXPLICIT, 'Kanban'))
   .component(Kanban)
   .build();
 

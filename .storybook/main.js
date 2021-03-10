@@ -13,6 +13,8 @@ module.exports = {
     '@storybook/addon-storysource',
     '@storybook/addon-links',
     'storybook-design-token',
+    "storybook-zeplin/register",
+    '@geometricpanda/storybook-addon-badges/register'
   ],
   stories: [
     '../src/components/**/*.story.(tsx|mdx)',

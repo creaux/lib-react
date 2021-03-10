@@ -10,10 +10,13 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { Collect } from '../../explicit/checkout/collect/collect.component';
 import { Name } from '../../bits/typographical/name.component';
 import { Price } from '../../bits/typographical/price.component';
-import { createKind, Kinds } from '../../structure.enum';
+import {
+  createFunctionalityDesign,
+  FunctionalityDesignKind,
+} from '../../structure.enum';
 
 export default Builder<Meta>()
-  .title(createKind(Kinds.COMPOSABLE, 'Card'))
+  .title(createFunctionalityDesign(FunctionalityDesignKind.COMPOSABLE, 'Card'))
   .component(Collect)
   .parameters({
     status: 'beta',
