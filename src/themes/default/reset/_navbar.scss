@@ -1,7 +1,0 @@
-// To fix vertical align of text
-.navbar-brand::after {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-}

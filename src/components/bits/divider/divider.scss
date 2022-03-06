@@ -1,15 +1,15 @@
 .divider {
-  display: block;
   position: absolute;
   top: 50%;
-  margin: 0;
-  width: 100%;
   z-index: 0;
+  display: block;
+  width: 100%;
+  margin: 0;
 }
 
 .divider-title {
-  background-color: white;
   position: relative;
   z-index: 1;
   display: inline-block;
+  background-color: white;
 }

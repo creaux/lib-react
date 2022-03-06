@@ -35,36 +35,36 @@ $backgroundPositions: (
 
 .image-background {
   width: 100%;
-  background-size: cover;
   height: 100%;
+  background-size: cover;
 
   @include media-breakpoint-down(xs) {
-    background-position-x: map-get-second($backgroundPositions, 'xs', 'x');
-    background-position-y: map-get-second($backgroundPositions, 'xs', 'y');
+    background-position-x: map-get-second($backgroundPositions, "xs", "x");
+    background-position-y: map-get-second($backgroundPositions, "xs", "y");
   }
 
   @include media-breakpoint-up(xs) {
-    background-position-x: map-get-second($backgroundPositions, 'xs', 'x');
-    background-position-y: map-get-second($backgroundPositions, 'xs', 'y');
+    background-position-x: map-get-second($backgroundPositions, "xs", "x");
+    background-position-y: map-get-second($backgroundPositions, "xs", "y");
   }
 
   @include media-breakpoint-up(sm) {
-    background-position-x: map-get-second($backgroundPositions, 'sm', 'x');
-    background-position-y: map-get-second($backgroundPositions, 'sm', 'y');
+    background-position-x: map-get-second($backgroundPositions, "sm", "x");
+    background-position-y: map-get-second($backgroundPositions, "sm", "y");
   }
 
   @include media-breakpoint-up(md) {
-    background-position-x: map-get-second($backgroundPositions, 'md', 'x');
-    background-position-y: map-get-second($backgroundPositions, 'md', 'y');
+    background-position-x: map-get-second($backgroundPositions, "md", "x");
+    background-position-y: map-get-second($backgroundPositions, "md", "y");
   }
 
   @include media-breakpoint-up(lg) {
-    background-position-x: map-get-second($backgroundPositions, 'lg', 'x');
-    background-position-y: map-get-second($backgroundPositions, 'lg', 'y');
+    background-position-x: map-get-second($backgroundPositions, "lg", "x");
+    background-position-y: map-get-second($backgroundPositions, "lg", "y");
   }
 
   @include media-breakpoint-up(xl) {
-    background-position-x: map-get-second($backgroundPositions, 'xl', 'x');
-    background-position-y: map-get-second($backgroundPositions, 'xl', 'y');
+    background-position-x: map-get-second($backgroundPositions, "xl", "x");
+    background-position-y: map-get-second($backgroundPositions, "xl", "y");
   }
 }

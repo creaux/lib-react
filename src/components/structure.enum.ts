@@ -14,8 +14,13 @@ export function createFunctionalityDesign(
 
 export enum DesignSystemKind {
   Field = 'Field',
+  Navbar = 'Navbar',
 }
 
-export function createDesignSystemKind(kind: DesignSystemKind, name: string) {
-  return `Design System/${kind}/${name}`;
+export function createDesignSystemKind(kind: DesignSystemKind, name?: string) {
+  const group = 'Design System';
+  if (name) {
+    return `${group}/${kind}/${name}`;
+  }
+  return `${group}/${kind}`;
 }
