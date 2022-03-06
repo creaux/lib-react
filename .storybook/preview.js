@@ -1,4 +1,4 @@
-import defaultTheme from '!raw-loader!sass-loader!../src/themes/default/main.scss';
+// import defaultTheme from '!raw-loader!sass-loader!../src/themes/default/main.scss';
 // import animoTheme from '!raw-loader!sass-loader!../src/themes/animo/main.scss';
 // import checkoutTheme from '!raw-loader!sass-loader!../src/themes/checkout/main.scss';
 import { addParameters, addDecorator } from '@storybook/react';

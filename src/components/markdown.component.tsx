@@ -6,5 +6,5 @@ export interface MarkdownProps {
 }
 
 export const Markdown: FunctionComponent<MarkdownProps> = ({ children }) => (
-  <ReactMarkdown source={children} />
+  <ReactMarkdown children={children} />
 );
