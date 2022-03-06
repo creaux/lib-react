@@ -3,38 +3,50 @@
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
     .border#{$infix}-top {
+      /* stylelint-disable-next-line */
       border-top: $border-width solid $border-color !important;
     }
     .border#{$infix}-right {
+      /* stylelint-disable-next-line */
       border-right: $border-width solid $border-color !important;
     }
     .border#{$infix}-bottom {
+      /* stylelint-disable-next-line */
       border-bottom: $border-width solid $border-color !important;
     }
     .border#{$infix}-left {
+      /* stylelint-disable-next-line */
       border-left: $border-width solid $border-color !important;
     }
 
     .border#{$infix}-top-0 {
+      /* stylelint-disable-next-line */
       border-top: 0 !important;
     }
     .border#{$infix}-right-0 {
+      /* stylelint-disable-next-line */
       border-right: 0 !important;
     }
     .border#{$infix}-bottom-0 {
+      /* stylelint-disable-next-line */
       border-bottom: 0 !important;
     }
     .border#{$infix}-left-0 {
+      /* stylelint-disable-next-line */
       border-left: 0 !important;
     }
 
     .border#{$infix}-x {
-      border-left: $border-width solid $border-color !important;
+      /* stylelint-disable-next-line */
       border-right: $border-width solid $border-color !important;
+      /* stylelint-disable-next-line */
+      border-left: $border-width solid $border-color !important;
     }
 
     .border#{$infix}-y {
+      /* stylelint-disable-next-line */
       border-top: $border-width solid $border-color !important;
+      /* stylelint-disable-next-line */
       border-bottom: $border-width solid $border-color !important;
     }
   }

@@ -1,4 +1,4 @@
-@import '../../../../node_modules/bootstrap/scss/variables';
+@import "../../../../node_modules/bootstrap/scss/variables";
 @import "../mixins/form-control";
 
 @include media-breakpoint-down(xs) {
@@ -22,15 +22,15 @@
   outline: -webkit-focus-ring-color auto 1px;
   outline-offset: -2px;
 
-  input:focus {
-    outline: none;
-  }
+  // input:focus {
+  //   outline: none;
+  // }
 }
 
 .form-check-input {
-  transform: scale(1.3333);
   margin-top: 0.4rem;
   margin-left: -1.3rem;
+  transform: scale(1.3333);
 }
 
 .form-check {
@@ -38,11 +38,11 @@
 }
 
 .form-control {
-  @include input-border;
+  @include input-border();
 }
 
 .custom-checkbox .custom-control-label::before {
-  @include input-border;
+  @include input-border();
 }
 
 .custom-select {
@@ -52,4 +52,8 @@
 
 .form-control.disabled {
   background-color: $input-disabled-bg;
+}
+
+form fieldset {
+  padding-bottom: 1rem;
 }

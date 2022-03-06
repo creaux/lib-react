@@ -35,47 +35,47 @@ $breakpointCoordinates: (
 
 .viewport {
   position: relative;
-  height: 100vh;
   width: 100vw;
-  background-size: cover;
+  height: 100vh;
   overflow: hidden;
+  background-size: cover;
 }
 
 .viewport {
   @include media-breakpoint-down(xs) {
-    background-position-x: map-get-second($breakpointCoordinates, 'xs', 'x');
-    background-position-y: map-get-second($breakpointCoordinates, 'xs', 'y');
+    background-position-x: map-get-second($breakpointCoordinates, "xs", "x");
+    background-position-y: map-get-second($breakpointCoordinates, "xs", "y");
   }
 
   @include media-breakpoint-up(xs) {
-    background-position-x: map-get-second($breakpointCoordinates, 'xs', 'x');
-    background-position-y: map-get-second($breakpointCoordinates, 'xs', 'y');
+    background-position-x: map-get-second($breakpointCoordinates, "xs", "x");
+    background-position-y: map-get-second($breakpointCoordinates, "xs", "y");
   }
 
   @include media-breakpoint-up(sm) {
-    background-position-x: map-get-second($breakpointCoordinates, 'sm', 'x');
-    background-position-y: map-get-second($breakpointCoordinates, 'sm', 'y');
+    background-position-x: map-get-second($breakpointCoordinates, "sm", "x");
+    background-position-y: map-get-second($breakpointCoordinates, "sm", "y");
   }
 
   @include media-breakpoint-up(md) {
-    background-position-x: map-get-second($breakpointCoordinates, 'md', 'x');
-    background-position-y: map-get-second($breakpointCoordinates, 'md', 'y');
+    background-position-x: map-get-second($breakpointCoordinates, "md", "x");
+    background-position-y: map-get-second($breakpointCoordinates, "md", "y");
   }
 
   @include media-breakpoint-up(lg) {
-    background-position-x: map-get-second($breakpointCoordinates, 'lg', 'x');
-    background-position-y: map-get-second($breakpointCoordinates, 'lg', 'y');
+    background-position-x: map-get-second($breakpointCoordinates, "lg", "x");
+    background-position-y: map-get-second($breakpointCoordinates, "lg", "y");
   }
 
   @include media-breakpoint-up(xl) {
-    background-position-x: map-get-second($breakpointCoordinates, 'xl', 'x');
-    background-position-y: map-get-second($breakpointCoordinates, 'xl', 'y');
+    background-position-x: map-get-second($breakpointCoordinates, "xl", "x");
+    background-position-y: map-get-second($breakpointCoordinates, "xl", "y");
   }
 }
 
 .viewport--center {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }

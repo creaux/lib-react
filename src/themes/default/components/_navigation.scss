@@ -1,5 +1,5 @@
-$transition-in: cubic-bezier(.89, .13, 0, .89);
-$transition-out: cubic-bezier(.89, 0, .13, .89);
+$transition-in: cubic-bezier(0.89, 0.13, 0, 0.89);
+$transition-out: cubic-bezier(0.89, 0, 0.13, 0.89);
 
 .navbar-content {
   z-index: 1;
@@ -15,8 +15,8 @@ $transition-out: cubic-bezier(.89, 0, .13, .89);
 
 .navbar-screen-enter-active {
   opacity: 1;
-  transition: opacity .89s $transition-in;
-  transition-delay: .1s;
+  transition: opacity 0.89s $transition-in;
+  transition-delay: 0.1s;
 }
 
 .navbar-screen-exit {
@@ -25,7 +25,7 @@ $transition-out: cubic-bezier(.89, 0, .13, .89);
 
 .navbar-screen-exit-active {
   opacity: 0;
-  transition: opacity .89s $transition-in;
+  transition: opacity 0.89s $transition-in;
 }
 
 .navbar {
@@ -34,17 +34,17 @@ $transition-out: cubic-bezier(.89, 0, .13, .89);
 
 .navbar-with-screen {
   &.navbar-light {
-    background-image: linear-gradient(#FFF, #FFF);
     background-color: rgba(255, 255, 255, 0) !important;
+    background-image: linear-gradient(#fff, #fff);
   }
 
   .navbar-nav .nav-link {
-    transition: color .89s $transition-in;
+    transition: color 0.89s $transition-in;
   }
 
   &.navbar-dark {
-    background-image: linear-gradient(transparent, transparent);
     background-color: rgba(255, 255, 255, 0) !important;
+    background-image: linear-gradient(transparent, transparent);
   }
 
   &.navbar-enter {
@@ -52,9 +52,9 @@ $transition-out: cubic-bezier(.89, 0, .13, .89);
   }
 
   &.navbar-enter-active {
-    background-position: 0 0;
-    transition: background-position .89s $transition-in;
     height: 100vh;
+    background-position: 0 0;
+    transition: background-position 0.89s $transition-in;
   }
 
   &.navbar-exit {
@@ -62,33 +62,37 @@ $transition-out: cubic-bezier(.89, 0, .13, .89);
   }
 
   &.navbar-exit-active {
-    background-image: linear-gradient(#FFF, #FFF);
-    background-position: 100vw 0;
-    transition: background-position .89s $transition-out;
     height: 100vh;
+    background-image: linear-gradient(#fff, #fff);
+    background-position: 100vw 0;
+    transition: background-position 0.89s $transition-out;
   }
 }
 
 .navbar-background::after {
-  content: "";
-  opacity: var(--navbar-opacity);
-  background-color: var(--navbar-background-color);
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 0;
+  content: "";
+  background-color: var(--navbar-background-color);
+  opacity: var(--navbar-opacity);
 }
 
 .navbar-shadow {
   &::before {
-    content: "";
     position: absolute;
+    top: 0;
+    z-index: 0;
     width: 100%;
     height: 0;
-    top: 0;
+    content: "";
     box-shadow: 0 0 180px 42px black;
-    z-index: 0;
   }
+}
+
+.nav-item .nav-link {
+  font-weight: 600;
 }

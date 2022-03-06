@@ -5,13 +5,13 @@
 }
 
 .signpost__item {
+  position: relative;
   display: flex;
 
   overflow: hidden;
-  background-position: center center;
-  position: relative;
 
   cursor: pointer;
+  background-position: center center;
 
   .signpost__btn {
     position: relative;
@@ -33,15 +33,14 @@
 }
 
 .signpost__image {
-  display: flex;
-  z-index: 0;
-
-  opacity: 0;
-  transition: opacity 300ms ease-in-out;
-
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 0;
+  display: flex;
+
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
 }
 
 .signpost__image--active {
@@ -49,10 +48,10 @@
 }
 
 .signpost__btn-text {
-  text-transform: uppercase;
   font-weight: 600;
 
   color: map-get($theme-colors, light);
+  text-transform: uppercase;
 }
 
 .signpost__btn-icon {
@@ -65,12 +64,12 @@
   transition: opacity 300ms ease-in-out;
 
   &--active {
-    opacity: 0.7;
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    opacity: 0.7;
   }
 }
 
@@ -80,10 +79,10 @@
   }
 
   .signpost__item {
-    height: 25vh;
     flex-direction: row-reverse;
-    justify-content: space-between;
     align-items: flex-end;
+    justify-content: space-between;
+    height: 25vh;
     padding: 16px;
 
     .signpost__btn {
@@ -92,8 +91,8 @@
     }
 
     .signpost__btn-text {
-      font-weight: 200;
       font-size: calc(14px + 1vw);
+      font-weight: 200;
     }
   }
 
@@ -108,23 +107,22 @@
   }
 
   .signpost__item {
-    width: 25vw;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    width: 25vw;
 
     .signpost__btn {
+      display: flex;
       align-items: center;
       justify-content: center;
-      display: flex;
     }
 
     .signpost__btn {
-      transition: opacity 300ms ease-in-out;
-      opacity: 0;
-
       position: relative;
       z-index: 1;
+      opacity: 0;
+      transition: opacity 300ms ease-in-out;
     }
 
     .signpost__btn--active {
@@ -133,12 +131,12 @@
   }
 
   .signpost__title {
-    font-size: calc(28px + 1vw);
     padding-bottom: calc(20px + 1vh);
+    font-size: calc(28px + 1vw);
   }
 
   .signpost__btn-text {
-    font-weight: 200;
     font-size: calc(7px + 1vw);
+    font-weight: 200;
   }
 }

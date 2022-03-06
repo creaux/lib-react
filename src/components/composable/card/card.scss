@@ -1,10 +1,10 @@
 .product-card-image {
-  width: 100%;
   position: relative;
+  width: 100%;
 
-  &:after {
-    content: "";
+  &::after {
     display: block;
     padding-bottom: 100%;
+    content: "";
   }
 }

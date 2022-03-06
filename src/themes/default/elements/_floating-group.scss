@@ -1,8 +1,8 @@
-$animation-duration: .3s;
+$animation-duration: 0.3s;
 
 @mixin active {
   font-size: 0.75rem;
-  transform: translateY(-.6rem);
+  transform: translateY(-0.6rem);
 }
 
 @mixin inactive {
@@ -17,48 +17,48 @@ $animation-duration: .3s;
 }
 
 .floating-group.form-control {
-  padding-bottom: .1rem;
+  padding-bottom: 0.1rem;
 
   label {
     cursor: text;
   }
 
-  & > input {
-    margin-top: .75rem;
+  > input {
+    margin-top: 0.75rem;
   }
 
-  & > input + label {
-    @include active;
-
-    display: block;
-    font-weight: normal;
-    left: 0;
-    margin: 0;
-    padding: .75rem .75rem 0;
+  > input + label {
+    @include active();
     position: absolute;
     top: 0;
-    transition: all $animation-duration;
+    left: 0;
+
+    display: block;
     width: 100%;
+    padding: 0.75rem 0.75rem 0;
+    margin: 0;
+    font-weight: $font-weight-normal;
+    transition: all $animation-duration;
   }
 
-  & > input:focus + label {
-    @include active;
+  > input:focus + label {
+    @include active();
   }
 
-  & > input:focus::placeholder {
+  > input:focus::placeholder {
     color: $input-placeholder-color;
   }
 
-  & > input::placeholder {
-    transition: color 0 ease $animation-duration;
+  > input::placeholder {
     color: transparent;
+    transition: color 0 ease $animation-duration;
   }
 
-  & > input:placeholder-shown + label {
-    @include inactive;
+  > input:placeholder-shown + label {
+    @include inactive();
   }
 
-  & > input:focus:placeholder-shown + label {
-    @include active;
+  > input:focus:placeholder-shown + label {
+    @include active();
   }
 }

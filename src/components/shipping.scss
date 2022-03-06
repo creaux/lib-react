@@ -5,20 +5,20 @@
 
 .shipping__toggle {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-weight: 600;
+  justify-content: space-between;
   height: 40px;
+  font-weight: 600;
 }
 
 .shipping__icon {
   display: inline-block;
-  text-align: center;
   width: 18px;
+  text-align: center;
 }
 
 .shipping__billing {
-  height: auto;
-  transition: all 0.001s ease-in-out;
   flex: 1;
+  height: auto;
+  transition: all .001s ease-in-out;
 }

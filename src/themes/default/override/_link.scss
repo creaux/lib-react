@@ -1,0 +1,33 @@
+@mixin link-hover {
+  position: static;
+  display: block;
+  width: 100%;
+  height: 0.1em;
+  content: "";
+  background-color: $link-border-color;
+}
+
+a {
+  cursor: pointer;
+}
+
+.link {
+  cursor: pointer;
+}
+
+a:not(.nav-brand):not(.carousel-control-next):not(.carousel-control-prev):hover::after,
+.link:hover::after {
+  @include link-hover();
+}
+
+// Custom bottom line for hyperlinks
+.btn.btn-link {
+  &:hover:not(.nav-brand)::after,
+  .nav-item.active &::after {
+    @include link-hover();
+  }
+
+  &.navbar-brand:hover::after {
+    content: none;
+  }
+}

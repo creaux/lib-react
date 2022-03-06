@@ -12,7 +12,7 @@
 
   @function getWrapperHeight() {
     @return (map-get($map: $item, $key: height) * ($item-count - 1)) +
-    map-get($map: $active-item, $key: height);
+      map-get($map: $active-item, $key: height);
   }
 
   @mixin direction {
@@ -22,18 +22,18 @@
   .up,
   .down,
   .link {
-    outline: none;
-    padding: 0;
-    border: 0;
     box-sizing: none;
+    padding: 0;
     background-color: transparent;
+    border: 0;
+    outline: none;
   }
 
 
   .wrapper {
-    height: getWrapperHeight();
-    overflow: hidden;
     position: relative;
+    height: getwrapperheight();
+    overflow: hidden;
   }
 
   .items {
@@ -44,16 +44,16 @@
 
   .item {
     height: map-get($map: $item, $key: height);
-    line-height: map-get($map: $item, $key: height);
-    list-style: none;
-    vertical-align: middle;
     font-weight: 200;
+    line-height: map-get($map: $item, $key: height);
+    vertical-align: middle;
+    list-style: none;
   }
 
   .link {
     font-weight: 300;
     text-decoration: none;
-    transition: font-weight 0.2s ease-in-out;
+    transition: font-weight .2s ease-in-out;
   }
 
   .link:hover {
@@ -62,8 +62,8 @@
   }
 
   .active {
-    font-size: 20px;
     height: map-get($map: $active-item, $key: height);
+    font-size: 20px;
     line-height: map-get($map: $active-item, $key: height);
   }
 
